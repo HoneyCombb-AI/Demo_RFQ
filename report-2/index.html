@@ -278,13 +278,11 @@ ul.clean li { margin: 4px 0; }
   <main class="shell">
     <aside class="viewer">
       <div class="viewer-toolbar">
-        <div class="toggle"><span class="active">Drawing</span><span>Info</span></div>
-        <div class="page-nav">Page 1 / 3</div>
+        <div class="toggle"><span class="active" data-img="0">Ballooned</span><span data-img="1">Original</span></div>
       </div>
       <div class="drawing-frame">
-        <img src="./images/ballooned_drawing.png" alt="Drawing page 1">
-<img src="./images/page_001_original.png" alt="Drawing page 2">
-<img src="./images/page_001_vlm.png" alt="Drawing page 3">
+        <img src="./images/ballooned_drawing.png" alt="Ballooned drawing">
+<img src="./images/page_001_vlm.png" alt="Original drawing" style="display:none">
       </div>
     </aside>
 
@@ -347,25 +345,14 @@ if (filter) {
     });
   });
 }
-// Page navigation
-const pageImgs = document.querySelectorAll('.drawing-frame img');
-const pageNav = document.querySelector('.page-nav');
-let currentPage = 0;
-function showPage(idx) {
-  pageImgs.forEach((img, i) => { img.style.display = i === idx ? 'block' : 'none'; });
-  if (pageNav) pageNav.textContent = 'Page ' + (idx + 1) + ' / ' + pageImgs.length;
-  currentPage = idx;
-}
-if (pageImgs.length > 0) showPage(0);
-if (pageNav && pageImgs.length > 1) {
-  pageNav.style.cursor = 'pointer';
-  pageNav.addEventListener('click', () => { showPage((currentPage + 1) % pageImgs.length); });
-}
-// Toggle view type
+// Image toggle
+const drawingImgs = document.querySelectorAll('.drawing-frame img');
 document.querySelectorAll('.toggle span').forEach((btn) => {
   btn.addEventListener('click', () => {
     document.querySelectorAll('.toggle span').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
+    const idx = parseInt(btn.dataset.img);
+    drawingImgs.forEach((img, i) => { img.style.display = i === idx ? 'block' : 'none'; });
   });
 });
 
