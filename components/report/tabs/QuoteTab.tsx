@@ -17,9 +17,8 @@ export function QuoteTab({ data }: { data: ReportData }) {
   const pricePerPiece = summary.ex_works_price_per_piece_inr
   const batchTotal = pricePerPiece * quote.quantity
   
-  // Calculate approximate overhead from the provided data
-  const subtotal = summary.total_cost_inr
-  const overheadAndMargin = summary.profit_and_overhead_inr - summary.total_cost_inr
+  const overheadAndMargin = summary.profit_and_overhead_inr || 0
+  const subtotal = pricePerPiece - overheadAndMargin
 
   return (
     <div className="space-y-8 pb-12">
