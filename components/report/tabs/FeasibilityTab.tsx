@@ -4,7 +4,7 @@ import * as React from "react"
 import { ReportData, SpecAssessment } from "@/lib/data"
 import { Card, CardContent, CardHeader } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { RiskCard } from "../RiskCard"
+import { Input } from "@/components/ui/input"
 import {
   Table,
   TableBody,
@@ -13,7 +13,15 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table"
-import { CheckCircle2, XCircle, AlertTriangle, Info, ChevronDown, ChevronRight } from "lucide-react"
+import { CheckCircle2, XCircle, AlertTriangle, Info, ChevronDown, ChevronRight, Search } from "lucide-react"
+
+function formatText(text: string) {
+  if (!text) return ""
+  return text
+    .split("_")
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ")
+}
 
 function VerdictBadge({ verdict }: { verdict: string }) {
   const v = verdict.toLowerCase()
@@ -40,7 +48,7 @@ function VerdictBadge({ verdict }: { verdict: string }) {
   )
 }
 
-function SpecRow({ sa }: { sa: SpecAssessment }) {
+function SpecRow({ sa }: { sa: SpecAssessment & { feature_id: string; feature_name: string } }) {
   const [expanded, setExpanded] = React.useState(false)
   const hasRisk = sa.risk_description || sa.verdict.toLowerCase().includes("risk") || sa.verdict.toLowerCase().includes("missing")
 
@@ -60,11 +68,18 @@ function SpecRow({ sa }: { sa: SpecAssessment }) {
             : <ChevronRight className="w-3.5 h-3.5 text-muted-foreground" />
           }
         </TableCell>
-        <TableCell className="font-medium text-sm">{sa.spec_description}</TableCell>
+        <TableCell className="font-medium text-sm">
+          {formatText(sa.spec_description)}
+          {sa.feature_name && (
+            <span className="block text-xs font-normal text-muted-foreground mt-0.5">
+              {sa.feature_name}
+            </span>
+          )}
+        </TableCell>
         <TableCell className="font-mono text-sm">{sa.nominal_value}</TableCell>
-        <TableCell className="font-mono text-sm whitespace-nowrap">{sa.tolerance_or_requirement || "–"}</TableCell>
         <TableCell><VerdictBadge verdict={sa.verdict} /></TableCell>
         <TableCell className="text-xs text-muted-foreground">{sa.required_process}</TableCell>
+        <TableCell className="font-mono text-xs text-muted-foreground text-right">{sa.feature_id}</TableCell>
       </TableRow>
       {expanded && (
         <TableRow className="bg-muted/20 hover:bg-muted/20">
@@ -103,7 +118,33 @@ function SpecRow({ sa }: { sa: SpecAssessment }) {
 }
 
 export function FeasibilityTab({ data }: { data: ReportData }) {
+  const [searchTerm, setSearchTerm] = React.useState("")
   const f = data.feasibility.feasibility
+
+  // Flatten all spec assessments from all features
+  const allSpecs = React.useMemo(() => {
+    return data.feasibility.feature_assessments.flatMap((fa) => 
+      fa.spec_assessments.map((sa) => ({
+        ...sa,
+        feature_id: fa.feature_id,
+        feature_name: fa.feature_name,
+      }))
+    )
+  }, [data.feasibility.feature_assessments])
+
+  // Filter based on search term
+  const filteredSpecs = React.useMemo(() => {
+    const term = searchTerm.toLowerCase()
+    if (!term) return allSpecs
+    
+    return allSpecs.filter((sa) => 
+      sa.spec_description.toLowerCase().includes(term) ||
+      sa.feature_name.toLowerCase().includes(term) ||
+      sa.feature_id.toLowerCase().includes(term) ||
+      sa.verdict.toLowerCase().includes(term) ||
+      (sa.nominal_value && sa.nominal_value.toLowerCase().includes(term))
+    )
+  }, [allSpecs, searchTerm])
 
   // Status badge styling
   let statusColor = "bg-green-100 text-green-700"
@@ -126,7 +167,7 @@ export function FeasibilityTab({ data }: { data: ReportData }) {
 
   return (
     <div className="space-y-8 pb-12">
-      {/* Overall Summary Card — no colored top border */}
+      {/* Overall Summary Card */}
       <Card>
         <CardHeader className="pb-4">
           <div className="flex items-center gap-4">
@@ -164,46 +205,51 @@ export function FeasibilityTab({ data }: { data: ReportData }) {
         </CardContent>
       </Card>
 
-      {/* Feature Assessments as Tables */}
+      {/* Flattened Spec Assessments Table */}
       <section>
-        <h3 className="text-lg font-semibold mb-4">Feature Assessments</h3>
-        <div className="space-y-6">
-          {data.feasibility.feature_assessments.map((fa) => (
-            <Card key={fa.feature_id} className="overflow-hidden">
-              <CardHeader className="bg-muted/30 py-3 px-5 border-b">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    <Badge variant="outline" className="border-red-200 text-red-600 bg-red-50/50 hover:bg-red-50/50 font-mono font-bold text-sm px-2 py-0.5 rounded-sm shadow-none">
-                      {fa.feature_id}
-                    </Badge>
-                    <span className="text-base font-semibold">{fa.feature_name}</span>
-                  </div>
-                </div>
-                {fa.notes && (
-                  <p className="text-sm text-muted-foreground mt-2">{fa.notes}</p>
-                )}
-              </CardHeader>
-              <CardContent className="p-0">
-                <Table>
-                  <TableHeader>
-                    <TableRow className="bg-muted/50 hover:bg-muted/50 border-b">
-                      <TableHead className="w-9 px-2"></TableHead>
-                      <TableHead className="text-[11px] font-bold tracking-wider uppercase text-foreground/80">Specification</TableHead>
-                      <TableHead className="text-[11px] font-bold tracking-wider uppercase text-foreground/80">Nominal</TableHead>
-                      <TableHead className="text-[11px] font-bold tracking-wider uppercase text-foreground/80">Tolerance / Requirement</TableHead>
-                      <TableHead className="text-[11px] font-bold tracking-wider uppercase text-foreground/80">Verdict</TableHead>
-                      <TableHead className="text-[11px] font-bold tracking-wider uppercase text-foreground/80">Process</TableHead>
-                    </TableRow>
-                  </TableHeader>
-                  <TableBody>
-                    {fa.spec_assessments.map((sa, i) => (
-                      <SpecRow key={i} sa={sa} />
-                    ))}
-                  </TableBody>
-                </Table>
-              </CardContent>
-            </Card>
-          ))}
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
+          <h3 className="text-lg font-semibold">Spec Assessments</h3>
+          <div className="flex items-center gap-3">
+            <div className="relative max-w-sm w-full sm:w-64">
+              <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
+              <Input
+                type="search"
+                placeholder="Filter specs..."
+                className="pl-9 bg-background"
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+              />
+            </div>
+            <div className="text-sm text-muted-foreground font-mono whitespace-nowrap">
+              {filteredSpecs.length} specs
+            </div>
+          </div>
+        </div>
+
+        <div className="rounded-lg border bg-background shadow-sm overflow-hidden">
+          {filteredSpecs.length === 0 ? (
+            <div className="text-center py-12 text-muted-foreground bg-muted/20 border-dashed">
+              No spec assessments match your search.
+            </div>
+          ) : (
+            <Table>
+              <TableHeader>
+                <TableRow className="bg-muted/70 hover:bg-muted/70 border-b-2 border-border/50">
+                  <TableHead className="w-9 px-2"></TableHead>
+                  <TableHead className="text-[11px] font-bold tracking-wider uppercase text-foreground/80">Specification</TableHead>
+                  <TableHead className="text-[11px] font-bold tracking-wider uppercase text-foreground/80">Nominal</TableHead>
+                  <TableHead className="text-[11px] font-bold tracking-wider uppercase text-foreground/80">Verdict</TableHead>
+                  <TableHead className="text-[11px] font-bold tracking-wider uppercase text-foreground/80">Process</TableHead>
+                  <TableHead className="text-[11px] font-bold tracking-wider uppercase text-foreground/80 text-right">Feature</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                {filteredSpecs.map((sa, i) => (
+                  <SpecRow key={`${sa.feature_id}-${i}`} sa={sa} />
+                ))}
+              </TableBody>
+            </Table>
+          )}
         </div>
       </section>
     </div>
