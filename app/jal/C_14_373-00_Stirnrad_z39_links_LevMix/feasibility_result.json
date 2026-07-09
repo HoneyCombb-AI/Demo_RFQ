@@ -1,0 +1,771 @@
+{
+  "analysis_id": "feas_rfq_C_14_373-00_Stirnrad_z39_links_LevMix_20260629T180729Z",
+  "source_feature_graph_id": "rfq_C_14_373-00_Stirnrad_z39_links_LevMix_20260629T180729Z",
+  "feasibility": {
+    "can_proceed": true,
+    "status": "feasible_with_risks",
+    "risk_level": "medium",
+    "blockers": [],
+    "risks": [
+      {
+        "risk_type": "missing_gear_profile_detail",
+        "description": "The tooth tip rounding value for the external helical gear is unclear, so the gear profile definition is not fully specified for final manufacture/inspection.",
+        "mitigation": "Obtain clarification or approved gear data before release; manufacture remains physically feasible with JAL's gear hobbing/grinding/honing capability once defined.",
+        "affected_feature_ids": [
+          "F002"
+        ]
+      },
+      {
+        "risk_type": "heat_treat_distortion",
+        "description": "Case hardening to 630+100 HV10 with 0.3+0.2 mm case depth can distort the small gear and affect the \u00d89 H7 bore and gear runout/composite errors.",
+        "mitigation": "Use controlled in-house sealed-quench heat treatment and final precision finishing/inspection after heat treatment where required.",
+        "affected_feature_ids": [
+          "F001",
+          "F002",
+          "F003",
+          "F004",
+          "F005"
+        ]
+      },
+      {
+        "risk_type": "surface_finish_interpretation_uncertain",
+        "description": "The Rz 2.5 callout location is uncertain between the bore and adjacent face.",
+        "mitigation": "Confirm drawing intent; if applied to the bore, JAL's bore honing and surface-finish inspection can achieve it.",
+        "affected_feature_ids": [
+          "F003",
+          "F004"
+        ]
+      },
+      {
+        "risk_type": "gear_inspection_dependency",
+        "description": "The 23.3 \u00b10.017 mm axis-distance-with-counter-gear criterion depends on a correct master/counter gear or inspection fixture.",
+        "mitigation": "Use certified gear measurement equipment or approved master gear during inspection.",
+        "affected_feature_ids": [
+          "F002"
+        ]
+      }
+    ],
+    "outside_processes_needed": [],
+    "material_machinable": true,
+    "tolerances_achievable": true,
+    "machines_available": true,
+    "part_fits_envelopes": true,
+    "assessment_notes": "The part is a small \u00d839.79 x 14 mm case-hardened left-hand helical gear with a \u00d89 H7 through bore. JAL has in-house alloy-steel machining, gear hobbing/shaping/shaving/grinding/honing, bore honing/ID grinding, heat treatment, finishing, and inspection capabilities, and the part is well within machine envelopes."
+  },
+  "feature_assessments": [
+    {
+      "feature_id": "F001",
+      "feature_name": "Cylindrical gear body",
+      "feature_type": "part_body",
+      "overall_verdict": "risk",
+      "spec_assessments": [
+        {
+          "feature_id": "F001",
+          "feature_name": "Cylindrical gear body",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "Overall axial width",
+          "nominal_value": "14.0 mm",
+          "tolerance_or_requirement": "No explicit plus/minus; general DIN ISO 2768-mK applies unless otherwise specified",
+          "verdict": "feasible",
+          "reasoning": "A 14 mm axial width on a \u00d839.79 mm steel gear body is within CNC lathe/VMC and grinding capability.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "turning/facing or grinding as needed",
+          "shop_capability_reference": "cnc_lathe careful_tolerance_mm 0.02; od_grinding careful_tolerance_mm 0.005"
+        },
+        {
+          "feature_id": "F001",
+          "feature_name": "Cylindrical gear body",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "Maximum outside diameter envelope",
+          "nominal_value": "\u00d839.79 mm",
+          "tolerance_or_requirement": "+0 / -0.05 mm",
+          "verdict": "feasible",
+          "reasoning": "A 0.05 mm unilateral OD tolerance is within CNC turning normal capability and easily within OD grinding capability.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "turning or OD grinding",
+          "shop_capability_reference": "cnc_lathe normal_tolerance_mm 0.05; od_grinding normal_tolerance_mm 0.01"
+        },
+        {
+          "feature_id": "F001",
+          "feature_name": "Cylindrical gear body",
+          "spec_category": "material_condition",
+          "spec_description": "Case-hardened and tempered part-level condition",
+          "nominal_value": "16MnCrS5, 630+100 HV10, Eht 0.3+0.2 mm",
+          "tolerance_or_requirement": "Case-hardened and tempered per heat-treatment note",
+          "verdict": "risk",
+          "reasoning": "JAL has sealed-quench case-carburizing furnaces covering 0.3-0.8 mm case depth, but heat-treatment distortion can affect the finished gear body.",
+          "risk_description": "Distortion after case hardening may affect OD, faces, bore coaxiality, and runout-related features.",
+          "mitigation": "Use controlled in-house heat treatment and finish critical surfaces after heat treat if required.",
+          "required_process": "case carburizing/quench and temper",
+          "shop_capability_reference": "sealed_quench_furnace case_depth_range_mm 0.3-0.8 and case_depth_control_mm 0.2"
+        }
+      ],
+      "notes": "The basic cylindrical body is manufacturable; the risk is tied to maintaining final precision after case hardening."
+    },
+    {
+      "feature_id": "F002",
+      "feature_name": "External left-hand helical gear tooth form",
+      "feature_type": "external_cylinder",
+      "overall_verdict": "info_missing",
+      "spec_assessments": [
+        {
+          "feature_id": "F002",
+          "feature_name": "External left-hand helical gear tooth form",
+          "spec_category": "geometry_parameter",
+          "spec_description": "External left-hand helical gear form per DIN 3972/II basic rack profile",
+          "nominal_value": "External helical gear, left-rising flank, full circumference",
+          "tolerance_or_requirement": "Requires gear cutting/finishing capability",
+          "verdict": "feasible",
+          "reasoning": "JAL has extensive external gear hobbing, shaping, shaving, gear grinding, and teeth honing capability.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "gear hobbing/grinding/honing",
+          "shop_capability_reference": "gear_hobbing, gear_shaving, gear_grinding, teeth_honing available"
+        },
+        {
+          "feature_id": "F002",
+          "feature_name": "External left-hand helical gear tooth form",
+          "spec_category": "geometry_parameter",
+          "spec_description": "Tooth tip rounding value",
+          "nominal_value": "Unclear/question mark in extracted drawing clarification",
+          "tolerance_or_requirement": "Required tooth tip rounding not confirmed",
+          "verdict": "info_missing",
+          "reasoning": "The feature graph includes a high-priority clarification that the tooth tip rounding value is unclear, so this profile detail cannot be verified from current data.",
+          "risk_description": null,
+          "mitigation": "Clarify required tip rounding before production release.",
+          "required_process": "gear profile generation",
+          "shop_capability_reference": "gear_hobbing/gear_grinding capable once profile is defined"
+        },
+        {
+          "feature_id": "F002",
+          "feature_name": "External left-hand helical gear tooth form",
+          "spec_category": "surface_finish",
+          "spec_description": "Local tooth/external surface texture",
+          "nominal_value": "Rz 6",
+          "tolerance_or_requirement": "Rz 6 local finish, not converted to Ra",
+          "verdict": "feasible",
+          "reasoning": "Gear grinding/teeth honing and surface-finish inspection support fine gear surface finishing beyond ordinary as-machined finish.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "gear grinding or teeth honing",
+          "shop_capability_reference": "gear_grinding, teeth_honing, inspection surface_finish_measurement"
+        },
+        {
+          "feature_id": "F002",
+          "feature_name": "External left-hand helical gear tooth form",
+          "spec_category": "material_condition",
+          "spec_description": "Case-hardened gear tooth surface",
+          "nominal_value": "630+100 HV10, Eht 0.3+0.2 mm",
+          "tolerance_or_requirement": "Case-hardened gear tooth surface per heat-treatment note",
+          "verdict": "risk",
+          "reasoning": "The required case hardening is in-house, but hardened gear teeth with composite-error and runout requirements create distortion-control risk.",
+          "risk_description": "Heat treatment may move tooth geometry before final finishing.",
+          "mitigation": "Use controlled sealed-quench furnace and final gear grinding/honing/inspection after heat treatment as needed.",
+          "required_process": "case carburizing/quench and temper plus gear finishing",
+          "shop_capability_reference": "sealed_quench_furnace; gear_grinding careful_tolerance_mm 0.005; teeth_honing careful_tolerance_mm 0.005"
+        },
+        {
+          "feature_id": "F002",
+          "feature_name": "External left-hand helical gear tooth form",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "Number of teeth",
+          "nominal_value": "z = 39 teeth",
+          "tolerance_or_requirement": "Exact tooth count per gear data",
+          "verdict": "feasible",
+          "reasoning": "A 39-tooth external gear is within standard gear hobbing/shaping capability.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "gear hobbing or gear shaping",
+          "shop_capability_reference": "gear_hobbing and gear_shaping available"
+        },
+        {
+          "feature_id": "F002",
+          "feature_name": "External left-hand helical gear tooth form",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "Normal module",
+          "nominal_value": "m = 1.0 mm",
+          "tolerance_or_requirement": "Module per gear data",
+          "verdict": "feasible",
+          "reasoning": "Module 1 external gears are compatible with JAL's dedicated gear cutting and finishing equipment.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "gear hobbing/grinding",
+          "shop_capability_reference": "gear_hobbing, gear_grinding available"
+        },
+        {
+          "feature_id": "F002",
+          "feature_name": "External left-hand helical gear tooth form",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "Head/outside diameter",
+          "nominal_value": "\u00d839.79 mm",
+          "tolerance_or_requirement": "+0 / -0.05 mm",
+          "verdict": "feasible",
+          "reasoning": "The 0.05 mm OD tolerance is within CNC turning and OD/gear grinding capability.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "turning or grinding",
+          "shop_capability_reference": "cnc_lathe normal_tolerance_mm 0.05; od_grinding normal_tolerance_mm 0.01"
+        },
+        {
+          "feature_id": "F002",
+          "feature_name": "External left-hand helical gear tooth form",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "Face width",
+          "nominal_value": "14.0 mm",
+          "tolerance_or_requirement": "No explicit plus/minus; general DIN ISO 2768-mK applies unless otherwise specified",
+          "verdict": "feasible",
+          "reasoning": "A 14 mm gear face width is within turning/facing and grinding capability.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "facing/grinding",
+          "shop_capability_reference": "cnc_lathe; od_grinding/lapping available"
+        },
+        {
+          "feature_id": "F002",
+          "feature_name": "External left-hand helical gear tooth form",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "Pitch diameter",
+          "nominal_value": "d = 40.376 mm",
+          "tolerance_or_requirement": "Gear data value; no explicit plus/minus listed",
+          "verdict": "feasible",
+          "reasoning": "The pitch diameter is controlled by the generated gear geometry and is within JAL's gear cutting/finishing and gear measurement capability.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "gear generation and inspection",
+          "shop_capability_reference": "gear_hobbing normal_tolerance_mm 0.03; gear_grinding normal_tolerance_mm 0.01; inspection gear_measurement"
+        },
+        {
+          "feature_id": "F002",
+          "feature_name": "External left-hand helical gear tooth form",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "Base diameter",
+          "nominal_value": "db = 37.783 mm",
+          "tolerance_or_requirement": "Gear data value; no explicit plus/minus listed",
+          "verdict": "feasible",
+          "reasoning": "The base diameter is an output of the gear profile and can be controlled with gear cutting/finishing and inspection.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "gear generation and inspection",
+          "shop_capability_reference": "gear_hobbing, gear_grinding, inspection gear_measurement"
+        },
+        {
+          "feature_id": "F002",
+          "feature_name": "External left-hand helical gear tooth form",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "Generated root circle diameter df",
+          "nominal_value": "\u00d835.487 mm",
+          "tolerance_or_requirement": "+0 / -0.08 mm",
+          "verdict": "feasible",
+          "reasoning": "A 0.08 mm root-circle tolerance is looser than the careful capability of gear hobbing and grinding.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "gear hobbing/grinding",
+          "shop_capability_reference": "gear_hobbing careful_tolerance_mm 0.015; gear_grinding careful_tolerance_mm 0.005"
+        },
+        {
+          "feature_id": "F002",
+          "feature_name": "External left-hand helical gear tooth form",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "Effective root diameter",
+          "nominal_value": "\u00d837.858 mm",
+          "tolerance_or_requirement": "+0 / -0.03 mm",
+          "verdict": "feasible",
+          "reasoning": "A 0.03 mm effective root-diameter tolerance is within gear hobbing normal capability and gear grinding capability.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "gear hobbing/grinding",
+          "shop_capability_reference": "gear_hobbing normal_tolerance_mm 0.03; gear_grinding normal_tolerance_mm 0.01"
+        },
+        {
+          "feature_id": "F002",
+          "feature_name": "External left-hand helical gear tooth form",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "Pressure angle",
+          "nominal_value": "20\u00b0",
+          "tolerance_or_requirement": "Pressure angle per gear data",
+          "verdict": "feasible",
+          "reasoning": "20\u00b0 pressure angle is a standard gear geometry parameter for gear cutting and grinding.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "gear hobbing/grinding with specified gear data",
+          "shop_capability_reference": "gear_hobbing and gear_grinding available"
+        },
+        {
+          "feature_id": "F002",
+          "feature_name": "External left-hand helical gear tooth form",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "Change in head height",
+          "nominal_value": "k = -0.18 mm",
+          "tolerance_or_requirement": "Gear data value; no explicit plus/minus listed",
+          "verdict": "feasible",
+          "reasoning": "The specified head-height modification is part of the generated gear profile and is feasible with CNC gear generation when tool/profile data are defined.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "gear hobbing/grinding",
+          "shop_capability_reference": "gear_hobbing, gear_grinding available"
+        },
+        {
+          "feature_id": "F002",
+          "feature_name": "External left-hand helical gear tooth form",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "Helix angle",
+          "nominal_value": "\u03b2 = 15\u00b0 left-hand",
+          "tolerance_or_requirement": "Helix angle and hand per gear data",
+          "verdict": "feasible",
+          "reasoning": "A 15\u00b0 left-hand external helical gear is within dedicated gear hobbing/grinding capability.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "helical gear hobbing/grinding",
+          "shop_capability_reference": "gear_hobbing and gear_grinding available"
+        },
+        {
+          "feature_id": "F002",
+          "feature_name": "External left-hand helical gear tooth form",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "Addendum modification coefficient",
+          "nominal_value": "x* = -1.134",
+          "tolerance_or_requirement": "Gear data value; no explicit plus/minus listed",
+          "verdict": "feasible",
+          "reasoning": "The addendum modification is a generated gear-geometry parameter and is manufacturable with defined gear tooling/CNC gear setup.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "gear hobbing/grinding",
+          "shop_capability_reference": "gear_hobbing, gear_grinding available"
+        },
+        {
+          "feature_id": "F002",
+          "feature_name": "External left-hand helical gear tooth form",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "Distance between axes with counter gear",
+          "nominal_value": "23.3 mm",
+          "tolerance_or_requirement": "\u00b10.017 mm",
+          "verdict": "risk",
+          "reasoning": "The 0.034 mm total range is achievable by gear finishing, but the requirement depends on mating-gear/master-gear inspection conditions.",
+          "risk_description": "Inspection fixture or counter gear definition may affect acceptance.",
+          "mitigation": "Confirm inspection method and use certified master/counter gear.",
+          "required_process": "gear finishing and gear measurement",
+          "shop_capability_reference": "gear_grinding careful_tolerance_mm 0.005; inspection gear_measurement"
+        },
+        {
+          "feature_id": "F002",
+          "feature_name": "External left-hand helical gear tooth form",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "Gear quality grade",
+          "nominal_value": "DIN 58405 / 8d",
+          "tolerance_or_requirement": "Quality grade 8d",
+          "verdict": "feasible",
+          "reasoning": "DIN quality grade 8 is within normal capability for a shop with shaving, grinding, honing, and gear measurement equipment.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "gear finishing and gear inspection",
+          "shop_capability_reference": "gear_shaving, gear_grinding, teeth_honing, inspection gear_measurement"
+        },
+        {
+          "feature_id": "F002",
+          "feature_name": "External left-hand helical gear tooth form",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "Gauge over teeth Am n4",
+          "nominal_value": "10.119 mm",
+          "tolerance_or_requirement": "+0 / -0.028 mm",
+          "verdict": "feasible",
+          "reasoning": "A 0.028 mm gear gauge tolerance is within gear grinding/teeth honing capability and can be inspected in-house.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "gear finishing and inspection",
+          "shop_capability_reference": "gear_grinding normal_tolerance_mm 0.01; teeth_honing normal_tolerance_mm 0.01; inspection careful_dimensional_capability_mm 0.005"
+        },
+        {
+          "feature_id": "F002",
+          "feature_name": "External left-hand helical gear tooth form",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "Two-flank working error fi double prime",
+          "nominal_value": "0.012 mm",
+          "tolerance_or_requirement": "Maximum/required value per gear data",
+          "verdict": "feasible",
+          "reasoning": "A 0.012 mm two-flank working error is tight but within gear grinding/honing capability and gear measurement capability.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "gear grinding/honing and gear measurement",
+          "shop_capability_reference": "gear_grinding normal_tolerance_mm 0.01; teeth_honing normal_tolerance_mm 0.01; inspection gear_measurement"
+        },
+        {
+          "feature_id": "F002",
+          "feature_name": "External left-hand helical gear tooth form",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "Radial composite error Fi double prime",
+          "nominal_value": "0.032 mm",
+          "tolerance_or_requirement": "Maximum/required value per gear data",
+          "verdict": "feasible",
+          "reasoning": "A 0.032 mm radial composite error is within JAL's gear finishing and in-house gear measurement capability.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "gear finishing and gear measurement",
+          "shop_capability_reference": "gear_hobbing normal_tolerance_mm 0.03; gear_grinding normal_tolerance_mm 0.01; inspection gear_measurement"
+        },
+        {
+          "feature_id": "F002",
+          "feature_name": "External left-hand helical gear tooth form",
+          "spec_category": "gdt_control",
+          "spec_description": "Runout of external gear/OD to datum A",
+          "nominal_value": "0.035 mm",
+          "tolerance_or_requirement": "Runout 0.035 to datum A",
+          "verdict": "feasible",
+          "reasoning": "The runout requirement is within the shop's turning/grinding and inspection capability when datum A and bore/gear axis are controlled.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "precision turning/grinding and inspection",
+          "shop_capability_reference": "od_grinding normal_tolerance_mm 0.01; inspection careful_dimensional_capability_mm 0.005"
+        }
+      ],
+      "notes": "The gear is physically manufacturable in-house, but final release needs clarification of tooth tip rounding and controlled heat-treatment/gear inspection."
+    },
+    {
+      "feature_id": "F003",
+      "feature_name": "Central through bore \u00d89 H7",
+      "feature_type": "internal_bore",
+      "overall_verdict": "risk",
+      "spec_assessments": [
+        {
+          "feature_id": "F003",
+          "feature_name": "Central through bore \u00d89 H7",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "Bore diameter",
+          "nominal_value": "\u00d89.0 mm",
+          "tolerance_or_requirement": "H7 tolerance class",
+          "verdict": "feasible",
+          "reasoning": "A \u00d89 H7 precision through bore is within JAL's ID grinding and bore honing capabilities.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "reaming plus bore honing or ID grinding",
+          "shop_capability_reference": "bore_honing careful_tolerance_mm 0.002; id_grinding careful_tolerance_mm 0.005"
+        },
+        {
+          "feature_id": "F003",
+          "feature_name": "Central through bore \u00d89 H7",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "Through bore depth equal to part width",
+          "nominal_value": "14.0 mm THRU",
+          "tolerance_or_requirement": "Through full 14 mm gear width",
+          "verdict": "feasible",
+          "reasoning": "A 14 mm through bore at \u00d89 mm is shallow and accessible axially from both faces.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "drilling/boring/reaming/honing",
+          "shop_capability_reference": "cnc_lathe drilling_on_center/boring; vmc drilling/reaming; bore_honing available"
+        },
+        {
+          "feature_id": "F003",
+          "feature_name": "Central through bore \u00d89 H7",
+          "spec_category": "surface_finish",
+          "spec_description": "Local surface texture possibly on bore",
+          "nominal_value": "Rz 2.5",
+          "tolerance_or_requirement": "Rz 2.5 if leader applies to bore",
+          "verdict": "risk",
+          "reasoning": "Bore honing can achieve fine bore finish, but the feature graph notes the callout location is moderately uncertain.",
+          "risk_description": "If the callout applies to a different surface, process/inspection focus changes.",
+          "mitigation": "Confirm whether Rz 2.5 applies to the \u00d89 H7 bore; if yes, use bore honing and surface-finish measurement.",
+          "required_process": "bore honing and surface-finish inspection",
+          "shop_capability_reference": "bore_honing surface_finish_ra_min 0.1; inspection surface_finish_measurement"
+        },
+        {
+          "feature_id": "F003",
+          "feature_name": "Central through bore \u00d89 H7",
+          "spec_category": "material_condition",
+          "spec_description": "Bore tolerance retained on case-hardened part",
+          "nominal_value": "Case-hardened part with \u00d89 H7 bore",
+          "tolerance_or_requirement": "Bore remains \u00d89 H7 after heat treatment",
+          "verdict": "risk",
+          "reasoning": "The shop can heat treat and finish hard bores, but maintaining H7 after case hardening requires distortion control or finish honing/grinding after heat treatment.",
+          "risk_description": "Heat-treatment distortion could move the bore outside H7 if not finish processed after hardening.",
+          "mitigation": "Control heat treat and perform final bore honing/ID grinding if required by final condition.",
+          "required_process": "heat treat plus bore honing/ID grinding",
+          "shop_capability_reference": "sealed_quench_furnace; bore_honing careful_tolerance_mm 0.002; id_grinding careful_tolerance_mm 0.005"
+        }
+      ],
+      "notes": "The bore is feasible with in-house precision bore finishing; heat-treatment distortion and the uncertain Rz 2.5 leader are the main risks."
+    },
+    {
+      "feature_id": "F004",
+      "feature_name": "Right axial datum face A",
+      "feature_type": "datum_face",
+      "overall_verdict": "risk",
+      "spec_assessments": [
+        {
+          "feature_id": "F004",
+          "feature_name": "Right axial datum face A",
+          "spec_category": "geometry_parameter",
+          "spec_description": "Planar axial datum face A",
+          "nominal_value": "Annular face \u00d839.79/\u00d89 normal to Z",
+          "tolerance_or_requirement": "Serves as datum A for 0.035 runout control",
+          "verdict": "feasible",
+          "reasoning": "Facing, grinding, and lapping capabilities can produce a stable planar datum face for inspection.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "facing/grinding/lapping as needed",
+          "shop_capability_reference": "cnc_lathe facing; od_grinding surface_grinding; lapping face_lapping"
+        },
+        {
+          "feature_id": "F004",
+          "feature_name": "Right axial datum face A",
+          "spec_category": "material_condition",
+          "spec_description": "Case-hardened datum face surface",
+          "nominal_value": "Case-hardened surface",
+          "tolerance_or_requirement": "Case-hardened part surface",
+          "verdict": "risk",
+          "reasoning": "The case-hardened condition is in-house, but datum-face flatness/stability after heat treatment may affect runout inspection.",
+          "risk_description": "Heat-treatment distortion can change the datum face used for runout measurement.",
+          "mitigation": "Finish grind/lap the datum face after heat treatment if required.",
+          "required_process": "heat treat and possible face grinding/lapping",
+          "shop_capability_reference": "sealed_quench_furnace; lapping normal_tolerance_mm 0.003; od_grinding/surface_grinding normal_tolerance_mm 0.01"
+        }
+      ],
+      "notes": "Datum face creation is feasible; risk is related to post-heat-treatment datum stability."
+    },
+    {
+      "feature_id": "F005",
+      "feature_name": "Left axial end face",
+      "feature_type": "flat_face",
+      "overall_verdict": "risk",
+      "spec_assessments": [
+        {
+          "feature_id": "F005",
+          "feature_name": "Left axial end face",
+          "spec_category": "geometry_parameter",
+          "spec_description": "Planar axial end face opposite datum A",
+          "nominal_value": "Annular face \u00d839.79/\u00d89 normal to Z",
+          "tolerance_or_requirement": "Bounds 14 mm gear width",
+          "verdict": "feasible",
+          "reasoning": "The opposite axial face is a straightforward turned or ground face within shop capability.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "facing/grinding/lapping as needed",
+          "shop_capability_reference": "cnc_lathe facing; od_grinding surface_grinding; lapping face_lapping"
+        },
+        {
+          "feature_id": "F005",
+          "feature_name": "Left axial end face",
+          "spec_category": "material_condition",
+          "spec_description": "Case-hardened axial face surface",
+          "nominal_value": "Case-hardened surface",
+          "tolerance_or_requirement": "Case-hardened part surface",
+          "verdict": "risk",
+          "reasoning": "The shop can case harden the part, but post-heat-treatment movement may affect the final gear width and face condition.",
+          "risk_description": "Heat-treatment distortion may require final face finishing.",
+          "mitigation": "Use controlled heat treatment and finish grind/lap if final width/face quality requires it.",
+          "required_process": "heat treat and possible face finishing",
+          "shop_capability_reference": "sealed_quench_furnace; lapping normal_tolerance_mm 0.003"
+        }
+      ],
+      "notes": "The face is manufacturable; risk is tied to heat-treatment movement."
+    },
+    {
+      "feature_id": "F006",
+      "feature_name": "External axial edge chamfers 2X 0.3 x 45\u00b0",
+      "feature_type": "chamfer",
+      "overall_verdict": "feasible",
+      "spec_assessments": [
+        {
+          "feature_id": "F006",
+          "feature_name": "External axial edge chamfers 2X 0.3 x 45\u00b0",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "External edge chamfer size",
+          "nominal_value": "0.3 mm",
+          "tolerance_or_requirement": "No explicit plus/minus; general tolerance applies",
+          "verdict": "feasible",
+          "reasoning": "A 0.3 mm external edge chamfer is a standard turning/milling/deburr feature within shop capability.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "chamfering/deburr",
+          "shop_capability_reference": "cnc_lathe chamfering; vmc_3axis chamfering; finish_bench edge_break"
+        },
+        {
+          "feature_id": "F006",
+          "feature_name": "External axial edge chamfers 2X 0.3 x 45\u00b0",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "External edge chamfer angle",
+          "nominal_value": "45\u00b0",
+          "tolerance_or_requirement": "No explicit plus/minus; general tolerance applies",
+          "verdict": "feasible",
+          "reasoning": "A 45\u00b0 chamfer angle is standard and supported by turning, milling, and bench finishing processes.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "chamfering",
+          "shop_capability_reference": "cnc_lathe chamfering; vmc_3axis/vmc_5axis chamfering"
+        }
+      ],
+      "notes": "The specified OD edge chamfers are routine and feasible."
+    },
+    {
+      "feature_id": "F007",
+      "feature_name": "Central bore entry chamfers 2X 0.7 at 30\u00b0",
+      "feature_type": "chamfer",
+      "overall_verdict": "risk",
+      "spec_assessments": [
+        {
+          "feature_id": "F007",
+          "feature_name": "Central bore entry chamfers 2X 0.7 at 30\u00b0",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "Bore entry chamfer size or land",
+          "nominal_value": "0.7 mm",
+          "tolerance_or_requirement": "No explicit plus/minus; exact interpretation somewhat ambiguous",
+          "verdict": "risk",
+          "reasoning": "The geometry is easy to machine, but the feature graph notes ambiguity in whether 0.7 is chamfer size or axial land.",
+          "risk_description": "Incorrect interpretation could produce a nonconforming bore-mouth detail.",
+          "mitigation": "Confirm the 0.7 mm definition; then machine with standard axial chamfering capability.",
+          "required_process": "chamfering/countersinking",
+          "shop_capability_reference": "cnc_lathe chamfering; vmc_3axis chamfering"
+        },
+        {
+          "feature_id": "F007",
+          "feature_name": "Central bore entry chamfers 2X 0.7 at 30\u00b0",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "Bore entry chamfer angle",
+          "nominal_value": "30\u00b0",
+          "tolerance_or_requirement": "No explicit plus/minus; general angular tolerance applies",
+          "verdict": "feasible",
+          "reasoning": "A 30\u00b0 chamfer, equivalent to a 60\u00b0 included cone in the feature graph, is machinable with standard chamfer/countersink tooling.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "chamfering/countersinking",
+          "shop_capability_reference": "cnc_lathe chamfering; vmc_3axis/vmc_5axis chamfering"
+        }
+      ],
+      "notes": "The bore-mouth chamfers are physically feasible, but the 0.7 mm interpretation should be confirmed."
+    },
+    {
+      "feature_id": "F008",
+      "feature_name": "General deburred/unspecified edge break condition",
+      "feature_type": "edge_break",
+      "overall_verdict": "feasible",
+      "spec_assessments": [
+        {
+          "feature_id": "F008",
+          "feature_name": "General deburred/unspecified edge break condition",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "General edge chamfer",
+          "nominal_value": "0.3 mm",
+          "tolerance_or_requirement": "DIN ISO 2768-mK unless otherwise specified",
+          "verdict": "feasible",
+          "reasoning": "General 0.3 mm edge breaking and deburring are supported by in-house bench finishing and chamfering capability.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "deburr/edge break",
+          "shop_capability_reference": "finish_bench deburr and edge_break; cnc_lathe/vmc chamfering"
+        },
+        {
+          "feature_id": "F008",
+          "feature_name": "General deburred/unspecified edge break condition",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "General edge radius",
+          "nominal_value": "R0.4 mm",
+          "tolerance_or_requirement": "DIN ISO 2768-mK unless otherwise specified",
+          "verdict": "feasible",
+          "reasoning": "A general R0.4 edge condition is feasible with manual edge break/tumbling/finishing processes.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "deburr/edge break or tumbling",
+          "shop_capability_reference": "finish_bench edge_break; surface_finishing tumbling"
+        }
+      ],
+      "notes": "General edge deburring is fully within in-house capability."
+    }
+  ],
+  "clarifications": [
+    {
+      "clarification_id": "C001",
+      "question": "What is the required tooth tip rounding value for the gear tooth form?",
+      "why_it_matters": "The exact tooth tip/root rounding affects the finished gear profile and inspection criteria.",
+      "blocks": [
+        "F002"
+      ],
+      "suggested_default": null,
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C002",
+      "question": "Does the local Rz 2.5 surface texture callout apply to the \u00d89 H7 bore or to the adjacent axial datum face?",
+      "why_it_matters": "It determines which surface requires the fine finish process and inspection.",
+      "blocks": [
+        "F003",
+        "F004"
+      ],
+      "suggested_default": "Apply Rz 2.5 to the \u00d89 H7 bore.",
+      "priority": "medium"
+    },
+    {
+      "clarification_id": "C003",
+      "question": "Do the 0.7 and 30\u00b0 callouts describe matching chamfers at both mouths of the \u00d89 H7 bore?",
+      "why_it_matters": "The bore entry geometry is visible but the exact meaning of the 0.7 dimension is ambiguous.",
+      "blocks": [
+        "F007"
+      ],
+      "suggested_default": "Treat as 2X bore entry chamfers, 0.7 mm at 30\u00b0.",
+      "priority": "medium"
+    },
+    {
+      "clarification_id": "C004",
+      "question": "Please confirm the unilateral tolerance on the outside/head diameter is \u00d839.79 +0/-0.05 mm.",
+      "why_it_matters": "The OD/head diameter tolerance is critical to the body and gear envelope.",
+      "blocks": [
+        "F001",
+        "F002"
+      ],
+      "suggested_default": "\u00d839.79 +0/-0.05 mm.",
+      "priority": "medium"
+    }
+  ],
+  "assumptions": [
+    {
+      "assumption_id": "A001",
+      "text": "16MnCrS5 1.7139 is treated as an alloy/case-hardening steel within the shop's steel material capability.",
+      "applies_to": [
+        "F001",
+        "F002",
+        "F003",
+        "F004",
+        "F005"
+      ],
+      "impact": "low",
+      "confidence": 0.9
+    },
+    {
+      "assumption_id": "A002",
+      "text": "The \u00d89 H7 bore is interpreted using the standard H7 tolerance class for this diameter range and is assessed against honing/ID grinding capability.",
+      "applies_to": [
+        "F003"
+      ],
+      "impact": "medium",
+      "confidence": 0.85
+    },
+    {
+      "assumption_id": "A003",
+      "text": "Rz finish values are assessed qualitatively against grinding/honing/surface-finish capabilities without converting Rz to Ra.",
+      "applies_to": [
+        "F002",
+        "F003",
+        "F004"
+      ],
+      "impact": "medium",
+      "confidence": 0.8
+    },
+    {
+      "assumption_id": "A004",
+      "text": "No outside processing is permitted or needed because the shop profile lists all required gear manufacturing, heat treatment, grinding/honing, finishing, and inspection processes in-house.",
+      "applies_to": [
+        "F001",
+        "F002",
+        "F003",
+        "F004",
+        "F005",
+        "F006",
+        "F007",
+        "F008"
+      ],
+      "impact": "low",
+      "confidence": 0.95
+    }
+  ],
+  "reasoning_summary": "This is a small case-hardened external helical gear with a precision \u00d89 H7 through bore, and it fits easily within JAL's turning, VMC, gear, grinding, honing, heat-treatment, and inspection envelopes. The shop can physically manufacture all required feature types in-house, including gear cutting/finishing, bore honing/ID grinding, and case hardening. The assessment is feasible with risks because the tooth tip rounding is unclear and heat-treatment distortion plus uncertain Rz 2.5 callout placement require clarification/control before production release."
+}

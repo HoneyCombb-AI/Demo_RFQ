@@ -1,0 +1,1748 @@
+{
+  "analysis_id": "route_rfq_LevMix_20260629T161654Z",
+  "source_deconstructed_route_path": "/Users/mirshahzadmubeen/Desktop/IN/RFQ/runs/Filters/C.14.374-00 - Zahnwelle z9 rechts LevMix/deconstructed_route.json",
+  "source_feature_graph_path": "/Users/mirshahzadmubeen/Desktop/IN/RFQ/runs/Filters/C.14.374-00 - Zahnwelle z9 rechts LevMix/feature_graph.json",
+  "shop_profile_basis": {
+    "profile_path": "/Users/mirshahzadmubeen/Desktop/IN/RFQ/config/shop_profile_jal.yaml",
+    "profile_name": "JAL Precision Products Manufacturing Profile",
+    "material_machinability_key": "16mncrs5_1.7139_case_hardening_steel",
+    "notes": []
+  },
+  "part_family": "hybrid",
+  "base_geometry": "rotational",
+  "material": "16MnCrS5 1.7139 case-hardening steel",
+  "setups": [
+    {
+      "setup_id": "S001",
+      "sequence": 1,
+      "setup_name": "Saw cut round-bar blank",
+      "machine_family": "saw",
+      "in_house": true,
+      "outside_process": false,
+      "sub_operations": [
+        {
+          "sub_op_id": "S001-01",
+          "sequence": 1,
+          "operation_type": "saw_cut",
+          "operation_name": "Saw cut \u00d814 round bar to 64 mm blank length",
+          "formula_hint": "saw",
+          "target_feature_ids": [
+            "F001"
+          ],
+          "formula_inputs_used": {
+            "process_type": "saw",
+            "start_diameter_mm": 14.0,
+            "finish_diameter_mm": 14.0,
+            "cut_length_mm": 64.0,
+            "depth_of_cut_mm": 14.0,
+            "number_of_passes": 1,
+            "material_machinability": "medium",
+            "tolerance_class": "loose"
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.35,
+            "non_cutting_time_min": 0.3,
+            "total_time_min": 0.65,
+            "formula_family": "saw",
+            "cutting_parameters": {
+              "cutting_speed_m_min": null,
+              "rpm": null,
+              "rpm_capped": false,
+              "feed_per_rev_mm": null,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": 40.0,
+              "flute_count": null,
+              "tool_diameter_mm": 14.0,
+              "step_over_mm": null,
+              "depth_per_pass_mm": null,
+              "number_of_passes": 1,
+              "reversal_factor": null
+            },
+            "calculation_notes": [],
+            "confidence": "medium",
+            "warnings": []
+          },
+          "skipped": false,
+          "skip_reason": null
+        }
+      ],
+      "time_summary": {
+        "setup_time_min": 15.0,
+        "handling_time_min": 0.4,
+        "total_cutting_time_min": 0.35,
+        "total_non_cutting_time_min": 0.3,
+        "total_machining_time_min": 1.2353,
+        "sub_operation_count": 1,
+        "outside_process": false
+      }
+    },
+    {
+      "setup_id": "S002",
+      "sequence": 2,
+      "setup_name": "Lathe first-end face and left DIN centre hole",
+      "machine_family": "cnc_lathe",
+      "in_house": true,
+      "outside_process": false,
+      "sub_operations": [
+        {
+          "sub_op_id": "S002-01",
+          "sequence": 1,
+          "operation_type": "face",
+          "operation_name": "Face first end of \u00d814 blank",
+          "formula_hint": "cylindrical",
+          "target_feature_ids": [
+            "F001"
+          ],
+          "formula_inputs_used": {
+            "process_type": "cylindrical",
+            "start_diameter_mm": 14.0,
+            "finish_diameter_mm": 14.0,
+            "cut_length_mm": 7.0,
+            "number_of_passes": 1,
+            "material_machinability": "medium",
+            "tolerance_class": "loose"
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.0484,
+            "non_cutting_time_min": 0.0033,
+            "total_time_min": 0.0517,
+            "formula_family": "cylindrical",
+            "cutting_parameters": {
+              "cutting_speed_m_min": 100.0,
+              "rpm": 2274.0,
+              "rpm_capped": false,
+              "feed_per_rev_mm": 0.1,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": null,
+              "flute_count": null,
+              "tool_diameter_mm": null,
+              "step_over_mm": null,
+              "depth_per_pass_mm": 0.0,
+              "number_of_passes": 1,
+              "reversal_factor": null
+            },
+            "calculation_notes": [],
+            "confidence": "high",
+            "warnings": []
+          },
+          "skipped": false,
+          "skip_reason": null
+        },
+        {
+          "sub_op_id": "S002-02",
+          "sequence": 2,
+          "operation_type": "center_drill",
+          "operation_name": "Center drill left DIN 332-R2 x 4.25 centre hole",
+          "formula_hint": "point",
+          "target_feature_ids": [
+            "F003"
+          ],
+          "formula_inputs_used": {
+            "process_type": "point",
+            "number_of_passes": 1,
+            "hole_diameter_mm": 2.0,
+            "hole_depth_mm": 4.25,
+            "hole_count": 1,
+            "material_machinability": "medium",
+            "tolerance_class": "standard"
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.0175,
+            "non_cutting_time_min": 0.002,
+            "total_time_min": 0.0195,
+            "formula_family": "point",
+            "cutting_parameters": {
+              "cutting_speed_m_min": 25.0,
+              "rpm": 3979.0,
+              "rpm_capped": false,
+              "feed_per_rev_mm": 0.09,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": null,
+              "flute_count": null,
+              "tool_diameter_mm": 2.0,
+              "step_over_mm": null,
+              "depth_per_pass_mm": null,
+              "number_of_passes": 1,
+              "reversal_factor": null
+            },
+            "calculation_notes": [],
+            "confidence": "high",
+            "warnings": []
+          },
+          "skipped": false,
+          "skip_reason": null
+        }
+      ],
+      "time_summary": {
+        "setup_time_min": 15.0,
+        "handling_time_min": 0.4,
+        "total_cutting_time_min": 0.0659,
+        "total_non_cutting_time_min": 0.0886,
+        "total_machining_time_min": 0.6524,
+        "sub_operation_count": 2,
+        "outside_process": false
+      }
+    },
+    {
+      "setup_id": "S003",
+      "sequence": 3,
+      "setup_name": "Lathe second-end face to length and right DIN centre hole",
+      "machine_family": "cnc_lathe",
+      "in_house": true,
+      "outside_process": false,
+      "sub_operations": [
+        {
+          "sub_op_id": "S003-01",
+          "sequence": 1,
+          "operation_type": "face",
+          "operation_name": "Face second end to 61.4 mm overall length",
+          "formula_hint": "cylindrical",
+          "target_feature_ids": [
+            "F001"
+          ],
+          "formula_inputs_used": {
+            "process_type": "cylindrical",
+            "start_diameter_mm": 14.0,
+            "finish_diameter_mm": 14.0,
+            "cut_length_mm": 7.0,
+            "number_of_passes": 1,
+            "material_machinability": "medium",
+            "tolerance_class": "standard"
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.0484,
+            "non_cutting_time_min": 0.0033,
+            "total_time_min": 0.0517,
+            "formula_family": "cylindrical",
+            "cutting_parameters": {
+              "cutting_speed_m_min": 100.0,
+              "rpm": 2274.0,
+              "rpm_capped": false,
+              "feed_per_rev_mm": 0.1,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": null,
+              "flute_count": null,
+              "tool_diameter_mm": null,
+              "step_over_mm": null,
+              "depth_per_pass_mm": 0.0,
+              "number_of_passes": 1,
+              "reversal_factor": null
+            },
+            "calculation_notes": [],
+            "confidence": "high",
+            "warnings": []
+          },
+          "skipped": false,
+          "skip_reason": null
+        },
+        {
+          "sub_op_id": "S003-02",
+          "sequence": 2,
+          "operation_type": "center_drill",
+          "operation_name": "Center drill right DIN 332-R1.6 x 3 centre hole",
+          "formula_hint": "point",
+          "target_feature_ids": [
+            "F011"
+          ],
+          "formula_inputs_used": {
+            "process_type": "point",
+            "number_of_passes": 1,
+            "hole_diameter_mm": 1.6,
+            "hole_depth_mm": 3.0,
+            "hole_count": 1,
+            "material_machinability": "medium",
+            "tolerance_class": "standard"
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.0126,
+            "non_cutting_time_min": 0.002,
+            "total_time_min": 0.0146,
+            "formula_family": "point",
+            "cutting_parameters": {
+              "cutting_speed_m_min": 25.0,
+              "rpm": 4500.0,
+              "rpm_capped": false,
+              "feed_per_rev_mm": 0.088,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": null,
+              "flute_count": null,
+              "tool_diameter_mm": 1.6,
+              "step_over_mm": null,
+              "depth_per_pass_mm": null,
+              "number_of_passes": 1,
+              "reversal_factor": null
+            },
+            "calculation_notes": [],
+            "confidence": "high",
+            "warnings": []
+          },
+          "skipped": false,
+          "skip_reason": null
+        }
+      ],
+      "time_summary": {
+        "setup_time_min": 15.0,
+        "handling_time_min": 0.4,
+        "total_cutting_time_min": 0.061,
+        "total_non_cutting_time_min": 0.0886,
+        "total_machining_time_min": 0.6466,
+        "sub_operation_count": 2,
+        "outside_process": false
+      }
+    },
+    {
+      "setup_id": "S004",
+      "sequence": 4,
+      "setup_name": "Between-centres CNC turning of shaft blank, shoulders, reliefs and chamfers",
+      "machine_family": "cnc_lathe",
+      "in_house": true,
+      "outside_process": false,
+      "sub_operations": [
+        {
+          "sub_op_id": "S004-01",
+          "sequence": 1,
+          "operation_type": "rough_turn_od",
+          "operation_name": "Rough turn overall gear blank envelope from \u00d814 to \u00d811.79 max OD region",
+          "formula_hint": "cylindrical",
+          "target_feature_ids": [
+            "F001",
+            "F006"
+          ],
+          "formula_inputs_used": {
+            "process_type": "cylindrical",
+            "start_diameter_mm": 14.0,
+            "finish_diameter_mm": 11.79,
+            "cut_length_mm": 61.4,
+            "number_of_passes": 3,
+            "material_machinability": "medium",
+            "tolerance_class": "standard"
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.3974,
+            "non_cutting_time_min": 0.0033,
+            "total_time_min": 0.4007,
+            "formula_family": "cylindrical",
+            "cutting_parameters": {
+              "cutting_speed_m_min": 80.0,
+              "rpm": 1975.0,
+              "rpm_capped": false,
+              "feed_per_rev_mm": 0.25,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": null,
+              "flute_count": null,
+              "tool_diameter_mm": null,
+              "step_over_mm": null,
+              "depth_per_pass_mm": 0.368,
+              "number_of_passes": 3,
+              "reversal_factor": null
+            },
+            "calculation_notes": [],
+            "confidence": "high",
+            "warnings": []
+          },
+          "skipped": false,
+          "skip_reason": null
+        },
+        {
+          "sub_op_id": "S004-02",
+          "sequence": 2,
+          "operation_type": "rough_turn_od",
+          "operation_name": "Turn left datum journal A region to \u00d87 nominal pre-grind geometry over 9 mm",
+          "formula_hint": "cylindrical",
+          "target_feature_ids": [
+            "F002"
+          ],
+          "formula_inputs_used": {
+            "process_type": "cylindrical",
+            "start_diameter_mm": 11.79,
+            "finish_diameter_mm": 7.0,
+            "cut_length_mm": 9.0,
+            "number_of_passes": 2,
+            "material_machinability": "medium",
+            "tolerance_class": "tight"
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.0767,
+            "non_cutting_time_min": 0.0033,
+            "total_time_min": 0.0801,
+            "formula_family": "cylindrical",
+            "cutting_parameters": {
+              "cutting_speed_m_min": 100.0,
+              "rpm": 3388.0,
+              "rpm_capped": false,
+              "feed_per_rev_mm": 0.1,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": null,
+              "flute_count": null,
+              "tool_diameter_mm": null,
+              "step_over_mm": null,
+              "depth_per_pass_mm": 1.197,
+              "number_of_passes": 2,
+              "reversal_factor": null
+            },
+            "calculation_notes": [],
+            "confidence": "high",
+            "warnings": []
+          },
+          "skipped": false,
+          "skip_reason": null
+        },
+        {
+          "sub_op_id": "S004-03",
+          "sequence": 3,
+          "operation_type": "groove",
+          "operation_name": "Turn left annular relief groove, 1.5 mm axial width",
+          "formula_hint": "cylindrical",
+          "target_feature_ids": [
+            "F005"
+          ],
+          "formula_inputs_used": {
+            "process_type": "cylindrical",
+            "start_diameter_mm": 11.79,
+            "cut_length_mm": 1.5,
+            "number_of_passes": 1,
+            "milling_width_mm": 1.5,
+            "material_machinability": "medium",
+            "tolerance_class": "loose"
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.0204,
+            "non_cutting_time_min": 0.0033,
+            "total_time_min": 0.0237,
+            "formula_family": "cylindrical",
+            "cutting_parameters": {
+              "cutting_speed_m_min": 100.0,
+              "rpm": 2700.0,
+              "rpm_capped": false,
+              "feed_per_rev_mm": 0.1,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": null,
+              "flute_count": null,
+              "tool_diameter_mm": null,
+              "step_over_mm": null,
+              "depth_per_pass_mm": 0.0,
+              "number_of_passes": 1,
+              "reversal_factor": null
+            },
+            "calculation_notes": [],
+            "confidence": "high",
+            "warnings": []
+          },
+          "skipped": false,
+          "skip_reason": null
+        },
+        {
+          "sub_op_id": "S004-04",
+          "sequence": 4,
+          "operation_type": "chamfer_turn",
+          "operation_name": "Turn left shoulder chamfers 0.2 x 45\u00b0 and 0.3 x 45\u00b0",
+          "formula_hint": "cylindrical",
+          "target_feature_ids": [
+            "F004"
+          ],
+          "formula_inputs_used": {
+            "process_type": "cylindrical",
+            "start_diameter_mm": 7.0,
+            "finish_diameter_mm": 11.79,
+            "cut_length_mm": 0.3,
+            "number_of_passes": 1,
+            "milling_width_mm": 0.3,
+            "axial_depth_mm": 0.3,
+            "material_machinability": "medium",
+            "tolerance_class": "loose"
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.0127,
+            "non_cutting_time_min": 0.0033,
+            "total_time_min": 0.016,
+            "formula_family": "cylindrical",
+            "cutting_parameters": {
+              "cutting_speed_m_min": 100.0,
+              "rpm": 3388.0,
+              "rpm_capped": false,
+              "feed_per_rev_mm": 0.1,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": null,
+              "flute_count": null,
+              "tool_diameter_mm": null,
+              "step_over_mm": null,
+              "depth_per_pass_mm": 2.395,
+              "number_of_passes": 1,
+              "reversal_factor": null
+            },
+            "calculation_notes": [],
+            "confidence": "high",
+            "warnings": []
+          },
+          "skipped": false,
+          "skip_reason": null
+        },
+        {
+          "sub_op_id": "S004-05",
+          "sequence": 5,
+          "operation_type": "rough_turn_od",
+          "operation_name": "Turn intermediate gear-end cylindrical step to \u00d810 nominal",
+          "formula_hint": "cylindrical",
+          "target_feature_ids": [
+            "F007"
+          ],
+          "formula_inputs_used": {
+            "process_type": "cylindrical",
+            "start_diameter_mm": 11.79,
+            "finish_diameter_mm": 10.0,
+            "number_of_passes": 1,
+            "material_machinability": "medium",
+            "tolerance_class": "loose"
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.0479,
+            "non_cutting_time_min": 0.0033,
+            "total_time_min": 0.0513,
+            "formula_family": "cylindrical",
+            "cutting_parameters": {
+              "cutting_speed_m_min": 100.0,
+              "rpm": 2922.0,
+              "rpm_capped": false,
+              "feed_per_rev_mm": 0.1,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": null,
+              "flute_count": null,
+              "tool_diameter_mm": null,
+              "step_over_mm": null,
+              "depth_per_pass_mm": 0.895,
+              "number_of_passes": 1,
+              "reversal_factor": null
+            },
+            "calculation_notes": [],
+            "confidence": "high",
+            "warnings": []
+          },
+          "skipped": false,
+          "skip_reason": null
+        },
+        {
+          "sub_op_id": "S004-06",
+          "sequence": 6,
+          "operation_type": "rough_turn_od",
+          "operation_name": "Turn right main shaft journal region to \u00d89 nominal over 16 mm",
+          "formula_hint": "cylindrical",
+          "target_feature_ids": [
+            "F008"
+          ],
+          "formula_inputs_used": {
+            "process_type": "cylindrical",
+            "start_diameter_mm": 10.0,
+            "finish_diameter_mm": 9.0,
+            "cut_length_mm": 16.0,
+            "number_of_passes": 1,
+            "material_machinability": "medium",
+            "tolerance_class": "tight"
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.0597,
+            "non_cutting_time_min": 0.0033,
+            "total_time_min": 0.063,
+            "formula_family": "cylindrical",
+            "cutting_parameters": {
+              "cutting_speed_m_min": 100.0,
+              "rpm": 3351.0,
+              "rpm_capped": false,
+              "feed_per_rev_mm": 0.1,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": null,
+              "flute_count": null,
+              "tool_diameter_mm": null,
+              "step_over_mm": null,
+              "depth_per_pass_mm": 0.5,
+              "number_of_passes": 1,
+              "reversal_factor": null
+            },
+            "calculation_notes": [],
+            "confidence": "high",
+            "warnings": []
+          },
+          "skipped": false,
+          "skip_reason": null
+        },
+        {
+          "sub_op_id": "S004-07",
+          "sequence": 7,
+          "operation_type": "groove",
+          "operation_name": "Turn right shoulder relief / 1 mm transition before \u00d86 k6 journal",
+          "formula_hint": "cylindrical",
+          "target_feature_ids": [
+            "F009"
+          ],
+          "formula_inputs_used": {
+            "process_type": "cylindrical",
+            "start_diameter_mm": 9.0,
+            "finish_diameter_mm": 6.0,
+            "cut_length_mm": 1.0,
+            "number_of_passes": 1,
+            "milling_width_mm": 1.0,
+            "material_machinability": "medium",
+            "tolerance_class": "loose"
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.0118,
+            "non_cutting_time_min": 0.0033,
+            "total_time_min": 0.0151,
+            "formula_family": "cylindrical",
+            "cutting_parameters": {
+              "cutting_speed_m_min": 100.0,
+              "rpm": 4244.0,
+              "rpm_capped": false,
+              "feed_per_rev_mm": 0.1,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": null,
+              "flute_count": null,
+              "tool_diameter_mm": null,
+              "step_over_mm": null,
+              "depth_per_pass_mm": 1.5,
+              "number_of_passes": 1,
+              "reversal_factor": null
+            },
+            "calculation_notes": [],
+            "confidence": "high",
+            "warnings": []
+          },
+          "skipped": false,
+          "skip_reason": null
+        },
+        {
+          "sub_op_id": "S004-08",
+          "sequence": 8,
+          "operation_type": "rough_turn_od",
+          "operation_name": "Turn right datum journal B region to \u00d86 nominal over 5.9 mm",
+          "formula_hint": "cylindrical",
+          "target_feature_ids": [
+            "F010"
+          ],
+          "formula_inputs_used": {
+            "process_type": "cylindrical",
+            "start_diameter_mm": 9.0,
+            "finish_diameter_mm": 6.0,
+            "cut_length_mm": 5.9,
+            "number_of_passes": 1,
+            "material_machinability": "medium",
+            "tolerance_class": "tight"
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.0233,
+            "non_cutting_time_min": 0.0033,
+            "total_time_min": 0.0267,
+            "formula_family": "cylindrical",
+            "cutting_parameters": {
+              "cutting_speed_m_min": 100.0,
+              "rpm": 4244.0,
+              "rpm_capped": false,
+              "feed_per_rev_mm": 0.1,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": null,
+              "flute_count": null,
+              "tool_diameter_mm": null,
+              "step_over_mm": null,
+              "depth_per_pass_mm": 1.5,
+              "number_of_passes": 1,
+              "reversal_factor": null
+            },
+            "calculation_notes": [],
+            "confidence": "high",
+            "warnings": []
+          },
+          "skipped": false,
+          "skip_reason": null
+        },
+        {
+          "sub_op_id": "S004-09",
+          "sequence": 9,
+          "operation_type": "chamfer_turn",
+          "operation_name": "Turn right transition chamfer 0.5 x 45\u00b0 and local 10\u00b0 lead form",
+          "formula_hint": "cylindrical",
+          "target_feature_ids": [
+            "F009",
+            "F010"
+          ],
+          "formula_inputs_used": {
+            "process_type": "cylindrical",
+            "start_diameter_mm": 9.0,
+            "finish_diameter_mm": 6.0,
+            "cut_length_mm": 0.5,
+            "number_of_passes": 1,
+            "milling_width_mm": 0.5,
+            "axial_depth_mm": 0.5,
+            "material_machinability": "medium",
+            "tolerance_class": "loose"
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.0106,
+            "non_cutting_time_min": 0.0033,
+            "total_time_min": 0.0139,
+            "formula_family": "cylindrical",
+            "cutting_parameters": {
+              "cutting_speed_m_min": 100.0,
+              "rpm": 4244.0,
+              "rpm_capped": false,
+              "feed_per_rev_mm": 0.1,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": null,
+              "flute_count": null,
+              "tool_diameter_mm": null,
+              "step_over_mm": null,
+              "depth_per_pass_mm": 1.5,
+              "number_of_passes": 1,
+              "reversal_factor": null
+            },
+            "calculation_notes": [],
+            "confidence": "high",
+            "warnings": []
+          },
+          "skipped": false,
+          "skip_reason": null
+        },
+        {
+          "sub_op_id": "S004-10",
+          "sequence": 10,
+          "operation_type": "inspect_in_process",
+          "operation_name": "In-process check of pre-heat turned coaxial shaft blank",
+          "formula_hint": "fixed",
+          "target_feature_ids": [
+            "F002",
+            "F006",
+            "F008",
+            "F010"
+          ],
+          "formula_inputs_used": {
+            "process_type": "fixed",
+            "start_diameter_mm": 11.79,
+            "finish_diameter_mm": 6.0,
+            "cut_length_mm": 61.4,
+            "number_of_passes": 1,
+            "material_machinability": "medium",
+            "tolerance_class": "standard"
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.0,
+            "non_cutting_time_min": 0.5,
+            "total_time_min": 0.5,
+            "formula_family": "fixed",
+            "cutting_parameters": {
+              "cutting_speed_m_min": null,
+              "rpm": null,
+              "rpm_capped": false,
+              "feed_per_rev_mm": null,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": null,
+              "flute_count": null,
+              "tool_diameter_mm": null,
+              "step_over_mm": null,
+              "depth_per_pass_mm": null,
+              "number_of_passes": null,
+              "reversal_factor": null
+            },
+            "calculation_notes": [
+              "Fixed-time operation \u2014 no geometry-based formula."
+            ],
+            "confidence": "low",
+            "warnings": []
+          },
+          "skipped": false,
+          "skip_reason": null
+        }
+      ],
+      "time_summary": {
+        "setup_time_min": 15.0,
+        "handling_time_min": 0.4,
+        "total_cutting_time_min": 0.6605,
+        "total_non_cutting_time_min": 1.2797,
+        "total_machining_time_min": 2.7532,
+        "sub_operation_count": 10,
+        "outside_process": false
+      }
+    },
+    {
+      "setup_id": "S005",
+      "sequence": 5,
+      "setup_name": "Gear hobbing of 9-tooth right-hand helical gear",
+      "machine_family": "gear_hobbing",
+      "in_house": true,
+      "outside_process": false,
+      "sub_operations": [
+        {
+          "sub_op_id": "S005-01",
+          "sequence": 1,
+          "operation_type": "profile_mill",
+          "operation_name": "Hob 9T helical external gear, mn 1, 20\u00b0 PA, 15\u00b0 RH helix",
+          "formula_hint": "gear",
+          "target_feature_ids": [
+            "F006"
+          ],
+          "formula_inputs_used": {
+            "process_type": "gear",
+            "start_diameter_mm": 11.79,
+            "finish_diameter_mm": 11.79,
+            "cut_length_mm": 46.5,
+            "depth_of_cut_mm": 2.0315,
+            "hole_count": 9,
+            "profile_length_mm": 20.9,
+            "axial_depth_mm": 2.0315,
+            "material_machinability": "medium",
+            "tolerance_class": "tight",
+            "normal_module_mm": 1.0,
+            "number_of_teeth": 9,
+            "pressure_angle_deg": 20.0,
+            "helix_angle_deg": 15.0,
+            "face_width_mm": 46.5,
+            "external_diameter_mm": 11.79,
+            "root_diameter_mm": 7.727,
+            "base_diameter_mm": 8.719,
+            "whole_depth_mm": 2.0315,
+            "gear_quality_standard": "DIN",
+            "hob_starts": 1,
+            "hob_od_mm": 80.0
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.9868,
+            "non_cutting_time_min": 0.5,
+            "total_time_min": 1.4868,
+            "formula_family": "gear",
+            "cutting_parameters": {
+              "cutting_speed_m_min": 120.0,
+              "rpm": 477.0,
+              "rpm_capped": false,
+              "feed_per_rev_mm": 1.2,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": null,
+              "flute_count": null,
+              "tool_diameter_mm": null,
+              "step_over_mm": null,
+              "depth_per_pass_mm": null,
+              "number_of_passes": 1,
+              "reversal_factor": null
+            },
+            "calculation_notes": [
+              "Hob: 1-start, \u00d880.0mm",
+              "Table RPM: 53.0, Axial feed: 1.2 mm/rev",
+              "Approach: 16.3mm, Overrun: 3.7mm"
+            ],
+            "confidence": "high",
+            "warnings": []
+          },
+          "skipped": false,
+          "skip_reason": null
+        }
+      ],
+      "time_summary": {
+        "setup_time_min": 15.0,
+        "handling_time_min": 0.4,
+        "total_cutting_time_min": 0.9868,
+        "total_non_cutting_time_min": 0.5,
+        "total_machining_time_min": 2.2198,
+        "sub_operation_count": 1,
+        "outside_process": false
+      }
+    },
+    {
+      "setup_id": "S006",
+      "sequence": 6,
+      "setup_name": "Gear tooth end edge details A and B",
+      "machine_family": "vmc_5axis",
+      "in_house": true,
+      "outside_process": false,
+      "sub_operations": [
+        {
+          "sub_op_id": "S006-01",
+          "sequence": 1,
+          "operation_type": "chamfer_mill",
+          "operation_name": "Machine gear tooth end detail A on left side, R0.4 / 15\u00b0 / 0.2 / 1.45",
+          "formula_hint": "fixed",
+          "target_feature_ids": [
+            "F012"
+          ],
+          "formula_inputs_used": {
+            "process_type": "fixed",
+            "start_diameter_mm": 11.79,
+            "finish_diameter_mm": 11.79,
+            "cut_length_mm": 1.45,
+            "depth_of_cut_mm": 0.2,
+            "number_of_passes": 1,
+            "hole_count": 9,
+            "profile_length_mm": 1.45,
+            "milling_width_mm": 1.45,
+            "axial_depth_mm": 0.2,
+            "material_machinability": "medium",
+            "tolerance_class": "loose"
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.0,
+            "non_cutting_time_min": 0.5,
+            "total_time_min": 0.5,
+            "formula_family": "fixed",
+            "cutting_parameters": {
+              "cutting_speed_m_min": null,
+              "rpm": null,
+              "rpm_capped": false,
+              "feed_per_rev_mm": null,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": null,
+              "flute_count": null,
+              "tool_diameter_mm": null,
+              "step_over_mm": null,
+              "depth_per_pass_mm": null,
+              "number_of_passes": null,
+              "reversal_factor": null
+            },
+            "calculation_notes": [
+              "Fixed-time operation \u2014 no geometry-based formula."
+            ],
+            "confidence": "low",
+            "warnings": []
+          },
+          "skipped": false,
+          "skip_reason": null
+        },
+        {
+          "sub_op_id": "S006-02",
+          "sequence": 2,
+          "operation_type": "chamfer_mill",
+          "operation_name": "Machine gear tooth end detail B on right side, R0.4 / 15\u00b0 / 0.2 / 1.45",
+          "formula_hint": "fixed",
+          "target_feature_ids": [
+            "F013"
+          ],
+          "formula_inputs_used": {
+            "process_type": "fixed",
+            "start_diameter_mm": 11.79,
+            "finish_diameter_mm": 11.79,
+            "cut_length_mm": 1.45,
+            "depth_of_cut_mm": 0.2,
+            "number_of_passes": 1,
+            "hole_count": 9,
+            "profile_length_mm": 1.45,
+            "milling_width_mm": 1.45,
+            "axial_depth_mm": 0.2,
+            "material_machinability": "medium",
+            "tolerance_class": "loose"
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.0,
+            "non_cutting_time_min": 0.5,
+            "total_time_min": 0.5,
+            "formula_family": "fixed",
+            "cutting_parameters": {
+              "cutting_speed_m_min": null,
+              "rpm": null,
+              "rpm_capped": false,
+              "feed_per_rev_mm": null,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": null,
+              "flute_count": null,
+              "tool_diameter_mm": null,
+              "step_over_mm": null,
+              "depth_per_pass_mm": null,
+              "number_of_passes": null,
+              "reversal_factor": null
+            },
+            "calculation_notes": [
+              "Fixed-time operation \u2014 no geometry-based formula."
+            ],
+            "confidence": "low",
+            "warnings": []
+          },
+          "skipped": false,
+          "skip_reason": null
+        }
+      ],
+      "time_summary": {
+        "setup_time_min": 15.0,
+        "handling_time_min": 0.4,
+        "total_cutting_time_min": 0.0,
+        "total_non_cutting_time_min": 1.1167,
+        "total_machining_time_min": 1.7843,
+        "sub_operation_count": 2,
+        "outside_process": false
+      }
+    },
+    {
+      "setup_id": "S007",
+      "sequence": 7,
+      "setup_name": "In-house case harden and temper",
+      "machine_family": "sealed_quench_furnace",
+      "in_house": true,
+      "outside_process": false,
+      "sub_operations": [
+        {
+          "sub_op_id": "S007-01",
+          "sequence": 1,
+          "operation_type": "heat_treat",
+          "operation_name": "Case harden and temper 16MnCrS5 to 700+100 HV10, Eht 0.3+0.2 mm",
+          "formula_hint": "fixed",
+          "target_feature_ids": [
+            "F001",
+            "F002",
+            "F006",
+            "F008",
+            "F010"
+          ],
+          "formula_inputs_used": {
+            "process_type": "fixed",
+            "start_diameter_mm": 11.79,
+            "finish_diameter_mm": 11.79,
+            "cut_length_mm": 61.4,
+            "number_of_passes": 1,
+            "axial_depth_mm": 0.3,
+            "material_machinability": "hardened",
+            "tolerance_class": "tight"
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.0,
+            "non_cutting_time_min": 0.5,
+            "total_time_min": 0.5,
+            "formula_family": "fixed",
+            "cutting_parameters": {
+              "cutting_speed_m_min": null,
+              "rpm": null,
+              "rpm_capped": false,
+              "feed_per_rev_mm": null,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": null,
+              "flute_count": null,
+              "tool_diameter_mm": null,
+              "step_over_mm": null,
+              "depth_per_pass_mm": null,
+              "number_of_passes": null,
+              "reversal_factor": null
+            },
+            "calculation_notes": [
+              "Fixed-time operation \u2014 no geometry-based formula."
+            ],
+            "confidence": "low",
+            "warnings": []
+          },
+          "skipped": false,
+          "skip_reason": null
+        }
+      ],
+      "time_summary": {
+        "setup_time_min": 15.0,
+        "handling_time_min": 0.4,
+        "total_cutting_time_min": 0.0,
+        "total_non_cutting_time_min": 0.5,
+        "total_machining_time_min": 1.0588,
+        "sub_operation_count": 1,
+        "outside_process": false
+      }
+    },
+    {
+      "setup_id": "S008",
+      "sequence": 8,
+      "setup_name": "OD grind datum and bearing journals between centres",
+      "machine_family": "od_grinding",
+      "in_house": true,
+      "outside_process": false,
+      "sub_operations": [
+        {
+          "sub_op_id": "S008-01",
+          "sequence": 1,
+          "operation_type": "grind",
+          "operation_name": "OD grind left datum journal A \u00d87 h6 over 9 mm",
+          "formula_hint": "grinding",
+          "target_feature_ids": [
+            "F002"
+          ],
+          "formula_inputs_used": {
+            "process_type": "grinding",
+            "finish_diameter_mm": 7.0,
+            "cut_length_mm": 9.0,
+            "number_of_passes": 1,
+            "material_machinability": "hardened",
+            "tolerance_class": "tight",
+            "grinding_diameter_mm": 7.0,
+            "grinding_length_mm": 9.0,
+            "grinding_stock_radial_mm": 0.15
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.3833,
+            "non_cutting_time_min": 0.3,
+            "total_time_min": 0.6833,
+            "formula_family": "grinding",
+            "cutting_parameters": {
+              "cutting_speed_m_min": null,
+              "rpm": 200.0,
+              "rpm_capped": false,
+              "feed_per_rev_mm": null,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": 540.0,
+              "flute_count": null,
+              "tool_diameter_mm": null,
+              "step_over_mm": null,
+              "depth_per_pass_mm": 0.01,
+              "number_of_passes": 23,
+              "reversal_factor": null
+            },
+            "calculation_notes": [
+              "Rough: 11 passes @ 0.01mm, Finish: 9 @ 0.005mm",
+              "Spark-out: 3 revs"
+            ],
+            "confidence": "high",
+            "warnings": []
+          },
+          "skipped": false,
+          "skip_reason": null
+        },
+        {
+          "sub_op_id": "S008-02",
+          "sequence": 2,
+          "operation_type": "grind",
+          "operation_name": "OD grind right main shaft journal \u00d89 x6 over 16 mm",
+          "formula_hint": "grinding",
+          "target_feature_ids": [
+            "F008"
+          ],
+          "formula_inputs_used": {
+            "process_type": "grinding",
+            "finish_diameter_mm": 9.0,
+            "cut_length_mm": 16.0,
+            "number_of_passes": 1,
+            "material_machinability": "hardened",
+            "tolerance_class": "tight",
+            "grinding_diameter_mm": 9.0,
+            "grinding_length_mm": 16.0,
+            "grinding_stock_radial_mm": 0.15
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.7667,
+            "non_cutting_time_min": 0.3,
+            "total_time_min": 1.0667,
+            "formula_family": "grinding",
+            "cutting_parameters": {
+              "cutting_speed_m_min": null,
+              "rpm": 200.0,
+              "rpm_capped": false,
+              "feed_per_rev_mm": null,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": 960.0,
+              "flute_count": null,
+              "tool_diameter_mm": null,
+              "step_over_mm": null,
+              "depth_per_pass_mm": 0.01,
+              "number_of_passes": 46,
+              "reversal_factor": null
+            },
+            "calculation_notes": [
+              "Rough: 11 passes @ 0.01mm, Finish: 9 @ 0.005mm",
+              "Spark-out: 3 revs"
+            ],
+            "confidence": "high",
+            "warnings": []
+          },
+          "skipped": false,
+          "skip_reason": null
+        },
+        {
+          "sub_op_id": "S008-03",
+          "sequence": 3,
+          "operation_type": "grind",
+          "operation_name": "OD grind right datum journal B \u00d86 k6 over 5.9 mm",
+          "formula_hint": "grinding",
+          "target_feature_ids": [
+            "F010"
+          ],
+          "formula_inputs_used": {
+            "process_type": "grinding",
+            "finish_diameter_mm": 6.0,
+            "cut_length_mm": 5.9,
+            "number_of_passes": 1,
+            "material_machinability": "hardened",
+            "tolerance_class": "tight",
+            "grinding_diameter_mm": 9.0,
+            "grinding_length_mm": 16.0,
+            "grinding_stock_radial_mm": 0.15
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.7667,
+            "non_cutting_time_min": 0.3,
+            "total_time_min": 1.0667,
+            "formula_family": "grinding",
+            "cutting_parameters": {
+              "cutting_speed_m_min": null,
+              "rpm": 200.0,
+              "rpm_capped": false,
+              "feed_per_rev_mm": null,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": 960.0,
+              "flute_count": null,
+              "tool_diameter_mm": null,
+              "step_over_mm": null,
+              "depth_per_pass_mm": 0.01,
+              "number_of_passes": 46,
+              "reversal_factor": null
+            },
+            "calculation_notes": [
+              "Rough: 11 passes @ 0.01mm, Finish: 9 @ 0.005mm",
+              "Spark-out: 3 revs"
+            ],
+            "confidence": "high",
+            "warnings": []
+          },
+          "skipped": false,
+          "skip_reason": null
+        },
+        {
+          "sub_op_id": "S008-04",
+          "sequence": 4,
+          "operation_type": "inspect_in_process",
+          "operation_name": "In-process inspect ground journals and A-B runout",
+          "formula_hint": "fixed",
+          "target_feature_ids": [
+            "F002",
+            "F008",
+            "F010"
+          ],
+          "formula_inputs_used": {
+            "process_type": "fixed",
+            "start_diameter_mm": 9.0,
+            "finish_diameter_mm": 6.0,
+            "cut_length_mm": 61.4,
+            "number_of_passes": 1,
+            "material_machinability": "hardened",
+            "tolerance_class": "tight"
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.0,
+            "non_cutting_time_min": 0.5,
+            "total_time_min": 0.5,
+            "formula_family": "fixed",
+            "cutting_parameters": {
+              "cutting_speed_m_min": null,
+              "rpm": null,
+              "rpm_capped": false,
+              "feed_per_rev_mm": null,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": null,
+              "flute_count": null,
+              "tool_diameter_mm": null,
+              "step_over_mm": null,
+              "depth_per_pass_mm": null,
+              "number_of_passes": null,
+              "reversal_factor": null
+            },
+            "calculation_notes": [
+              "Fixed-time operation \u2014 no geometry-based formula."
+            ],
+            "confidence": "low",
+            "warnings": []
+          },
+          "skipped": false,
+          "skip_reason": null
+        }
+      ],
+      "time_summary": {
+        "setup_time_min": 15.0,
+        "handling_time_min": 0.4,
+        "total_cutting_time_min": 1.9167,
+        "total_non_cutting_time_min": 1.65,
+        "total_machining_time_min": 4.6667,
+        "sub_operation_count": 4,
+        "outside_process": false
+      }
+    },
+    {
+      "setup_id": "S009",
+      "sequence": 9,
+      "setup_name": "Finish gear grind and tooth hone/measure",
+      "machine_family": "gear_grinding",
+      "in_house": true,
+      "outside_process": false,
+      "sub_operations": [
+        {
+          "sub_op_id": "S009-01",
+          "sequence": 1,
+          "operation_type": "grind",
+          "operation_name": "Gear grind 9T helical tooth form to final gauge and runout",
+          "formula_hint": "gear",
+          "target_feature_ids": [
+            "F006"
+          ],
+          "formula_inputs_used": {
+            "process_type": "gear",
+            "start_diameter_mm": 11.79,
+            "finish_diameter_mm": 11.79,
+            "cut_length_mm": 46.5,
+            "depth_of_cut_mm": 2.0315,
+            "hole_count": 9,
+            "profile_length_mm": 20.9,
+            "axial_depth_mm": 2.0315,
+            "material_machinability": "hardened",
+            "tolerance_class": "tight",
+            "normal_module_mm": 1.0,
+            "number_of_teeth": 9,
+            "pressure_angle_deg": 20.0,
+            "helix_angle_deg": 15.0,
+            "face_width_mm": 46.5,
+            "external_diameter_mm": 11.79,
+            "root_diameter_mm": 7.727,
+            "base_diameter_mm": 8.719,
+            "whole_depth_mm": 2.0315,
+            "gear_quality_standard": "DIN",
+            "stock_per_flank_mm": 0.12,
+            "dressing_cycle_time_sec": 540.0,
+            "dressing_interval_parts": 25
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.9868,
+            "non_cutting_time_min": 0.5,
+            "total_time_min": 1.4868,
+            "formula_family": "gear",
+            "cutting_parameters": {
+              "cutting_speed_m_min": 120.0,
+              "rpm": 477.0,
+              "rpm_capped": false,
+              "feed_per_rev_mm": 1.2,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": null,
+              "flute_count": null,
+              "tool_diameter_mm": null,
+              "step_over_mm": null,
+              "depth_per_pass_mm": null,
+              "number_of_passes": 1,
+              "reversal_factor": null
+            },
+            "calculation_notes": [
+              "Hob: 1-start, \u00d880.0mm",
+              "Table RPM: 53.0, Axial feed: 1.2 mm/rev",
+              "Approach: 16.3mm, Overrun: 3.7mm"
+            ],
+            "confidence": "high",
+            "warnings": []
+          },
+          "skipped": false,
+          "skip_reason": null
+        },
+        {
+          "sub_op_id": "S009-02",
+          "sequence": 2,
+          "operation_type": "hone",
+          "operation_name": "Teeth hone / superfinish gear flanks as required for Rz 6 and working error",
+          "formula_hint": "gear",
+          "target_feature_ids": [
+            "F006"
+          ],
+          "formula_inputs_used": {
+            "process_type": "gear",
+            "start_diameter_mm": 11.79,
+            "finish_diameter_mm": 11.79,
+            "cut_length_mm": 46.5,
+            "number_of_passes": 1,
+            "hole_count": 9,
+            "profile_length_mm": 20.9,
+            "material_machinability": "hardened",
+            "tolerance_class": "tight",
+            "normal_module_mm": 1.0,
+            "number_of_teeth": 9,
+            "pressure_angle_deg": 20.0,
+            "helix_angle_deg": 15.0,
+            "face_width_mm": 46.5,
+            "external_diameter_mm": 11.79,
+            "root_diameter_mm": 7.727,
+            "base_diameter_mm": 8.719,
+            "whole_depth_mm": 2.0315,
+            "gear_quality_standard": "DIN",
+            "stock_per_flank_mm": 0.005
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.9868,
+            "non_cutting_time_min": 0.5,
+            "total_time_min": 1.4868,
+            "formula_family": "gear",
+            "cutting_parameters": {
+              "cutting_speed_m_min": 120.0,
+              "rpm": 477.0,
+              "rpm_capped": false,
+              "feed_per_rev_mm": 1.2,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": null,
+              "flute_count": null,
+              "tool_diameter_mm": null,
+              "step_over_mm": null,
+              "depth_per_pass_mm": null,
+              "number_of_passes": 1,
+              "reversal_factor": null
+            },
+            "calculation_notes": [
+              "Hob: 1-start, \u00d880.0mm",
+              "Table RPM: 53.0, Axial feed: 1.2 mm/rev",
+              "Approach: 16.3mm, Overrun: 3.7mm"
+            ],
+            "confidence": "high",
+            "warnings": []
+          },
+          "skipped": false,
+          "skip_reason": null
+        },
+        {
+          "sub_op_id": "S009-03",
+          "sequence": 3,
+          "operation_type": "inspect_in_process",
+          "operation_name": "In-process gear measurement: gauge over 2 teeth, composite error, runout to A-B",
+          "formula_hint": "fixed",
+          "target_feature_ids": [
+            "F006"
+          ],
+          "formula_inputs_used": {
+            "process_type": "fixed",
+            "start_diameter_mm": 11.79,
+            "finish_diameter_mm": 11.79,
+            "cut_length_mm": 46.5,
+            "number_of_passes": 1,
+            "hole_count": 9,
+            "profile_length_mm": 20.9,
+            "material_machinability": "hardened",
+            "tolerance_class": "tight"
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.0,
+            "non_cutting_time_min": 0.5,
+            "total_time_min": 0.5,
+            "formula_family": "fixed",
+            "cutting_parameters": {
+              "cutting_speed_m_min": null,
+              "rpm": null,
+              "rpm_capped": false,
+              "feed_per_rev_mm": null,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": null,
+              "flute_count": null,
+              "tool_diameter_mm": null,
+              "step_over_mm": null,
+              "depth_per_pass_mm": null,
+              "number_of_passes": null,
+              "reversal_factor": null
+            },
+            "calculation_notes": [
+              "Fixed-time operation \u2014 no geometry-based formula."
+            ],
+            "confidence": "low",
+            "warnings": []
+          },
+          "skipped": false,
+          "skip_reason": null
+        }
+      ],
+      "time_summary": {
+        "setup_time_min": 15.0,
+        "handling_time_min": 0.4,
+        "total_cutting_time_min": 1.9736,
+        "total_non_cutting_time_min": 1.5,
+        "total_machining_time_min": 4.5572,
+        "sub_operation_count": 3,
+        "outside_process": false
+      }
+    },
+    {
+      "setup_id": "S010",
+      "sequence": 10,
+      "setup_name": "Finish bench deburr and clean",
+      "machine_family": "finish_bench",
+      "in_house": true,
+      "outside_process": false,
+      "sub_operations": [
+        {
+          "sub_op_id": "S010-01",
+          "sequence": 1,
+          "operation_type": "deburr_edge",
+          "operation_name": "Deburr all sharp edges, reliefs, centre holes and gear tooth end details",
+          "formula_hint": "fixed",
+          "target_feature_ids": [
+            "F003",
+            "F004",
+            "F005",
+            "F009",
+            "F011",
+            "F012",
+            "F013"
+          ],
+          "formula_inputs_used": {
+            "process_type": "fixed",
+            "start_diameter_mm": 11.79,
+            "finish_diameter_mm": 11.79,
+            "cut_length_mm": 61.4,
+            "number_of_passes": 1,
+            "hole_count": 9,
+            "profile_length_mm": 1.45,
+            "milling_width_mm": 0.5,
+            "axial_depth_mm": 0.5,
+            "material_machinability": "hardened",
+            "tolerance_class": "loose"
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.0,
+            "non_cutting_time_min": 0.5,
+            "total_time_min": 0.5,
+            "formula_family": "fixed",
+            "cutting_parameters": {
+              "cutting_speed_m_min": null,
+              "rpm": null,
+              "rpm_capped": false,
+              "feed_per_rev_mm": null,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": null,
+              "flute_count": null,
+              "tool_diameter_mm": null,
+              "step_over_mm": null,
+              "depth_per_pass_mm": null,
+              "number_of_passes": null,
+              "reversal_factor": null
+            },
+            "calculation_notes": [
+              "Fixed-time operation \u2014 no geometry-based formula."
+            ],
+            "confidence": "low",
+            "warnings": []
+          },
+          "skipped": false,
+          "skip_reason": null
+        },
+        {
+          "sub_op_id": "S010-02",
+          "sequence": 2,
+          "operation_type": "cleaning",
+          "operation_name": "Clean part after deburr and grinding residue removal",
+          "formula_hint": "fixed",
+          "target_feature_ids": [
+            "F001"
+          ],
+          "formula_inputs_used": {
+            "process_type": "fixed",
+            "start_diameter_mm": 11.79,
+            "finish_diameter_mm": 11.79,
+            "cut_length_mm": 61.4,
+            "number_of_passes": 1,
+            "material_machinability": "hardened",
+            "tolerance_class": "loose"
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.0,
+            "non_cutting_time_min": 0.5,
+            "total_time_min": 0.5,
+            "formula_family": "fixed",
+            "cutting_parameters": {
+              "cutting_speed_m_min": null,
+              "rpm": null,
+              "rpm_capped": false,
+              "feed_per_rev_mm": null,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": null,
+              "flute_count": null,
+              "tool_diameter_mm": null,
+              "step_over_mm": null,
+              "depth_per_pass_mm": null,
+              "number_of_passes": null,
+              "reversal_factor": null
+            },
+            "calculation_notes": [
+              "Fixed-time operation \u2014 no geometry-based formula."
+            ],
+            "confidence": "low",
+            "warnings": []
+          },
+          "skipped": false,
+          "skip_reason": null
+        }
+      ],
+      "time_summary": {
+        "setup_time_min": 15.0,
+        "handling_time_min": 0.4,
+        "total_cutting_time_min": 0.0,
+        "total_non_cutting_time_min": 1.0,
+        "total_machining_time_min": 1.6471,
+        "sub_operation_count": 2,
+        "outside_process": false
+      }
+    },
+    {
+      "setup_id": "S011",
+      "sequence": 11,
+      "setup_name": "Final dimensional, gear, hardness and surface-finish inspection",
+      "machine_family": "inspection",
+      "in_house": true,
+      "outside_process": false,
+      "sub_operations": [
+        {
+          "sub_op_id": "S011-01",
+          "sequence": 1,
+          "operation_type": "cmm_check",
+          "operation_name": "Final dimensional check of \u00d87 h6, \u00d89 x6, \u00d86 k6 journals and runout to A-B",
+          "formula_hint": "fixed",
+          "target_feature_ids": [
+            "F002",
+            "F008",
+            "F010"
+          ],
+          "formula_inputs_used": {
+            "process_type": "fixed",
+            "start_diameter_mm": 9.0,
+            "finish_diameter_mm": 6.0,
+            "cut_length_mm": 61.4,
+            "number_of_passes": 1,
+            "material_machinability": "hardened",
+            "tolerance_class": "tight"
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.0,
+            "non_cutting_time_min": 0.5,
+            "total_time_min": 0.5,
+            "formula_family": "fixed",
+            "cutting_parameters": {
+              "cutting_speed_m_min": null,
+              "rpm": null,
+              "rpm_capped": false,
+              "feed_per_rev_mm": null,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": null,
+              "flute_count": null,
+              "tool_diameter_mm": null,
+              "step_over_mm": null,
+              "depth_per_pass_mm": null,
+              "number_of_passes": null,
+              "reversal_factor": null
+            },
+            "calculation_notes": [
+              "Fixed-time operation \u2014 no geometry-based formula."
+            ],
+            "confidence": "low",
+            "warnings": []
+          },
+          "skipped": false,
+          "skip_reason": null
+        },
+        {
+          "sub_op_id": "S011-02",
+          "sequence": 2,
+          "operation_type": "inspection",
+          "operation_name": "Final gear inspection: tooth count, gauge over 2 teeth, composite errors and runout",
+          "formula_hint": "fixed",
+          "target_feature_ids": [
+            "F006",
+            "F012",
+            "F013"
+          ],
+          "formula_inputs_used": {
+            "process_type": "fixed",
+            "start_diameter_mm": 11.79,
+            "finish_diameter_mm": 11.79,
+            "cut_length_mm": 46.5,
+            "depth_of_cut_mm": 2.0315,
+            "number_of_passes": 1,
+            "hole_count": 9,
+            "profile_length_mm": 20.9,
+            "axial_depth_mm": 2.0315,
+            "material_machinability": "hardened",
+            "tolerance_class": "tight"
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.0,
+            "non_cutting_time_min": 0.5,
+            "total_time_min": 0.5,
+            "formula_family": "fixed",
+            "cutting_parameters": {
+              "cutting_speed_m_min": null,
+              "rpm": null,
+              "rpm_capped": false,
+              "feed_per_rev_mm": null,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": null,
+              "flute_count": null,
+              "tool_diameter_mm": null,
+              "step_over_mm": null,
+              "depth_per_pass_mm": null,
+              "number_of_passes": null,
+              "reversal_factor": null
+            },
+            "calculation_notes": [
+              "Fixed-time operation \u2014 no geometry-based formula."
+            ],
+            "confidence": "low",
+            "warnings": []
+          },
+          "skipped": false,
+          "skip_reason": null
+        },
+        {
+          "sub_op_id": "S011-03",
+          "sequence": 3,
+          "operation_type": "inspection",
+          "operation_name": "Final hardness, case depth and surface texture verification",
+          "formula_hint": "fixed",
+          "target_feature_ids": [
+            "F001",
+            "F002",
+            "F006",
+            "F008",
+            "F010"
+          ],
+          "formula_inputs_used": {
+            "process_type": "fixed",
+            "start_diameter_mm": 11.79,
+            "finish_diameter_mm": 11.79,
+            "cut_length_mm": 61.4,
+            "number_of_passes": 1,
+            "axial_depth_mm": 0.3,
+            "material_machinability": "hardened",
+            "tolerance_class": "tight"
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.0,
+            "non_cutting_time_min": 0.5,
+            "total_time_min": 0.5,
+            "formula_family": "fixed",
+            "cutting_parameters": {
+              "cutting_speed_m_min": null,
+              "rpm": null,
+              "rpm_capped": false,
+              "feed_per_rev_mm": null,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": null,
+              "flute_count": null,
+              "tool_diameter_mm": null,
+              "step_over_mm": null,
+              "depth_per_pass_mm": null,
+              "number_of_passes": null,
+              "reversal_factor": null
+            },
+            "calculation_notes": [
+              "Fixed-time operation \u2014 no geometry-based formula."
+            ],
+            "confidence": "low",
+            "warnings": []
+          },
+          "skipped": false,
+          "skip_reason": null
+        }
+      ],
+      "time_summary": {
+        "setup_time_min": 15.0,
+        "handling_time_min": 0.4,
+        "total_cutting_time_min": 0.0,
+        "total_non_cutting_time_min": 1.5,
+        "total_machining_time_min": 2.2353,
+        "sub_operation_count": 3,
+        "outside_process": false
+      }
+    }
+  ],
+  "total_summary": {
+    "total_setups": 11,
+    "total_sub_operations": 31,
+    "total_setup_time_min": 165.0,
+    "total_handling_time_min": 0.0,
+    "total_cutting_time_min": 6.01,
+    "total_non_cutting_time_min": 0.0,
+    "total_machining_time_min": 23.46,
+    "total_time_min": 188.46,
+    "outside_process_count": 0,
+    "confidence": "medium"
+  },
+  "global_warnings": [],
+  "global_assumptions": []
+}

@@ -1,0 +1,2631 @@
+{
+  "analysis_id": "route_rfq_C_14_373-00_Stirnrad_z39_links_LevMix_20260629T180729Z",
+  "source_feature_graph_id": "rfq_C_14_373-00_Stirnrad_z39_links_LevMix_20260629T180729Z",
+  "stock": {
+    "form": "round_bar",
+    "material": "16MnCrS5 1.7139 (Pb<0.1%) case-hardening steel",
+    "starting_dimensions": {
+      "diameter_mm": 42.0,
+      "length_mm": 17.0,
+      "width_mm": null,
+      "height_mm": null,
+      "thickness_mm": null,
+      "notes": "Per-piece sawed slug from Ø42 mm round bar. Finished envelope is Ø39.79 x 14 mm; this provides about 2.6 mm radial OD stock and about 6 mm total axial stock for saw cleanup, facing, heat-treat/lapping allowance, and handling. For 700 pieces, process as a batch from long bars with dedicated soft jaws/mandrels."
+    },
+    "machining_allowance_mm": 1.1,
+    "why": "The part is a small coaxial cylindrical external gear with a central bore, so round bar is the nearest standard form. Although 700 pieces is medium volume, the blank is simple and small; without confirmed repeat volume or forging die economics, Ø42 round bar is the lower-risk provisional choice. Dedicated mandrels/soft jaws are still justified for the batch.",
+    "evidence": [
+      {
+        "page_index": 1,
+        "image_name": "page_001_vlm.png",
+        "visual_location": "lower right title block, material row",
+        "cited_text": "Werkstoff / Material: 16MnCrS5 1.7139 (Pb<0,1%)",
+        "evidence_type": "title_block",
+        "confidence": 0.94
+      },
+      {
+        "page_index": null,
+        "image_name": "feature_graph",
+        "visual_location": "part_envelope",
+        "cited_text": "Envelope approximately Ø39.79 mm by 14 mm; envelope_shape cylindrical.",
+        "evidence_type": "dimension",
+        "confidence": 0.92
+      },
+      {
+        "page_index": null,
+        "image_name": "shop_profile",
+        "visual_location": "machine_inventory/material_capabilities",
+        "cited_text": "Shop supports alloy steel machining, heat treatment, gear manufacturing, grinding, honing, and lapping in-house.",
+        "evidence_type": "shop_profile",
+        "confidence": 0.9
+      },
+      {
+        "page_index": null,
+        "image_name": "planning_assumption",
+        "visual_location": "stock selection",
+        "cited_text": "Round bar selected provisionally over forging due missing die amortization data for 700-piece batch.",
+        "evidence_type": "assumption",
+        "confidence": 0.72
+      }
+    ],
+    "confidence": 0.73
+  },
+  "route": {
+    "route_name": "Round-bar soft-turn, hob/shave, case-harden, hard-finish gear route",
+    "route_reason": "The part is a small rotational helical gear. The cost-effective route is to prepare a turned gear blank from round bar, generate the soft gear teeth, deburr before heat treatment, case-harden and temper, then hard-finish the bore, datum faces, and gear flanks to control H7 bore size, runout, surface finish, and DIN gear quality.",
+    "part_family": "hybrid",
+    "base_geometry": "cylindrical",
+    "total_setups": 15,
+    "total_sub_operations": 27,
+    "setups": [
+      {
+        "setup_id": "S001",
+        "sequence": 1,
+        "setup_name": "Saw blank preparation from round bar",
+        "machine_family": "saw",
+        "machine_reason": "Sawing is the lowest-cost in-house method to convert Ø42 mm alloy-steel round bar into repeatable short slugs for the 700-piece batch.",
+        "workholding": {
+          "method": "automatic saw vise",
+          "grip_description": "Clamp long Ø42 mm round bar in saw vise and index to slug length.",
+          "special_fixture_required": false,
+          "fixture_notes": null
+        },
+        "datum_references": [],
+        "stock_state_before": "Ø42 mm 16MnCrS5 round bar in machinable pre-heat-treatment condition.",
+        "stock_state_after": "Sawn Ø42 x 17 mm cylindrical slugs, raw saw faces, ready for lathe Op10.",
+        "access_directions": [
+          "axial"
+        ],
+        "sub_operations": [
+          {
+            "sub_op_id": "S001-01",
+            "sequence": 1,
+            "operation_type": "saw_cut",
+            "operation_name": "Saw Ø42 bar into 17 mm long gear blanks",
+            "target_feature_ids": [
+              "F001"
+            ],
+            "reason": "Prepare individual blanks with axial stock for facing and post-heat-treatment finishing allowance.",
+            "formula_hint": "fixed_run_time",
+            "formula_inputs": {
+              "process_type": "saw",
+              "start_diameter_mm": 42.0,
+              "finish_diameter_mm": 42.0,
+              "cut_length_mm": 17.0,
+              "depth_of_cut_mm": 42.0,
+              "number_of_passes": 1,
+              "hole_diameter_mm": null,
+              "hole_depth_mm": null,
+              "hole_count": null,
+              "thread_pitch_mm": null,
+              "thread_depth_mm": null,
+              "profile_length_mm": null,
+              "pocket_area_mm2": null,
+              "milling_width_mm": null,
+              "milling_length_mm": null,
+              "axial_depth_mm": null,
+              "step_over_mm": null,
+              "material_machinability": "medium",
+              "surface_finish_required_ra": null,
+              "tolerance_class": "loose",
+              "input_sources": [
+                {
+                  "parameter_name": "stock_diameter",
+                  "value": "45.0 mm",
+                  "source": "agent_estimate",
+                  "source_feature_id": "F001",
+                  "confidence": 0.72
+                },
+                {
+                  "parameter_name": "blank_length",
+                  "value": "20.0 mm",
+                  "source": "agent_estimate",
+                  "source_feature_id": "F001",
+                  "confidence": 0.7
+                }
+              ]
+            },
+            "tool": {
+              "tool_type": "automatic saw blade",
+              "tool_diameter_mm": null,
+              "tool_description": "Carbide or bimetal cutoff blade suitable for alloy steel bar",
+              "insert_grade": null,
+              "flute_count": null,
+              "notes": "Use batch stop/indexing for repeat length."
+            },
+            "notes": "Saw length is provisional stock allowance, not a finished dimension.",
+            "confidence": 0.78
+          }
+        ],
+        "setup_time_min": 0.0,
+        "in_house": true,
+        "outside_process": false,
+        "outside_reason": null,
+        "linked_feature_ids": [
+          "F001"
+        ],
+        "inspection_at_setup": null,
+        "setup_reason": "Blank preparation must precede all turning operations.",
+        "assumptions": [
+          "A001",
+          "A002"
+        ],
+        "confidence": 0.8
+      },
+      {
+        "setup_id": "S002",
+        "sequence": 2,
+        "setup_name": "CNC lathe Op10: establish datum A and semi-finish bore",
+        "machine_family": "cnc_lathe",
+        "machine_reason": "The bore, datum face, and blank geometry are coaxial rotational features; CNC lathe is the correct low-cost machine for facing, axial drilling, boring, and chamfer turning.",
+        "workholding": {
+          "method": "3-jaw chuck / soft jaws on raw OD",
+          "grip_description": "Grip the raw Ø42 OD with enough protrusion to face the +Z side and machine the through bore.",
+          "special_fixture_required": true,
+          "fixture_notes": "Batch soft jaws recommended for 700 pieces to improve repeatability and reduce marking."
+        },
+        "datum_references": [
+          "A",
+          "F004"
+        ],
+        "stock_state_before": "Sawn Ø42 x 17 mm slug with raw saw faces.",
+        "stock_state_after": "Datum face A established on +Z side; central bore drilled and bored undersize for hard finishing; +Z bore entry chamfer added.",
+        "access_directions": [
+          "axial"
+        ],
+        "sub_operations": [
+          {
+            "sub_op_id": "S002-01",
+            "sequence": 1,
+            "operation_type": "face",
+            "operation_name": "Face +Z side to establish datum face A",
+            "target_feature_ids": [
+              "F004"
+            ],
+            "reason": "Datum A is referenced by the gear runout control, so the datum face is established before gear cutting and subsequent datum-based operations.",
+            "formula_hint": "facing",
+            "formula_inputs": {
+              "process_type": "cylindrical",
+              "start_diameter_mm": 42.0,
+              "finish_diameter_mm": 42.0,
+              "cut_length_mm": 21.0,
+              "depth_of_cut_mm": 1.0,
+              "number_of_passes": 1,
+              "hole_diameter_mm": null,
+              "hole_depth_mm": null,
+              "hole_count": null,
+              "thread_pitch_mm": null,
+              "thread_depth_mm": null,
+              "profile_length_mm": null,
+              "pocket_area_mm2": null,
+              "milling_width_mm": null,
+              "milling_length_mm": null,
+              "axial_depth_mm": 1.0,
+              "step_over_mm": null,
+              "material_machinability": "medium",
+              "surface_finish_required_ra": null,
+              "tolerance_class": "standard",
+              "input_sources": [
+                {
+                  "parameter_name": "facing_diameter",
+                  "value": "45.0 mm stock OD",
+                  "source": "agent_estimate",
+                  "source_feature_id": "F001",
+                  "confidence": 0.72
+                },
+                {
+                  "parameter_name": "datum_face",
+                  "value": "F004 datum A",
+                  "source": "feature_graph",
+                  "source_feature_id": "F004",
+                  "confidence": 0.95
+                }
+              ]
+            },
+            "tool": {
+              "tool_type": "turning/facing tool",
+              "tool_diameter_mm": null,
+              "tool_description": "CNMG/WNMG style OD/facing insert for alloy steel",
+              "insert_grade": "steel turning grade",
+              "flute_count": null,
+              "notes": null
+            },
+            "notes": "This is the first controlled datum surface.",
+            "confidence": 0.88
+          },
+          {
+            "sub_op_id": "S002-02",
+            "sequence": 2,
+            "operation_type": "center_drill",
+            "operation_name": "Center drill on gear axis for Ø9 bore",
+            "target_feature_ids": [
+              "F003"
+            ],
+            "reason": "Spotting on the rotational axis prevents drill walk before drilling the central through bore.",
+            "formula_hint": "drilling",
+            "formula_inputs": {
+              "process_type": "point",
+              "start_diameter_mm": null,
+              "finish_diameter_mm": null,
+              "cut_length_mm": null,
+              "depth_of_cut_mm": null,
+              "number_of_passes": 1,
+              "hole_diameter_mm": 9.0,
+              "hole_depth_mm": null,
+              "hole_count": 1,
+              "thread_pitch_mm": null,
+              "thread_depth_mm": null,
+              "profile_length_mm": null,
+              "pocket_area_mm2": null,
+              "milling_width_mm": null,
+              "milling_length_mm": null,
+              "axial_depth_mm": null,
+              "step_over_mm": null,
+              "material_machinability": "medium",
+              "surface_finish_required_ra": null,
+              "tolerance_class": "tight",
+              "input_sources": [
+                {
+                  "parameter_name": "final_bore_diameter",
+                  "value": "9.0 mm H7",
+                  "source": "feature_graph",
+                  "source_feature_id": "F003",
+                  "confidence": 0.95
+                },
+                {
+                  "parameter_name": "hole_count",
+                  "value": "1",
+                  "source": "feature_graph",
+                  "source_feature_id": "F003",
+                  "confidence": 0.95
+                }
+              ]
+            },
+            "tool": {
+              "tool_type": "center drill / spot drill",
+              "tool_diameter_mm": 3.0,
+              "tool_description": "Short rigid spot drill for axial bore start",
+              "insert_grade": null,
+              "flute_count": 2,
+              "notes": "Tool diameter is a shop selection; final feature diameter is Ø9."
+            },
+            "notes": null,
+            "confidence": 0.86
+          },
+          {
+            "sub_op_id": "S002-03",
+            "sequence": 3,
+            "operation_type": "drill",
+            "operation_name": "Drill pilot through for central Ø9 bore",
+            "target_feature_ids": [
+              "F003"
+            ],
+            "reason": "Remove central material before boring. Hole depth is below the deep-hole threshold for the final Ø9 bore, so standard drilling is sufficient.",
+            "formula_hint": "drilling",
+            "formula_inputs": {
+              "process_type": "point",
+              "start_diameter_mm": null,
+              "finish_diameter_mm": null,
+              "cut_length_mm": null,
+              "depth_of_cut_mm": null,
+              "number_of_passes": 1,
+              "hole_diameter_mm": 8.5,
+              "hole_depth_mm": 20.0,
+              "hole_count": 1,
+              "thread_pitch_mm": null,
+              "thread_depth_mm": null,
+              "profile_length_mm": null,
+              "pocket_area_mm2": null,
+              "milling_width_mm": null,
+              "milling_length_mm": null,
+              "axial_depth_mm": null,
+              "step_over_mm": null,
+              "material_machinability": "medium",
+              "surface_finish_required_ra": null,
+              "tolerance_class": "standard",
+              "input_sources": [
+                {
+                  "parameter_name": "pilot_drill_diameter",
+                  "value": "8.5 mm",
+                  "source": "agent_estimate",
+                  "source_feature_id": "F003",
+                  "confidence": 0.65
+                },
+                {
+                  "parameter_name": "blank_thickness_at_drilling",
+                  "value": "20.0 mm",
+                  "source": "agent_estimate",
+                  "source_feature_id": "F001",
+                  "confidence": 0.7
+                },
+                {
+                  "parameter_name": "final_bore_depth",
+                  "value": "14.0 mm finished through bore",
+                  "source": "feature_graph",
+                  "source_feature_id": "F003",
+                  "confidence": 0.95
+                }
+              ]
+            },
+            "tool": {
+              "tool_type": "twist drill",
+              "tool_diameter_mm": 8.5,
+              "tool_description": "Carbide or HSS cobalt drill for alloy steel",
+              "insert_grade": null,
+              "flute_count": 2,
+              "notes": "Pilot diameter leaves boring stock; CAM may adjust exact drill size."
+            },
+            "notes": "Pilot diameter is a process selection to leave stock for boring and hard finishing.",
+            "confidence": 0.78
+          },
+          {
+            "sub_op_id": "S002-04",
+            "sequence": 4,
+            "operation_type": "bore",
+            "operation_name": "Rough/semi-finish bore through to Ø8.90 before heat treatment",
+            "target_feature_ids": [
+              "F003"
+            ],
+            "reason": "Creates a concentric locating bore for mandrel workholding and gear cutting while leaving stock for post-heat-treatment ID grinding/honing to Ø9 H7.",
+            "formula_hint": "boring",
+            "formula_inputs": {
+              "process_type": "cylindrical",
+              "start_diameter_mm": 8.5,
+              "finish_diameter_mm": 8.9,
+              "cut_length_mm": 17.0,
+              "depth_of_cut_mm": 0.2,
+              "number_of_passes": 2,
+              "hole_diameter_mm": 8.9,
+              "hole_depth_mm": 20.0,
+              "hole_count": 1,
+              "thread_pitch_mm": null,
+              "thread_depth_mm": null,
+              "profile_length_mm": null,
+              "pocket_area_mm2": null,
+              "milling_width_mm": null,
+              "milling_length_mm": null,
+              "axial_depth_mm": null,
+              "step_over_mm": null,
+              "material_machinability": "medium",
+              "surface_finish_required_ra": null,
+              "tolerance_class": "standard",
+              "input_sources": [
+                {
+                  "parameter_name": "pre_heat_treat_bore_size",
+                  "value": "8.90 mm",
+                  "source": "agent_estimate",
+                  "source_feature_id": "F003",
+                  "confidence": 0.68
+                },
+                {
+                  "parameter_name": "final_bore_size",
+                  "value": "9.0 mm H7",
+                  "source": "feature_graph",
+                  "source_feature_id": "F003",
+                  "confidence": 0.95
+                }
+              ]
+            },
+            "tool": {
+              "tool_type": "small boring bar",
+              "tool_diameter_mm": 8.0,
+              "tool_description": "Micro boring bar for Ø9 class through bore",
+              "insert_grade": "steel boring grade",
+              "flute_count": null,
+              "notes": "Maintain coaxiality with lathe spindle."
+            },
+            "notes": "Final H7 is not attempted before heat treatment.",
+            "confidence": 0.82
+          },
+          {
+            "sub_op_id": "S002-05",
+            "sequence": 5,
+            "operation_type": "chamfer_turn",
+            "operation_name": "Turn +Z bore entry chamfer 0.7 at 30°",
+            "target_feature_ids": [
+              "F007",
+              "F004"
+            ],
+            "reason": "Chamfer the datum-side bore mouth after boring and before heat treatment; final bench will remove any hard-finishing burrs.",
+            "formula_hint": "chamfering",
+            "formula_inputs": {
+              "process_type": "cylindrical",
+              "start_diameter_mm": 8.9,
+              "finish_diameter_mm": 9.0,
+              "cut_length_mm": 0.7,
+              "depth_of_cut_mm": null,
+              "number_of_passes": 1,
+              "hole_diameter_mm": 9.0,
+              "hole_depth_mm": 0.7,
+              "hole_count": 1,
+              "thread_pitch_mm": null,
+              "thread_depth_mm": null,
+              "profile_length_mm": null,
+              "pocket_area_mm2": null,
+              "milling_width_mm": 0.7,
+              "milling_length_mm": null,
+              "axial_depth_mm": 0.7,
+              "step_over_mm": null,
+              "material_machinability": "medium",
+              "surface_finish_required_ra": null,
+              "tolerance_class": "loose",
+              "input_sources": [
+                {
+                  "parameter_name": "chamfer_size",
+                  "value": "0.7 mm",
+                  "source": "feature_graph",
+                  "source_feature_id": "F007",
+                  "confidence": 0.72
+                },
+                {
+                  "parameter_name": "chamfer_angle",
+                  "value": "30 degrees",
+                  "source": "feature_graph",
+                  "source_feature_id": "F007",
+                  "confidence": 0.72
+                }
+              ]
+            },
+            "tool": {
+              "tool_type": "chamfer/boring tool",
+              "tool_diameter_mm": null,
+              "tool_description": "Internal chamfer tool set to 30° included interpretation",
+              "insert_grade": "steel grade",
+              "flute_count": null,
+              "notes": "Chamfer definition requires confirmation."
+            },
+            "notes": "Exact interpretation of 0.7 / 30° is flagged as a clarification.",
+            "confidence": 0.7
+          }
+        ],
+        "setup_time_min": 0.0,
+        "in_house": true,
+        "outside_process": false,
+        "outside_reason": null,
+        "linked_feature_ids": [
+          "F003",
+          "F004",
+          "F007"
+        ],
+        "inspection_at_setup": "Verify datum face cleanup and bore runout/size sufficient for mandrel loading.",
+        "setup_reason": "Datum A and bore axis must be established before finishing OD and gear blank geometry.",
+        "assumptions": [
+          "A002",
+          "A004"
+        ],
+        "confidence": 0.84
+      },
+      {
+        "setup_id": "S003",
+        "sequence": 3,
+        "setup_name": "CNC lathe Op20: finish soft gear blank OD, width, and chamfers",
+        "machine_family": "cnc_lathe",
+        "machine_reason": "The OD, opposite face, and axial chamfers are rotational features sharing the Z axis; a CNC lathe on a bore mandrel minimizes coaxial error before gear cutting.",
+        "workholding": {
+          "method": "expanding mandrel through semi-finished bore with datum A against stop",
+          "grip_description": "Locate on the Ø8.90 semi-finished bore and seat datum face A against a positive axial stop; support as needed for batch repeatability.",
+          "special_fixture_required": true,
+          "fixture_notes": "Dedicated expanding mandrel or precision arbor is justified for 700 pieces and improves gear blank concentricity."
+        },
+        "datum_references": [
+          "A",
+          "F003",
+          "F004"
+        ],
+        "stock_state_before": "Op10 blank with datum face A and Ø8.90 semi-finished through bore; OD still raw Ø42 and axial length oversize.",
+        "stock_state_after": "Soft-machined gear blank with OD/head diameter Ø39.79, width left at approximately 14.05 mm for later lapping, opposite face machined, OD chamfers and second bore chamfer complete.",
+        "access_directions": [
+          "axial",
+          "radial"
+        ],
+        "sub_operations": [
+          {
+            "sub_op_id": "S003-01",
+            "sequence": 1,
+            "operation_type": "face",
+            "operation_name": "Face -Z side to 14.05 mm pre-lap width",
+            "target_feature_ids": [
+              "F005",
+              "F001"
+            ],
+            "reason": "Establish the opposite axial face and leave small allowance for post-heat-treatment face lapping to final 14.0 mm width.",
+            "formula_hint": "facing",
+            "formula_inputs": {
+              "process_type": "cylindrical",
+              "start_diameter_mm": 42.0,
+              "finish_diameter_mm": 8.9,
+              "cut_length_mm": 16.55,
+              "depth_of_cut_mm": 5.95,
+              "number_of_passes": 3,
+              "hole_diameter_mm": 8.9,
+              "hole_depth_mm": 20.0,
+              "hole_count": 1,
+              "thread_pitch_mm": null,
+              "thread_depth_mm": null,
+              "profile_length_mm": null,
+              "pocket_area_mm2": null,
+              "milling_width_mm": null,
+              "milling_length_mm": null,
+              "axial_depth_mm": 5.95,
+              "step_over_mm": null,
+              "material_machinability": "medium",
+              "surface_finish_required_ra": null,
+              "tolerance_class": "standard",
+              "input_sources": [
+                {
+                  "parameter_name": "finished_width",
+                  "value": "14.0 mm",
+                  "source": "feature_graph",
+                  "source_feature_id": "F001",
+                  "confidence": 0.94
+                },
+                {
+                  "parameter_name": "pre_lap_width",
+                  "value": "14.05 mm",
+                  "source": "agent_estimate",
+                  "source_feature_id": "F001",
+                  "confidence": 0.65
+                },
+                {
+                  "parameter_name": "stock_length",
+                  "value": "20.0 mm",
+                  "source": "agent_estimate",
+                  "source_feature_id": "F001",
+                  "confidence": 0.7
+                }
+              ]
+            },
+            "tool": {
+              "tool_type": "turning/facing tool",
+              "tool_diameter_mm": null,
+              "tool_description": "Facing insert suitable for alloy steel",
+              "insert_grade": "steel turning grade",
+              "flute_count": null,
+              "notes": null
+            },
+            "notes": "Final width is achieved after heat treatment by lapping.",
+            "confidence": 0.8
+          },
+          {
+            "sub_op_id": "S003-02",
+            "sequence": 2,
+            "operation_type": "rough_turn_od",
+            "operation_name": "Rough turn OD from Ø42 to Ø40.50 over gear width",
+            "target_feature_ids": [
+              "F001"
+            ],
+            "reason": "Remove bulk stock from the round bar blank before the finishing OD pass and gear hobbing.",
+            "formula_hint": "turning",
+            "formula_inputs": {
+              "process_type": "cylindrical",
+              "start_diameter_mm": 42.0,
+              "finish_diameter_mm": 40.5,
+              "cut_length_mm": 14.05,
+              "depth_of_cut_mm": 1.125,
+              "number_of_passes": 2,
+              "hole_diameter_mm": null,
+              "hole_depth_mm": null,
+              "hole_count": null,
+              "thread_pitch_mm": null,
+              "thread_depth_mm": null,
+              "profile_length_mm": null,
+              "pocket_area_mm2": null,
+              "milling_width_mm": null,
+              "milling_length_mm": null,
+              "axial_depth_mm": null,
+              "step_over_mm": null,
+              "material_machinability": "medium",
+              "surface_finish_required_ra": null,
+              "tolerance_class": "standard",
+              "input_sources": [
+                {
+                  "parameter_name": "stock_diameter",
+                  "value": "45.0 mm",
+                  "source": "agent_estimate",
+                  "source_feature_id": "F001",
+                  "confidence": 0.72
+                },
+                {
+                  "parameter_name": "gear_face_width_pre_lap",
+                  "value": "14.05 mm",
+                  "source": "agent_estimate",
+                  "source_feature_id": "F001",
+                  "confidence": 0.65
+                }
+              ]
+            },
+            "tool": {
+              "tool_type": "OD turning tool",
+              "tool_diameter_mm": null,
+              "tool_description": "CNMG/WNMG roughing insert for alloy steel",
+              "insert_grade": "steel roughing grade",
+              "flute_count": null,
+              "notes": null
+            },
+            "notes": null,
+            "confidence": 0.84
+          },
+          {
+            "sub_op_id": "S003-03",
+            "sequence": 3,
+            "operation_type": "finish_turn_od",
+            "operation_name": "Finish turn gear blank OD/head diameter to Ø39.79 +0/-0.05",
+            "target_feature_ids": [
+              "F001",
+              "F002"
+            ],
+            "reason": "Set the gear blank outside/head diameter before hobbing; the drawing specifies Ø39.79 +0/-0.05 and notes the head is milled during toothing.",
+            "formula_hint": "turning",
+            "formula_inputs": {
+              "process_type": "cylindrical",
+              "start_diameter_mm": 40.5,
+              "finish_diameter_mm": 39.79,
+              "cut_length_mm": 14.05,
+              "depth_of_cut_mm": 0.355,
+              "number_of_passes": 1,
+              "hole_diameter_mm": null,
+              "hole_depth_mm": null,
+              "hole_count": null,
+              "thread_pitch_mm": null,
+              "thread_depth_mm": null,
+              "profile_length_mm": null,
+              "pocket_area_mm2": null,
+              "milling_width_mm": null,
+              "milling_length_mm": null,
+              "axial_depth_mm": null,
+              "step_over_mm": null,
+              "material_machinability": "medium",
+              "surface_finish_required_ra": null,
+              "tolerance_class": "standard",
+              "input_sources": [
+                {
+                  "parameter_name": "head_or_outside_diameter",
+                  "value": "39.79 +0/-0.05 mm",
+                  "source": "feature_graph",
+                  "source_feature_id": "F002",
+                  "confidence": 0.88
+                },
+                {
+                  "parameter_name": "face_width_pre_lap",
+                  "value": "14.05 mm",
+                  "source": "agent_estimate",
+                  "source_feature_id": "F001",
+                  "confidence": 0.65
+                }
+              ]
+            },
+            "tool": {
+              "tool_type": "finish OD turning tool",
+              "tool_diameter_mm": null,
+              "tool_description": "Finishing insert for steel with small nose radius",
+              "insert_grade": "steel finishing grade",
+              "flute_count": null,
+              "notes": null
+            },
+            "notes": "OD tolerance clarification remains open but route uses extracted value.",
+            "confidence": 0.82
+          },
+          {
+            "sub_op_id": "S003-04",
+            "sequence": 4,
+            "operation_type": "chamfer_turn",
+            "operation_name": "Turn 2X external axial edge chamfers 0.3 x 45°",
+            "target_feature_ids": [
+              "F006"
+            ],
+            "reason": "The OD chamfers modify the intersections of the external gear/OD with both axial faces and should follow OD finishing.",
+            "formula_hint": "chamfering",
+            "formula_inputs": {
+              "process_type": "cylindrical",
+              "start_diameter_mm": 39.79,
+              "finish_diameter_mm": 39.19,
+              "cut_length_mm": 0.3,
+              "depth_of_cut_mm": 0.3,
+              "number_of_passes": 1,
+              "hole_diameter_mm": null,
+              "hole_depth_mm": null,
+              "hole_count": null,
+              "thread_pitch_mm": null,
+              "thread_depth_mm": null,
+              "profile_length_mm": null,
+              "pocket_area_mm2": null,
+              "milling_width_mm": 0.3,
+              "milling_length_mm": null,
+              "axial_depth_mm": 0.3,
+              "step_over_mm": null,
+              "material_machinability": "medium",
+              "surface_finish_required_ra": null,
+              "tolerance_class": "loose",
+              "input_sources": [
+                {
+                  "parameter_name": "external_chamfer_size",
+                  "value": "0.3 mm",
+                  "source": "feature_graph",
+                  "source_feature_id": "F006",
+                  "confidence": 0.92
+                },
+                {
+                  "parameter_name": "external_chamfer_angle",
+                  "value": "45 degrees",
+                  "source": "feature_graph",
+                  "source_feature_id": "F006",
+                  "confidence": 0.92
+                }
+              ]
+            },
+            "tool": {
+              "tool_type": "OD chamfer tool",
+              "tool_diameter_mm": null,
+              "tool_description": "45° turning chamfer tool",
+              "insert_grade": "steel grade",
+              "flute_count": null,
+              "notes": null
+            },
+            "notes": "Final hand deburr after gear cutting and hard finishing will preserve specified chamfers.",
+            "confidence": 0.86
+          },
+          {
+            "sub_op_id": "S003-05",
+            "sequence": 5,
+            "operation_type": "chamfer_turn",
+            "operation_name": "Turn -Z bore entry chamfer 0.7 at 30°",
+            "target_feature_ids": [
+              "F007",
+              "F005"
+            ],
+            "reason": "Completes the second bore mouth chamfer after the opposite face is established.",
+            "formula_hint": "chamfering",
+            "formula_inputs": {
+              "process_type": "cylindrical",
+              "start_diameter_mm": 8.9,
+              "finish_diameter_mm": 9.0,
+              "cut_length_mm": 0.7,
+              "depth_of_cut_mm": null,
+              "number_of_passes": 1,
+              "hole_diameter_mm": 9.0,
+              "hole_depth_mm": 0.7,
+              "hole_count": 1,
+              "thread_pitch_mm": null,
+              "thread_depth_mm": null,
+              "profile_length_mm": null,
+              "pocket_area_mm2": null,
+              "milling_width_mm": 0.7,
+              "milling_length_mm": null,
+              "axial_depth_mm": 0.7,
+              "step_over_mm": null,
+              "material_machinability": "medium",
+              "surface_finish_required_ra": null,
+              "tolerance_class": "loose",
+              "input_sources": [
+                {
+                  "parameter_name": "chamfer_size",
+                  "value": "0.7 mm",
+                  "source": "feature_graph",
+                  "source_feature_id": "F007",
+                  "confidence": 0.72
+                },
+                {
+                  "parameter_name": "chamfer_angle",
+                  "value": "30 degrees",
+                  "source": "feature_graph",
+                  "source_feature_id": "F007",
+                  "confidence": 0.72
+                }
+              ]
+            },
+            "tool": {
+              "tool_type": "internal chamfer tool",
+              "tool_diameter_mm": null,
+              "tool_description": "Internal chamfer tool for bore mouth",
+              "insert_grade": "steel grade",
+              "flute_count": null,
+              "notes": "Confirm 0.7 / 30° interpretation."
+            },
+            "notes": null,
+            "confidence": 0.72
+          }
+        ],
+        "setup_time_min": 0.0,
+        "in_house": true,
+        "outside_process": false,
+        "outside_reason": null,
+        "linked_feature_ids": [
+          "F001",
+          "F002",
+          "F005",
+          "F006",
+          "F007"
+        ],
+        "inspection_at_setup": "Check OD/head diameter, pre-lap width, bore location on mandrel, and chamfer presence before gear cutting.",
+        "setup_reason": "Completes the soft rotational blank before gear generation.",
+        "assumptions": [
+          "A003",
+          "A004"
+        ],
+        "confidence": 0.82
+      },
+      {
+        "setup_id": "S004",
+        "sequence": 4,
+        "setup_name": "In-process inspection of soft gear blank",
+        "machine_family": "inspection",
+        "machine_reason": "Dimensional inspection is needed before committing the batch to gear hobbing and heat treatment.",
+        "workholding": {
+          "method": "bench inspection fixtures and bore plug",
+          "grip_description": "Support part on datum face and check bore/OD/width with plug gauges, micrometers, and runout fixture.",
+          "special_fixture_required": false,
+          "fixture_notes": "Production go/no-go gauges may be justified for 700 pieces."
+        },
+        "datum_references": [
+          "A",
+          "F003",
+          "F004"
+        ],
+        "stock_state_before": "Soft-machined gear blank after lathe Op20.",
+        "stock_state_after": "Accepted soft gear blank released to gear hobbing.",
+        "access_directions": [
+          "axial",
+          "radial"
+        ],
+        "sub_operations": [
+          {
+            "sub_op_id": "S004-01",
+            "sequence": 1,
+            "operation_type": "inspect_in_process",
+            "operation_name": "Inspect soft blank OD, width allowance, datum face, and semi-finished bore",
+            "target_feature_ids": [
+              "F001",
+              "F003",
+              "F004",
+              "F005",
+              "F006",
+              "F007"
+            ],
+            "reason": "Prevents adding gear-cutting and heat-treatment cost to blanks with incorrect datum, bore, OD, width, or chamfer condition.",
+            "formula_hint": "fixed_run_time",
+            "formula_inputs": {
+              "process_type": "fixed",
+              "start_diameter_mm": 39.79,
+              "finish_diameter_mm": 39.79,
+              "cut_length_mm": 14.05,
+              "depth_of_cut_mm": null,
+              "number_of_passes": 1,
+              "hole_diameter_mm": 8.9,
+              "hole_depth_mm": 14.05,
+              "hole_count": 1,
+              "thread_pitch_mm": null,
+              "thread_depth_mm": null,
+              "profile_length_mm": null,
+              "pocket_area_mm2": null,
+              "milling_width_mm": 0.3,
+              "milling_length_mm": null,
+              "axial_depth_mm": 0.7,
+              "step_over_mm": null,
+              "material_machinability": "medium",
+              "surface_finish_required_ra": null,
+              "tolerance_class": "standard",
+              "input_sources": [
+                {
+                  "parameter_name": "OD_check",
+                  "value": "39.79 mm",
+                  "source": "feature_graph",
+                  "source_feature_id": "F002",
+                  "confidence": 0.88
+                },
+                {
+                  "parameter_name": "bore_pre_finish_check",
+                  "value": "8.90 mm provisional",
+                  "source": "agent_estimate",
+                  "source_feature_id": "F003",
+                  "confidence": 0.68
+                },
+                {
+                  "parameter_name": "pre_lap_width_check",
+                  "value": "14.05 mm provisional",
+                  "source": "agent_estimate",
+                  "source_feature_id": "F001",
+                  "confidence": 0.65
+                }
+              ]
+            },
+            "tool": {
+              "tool_type": "inspection gauges",
+              "tool_diameter_mm": null,
+              "tool_description": "Micrometer, bore gauge/plug, height gauge, and runout fixture",
+              "insert_grade": null,
+              "flute_count": null,
+              "notes": null
+            },
+            "notes": null,
+            "confidence": 0.84
+          }
+        ],
+        "setup_time_min": 0.0,
+        "in_house": true,
+        "outside_process": false,
+        "outside_reason": null,
+        "linked_feature_ids": [
+          "F001",
+          "F003",
+          "F004",
+          "F005",
+          "F006",
+          "F007"
+        ],
+        "inspection_at_setup": "Record first-off soft blank dimensions.",
+        "setup_reason": "Quality gate before gear cutting.",
+        "assumptions": [],
+        "confidence": 0.86
+      },
+      {
+        "setup_id": "S005",
+        "sequence": 5,
+        "setup_name": "Gear hobbing: generate 39-tooth LH helical gear",
+        "machine_family": "gear_hobbing",
+        "machine_reason": "External helical gear teeth are best generated on a gear hobbing machine; the shop has dedicated hobbing machines for external gear cutting.",
+        "workholding": {
+          "method": "precision arbor / expanding mandrel",
+          "grip_description": "Locate on semi-finished bore with datum face A against a spacer or shoulder; support axially to control runout.",
+          "special_fixture_required": true,
+          "fixture_notes": "Dedicated hob arbor/mandrel required for repeatable 700-piece gear cutting."
+        },
+        "datum_references": [
+          "A",
+          "F003",
+          "F004"
+        ],
+        "stock_state_before": "Soft turned blank Ø39.79 with Ø8.90 semi-finished bore and pre-lap width.",
+        "stock_state_after": "Soft hobbed left-hand helical gear tooth form with stock for shaving/grinding.",
+        "access_directions": [
+          "radial"
+        ],
+        "sub_operations": [
+          {
+            "sub_op_id": "S005-01",
+            "sequence": 1,
+            "operation_type": "profile_mill",
+            "operation_name": "Hob 39-tooth left-hand helical gear, mn=1, β=15°, α=20°",
+            "target_feature_ids": [
+              "F002"
+            ],
+            "reason": "Generate the external helical tooth form after the blank OD, bore, and datum face are established.",
+            "formula_hint": "profile_milling",
+            "formula_inputs": {
+              "process_type": "gear",
+              "start_diameter_mm": 39.79,
+              "finish_diameter_mm": 35.487,
+              "cut_length_mm": 14.0,
+              "depth_of_cut_mm": 2.1515,
+              "number_of_passes": 1,
+              "hole_diameter_mm": null,
+              "hole_depth_mm": null,
+              "hole_count": null,
+              "thread_pitch_mm": null,
+              "thread_depth_mm": null,
+              "profile_length_mm": 14.0,
+              "pocket_area_mm2": null,
+              "milling_width_mm": null,
+              "milling_length_mm": null,
+              "axial_depth_mm": 14.0,
+              "step_over_mm": null,
+              "material_machinability": "medium",
+              "surface_finish_required_ra": null,
+              "tolerance_class": "tight",
+              "input_sources": [
+                {
+                  "parameter_name": "number_of_teeth",
+                  "value": "39",
+                  "source": "feature_graph",
+                  "source_feature_id": "F002",
+                  "confidence": 0.95
+                },
+                {
+                  "parameter_name": "normal_module",
+                  "value": "1.0 mm",
+                  "source": "feature_graph",
+                  "source_feature_id": "F002",
+                  "confidence": 0.95
+                },
+                {
+                  "parameter_name": "helix_angle",
+                  "value": "15 degrees left-hand",
+                  "source": "feature_graph",
+                  "source_feature_id": "F002",
+                  "confidence": 0.95
+                },
+                {
+                  "parameter_name": "head_or_outside_diameter",
+                  "value": "39.79 mm",
+                  "source": "feature_graph",
+                  "source_feature_id": "F002",
+                  "confidence": 0.88
+                },
+                {
+                  "parameter_name": "generated_root_circle",
+                  "value": "35.487 +0/-0.08 mm",
+                  "source": "feature_graph",
+                  "source_feature_id": "F002",
+                  "confidence": 0.88
+                }
+              ],
+              "normal_module_mm": 1.0,
+              "number_of_teeth": 39,
+              "pressure_angle_deg": 20.0,
+              "helix_angle_deg": 15.0,
+              "face_width_mm": 14.0,
+              "external_diameter_mm": 39.79,
+              "root_diameter_mm": 35.487,
+              "base_diameter_mm": 37.783,
+              "whole_depth_mm": 2.1515,
+              "gear_quality_class": 8,
+              "gear_quality_standard": "DIN",
+              "hob_starts": 1,
+              "hob_od_mm": 80.0
+            },
+            "tool": {
+              "tool_type": "gear hob",
+              "tool_diameter_mm": null,
+              "tool_description": "Module 1 DIN 3972/II hob for 20° pressure angle, left-hand helical setup",
+              "insert_grade": null,
+              "flute_count": null,
+              "notes": "Tooth tip rounding must be confirmed before final tool/process release."
+            },
+            "notes": "Operation uses gear-hobbing machine although formula category is profile_milling/fixed gear generation.",
+            "confidence": 0.78
+          }
+        ],
+        "setup_time_min": 0.0,
+        "in_house": true,
+        "outside_process": false,
+        "outside_reason": null,
+        "linked_feature_ids": [
+          "F002"
+        ],
+        "inspection_at_setup": "Check first-off tooth count, helix hand, root diameter, and over-teeth gauge before full batch.",
+        "setup_reason": "Gear teeth must be generated before shaving and heat treatment.",
+        "assumptions": [
+          "A005"
+        ],
+        "confidence": 0.8
+      },
+      {
+        "setup_id": "S006",
+        "sequence": 6,
+        "setup_name": "Pre-heat-treatment gear shaving",
+        "machine_family": "gear_shaving",
+        "machine_reason": "Gear shaving improves soft gear tooth accuracy and surface quality before case hardening, reducing hard finishing stock and risk.",
+        "workholding": {
+          "method": "gear shaving arbor",
+          "grip_description": "Mount on bore-locating gear arbor with axial datum face support.",
+          "special_fixture_required": true,
+          "fixture_notes": "Use the same datum logic as hobbing to preserve concentricity."
+        },
+        "datum_references": [
+          "A",
+          "F003",
+          "F004"
+        ],
+        "stock_state_before": "Soft hobbed gear blank with generated teeth.",
+        "stock_state_after": "Soft shaved gear teeth with improved flank form, ready for deburr and heat treatment.",
+        "access_directions": [
+          "radial"
+        ],
+        "sub_operations": [
+          {
+            "sub_op_id": "S006-01",
+            "sequence": 1,
+            "operation_type": "profile_mill",
+            "operation_name": "Shave gear flanks before case hardening",
+            "target_feature_ids": [
+              "F002"
+            ],
+            "reason": "Improves tooth form and surface before heat treatment and reduces hard grinding/honing load.",
+            "formula_hint": "fixed_run_time",
+            "formula_inputs": {
+              "process_type": "gear",
+              "start_diameter_mm": 39.79,
+              "finish_diameter_mm": 39.79,
+              "cut_length_mm": 14.0,
+              "depth_of_cut_mm": null,
+              "number_of_passes": 1,
+              "hole_diameter_mm": null,
+              "hole_depth_mm": null,
+              "hole_count": null,
+              "thread_pitch_mm": null,
+              "thread_depth_mm": null,
+              "profile_length_mm": 14.0,
+              "pocket_area_mm2": null,
+              "milling_width_mm": null,
+              "milling_length_mm": null,
+              "axial_depth_mm": 14.0,
+              "step_over_mm": null,
+              "material_machinability": "medium",
+              "surface_finish_required_ra": null,
+              "tolerance_class": "tight",
+              "input_sources": [
+                {
+                  "parameter_name": "gear_face_width",
+                  "value": "14.0 mm",
+                  "source": "feature_graph",
+                  "source_feature_id": "F002",
+                  "confidence": 0.94
+                },
+                {
+                  "parameter_name": "gear_quality_grade",
+                  "value": "DIN 58405 / 8d",
+                  "source": "feature_graph",
+                  "source_feature_id": "F002",
+                  "confidence": 0.9
+                }
+              ],
+              "normal_module_mm": 1.0,
+              "number_of_teeth": 39,
+              "pressure_angle_deg": 20.0,
+              "helix_angle_deg": 15.0,
+              "face_width_mm": 14.0,
+              "external_diameter_mm": 39.79,
+              "root_diameter_mm": 35.487,
+              "base_diameter_mm": 37.783,
+              "whole_depth_mm": 2.1515,
+              "gear_quality_class": 8,
+              "gear_quality_standard": "DIN",
+              "stock_per_flank_mm": 0.05,
+              "shaving_passes": 2
+            },
+            "tool": {
+              "tool_type": "gear shaving cutter",
+              "tool_diameter_mm": null,
+              "tool_description": "Shaving cutter matched to mn=1, z39, β=15° LH gear data",
+              "insert_grade": null,
+              "flute_count": null,
+              "notes": "Final cutter data depends on confirmed tooth rounding."
+            },
+            "notes": null,
+            "confidence": 0.76
+          }
+        ],
+        "setup_time_min": 0.0,
+        "in_house": true,
+        "outside_process": false,
+        "outside_reason": null,
+        "linked_feature_ids": [
+          "F002"
+        ],
+        "inspection_at_setup": "Inspect over-teeth gauge and visual burr condition on first-off shaved gear.",
+        "setup_reason": "Soft gear finishing before heat treatment helps achieve final gear quality with less hard finishing.",
+        "assumptions": [
+          "A005"
+        ],
+        "confidence": 0.76
+      },
+      {
+        "setup_id": "S007",
+        "sequence": 7,
+        "setup_name": "Pre-heat-treatment deburr and clean",
+        "machine_family": "finish_bench",
+        "machine_reason": "Burrs from hobbing and shaving must be removed before heat treatment; hardened burrs are difficult to remove and can affect case uniformity.",
+        "workholding": {
+          "method": "manual bench support / batch trays",
+          "grip_description": "Handle gears in trays and support by faces; avoid damaging gear teeth.",
+          "special_fixture_required": false,
+          "fixture_notes": "Use soft brushes/stones appropriate for gear teeth."
+        },
+        "datum_references": [],
+        "stock_state_before": "Soft shaved gear with possible tooth and bore-mouth burrs.",
+        "stock_state_after": "Deburred and cleaned soft gear ready for case hardening.",
+        "access_directions": [
+          "axial",
+          "radial"
+        ],
+        "sub_operations": [
+          {
+            "sub_op_id": "S007-01",
+            "sequence": 1,
+            "operation_type": "deburr_edge",
+            "operation_name": "Deburr gear tooth edges, bore mouths, and unspecified sharp edges before heat treatment",
+            "target_feature_ids": [
+              "F006",
+              "F007",
+              "F008",
+              "F002",
+              "F003"
+            ],
+            "reason": "Remove soft burrs before hardening to prevent hardened burrs and inspection errors.",
+            "formula_hint": "chamfering",
+            "formula_inputs": {
+              "process_type": "fixed",
+              "start_diameter_mm": 39.79,
+              "finish_diameter_mm": 39.79,
+              "cut_length_mm": 14.0,
+              "depth_of_cut_mm": 0.3,
+              "number_of_passes": 1,
+              "hole_diameter_mm": 9.0,
+              "hole_depth_mm": 14.0,
+              "hole_count": 1,
+              "thread_pitch_mm": null,
+              "thread_depth_mm": null,
+              "profile_length_mm": 125.0,
+              "pocket_area_mm2": null,
+              "milling_width_mm": 0.3,
+              "milling_length_mm": null,
+              "axial_depth_mm": 0.3,
+              "step_over_mm": null,
+              "material_machinability": "medium",
+              "surface_finish_required_ra": null,
+              "tolerance_class": "loose",
+              "input_sources": [
+                {
+                  "parameter_name": "general_edge_break",
+                  "value": "0.3 x 45 / R0.4 general note",
+                  "source": "feature_graph",
+                  "source_feature_id": "F008",
+                  "confidence": 0.85
+                },
+                {
+                  "parameter_name": "OD_circumference_estimate",
+                  "value": "125.0 mm from Ø39.79",
+                  "source": "agent_estimate",
+                  "source_feature_id": "F006",
+                  "confidence": 0.7
+                }
+              ]
+            },
+            "tool": {
+              "tool_type": "manual deburr tools",
+              "tool_diameter_mm": null,
+              "tool_description": "Fine abrasive brush, ceramic stone, and deburr blades",
+              "insert_grade": null,
+              "flute_count": null,
+              "notes": "Avoid rounding functional gear flanks beyond specification."
+            },
+            "notes": null,
+            "confidence": 0.78
+          },
+          {
+            "sub_op_id": "S007-02",
+            "sequence": 2,
+            "operation_type": "cleaning",
+            "operation_name": "Clean parts before sealed-quench heat treatment",
+            "target_feature_ids": [
+              "F001",
+              "F002",
+              "F003"
+            ],
+            "reason": "Remove chips, oil, and abrasive debris before carburizing/quench to avoid contamination and case defects.",
+            "formula_hint": "fixed_run_time",
+            "formula_inputs": {
+              "process_type": "fixed",
+              "start_diameter_mm": 39.79,
+              "finish_diameter_mm": 39.79,
+              "cut_length_mm": 14.0,
+              "depth_of_cut_mm": null,
+              "number_of_passes": 1,
+              "hole_diameter_mm": 9.0,
+              "hole_depth_mm": 14.0,
+              "hole_count": 1,
+              "thread_pitch_mm": null,
+              "thread_depth_mm": null,
+              "profile_length_mm": 14.0,
+              "pocket_area_mm2": null,
+              "milling_width_mm": null,
+              "milling_length_mm": null,
+              "axial_depth_mm": null,
+              "step_over_mm": null,
+              "material_machinability": "medium",
+              "surface_finish_required_ra": null,
+              "tolerance_class": "loose",
+              "input_sources": [
+                {
+                  "parameter_name": "part_OD",
+                  "value": "39.79 mm",
+                  "source": "feature_graph",
+                  "source_feature_id": "F001",
+                  "confidence": 0.92
+                },
+                {
+                  "parameter_name": "part_width",
+                  "value": "14.0 mm",
+                  "source": "feature_graph",
+                  "source_feature_id": "F001",
+                  "confidence": 0.94
+                }
+              ]
+            },
+            "tool": {
+              "tool_type": "cleaning station",
+              "tool_diameter_mm": null,
+              "tool_description": "Aqueous/degreasing clean suitable before heat treatment",
+              "insert_grade": null,
+              "flute_count": null,
+              "notes": null
+            },
+            "notes": null,
+            "confidence": 0.82
+          }
+        ],
+        "setup_time_min": 0.0,
+        "in_house": true,
+        "outside_process": false,
+        "outside_reason": null,
+        "linked_feature_ids": [
+          "F001",
+          "F002",
+          "F003",
+          "F006",
+          "F007",
+          "F008"
+        ],
+        "inspection_at_setup": "Visual burr check before heat treatment.",
+        "setup_reason": "Burr management before hardening is mandatory for gear quality.",
+        "assumptions": [],
+        "confidence": 0.82
+      },
+      {
+        "setup_id": "S008",
+        "sequence": 8,
+        "setup_name": "Case harden and temper",
+        "machine_family": "sealed_quench_furnace",
+        "machine_reason": "The drawing requires case-hardened and tempered 16MnCrS5 at 630+100 HV10 with Eht 0.3+0.2 mm; the shop has sealed-quench carburizing/tempering furnaces in-house.",
+        "workholding": {
+          "method": "heat-treatment baskets/fixtures",
+          "grip_description": "Load gears in baskets or fixtures to minimize tooth damage and distortion; avoid heavy stacking on gear teeth.",
+          "special_fixture_required": true,
+          "fixture_notes": "Use batch fixturing appropriate for small gears and distortion control."
+        },
+        "datum_references": [],
+        "stock_state_before": "Soft machined, hobbed, shaved, deburred, and cleaned gears.",
+        "stock_state_after": "Case-hardened and tempered gears with expected distortion allowance for hard finishing.",
+        "access_directions": [
+          "all"
+        ],
+        "sub_operations": [
+          {
+            "sub_op_id": "S008-01",
+            "sequence": 1,
+            "operation_type": "heat_treat",
+            "operation_name": "Case harden and temper 16MnCrS5 to 630+100 HV10, Eht 0.3+0.2 mm",
+            "target_feature_ids": [
+              "F001",
+              "F002",
+              "F003",
+              "F004",
+              "F005"
+            ],
+            "reason": "Required part-level heat treatment to create hardened wear surfaces on gear teeth and part surfaces.",
+            "formula_hint": "fixed_run_time",
+            "formula_inputs": {
+              "process_type": "fixed",
+              "start_diameter_mm": 39.79,
+              "finish_diameter_mm": 39.79,
+              "cut_length_mm": 14.0,
+              "depth_of_cut_mm": null,
+              "number_of_passes": 1,
+              "hole_diameter_mm": 9.0,
+              "hole_depth_mm": 14.0,
+              "hole_count": 1,
+              "thread_pitch_mm": null,
+              "thread_depth_mm": null,
+              "profile_length_mm": 14.0,
+              "pocket_area_mm2": null,
+              "milling_width_mm": null,
+              "milling_length_mm": null,
+              "axial_depth_mm": 0.3,
+              "step_over_mm": null,
+              "material_machinability": "hardened",
+              "surface_finish_required_ra": null,
+              "tolerance_class": "tight",
+              "input_sources": [
+                {
+                  "parameter_name": "case_depth",
+                  "value": "Eht 0.3+0.2 mm",
+                  "source": "feature_graph",
+                  "source_feature_id": "F001",
+                  "confidence": 0.94
+                },
+                {
+                  "parameter_name": "hardness",
+                  "value": "630+100 HV10",
+                  "source": "feature_graph",
+                  "source_feature_id": "F001",
+                  "confidence": 0.94
+                },
+                {
+                  "parameter_name": "material",
+                  "value": "16MnCrS5 1.7139",
+                  "source": "feature_graph",
+                  "source_feature_id": "F001",
+                  "confidence": 0.94
+                }
+              ]
+            },
+            "tool": {
+              "tool_type": "sealed quench furnace batch",
+              "tool_diameter_mm": null,
+              "tool_description": "Gas carburizing/case-hardening and tempering furnace cycle",
+              "insert_grade": null,
+              "flute_count": null,
+              "notes": "Furnace cycle parameters are determined by heat-treatment department, not by route planner."
+            },
+            "notes": "All heat treatment is in-house; no outside process needed.",
+            "confidence": 0.88
+          }
+        ],
+        "setup_time_min": 0.0,
+        "in_house": true,
+        "outside_process": false,
+        "outside_reason": null,
+        "linked_feature_ids": [
+          "F001",
+          "F002",
+          "F003",
+          "F004",
+          "F005"
+        ],
+        "inspection_at_setup": "Hardness/case-depth coupon or sample check per heat-treatment quality plan.",
+        "setup_reason": "Heat treatment is required before final hard finishing of critical surfaces.",
+        "assumptions": [],
+        "confidence": 0.9
+      },
+      {
+        "setup_id": "S009",
+        "sequence": 9,
+        "setup_name": "Post-heat-treatment face lapping of datum faces",
+        "machine_family": "lapping",
+        "machine_reason": "Face lapping/double-disc lapping is the most suitable in-house process to restore flat, parallel hardened axial faces and finish the 14 mm width without excessive cutting forces.",
+        "workholding": {
+          "method": "lapping carrier / double-disc fixture",
+          "grip_description": "Carry gears by OD/tooth-safe carrier, lap both axial faces with controlled stock removal.",
+          "special_fixture_required": true,
+          "fixture_notes": "Carrier must protect gear teeth and maintain parallelism."
+        },
+        "datum_references": [
+          "A",
+          "F004",
+          "F005"
+        ],
+        "stock_state_before": "Case-hardened gear with axial width allowance and possible heat-treat distortion.",
+        "stock_state_after": "Finished axial faces including datum A; gear width brought to final 14.0 mm.",
+        "access_directions": [
+          "axial"
+        ],
+        "sub_operations": [
+          {
+            "sub_op_id": "S009-01",
+            "sequence": 1,
+            "operation_type": "polish",
+            "operation_name": "Lap datum face A and opposite face to final 14.0 mm width",
+            "target_feature_ids": [
+              "F004",
+              "F005",
+              "F001"
+            ],
+            "reason": "Restores datum face quality after heat treatment and finishes the critical gear width before bore and gear hard finishing reference operations.",
+            "formula_hint": "fixed_run_time",
+            "formula_inputs": {
+              "process_type": "honing",
+              "start_diameter_mm": 39.79,
+              "finish_diameter_mm": 39.79,
+              "cut_length_mm": 14.0,
+              "depth_of_cut_mm": 0.05,
+              "number_of_passes": 1,
+              "hole_diameter_mm": 9.0,
+              "hole_depth_mm": 14.0,
+              "hole_count": 1,
+              "thread_pitch_mm": null,
+              "thread_depth_mm": null,
+              "profile_length_mm": null,
+              "pocket_area_mm2": null,
+              "milling_width_mm": 39.79,
+              "milling_length_mm": 39.79,
+              "axial_depth_mm": 0.05,
+              "step_over_mm": null,
+              "material_machinability": "hardened",
+              "surface_finish_required_ra": null,
+              "tolerance_class": "standard",
+              "input_sources": [
+                {
+                  "parameter_name": "final_width",
+                  "value": "14.0 mm",
+                  "source": "feature_graph",
+                  "source_feature_id": "F001",
+                  "confidence": 0.94
+                },
+                {
+                  "parameter_name": "lapping_allowance",
+                  "value": "0.05 mm",
+                  "source": "agent_estimate",
+                  "source_feature_id": "F001",
+                  "confidence": 0.62
+                },
+                {
+                  "parameter_name": "datum_face",
+                  "value": "F004 datum A",
+                  "source": "feature_graph",
+                  "source_feature_id": "F004",
+                  "confidence": 0.95
+                }
+              ]
+            },
+            "tool": {
+              "tool_type": "double-disc lapping plates",
+              "tool_diameter_mm": null,
+              "tool_description": "Face lapping plates/abrasive slurry for hardened steel",
+              "insert_grade": null,
+              "flute_count": null,
+              "notes": "Exact stock removal controlled by inspection."
+            },
+            "notes": "If width tolerance is later clarified as loose, this step may be replaced by face grinding or omitted; retained here to protect datum/runout quality after heat treat.",
+            "confidence": 0.74
+          }
+        ],
+        "setup_time_min": 0.0,
+        "in_house": true,
+        "outside_process": false,
+        "outside_reason": null,
+        "linked_feature_ids": [
+          "F001",
+          "F004",
+          "F005"
+        ],
+        "inspection_at_setup": "Check final width and face parallelism/flatness before bore honing and gear grinding.",
+        "setup_reason": "Datum faces must be clean and stable for final bore/gear inspection and finishing references.",
+        "assumptions": [
+          "A003"
+        ],
+        "confidence": 0.76
+      },
+      {
+        "setup_id": "S010",
+        "sequence": 10,
+        "setup_name": "Post-heat-treatment ID grinding",
+        "machine_family": "id_grinding",
+        "machine_reason": "The case-hardened Ø9 bore requires a hard finishing process; ID grinding is appropriate to correct heat-treat distortion and prepare for final H7 honing.",
+        "workholding": {
+          "method": "locate on lapped faces and OD/tooth-safe support",
+          "grip_description": "Hold gear square to lapped datum face and grind bore coaxially; protect finished gear teeth.",
+          "special_fixture_required": true,
+          "fixture_notes": "Use small-bore ID grinding fixture for Ø9 through bore."
+        },
+        "datum_references": [
+          "A",
+          "F004",
+          "F005"
+        ],
+        "stock_state_before": "Case-hardened gear with lapped faces and undersize bore.",
+        "stock_state_after": "Bore ground close to final size with small honing allowance.",
+        "access_directions": [
+          "axial"
+        ],
+        "sub_operations": [
+          {
+            "sub_op_id": "S010-01",
+            "sequence": 1,
+            "operation_type": "grind",
+            "operation_name": "ID grind Ø9 bore from Ø8.90 to approx. Ø8.98 through 14 mm",
+            "target_feature_ids": [
+              "F003"
+            ],
+            "reason": "Remove heat-treat distortion and leave minimal stock for bore honing to final Ø9 H7 and fine finish.",
+            "formula_hint": "boring",
+            "formula_inputs": {
+              "process_type": "grinding",
+              "start_diameter_mm": 8.9,
+              "finish_diameter_mm": 8.98,
+              "cut_length_mm": 14.0,
+              "depth_of_cut_mm": 0.04,
+              "number_of_passes": 2,
+              "hole_diameter_mm": 8.98,
+              "hole_depth_mm": 14.0,
+              "hole_count": 1,
+              "thread_pitch_mm": null,
+              "thread_depth_mm": null,
+              "profile_length_mm": null,
+              "pocket_area_mm2": null,
+              "milling_width_mm": null,
+              "milling_length_mm": null,
+              "axial_depth_mm": null,
+              "step_over_mm": null,
+              "material_machinability": "hardened",
+              "surface_finish_required_ra": null,
+              "tolerance_class": "tight",
+              "input_sources": [
+                {
+                  "parameter_name": "pre_grind_bore",
+                  "value": "8.90 mm provisional",
+                  "source": "agent_estimate",
+                  "source_feature_id": "F003",
+                  "confidence": 0.68
+                },
+                {
+                  "parameter_name": "pre_hone_bore",
+                  "value": "8.98 mm provisional",
+                  "source": "agent_estimate",
+                  "source_feature_id": "F003",
+                  "confidence": 0.65
+                },
+                {
+                  "parameter_name": "final_bore",
+                  "value": "9.0 H7",
+                  "source": "feature_graph",
+                  "source_feature_id": "F003",
+                  "confidence": 0.95
+                },
+                {
+                  "parameter_name": "bore_depth",
+                  "value": "14.0 mm",
+                  "source": "feature_graph",
+                  "source_feature_id": "F003",
+                  "confidence": 0.95
+                }
+              ],
+              "grinding_diameter_mm": 9.0,
+              "grinding_length_mm": 14.0,
+              "grinding_stock_radial_mm": 0.05
+            },
+            "tool": {
+              "tool_type": "ID grinding wheel/quill",
+              "tool_diameter_mm": 6.0,
+              "tool_description": "Small ID grinding wheel suitable for Ø9 hardened steel bore",
+              "insert_grade": null,
+              "flute_count": null,
+              "notes": "Wheel/quill size is a process selection."
+            },
+            "notes": "Final size is achieved by honing, not grinding alone.",
+            "confidence": 0.8
+          }
+        ],
+        "setup_time_min": 0.0,
+        "in_house": true,
+        "outside_process": false,
+        "outside_reason": null,
+        "linked_feature_ids": [
+          "F003"
+        ],
+        "inspection_at_setup": "Gauge bore after grinding before honing.",
+        "setup_reason": "Corrects hardened bore geometry before final H7 honing.",
+        "assumptions": [
+          "A003"
+        ],
+        "confidence": 0.82
+      },
+      {
+        "setup_id": "S011",
+        "sequence": 11,
+        "setup_name": "Final bore honing to Ø9 H7",
+        "machine_family": "bore_honing",
+        "machine_reason": "Bore honing is the most capable in-house process for final Ø9 H7 size and fine bore texture after hardening.",
+        "workholding": {
+          "method": "honing fixture on lapped faces",
+          "grip_description": "Support gear squarely and hone through the Ø9 bore with controlled expansion stone/tool.",
+          "special_fixture_required": true,
+          "fixture_notes": "Use bore-honing mandrel appropriate for Ø9 mm bore."
+        },
+        "datum_references": [
+          "A",
+          "F004",
+          "F005"
+        ],
+        "stock_state_before": "Hardened gear with ID ground bore approximately Ø8.98.",
+        "stock_state_after": "Final Ø9 H7 through bore with assumed fine Rz 2.5 bore finish.",
+        "access_directions": [
+          "axial"
+        ],
+        "sub_operations": [
+          {
+            "sub_op_id": "S011-01",
+            "sequence": 1,
+            "operation_type": "hone",
+            "operation_name": "Hone central through bore to Ø9 H7 over 14 mm depth",
+            "target_feature_ids": [
+              "F003"
+            ],
+            "reason": "Achieves final H7 bore size and the assumed local fine bore finish after heat treatment.",
+            "formula_hint": "fixed_run_time",
+            "formula_inputs": {
+              "process_type": "honing",
+              "start_diameter_mm": 8.98,
+              "finish_diameter_mm": 9.0,
+              "cut_length_mm": 14.0,
+              "depth_of_cut_mm": 0.01,
+              "number_of_passes": 1,
+              "hole_diameter_mm": 9.0,
+              "hole_depth_mm": 14.0,
+              "hole_count": 1,
+              "thread_pitch_mm": null,
+              "thread_depth_mm": null,
+              "profile_length_mm": null,
+              "pocket_area_mm2": null,
+              "milling_width_mm": null,
+              "milling_length_mm": null,
+              "axial_depth_mm": null,
+              "step_over_mm": null,
+              "material_machinability": "hardened",
+              "surface_finish_required_ra": null,
+              "tolerance_class": "tight",
+              "input_sources": [
+                {
+                  "parameter_name": "final_bore_diameter",
+                  "value": "9.0 mm H7",
+                  "source": "feature_graph",
+                  "source_feature_id": "F003",
+                  "confidence": 0.95
+                },
+                {
+                  "parameter_name": "bore_depth",
+                  "value": "14.0 mm THRU",
+                  "source": "feature_graph",
+                  "source_feature_id": "F003",
+                  "confidence": 0.95
+                },
+                {
+                  "parameter_name": "assumed_fine_finish",
+                  "value": "Rz 2.5 on bore",
+                  "source": "feature_graph",
+                  "source_feature_id": "F003",
+                  "confidence": 0.65
+                }
+              ],
+              "bore_start_diameter_mm": 0.0,
+              "bore_finish_diameter_mm": 9.0,
+              "honing_diameter_mm": 9.0,
+              "honing_length_mm": 14.0,
+              "honing_stock_on_diameter_mm": 0.03
+            },
+            "tool": {
+              "tool_type": "bore honing mandrel",
+              "tool_diameter_mm": 9.0,
+              "tool_description": "Expandable honing mandrel/stones for Ø9 hardened steel bore",
+              "insert_grade": null,
+              "flute_count": null,
+              "notes": "Final expansion and abrasive grade set by honing department."
+            },
+            "notes": "Surface finish callout location is a clarification item.",
+            "confidence": 0.82
+          }
+        ],
+        "setup_time_min": 0.0,
+        "in_house": true,
+        "outside_process": false,
+        "outside_reason": null,
+        "linked_feature_ids": [
+          "F003"
+        ],
+        "inspection_at_setup": "Air gauge or bore gauge check Ø9 H7 before gear grinding.",
+        "setup_reason": "Final bore becomes the precise locating feature for final gear hard finishing and inspection.",
+        "assumptions": [
+          "A003"
+        ],
+        "confidence": 0.84
+      },
+      {
+        "setup_id": "S012",
+        "sequence": 12,
+        "setup_name": "Hard gear grinding",
+        "machine_family": "gear_grinding",
+        "machine_reason": "After case hardening, gear grinding is the correct in-house process to correct distortion and achieve DIN gear quality, runout, and tight gear composite/gauge requirements.",
+        "workholding": {
+          "method": "finished bore arbor with datum A face stop",
+          "grip_description": "Mount gear on finished Ø9 H7 bore arbor and seat datum face A against a precision stop to maintain runout relationship.",
+          "special_fixture_required": true,
+          "fixture_notes": "Use dedicated precision arbor for Ø9 H7 bore and gear grinding."
+        },
+        "datum_references": [
+          "A",
+          "F003",
+          "F004"
+        ],
+        "stock_state_before": "Case-hardened gear with lapped faces and final honed bore; teeth shaved but distorted by heat treatment.",
+        "stock_state_after": "Hard ground gear flanks/root geometry to final gear accuracy, ready for teeth honing.",
+        "access_directions": [
+          "radial"
+        ],
+        "sub_operations": [
+          {
+            "sub_op_id": "S012-01",
+            "sequence": 1,
+            "operation_type": "grind",
+            "operation_name": "Gear grind helical tooth flanks to DIN 58405 / 8d requirements",
+            "target_feature_ids": [
+              "F002"
+            ],
+            "reason": "Correct heat-treat distortion and achieve specified gear quality, runout to datum A, gauge over teeth, and composite error limits.",
+            "formula_hint": "fixed_run_time",
+            "formula_inputs": {
+              "process_type": "gear",
+              "start_diameter_mm": 39.79,
+              "finish_diameter_mm": 39.79,
+              "cut_length_mm": 14.0,
+              "depth_of_cut_mm": null,
+              "number_of_passes": 2,
+              "hole_diameter_mm": 9.0,
+              "hole_depth_mm": 14.0,
+              "hole_count": 1,
+              "thread_pitch_mm": null,
+              "thread_depth_mm": null,
+              "profile_length_mm": 14.0,
+              "pocket_area_mm2": null,
+              "milling_width_mm": null,
+              "milling_length_mm": null,
+              "axial_depth_mm": 14.0,
+              "step_over_mm": null,
+              "material_machinability": "hardened",
+              "surface_finish_required_ra": null,
+              "tolerance_class": "tight",
+              "input_sources": [
+                {
+                  "parameter_name": "gear_quality_grade",
+                  "value": "DIN 58405 / 8d",
+                  "source": "feature_graph",
+                  "source_feature_id": "F002",
+                  "confidence": 0.9
+                },
+                {
+                  "parameter_name": "runout_to_A",
+                  "value": "0.035 mm",
+                  "source": "feature_graph",
+                  "source_feature_id": "F002",
+                  "confidence": 0.93
+                },
+                {
+                  "parameter_name": "gauge_over_teeth",
+                  "value": "10.119 +0/-0.028 mm",
+                  "source": "feature_graph",
+                  "source_feature_id": "F002",
+                  "confidence": 0.88
+                },
+                {
+                  "parameter_name": "two_flank_working_error",
+                  "value": "0.012 mm",
+                  "source": "feature_graph",
+                  "source_feature_id": "F002",
+                  "confidence": 0.85
+                },
+                {
+                  "parameter_name": "radial_composite_error",
+                  "value": "0.032 mm",
+                  "source": "feature_graph",
+                  "source_feature_id": "F002",
+                  "confidence": 0.85
+                }
+              ],
+              "normal_module_mm": 1.0,
+              "number_of_teeth": 39,
+              "pressure_angle_deg": 20.0,
+              "helix_angle_deg": 15.0,
+              "face_width_mm": 14.0,
+              "external_diameter_mm": 39.79,
+              "root_diameter_mm": 35.487,
+              "base_diameter_mm": 37.783,
+              "whole_depth_mm": 2.1515,
+              "gear_quality_class": 8,
+              "gear_quality_standard": "DIN",
+              "stock_per_flank_mm": 0.12,
+              "dressing_cycle_time_sec": 540.0,
+              "dressing_interval_parts": 25
+            },
+            "tool": {
+              "tool_type": "gear grinding wheel",
+              "tool_diameter_mm": null,
+              "tool_description": "Dressed gear grinding wheel/profile for mn=1, z39, β=15° LH gear",
+              "insert_grade": null,
+              "flute_count": null,
+              "notes": "Grinding program depends on final confirmed tooth rounding/profile data."
+            },
+            "notes": "Critical operation for final gear accuracy.",
+            "confidence": 0.78
+          }
+        ],
+        "setup_time_min": 0.0,
+        "in_house": true,
+        "outside_process": false,
+        "outside_reason": null,
+        "linked_feature_ids": [
+          "F002"
+        ],
+        "inspection_at_setup": "Check first-off gear chart and runout after grinding.",
+        "setup_reason": "Hard finishing of gear teeth must occur after heat treatment and after bore/datum references are finished.",
+        "assumptions": [
+          "A005"
+        ],
+        "confidence": 0.8
+      },
+      {
+        "setup_id": "S013",
+        "sequence": 13,
+        "setup_name": "Final teeth honing / superfinish",
+        "machine_family": "teeth_honing",
+        "machine_reason": "Teeth honing is available in-house and is appropriate to improve hardened gear tooth surface finish and running behavior after grinding.",
+        "workholding": {
+          "method": "finished bore arbor",
+          "grip_description": "Locate on Ø9 H7 bore and datum face A, matching the gear grinding datum strategy.",
+          "special_fixture_required": true,
+          "fixture_notes": "Use tooth-safe finishing fixture and honing tool matched to gear geometry."
+        },
+        "datum_references": [
+          "A",
+          "F003",
+          "F004"
+        ],
+        "stock_state_before": "Hard ground gear teeth with final bore and faces.",
+        "stock_state_after": "Final honed gear teeth meeting local Rz 6 assumption and gear finishing requirements.",
+        "access_directions": [
+          "radial"
+        ],
+        "sub_operations": [
+          {
+            "sub_op_id": "S013-01",
+            "sequence": 1,
+            "operation_type": "hone",
+            "operation_name": "Teeth hone final hardened gear flanks",
+            "target_feature_ids": [
+              "F002"
+            ],
+            "reason": "Improves final tooth surface texture and contact quality after grinding; supports the local Rz 6 tooth/external surface requirement.",
+            "formula_hint": "fixed_run_time",
+            "formula_inputs": {
+              "process_type": "gear",
+              "start_diameter_mm": 39.79,
+              "finish_diameter_mm": 39.79,
+              "cut_length_mm": 14.0,
+              "depth_of_cut_mm": null,
+              "number_of_passes": 1,
+              "hole_diameter_mm": 9.0,
+              "hole_depth_mm": 14.0,
+              "hole_count": 1,
+              "thread_pitch_mm": null,
+              "thread_depth_mm": null,
+              "profile_length_mm": 14.0,
+              "pocket_area_mm2": null,
+              "milling_width_mm": null,
+              "milling_length_mm": null,
+              "axial_depth_mm": 14.0,
+              "step_over_mm": null,
+              "material_machinability": "hardened",
+              "surface_finish_required_ra": null,
+              "tolerance_class": "tight",
+              "input_sources": [
+                {
+                  "parameter_name": "tooth_surface_finish",
+                  "value": "Rz 6 local callout",
+                  "source": "feature_graph",
+                  "source_feature_id": "F002",
+                  "confidence": 0.75
+                },
+                {
+                  "parameter_name": "gear_face_width",
+                  "value": "14.0 mm",
+                  "source": "feature_graph",
+                  "source_feature_id": "F002",
+                  "confidence": 0.94
+                }
+              ],
+              "normal_module_mm": 1.0,
+              "number_of_teeth": 39,
+              "pressure_angle_deg": 20.0,
+              "helix_angle_deg": 15.0,
+              "face_width_mm": 14.0,
+              "external_diameter_mm": 39.79,
+              "root_diameter_mm": 35.487,
+              "base_diameter_mm": 37.783,
+              "whole_depth_mm": 2.1515,
+              "gear_quality_class": 8,
+              "gear_quality_standard": "DIN",
+              "stock_per_flank_mm": 0.005
+            },
+            "tool": {
+              "tool_type": "teeth honing tool",
+              "tool_diameter_mm": null,
+              "tool_description": "Honing tool matched to z39, mn=1 helical gear",
+              "insert_grade": null,
+              "flute_count": null,
+              "notes": "Abrasive grade selected by gear finishing department."
+            },
+            "notes": "Rz is not converted to Ra; inspection should measure the required Rz parameter.",
+            "confidence": 0.78
+          }
+        ],
+        "setup_time_min": 0.0,
+        "in_house": true,
+        "outside_process": false,
+        "outside_reason": null,
+        "linked_feature_ids": [
+          "F002"
+        ],
+        "inspection_at_setup": "Visual and surface finish spot check after honing.",
+        "setup_reason": "Final tooth finishing follows gear grinding.",
+        "assumptions": [],
+        "confidence": 0.8
+      },
+      {
+        "setup_id": "S014",
+        "sequence": 14,
+        "setup_name": "Final deburr, edge break, clean, and mark",
+        "machine_family": "finish_bench",
+        "machine_reason": "Manual finishing is required after all machining and hard finishing so burrs do not affect final inspection; the shop has in-house finish bench capability.",
+        "workholding": {
+          "method": "manual bench support / trays",
+          "grip_description": "Support on soft pads or trays; avoid damaging finished teeth and honed bore.",
+          "special_fixture_required": false,
+          "fixture_notes": "Use non-marring handling for hardened finished gears."
+        },
+        "datum_references": [],
+        "stock_state_before": "Fully hard-finished gear with possible fine grinding/honing burrs at edges.",
+        "stock_state_after": "Deburred, edge-broken, cleaned, and marked part ready for final inspection.",
+        "access_directions": [
+          "axial",
+          "radial"
+        ],
+        "sub_operations": [
+          {
+            "sub_op_id": "S014-01",
+            "sequence": 1,
+            "operation_type": "deburr_edge",
+            "operation_name": "Final deburr gear tooth edges, bore edges, and axial edges",
+            "target_feature_ids": [
+              "F006",
+              "F007",
+              "F008",
+              "F002",
+              "F003"
+            ],
+            "reason": "Final deburring must occur before inspection so burrs do not affect measurements or create rejectable sharp edges.",
+            "formula_hint": "chamfering",
+            "formula_inputs": {
+              "process_type": "fixed",
+              "start_diameter_mm": 39.79,
+              "finish_diameter_mm": 39.79,
+              "cut_length_mm": 14.0,
+              "depth_of_cut_mm": 0.3,
+              "number_of_passes": 1,
+              "hole_diameter_mm": 9.0,
+              "hole_depth_mm": 14.0,
+              "hole_count": 1,
+              "thread_pitch_mm": null,
+              "thread_depth_mm": null,
+              "profile_length_mm": 125.0,
+              "pocket_area_mm2": null,
+              "milling_width_mm": 0.3,
+              "milling_length_mm": null,
+              "axial_depth_mm": 0.3,
+              "step_over_mm": null,
+              "material_machinability": "hardened",
+              "surface_finish_required_ra": null,
+              "tolerance_class": "loose",
+              "input_sources": [
+                {
+                  "parameter_name": "general_edge_break",
+                  "value": "0.3 x 45 / R0.4 general edge note",
+                  "source": "feature_graph",
+                  "source_feature_id": "F008",
+                  "confidence": 0.85
+                },
+                {
+                  "parameter_name": "bore_diameter",
+                  "value": "9.0 mm",
+                  "source": "feature_graph",
+                  "source_feature_id": "F003",
+                  "confidence": 0.95
+                }
+              ]
+            },
+            "tool": {
+              "tool_type": "fine manual deburr tools",
+              "tool_diameter_mm": null,
+              "tool_description": "Fine abrasive brush, nylon brush, ceramic stone",
+              "insert_grade": null,
+              "flute_count": null,
+              "notes": "Do not damage gear profile or enlarge bore chamfers."
+            },
+            "notes": null,
+            "confidence": 0.82
+          },
+          {
+            "sub_op_id": "S014-02",
+            "sequence": 2,
+            "operation_type": "edge_break",
+            "operation_name": "Verify/finish unspecified edge break per general note",
+            "target_feature_ids": [
+              "F008"
+            ],
+            "reason": "Ensures all unspecified sharp edges comply with the general deburr/edge-break condition after final hard finishing.",
+            "formula_hint": "chamfering",
+            "formula_inputs": {
+              "process_type": "fixed",
+              "start_diameter_mm": 39.79,
+              "finish_diameter_mm": 39.79,
+              "cut_length_mm": 14.0,
+              "depth_of_cut_mm": 0.4,
+              "number_of_passes": 1,
+              "hole_diameter_mm": 9.0,
+              "hole_depth_mm": 14.0,
+              "hole_count": 1,
+              "thread_pitch_mm": null,
+              "thread_depth_mm": null,
+              "profile_length_mm": 125.0,
+              "pocket_area_mm2": null,
+              "milling_width_mm": 0.3,
+              "milling_length_mm": null,
+              "axial_depth_mm": 0.4,
+              "step_over_mm": null,
+              "material_machinability": "hardened",
+              "surface_finish_required_ra": null,
+              "tolerance_class": "loose",
+              "input_sources": [
+                {
+                  "parameter_name": "general_chamfer",
+                  "value": "0.3 mm",
+                  "source": "feature_graph",
+                  "source_feature_id": "F008",
+                  "confidence": 0.85
+                },
+                {
+                  "parameter_name": "general_radius",
+                  "value": "R0.4",
+                  "source": "feature_graph",
+                  "source_feature_id": "F008",
+                  "confidence": 0.85
+                }
+              ]
+            },
+            "tool": {
+              "tool_type": "edge-break brush/stone",
+              "tool_diameter_mm": null,
+              "tool_description": "Fine abrasive/nylon brush and ceramic stone",
+              "insert_grade": null,
+              "flute_count": null,
+              "notes": null
+            },
+            "notes": null,
+            "confidence": 0.82
+          },
+          {
+            "sub_op_id": "S014-03",
+            "sequence": 3,
+            "operation_type": "cleaning",
+            "operation_name": "Final clean after deburr",
+            "target_feature_ids": [
+              "F001",
+              "F002",
+              "F003"
+            ],
+            "reason": "Remove abrasive debris and loose burrs before marking and final inspection.",
+            "formula_hint": "fixed_run_time",
+            "formula_inputs": {
+              "process_type": "fixed",
+              "start_diameter_mm": 39.79,
+              "finish_diameter_mm": 39.79,
+              "cut_length_mm": 14.0,
+              "depth_of_cut_mm": null,
+              "number_of_passes": 1,
+              "hole_diameter_mm": 9.0,
+              "hole_depth_mm": 14.0,
+              "hole_count": 1,
+              "thread_pitch_mm": null,
+              "thread_depth_mm": null,
+              "profile_length_mm": 14.0,
+              "pocket_area_mm2": null,
+              "milling_width_mm": null,
+              "milling_length_mm": null,
+              "axial_depth_mm": null,
+              "step_over_mm": null,
+              "material_machinability": "hardened",
+              "surface_finish_required_ra": null,
+              "tolerance_class": "loose",
+              "input_sources": [
+                {
+                  "parameter_name": "part_size",
+                  "value": "Ø39.79 x 14 mm",
+                  "source": "feature_graph",
+                  "source_feature_id": "F001",
+                  "confidence": 0.92
+                }
+              ]
+            },
+            "tool": {
+              "tool_type": "cleaning station",
+              "tool_diameter_mm": null,
+              "tool_description": "Final wash/dry equipment",
+              "insert_grade": null,
+              "flute_count": null,
+              "notes": "Ensure bore and tooth spaces are clean."
+            },
+            "notes": null,
+            "confidence": 0.86
+          },
+          {
+            "sub_op_id": "S014-04",
+            "sequence": 4,
+            "operation_type": "marking",
+            "operation_name": "Mark/identify batch per shop quality practice",
+            "target_feature_ids": [
+              "F001"
+            ],
+            "reason": "Part identification should occur after cleaning and before final inspection/packaging without affecting functional surfaces.",
+            "formula_hint": "fixed_run_time",
+            "formula_inputs": {
+              "process_type": "fixed",
+              "start_diameter_mm": 39.79,
+              "finish_diameter_mm": 39.79,
+              "cut_length_mm": 14.0,
+              "depth_of_cut_mm": null,
+              "number_of_passes": 1,
+              "hole_diameter_mm": 9.0,
+              "hole_depth_mm": 14.0,
+              "hole_count": 1,
+              "thread_pitch_mm": null,
+              "thread_depth_mm": null,
+              "profile_length_mm": null,
+              "pocket_area_mm2": null,
+              "milling_width_mm": null,
+              "milling_length_mm": null,
+              "axial_depth_mm": null,
+              "step_over_mm": null,
+              "material_machinability": "hardened",
+              "surface_finish_required_ra": null,
+              "tolerance_class": "loose",
+              "input_sources": [
+                {
+                  "parameter_name": "part_envelope",
+                  "value": "Ø39.79 x 14 mm",
+                  "source": "feature_graph",
+                  "source_feature_id": "F001",
+                  "confidence": 0.92
+                }
+              ]
+            },
+            "tool": {
+              "tool_type": "non-functional-area marking method",
+              "tool_diameter_mm": null,
+              "tool_description": "Batch tag, laser/ink mark, or packaging label as allowed by quality plan",
+              "insert_grade": null,
+              "flute_count": null,
+              "notes": "Do not mark gear teeth or H7 bore unless explicitly allowed."
+            },
+            "notes": null,
+            "confidence": 0.72
+          }
+        ],
+        "setup_time_min": 0.0,
+        "in_house": true,
+        "outside_process": false,
+        "outside_reason": null,
+        "linked_feature_ids": [
+          "F001",
+          "F002",
+          "F003",
+          "F006",
+          "F007",
+          "F008"
+        ],
+        "inspection_at_setup": "Visual burr and cleanliness check before final inspection.",
+        "setup_reason": "All machining and hard finishing must be complete before final bench finishing and inspection.",
+        "assumptions": [],
+        "confidence": 0.84
+      },
+      {
+        "setup_id": "S015",
+        "sequence": 15,
+        "setup_name": "Final inspection and gear measurement",
+        "machine_family": "inspection",
+        "machine_reason": "The shop has in-house dimensional inspection, gear measurement, surface finish measurement, and hardness testing required for the H7 bore, gear quality, runout, surface texture, and case-hardness requirements.",
+        "workholding": {
+          "method": "quality lab gear inspection fixtures",
+          "grip_description": "Use Ø9 bore arbor, datum face reference, gear measuring center, bore gauge/air gauge, surface tester, and hardness/case-depth checks as required.",
+          "special_fixture_required": true,
+          "fixture_notes": "Gear inspection arbor must match final Ø9 H7 bore and datum A reference."
+        },
+        "datum_references": [
+          "A",
+          "F003",
+          "F004"
+        ],
+        "stock_state_before": "Finished, deburred, cleaned, and marked gear.",
+        "stock_state_after": "Accepted finished gear ready for packaging/shipment.",
+        "access_directions": [
+          "axial",
+          "radial"
+        ],
+        "sub_operations": [
+          {
+            "sub_op_id": "S015-01",
+            "sequence": 1,
+            "operation_type": "inspection",
+            "operation_name": "Final inspect Ø9 H7 bore, gear quality, runout to datum A, width, chamfers, surface finish, and hardness",
+            "target_feature_ids": [
+              "F001",
+              "F002",
+              "F003",
+              "F004",
+              "F005",
+              "F006",
+              "F007",
+              "F008"
+            ],
+            "reason": "Final conformance check after deburr/cleaning, including all critical dimensional, gear, datum, finish, deburr, and heat-treatment requirements.",
+            "formula_hint": "fixed_run_time",
+            "formula_inputs": {
+              "process_type": "fixed",
+              "start_diameter_mm": 39.79,
+              "finish_diameter_mm": 39.79,
+              "cut_length_mm": 14.0,
+              "depth_of_cut_mm": null,
+              "number_of_passes": 1,
+              "hole_diameter_mm": 9.0,
+              "hole_depth_mm": 14.0,
+              "hole_count": 1,
+              "thread_pitch_mm": null,
+              "thread_depth_mm": null,
+              "profile_length_mm": 14.0,
+              "pocket_area_mm2": null,
+              "milling_width_mm": 0.3,
+              "milling_length_mm": 39.79,
+              "axial_depth_mm": 0.3,
+              "step_over_mm": null,
+              "material_machinability": "hardened",
+              "surface_finish_required_ra": null,
+              "tolerance_class": "tight",
+              "input_sources": [
+                {
+                  "parameter_name": "OD",
+                  "value": "39.79 +0/-0.05 mm",
+                  "source": "feature_graph",
+                  "source_feature_id": "F002",
+                  "confidence": 0.88
+                },
+                {
+                  "parameter_name": "bore",
+                  "value": "Ø9 H7",
+                  "source": "feature_graph",
+                  "source_feature_id": "F003",
+                  "confidence": 0.95
+                },
+                {
+                  "parameter_name": "width",
+                  "value": "14.0 mm",
+                  "source": "feature_graph",
+                  "source_feature_id": "F001",
+                  "confidence": 0.94
+                },
+                {
+                  "parameter_name": "runout",
+                  "value": "0.035 mm to A",
+                  "source": "feature_graph",
+                  "source_feature_id": "F002",
+                  "confidence": 0.93
+                },
+                {
+                  "parameter_name": "heat_treat",
+                  "value": "630+100 HV10, Eht 0.3+0.2 mm",
+                  "source": "feature_graph",
+                  "source_feature_id": "F001",
+                  "confidence": 0.94
+                }
+              ]
+            },
+            "tool": {
+              "tool_type": "gear and dimensional inspection equipment",
+              "tool_diameter_mm": null,
+              "tool_description": "Gear measuring center, bore gauge/air gauge, micrometers, runout fixture, surface finish tester, hardness/case-depth testing",
+              "insert_grade": null,
+              "flute_count": null,
+              "notes": "Measure Rz values as Rz, not converted Ra."
+            },
+            "notes": "Final inspection is intentionally after all deburr, cleaning, and marking steps.",
+            "confidence": 0.88
+          }
+        ],
+        "setup_time_min": 0.0,
+        "in_house": true,
+        "outside_process": false,
+        "outside_reason": null,
+        "linked_feature_ids": [
+          "F001",
+          "F002",
+          "F003",
+          "F004",
+          "F005",
+          "F006",
+          "F007",
+          "F008"
+        ],
+        "inspection_at_setup": "Final acceptance record / gear inspection chart.",
+        "setup_reason": "Final quality gate after all processing.",
+        "assumptions": [
+          "A003",
+          "A004",
+          "A005"
+        ],
+        "confidence": 0.9
+      }
+    ],
+    "routing_notes": [
+      "All selected machine_family values are exact keys from the supplied shop machine_inventory.",
+      "No outside processes are required; heat treatment, gear cutting, grinding, honing, lapping, finishing, and inspection are all available in-house.",
+      "Setup time fields are set to 0.0 because setup-time estimation is intentionally not calculated at this planning stage.",
+      "Round-bar stock is the provisional route for a 700-piece batch. If this becomes repeat annual production, re-evaluate a near-net forged blank using actual die cost and per-piece savings.",
+      "Final inspection is placed after deburr and cleaning, per manufacturing sequence requirements."
+    ]
+  },
+  "clarifications": [
+    {
+      "clarification_id": "C001",
+      "question": "The gear data table row for tooth tip rounding appears to show a question mark for 'Kopfrundung / tooth tip rounding'. What is the required tooth tip rounding value?",
+      "why_it_matters": "The exact tooth tip/root rounding affects hob selection, shaving/grinding tool dressing, finished tooth profile, and inspection criteria.",
+      "blocks": [
+        "F002"
+      ],
+      "suggested_default": "Use DIN 3972/II basic rack/tooling unless a specific rounding value is provided.",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C002",
+      "question": "Please confirm whether the local Rz 2.5 surface texture callout applies to the Ø9 H7 bore or to the adjacent axial datum face.",
+      "why_it_matters": "It determines whether bore honing is mandatory for finish or whether datum face lapping/superfinishing must be held to the finer texture.",
+      "blocks": [
+        "F003",
+        "F004"
+      ],
+      "suggested_default": "Apply Rz 2.5 to the Ø9 H7 bore.",
+      "priority": "medium"
+    },
+    {
+      "clarification_id": "C003",
+      "question": "Please confirm that the 0.7 and 30° callouts describe matching chamfers at both mouths of the Ø9 H7 bore.",
+      "why_it_matters": "The bore entry geometry affects lathe chamfer tools, final deburr limits, and inspection acceptance.",
+      "blocks": [
+        "F007"
+      ],
+      "suggested_default": "Treat as 2X bore entry chamfers, 0.7 mm at 30°.",
+      "priority": "medium"
+    },
+    {
+      "clarification_id": "C004",
+      "question": "Please confirm the unilateral tolerance on the outside/head diameter is Ø39.79 +0/-0.05 mm.",
+      "why_it_matters": "The OD/head diameter controls the turned gear blank and gear tooth head geometry before and after tooth generation.",
+      "blocks": [
+        "F001",
+        "F002"
+      ],
+      "suggested_default": "Ø39.79 +0/-0.05 mm.",
+      "priority": "medium"
+    },
+    {
+      "clarification_id": "C005",
+      "question": "Is the 700-piece quantity a one-time order or repeat annual production where forging tooling can be amortized?",
+      "why_it_matters": "For repeat production, an in-house near-net forged blank may be lower total cost than machining from Ø45 round bar; for a one-time batch, round bar is lower risk.",
+      "blocks": [
+        "stock_selection",
+        "F001",
+        "F002"
+      ],
+      "suggested_default": "Use Ø45 round bar for this provisional 700-piece route.",
+      "priority": "low"
+    }
+  ],
+  "assumptions": [
+    {
+      "assumption_id": "A001",
+      "text": "Quantity 700 is treated as a medium-volume batch; dedicated soft jaws, mandrels, and gear arbors are justified, but a new forging die is not assumed without amortization data.",
+      "applies_to": [
+        "stock",
+        "S002",
+        "S003",
+        "S005",
+        "S006",
+        "S012"
+      ],
+      "impact": "medium",
+      "confidence": 0.72
+    },
+    {
+      "assumption_id": "A002",
+      "text": "16MnCrS5 round bar is supplied in a machinable pre-heat-treatment condition suitable for turning, hobbing, shaving, and deburring before case hardening.",
+      "applies_to": [
+        "stock",
+        "S001",
+        "S002",
+        "S003",
+        "S005",
+        "S006"
+      ],
+      "impact": "medium",
+      "confidence": 0.82
+    },
+    {
+      "assumption_id": "A003",
+      "text": "The local Rz 2.5 finish is assumed to apply to the Ø9 H7 bore, so the route includes post-heat-treatment ID grinding and bore honing.",
+      "applies_to": [
+        "F003",
+        "S010",
+        "S011"
+      ],
+      "impact": "medium",
+      "confidence": 0.65
+    },
+    {
+      "assumption_id": "A004",
+      "text": "The bore entry geometry is treated as 2X 0.7 mm chamfers at 30° at both axial mouths of the Ø9 bore.",
+      "applies_to": [
+        "F007",
+        "S002",
+        "S003",
+        "S014"
+      ],
+      "impact": "low",
+      "confidence": 0.72
+    },
+    {
+      "assumption_id": "A005",
+      "text": "Until clarified, the tooth tip/root rounding is handled using the DIN 3972/II basic rack/toothing data in the feature graph; final hob and grinding wheel dressing must be confirmed before production release.",
+      "applies_to": [
+        "F002",
+        "S005",
+        "S006",
+        "S012"
+      ],
+      "impact": "high",
+      "confidence": 0.62
+    }
+  ],
+  "confidence": {
+    "overall": 0.79,
+    "feasibility": 0.9,
+    "stock_selection": 0.73,
+    "route_planning": 0.8,
+    "formula_inputs": 0.76
+  },
+  "analysis_trace": [
+    {
+      "step": "Step 1: Reconstruct the Part",
+      "summary": "The part is a small Ø39.79 x 14 mm cylindrical external left-hand helical gear with z=39, mn=1, β=15°, central Ø9 H7 through bore, datum face A on +Z, 0.035 mm runout of the gear/OD to datum A, case-hardened 16MnCrS5 material, OD chamfers, bore entry chamfers, and general deburr requirement.",
+      "issues": [
+        "Tooth tip rounding is unclear.",
+        "Rz 2.5 callout target is ambiguous.",
+        "Bore chamfer interpretation needs confirmation."
+      ]
+    },
+    {
+      "step": "Step 2: Classify the Part",
+      "summary": "The geometry is fundamentally cylindrical/rotational, but the manufacturing route is hybrid because it requires turning, gear cutting/finishing, heat treatment, grinding/honing/lapping, and inspection rather than only lathe work.",
+      "issues": [
+        "No prismatic milling features are present."
+      ]
+    },
+    {
+      "step": "Step 3: Feasibility Gate",
+      "summary": "Material, machine availability, tolerances, and machine envelopes all pass. The shop has alloy-steel machining, CNC turning, gear hobbing/shaving/grinding/honing, sealed-quench heat treatment, ID grinding, bore honing, lapping, finish bench, and inspection in-house. Feasibility is marked with risks due heat-treatment distortion and unresolved gear/surface details.",
+      "issues": [
+        "Post-heat-treatment finishing is required to protect Ø9 H7 bore and gear accuracy.",
+        "Unresolved gear tooth tip rounding affects final gear-tooling details."
+      ]
+    },
+    {
+      "step": "Step 4: Stock Selection",
+      "summary": "Round bar Ø45 mm x 20 mm sawed slugs are selected provisionally because the finished part is a small cylindrical gear. The route uses batch workholding and dedicated arbors for 700 pieces. Forging was considered but not selected without repeat-volume/die-amortization data.",
+      "issues": [
+        "If this is repeat annual production, an in-house near-net forged blank may become more economical."
+      ]
+    },
+    {
+      "step": "Step 5: Setup Planning",
+      "summary": "Setups are sequenced as saw blanking, soft turning datum/bore/OD/chamfers, in-process inspection, gear hobbing, gear shaving, pre-HT deburr/clean, case harden/temper, post-HT face lapping, ID grinding, bore honing, gear grinding, teeth honing, final bench finishing, and final inspection.",
+      "issues": [
+        "Multiple precision datum transfers require dedicated arbors and careful inspection."
+      ]
+    },
+    {
+      "step": "Step 6: Sub-operation Decomposition",
+      "summary": "Each setup is decomposed into atomic operations with feature IDs and geometric formula inputs. Bore and gear features are intentionally rough/semi-finished before heat treatment and finished after heat treatment.",
+      "issues": [
+        "Gear-specific cycle formulas require post-processor support; geometric inputs are provided as diameter, face width/profile length, and relevant source parameters."
+      ]
+    },
+    {
+      "step": "Step 7: Cross-validation",
+      "summary": "All feature IDs F001 through F008 are covered by at least one sub-operation. The process state flows logically from raw bar to sawed blank, soft blank, gear cut blank, heat-treated part, hard-finished part, bench-finished part, and final inspection. Formula inputs include non-null numeric geometry for every sub-operation.",
+      "issues": [
+        "Some process allowance values such as pilot drill diameter, pre-hone bore size, and lapping allowance are planning estimates and are flagged through input_sources/assumptions."
+      ]
+    }
+  ]
+}
