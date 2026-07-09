@@ -444,7 +444,11 @@ export interface OperationCost {
 export interface CostSummaryData {
   bar_route_blank_cost_inr: number;
   total_machining_cost_inr: number;
-  heat_treatment_cost_inr: number;
+  heat_treatment?: {
+    total_heat_treatment_cost_inr: number;
+    [key: string]: number;
+  };
+  heat_treatment_cost_inr?: number;
   total_cost_inr: number;
   profit_and_overhead_inr: number;
   tool_cost_inr: number;

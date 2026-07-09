@@ -76,7 +76,7 @@ export function QuoteTab({ data }: { data: ReportData }) {
               </TableRow>
               <TableRow>
                 <TableCell className="font-medium">Heat Treatment</TableCell>
-                <TableCell className="font-mono text-right">{formatCurrency(summary.heat_treatment_cost_inr)}</TableCell>
+                <TableCell className="font-mono text-right">{formatCurrency(summary.heat_treatment?.total_heat_treatment_cost_inr ?? summary.heat_treatment_cost_inr ?? 0)}</TableCell>
                 <TableCell className="text-muted-foreground text-sm">In-house heat treatment</TableCell>
               </TableRow>
               <TableRow>

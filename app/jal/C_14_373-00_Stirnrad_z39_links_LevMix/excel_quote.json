@@ -8,11 +8,11 @@
     "form": "round_bar",
     "bar_diameter_mm": 42.0,
     "item_length_mm": 14.0,
-    "gross_weight_kg": 0.2209585895,
-    "net_weight_kg": 0.2209585895,
-    "net_weight_for_ht_kg": 0.1380344,
-    "scrap_weight_kg": 0.08292418948,
-    "bar_route_blank_cost_inr": 3.94633601
+    "gross_weight_kg": 0.220959,
+    "net_weight_kg": 0.220959,
+    "net_weight_for_ht_kg": 0.138034,
+    "scrap_weight_kg": 0.082924,
+    "bar_route_blank_cost_inr": 3.9463
   },
   "cycle_times": {
     "hobbing": {
@@ -23,34 +23,34 @@
       "hob_starts": 1.0,
       "cutting_speed_m_min": 120.0,
       "axial_feed_mm_rev": 1.2,
-      "hobbing_time_min": 2.098938275,
-      "cycle_time_per_piece_min": 2.598938275,
-      "hob_cost_per_piece_inr": 3.50567867
+      "hobbing_time_min": 2.098938,
+      "cycle_time_per_piece_min": 2.598938,
+      "hob_cost_per_piece_inr": 3.5057
     }
   },
   "operations_cost_breakdown": [
     {
       "operation": "Facing & centring",
       "cycle_time_sec": 123.5,
-      "cost_inr": 10.08986928,
+      "cost_inr": 10.0899,
       "hourly_rate_inr": 250
     },
     {
       "operation": "CNC Turning I & II",
       "cycle_time_sec": 210.3,
-      "cost_inr": 17.18137255,
+      "cost_inr": 17.1814,
       "hourly_rate_inr": 250
     },
     {
       "operation": "Hobbing",
       "cycle_time_sec": 532.4,
-      "cost_inr": 139.1895425,
+      "cost_inr": 139.1895,
       "hourly_rate_inr": 800
     },
     {
       "operation": "Gear Shaving",
       "cycle_time_sec": 532.4,
-      "cost_inr": 78.29411765,
+      "cost_inr": 78.2941,
       "hourly_rate_inr": 450
     },
     {
@@ -62,42 +62,54 @@
     {
       "operation": "Gear OD Grinding",
       "cycle_time_sec": 532.4,
-      "cost_inr": 52.19607843,
+      "cost_inr": 52.1961,
       "hourly_rate_inr": 300
     },
     {
       "operation": "Face Super Finishing",
       "cycle_time_sec": 59.1,
-      "cost_inr": 6.759803922,
+      "cost_inr": 6.7598,
       "hourly_rate_inr": 350
     },
     {
       "operation": "Super Finishing",
       "cycle_time_sec": 591.0,
-      "cost_inr": 57.94117647,
+      "cost_inr": 57.9412,
       "hourly_rate_inr": 300
     },
     {
       "operation": "Face Deburring",
       "cycle_time_sec": 268.2,
-      "cost_inr": 17.52941176,
+      "cost_inr": 17.5294,
       "hourly_rate_inr": 200
     }
   ],
   "cost_summary": {
-    "bar_route_blank_cost_inr": 3.94633601,
-    "total_machining_cost_inr": 388.1813725,
-    "heat_treatment_cost_inr": 0,
-    "total_cost_inr": 392.1277086,
-    "profit_and_overhead_inr": 392.1277086,
-    "tool_cost_inr": 78.42554171,
-    "rejection_cost_inr": 17.25361918,
-    "inspection_cost_inr": 15.68510834,
-    "cleaning_cost_inr": 7.842554171,
-    "scrap_recovery_inr": -1.762139027,
-    "packaging_cost_inr": 2.760688,
-    "fob_cost_inr": 2.070516,
-    "ex_works_price_per_piece_inr": 906.5313055,
-    "price_in_euro": 9.065313055
+    "bar_route_blank_cost_inr": 3.9463,
+    "total_machining_cost_inr": 388.1814,
+    "heat_treatment": {
+      "case_carburizing_rate_per_kg": 35.0,
+      "case_carburizing_cost_inr": 4.8312,
+      "shot_blasting_rate_per_kg": 2.5,
+      "shot_blasting_cost_inr": 0.3451,
+      "straightening_cost_inr": 0,
+      "total_heat_treatment_cost_inr": 5.1763
+    },
+    "total_cost_inr": 397.304,
+    "profit_and_overhead_inr": 397.304,
+    "profit_and_overhead_percent": 50.0,
+    "tool_cost_inr": 79.4608,
+    "tool_cost_percent": 10.0,
+    "rejection_cost_inr": 17.4814,
+    "rejection_percent": 2.0,
+    "inspection_cost_inr": 15.8922,
+    "inspection_percent": 2.0,
+    "cleaning_cost_inr": 7.9461,
+    "cleaning_percent": 1.0,
+    "scrap_recovery_inr": -1.7621,
+    "packaging_cost_inr": 2.7607,
+    "fob_cost_inr": 2.0705,
+    "ex_works_price_per_piece_inr": 918.4575,
+    "price_in_euro": 9.1846
   }
 }
