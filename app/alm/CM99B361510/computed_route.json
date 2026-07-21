@@ -1,0 +1,1201 @@
+{
+  "analysis_id": "route_CM99B361510_20260721T025606Z",
+  "source_deconstructed_route_path": "/Users/mirshahzadmubeen/Desktop/IN/RFQ/runs/CM99B361510/vlm/agent2/deconstructed_route.json",
+  "source_feature_graph_path": "/Users/mirshahzadmubeen/Desktop/IN/RFQ/runs/CM99B361510/vlm/agent1/feature_graph.json",
+  "shop_profile_basis": {
+    "profile_path": "/Users/mirshahzadmubeen/Desktop/IN/RFQ/config/shop_profile.yaml",
+    "profile_name": "Almity Automotive Component Manufacturing Profile",
+    "material_machinability_key": "ms___12.20,_opt:_ms___12.10;_treated_provisionally_as_machinable_cast/mild_steel_pending_material_confirmation",
+    "notes": []
+  },
+  "part_family": "hybrid",
+  "base_geometry": "complex",
+  "material": "MS - 12.20, OPT: MS - 12.10; treated provisionally as machinable cast/mild steel pending material confirmation",
+  "setups": [
+    {
+      "setup_id": "S001",
+      "sequence": 1,
+      "setup_name": "Outside foundry casting supply and stress relief",
+      "machine_family": "outside_vendor",
+      "in_house": false,
+      "outside_process": true,
+      "sub_operations": [
+        {
+          "sub_op_id": "S001-01",
+          "sequence": 1,
+          "operation_type": "outside_process_candidate",
+          "operation_name": "Procure/produce near-net cast body with bosses, web, pads, draft faces and cast radii",
+          "formula_hint": "fixed",
+          "target_feature_ids": [
+            "F001",
+            "F003",
+            "F004",
+            "F011",
+            "F012",
+            "F013",
+            "F014",
+            "F015",
+            "F016",
+            "F017",
+            "F020",
+            "F021",
+            "F022"
+          ],
+          "formula_inputs_used": {
+            "process_type": "fixed",
+            "start_diameter_mm": 35.0,
+            "finish_diameter_mm": 35.0,
+            "cut_length_mm": 234.88,
+            "profile_length_mm": 234.88,
+            "milling_width_mm": 149.94,
+            "milling_length_mm": 234.88,
+            "wall_height_mm": 55.0,
+            "external_diameter_mm": 35.0,
+            "blank_length_mm": 234.88,
+            "max_section_thickness_mm": 55.0,
+            "material_machinability": "medium",
+            "tolerance_class": "standard"
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.0,
+            "non_cutting_time_min": 0.0,
+            "total_time_min": 0.0,
+            "formula_family": "outside",
+            "cutting_parameters": {
+              "cutting_speed_m_min": null,
+              "rpm": null,
+              "rpm_capped": false,
+              "feed_per_rev_mm": null,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": null,
+              "flute_count": null,
+              "tool_diameter_mm": null,
+              "step_over_mm": null,
+              "depth_per_pass_mm": null,
+              "number_of_passes": null,
+              "reversal_factor": null
+            },
+            "calculation_notes": [
+              "Outside process \u2014 no in-house cycle time."
+            ],
+            "confidence": "low",
+            "warnings": []
+          },
+          "skipped": true,
+          "skip_reason": "Outside process"
+        },
+        {
+          "sub_op_id": "S001-02",
+          "sequence": 2,
+          "operation_type": "heat_treat",
+          "operation_name": "Stress-relieve or normalize cast blank before machining",
+          "formula_hint": "fixed",
+          "target_feature_ids": [
+            "F001"
+          ],
+          "formula_inputs_used": {
+            "process_type": "fixed",
+            "cut_length_mm": 234.88,
+            "wall_height_mm": 55.0,
+            "blank_length_mm": 234.88,
+            "max_section_thickness_mm": 55.0,
+            "heat_treat_process": "stress_relieve_or_normalize",
+            "material_machinability": "medium"
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.0,
+            "non_cutting_time_min": 0.0,
+            "total_time_min": 0.0,
+            "formula_family": "outside",
+            "cutting_parameters": {
+              "cutting_speed_m_min": null,
+              "rpm": null,
+              "rpm_capped": false,
+              "feed_per_rev_mm": null,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": null,
+              "flute_count": null,
+              "tool_diameter_mm": null,
+              "step_over_mm": null,
+              "depth_per_pass_mm": null,
+              "number_of_passes": null,
+              "reversal_factor": null
+            },
+            "calculation_notes": [
+              "Outside process \u2014 no in-house cycle time."
+            ],
+            "confidence": "low",
+            "warnings": []
+          },
+          "skipped": true,
+          "skip_reason": "Outside process"
+        }
+      ],
+      "time_summary": {
+        "setup_time_min": 0.0,
+        "handling_time_min": 0.0,
+        "total_cutting_time_min": 0.0,
+        "total_non_cutting_time_min": 0.0,
+        "total_machining_time_min": 0.0,
+        "sub_operation_count": 2,
+        "outside_process": true
+      }
+    },
+    {
+      "setup_id": "S002",
+      "sequence": 2,
+      "setup_name": "Machine primary datum A bottom mounting face",
+      "machine_family": "vmc_3axis",
+      "in_house": true,
+      "outside_process": false,
+      "sub_operations": [
+        {
+          "sub_op_id": "S002-01",
+          "sequence": 1,
+          "operation_type": "rough_face_mill",
+          "operation_name": "Rough face mill datum A below casting skin",
+          "formula_hint": "linear",
+          "target_feature_ids": [
+            "F002"
+          ],
+          "formula_inputs_used": {
+            "process_type": "linear",
+            "number_of_passes": 1,
+            "milling_width_mm": 149.94,
+            "milling_length_mm": 234.88,
+            "axial_depth_mm": 2.0,
+            "material_machinability": "medium",
+            "tolerance_class": "standard"
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.4169,
+            "non_cutting_time_min": 0.0033,
+            "total_time_min": 0.4203,
+            "formula_family": "linear",
+            "cutting_parameters": {
+              "cutting_speed_m_min": 60.0,
+              "rpm": 1194.0,
+              "rpm_capped": false,
+              "feed_per_rev_mm": null,
+              "feed_per_tooth_mm": 0.12,
+              "feed_rate_mm_min": 573.0,
+              "flute_count": 4,
+              "tool_diameter_mm": 16.0,
+              "step_over_mm": null,
+              "depth_per_pass_mm": 2.0,
+              "number_of_passes": 1,
+              "reversal_factor": null
+            },
+            "calculation_notes": [],
+            "confidence": "high",
+            "warnings": []
+          },
+          "skipped": false,
+          "skip_reason": null
+        },
+        {
+          "sub_op_id": "S002-02",
+          "sequence": 2,
+          "operation_type": "finish_face_mill",
+          "operation_name": "Finish face mill datum A to flatness 0.25",
+          "formula_hint": "linear",
+          "target_feature_ids": [
+            "F002"
+          ],
+          "formula_inputs_used": {
+            "process_type": "linear",
+            "number_of_passes": 1,
+            "milling_width_mm": 149.94,
+            "milling_length_mm": 234.88,
+            "axial_depth_mm": 0.2,
+            "material_machinability": "medium",
+            "tolerance_class": "standard"
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.4169,
+            "non_cutting_time_min": 0.0033,
+            "total_time_min": 0.4203,
+            "formula_family": "linear",
+            "cutting_parameters": {
+              "cutting_speed_m_min": 60.0,
+              "rpm": 1194.0,
+              "rpm_capped": false,
+              "feed_per_rev_mm": null,
+              "feed_per_tooth_mm": 0.12,
+              "feed_rate_mm_min": 573.0,
+              "flute_count": 4,
+              "tool_diameter_mm": 16.0,
+              "step_over_mm": null,
+              "depth_per_pass_mm": 2.0,
+              "number_of_passes": 1,
+              "reversal_factor": null
+            },
+            "calculation_notes": [],
+            "confidence": "high",
+            "warnings": []
+          },
+          "skipped": false,
+          "skip_reason": null
+        },
+        {
+          "sub_op_id": "S002-03",
+          "sequence": 3,
+          "operation_type": "inspect_in_process",
+          "operation_name": "In-process inspect datum A flatness and clean-up",
+          "formula_hint": "fixed",
+          "target_feature_ids": [
+            "F002"
+          ],
+          "formula_inputs_used": {
+            "process_type": "fixed",
+            "profile_length_mm": 234.88,
+            "milling_width_mm": 149.94,
+            "milling_length_mm": 234.88,
+            "wall_height_mm": 55.0,
+            "tolerance_class": "standard"
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.0,
+            "non_cutting_time_min": 1.0,
+            "total_time_min": 1.0,
+            "formula_family": "fixed",
+            "cutting_parameters": {
+              "cutting_speed_m_min": null,
+              "rpm": null,
+              "rpm_capped": false,
+              "feed_per_rev_mm": null,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": null,
+              "flute_count": null,
+              "tool_diameter_mm": null,
+              "step_over_mm": null,
+              "depth_per_pass_mm": null,
+              "number_of_passes": null,
+              "reversal_factor": null
+            },
+            "calculation_notes": [],
+            "confidence": "high",
+            "warnings": []
+          },
+          "skipped": false,
+          "skip_reason": null
+        }
+      ],
+      "time_summary": {
+        "setup_time_min": 18.0,
+        "handling_time_min": 0.3,
+        "total_cutting_time_min": 0.8338,
+        "total_non_cutting_time_min": 1.2399,
+        "total_machining_time_min": 2.3737,
+        "sub_operation_count": 3,
+        "outside_process": false
+      }
+    },
+    {
+      "setup_id": "S003",
+      "sequence": 3,
+      "setup_name": "Machine \u00d89 datum B/C locating holes and right counterbore",
+      "machine_family": "spm_milling_drilling",
+      "in_house": true,
+      "outside_process": false,
+      "sub_operations": [
+        {
+          "sub_op_id": "S003-01",
+          "sequence": 1,
+          "operation_type": "center_drill",
+          "operation_name": "Spot drill 2\u00d7 \u00d89 datum-hole positions",
+          "formula_hint": "point",
+          "target_feature_ids": [
+            "F008",
+            "F009",
+            "F022"
+          ],
+          "formula_inputs_used": {
+            "process_type": "point",
+            "hole_diameter_mm": 9.0,
+            "hole_count": 2,
+            "material_machinability": "medium",
+            "tolerance_class": "tight"
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.3066,
+            "non_cutting_time_min": 0.004,
+            "total_time_min": 0.3106,
+            "formula_family": "point",
+            "cutting_parameters": {
+              "cutting_speed_m_min": 27.5,
+              "rpm": 973.0,
+              "rpm_capped": false,
+              "feed_per_rev_mm": 0.11399999999999999,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": null,
+              "flute_count": null,
+              "tool_diameter_mm": 9.0,
+              "step_over_mm": null,
+              "depth_per_pass_mm": null,
+              "number_of_passes": 2,
+              "reversal_factor": null
+            },
+            "calculation_notes": [],
+            "confidence": "medium",
+            "warnings": []
+          },
+          "skipped": false,
+          "skip_reason": null
+        },
+        {
+          "sub_op_id": "S003-02",
+          "sequence": 2,
+          "operation_type": "drill",
+          "operation_name": "Drill 2\u00d7 \u00d89 datum holes through 17.5 mm, leaving ream stock",
+          "formula_hint": "point",
+          "target_feature_ids": [
+            "F008",
+            "F009",
+            "F022"
+          ],
+          "formula_inputs_used": {
+            "process_type": "point",
+            "hole_diameter_mm": 9.0,
+            "hole_depth_mm": 17.5,
+            "hole_count": 2,
+            "material_machinability": "medium",
+            "tolerance_class": "tight"
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.3517,
+            "non_cutting_time_min": 0.004,
+            "total_time_min": 0.3557,
+            "formula_family": "point",
+            "cutting_parameters": {
+              "cutting_speed_m_min": 27.5,
+              "rpm": 973.0,
+              "rpm_capped": false,
+              "feed_per_rev_mm": 0.11399999999999999,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": null,
+              "flute_count": null,
+              "tool_diameter_mm": 9.0,
+              "step_over_mm": null,
+              "depth_per_pass_mm": null,
+              "number_of_passes": 2,
+              "reversal_factor": null
+            },
+            "calculation_notes": [],
+            "confidence": "high",
+            "warnings": []
+          },
+          "skipped": false,
+          "skip_reason": null
+        },
+        {
+          "sub_op_id": "S003-03",
+          "sequence": 3,
+          "operation_type": "ream",
+          "operation_name": "Ream 2\u00d7 \u00d89.00 datum B/C holes through 17.5 mm",
+          "formula_hint": "point",
+          "target_feature_ids": [
+            "F008",
+            "F009",
+            "F022"
+          ],
+          "formula_inputs_used": {
+            "process_type": "point",
+            "hole_diameter_mm": 9.0,
+            "hole_depth_mm": 17.5,
+            "hole_count": 2,
+            "ream_diameter_mm": 9.0,
+            "material_machinability": "medium",
+            "tolerance_class": "tight"
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.3517,
+            "non_cutting_time_min": 0.004,
+            "total_time_min": 0.3557,
+            "formula_family": "point",
+            "cutting_parameters": {
+              "cutting_speed_m_min": 27.5,
+              "rpm": 973.0,
+              "rpm_capped": false,
+              "feed_per_rev_mm": 0.11399999999999999,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": null,
+              "flute_count": null,
+              "tool_diameter_mm": 9.0,
+              "step_over_mm": null,
+              "depth_per_pass_mm": null,
+              "number_of_passes": 2,
+              "reversal_factor": null
+            },
+            "calculation_notes": [],
+            "confidence": "high",
+            "warnings": []
+          },
+          "skipped": false,
+          "skip_reason": null
+        },
+        {
+          "sub_op_id": "S003-04",
+          "sequence": 4,
+          "operation_type": "counterbore",
+          "operation_name": "Machine right \u00d810.05 \u00d7 9.0 deep counterbore/clearance coaxial with datum B hole",
+          "formula_hint": "point",
+          "target_feature_ids": [
+            "F010",
+            "F008"
+          ],
+          "formula_inputs_used": {
+            "process_type": "point",
+            "hole_diameter_mm": 9.0,
+            "hole_count": 1,
+            "counterbore_diameter_mm": 10.05,
+            "counterbore_depth_mm": 9.0,
+            "material_machinability": "medium",
+            "tolerance_class": "standard"
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.0992,
+            "non_cutting_time_min": 0.002,
+            "total_time_min": 0.1012,
+            "formula_family": "point",
+            "cutting_parameters": {
+              "cutting_speed_m_min": 27.5,
+              "rpm": 973.0,
+              "rpm_capped": false,
+              "feed_per_rev_mm": 0.11399999999999999,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": null,
+              "flute_count": null,
+              "tool_diameter_mm": 9.0,
+              "step_over_mm": null,
+              "depth_per_pass_mm": null,
+              "number_of_passes": 1,
+              "reversal_factor": null
+            },
+            "calculation_notes": [],
+            "confidence": "medium",
+            "warnings": []
+          },
+          "skipped": false,
+          "skip_reason": null
+        },
+        {
+          "sub_op_id": "S003-05",
+          "sequence": 5,
+          "operation_type": "inspect_in_process",
+          "operation_name": "Inspect \u00d89 datum holes and right counterbore/clearance",
+          "formula_hint": "fixed",
+          "target_feature_ids": [
+            "F008",
+            "F009",
+            "F010"
+          ],
+          "formula_inputs_used": {
+            "process_type": "fixed",
+            "hole_diameter_mm": 9.0,
+            "hole_depth_mm": 17.5,
+            "hole_count": 2,
+            "counterbore_diameter_mm": 10.05,
+            "counterbore_depth_mm": 9.0,
+            "ream_diameter_mm": 9.0,
+            "tolerance_class": "tight"
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.0,
+            "non_cutting_time_min": 1.0,
+            "total_time_min": 1.0,
+            "formula_family": "fixed",
+            "cutting_parameters": {
+              "cutting_speed_m_min": null,
+              "rpm": null,
+              "rpm_capped": false,
+              "feed_per_rev_mm": null,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": null,
+              "flute_count": null,
+              "tool_diameter_mm": null,
+              "step_over_mm": null,
+              "depth_per_pass_mm": null,
+              "number_of_passes": null,
+              "reversal_factor": null
+            },
+            "calculation_notes": [],
+            "confidence": "high",
+            "warnings": []
+          },
+          "skipped": false,
+          "skip_reason": null
+        }
+      ],
+      "time_summary": {
+        "setup_time_min": 15.0,
+        "handling_time_min": 0.3,
+        "total_cutting_time_min": 1.1092,
+        "total_non_cutting_time_min": 1.3473,
+        "total_machining_time_min": 2.7565,
+        "sub_operation_count": 5,
+        "outside_process": false
+      }
+    },
+    {
+      "setup_id": "S004",
+      "sequence": 4,
+      "setup_name": "Machine side-access \u00d831 socket bores, Bore R, and Bore R chamfers",
+      "machine_family": "vmc_3axis",
+      "in_house": true,
+      "outside_process": false,
+      "sub_operations": [
+        {
+          "sub_op_id": "S004-01",
+          "sequence": 1,
+          "operation_type": "bore",
+          "operation_name": "Bore 2\u00d7 \u00d828.94 I/P socket-clearance features",
+          "formula_hint": "cylindrical",
+          "target_feature_ids": [
+            "F007"
+          ],
+          "formula_inputs_used": {
+            "process_type": "cylindrical",
+            "hole_diameter_mm": 28.94,
+            "hole_depth_mm": 15.0,
+            "hole_count": 2,
+            "bore_finish_diameter_mm": 28.94,
+            "material_machinability": "medium",
+            "tolerance_class": "standard"
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.0831,
+            "non_cutting_time_min": 0.0033,
+            "total_time_min": 0.0864,
+            "formula_family": "cylindrical",
+            "cutting_parameters": {
+              "cutting_speed_m_min": 130.0,
+              "rpm": 1404.0,
+              "rpm_capped": false,
+              "feed_per_rev_mm": 0.12,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": null,
+              "flute_count": null,
+              "tool_diameter_mm": null,
+              "step_over_mm": null,
+              "depth_per_pass_mm": 0.53,
+              "number_of_passes": 1,
+              "reversal_factor": null
+            },
+            "calculation_notes": [],
+            "confidence": "high",
+            "warnings": []
+          },
+          "skipped": false,
+          "skip_reason": null
+        },
+        {
+          "sub_op_id": "S004-02",
+          "sequence": 2,
+          "operation_type": "bore",
+          "operation_name": "Rough bore Bore R from cast/cored opening, leaving finish stock",
+          "formula_hint": "cylindrical",
+          "target_feature_ids": [
+            "F006"
+          ],
+          "formula_inputs_used": {
+            "process_type": "cylindrical",
+            "number_of_passes": 1,
+            "hole_diameter_mm": 31.0,
+            "hole_depth_mm": 15.0,
+            "hole_count": 1,
+            "bore_finish_diameter_mm": 31.0,
+            "material_machinability": "medium",
+            "tolerance_class": "standard"
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.086,
+            "non_cutting_time_min": 0.0033,
+            "total_time_min": 0.0893,
+            "formula_family": "cylindrical",
+            "cutting_parameters": {
+              "cutting_speed_m_min": 130.0,
+              "rpm": 1357.0,
+              "rpm_capped": false,
+              "feed_per_rev_mm": 0.12,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": null,
+              "flute_count": null,
+              "tool_diameter_mm": null,
+              "step_over_mm": null,
+              "depth_per_pass_mm": 0.5,
+              "number_of_passes": 1,
+              "reversal_factor": null
+            },
+            "calculation_notes": [],
+            "confidence": "high",
+            "warnings": []
+          },
+          "skipped": false,
+          "skip_reason": null
+        },
+        {
+          "sub_op_id": "S004-03",
+          "sequence": 3,
+          "operation_type": "bore",
+          "operation_name": "Finish bore 2\u00d7 \u00d831.00 sockets to 31.10/30.90 limits",
+          "formula_hint": "cylindrical",
+          "target_feature_ids": [
+            "F005"
+          ],
+          "formula_inputs_used": {
+            "process_type": "cylindrical",
+            "hole_diameter_mm": 31.0,
+            "hole_depth_mm": 15.0,
+            "hole_count": 2,
+            "bore_start_diameter_mm": 28.94,
+            "bore_finish_diameter_mm": 31.0,
+            "material_machinability": "medium",
+            "tolerance_class": "standard"
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.0845,
+            "non_cutting_time_min": 0.0033,
+            "total_time_min": 0.0878,
+            "formula_family": "cylindrical",
+            "cutting_parameters": {
+              "cutting_speed_m_min": 130.0,
+              "rpm": 1381.0,
+              "rpm_capped": false,
+              "feed_per_rev_mm": 0.12,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": null,
+              "flute_count": null,
+              "tool_diameter_mm": null,
+              "step_over_mm": null,
+              "depth_per_pass_mm": 1.03,
+              "number_of_passes": 1,
+              "reversal_factor": null
+            },
+            "calculation_notes": [],
+            "confidence": "high",
+            "warnings": []
+          },
+          "skipped": false,
+          "skip_reason": null
+        },
+        {
+          "sub_op_id": "S004-04",
+          "sequence": 4,
+          "operation_type": "bore",
+          "operation_name": "Finish bore Bore R \u00d831.00 to 31.10/30.90 limits and position to A/B/C",
+          "formula_hint": "cylindrical",
+          "target_feature_ids": [
+            "F006"
+          ],
+          "formula_inputs_used": {
+            "process_type": "cylindrical",
+            "hole_diameter_mm": 31.0,
+            "hole_depth_mm": 15.0,
+            "hole_count": 1,
+            "bore_finish_diameter_mm": 31.0,
+            "material_machinability": "medium",
+            "tolerance_class": "standard"
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.086,
+            "non_cutting_time_min": 0.0033,
+            "total_time_min": 0.0893,
+            "formula_family": "cylindrical",
+            "cutting_parameters": {
+              "cutting_speed_m_min": 130.0,
+              "rpm": 1357.0,
+              "rpm_capped": false,
+              "feed_per_rev_mm": 0.12,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": null,
+              "flute_count": null,
+              "tool_diameter_mm": null,
+              "step_over_mm": null,
+              "depth_per_pass_mm": 0.5,
+              "number_of_passes": 1,
+              "reversal_factor": null
+            },
+            "calculation_notes": [],
+            "confidence": "high",
+            "warnings": []
+          },
+          "skipped": false,
+          "skip_reason": null
+        },
+        {
+          "sub_op_id": "S004-05",
+          "sequence": 5,
+          "operation_type": "chamfer_mill",
+          "operation_name": "Chamfer Bore R edges 4\u00d7 1.5 +0.10/-0.25 \u00d7 45\u00b0",
+          "formula_hint": "cylindrical",
+          "target_feature_ids": [
+            "F018",
+            "F006"
+          ],
+          "formula_inputs_used": {
+            "process_type": "cylindrical",
+            "start_diameter_mm": 31.0,
+            "finish_diameter_mm": 31.0,
+            "number_of_passes": 4,
+            "chamfer_size_mm": 1.5,
+            "chamfer_angle_deg": 45.0,
+            "hole_diameter_mm": 31.0,
+            "hole_depth_mm": 15.0,
+            "hole_count": 4,
+            "bore_finish_diameter_mm": 31.0,
+            "material_machinability": "medium",
+            "tolerance_class": "tight"
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.3496,
+            "non_cutting_time_min": 0.0033,
+            "total_time_min": 0.3529,
+            "formula_family": "cylindrical",
+            "cutting_parameters": {
+              "cutting_speed_m_min": 130.0,
+              "rpm": 1335.0,
+              "rpm_capped": false,
+              "feed_per_rev_mm": 0.12,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": null,
+              "flute_count": null,
+              "tool_diameter_mm": null,
+              "step_over_mm": null,
+              "depth_per_pass_mm": 0.0,
+              "number_of_passes": 4,
+              "reversal_factor": null
+            },
+            "calculation_notes": [],
+            "confidence": "high",
+            "warnings": []
+          },
+          "skipped": false,
+          "skip_reason": null
+        },
+        {
+          "sub_op_id": "S004-06",
+          "sequence": 6,
+          "operation_type": "inspect_in_process",
+          "operation_name": "Inspect \u00d831 bores, Bore R position, and Bore R chamfers",
+          "formula_hint": "fixed",
+          "target_feature_ids": [
+            "F005",
+            "F006",
+            "F007",
+            "F018"
+          ],
+          "formula_inputs_used": {
+            "process_type": "fixed",
+            "chamfer_size_mm": 1.5,
+            "chamfer_angle_deg": 45.0,
+            "hole_diameter_mm": 31.0,
+            "hole_depth_mm": 15.0,
+            "hole_count": 3,
+            "bore_finish_diameter_mm": 31.0,
+            "tolerance_class": "standard"
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.0,
+            "non_cutting_time_min": 1.0,
+            "total_time_min": 1.0,
+            "formula_family": "fixed",
+            "cutting_parameters": {
+              "cutting_speed_m_min": null,
+              "rpm": null,
+              "rpm_capped": false,
+              "feed_per_rev_mm": null,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": null,
+              "flute_count": null,
+              "tool_diameter_mm": null,
+              "step_over_mm": null,
+              "depth_per_pass_mm": null,
+              "number_of_passes": null,
+              "reversal_factor": null
+            },
+            "calculation_notes": [],
+            "confidence": "high",
+            "warnings": []
+          },
+          "skipped": false,
+          "skip_reason": null
+        }
+      ],
+      "time_summary": {
+        "setup_time_min": 18.0,
+        "handling_time_min": 0.3,
+        "total_cutting_time_min": 0.6892,
+        "total_non_cutting_time_min": 1.5998,
+        "total_machining_time_min": 2.589,
+        "sub_operation_count": 6,
+        "outside_process": false
+      }
+    },
+    {
+      "setup_id": "S005",
+      "sequence": 5,
+      "setup_name": "Finish bench deburr, clean, and mark",
+      "machine_family": "finish_bench",
+      "in_house": true,
+      "outside_process": false,
+      "sub_operations": [
+        {
+          "sub_op_id": "S005-01",
+          "sequence": 1,
+          "operation_type": "edge_break",
+          "operation_name": "Break all sharp edges 0.5 mm max and deburr holes/bores",
+          "formula_hint": "fixed",
+          "target_feature_ids": [
+            "F019",
+            "F002",
+            "F005",
+            "F006",
+            "F008",
+            "F009",
+            "F010",
+            "F018"
+          ],
+          "formula_inputs_used": {
+            "process_type": "fixed",
+            "chamfer_size_mm": 0.5,
+            "hole_diameter_mm": 31.0,
+            "hole_count": 5,
+            "bore_finish_diameter_mm": 31.0,
+            "profile_length_mm": 234.88,
+            "milling_width_mm": 149.94,
+            "wall_height_mm": 55.0,
+            "blank_length_mm": 234.88,
+            "tolerance_class": "standard"
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.0,
+            "non_cutting_time_min": 0.5,
+            "total_time_min": 0.5,
+            "formula_family": "fixed",
+            "cutting_parameters": {
+              "cutting_speed_m_min": null,
+              "rpm": null,
+              "rpm_capped": false,
+              "feed_per_rev_mm": null,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": null,
+              "flute_count": null,
+              "tool_diameter_mm": null,
+              "step_over_mm": null,
+              "depth_per_pass_mm": null,
+              "number_of_passes": null,
+              "reversal_factor": null
+            },
+            "calculation_notes": [],
+            "confidence": "high",
+            "warnings": []
+          },
+          "skipped": false,
+          "skip_reason": null
+        },
+        {
+          "sub_op_id": "S005-02",
+          "sequence": 2,
+          "operation_type": "cleaning",
+          "operation_name": "Clean chips, casting dust, and abrasive residue",
+          "formula_hint": "fixed",
+          "target_feature_ids": [
+            "F001",
+            "F019"
+          ],
+          "formula_inputs_used": {
+            "process_type": "fixed",
+            "hole_diameter_mm": 31.0,
+            "hole_depth_mm": 15.0,
+            "hole_count": 5,
+            "bore_finish_diameter_mm": 31.0,
+            "profile_length_mm": 234.88,
+            "milling_width_mm": 149.94,
+            "milling_length_mm": 234.88,
+            "wall_height_mm": 55.0,
+            "blank_length_mm": 234.88
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.0,
+            "non_cutting_time_min": 0.3,
+            "total_time_min": 0.3,
+            "formula_family": "fixed",
+            "cutting_parameters": {
+              "cutting_speed_m_min": null,
+              "rpm": null,
+              "rpm_capped": false,
+              "feed_per_rev_mm": null,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": null,
+              "flute_count": null,
+              "tool_diameter_mm": null,
+              "step_over_mm": null,
+              "depth_per_pass_mm": null,
+              "number_of_passes": null,
+              "reversal_factor": null
+            },
+            "calculation_notes": [],
+            "confidence": "high",
+            "warnings": []
+          },
+          "skipped": false,
+          "skip_reason": null
+        },
+        {
+          "sub_op_id": "S005-03",
+          "sequence": 3,
+          "operation_type": "marking",
+          "operation_name": "Mark part identification per drawing/shop requirement",
+          "formula_hint": "fixed",
+          "target_feature_ids": [
+            "F001"
+          ],
+          "formula_inputs_used": {
+            "process_type": "fixed",
+            "profile_length_mm": 234.88,
+            "milling_width_mm": 149.94,
+            "wall_height_mm": 55.0,
+            "blank_length_mm": 234.88
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.0,
+            "non_cutting_time_min": 0.2,
+            "total_time_min": 0.2,
+            "formula_family": "fixed",
+            "cutting_parameters": {
+              "cutting_speed_m_min": null,
+              "rpm": null,
+              "rpm_capped": false,
+              "feed_per_rev_mm": null,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": null,
+              "flute_count": null,
+              "tool_diameter_mm": null,
+              "step_over_mm": null,
+              "depth_per_pass_mm": null,
+              "number_of_passes": null,
+              "reversal_factor": null
+            },
+            "calculation_notes": [],
+            "confidence": "high",
+            "warnings": []
+          },
+          "skipped": false,
+          "skip_reason": null
+        }
+      ],
+      "time_summary": {
+        "setup_time_min": 3.0,
+        "handling_time_min": 0.3,
+        "total_cutting_time_min": 0.0,
+        "total_non_cutting_time_min": 1.0,
+        "total_machining_time_min": 1.3,
+        "sub_operation_count": 3,
+        "outside_process": false
+      }
+    },
+    {
+      "setup_id": "S006",
+      "sequence": 6,
+      "setup_name": "In-house production dimensional inspection",
+      "machine_family": "inspection",
+      "in_house": true,
+      "outside_process": false,
+      "sub_operations": [
+        {
+          "sub_op_id": "S006-01",
+          "sequence": 1,
+          "operation_type": "inspection",
+          "operation_name": "Final in-house dimensional and visual inspection of machined and cast features",
+          "formula_hint": "fixed",
+          "target_feature_ids": [
+            "F002",
+            "F003",
+            "F004",
+            "F005",
+            "F006",
+            "F007",
+            "F008",
+            "F009",
+            "F010",
+            "F011",
+            "F012",
+            "F013",
+            "F014",
+            "F015",
+            "F016",
+            "F017",
+            "F018",
+            "F019",
+            "F020",
+            "F021",
+            "F022"
+          ],
+          "formula_inputs_used": {
+            "process_type": "fixed",
+            "cut_length_mm": 234.88,
+            "chamfer_size_mm": 1.5,
+            "chamfer_angle_deg": 45.0,
+            "hole_diameter_mm": 31.0,
+            "hole_depth_mm": 15.0,
+            "hole_count": 5,
+            "counterbore_diameter_mm": 10.05,
+            "counterbore_depth_mm": 9.0,
+            "ream_diameter_mm": 9.0,
+            "bore_finish_diameter_mm": 31.0,
+            "profile_length_mm": 234.88,
+            "milling_width_mm": 149.94,
+            "milling_length_mm": 234.88,
+            "wall_height_mm": 55.0,
+            "external_diameter_mm": 35.0,
+            "blank_length_mm": 234.88,
+            "max_section_thickness_mm": 55.0,
+            "tolerance_class": "standard"
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.0,
+            "non_cutting_time_min": 2.0,
+            "total_time_min": 2.0,
+            "formula_family": "fixed",
+            "cutting_parameters": {
+              "cutting_speed_m_min": null,
+              "rpm": null,
+              "rpm_capped": false,
+              "feed_per_rev_mm": null,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": null,
+              "flute_count": null,
+              "tool_diameter_mm": null,
+              "step_over_mm": null,
+              "depth_per_pass_mm": null,
+              "number_of_passes": null,
+              "reversal_factor": null
+            },
+            "calculation_notes": [],
+            "confidence": "high",
+            "warnings": []
+          },
+          "skipped": false,
+          "skip_reason": null
+        }
+      ],
+      "time_summary": {
+        "setup_time_min": 3.0,
+        "handling_time_min": 0.3,
+        "total_cutting_time_min": 0.0,
+        "total_non_cutting_time_min": 2.0,
+        "total_machining_time_min": 2.3,
+        "sub_operation_count": 1,
+        "outside_process": false
+      }
+    },
+    {
+      "setup_id": "S007",
+      "sequence": 7,
+      "setup_name": "Outside CMM / first article inspection for GD&T",
+      "machine_family": "outside_vendor",
+      "in_house": false,
+      "outside_process": true,
+      "sub_operations": [
+        {
+          "sub_op_id": "S007-01",
+          "sequence": 1,
+          "operation_type": "cmm_fai",
+          "operation_name": "CMM/FAI verify profile, datum scheme, \u00d89 holes, Bore R position, and \u00d831 bores",
+          "formula_hint": "fixed",
+          "target_feature_ids": [
+            "F001",
+            "F002",
+            "F003",
+            "F004",
+            "F005",
+            "F006",
+            "F008",
+            "F009",
+            "F011",
+            "F012",
+            "F013",
+            "F014",
+            "F015",
+            "F016",
+            "F017",
+            "F018",
+            "F020",
+            "F021",
+            "F022"
+          ],
+          "formula_inputs_used": {
+            "process_type": "fixed",
+            "cut_length_mm": 234.88,
+            "chamfer_size_mm": 1.5,
+            "chamfer_angle_deg": 45.0,
+            "hole_diameter_mm": 31.0,
+            "hole_depth_mm": 15.0,
+            "hole_count": 5,
+            "ream_diameter_mm": 9.0,
+            "bore_finish_diameter_mm": 31.0,
+            "profile_length_mm": 234.88,
+            "milling_width_mm": 149.94,
+            "milling_length_mm": 234.88,
+            "wall_height_mm": 55.0,
+            "external_diameter_mm": 35.0,
+            "blank_length_mm": 234.88,
+            "max_section_thickness_mm": 55.0,
+            "tolerance_class": "standard"
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.0,
+            "non_cutting_time_min": 0.0,
+            "total_time_min": 0.0,
+            "formula_family": "outside",
+            "cutting_parameters": {
+              "cutting_speed_m_min": null,
+              "rpm": null,
+              "rpm_capped": false,
+              "feed_per_rev_mm": null,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": null,
+              "flute_count": null,
+              "tool_diameter_mm": null,
+              "step_over_mm": null,
+              "depth_per_pass_mm": null,
+              "number_of_passes": null,
+              "reversal_factor": null
+            },
+            "calculation_notes": [
+              "Outside process \u2014 no in-house cycle time."
+            ],
+            "confidence": "low",
+            "warnings": []
+          },
+          "skipped": true,
+          "skip_reason": "Outside process"
+        }
+      ],
+      "time_summary": {
+        "setup_time_min": 0.0,
+        "handling_time_min": 0.0,
+        "total_cutting_time_min": 0.0,
+        "total_non_cutting_time_min": 0.0,
+        "total_machining_time_min": 0.0,
+        "sub_operation_count": 1,
+        "outside_process": true
+      }
+    }
+  ],
+  "total_summary": {
+    "total_setups": 7,
+    "total_sub_operations": 21,
+    "total_setup_time_min": 57.0,
+    "total_handling_time_min": 1.5,
+    "total_cutting_time_min": 2.63,
+    "total_non_cutting_time_min": 7.19,
+    "total_machining_time_min": 11.32,
+    "total_time_min": 68.32,
+    "outside_process_count": 2,
+    "confidence": "medium"
+  },
+  "global_warnings": [],
+  "global_assumptions": []
+}

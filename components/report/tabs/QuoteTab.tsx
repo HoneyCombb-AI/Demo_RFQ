@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/table"
 
 export function QuoteTab({ data }: { data: ReportData }) {
-  const quote = data.excelQuote
+  const quote = data.excelQuote!
   const summary = quote.cost_summary
 
   const pricePerPiece = summary.ex_works_price_per_piece_inr

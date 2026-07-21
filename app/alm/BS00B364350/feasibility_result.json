@@ -1,0 +1,675 @@
+{
+  "analysis_id": "feasibility_rfq_BS00B364350-1_20260721T021526Z",
+  "source_feature_graph_id": "rfq_BS00B364350-1_20260721T021526Z",
+  "feasibility": {
+    "can_proceed": true,
+    "status": "feasible_with_risks",
+    "risk_level": "medium",
+    "blockers": [],
+    "risks": [
+      {
+        "risk_type": "specific_plating_capability_uncertain",
+        "description": "The part requires zinc-nickel plating per PS-152.17A, while the shop profile explicitly advertises alkaline zinc plating rather than confirmed zinc-nickel plating to this customer standard.",
+        "mitigation": "Confirm whether the in-house plating line is qualified for PS-152.17A zinc-nickel; otherwise use a qualified outside plating vendor.",
+        "affected_feature_ids": [
+          "F001",
+          "F010"
+        ]
+      },
+      {
+        "risk_type": "local_bond_prep_definition_unclear",
+        "description": "The bond-preparation zone is called out locally but exact axial/circumferential boundaries and applicability to BS00B364350 versus BS00B364351 are unclear.",
+        "mitigation": "Clarify RFQ part number applicability and obtain PS-135.22 or marked-up zone limits before production release.",
+        "affected_feature_ids": [
+          "F010",
+          "F007"
+        ]
+      },
+      {
+        "risk_type": "general_tolerance_block_uncertain",
+        "description": "Several untoleranced dimensions rely on a partially legible title-block general tolerance, though the best-read default appears loose enough for the shop's CNC capability.",
+        "mitigation": "Confirm the title-block tolerance standard; explicit limit dimensions are well within the shop's listed CNC tolerance capability.",
+        "affected_feature_ids": [
+          "F001",
+          "F007",
+          "F008",
+          "F009"
+        ]
+      },
+      {
+        "risk_type": "long_through_bore_process_care",
+        "description": "The \u00d819 mm through bore over 122.5 mm length is feasible but has moderate L/D and may need careful drilling/boring control for chip evacuation and coaxiality, even though no tight straightness or GD&T is specified.",
+        "mitigation": "Use appropriate axial drilling/boring practice and inspect bore size from both ends as needed.",
+        "affected_feature_ids": [
+          "F003"
+        ]
+      }
+    ],
+    "outside_processes_needed": [
+      {
+        "process": "zinc-nickel plating per PS-152.17A, conditional",
+        "reason": "In-house plating is listed, but the profile specifically names alkaline zinc plating rather than confirmed zinc-nickel plating to PS-152.17A.",
+        "sequence_position": "after machining and deburr, if in-house line is not qualified",
+        "estimated_lead_time_days": null
+      }
+    ],
+    "material_machinable": true,
+    "tolerances_achievable": true,
+    "machines_available": true,
+    "part_fits_envelopes": true,
+    "assessment_notes": "The part is an axisymmetric SAE 1045 cold-drawn steel ball-stud component, \u00d863 mm maximum by 122.5 mm long, with coaxial OD turning, an axial through bore, a right-side counterbore, blend radii, edge break, zinc-nickel plating, and a local bond-prep note. The part fits the CNC lathe envelope of \u00d8200 x 500 mm and all explicit machining tolerances, with the tightest explicit requirements around \u00b10.10 to \u00b10.13 mm, are looser than the shop's listed CNC normal/careful capability. No hard manufacturing blocker is identified, but plating chemistry qualification, bond-prep definition, and general tolerance confirmation remain risks."
+  },
+  "feature_assessments": [
+    {
+      "feature_id": "F001",
+      "feature_name": "Axisymmetric ball-stud body envelope",
+      "feature_type": "part_body",
+      "overall_verdict": "risk",
+      "spec_assessments": [
+        {
+          "feature_id": "F001",
+          "feature_name": "Axisymmetric ball-stud body envelope",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "Overall axial length",
+          "nominal_value": "122.5 mm",
+          "tolerance_or_requirement": "General title-block tolerance applies; exact value partially legible",
+          "verdict": "risk",
+          "reasoning": "The 122.5 mm length is easily within the CNC lathe envelope and likely within capability if the best-read general tolerance is about \u00b10.25 mm, but the exact title-block tolerance is not confirmed.",
+          "risk_description": "General tolerance value is partly illegible.",
+          "mitigation": "Confirm title-block general tolerance before release.",
+          "required_process": "CNC turning/facing",
+          "shop_capability_reference": "cnc_lathe max_length_mm 500; normal_tolerance_mm 0.05"
+        },
+        {
+          "feature_id": "F001",
+          "feature_name": "Axisymmetric ball-stud body envelope",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "Maximum outside diameter",
+          "nominal_value": "63.0 mm",
+          "tolerance_or_requirement": "General title-block tolerance applies; exact value partially legible",
+          "verdict": "risk",
+          "reasoning": "The \u00d863 mm envelope is well within the \u00d8200 mm CNC lathe capacity and should be machinable, but the exact default tolerance is not fully legible.",
+          "risk_description": "General tolerance value is partly illegible.",
+          "mitigation": "Confirm title-block general tolerance before release.",
+          "required_process": "CNC turning/profile turning",
+          "shop_capability_reference": "cnc_lathe max_diameter_mm 200; normal_tolerance_mm 0.05"
+        },
+        {
+          "feature_id": "F001",
+          "feature_name": "Axisymmetric ball-stud body envelope",
+          "spec_category": "geometry_parameter",
+          "spec_description": "Axisymmetric cylindrical/spherical body envelope",
+          "nominal_value": "\u00d863 mm max x 122.5 mm long",
+          "tolerance_or_requirement": "Must fit machine envelope and allow axial/radial access",
+          "verdict": "feasible",
+          "reasoning": "The cylindrical envelope fits the listed CNC turning center capacity and access is compatible with rotary workholding.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "CNC turning",
+          "shop_capability_reference": "cnc_lathe available; max_diameter_mm 200; max_length_mm 500"
+        },
+        {
+          "feature_id": "F001",
+          "feature_name": "Axisymmetric ball-stud body envelope",
+          "spec_category": "material_condition",
+          "spec_description": "Material and finished steel condition with part-level coating note",
+          "nominal_value": "SAE J403 Grade 1045 cold drawn steel; zinc-nickel plate per PS-152.17A",
+          "tolerance_or_requirement": "Machinable carbon steel; finished component to be plated",
+          "verdict": "risk",
+          "reasoning": "1045 cold-drawn carbon steel is within the shop's common steel material capability, but zinc-nickel plating to PS-152.17A is more specific than the advertised alkaline zinc plating capability.",
+          "risk_description": "Specific zinc-nickel chemistry/customer standard approval is not confirmed in the shop profile.",
+          "mitigation": "Confirm in-house PS-152.17A zinc-nickel capability or use a qualified outside plating vendor.",
+          "required_process": "CNC machining plus zinc-nickel plating/coating",
+          "shop_capability_reference": "material_capabilities common_materials carbon_steel; plating_line available for alkaline_zinc_plating"
+        }
+      ],
+      "notes": "Main body is manufacturable in 1045 steel and fits the lathe envelope; risks are specification-confirmation issues rather than hard process blockers."
+    },
+    {
+      "feature_id": "F002",
+      "feature_name": "Left annular end face",
+      "feature_type": "flat_face",
+      "overall_verdict": "feasible",
+      "spec_assessments": [
+        {
+          "feature_id": "F002",
+          "feature_name": "Left annular end face",
+          "spec_category": "geometry_parameter",
+          "spec_description": "Flat annular end face geometry",
+          "nominal_value": "ID \u00d819 mm, OD \u00d840 mm annular face at X=0",
+          "tolerance_or_requirement": "Axial face, no explicit dimensional tolerance or finish specified",
+          "verdict": "feasible",
+          "reasoning": "Facing an annular end face on an axisymmetric turned part is within the CNC lathe facing capability.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "Facing",
+          "shop_capability_reference": "cnc_lathe processes include facing"
+        }
+      ],
+      "notes": "No explicit tolerance, GD&T, or surface finish was specified for this face."
+    },
+    {
+      "feature_id": "F003",
+      "feature_name": "Small axial through bore",
+      "feature_type": "internal_bore",
+      "overall_verdict": "risk",
+      "spec_assessments": [
+        {
+          "feature_id": "F003",
+          "feature_name": "Small axial through bore",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "Small bore diameter limit",
+          "nominal_value": "19.0 mm",
+          "tolerance_or_requirement": "\u00d819.15 / \u00d818.85 mm, equivalent \u00b10.15 mm",
+          "verdict": "feasible",
+          "reasoning": "A \u00b10.15 mm bore diameter tolerance is looser than the shop's listed CNC turning/VMC normal tolerance capability.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "On-center drilling/boring or reaming",
+          "shop_capability_reference": "cnc_lathe processes include drilling_on_center and boring; normal_tolerance_mm 0.05"
+        },
+        {
+          "feature_id": "F003",
+          "feature_name": "Small axial through bore",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "Through depth based on overall part length",
+          "nominal_value": "122.5 mm",
+          "tolerance_or_requirement": "Same as overall length unless otherwise specified",
+          "verdict": "risk",
+          "reasoning": "The through condition is feasible, but the governing axial tolerance depends on the partially legible general tolerance/overall length requirement.",
+          "risk_description": "General tolerance dependency is not fully confirmed.",
+          "mitigation": "Confirm title-block tolerance and inspect through passage continuity.",
+          "required_process": "On-center drilling/boring",
+          "shop_capability_reference": "cnc_lathe max_length_mm 500; processes include drilling_on_center and boring"
+        },
+        {
+          "feature_id": "F003",
+          "feature_name": "Small axial through bore",
+          "spec_category": "geometry_parameter",
+          "spec_description": "Long axial through bore geometry",
+          "nominal_value": "\u00d819 mm through 122.5 mm",
+          "tolerance_or_requirement": "Through axial access; no explicit straightness or positional GD&T",
+          "verdict": "risk",
+          "reasoning": "The bore is feasible on available axial drilling/boring equipment, but the length-to-diameter ratio is moderately high and requires process care.",
+          "risk_description": "Potential chip evacuation and bore wander risk despite loose diameter tolerance.",
+          "mitigation": "Use suitable long-drilling/boring practice and verify bore size/continuity.",
+          "required_process": "Drilling_on_center and/or boring",
+          "shop_capability_reference": "cnc_lathe processes include drilling_on_center and boring; spm_milling_drilling processes include drilling"
+        }
+      ],
+      "notes": "The bore is feasible with care; no hard GD&T or tight finish requirement is present."
+    },
+    {
+      "feature_id": "F004",
+      "feature_name": "Right-side large internal counterbore",
+      "feature_type": "counterbore",
+      "overall_verdict": "feasible",
+      "spec_assessments": [
+        {
+          "feature_id": "F004",
+          "feature_name": "Right-side large internal counterbore",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "Counterbore diameter limit",
+          "nominal_value": "31.67 mm",
+          "tolerance_or_requirement": "\u00d831.77 / \u00d831.57 mm, equivalent \u00b10.10 mm",
+          "verdict": "feasible",
+          "reasoning": "A \u00b10.10 mm internal counterbore diameter tolerance is within the listed CNC boring capability.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "Boring/counterboring",
+          "shop_capability_reference": "cnc_lathe processes include boring; normal_tolerance_mm 0.05"
+        },
+        {
+          "feature_id": "F004",
+          "feature_name": "Right-side large internal counterbore",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "Counterbore depth / right bore length limit",
+          "nominal_value": "50.0 mm",
+          "tolerance_or_requirement": "50.13 / 49.87 mm, equivalent \u00b10.13 mm",
+          "verdict": "feasible",
+          "reasoning": "A \u00b10.13 mm blind counterbore depth tolerance is looser than the shop's CNC turning normal tolerance capability.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "Boring/counterboring with depth control",
+          "shop_capability_reference": "cnc_lathe processes include boring; normal_tolerance_mm 0.05"
+        },
+        {
+          "feature_id": "F004",
+          "feature_name": "Right-side large internal counterbore",
+          "spec_category": "geometry_parameter",
+          "spec_description": "Blind counterbore geometry and remaining annular wall",
+          "nominal_value": "\u00d831.67 mm x 50 mm blind; wall thickness about 4.165 mm to \u00d840 OD",
+          "tolerance_or_requirement": "Axial access from right side; internal shoulder formed at depth",
+          "verdict": "feasible",
+          "reasoning": "The counterbore size and 50 mm depth are within ordinary CNC lathe boring capability and the remaining wall thickness is not unusually thin for the stated tolerance.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "Boring/counterboring",
+          "shop_capability_reference": "cnc_lathe available with boring process"
+        }
+      ],
+      "notes": "Counterbore requirements are within available turning/boring capability."
+    },
+    {
+      "feature_id": "F005",
+      "feature_name": "Internal counterbore shoulder face",
+      "feature_type": "flat_face",
+      "overall_verdict": "feasible",
+      "spec_assessments": [
+        {
+          "feature_id": "F005",
+          "feature_name": "Internal counterbore shoulder face",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "Shoulder axial location from right end",
+          "nominal_value": "50.0 mm",
+          "tolerance_or_requirement": "50.13 / 49.87 mm, equivalent \u00b10.13 mm",
+          "verdict": "feasible",
+          "reasoning": "The shoulder location tolerance is the same as the counterbore depth tolerance and is within the shop's listed CNC capability.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "Counterboring/boring with shoulder facing",
+          "shop_capability_reference": "cnc_lathe processes include boring and facing; normal_tolerance_mm 0.05"
+        },
+        {
+          "feature_id": "F005",
+          "feature_name": "Internal counterbore shoulder face",
+          "spec_category": "geometry_parameter",
+          "spec_description": "Internal annular shoulder face",
+          "nominal_value": "Annulus from \u00d819 mm to \u00d831.67 mm at 50 mm depth",
+          "tolerance_or_requirement": "Flat internal shoulder normal to bore axis",
+          "verdict": "feasible",
+          "reasoning": "An internal shoulder produced by boring/counterboring is within the CNC lathe capability, with no explicit perpendicularity or surface finish requirement called out.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "Boring/shoulder facing",
+          "shop_capability_reference": "cnc_lathe processes include boring and facing"
+        }
+      ],
+      "notes": "Shoulder is feasible as part of the counterbore geometry; no separate GD&T was specified."
+    },
+    {
+      "feature_id": "F006",
+      "feature_name": "\u00d840 external cylindrical stem/journal",
+      "feature_type": "external_cylinder",
+      "overall_verdict": "feasible",
+      "spec_assessments": [
+        {
+          "feature_id": "F006",
+          "feature_name": "\u00d840 external cylindrical stem/journal",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "External cylinder diameter limit",
+          "nominal_value": "40.0 mm",
+          "tolerance_or_requirement": "\u00d840.13 / \u00d839.87 mm, equivalent \u00b10.13 mm",
+          "verdict": "feasible",
+          "reasoning": "The \u00d840 external turning tolerance is looser than the CNC lathe normal tolerance capability.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "OD turning",
+          "shop_capability_reference": "cnc_lathe processes include turning; normal_tolerance_mm 0.05"
+        },
+        {
+          "feature_id": "F006",
+          "feature_name": "\u00d840 external cylindrical stem/journal",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "Right straight shank length limit",
+          "nominal_value": "50.0 mm",
+          "tolerance_or_requirement": "50.13 / 49.87 mm, equivalent \u00b10.13 mm",
+          "verdict": "feasible",
+          "reasoning": "The \u00b10.13 mm shank length tolerance is within the listed CNC lathe capability.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "OD turning/facing",
+          "shop_capability_reference": "cnc_lathe processes include turning and facing; normal_tolerance_mm 0.05"
+        },
+        {
+          "feature_id": "F006",
+          "feature_name": "\u00d840 external cylindrical stem/journal",
+          "spec_category": "geometry_parameter",
+          "spec_description": "External cylindrical stem geometry",
+          "nominal_value": "\u00d840 mm x 50 mm straight shank",
+          "tolerance_or_requirement": "Coaxial axisymmetric OD surface; no formal runout or cylindricity tolerance specified",
+          "verdict": "feasible",
+          "reasoning": "A straight coaxial OD on a turned component is within the shop's CNC turning capability.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "CNC turning",
+          "shop_capability_reference": "cnc_lathe available with rotary_workholding true"
+        }
+      ],
+      "notes": "Explicit diameter and length limits are comfortably achievable."
+    },
+    {
+      "feature_id": "F007",
+      "feature_name": "Spherical/bulged ball outer surface",
+      "feature_type": "boss",
+      "overall_verdict": "risk",
+      "spec_assessments": [
+        {
+          "feature_id": "F007",
+          "feature_name": "Spherical/bulged ball outer surface",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "Maximum ball outside diameter",
+          "nominal_value": "63.0 mm",
+          "tolerance_or_requirement": "General title-block tolerance applies if no explicit limit is specified",
+          "verdict": "risk",
+          "reasoning": "The \u00d863 mm ball diameter is within lathe capacity and likely machinable to the best-read general tolerance, but the exact default tolerance is not confirmed.",
+          "risk_description": "Untoleranced dimension depends on partially legible title-block tolerance.",
+          "mitigation": "Confirm general tolerance block.",
+          "required_process": "Profile turning",
+          "shop_capability_reference": "cnc_lathe max_diameter_mm 200; normal_tolerance_mm 0.05"
+        },
+        {
+          "feature_id": "F007",
+          "feature_name": "Spherical/bulged ball outer surface",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "Spherical/bulge radius",
+          "nominal_value": "R31.5 mm",
+          "tolerance_or_requirement": "General title-block tolerance applies if no explicit limit is specified",
+          "verdict": "risk",
+          "reasoning": "The radius is feasible by CNC profile turning, but acceptance tolerance depends on the unconfirmed general tolerance block.",
+          "risk_description": "Exact radius tolerance is not confirmed.",
+          "mitigation": "Confirm general tolerance or obtain explicit profile/radius acceptance requirement.",
+          "required_process": "Profile turning",
+          "shop_capability_reference": "cnc_lathe processes include turning; careful_tolerance_mm 0.02"
+        },
+        {
+          "feature_id": "F007",
+          "feature_name": "Spherical/bulged ball outer surface",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "Ball center axial offset from left end",
+          "nominal_value": "33.5 mm",
+          "tolerance_or_requirement": "General title-block tolerance applies if no explicit limit is specified",
+          "verdict": "risk",
+          "reasoning": "The axial location is easily within CNC lathe length positioning capability if the default tolerance is as best-read, but the exact title-block tolerance is uncertain.",
+          "risk_description": "General tolerance block partly illegible.",
+          "mitigation": "Confirm the default tolerance for 33.50 mm dimensions.",
+          "required_process": "Profile turning with axial positioning",
+          "shop_capability_reference": "cnc_lathe normal_tolerance_mm 0.05"
+        },
+        {
+          "feature_id": "F007",
+          "feature_name": "Spherical/bulged ball outer surface",
+          "spec_category": "geometry_parameter",
+          "spec_description": "Spherical/bulged external profile",
+          "nominal_value": "\u00d863 max, R31.5 generated about X axis",
+          "tolerance_or_requirement": "Axisymmetric radial access; no surface finish or GD&T specified",
+          "verdict": "feasible",
+          "reasoning": "An external axisymmetric ball/bulge profile is compatible with CNC turning/profile turning within the machine envelope.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "CNC profile turning",
+          "shop_capability_reference": "cnc_lathe available; processes include turning"
+        },
+        {
+          "feature_id": "F007",
+          "feature_name": "Spherical/bulged ball outer surface",
+          "spec_category": "process_requirement",
+          "spec_description": "Local bond-prep callout points to a portion of this external area",
+          "nominal_value": "Local area on ball/stem transition",
+          "tolerance_or_requirement": "BOND PREP THIS AREA *",
+          "verdict": "risk",
+          "reasoning": "The process is physically accessible on the external surface, but exact limits and applicable process standard are not fully defined in the feature graph.",
+          "risk_description": "Bond-prep coverage may affect masking, coating, and inspection acceptance.",
+          "mitigation": "Clarify PS-135.22 applicability and exact prepared-area boundaries.",
+          "required_process": "Bond preparation/surface preparation",
+          "shop_capability_reference": "finish_bench available for cleaning; outside_vendor available for outside_process_candidate if special surface prep is required"
+        }
+      ],
+      "notes": "The turned ball profile is feasible; risks are mainly drawing/process-definition related."
+    },
+    {
+      "feature_id": "F008",
+      "feature_name": "R2 ball-to-stem blend radii",
+      "feature_type": "fillet",
+      "overall_verdict": "risk",
+      "spec_assessments": [
+        {
+          "feature_id": "F008",
+          "feature_name": "R2 ball-to-stem blend radii",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "Transition fillet radius",
+          "nominal_value": "R2.0 mm",
+          "tolerance_or_requirement": "General title-block tolerance applies if no explicit limit is specified",
+          "verdict": "risk",
+          "reasoning": "An R2 circumferential blend is straightforward to machine, but the exact untoleranced radius tolerance is governed by the partly legible general tolerance block.",
+          "risk_description": "Default tolerance for R2.0 is not fully confirmed.",
+          "mitigation": "Confirm title-block tolerance; use inspection method appropriate for radius acceptance.",
+          "required_process": "Profile turning/form radius generation",
+          "shop_capability_reference": "cnc_lathe processes include turning; normal_tolerance_mm 0.05"
+        },
+        {
+          "feature_id": "F008",
+          "feature_name": "R2 ball-to-stem blend radii",
+          "spec_category": "geometry_parameter",
+          "spec_description": "Circumferential blend geometry at ball-to-stem transitions",
+          "nominal_value": "Two R2.0 blend locations",
+          "tolerance_or_requirement": "Radial access on axisymmetric body",
+          "verdict": "feasible",
+          "reasoning": "Circumferential blend radii on a turned part are within CNC turning/profile capability.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "CNC turning/profile turning",
+          "shop_capability_reference": "cnc_lathe available; processes include turning"
+        }
+      ],
+      "notes": "R2 blends are feasible; only the untoleranced default tolerance needs confirmation."
+    },
+    {
+      "feature_id": "F009",
+      "feature_name": "Right annular end face",
+      "feature_type": "flat_face",
+      "overall_verdict": "risk",
+      "spec_assessments": [
+        {
+          "feature_id": "F009",
+          "feature_name": "Right annular end face",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "Right end axial location from left end",
+          "nominal_value": "122.5 mm",
+          "tolerance_or_requirement": "General title-block tolerance applies if no explicit limit is specified",
+          "verdict": "risk",
+          "reasoning": "The overall axial location is within the CNC lathe length capacity and likely within capability, but the exact title-block general tolerance is not confirmed.",
+          "risk_description": "Untoleranced axial dimension depends on partly legible title-block tolerance.",
+          "mitigation": "Confirm general tolerance block.",
+          "required_process": "Facing/turning",
+          "shop_capability_reference": "cnc_lathe max_length_mm 500; normal_tolerance_mm 0.05"
+        },
+        {
+          "feature_id": "F009",
+          "feature_name": "Right annular end face",
+          "spec_category": "geometry_parameter",
+          "spec_description": "Right annular end face geometry",
+          "nominal_value": "ID \u00d831.67 mm, OD \u00d840 mm at X=122.5 mm",
+          "tolerance_or_requirement": "Flat annular face normal to X; no explicit finish or GD&T specified",
+          "verdict": "feasible",
+          "reasoning": "Facing the right annular end of an axisymmetric component is within the CNC lathe facing capability.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "Facing",
+          "shop_capability_reference": "cnc_lathe processes include facing"
+        }
+      ],
+      "notes": "Face geometry is feasible; overall length tolerance confirmation remains a drawing risk."
+    },
+    {
+      "feature_id": "F010",
+      "feature_name": "Local bond-preparation surface zone",
+      "feature_type": "coating_zone",
+      "overall_verdict": "info_missing",
+      "spec_assessments": [
+        {
+          "feature_id": "F010",
+          "feature_name": "Local bond-preparation surface zone",
+          "spec_category": "geometry_parameter",
+          "spec_description": "Exact bond-preparation zone boundaries",
+          "nominal_value": "Leader-indicated local external ball/stem transition area",
+          "tolerance_or_requirement": "BOND PREP THIS AREA *; exact axial/circumferential limits not dimensioned",
+          "verdict": "info_missing",
+          "reasoning": "The shop can physically access the external zone, but the feature graph lacks numeric boundaries needed to determine exact preparation and inspection scope.",
+          "risk_description": "Missing zone definition may cause masking or acceptance ambiguity.",
+          "mitigation": "Request marked-up boundaries or PS-135.22 instructions before production release.",
+          "required_process": "Bond preparation/surface preparation",
+          "shop_capability_reference": "finish_bench cleaning available; outside_vendor available for outside_process_candidate"
+        },
+        {
+          "feature_id": "F010",
+          "feature_name": "Local bond-preparation surface zone",
+          "spec_category": "process_requirement",
+          "spec_description": "Bond-prep process applicability and standard",
+          "nominal_value": "BOND PREP THIS AREA *; possible PS-135.22 reference for BS00B364351",
+          "tolerance_or_requirement": "Confirm whether applies to BS00B364350 as quoted",
+          "verdict": "risk",
+          "reasoning": "Basic surface preparation is not a machine-envelope issue, but the applicable process standard and part-number variant are unclear.",
+          "risk_description": "The process may apply only to the BS00B364351 row rather than BS00B364350, or may require a customer-specific method.",
+          "mitigation": "Confirm RFQ part number and obtain PS-135.22 if required.",
+          "required_process": "Bond preparation/process-standard-controlled surface treatment",
+          "shop_capability_reference": "finish_bench available; outside_vendor available for outside_process_candidate"
+        },
+        {
+          "feature_id": "F010",
+          "feature_name": "Local bond-preparation surface zone",
+          "spec_category": "process_requirement",
+          "spec_description": "Part-level zinc-nickel plating interaction with local prepared zone",
+          "nominal_value": "Zinc-nickel plate per PS-152.17A with local bond-prep area",
+          "tolerance_or_requirement": "Coating/process compatibility and masking requirements to be confirmed",
+          "verdict": "risk",
+          "reasoning": "The shop has plating capability, but the combination of a local bond-prep zone and zinc-nickel plating to PS-152.17A may require confirmed masking or sequence requirements.",
+          "risk_description": "Unclear whether the local zone is plated, masked, prepared after plating, or treated per a separate standard.",
+          "mitigation": "Clarify PS-152.17A and PS-135.22 interaction with the customer.",
+          "required_process": "Plating/coating and local surface preparation",
+          "shop_capability_reference": "plating_line available for plating/coating; outside_vendor available for outside_process_candidate"
+        }
+      ],
+      "notes": "This is the only feature with missing definition significant enough to mark as information-missing; it does not prevent basic machining feasibility."
+    },
+    {
+      "feature_id": "F011",
+      "feature_name": "General sharp-edge break",
+      "feature_type": "edge_break",
+      "overall_verdict": "feasible",
+      "spec_assessments": [
+        {
+          "feature_id": "F011",
+          "feature_name": "General sharp-edge break",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "Maximum edge break",
+          "nominal_value": "0.5 mm max",
+          "tolerance_or_requirement": "BREAK ALL SHARP EDGES 0.5 MAX",
+          "verdict": "feasible",
+          "reasoning": "Manual deburr and edge breaking to a 0.5 mm maximum is within the shop's finish bench capability.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "Deburr/edge break",
+          "shop_capability_reference": "finish_bench processes include deburr and edge_break"
+        },
+        {
+          "feature_id": "F011",
+          "feature_name": "General sharp-edge break",
+          "spec_category": "process_requirement",
+          "spec_description": "General deburr/edge-break process requirement",
+          "nominal_value": "Applies to all otherwise-sharp internal and external edges",
+          "tolerance_or_requirement": "0.5 MAX edge break unless superseded by R2 blends",
+          "verdict": "feasible",
+          "reasoning": "The shop lists finish bench capability for manual deburr, edge break, and cleaning, so this process requirement is available.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "Finish bench deburr/edge break",
+          "shop_capability_reference": "finish_bench available; processes include deburr, edge_break, cleaning"
+        }
+      ],
+      "notes": "General edge-break requirement is feasible in-house."
+    }
+  ],
+  "clarifications": [
+    {
+      "clarification_id": "C001",
+      "question": "Confirm whether the RFQ is for BS00B364350 only or also includes the BS00B364351 configuration/process row.",
+      "why_it_matters": "The parts table lists BS00B364350 as 'AS SHOWN' and BS00B364351 as 'PS-135.22 *'; the starred bond-prep process may affect required surface processing.",
+      "blocks": [
+        "F010",
+        "part_level_specs.general_notes"
+      ],
+      "suggested_default": "Treat BS00B364350 as the as-shown geometry with zinc-nickel plating; treat PS-135.22/bond-prep as conditional unless purchasing specifies BS00B364351.",
+      "priority": "medium"
+    },
+    {
+      "clarification_id": "C002",
+      "question": "What are the exact axial and circumferential boundaries of the 'BOND PREP THIS AREA *' zone?",
+      "why_it_matters": "The local surface-treatment area lacks numeric boundaries, which affects masking, inspection, and process acceptance.",
+      "blocks": [
+        "F010"
+      ],
+      "suggested_default": "Use only the leader-indicated external spherical/transition surface and do not assume full 360 degree coverage unless the process standard defines it.",
+      "priority": "medium"
+    },
+    {
+      "clarification_id": "C003",
+      "question": "Confirm the title-block general tolerance values for untoleranced metric dimensions.",
+      "why_it_matters": "Untoleranced dimensions such as \u00d863.00, R31.50, R2.0, 33.50, and 122.50 depend on the default tolerance standard.",
+      "blocks": [
+        "F001",
+        "F007",
+        "F008",
+        "F009"
+      ],
+      "suggested_default": "Use explicit limit dimensions where present; for untoleranced dimensions use the best-read title-block defaults of approximately X.X \u00b10.5, X.XX \u00b10.25, and angles \u00b12 degrees.",
+      "priority": "medium"
+    },
+    {
+      "clarification_id": "C004",
+      "question": "Is Almity's in-house plating line qualified for zinc-nickel plating per PS-152.17A, or is an approved outside plating vendor required?",
+      "why_it_matters": "The capability profile lists alkaline zinc plating, while the drawing calls out zinc-nickel plating to a customer/process standard.",
+      "blocks": [
+        "F001",
+        "F010",
+        "part_level_specs.coating"
+      ],
+      "suggested_default": "Proceed provisionally assuming plating can be performed in-house if qualified, otherwise outsource to an approved zinc-nickel plating supplier.",
+      "priority": "high"
+    }
+  ],
+  "assumptions": [
+    {
+      "assumption_id": "A001",
+      "text": "SAE J403 Grade 1045 cold-drawn steel is treated as a machinable carbon steel in the shop's listed steel material capability; no hardened condition is assumed because no heat treatment or hardness is specified.",
+      "applies_to": [
+        "F001",
+        "material"
+      ],
+      "impact": "medium",
+      "confidence": 0.86
+    },
+    {
+      "assumption_id": "A002",
+      "text": "Untoleranced dimensions use the best-read title-block general tolerance, approximately X.X \u00b10.5 mm and X.XX \u00b10.25 mm, pending confirmation.",
+      "applies_to": [
+        "F001",
+        "F007",
+        "F008",
+        "F009"
+      ],
+      "impact": "medium",
+      "confidence": 0.65
+    },
+    {
+      "assumption_id": "A003",
+      "text": "No formal GD&T, surface roughness requirement, thread, spline, gear, EDM feature, honing requirement, or grinding requirement is present in the structured feature graph.",
+      "applies_to": [
+        "all_features"
+      ],
+      "impact": "low",
+      "confidence": 0.9
+    },
+    {
+      "assumption_id": "A004",
+      "text": "Zinc-nickel plating per PS-152.17A is assumed to be feasible either by confirming the in-house plating line qualification or by using an approved outside process; this is a qualification risk, not a machining blocker.",
+      "applies_to": [
+        "F001",
+        "F010"
+      ],
+      "impact": "high",
+      "confidence": 0.6
+    }
+  ],
+  "reasoning_summary": "The part is physically manufacturable by this shop: it is a moderate-size axisymmetric 1045 steel component that fits the CNC lathe envelope, and all explicit machining tolerances are looser than the shop's listed CNC capability. The assessment is feasible with risks because zinc-nickel plating qualification, bond-prep zone definition/applicability, and partially legible general tolerances require clarification before production release."
+}

@@ -1,0 +1,3919 @@
+{
+  "analysis_id": "rfq_CM00B337200-1_20260721T034642Z",
+  "source": {
+    "file": "/Users/mirshahzadmubeen/Desktop/IN/RFQ/input/Almity/CM00B337200-1.pdf",
+    "page_count": 1,
+    "prepared_images": [
+      {
+        "page_index": 1,
+        "image_path": "/Users/mirshahzadmubeen/Desktop/IN/RFQ/runs/CM00B337200/pages/page_001_vlm_contrast.png",
+        "image_name": "page_001_vlm_contrast.png",
+        "width_px": 3072,
+        "height_px": 2160,
+        "frame_crop_applied": true,
+        "frame_crop_confidence": 0.952
+      }
+    ]
+  },
+  "part": {
+    "name": "HOUSING",
+    "drawing_number": "CM00B337200-1",
+    "revision": "E",
+    "material": null,
+    "quantity": null,
+    "units": "mm",
+    "title_block_notes": [
+      "Drawing title read as HOUSING in lower-right title block.",
+      "Metric units inferred from drawing dimensions and notes using mm, mm/min, kN, and Nm.",
+      "Title block material and default tolerance fields are not reliably legible in the raster image.",
+      "For any detail not shown refer to 3D model."
+    ],
+    "evidence": [
+      {
+        "page_index": 1,
+        "image_name": "page_001_vlm_contrast.png",
+        "visual_location": "lower-right title block",
+        "cited_text": "HOUSING; CM00B337200-1; REV E (partially legible)",
+        "evidence_type": "title_block",
+        "confidence": 0.62
+      },
+      {
+        "page_index": 1,
+        "image_name": "page_001_vlm_contrast.png",
+        "visual_location": "bottom-left notes and test notes",
+        "cited_text": "TEST SPEED 60 mm/min; 3mm CHARACTER HEIGHT; 0.3mm RAISED LETTERS",
+        "evidence_type": "note",
+        "confidence": 0.9
+      }
+    ],
+    "confidence": 0.62
+  },
+  "feature_graph": {
+    "part_envelope": {
+      "length_mm": 335.78,
+      "width_mm": 232.62,
+      "height_mm": 143.6,
+      "max_diameter_mm": 143.6,
+      "estimated_volume_cm3": null,
+      "estimated_weight_kg": null,
+      "envelope_shape": "complex_3d",
+      "evidence": [
+        {
+          "page_index": 1,
+          "image_name": "page_001_vlm_contrast.png",
+          "visual_location": "SECTION B-B lower-left/middle",
+          "cited_text": "168.69 + 167.09",
+          "evidence_type": "dimension",
+          "confidence": 0.82
+        },
+        {
+          "page_index": 1,
+          "image_name": "page_001_vlm_contrast.png",
+          "visual_location": "main front view, bottom horizontal dimension",
+          "cited_text": "232.62",
+          "evidence_type": "dimension",
+          "confidence": 0.83
+        },
+        {
+          "page_index": 1,
+          "image_name": "page_001_vlm_contrast.png",
+          "visual_location": "SECTION A-A, right-side largest profile dimension",
+          "cited_text": "Ø143.60 I/P",
+          "evidence_type": "dimension",
+          "confidence": 0.74
+        }
+      ]
+    },
+    "coordinate_system": {
+      "primary_axis": "+Z normal to the main front/primary view",
+      "orientation_notes": "Main front view is treated as the +Z face. X is left-to-right on the main view, Y is vertical on the main view, and Z is through the part as exposed by SECTION A-A and SECTION B-B. Access directions are assigned from this convention.",
+      "datum_origin": "Datum A is interpreted from the four A1-A4 circular datum target pads; exact coordinate origin is not explicitly shown."
+    },
+    "features": [
+      {
+        "feature_id": "F001",
+        "feature_type": "part_body",
+        "name": "Complex cast housing body",
+        "description": "One-piece irregular housing/bracket body with central annular housing, four threaded mounting bosses, clevis/lug areas, ribs, pockets/windows, and controlled perimeter surfaces.",
+        "geometry": {
+          "diameter_mm": null,
+          "inner_diameter_mm": null,
+          "outer_diameter_mm": null,
+          "length_mm": 335.78,
+          "depth_mm": null,
+          "depth_condition": null,
+          "width_mm": 232.62,
+          "height_mm": 143.6,
+          "taper_ratio": null,
+          "taper_included_angle_deg": null,
+          "radius_mm": null,
+          "angle_deg": null,
+          "pitch_mm": null,
+          "thread_class": null,
+          "hole_count": null,
+          "pcd_mm": null,
+          "profile_length_mm": null,
+          "area_mm2": 78109.14,
+          "wall_thickness_mm": null,
+          "position_description": "Overall complex housing; length from SECTION B-B dimensions 168.69 + 167.09, width from main-view maximum 232.62, max profile from Ø143.60 I/P in SECTION A-A.",
+          "axis_direction": null
+        },
+        "surface_finish": null,
+        "material_condition": null,
+        "access_directions": [
+          "+Z",
+          "-Z",
+          "+X",
+          "-X",
+          "+Y",
+          "-Y"
+        ],
+        "estimated_material_removal": null,
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "overall length, derived from two sectional dimensions",
+            "nominal_value_mm": 335.78,
+            "plus_mm": null,
+            "minus_mm": null,
+            "tolerance_class": null,
+            "is_critical": false,
+            "evidence": [
+              {
+                "page_index": 1,
+                "image_name": "page_001_vlm_contrast.png",
+                "visual_location": "SECTION B-B",
+                "cited_text": "168.69; 167.09",
+                "evidence_type": "dimension",
+                "confidence": 0.82
+              }
+            ]
+          },
+          {
+            "dimension_type": "main-view maximum horizontal span",
+            "nominal_value_mm": 232.62,
+            "plus_mm": null,
+            "minus_mm": null,
+            "tolerance_class": null,
+            "is_critical": false,
+            "evidence": [
+              {
+                "page_index": 1,
+                "image_name": "page_001_vlm_contrast.png",
+                "visual_location": "main front view, bottom",
+                "cited_text": "232.62",
+                "evidence_type": "dimension",
+                "confidence": 0.83
+              }
+            ]
+          },
+          {
+            "dimension_type": "largest profile/diameter shown",
+            "nominal_value_mm": 143.6,
+            "plus_mm": null,
+            "minus_mm": null,
+            "tolerance_class": null,
+            "is_critical": false,
+            "evidence": [
+              {
+                "page_index": 1,
+                "image_name": "page_001_vlm_contrast.png",
+                "visual_location": "SECTION A-A, far right",
+                "cited_text": "Ø143.60 I/P",
+                "evidence_type": "dimension",
+                "confidence": 0.74
+              }
+            ]
+          }
+        ],
+        "gdt_controls": [],
+        "source_views": [
+          "main front view",
+          "SECTION A-A",
+          "SECTION B-B",
+          "SECTION C-C",
+          "SECTION D-D"
+        ],
+        "evidence": [
+          {
+            "page_index": 1,
+            "image_name": "page_001_vlm_contrast.png",
+            "visual_location": "entire drawing sheet",
+            "cited_text": "Overall irregular housing geometry visible across all views",
+            "evidence_type": "visual",
+            "confidence": 0.78
+          }
+        ],
+        "confidence": 0.74
+      },
+      {
+        "feature_id": "F002",
+        "feature_type": "pad",
+        "name": "Datum target pad pattern A1-A4",
+        "description": "Four circular datum target pad/spotface areas around the M10 threaded mounting locations, identified as A1, A2, A3, and A4. These collectively establish datum A.",
+        "geometry": {
+          "diameter_mm": 40.0,
+          "inner_diameter_mm": null,
+          "outer_diameter_mm": 40.0,
+          "length_mm": null,
+          "depth_mm": null,
+          "depth_condition": null,
+          "width_mm": null,
+          "height_mm": null,
+          "taper_ratio": null,
+          "taper_included_angle_deg": null,
+          "radius_mm": null,
+          "angle_deg": null,
+          "pitch_mm": null,
+          "thread_class": null,
+          "hole_count": 4,
+          "pcd_mm": null,
+          "profile_length_mm": null,
+          "area_mm2": null,
+          "wall_thickness_mm": null,
+          "position_description": "Four circular target/pad areas at the upper-left, upper-right, lower-left, and lower-right mounting bosses on the main view.",
+          "axis_direction": "+Z"
+        },
+        "surface_finish": null,
+        "material_condition": null,
+        "access_directions": [
+          "+Z"
+        ],
+        "estimated_material_removal": null,
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "datum target pad diameter",
+            "nominal_value_mm": 40.0,
+            "plus_mm": null,
+            "minus_mm": null,
+            "tolerance_class": null,
+            "is_critical": true,
+            "evidence": [
+              {
+                "page_index": 1,
+                "image_name": "page_001_vlm_contrast.png",
+                "visual_location": "main front view at four mounting bosses",
+                "cited_text": "Ø40 A1; Ø40 A2; Ø40 A3; Ø40 A4",
+                "evidence_type": "dimension",
+                "confidence": 0.82
+              }
+            ]
+          }
+        ],
+        "gdt_controls": [],
+        "source_views": [
+          "main front view",
+          "SECTION D-D"
+        ],
+        "evidence": [
+          {
+            "page_index": 1,
+            "image_name": "page_001_vlm_contrast.png",
+            "visual_location": "main front view, four circular boss areas",
+            "cited_text": "Ø40 A1/A2/A3/A4 datum target symbols",
+            "evidence_type": "dimension",
+            "confidence": 0.82
+          }
+        ],
+        "confidence": 0.82
+      },
+      {
+        "feature_id": "F003",
+        "feature_type": "internal_thread",
+        "name": "4X M10 x 1.5 threaded mounting holes",
+        "description": "Four internal threaded holes in the mounting bosses. Callout states M10 x 1.5 - 6H thread after coating. Depth is not explicitly legible; the holes are associated with the four datum target pads and insert/nut features.",
+        "geometry": {
+          "diameter_mm": 10.0,
+          "inner_diameter_mm": 10.0,
+          "outer_diameter_mm": null,
+          "length_mm": null,
+          "depth_mm": null,
+          "depth_condition": null,
+          "width_mm": null,
+          "height_mm": null,
+          "taper_ratio": null,
+          "taper_included_angle_deg": null,
+          "radius_mm": null,
+          "angle_deg": null,
+          "pitch_mm": 1.5,
+          "thread_class": "6H",
+          "hole_count": 4,
+          "pcd_mm": null,
+          "profile_length_mm": null,
+          "area_mm2": null,
+          "wall_thickness_mm": null,
+          "position_description": "Four threaded features at A1-A4 mounting boss locations on the main view.",
+          "axis_direction": "+Z"
+        },
+        "surface_finish": null,
+        "material_condition": "thread after coating",
+        "access_directions": [
+          "+Z"
+        ],
+        "estimated_material_removal": null,
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "metric internal thread major size",
+            "nominal_value_mm": 10.0,
+            "plus_mm": null,
+            "minus_mm": null,
+            "tolerance_class": "6H",
+            "is_critical": true,
+            "evidence": [
+              {
+                "page_index": 1,
+                "image_name": "page_001_vlm_contrast.png",
+                "visual_location": "main front view, upper-left thread callout",
+                "cited_text": "4X M10X1.5 - 6H THREAD AFTER COATING",
+                "evidence_type": "dimension",
+                "confidence": 0.9
+              }
+            ]
+          },
+          {
+            "dimension_type": "metric thread pitch",
+            "nominal_value_mm": 1.5,
+            "plus_mm": null,
+            "minus_mm": null,
+            "tolerance_class": "6H",
+            "is_critical": true,
+            "evidence": [
+              {
+                "page_index": 1,
+                "image_name": "page_001_vlm_contrast.png",
+                "visual_location": "main front view, upper-left thread callout",
+                "cited_text": "M10X1.5 - 6H",
+                "evidence_type": "dimension",
+                "confidence": 0.9
+              }
+            ]
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "position",
+            "tolerance_value_mm": 0.3,
+            "material_condition": "MMC",
+            "datum_references": [
+              "A",
+              "B",
+              "C"
+            ],
+            "applied_to": "4X M10 threaded mounting-hole pattern",
+            "evidence": [
+              {
+                "page_index": 1,
+                "image_name": "page_001_vlm_contrast.png",
+                "visual_location": "main front view, immediately below M10 thread callout",
+                "cited_text": "position FCF near 4X M10X1.5 callout; interpreted as Ø0.3 to A|B|C",
+                "evidence_type": "dimension",
+                "confidence": 0.62
+              }
+            ],
+            "confidence": 0.62
+          }
+        ],
+        "source_views": [
+          "main front view",
+          "SECTION D-D"
+        ],
+        "evidence": [
+          {
+            "page_index": 1,
+            "image_name": "page_001_vlm_contrast.png",
+            "visual_location": "main front view upper-left leader to mounting boss",
+            "cited_text": "4X M10X1.5 - 6H THREAD AFTER COATING",
+            "evidence_type": "dimension",
+            "confidence": 0.9
+          }
+        ],
+        "confidence": 0.78
+      },
+      {
+        "feature_id": "F004",
+        "feature_type": "counterbore",
+        "name": "4X insert/nut counterbore or recesses",
+        "description": "Four coaxial recess/counterbore-like features associated with the threaded insert/nut locations. SECTION D-D states nuts must not extend beyond bracket surface and shows 4X 17.50 dimension. Recess diameter is not legible.",
+        "geometry": {
+          "diameter_mm": null,
+          "inner_diameter_mm": null,
+          "outer_diameter_mm": null,
+          "length_mm": null,
+          "depth_mm": 17.5,
+          "depth_condition": "BLIND",
+          "width_mm": null,
+          "height_mm": null,
+          "taper_ratio": null,
+          "taper_included_angle_deg": null,
+          "radius_mm": null,
+          "angle_deg": null,
+          "pitch_mm": null,
+          "thread_class": null,
+          "hole_count": 4,
+          "pcd_mm": null,
+          "profile_length_mm": null,
+          "area_mm2": null,
+          "wall_thickness_mm": null,
+          "position_description": "Coaxial with the four M10 threaded insert/nut locations; shown in SECTION D-D.",
+          "axis_direction": "+Z"
+        },
+        "surface_finish": null,
+        "material_condition": "nuts must remain flush or below bracket surface",
+        "access_directions": [
+          "+Z"
+        ],
+        "estimated_material_removal": null,
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "insert/nut recess depth or axial dimension",
+            "nominal_value_mm": 17.5,
+            "plus_mm": null,
+            "minus_mm": null,
+            "tolerance_class": null,
+            "is_critical": true,
+            "evidence": [
+              {
+                "page_index": 1,
+                "image_name": "page_001_vlm_contrast.png",
+                "visual_location": "SECTION D-D, top of section",
+                "cited_text": "4X 17.50; NUTS MUST NOT EXTEND BEYOND THE SURFACE OF BRACKET 4 PLACES",
+                "evidence_type": "dimension",
+                "confidence": 0.77
+              }
+            ]
+          }
+        ],
+        "gdt_controls": [],
+        "source_views": [
+          "SECTION D-D"
+        ],
+        "evidence": [
+          {
+            "page_index": 1,
+            "image_name": "page_001_vlm_contrast.png",
+            "visual_location": "SECTION D-D, upper left of section",
+            "cited_text": "4X 17.50; NUTS MUST NOT EXTEND BEYOND THE SURFACE OF BRACKET 4 PLACES",
+            "evidence_type": "dimension",
+            "confidence": 0.77
+          }
+        ],
+        "confidence": 0.68
+      },
+      {
+        "feature_id": "F005",
+        "feature_type": "flat_face",
+        "name": "Four controlled support/outer flat surfaces",
+        "description": "Set of four controlled flat/support surfaces indicated in sections with 4 SURFACES callouts and common-zone/profile controls. These appear to be machined support faces associated with datum-pad and bracket interfaces.",
+        "geometry": {
+          "diameter_mm": null,
+          "inner_diameter_mm": null,
+          "outer_diameter_mm": null,
+          "length_mm": null,
+          "depth_mm": null,
+          "depth_condition": null,
+          "width_mm": null,
+          "height_mm": null,
+          "taper_ratio": null,
+          "taper_included_angle_deg": null,
+          "radius_mm": null,
+          "angle_deg": null,
+          "pitch_mm": null,
+          "thread_class": null,
+          "hole_count": 4,
+          "pcd_mm": null,
+          "profile_length_mm": null,
+          "area_mm2": null,
+          "wall_thickness_mm": null,
+          "position_description": "Four surfaces called out in SECTION B-B/SECTION D-D, associated with the upper/support face set.",
+          "axis_direction": "+Z"
+        },
+        "surface_finish": null,
+        "material_condition": null,
+        "access_directions": [
+          "+Z"
+        ],
+        "estimated_material_removal": null,
+        "dimensional_tolerances": [],
+        "gdt_controls": [
+          {
+            "gdt_type": "flatness",
+            "tolerance_value_mm": 0.5,
+            "material_condition": null,
+            "datum_references": [],
+            "applied_to": "4 controlled surfaces, common zone",
+            "evidence": [
+              {
+                "page_index": 1,
+                "image_name": "page_001_vlm_contrast.png",
+                "visual_location": "SECTION D-D and SECTION B-B near 4 SURFACES notes",
+                "cited_text": "0.5 CZ; 4 SURFACES",
+                "evidence_type": "dimension",
+                "confidence": 0.72
+              }
+            ],
+            "confidence": 0.72
+          },
+          {
+            "gdt_type": "profile_of_surface",
+            "tolerance_value_mm": 0.9,
+            "material_condition": null,
+            "datum_references": [
+              "A",
+              "B",
+              "C"
+            ],
+            "applied_to": "controlled support surface set",
+            "evidence": [
+              {
+                "page_index": 1,
+                "image_name": "page_001_vlm_contrast.png",
+                "visual_location": "SECTION B-B right side surface-control frame",
+                "cited_text": "profile 0.9 A|B|C(M) (partially legible)",
+                "evidence_type": "dimension",
+                "confidence": 0.58
+              }
+            ],
+            "confidence": 0.58
+          }
+        ],
+        "source_views": [
+          "SECTION B-B",
+          "SECTION D-D"
+        ],
+        "evidence": [
+          {
+            "page_index": 1,
+            "image_name": "page_001_vlm_contrast.png",
+            "visual_location": "SECTION B-B and SECTION D-D",
+            "cited_text": "A 4 SURFACES; 0.5 CZ 4 SURFACES",
+            "evidence_type": "dimension",
+            "confidence": 0.72
+          }
+        ],
+        "confidence": 0.66
+      },
+      {
+        "feature_id": "F006",
+        "feature_type": "through_hole",
+        "name": "Left Ø16.90 datum bore B",
+        "description": "Left-side precision through bore/locating hole, limits 16.85 to 16.95 mm, interpreted as datum feature B based on the boxed B symbol adjacent to the callout.",
+        "geometry": {
+          "diameter_mm": 16.9,
+          "inner_diameter_mm": 16.9,
+          "outer_diameter_mm": null,
+          "length_mm": null,
+          "depth_mm": 143.6,
+          "depth_condition": "THRU",
+          "width_mm": null,
+          "height_mm": null,
+          "taper_ratio": null,
+          "taper_included_angle_deg": null,
+          "radius_mm": null,
+          "angle_deg": null,
+          "pitch_mm": null,
+          "thread_class": null,
+          "hole_count": null,
+          "pcd_mm": null,
+          "profile_length_mm": null,
+          "area_mm2": null,
+          "wall_thickness_mm": null,
+          "position_description": "Left of central annulus in the main front view, in a circular boss area; datum B symbol appears below associated FCF.",
+          "axis_direction": "+Z"
+        },
+        "surface_finish": null,
+        "material_condition": null,
+        "access_directions": [
+          "+Z",
+          "-Z"
+        ],
+        "estimated_material_removal": null,
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "limit diameter 16.85-16.95",
+            "nominal_value_mm": 16.9,
+            "plus_mm": 0.05,
+            "minus_mm": -0.05,
+            "tolerance_class": null,
+            "is_critical": true,
+            "evidence": [
+              {
+                "page_index": 1,
+                "image_name": "page_001_vlm_contrast.png",
+                "visual_location": "main front view, left central boss/hole callout",
+                "cited_text": "Ø16.95 / 16.85",
+                "evidence_type": "dimension",
+                "confidence": 0.83
+              }
+            ]
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "position",
+            "tolerance_value_mm": 0.15,
+            "material_condition": "MMC",
+            "datum_references": [
+              "A"
+            ],
+            "applied_to": "left Ø16.90 bore",
+            "evidence": [
+              {
+                "page_index": 1,
+                "image_name": "page_001_vlm_contrast.png",
+                "visual_location": "main front view, left Ø16.95/16.85 callout",
+                "cited_text": "position Ø0.15(M) A (partially legible)",
+                "evidence_type": "dimension",
+                "confidence": 0.65
+              }
+            ],
+            "confidence": 0.65
+          }
+        ],
+        "source_views": [
+          "main front view"
+        ],
+        "evidence": [
+          {
+            "page_index": 1,
+            "image_name": "page_001_vlm_contrast.png",
+            "visual_location": "main front view, left of central ring",
+            "cited_text": "Ø16.95 / 16.85; boxed B",
+            "evidence_type": "dimension",
+            "confidence": 0.82
+          }
+        ],
+        "confidence": 0.76
+      },
+      {
+        "feature_id": "F007",
+        "feature_type": "through_hole",
+        "name": "Right Ø16.90 datum bore C",
+        "description": "Right-side precision through bore/locating hole, limits 16.85 to 16.95 mm, interpreted as datum feature C based on boxed C symbol adjacent to the callout.",
+        "geometry": {
+          "diameter_mm": 16.9,
+          "inner_diameter_mm": 16.9,
+          "outer_diameter_mm": null,
+          "length_mm": null,
+          "depth_mm": 143.6,
+          "depth_condition": "THRU",
+          "width_mm": null,
+          "height_mm": null,
+          "taper_ratio": null,
+          "taper_included_angle_deg": null,
+          "radius_mm": null,
+          "angle_deg": null,
+          "pitch_mm": null,
+          "thread_class": null,
+          "hole_count": null,
+          "pcd_mm": null,
+          "profile_length_mm": null,
+          "area_mm2": null,
+          "wall_thickness_mm": null,
+          "position_description": "Right of central annulus in main front view, in circular boss area; datum C symbol appears under the associated FCF.",
+          "axis_direction": "+Z"
+        },
+        "surface_finish": null,
+        "material_condition": null,
+        "access_directions": [
+          "+Z",
+          "-Z"
+        ],
+        "estimated_material_removal": null,
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "limit diameter 16.85-16.95",
+            "nominal_value_mm": 16.9,
+            "plus_mm": 0.05,
+            "minus_mm": -0.05,
+            "tolerance_class": null,
+            "is_critical": true,
+            "evidence": [
+              {
+                "page_index": 1,
+                "image_name": "page_001_vlm_contrast.png",
+                "visual_location": "main front view, right central boss/hole callout",
+                "cited_text": "Ø16.95 / 16.85",
+                "evidence_type": "dimension",
+                "confidence": 0.83
+              }
+            ]
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "position",
+            "tolerance_value_mm": 0.2,
+            "material_condition": "MMC",
+            "datum_references": [
+              "A",
+              "B"
+            ],
+            "applied_to": "right Ø16.90 bore",
+            "evidence": [
+              {
+                "page_index": 1,
+                "image_name": "page_001_vlm_contrast.png",
+                "visual_location": "main front view, right Ø16.95/16.85 callout",
+                "cited_text": "position Ø0.2(M) A|B(M) (partially legible)",
+                "evidence_type": "dimension",
+                "confidence": 0.58
+              }
+            ],
+            "confidence": 0.58
+          }
+        ],
+        "source_views": [
+          "main front view"
+        ],
+        "evidence": [
+          {
+            "page_index": 1,
+            "image_name": "page_001_vlm_contrast.png",
+            "visual_location": "main front view, right of central ring",
+            "cited_text": "Ø16.95 / 16.85; boxed C",
+            "evidence_type": "dimension",
+            "confidence": 0.82
+          }
+        ],
+        "confidence": 0.74
+      },
+      {
+        "feature_id": "F008",
+        "feature_type": "internal_bore",
+        "name": "Datum D bore Ø72.04 limits",
+        "description": "Cylindrical bore/diameter shown in SECTION A-A with limits 71.89 to 72.19 mm. A boxed D datum symbol is attached to this diameter, so it is interpreted as datum feature D.",
+        "geometry": {
+          "diameter_mm": 72.04,
+          "inner_diameter_mm": 72.04,
+          "outer_diameter_mm": null,
+          "length_mm": null,
+          "depth_mm": null,
+          "depth_condition": "THRU",
+          "width_mm": null,
+          "height_mm": null,
+          "taper_ratio": null,
+          "taper_included_angle_deg": null,
+          "radius_mm": null,
+          "angle_deg": null,
+          "pitch_mm": null,
+          "thread_class": null,
+          "hole_count": null,
+          "pcd_mm": null,
+          "profile_length_mm": null,
+          "area_mm2": null,
+          "wall_thickness_mm": null,
+          "position_description": "Left/central cylindrical bore in SECTION A-A; datum D symbol shown at extension line.",
+          "axis_direction": "+Z"
+        },
+        "surface_finish": null,
+        "material_condition": null,
+        "access_directions": [
+          "+Z",
+          "-Z"
+        ],
+        "estimated_material_removal": null,
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "limit diameter 71.89-72.19",
+            "nominal_value_mm": 72.04,
+            "plus_mm": 0.15,
+            "minus_mm": -0.15,
+            "tolerance_class": null,
+            "is_critical": true,
+            "evidence": [
+              {
+                "page_index": 1,
+                "image_name": "page_001_vlm_contrast.png",
+                "visual_location": "SECTION A-A, left side diameter callout",
+                "cited_text": "Ø72.19 / 71.89",
+                "evidence_type": "dimension",
+                "confidence": 0.86
+              }
+            ]
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "position",
+            "tolerance_value_mm": 0.3,
+            "material_condition": "MMC",
+            "datum_references": [
+              "A",
+              "B",
+              "C"
+            ],
+            "applied_to": "Ø72.04 datum D bore",
+            "evidence": [
+              {
+                "page_index": 1,
+                "image_name": "page_001_vlm_contrast.png",
+                "visual_location": "SECTION A-A, below Ø72.19/71.89 callout",
+                "cited_text": "position Ø0.30 A|B|C(M) (partially legible)",
+                "evidence_type": "dimension",
+                "confidence": 0.56
+              }
+            ],
+            "confidence": 0.56
+          }
+        ],
+        "source_views": [
+          "SECTION A-A"
+        ],
+        "evidence": [
+          {
+            "page_index": 1,
+            "image_name": "page_001_vlm_contrast.png",
+            "visual_location": "SECTION A-A, left of central section",
+            "cited_text": "D; Ø72.19 / 71.89",
+            "evidence_type": "dimension",
+            "confidence": 0.86
+          }
+        ],
+        "confidence": 0.76
+      },
+      {
+        "feature_id": "F009",
+        "feature_type": "internal_bore",
+        "name": "Central Ø70.00 bore",
+        "description": "Central coaxial cylindrical bore/diameter in SECTION A-A, called out as Ø70.00 with adjacent draft maximum note. It is part of the stepped central bore train.",
+        "geometry": {
+          "diameter_mm": 70.0,
+          "inner_diameter_mm": 70.0,
+          "outer_diameter_mm": null,
+          "length_mm": null,
+          "depth_mm": null,
+          "depth_condition": "STEPPED",
+          "width_mm": null,
+          "height_mm": null,
+          "taper_ratio": null,
+          "taper_included_angle_deg": null,
+          "radius_mm": null,
+          "angle_deg": null,
+          "pitch_mm": null,
+          "thread_class": null,
+          "hole_count": null,
+          "pcd_mm": null,
+          "profile_length_mm": null,
+          "area_mm2": null,
+          "wall_thickness_mm": null,
+          "position_description": "Coaxial central bore/step in SECTION A-A, adjacent to Ø74/Ø82/Ø90 diameter chain.",
+          "axis_direction": "+Z"
+        },
+        "surface_finish": null,
+        "material_condition": null,
+        "access_directions": [
+          "+Z",
+          "-Z"
+        ],
+        "estimated_material_removal": null,
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "central bore diameter",
+            "nominal_value_mm": 70.0,
+            "plus_mm": null,
+            "minus_mm": null,
+            "tolerance_class": null,
+            "is_critical": true,
+            "evidence": [
+              {
+                "page_index": 1,
+                "image_name": "page_001_vlm_contrast.png",
+                "visual_location": "SECTION A-A, right of central bore",
+                "cited_text": "Ø70.00; Ø DRFT MAX",
+                "evidence_type": "dimension",
+                "confidence": 0.72
+              }
+            ]
+          }
+        ],
+        "gdt_controls": [],
+        "source_views": [
+          "main front view",
+          "SECTION A-A"
+        ],
+        "evidence": [
+          {
+            "page_index": 1,
+            "image_name": "page_001_vlm_contrast.png",
+            "visual_location": "SECTION A-A, central/right diameter stack",
+            "cited_text": "Ø70.00",
+            "evidence_type": "dimension",
+            "confidence": 0.72
+          }
+        ],
+        "confidence": 0.7
+      },
+      {
+        "feature_id": "F010",
+        "feature_type": "external_cylinder",
+        "name": "Coaxial Ø74.00 cylindrical step",
+        "description": "Coaxial cylindrical step in the central bore/annular stack, called out as Ø74.00 O/R. Interpreted as an outside/over-reference cylindrical diameter in the stepped central section.",
+        "geometry": {
+          "diameter_mm": 74.0,
+          "inner_diameter_mm": null,
+          "outer_diameter_mm": 74.0,
+          "length_mm": null,
+          "depth_mm": null,
+          "depth_condition": null,
+          "width_mm": null,
+          "height_mm": null,
+          "taper_ratio": null,
+          "taper_included_angle_deg": null,
+          "radius_mm": null,
+          "angle_deg": null,
+          "pitch_mm": null,
+          "thread_class": null,
+          "hole_count": null,
+          "pcd_mm": null,
+          "profile_length_mm": null,
+          "area_mm2": null,
+          "wall_thickness_mm": null,
+          "position_description": "Coaxial central cylindrical step shown in SECTION A-A.",
+          "axis_direction": "+Z"
+        },
+        "surface_finish": null,
+        "material_condition": null,
+        "access_directions": [
+          "+Z",
+          "-Z"
+        ],
+        "estimated_material_removal": null,
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "coaxial step outside diameter",
+            "nominal_value_mm": 74.0,
+            "plus_mm": null,
+            "minus_mm": null,
+            "tolerance_class": null,
+            "is_critical": true,
+            "evidence": [
+              {
+                "page_index": 1,
+                "image_name": "page_001_vlm_contrast.png",
+                "visual_location": "SECTION A-A, diameter stack",
+                "cited_text": "Ø74.00 O/R",
+                "evidence_type": "dimension",
+                "confidence": 0.74
+              }
+            ]
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "position",
+            "tolerance_value_mm": 0.2,
+            "material_condition": "MMC",
+            "datum_references": [
+              "D"
+            ],
+            "applied_to": "Ø74.00 coaxial step",
+            "evidence": [
+              {
+                "page_index": 1,
+                "image_name": "page_001_vlm_contrast.png",
+                "visual_location": "SECTION A-A under Ø74.00 O/R callout",
+                "cited_text": "position Ø0.20 D(M) (partially legible)",
+                "evidence_type": "dimension",
+                "confidence": 0.55
+              }
+            ],
+            "confidence": 0.55
+          }
+        ],
+        "source_views": [
+          "SECTION A-A"
+        ],
+        "evidence": [
+          {
+            "page_index": 1,
+            "image_name": "page_001_vlm_contrast.png",
+            "visual_location": "SECTION A-A, central diameter stack",
+            "cited_text": "Ø74.00 O/R",
+            "evidence_type": "dimension",
+            "confidence": 0.74
+          }
+        ],
+        "confidence": 0.68
+      },
+      {
+        "feature_id": "F011",
+        "feature_type": "external_cylinder",
+        "name": "Coaxial Ø82 cylindrical seat/step",
+        "description": "Coaxial cylindrical feature in the central housing. SECTION A-A gives Ø82.00; SECTION B-B also shows Ø82.71 O/R, suggesting a related central cylindrical envelope/seat. Exact interpretation of O/R is uncertain.",
+        "geometry": {
+          "diameter_mm": 82.0,
+          "inner_diameter_mm": null,
+          "outer_diameter_mm": 82.0,
+          "length_mm": null,
+          "depth_mm": null,
+          "depth_condition": null,
+          "width_mm": null,
+          "height_mm": null,
+          "taper_ratio": null,
+          "taper_included_angle_deg": null,
+          "radius_mm": null,
+          "angle_deg": null,
+          "pitch_mm": null,
+          "thread_class": null,
+          "hole_count": null,
+          "pcd_mm": null,
+          "profile_length_mm": null,
+          "area_mm2": null,
+          "wall_thickness_mm": null,
+          "position_description": "Central coaxial cylindrical seat/step visible in SECTION A-A and SECTION B-B.",
+          "axis_direction": "+Z"
+        },
+        "surface_finish": null,
+        "material_condition": null,
+        "access_directions": [
+          "+Z",
+          "-Z"
+        ],
+        "estimated_material_removal": null,
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "coaxial cylindrical diameter",
+            "nominal_value_mm": 82.0,
+            "plus_mm": null,
+            "minus_mm": null,
+            "tolerance_class": null,
+            "is_critical": true,
+            "evidence": [
+              {
+                "page_index": 1,
+                "image_name": "page_001_vlm_contrast.png",
+                "visual_location": "SECTION A-A, right-side diameter stack",
+                "cited_text": "Ø82.00",
+                "evidence_type": "dimension",
+                "confidence": 0.8
+              }
+            ]
+          },
+          {
+            "dimension_type": "related over-reference diameter",
+            "nominal_value_mm": 82.71,
+            "plus_mm": null,
+            "minus_mm": null,
+            "tolerance_class": "O/R",
+            "is_critical": false,
+            "evidence": [
+              {
+                "page_index": 1,
+                "image_name": "page_001_vlm_contrast.png",
+                "visual_location": "SECTION B-B, central top dimension",
+                "cited_text": "Ø82.71 O/R",
+                "evidence_type": "dimension",
+                "confidence": 0.71
+              }
+            ]
+          }
+        ],
+        "gdt_controls": [],
+        "source_views": [
+          "SECTION A-A",
+          "SECTION B-B"
+        ],
+        "evidence": [
+          {
+            "page_index": 1,
+            "image_name": "page_001_vlm_contrast.png",
+            "visual_location": "SECTION A-A and SECTION B-B central housing",
+            "cited_text": "Ø82.00; Ø82.71 O/R",
+            "evidence_type": "dimension",
+            "confidence": 0.72
+          }
+        ],
+        "confidence": 0.68
+      },
+      {
+        "feature_id": "F012",
+        "feature_type": "external_cylinder",
+        "name": "Coaxial Ø90.02 outer cylindrical step",
+        "description": "Outer coaxial cylindrical diameter/step of the central housing shown in SECTION A-A as Ø90.02 O/R.",
+        "geometry": {
+          "diameter_mm": 90.02,
+          "inner_diameter_mm": null,
+          "outer_diameter_mm": 90.02,
+          "length_mm": null,
+          "depth_mm": null,
+          "depth_condition": null,
+          "width_mm": null,
+          "height_mm": null,
+          "taper_ratio": null,
+          "taper_included_angle_deg": null,
+          "radius_mm": null,
+          "angle_deg": null,
+          "pitch_mm": null,
+          "thread_class": null,
+          "hole_count": null,
+          "pcd_mm": null,
+          "profile_length_mm": null,
+          "area_mm2": null,
+          "wall_thickness_mm": null,
+          "position_description": "Coaxial outer cylindrical step of central housing in SECTION A-A.",
+          "axis_direction": "+Z"
+        },
+        "surface_finish": null,
+        "material_condition": null,
+        "access_directions": [
+          "+Z",
+          "-Z"
+        ],
+        "estimated_material_removal": null,
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "outer cylindrical diameter",
+            "nominal_value_mm": 90.02,
+            "plus_mm": null,
+            "minus_mm": null,
+            "tolerance_class": "O/R",
+            "is_critical": true,
+            "evidence": [
+              {
+                "page_index": 1,
+                "image_name": "page_001_vlm_contrast.png",
+                "visual_location": "SECTION A-A, right-side diameter stack",
+                "cited_text": "Ø90.02 O/R",
+                "evidence_type": "dimension",
+                "confidence": 0.78
+              }
+            ]
+          }
+        ],
+        "gdt_controls": [],
+        "source_views": [
+          "SECTION A-A"
+        ],
+        "evidence": [
+          {
+            "page_index": 1,
+            "image_name": "page_001_vlm_contrast.png",
+            "visual_location": "SECTION A-A, far right diameter stack",
+            "cited_text": "Ø90.02 O/R",
+            "evidence_type": "dimension",
+            "confidence": 0.78
+          }
+        ],
+        "confidence": 0.72
+      },
+      {
+        "feature_id": "F013",
+        "feature_type": "boss",
+        "name": "Large annular central profile Ø143.60",
+        "description": "Largest annular profile/envelope of the central housing, called out Ø143.60 I/P in SECTION A-A and visible as the large ribbed circular region in the main view.",
+        "geometry": {
+          "diameter_mm": 143.6,
+          "inner_diameter_mm": null,
+          "outer_diameter_mm": 143.6,
+          "length_mm": null,
+          "depth_mm": null,
+          "depth_condition": null,
+          "width_mm": null,
+          "height_mm": null,
+          "taper_ratio": null,
+          "taper_included_angle_deg": null,
+          "radius_mm": null,
+          "angle_deg": null,
+          "pitch_mm": null,
+          "thread_class": null,
+          "hole_count": null,
+          "pcd_mm": null,
+          "profile_length_mm": null,
+          "area_mm2": null,
+          "wall_thickness_mm": null,
+          "position_description": "Large central annular/ribbed housing area concentric with central bore.",
+          "axis_direction": "+Z"
+        },
+        "surface_finish": null,
+        "material_condition": null,
+        "access_directions": [
+          "+Z"
+        ],
+        "estimated_material_removal": null,
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "large annular/profile diameter",
+            "nominal_value_mm": 143.6,
+            "plus_mm": null,
+            "minus_mm": null,
+            "tolerance_class": "I/P",
+            "is_critical": false,
+            "evidence": [
+              {
+                "page_index": 1,
+                "image_name": "page_001_vlm_contrast.png",
+                "visual_location": "SECTION A-A, largest right-side dimension",
+                "cited_text": "Ø143.60 I/P",
+                "evidence_type": "dimension",
+                "confidence": 0.74
+              }
+            ]
+          }
+        ],
+        "gdt_controls": [],
+        "source_views": [
+          "main front view",
+          "SECTION A-A"
+        ],
+        "evidence": [
+          {
+            "page_index": 1,
+            "image_name": "page_001_vlm_contrast.png",
+            "visual_location": "main front view central ring and SECTION A-A diameter stack",
+            "cited_text": "Ø143.60 I/P",
+            "evidence_type": "dimension",
+            "confidence": 0.74
+          }
+        ],
+        "confidence": 0.72
+      },
+      {
+        "feature_id": "F014",
+        "feature_type": "tapered_external",
+        "name": "Draft/taper surfaces in central section",
+        "description": "Tapered/draft surfaces on the central housing section, with visible angular callouts 1.5° and 0.5°. Exact surfaces and whether angles are draft limits are partially legible.",
+        "geometry": {
+          "diameter_mm": null,
+          "inner_diameter_mm": null,
+          "outer_diameter_mm": null,
+          "length_mm": null,
+          "depth_mm": null,
+          "depth_condition": null,
+          "width_mm": null,
+          "height_mm": null,
+          "taper_ratio": null,
+          "taper_included_angle_deg": null,
+          "radius_mm": null,
+          "angle_deg": 1.5,
+          "pitch_mm": null,
+          "thread_class": null,
+          "hole_count": null,
+          "pcd_mm": null,
+          "profile_length_mm": null,
+          "area_mm2": null,
+          "wall_thickness_mm": null,
+          "position_description": "Inclined/tapered surfaces in SECTION A-A between the central bore region and lug/bracket body.",
+          "axis_direction": "+Z"
+        },
+        "surface_finish": null,
+        "material_condition": "draft/taper indicated",
+        "access_directions": [
+          "+Z",
+          "-Z"
+        ],
+        "estimated_material_removal": null,
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "draft/taper angle",
+            "nominal_value_mm": 1.5,
+            "plus_mm": null,
+            "minus_mm": null,
+            "tolerance_class": "degrees",
+            "is_critical": false,
+            "evidence": [
+              {
+                "page_index": 1,
+                "image_name": "page_001_vlm_contrast.png",
+                "visual_location": "SECTION A-A, upper taper callouts",
+                "cited_text": "1.5°",
+                "evidence_type": "dimension",
+                "confidence": 0.75
+              }
+            ]
+          },
+          {
+            "dimension_type": "secondary draft/taper angle",
+            "nominal_value_mm": 0.5,
+            "plus_mm": null,
+            "minus_mm": null,
+            "tolerance_class": "degrees",
+            "is_critical": false,
+            "evidence": [
+              {
+                "page_index": 1,
+                "image_name": "page_001_vlm_contrast.png",
+                "visual_location": "SECTION A-A, taper callouts",
+                "cited_text": "0.5°",
+                "evidence_type": "dimension",
+                "confidence": 0.72
+              }
+            ]
+          }
+        ],
+        "gdt_controls": [],
+        "source_views": [
+          "SECTION A-A"
+        ],
+        "evidence": [
+          {
+            "page_index": 1,
+            "image_name": "page_001_vlm_contrast.png",
+            "visual_location": "SECTION A-A near marked inclined surface",
+            "cited_text": "1.5°; 0.5°",
+            "evidence_type": "dimension",
+            "confidence": 0.73
+          }
+        ],
+        "confidence": 0.64
+      },
+      {
+        "feature_id": "F015",
+        "feature_type": "through_hole",
+        "name": "Clevis/lug Ø30.60 bore",
+        "description": "Precision bore in lug/clevis area shown in SECTION A-A, limits 30.45 to 30.75 mm. It appears coaxial with the smaller Ø20.10 bore feature, possibly a counterbore/clearance step around a pin hole.",
+        "geometry": {
+          "diameter_mm": 30.6,
+          "inner_diameter_mm": 30.6,
+          "outer_diameter_mm": null,
+          "length_mm": null,
+          "depth_mm": 143.6,
+          "depth_condition": "THRU",
+          "width_mm": null,
+          "height_mm": null,
+          "taper_ratio": null,
+          "taper_included_angle_deg": null,
+          "radius_mm": null,
+          "angle_deg": null,
+          "pitch_mm": null,
+          "thread_class": null,
+          "hole_count": null,
+          "pcd_mm": null,
+          "profile_length_mm": null,
+          "area_mm2": null,
+          "wall_thickness_mm": null,
+          "position_description": "Right-side lug/clevis region in SECTION A-A, near Ø20.20/20.00 callout.",
+          "axis_direction": "+Z"
+        },
+        "surface_finish": null,
+        "material_condition": null,
+        "access_directions": [
+          "+Z",
+          "-Z"
+        ],
+        "estimated_material_removal": null,
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "limit diameter 30.45-30.75",
+            "nominal_value_mm": 30.6,
+            "plus_mm": 0.15,
+            "minus_mm": -0.15,
+            "tolerance_class": null,
+            "is_critical": true,
+            "evidence": [
+              {
+                "page_index": 1,
+                "image_name": "page_001_vlm_contrast.png",
+                "visual_location": "SECTION A-A, right lug callout",
+                "cited_text": "Ø30.75 U/R / 30.45",
+                "evidence_type": "dimension",
+                "confidence": 0.73
+              }
+            ]
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "position",
+            "tolerance_value_mm": 0.2,
+            "material_condition": null,
+            "datum_references": [
+              "D"
+            ],
+            "applied_to": "Ø30.60 lug bore",
+            "evidence": [
+              {
+                "page_index": 1,
+                "image_name": "page_001_vlm_contrast.png",
+                "visual_location": "SECTION A-A near Ø30.75/30.45 callout",
+                "cited_text": "position Ø0.20 D... (partially legible)",
+                "evidence_type": "dimension",
+                "confidence": 0.5
+              }
+            ],
+            "confidence": 0.5
+          }
+        ],
+        "source_views": [
+          "SECTION A-A"
+        ],
+        "evidence": [
+          {
+            "page_index": 1,
+            "image_name": "page_001_vlm_contrast.png",
+            "visual_location": "SECTION A-A, right-side lug",
+            "cited_text": "Ø30.75 U/R; 30.45",
+            "evidence_type": "dimension",
+            "confidence": 0.73
+          }
+        ],
+        "confidence": 0.65
+      },
+      {
+        "feature_id": "F016",
+        "feature_type": "hole_pattern",
+        "name": "Clevis/lug Ø20.10 hole set",
+        "description": "Hole or hole set in clevis/lug region with limits 20.00 to 20.20 mm, shown in SECTION A-A. The count is not fully clear but appears to belong to paired lug/clevis geometry.",
+        "geometry": {
+          "diameter_mm": 20.1,
+          "inner_diameter_mm": 20.1,
+          "outer_diameter_mm": null,
+          "length_mm": null,
+          "depth_mm": null,
+          "depth_condition": "THRU",
+          "width_mm": null,
+          "height_mm": null,
+          "taper_ratio": null,
+          "taper_included_angle_deg": null,
+          "radius_mm": null,
+          "angle_deg": null,
+          "pitch_mm": null,
+          "thread_class": null,
+          "hole_count": 2,
+          "pcd_mm": null,
+          "profile_length_mm": null,
+          "area_mm2": null,
+          "wall_thickness_mm": null,
+          "position_description": "Paired clevis/lug hole location in SECTION A-A; associated with the Ø30.60 bore/counterbore feature.",
+          "axis_direction": "+Z"
+        },
+        "surface_finish": null,
+        "material_condition": null,
+        "access_directions": [
+          "+Z",
+          "-Z"
+        ],
+        "estimated_material_removal": null,
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "limit diameter 20.00-20.20",
+            "nominal_value_mm": 20.1,
+            "plus_mm": 0.1,
+            "minus_mm": -0.1,
+            "tolerance_class": null,
+            "is_critical": true,
+            "evidence": [
+              {
+                "page_index": 1,
+                "image_name": "page_001_vlm_contrast.png",
+                "visual_location": "SECTION A-A, right lug/circular hole callout",
+                "cited_text": "Ø20.20 / 20.00",
+                "evidence_type": "dimension",
+                "confidence": 0.84
+              }
+            ]
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "position",
+            "tolerance_value_mm": 0.2,
+            "material_condition": null,
+            "datum_references": [
+              "D"
+            ],
+            "applied_to": "Ø20.10 clevis/lug hole set",
+            "evidence": [
+              {
+                "page_index": 1,
+                "image_name": "page_001_vlm_contrast.png",
+                "visual_location": "SECTION A-A under Ø20.20/20.00 callout",
+                "cited_text": "position Ø0.20 D... (partially legible)",
+                "evidence_type": "dimension",
+                "confidence": 0.55
+              }
+            ],
+            "confidence": 0.55
+          }
+        ],
+        "source_views": [
+          "SECTION A-A"
+        ],
+        "evidence": [
+          {
+            "page_index": 1,
+            "image_name": "page_001_vlm_contrast.png",
+            "visual_location": "SECTION A-A, right lug/circular hole",
+            "cited_text": "Ø20.20 / 20.00",
+            "evidence_type": "dimension",
+            "confidence": 0.84
+          }
+        ],
+        "confidence": 0.68
+      },
+      {
+        "feature_id": "F017",
+        "feature_type": "hole_pattern",
+        "name": "2X Ø10.50 clevis holes",
+        "description": "Two smaller clevis-area holes, limits 10.35 to 10.65 mm, called out as 2X and applying to both clevis areas.",
+        "geometry": {
+          "diameter_mm": 10.5,
+          "inner_diameter_mm": 10.5,
+          "outer_diameter_mm": null,
+          "length_mm": null,
+          "depth_mm": null,
+          "depth_condition": "THRU",
+          "width_mm": null,
+          "height_mm": null,
+          "taper_ratio": null,
+          "taper_included_angle_deg": null,
+          "radius_mm": null,
+          "angle_deg": null,
+          "pitch_mm": null,
+          "thread_class": null,
+          "hole_count": 2,
+          "pcd_mm": null,
+          "profile_length_mm": null,
+          "area_mm2": null,
+          "wall_thickness_mm": null,
+          "position_description": "Lower/detail clevis views; callout says 2X Ø10.65/10.35, both clevis areas.",
+          "axis_direction": "+Z"
+        },
+        "surface_finish": null,
+        "material_condition": null,
+        "access_directions": [
+          "+Z",
+          "-Z"
+        ],
+        "estimated_material_removal": null,
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "limit diameter 10.35-10.65",
+            "nominal_value_mm": 10.5,
+            "plus_mm": 0.15,
+            "minus_mm": -0.15,
+            "tolerance_class": null,
+            "is_critical": true,
+            "evidence": [
+              {
+                "page_index": 1,
+                "image_name": "page_001_vlm_contrast.png",
+                "visual_location": "bottom-center clevis detail view",
+                "cited_text": "2X Ø10.65 / 10.35; BOTH CLEVIS AREAS",
+                "evidence_type": "dimension",
+                "confidence": 0.83
+              }
+            ]
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "position",
+            "tolerance_value_mm": 0.5,
+            "material_condition": "MMC",
+            "datum_references": [
+              "A",
+              "B",
+              "C"
+            ],
+            "applied_to": "2X Ø10.50 clevis holes",
+            "evidence": [
+              {
+                "page_index": 1,
+                "image_name": "page_001_vlm_contrast.png",
+                "visual_location": "bottom-center clevis detail, under Ø10.65/10.35 callout",
+                "cited_text": "position Ø0.5(M) A|B|C(M) (partially legible)",
+                "evidence_type": "dimension",
+                "confidence": 0.58
+              }
+            ],
+            "confidence": 0.58
+          }
+        ],
+        "source_views": [
+          "lower clevis detail views"
+        ],
+        "evidence": [
+          {
+            "page_index": 1,
+            "image_name": "page_001_vlm_contrast.png",
+            "visual_location": "bottom-center clevis detail view",
+            "cited_text": "2X Ø10.65 / 10.35; BOTH CLEVIS AREAS",
+            "evidence_type": "dimension",
+            "confidence": 0.83
+          }
+        ],
+        "confidence": 0.72
+      },
+      {
+        "feature_id": "F018",
+        "feature_type": "slot",
+        "name": "Clevis fork slots/openings",
+        "description": "U-shaped clevis fork openings in both clevis areas. Width limit appears 55.05 to 55.35 mm, with a visible 87.26° angular feature. Treated as a through slot/opening; exact through depth is not dimensioned.",
+        "geometry": {
+          "diameter_mm": null,
+          "inner_diameter_mm": null,
+          "outer_diameter_mm": null,
+          "length_mm": null,
+          "depth_mm": 143.6,
+          "depth_condition": "THRU",
+          "width_mm": 55.2,
+          "height_mm": null,
+          "taper_ratio": null,
+          "taper_included_angle_deg": null,
+          "radius_mm": null,
+          "angle_deg": 87.26,
+          "pitch_mm": null,
+          "thread_class": null,
+          "hole_count": 2,
+          "pcd_mm": null,
+          "profile_length_mm": null,
+          "area_mm2": null,
+          "wall_thickness_mm": null,
+          "position_description": "Two clevis fork openings shown in bottom-center detail views, one per clevis area.",
+          "axis_direction": "+Z"
+        },
+        "surface_finish": null,
+        "material_condition": null,
+        "access_directions": [
+          "+Z",
+          "-Z"
+        ],
+        "estimated_material_removal": null,
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "clevis slot width limit 55.05-55.35",
+            "nominal_value_mm": 55.2,
+            "plus_mm": 0.15,
+            "minus_mm": -0.15,
+            "tolerance_class": null,
+            "is_critical": true,
+            "evidence": [
+              {
+                "page_index": 1,
+                "image_name": "page_001_vlm_contrast.png",
+                "visual_location": "bottom-center clevis U-slot view",
+                "cited_text": "55.35 / 55.05; BOTH CLEVIS AREAS",
+                "evidence_type": "dimension",
+                "confidence": 0.8
+              }
+            ]
+          },
+          {
+            "dimension_type": "clevis angular surface",
+            "nominal_value_mm": 87.26,
+            "plus_mm": null,
+            "minus_mm": null,
+            "tolerance_class": "degrees",
+            "is_critical": false,
+            "evidence": [
+              {
+                "page_index": 1,
+                "image_name": "page_001_vlm_contrast.png",
+                "visual_location": "bottom-center clevis U-slot view",
+                "cited_text": "87.26°",
+                "evidence_type": "dimension",
+                "confidence": 0.72
+              }
+            ]
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "profile_of_surface",
+            "tolerance_value_mm": 0.5,
+            "material_condition": null,
+            "datum_references": [],
+            "applied_to": "clevis slot/inner and outer surfaces",
+            "evidence": [
+              {
+                "page_index": 1,
+                "image_name": "page_001_vlm_contrast.png",
+                "visual_location": "bottom-center clevis U-slot view",
+                "cited_text": "4X OTR SURFACES profile 0.5; 4X INR SURFACES profile 0.5",
+                "evidence_type": "dimension",
+                "confidence": 0.72
+              }
+            ],
+            "confidence": 0.72
+          }
+        ],
+        "source_views": [
+          "lower clevis detail views",
+          "SECTION C-C"
+        ],
+        "evidence": [
+          {
+            "page_index": 1,
+            "image_name": "page_001_vlm_contrast.png",
+            "visual_location": "bottom-center clevis U-slot view",
+            "cited_text": "55.35 / 55.05; 87.26°",
+            "evidence_type": "dimension",
+            "confidence": 0.78
+          }
+        ],
+        "confidence": 0.69
+      },
+      {
+        "feature_id": "F019",
+        "feature_type": "flat_face",
+        "name": "Clevis inner/outer lug faces",
+        "description": "Four inner and four outer clevis lug faces controlled by profile callouts. Also associated with 4X 5.80 dimension in the lower clevis view.",
+        "geometry": {
+          "diameter_mm": null,
+          "inner_diameter_mm": null,
+          "outer_diameter_mm": null,
+          "length_mm": null,
+          "depth_mm": null,
+          "depth_condition": null,
+          "width_mm": 5.8,
+          "height_mm": null,
+          "taper_ratio": null,
+          "taper_included_angle_deg": null,
+          "radius_mm": null,
+          "angle_deg": null,
+          "pitch_mm": null,
+          "thread_class": null,
+          "hole_count": 4,
+          "pcd_mm": null,
+          "profile_length_mm": null,
+          "area_mm2": null,
+          "wall_thickness_mm": 5.8,
+          "position_description": "Clevis inner and outer side faces shown in bottom-center clevis view; applies to both clevis areas.",
+          "axis_direction": "+Z"
+        },
+        "surface_finish": null,
+        "material_condition": null,
+        "access_directions": [
+          "+Z",
+          "-Z"
+        ],
+        "estimated_material_removal": null,
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "clevis face/wall dimension",
+            "nominal_value_mm": 5.8,
+            "plus_mm": null,
+            "minus_mm": null,
+            "tolerance_class": null,
+            "is_critical": false,
+            "evidence": [
+              {
+                "page_index": 1,
+                "image_name": "page_001_vlm_contrast.png",
+                "visual_location": "bottom-center clevis view",
+                "cited_text": "4X 5.80",
+                "evidence_type": "dimension",
+                "confidence": 0.78
+              }
+            ]
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "profile_of_surface",
+            "tolerance_value_mm": 0.5,
+            "material_condition": null,
+            "datum_references": [],
+            "applied_to": "4X outer and 4X inner clevis surfaces",
+            "evidence": [
+              {
+                "page_index": 1,
+                "image_name": "page_001_vlm_contrast.png",
+                "visual_location": "bottom-center clevis view",
+                "cited_text": "4X OTR SURFACES profile 0.5; 4X INR SURFACES profile 0.5",
+                "evidence_type": "dimension",
+                "confidence": 0.72
+              }
+            ],
+            "confidence": 0.72
+          }
+        ],
+        "source_views": [
+          "lower clevis detail views"
+        ],
+        "evidence": [
+          {
+            "page_index": 1,
+            "image_name": "page_001_vlm_contrast.png",
+            "visual_location": "bottom-center clevis detail",
+            "cited_text": "4X 5.80; 4X OTR SURFACES; 4X INR SURFACES",
+            "evidence_type": "dimension",
+            "confidence": 0.76
+          }
+        ],
+        "confidence": 0.68
+      },
+      {
+        "feature_id": "F020",
+        "feature_type": "pad",
+        "name": "Stepped clevis wall stack in SECTION C-C",
+        "description": "Stepped clevis/lug wall and shelf geometry visible in SECTION C-C. Multiple 2X dimensions define repeated step thicknesses/depths: 3.00, 11.50, 8.50, and 15.00 mm.",
+        "geometry": {
+          "diameter_mm": null,
+          "inner_diameter_mm": null,
+          "outer_diameter_mm": null,
+          "length_mm": null,
+          "depth_mm": 15.0,
+          "depth_condition": "STEPPED",
+          "width_mm": null,
+          "height_mm": null,
+          "taper_ratio": null,
+          "taper_included_angle_deg": null,
+          "radius_mm": null,
+          "angle_deg": null,
+          "pitch_mm": null,
+          "thread_class": null,
+          "hole_count": 2,
+          "pcd_mm": null,
+          "profile_length_mm": null,
+          "area_mm2": null,
+          "wall_thickness_mm": null,
+          "position_description": "SECTION C-C stepped walls around the clevis/lug region; 2X dimensions indicate symmetry or two repeated sides.",
+          "axis_direction": "+Z"
+        },
+        "surface_finish": null,
+        "material_condition": null,
+        "access_directions": [
+          "+Z",
+          "-Z",
+          "+Y",
+          "-Y"
+        ],
+        "estimated_material_removal": null,
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "repeated step thickness/depth",
+            "nominal_value_mm": 3.0,
+            "plus_mm": null,
+            "minus_mm": null,
+            "tolerance_class": null,
+            "is_critical": false,
+            "evidence": [
+              {
+                "page_index": 1,
+                "image_name": "page_001_vlm_contrast.png",
+                "visual_location": "SECTION C-C top",
+                "cited_text": "2X 3.00",
+                "evidence_type": "dimension",
+                "confidence": 0.78
+              }
+            ]
+          },
+          {
+            "dimension_type": "repeated wall offset",
+            "nominal_value_mm": 11.5,
+            "plus_mm": null,
+            "minus_mm": null,
+            "tolerance_class": null,
+            "is_critical": false,
+            "evidence": [
+              {
+                "page_index": 1,
+                "image_name": "page_001_vlm_contrast.png",
+                "visual_location": "SECTION C-C mid-left",
+                "cited_text": "2X 11.50",
+                "evidence_type": "dimension",
+                "confidence": 0.82
+              }
+            ]
+          },
+          {
+            "dimension_type": "repeated wall offset",
+            "nominal_value_mm": 8.5,
+            "plus_mm": null,
+            "minus_mm": null,
+            "tolerance_class": null,
+            "is_critical": false,
+            "evidence": [
+              {
+                "page_index": 1,
+                "image_name": "page_001_vlm_contrast.png",
+                "visual_location": "SECTION C-C mid-left",
+                "cited_text": "2X 8.50",
+                "evidence_type": "dimension",
+                "confidence": 0.82
+              }
+            ]
+          },
+          {
+            "dimension_type": "repeated step depth/height",
+            "nominal_value_mm": 15.0,
+            "plus_mm": null,
+            "minus_mm": null,
+            "tolerance_class": null,
+            "is_critical": false,
+            "evidence": [
+              {
+                "page_index": 1,
+                "image_name": "page_001_vlm_contrast.png",
+                "visual_location": "SECTION C-C mid-left",
+                "cited_text": "2X 15.00",
+                "evidence_type": "dimension",
+                "confidence": 0.82
+              }
+            ]
+          }
+        ],
+        "gdt_controls": [],
+        "source_views": [
+          "SECTION C-C"
+        ],
+        "evidence": [
+          {
+            "page_index": 1,
+            "image_name": "page_001_vlm_contrast.png",
+            "visual_location": "SECTION C-C, right middle of sheet",
+            "cited_text": "2X 3.00; 2X 11.50; 2X 8.50; 2X 15.00",
+            "evidence_type": "dimension",
+            "confidence": 0.8
+          }
+        ],
+        "confidence": 0.69
+      },
+      {
+        "feature_id": "F021",
+        "feature_type": "pocket",
+        "name": "Cast lightening pockets/windows on main face",
+        "description": "Multiple irregular triangular/rounded pocket or window features visible around the central annulus in the main front view. No individual dimensions or depths are clearly called out; these appear to be cast or profile-controlled relief openings.",
+        "geometry": {
+          "diameter_mm": null,
+          "inner_diameter_mm": null,
+          "outer_diameter_mm": null,
+          "length_mm": null,
+          "depth_mm": null,
+          "depth_condition": null,
+          "width_mm": null,
+          "height_mm": null,
+          "taper_ratio": null,
+          "taper_included_angle_deg": null,
+          "radius_mm": null,
+          "angle_deg": null,
+          "pitch_mm": null,
+          "thread_class": null,
+          "hole_count": null,
+          "pcd_mm": null,
+          "profile_length_mm": null,
+          "area_mm2": null,
+          "wall_thickness_mm": null,
+          "position_description": "Irregular pockets/windows around left and right sides of the central annular housing in the main front view.",
+          "axis_direction": "+Z"
+        },
+        "surface_finish": null,
+        "material_condition": "likely cast relief geometry; exact machined/cast status not specified",
+        "access_directions": [
+          "+Z"
+        ],
+        "estimated_material_removal": null,
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "source_views": [
+          "main front view"
+        ],
+        "evidence": [
+          {
+            "page_index": 1,
+            "image_name": "page_001_vlm_contrast.png",
+            "visual_location": "main front view, around central annulus",
+            "cited_text": "visual irregular pocket/window geometry; no legible direct dimension",
+            "evidence_type": "visual",
+            "confidence": 0.48
+          }
+        ],
+        "confidence": 0.44
+      },
+      {
+        "feature_id": "F022",
+        "feature_type": "rib",
+        "name": "Radial stiffening ribs around central annulus",
+        "description": "Series of radial ribs/webs around the central circular housing. The exact rib count and individual dimensions are not explicitly legible; grouped as one rib feature set.",
+        "geometry": {
+          "diameter_mm": null,
+          "inner_diameter_mm": null,
+          "outer_diameter_mm": 143.6,
+          "length_mm": null,
+          "depth_mm": null,
+          "depth_condition": null,
+          "width_mm": null,
+          "height_mm": null,
+          "taper_ratio": null,
+          "taper_included_angle_deg": null,
+          "radius_mm": null,
+          "angle_deg": null,
+          "pitch_mm": null,
+          "thread_class": null,
+          "hole_count": null,
+          "pcd_mm": null,
+          "profile_length_mm": null,
+          "area_mm2": null,
+          "wall_thickness_mm": null,
+          "position_description": "Radially arrayed ribs on the +Z face, surrounding the central bore/annular boss.",
+          "axis_direction": "+Z"
+        },
+        "surface_finish": null,
+        "material_condition": "likely cast rib geometry",
+        "access_directions": [
+          "+Z"
+        ],
+        "estimated_material_removal": null,
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "source_views": [
+          "main front view"
+        ],
+        "evidence": [
+          {
+            "page_index": 1,
+            "image_name": "page_001_vlm_contrast.png",
+            "visual_location": "main front view, central circular housing",
+            "cited_text": "visual radial rib pattern around central bore",
+            "evidence_type": "visual",
+            "confidence": 0.62
+          }
+        ],
+        "confidence": 0.55
+      },
+      {
+        "feature_id": "F023",
+        "feature_type": "flat_face",
+        "name": "Controlled exterior perimeter edge surface",
+        "description": "Perimeter/edge surface around the housing profile, including apex regions, with a profile tolerance callout referenced to A, B, and C. The exact quoted surface labels are partly legible.",
+        "geometry": {
+          "diameter_mm": null,
+          "inner_diameter_mm": null,
+          "outer_diameter_mm": null,
+          "length_mm": 232.62,
+          "depth_mm": null,
+          "depth_condition": null,
+          "width_mm": null,
+          "height_mm": null,
+          "taper_ratio": null,
+          "taper_included_angle_deg": null,
+          "radius_mm": null,
+          "angle_deg": null,
+          "pitch_mm": null,
+          "thread_class": null,
+          "hole_count": null,
+          "pcd_mm": null,
+          "profile_length_mm": null,
+          "area_mm2": null,
+          "wall_thickness_mm": null,
+          "position_description": "Entire outer edge/perimeter surface of the main-view housing outline, including apex regions marked near lower left and lower right.",
+          "axis_direction": null
+        },
+        "surface_finish": null,
+        "material_condition": null,
+        "access_directions": [
+          "+X",
+          "-X",
+          "+Y",
+          "-Y"
+        ],
+        "estimated_material_removal": null,
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "main-view perimeter span reference",
+            "nominal_value_mm": 232.62,
+            "plus_mm": null,
+            "minus_mm": null,
+            "tolerance_class": null,
+            "is_critical": false,
+            "evidence": [
+              {
+                "page_index": 1,
+                "image_name": "page_001_vlm_contrast.png",
+                "visual_location": "main front view bottom dimension",
+                "cited_text": "232.62",
+                "evidence_type": "dimension",
+                "confidence": 0.83
+              }
+            ]
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "profile_of_surface",
+            "tolerance_value_mm": 1.5,
+            "material_condition": null,
+            "datum_references": [
+              "A",
+              "B",
+              "C"
+            ],
+            "applied_to": "entire exterior edge/perimeter surface",
+            "evidence": [
+              {
+                "page_index": 1,
+                "image_name": "page_001_vlm_contrast.png",
+                "visual_location": "main front view lower center near perimeter note",
+                "cited_text": "profile 1.5 A|B|C; ENTIRE EDGE SURFACE ...",
+                "evidence_type": "dimension",
+                "confidence": 0.62
+              }
+            ],
+            "confidence": 0.62
+          }
+        ],
+        "source_views": [
+          "main front view",
+          "DETAIL X"
+        ],
+        "evidence": [
+          {
+            "page_index": 1,
+            "image_name": "page_001_vlm_contrast.png",
+            "visual_location": "main front view lower edge and DETAIL X",
+            "cited_text": "ENTIRE EDGE SURFACE; profile 1.5 A|B|C; DETAIL X profile 1.0 A|B|C",
+            "evidence_type": "dimension",
+            "confidence": 0.62
+          }
+        ],
+        "confidence": 0.61
+      },
+      {
+        "feature_id": "F024",
+        "feature_type": "radius",
+        "name": "2X R20.0 upper lobe radii",
+        "description": "Two repeated outer radii on the upper lobe/boss areas of the main housing profile.",
+        "geometry": {
+          "diameter_mm": null,
+          "inner_diameter_mm": null,
+          "outer_diameter_mm": null,
+          "length_mm": null,
+          "depth_mm": null,
+          "depth_condition": null,
+          "width_mm": null,
+          "height_mm": null,
+          "taper_ratio": null,
+          "taper_included_angle_deg": null,
+          "radius_mm": 20.0,
+          "angle_deg": null,
+          "pitch_mm": null,
+          "thread_class": null,
+          "hole_count": 2,
+          "pcd_mm": null,
+          "profile_length_mm": null,
+          "area_mm2": null,
+          "wall_thickness_mm": null,
+          "position_description": "Upper left/right lobe transitions near the top mounting bosses in the main front view.",
+          "axis_direction": null
+        },
+        "surface_finish": null,
+        "material_condition": null,
+        "access_directions": [
+          "+Z"
+        ],
+        "estimated_material_removal": null,
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "repeated outside radius",
+            "nominal_value_mm": 20.0,
+            "plus_mm": null,
+            "minus_mm": null,
+            "tolerance_class": null,
+            "is_critical": false,
+            "evidence": [
+              {
+                "page_index": 1,
+                "image_name": "page_001_vlm_contrast.png",
+                "visual_location": "main front view, upper curved profile between top bosses",
+                "cited_text": "2X R20.0",
+                "evidence_type": "dimension",
+                "confidence": 0.82
+              }
+            ]
+          }
+        ],
+        "gdt_controls": [],
+        "source_views": [
+          "main front view"
+        ],
+        "evidence": [
+          {
+            "page_index": 1,
+            "image_name": "page_001_vlm_contrast.png",
+            "visual_location": "main front view top arc region",
+            "cited_text": "2X R20.0",
+            "evidence_type": "dimension",
+            "confidence": 0.82
+          }
+        ],
+        "confidence": 0.78
+      },
+      {
+        "feature_id": "F025",
+        "feature_type": "radius",
+        "name": "R18.5 right-side transition radius",
+        "description": "Single external transition radius on the right-side profile near the clevis/arm transition.",
+        "geometry": {
+          "diameter_mm": null,
+          "inner_diameter_mm": null,
+          "outer_diameter_mm": null,
+          "length_mm": null,
+          "depth_mm": null,
+          "depth_condition": null,
+          "width_mm": null,
+          "height_mm": null,
+          "taper_ratio": null,
+          "taper_included_angle_deg": null,
+          "radius_mm": 18.5,
+          "angle_deg": null,
+          "pitch_mm": null,
+          "thread_class": null,
+          "hole_count": null,
+          "pcd_mm": null,
+          "profile_length_mm": null,
+          "area_mm2": null,
+          "wall_thickness_mm": null,
+          "position_description": "Right side of main front view, near upper right-to-lower right transition/arm.",
+          "axis_direction": null
+        },
+        "surface_finish": null,
+        "material_condition": null,
+        "access_directions": [
+          "+Z"
+        ],
+        "estimated_material_removal": null,
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "external transition radius",
+            "nominal_value_mm": 18.5,
+            "plus_mm": null,
+            "minus_mm": null,
+            "tolerance_class": null,
+            "is_critical": false,
+            "evidence": [
+              {
+                "page_index": 1,
+                "image_name": "page_001_vlm_contrast.png",
+                "visual_location": "main front view right-side profile",
+                "cited_text": "R18.5",
+                "evidence_type": "dimension",
+                "confidence": 0.82
+              }
+            ]
+          }
+        ],
+        "gdt_controls": [],
+        "source_views": [
+          "main front view"
+        ],
+        "evidence": [
+          {
+            "page_index": 1,
+            "image_name": "page_001_vlm_contrast.png",
+            "visual_location": "main front view right side",
+            "cited_text": "R18.5",
+            "evidence_type": "dimension",
+            "confidence": 0.82
+          }
+        ],
+        "confidence": 0.77
+      },
+      {
+        "feature_id": "F026",
+        "feature_type": "rib",
+        "name": "Typical narrow wall/rib sections 12.86 mm",
+        "description": "Repeated narrow rib/wall or strap feature called out with typical limit dimensions 12.73 to 12.99 mm near the right-side boss/arm area.",
+        "geometry": {
+          "diameter_mm": null,
+          "inner_diameter_mm": null,
+          "outer_diameter_mm": null,
+          "length_mm": null,
+          "depth_mm": null,
+          "depth_condition": null,
+          "width_mm": 12.86,
+          "height_mm": null,
+          "taper_ratio": null,
+          "taper_included_angle_deg": null,
+          "radius_mm": null,
+          "angle_deg": null,
+          "pitch_mm": null,
+          "thread_class": null,
+          "hole_count": null,
+          "pcd_mm": null,
+          "profile_length_mm": null,
+          "area_mm2": null,
+          "wall_thickness_mm": 12.86,
+          "position_description": "Right-side rib/strap walls near the Ø16.90 datum bore C and lower right mounting boss; dimension marked TYP.",
+          "axis_direction": null
+        },
+        "surface_finish": null,
+        "material_condition": null,
+        "access_directions": [
+          "+Z"
+        ],
+        "estimated_material_removal": null,
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "typical rib/wall width limit 12.73-12.99",
+            "nominal_value_mm": 12.86,
+            "plus_mm": 0.13,
+            "minus_mm": -0.13,
+            "tolerance_class": "TYP",
+            "is_critical": false,
+            "evidence": [
+              {
+                "page_index": 1,
+                "image_name": "page_001_vlm_contrast.png",
+                "visual_location": "main front view right side near datum C bore",
+                "cited_text": "12.99 TYP / 12.73 TYP",
+                "evidence_type": "dimension",
+                "confidence": 0.78
+              }
+            ]
+          }
+        ],
+        "gdt_controls": [],
+        "source_views": [
+          "main front view"
+        ],
+        "evidence": [
+          {
+            "page_index": 1,
+            "image_name": "page_001_vlm_contrast.png",
+            "visual_location": "main front view right side",
+            "cited_text": "12.99 TYP; 12.73 TYP",
+            "evidence_type": "dimension",
+            "confidence": 0.78
+          }
+        ],
+        "confidence": 0.7
+      },
+      {
+        "feature_id": "F027",
+        "feature_type": "chamfer",
+        "name": "Detail Y local edge chamfers/reliefs",
+        "description": "Small repeated edge relief/chamfer features in DETAIL Y, scale 2:1. Callout appears to show 2X 1.1/0.9 and 2X 10°; exact angle symbol is partly legible.",
+        "geometry": {
+          "diameter_mm": null,
+          "inner_diameter_mm": null,
+          "outer_diameter_mm": null,
+          "length_mm": null,
+          "depth_mm": null,
+          "depth_condition": null,
+          "width_mm": 1.0,
+          "height_mm": null,
+          "taper_ratio": null,
+          "taper_included_angle_deg": null,
+          "radius_mm": null,
+          "angle_deg": 10.0,
+          "pitch_mm": null,
+          "thread_class": null,
+          "hole_count": 2,
+          "pcd_mm": null,
+          "profile_length_mm": null,
+          "area_mm2": null,
+          "wall_thickness_mm": null,
+          "position_description": "Local detailed edge condition marked DETAIL Y, near SECTION D-D area.",
+          "axis_direction": null
+        },
+        "surface_finish": null,
+        "material_condition": null,
+        "access_directions": [
+          "+Z",
+          "+Y",
+          "-Y"
+        ],
+        "estimated_material_removal": null,
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "chamfer/relief size limit 0.9-1.1",
+            "nominal_value_mm": 1.0,
+            "plus_mm": 0.1,
+            "minus_mm": -0.1,
+            "tolerance_class": null,
+            "is_critical": false,
+            "evidence": [
+              {
+                "page_index": 1,
+                "image_name": "page_001_vlm_contrast.png",
+                "visual_location": "DETAIL Y, scale 2:1",
+                "cited_text": "2X 1.1 / 0.9",
+                "evidence_type": "dimension",
+                "confidence": 0.72
+              }
+            ]
+          },
+          {
+            "dimension_type": "chamfer/relief angle",
+            "nominal_value_mm": 10.0,
+            "plus_mm": null,
+            "minus_mm": null,
+            "tolerance_class": "degrees",
+            "is_critical": false,
+            "evidence": [
+              {
+                "page_index": 1,
+                "image_name": "page_001_vlm_contrast.png",
+                "visual_location": "DETAIL Y, scale 2:1",
+                "cited_text": "2X 10° (partially legible)",
+                "evidence_type": "dimension",
+                "confidence": 0.58
+              }
+            ]
+          }
+        ],
+        "gdt_controls": [],
+        "source_views": [
+          "DETAIL Y"
+        ],
+        "evidence": [
+          {
+            "page_index": 1,
+            "image_name": "page_001_vlm_contrast.png",
+            "visual_location": "DETAIL Y, scale 2:1",
+            "cited_text": "2X 1.1/0.9; 2X 10°",
+            "evidence_type": "dimension",
+            "confidence": 0.65
+          }
+        ],
+        "confidence": 0.62
+      },
+      {
+        "feature_id": "F028",
+        "feature_type": "fillet",
+        "name": "Internal fillet/corner relief R3.0",
+        "description": "Internal radius/corner relief shown in SECTION B-B as R3.0, with nearby 3.0 A/C callout. Treated as a grouped internal fillet/relief feature.",
+        "geometry": {
+          "diameter_mm": null,
+          "inner_diameter_mm": null,
+          "outer_diameter_mm": null,
+          "length_mm": null,
+          "depth_mm": null,
+          "depth_condition": null,
+          "width_mm": null,
+          "height_mm": null,
+          "taper_ratio": null,
+          "taper_included_angle_deg": null,
+          "radius_mm": 3.0,
+          "angle_deg": null,
+          "pitch_mm": null,
+          "thread_class": null,
+          "hole_count": null,
+          "pcd_mm": null,
+          "profile_length_mm": null,
+          "area_mm2": null,
+          "wall_thickness_mm": null,
+          "position_description": "Internal lower/central corner in SECTION B-B near central housing support wall.",
+          "axis_direction": null
+        },
+        "surface_finish": null,
+        "material_condition": null,
+        "access_directions": [
+          "+Z",
+          "-Z"
+        ],
+        "estimated_material_removal": null,
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "internal fillet radius",
+            "nominal_value_mm": 3.0,
+            "plus_mm": null,
+            "minus_mm": null,
+            "tolerance_class": null,
+            "is_critical": false,
+            "evidence": [
+              {
+                "page_index": 1,
+                "image_name": "page_001_vlm_contrast.png",
+                "visual_location": "SECTION B-B near lower central wall",
+                "cited_text": "R3.0",
+                "evidence_type": "dimension",
+                "confidence": 0.82
+              }
+            ]
+          },
+          {
+            "dimension_type": "adjacent corner/condition dimension",
+            "nominal_value_mm": 3.0,
+            "plus_mm": null,
+            "minus_mm": null,
+            "tolerance_class": "A/C",
+            "is_critical": false,
+            "evidence": [
+              {
+                "page_index": 1,
+                "image_name": "page_001_vlm_contrast.png",
+                "visual_location": "SECTION B-B right lower area",
+                "cited_text": "3.0 A/C",
+                "evidence_type": "dimension",
+                "confidence": 0.67
+              }
+            ]
+          }
+        ],
+        "gdt_controls": [],
+        "source_views": [
+          "SECTION B-B"
+        ],
+        "evidence": [
+          {
+            "page_index": 1,
+            "image_name": "page_001_vlm_contrast.png",
+            "visual_location": "SECTION B-B lower central area",
+            "cited_text": "R3.0; 3.0 A/C",
+            "evidence_type": "dimension",
+            "confidence": 0.76
+          }
+        ],
+        "confidence": 0.7
+      },
+      {
+        "feature_id": "F029",
+        "feature_type": "boss",
+        "name": "2X Ø41.07 local circular bosses",
+        "description": "Two circular boss/landing features called out as 2X Ø41.07 near the right/lower mounting region in the main view. They appear associated with local boss geometry around mounting/through features.",
+        "geometry": {
+          "diameter_mm": 41.07,
+          "inner_diameter_mm": null,
+          "outer_diameter_mm": 41.07,
+          "length_mm": null,
+          "depth_mm": 143.6,
+          "depth_condition": "THRU",
+          "width_mm": null,
+          "height_mm": null,
+          "taper_ratio": null,
+          "taper_included_angle_deg": null,
+          "radius_mm": null,
+          "angle_deg": null,
+          "pitch_mm": null,
+          "thread_class": null,
+          "hole_count": 2,
+          "pcd_mm": null,
+          "profile_length_mm": null,
+          "area_mm2": null,
+          "wall_thickness_mm": null,
+          "position_description": "Right/lower boss areas in main front view; visually coaxial or adjacent to mounting boss features.",
+          "axis_direction": "+Z"
+        },
+        "surface_finish": null,
+        "material_condition": null,
+        "access_directions": [
+          "+Z"
+        ],
+        "estimated_material_removal": null,
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "local boss diameter",
+            "nominal_value_mm": 41.07,
+            "plus_mm": null,
+            "minus_mm": null,
+            "tolerance_class": null,
+            "is_critical": false,
+            "evidence": [
+              {
+                "page_index": 1,
+                "image_name": "page_001_vlm_contrast.png",
+                "visual_location": "main front view lower-right/right side",
+                "cited_text": "2X Ø41.07",
+                "evidence_type": "dimension",
+                "confidence": 0.77
+              }
+            ]
+          }
+        ],
+        "gdt_controls": [],
+        "source_views": [
+          "main front view"
+        ],
+        "evidence": [
+          {
+            "page_index": 1,
+            "image_name": "page_001_vlm_contrast.png",
+            "visual_location": "main front view, right-lower boss region",
+            "cited_text": "2X Ø41.07",
+            "evidence_type": "dimension",
+            "confidence": 0.77
+          }
+        ],
+        "confidence": 0.68
+      }
+    ],
+    "relationships": [
+      {
+        "relationship_id": "REL001",
+        "from_feature_id": "F002",
+        "to_feature_id": "F005",
+        "relationship_type": "on_same_face",
+        "detail": "Datum target pads lie on or are associated with the controlled support surface set."
+      },
+      {
+        "relationship_id": "REL002",
+        "from_feature_id": "F005",
+        "to_feature_id": "F002",
+        "relationship_type": "on_same_face",
+        "detail": "Controlled support faces include/relate to the datum target pad areas."
+      },
+      {
+        "relationship_id": "REL003",
+        "from_feature_id": "F003",
+        "to_feature_id": "F002",
+        "relationship_type": "threaded_into",
+        "detail": "Each M10 thread is located at a datum target pad/mounting boss."
+      },
+      {
+        "relationship_id": "REL004",
+        "from_feature_id": "F003",
+        "to_feature_id": "F001",
+        "relationship_type": "threaded_into",
+        "detail": "M10 threaded inserts/holes are contained in the housing body."
+      },
+      {
+        "relationship_id": "REL005",
+        "from_feature_id": "F004",
+        "to_feature_id": "F003",
+        "relationship_type": "coaxial",
+        "detail": "Insert/nut counterbore or recesses share axes with the M10 threaded locations."
+      },
+      {
+        "relationship_id": "REL006",
+        "from_feature_id": "F003",
+        "to_feature_id": "F004",
+        "relationship_type": "coaxial",
+        "detail": "M10 threads share axes with the insert/nut counterbores or recesses."
+      },
+      {
+        "relationship_id": "REL007",
+        "from_feature_id": "F004",
+        "to_feature_id": "F002",
+        "relationship_type": "on_same_face",
+        "detail": "Insert/nut recesses open at the same boss/pad surface set."
+      },
+      {
+        "relationship_id": "REL008",
+        "from_feature_id": "F006",
+        "to_feature_id": "F005",
+        "relationship_type": "perpendicular",
+        "detail": "Left Ø16.90 bore axis is normal to the primary/support face direction."
+      },
+      {
+        "relationship_id": "REL009",
+        "from_feature_id": "F007",
+        "to_feature_id": "F005",
+        "relationship_type": "perpendicular",
+        "detail": "Right Ø16.90 bore axis is normal to the primary/support face direction."
+      },
+      {
+        "relationship_id": "REL010",
+        "from_feature_id": "F006",
+        "to_feature_id": "F007",
+        "relationship_type": "parallel",
+        "detail": "The two Ø16.90 datum bores have parallel axes through the primary view."
+      },
+      {
+        "relationship_id": "REL011",
+        "from_feature_id": "F007",
+        "to_feature_id": "F006",
+        "relationship_type": "parallel",
+        "detail": "The two Ø16.90 datum bores have parallel axes through the primary view."
+      },
+      {
+        "relationship_id": "REL012",
+        "from_feature_id": "F006",
+        "to_feature_id": "F002",
+        "relationship_type": "datum_referenced",
+        "detail": "Left Ø16.90 bore position control references datum A."
+      },
+      {
+        "relationship_id": "REL013",
+        "from_feature_id": "F007",
+        "to_feature_id": "F002",
+        "relationship_type": "datum_referenced",
+        "detail": "Right Ø16.90 bore position control references datum A."
+      },
+      {
+        "relationship_id": "REL014",
+        "from_feature_id": "F007",
+        "to_feature_id": "F006",
+        "relationship_type": "datum_referenced",
+        "detail": "Right Ø16.90 bore is interpreted as positioned relative to datum B/left bore."
+      },
+      {
+        "relationship_id": "REL015",
+        "from_feature_id": "F008",
+        "to_feature_id": "F002",
+        "relationship_type": "datum_referenced",
+        "detail": "Datum D bore position frame appears to reference A."
+      },
+      {
+        "relationship_id": "REL016",
+        "from_feature_id": "F008",
+        "to_feature_id": "F006",
+        "relationship_type": "datum_referenced",
+        "detail": "Datum D bore position frame appears to reference B."
+      },
+      {
+        "relationship_id": "REL017",
+        "from_feature_id": "F008",
+        "to_feature_id": "F007",
+        "relationship_type": "datum_referenced",
+        "detail": "Datum D bore position frame appears to reference C."
+      },
+      {
+        "relationship_id": "REL018",
+        "from_feature_id": "F009",
+        "to_feature_id": "F008",
+        "relationship_type": "coaxial",
+        "detail": "Central Ø70 bore lies on the same central axis as the Ø72.04 datum D bore train."
+      },
+      {
+        "relationship_id": "REL019",
+        "from_feature_id": "F008",
+        "to_feature_id": "F009",
+        "relationship_type": "coaxial",
+        "detail": "Datum D bore is coaxial with the central Ø70 bore/step."
+      },
+      {
+        "relationship_id": "REL020",
+        "from_feature_id": "F010",
+        "to_feature_id": "F009",
+        "relationship_type": "coaxial",
+        "detail": "Ø74.00 step is coaxial with the central Ø70 bore."
+      },
+      {
+        "relationship_id": "REL021",
+        "from_feature_id": "F009",
+        "to_feature_id": "F010",
+        "relationship_type": "coaxial",
+        "detail": "Central Ø70 bore is coaxial with Ø74.00 step."
+      },
+      {
+        "relationship_id": "REL022",
+        "from_feature_id": "F011",
+        "to_feature_id": "F009",
+        "relationship_type": "coaxial",
+        "detail": "Ø82 cylindrical seat/step is coaxial with central bore."
+      },
+      {
+        "relationship_id": "REL023",
+        "from_feature_id": "F009",
+        "to_feature_id": "F011",
+        "relationship_type": "coaxial",
+        "detail": "Central bore is coaxial with Ø82 cylindrical seat/step."
+      },
+      {
+        "relationship_id": "REL024",
+        "from_feature_id": "F012",
+        "to_feature_id": "F009",
+        "relationship_type": "coaxial",
+        "detail": "Ø90.02 outer step is coaxial with central bore."
+      },
+      {
+        "relationship_id": "REL025",
+        "from_feature_id": "F009",
+        "to_feature_id": "F012",
+        "relationship_type": "coaxial",
+        "detail": "Central bore is coaxial with Ø90.02 outer step."
+      },
+      {
+        "relationship_id": "REL026",
+        "from_feature_id": "F013",
+        "to_feature_id": "F009",
+        "relationship_type": "coaxial",
+        "detail": "Large Ø143.60 annular profile is concentric/coaxial with the central bore."
+      },
+      {
+        "relationship_id": "REL027",
+        "from_feature_id": "F009",
+        "to_feature_id": "F013",
+        "relationship_type": "coaxial",
+        "detail": "Central bore axis defines the large annular profile axis."
+      },
+      {
+        "relationship_id": "REL028",
+        "from_feature_id": "F014",
+        "to_feature_id": "F009",
+        "relationship_type": "coaxial",
+        "detail": "Draft/taper surfaces are part of the central coaxial section geometry."
+      },
+      {
+        "relationship_id": "REL029",
+        "from_feature_id": "F009",
+        "to_feature_id": "F014",
+        "relationship_type": "coaxial",
+        "detail": "Central bore is coaxial with adjacent draft/tapered surfaces."
+      },
+      {
+        "relationship_id": "REL030",
+        "from_feature_id": "F009",
+        "to_feature_id": "F001",
+        "relationship_type": "intersecting",
+        "detail": "Central bore penetrates/intersects the housing body."
+      },
+      {
+        "relationship_id": "REL031",
+        "from_feature_id": "F010",
+        "to_feature_id": "F008",
+        "relationship_type": "datum_referenced",
+        "detail": "Ø74.00 step FCF appears to reference datum D."
+      },
+      {
+        "relationship_id": "REL032",
+        "from_feature_id": "F015",
+        "to_feature_id": "F001",
+        "relationship_type": "intersecting",
+        "detail": "Ø30.60 clevis/lug bore penetrates the lug portion of the housing body."
+      },
+      {
+        "relationship_id": "REL033",
+        "from_feature_id": "F015",
+        "to_feature_id": "F008",
+        "relationship_type": "datum_referenced",
+        "detail": "Ø30.60 bore FCF appears to reference datum D."
+      },
+      {
+        "relationship_id": "REL034",
+        "from_feature_id": "F016",
+        "to_feature_id": "F015",
+        "relationship_type": "coaxial",
+        "detail": "Ø20.10 clevis/lug hole appears coaxial with the Ø30.60 bore/counterbore."
+      },
+      {
+        "relationship_id": "REL035",
+        "from_feature_id": "F015",
+        "to_feature_id": "F016",
+        "relationship_type": "coaxial",
+        "detail": "Ø30.60 bore/counterbore appears coaxial with Ø20.10 clevis/lug hole."
+      },
+      {
+        "relationship_id": "REL036",
+        "from_feature_id": "F016",
+        "to_feature_id": "F008",
+        "relationship_type": "datum_referenced",
+        "detail": "Ø20.10 hole FCF appears to reference datum D."
+      },
+      {
+        "relationship_id": "REL037",
+        "from_feature_id": "F017",
+        "to_feature_id": "F019",
+        "relationship_type": "perpendicular",
+        "detail": "2X Ø10.50 clevis holes pass through the clevis lug faces."
+      },
+      {
+        "relationship_id": "REL038",
+        "from_feature_id": "F017",
+        "to_feature_id": "F002",
+        "relationship_type": "datum_referenced",
+        "detail": "2X Ø10.50 clevis hole position frame references datum A."
+      },
+      {
+        "relationship_id": "REL039",
+        "from_feature_id": "F017",
+        "to_feature_id": "F006",
+        "relationship_type": "datum_referenced",
+        "detail": "2X Ø10.50 clevis hole position frame references datum B."
+      },
+      {
+        "relationship_id": "REL040",
+        "from_feature_id": "F017",
+        "to_feature_id": "F007",
+        "relationship_type": "datum_referenced",
+        "detail": "2X Ø10.50 clevis hole position frame references datum C."
+      },
+      {
+        "relationship_id": "REL041",
+        "from_feature_id": "F018",
+        "to_feature_id": "F019",
+        "relationship_type": "on_same_face",
+        "detail": "Clevis fork slots are bounded by the clevis inner/outer lug faces."
+      },
+      {
+        "relationship_id": "REL042",
+        "from_feature_id": "F019",
+        "to_feature_id": "F018",
+        "relationship_type": "on_same_face",
+        "detail": "Clevis lug faces form the walls of the fork openings."
+      },
+      {
+        "relationship_id": "REL043",
+        "from_feature_id": "F018",
+        "to_feature_id": "F002",
+        "relationship_type": "datum_referenced",
+        "detail": "Clevis slot/face controls appear tied to the A/B/C datum frame via surrounding clevis callouts."
+      },
+      {
+        "relationship_id": "REL044",
+        "from_feature_id": "F019",
+        "to_feature_id": "F020",
+        "relationship_type": "on_same_face",
+        "detail": "Clevis lug faces continue into the stepped wall stack shown in SECTION C-C."
+      },
+      {
+        "relationship_id": "REL045",
+        "from_feature_id": "F020",
+        "to_feature_id": "F001",
+        "relationship_type": "intersecting",
+        "detail": "SECTION C-C stepped wall geometry is integral with the housing body."
+      },
+      {
+        "relationship_id": "REL046",
+        "from_feature_id": "F021",
+        "to_feature_id": "F005",
+        "relationship_type": "on_same_face",
+        "detail": "Lightening pockets/windows are visible on the main +Z face around the central surface set."
+      },
+      {
+        "relationship_id": "REL047",
+        "from_feature_id": "F021",
+        "to_feature_id": "F001",
+        "relationship_type": "intersecting",
+        "detail": "Lightening pocket/window geometry removes or opens through portions of the housing body."
+      },
+      {
+        "relationship_id": "REL048",
+        "from_feature_id": "F022",
+        "to_feature_id": "F013",
+        "relationship_type": "intersecting",
+        "detail": "Radial ribs merge into the large central annular boss/profile."
+      },
+      {
+        "relationship_id": "REL049",
+        "from_feature_id": "F022",
+        "to_feature_id": "F001",
+        "relationship_type": "intersecting",
+        "detail": "Radial ribs are integral with the housing body."
+      },
+      {
+        "relationship_id": "REL050",
+        "from_feature_id": "F023",
+        "to_feature_id": "F001",
+        "relationship_type": "intersecting",
+        "detail": "Controlled exterior perimeter edge is the outer boundary of the housing body."
+      },
+      {
+        "relationship_id": "REL051",
+        "from_feature_id": "F023",
+        "to_feature_id": "F002",
+        "relationship_type": "datum_referenced",
+        "detail": "Exterior edge profile control references datum A."
+      },
+      {
+        "relationship_id": "REL052",
+        "from_feature_id": "F023",
+        "to_feature_id": "F006",
+        "relationship_type": "datum_referenced",
+        "detail": "Exterior edge profile control references datum B."
+      },
+      {
+        "relationship_id": "REL053",
+        "from_feature_id": "F023",
+        "to_feature_id": "F007",
+        "relationship_type": "datum_referenced",
+        "detail": "Exterior edge profile control references datum C."
+      },
+      {
+        "relationship_id": "REL054",
+        "from_feature_id": "F024",
+        "to_feature_id": "F023",
+        "relationship_type": "machining_dependency",
+        "detail": "2X R20.0 radii modify the exterior perimeter edge profile."
+      },
+      {
+        "relationship_id": "REL055",
+        "from_feature_id": "F025",
+        "to_feature_id": "F023",
+        "relationship_type": "machining_dependency",
+        "detail": "R18.5 transition radius modifies the exterior perimeter edge profile."
+      },
+      {
+        "relationship_id": "REL056",
+        "from_feature_id": "F026",
+        "to_feature_id": "F001",
+        "relationship_type": "intersecting",
+        "detail": "Typical narrow rib/wall sections are integral with the housing body."
+      },
+      {
+        "relationship_id": "REL057",
+        "from_feature_id": "F026",
+        "to_feature_id": "F021",
+        "relationship_type": "offset",
+        "detail": "Typical ribs/walls separate or border the irregular lightening pocket/window regions."
+      },
+      {
+        "relationship_id": "REL058",
+        "from_feature_id": "F027",
+        "to_feature_id": "F029",
+        "relationship_type": "machining_dependency",
+        "detail": "Detail Y local chamfers/reliefs are applied to local boss/edge geometry."
+      },
+      {
+        "relationship_id": "REL059",
+        "from_feature_id": "F028",
+        "to_feature_id": "F011",
+        "relationship_type": "machining_dependency",
+        "detail": "Internal R3.0 fillet/corner relief modifies the central cylindrical support/seat geometry."
+      },
+      {
+        "relationship_id": "REL060",
+        "from_feature_id": "F029",
+        "to_feature_id": "F003",
+        "relationship_type": "coaxial",
+        "detail": "Local circular bosses are interpreted as sharing axes with related mounting threaded locations where shown."
+      },
+      {
+        "relationship_id": "REL061",
+        "from_feature_id": "F003",
+        "to_feature_id": "F029",
+        "relationship_type": "coaxial",
+        "detail": "Mounting threaded locations align with local circular boss geometry."
+      },
+      {
+        "relationship_id": "REL062",
+        "from_feature_id": "F029",
+        "to_feature_id": "F002",
+        "relationship_type": "on_same_face",
+        "detail": "Local circular bosses are on the same +Z mounting face as the datum target pad set."
+      },
+      {
+        "relationship_id": "REL063",
+        "from_feature_id": "F011",
+        "to_feature_id": "F001",
+        "relationship_type": "intersecting",
+        "detail": "Ø82 central cylindrical seat/step is part of the housing body."
+      },
+      {
+        "relationship_id": "REL064",
+        "from_feature_id": "F012",
+        "to_feature_id": "F001",
+        "relationship_type": "intersecting",
+        "detail": "Ø90.02 outer central cylindrical step is part of the housing body."
+      },
+      {
+        "relationship_id": "REL065",
+        "from_feature_id": "F013",
+        "to_feature_id": "F001",
+        "relationship_type": "intersecting",
+        "detail": "Large annular boss/profile is integral with the housing body."
+      },
+      {
+        "relationship_id": "REL066",
+        "from_feature_id": "F014",
+        "to_feature_id": "F001",
+        "relationship_type": "intersecting",
+        "detail": "Draft/tapered surfaces are integral with the housing body."
+      },
+      {
+        "relationship_id": "REL067",
+        "from_feature_id": "F005",
+        "to_feature_id": "F001",
+        "relationship_type": "on_same_face",
+        "detail": "Controlled support/outer flat surfaces are faces of the housing body."
+      },
+      {
+        "relationship_id": "REL068",
+        "from_feature_id": "F002",
+        "to_feature_id": "F001",
+        "relationship_type": "on_same_face",
+        "detail": "Datum target pad pattern is on the housing body mounting boss faces."
+      },
+      {
+        "relationship_id": "REL069",
+        "from_feature_id": "F004",
+        "to_feature_id": "F001",
+        "relationship_type": "perpendicular",
+        "detail": "[auto-enriched] counterbore F004 penetrates through F001"
+      },
+      {
+        "relationship_id": "REL070",
+        "from_feature_id": "F006",
+        "to_feature_id": "F001",
+        "relationship_type": "perpendicular",
+        "detail": "[auto-enriched] through_hole F006 penetrates through F001"
+      },
+      {
+        "relationship_id": "REL071",
+        "from_feature_id": "F007",
+        "to_feature_id": "F001",
+        "relationship_type": "perpendicular",
+        "detail": "[auto-enriched] through_hole F007 penetrates through F001"
+      },
+      {
+        "relationship_id": "REL072",
+        "from_feature_id": "F016",
+        "to_feature_id": "F001",
+        "relationship_type": "perpendicular",
+        "detail": "[auto-enriched] hole_pattern F016 penetrates through F001"
+      },
+      {
+        "relationship_id": "REL073",
+        "from_feature_id": "F017",
+        "to_feature_id": "F001",
+        "relationship_type": "perpendicular",
+        "detail": "[auto-enriched] hole_pattern F017 penetrates through F001"
+      },
+      {
+        "relationship_id": "REL074",
+        "from_feature_id": "F018",
+        "to_feature_id": "F001",
+        "relationship_type": "intersecting",
+        "detail": "[auto-enriched] slot F018 is machined into F001"
+      },
+      {
+        "relationship_id": "REL075",
+        "from_feature_id": "F002",
+        "to_feature_id": "F020",
+        "relationship_type": "on_same_face",
+        "detail": "[auto-enriched] Both F002 and F020 (pad) are accessed from the +Z face"
+      },
+      {
+        "relationship_id": "REL076",
+        "from_feature_id": "F005",
+        "to_feature_id": "F019",
+        "relationship_type": "on_same_face",
+        "detail": "[auto-enriched] Both F005 and F019 (flat_face) are accessed from the +Z face"
+      },
+      {
+        "relationship_id": "REL077",
+        "from_feature_id": "F006",
+        "to_feature_id": "F015",
+        "relationship_type": "on_same_face",
+        "detail": "[auto-enriched] Both F006 and F015 (through_hole) are accessed from the +Z face"
+      },
+      {
+        "relationship_id": "REL078",
+        "from_feature_id": "F007",
+        "to_feature_id": "F015",
+        "relationship_type": "on_same_face",
+        "detail": "[auto-enriched] Both F007 and F015 (through_hole) are accessed from the +Z face"
+      },
+      {
+        "relationship_id": "REL079",
+        "from_feature_id": "F010",
+        "to_feature_id": "F011",
+        "relationship_type": "on_same_face",
+        "detail": "[auto-enriched] Both F010 and F011 (external_cylinder) are accessed from the +Z face"
+      },
+      {
+        "relationship_id": "REL080",
+        "from_feature_id": "F010",
+        "to_feature_id": "F012",
+        "relationship_type": "on_same_face",
+        "detail": "[auto-enriched] Both F010 and F012 (external_cylinder) are accessed from the +Z face"
+      },
+      {
+        "relationship_id": "REL081",
+        "from_feature_id": "F011",
+        "to_feature_id": "F012",
+        "relationship_type": "on_same_face",
+        "detail": "[auto-enriched] Both F011 and F012 (external_cylinder) are accessed from the +Z face"
+      },
+      {
+        "relationship_id": "REL082",
+        "from_feature_id": "F013",
+        "to_feature_id": "F029",
+        "relationship_type": "on_same_face",
+        "detail": "[auto-enriched] Both F013 and F029 (boss) are accessed from the +Z face"
+      },
+      {
+        "relationship_id": "REL083",
+        "from_feature_id": "F016",
+        "to_feature_id": "F017",
+        "relationship_type": "on_same_face",
+        "detail": "[auto-enriched] Both F016 and F017 (hole_pattern) are accessed from the +Z face"
+      },
+      {
+        "relationship_id": "REL084",
+        "from_feature_id": "F022",
+        "to_feature_id": "F026",
+        "relationship_type": "on_same_face",
+        "detail": "[auto-enriched] Both F022 and F026 (rib) are accessed from the +Z face"
+      },
+      {
+        "relationship_id": "REL085",
+        "from_feature_id": "F024",
+        "to_feature_id": "F025",
+        "relationship_type": "on_same_face",
+        "detail": "[auto-enriched] Both F024 and F025 (radius) are accessed from the +Z face"
+      }
+    ],
+    "datum_scheme": {
+      "datums": [
+        {
+          "datum_letter": "A",
+          "feature_id": "F002",
+          "surface_type": "four circular datum target pads",
+          "description": "Datum A is interpreted as the common datum established by four Ø40 datum target areas labeled A1-A4 at the mounting bosses.",
+          "evidence": [
+            {
+              "page_index": 1,
+              "image_name": "page_001_vlm_contrast.png",
+              "visual_location": "main front view at four mounting bosses",
+              "cited_text": "Ø40 A1; Ø40 A2; Ø40 A3; Ø40 A4",
+              "evidence_type": "dimension",
+              "confidence": 0.82
+            }
+          ]
+        },
+        {
+          "datum_letter": "B",
+          "feature_id": "F006",
+          "surface_type": "cylindrical hole",
+          "description": "Datum B is interpreted as the left Ø16.95/16.85 bore; boxed B is adjacent to that bore callout.",
+          "evidence": [
+            {
+              "page_index": 1,
+              "image_name": "page_001_vlm_contrast.png",
+              "visual_location": "main front view, left Ø16.95/16.85 hole callout",
+              "cited_text": "Ø16.95 / 16.85; boxed B",
+              "evidence_type": "dimension",
+              "confidence": 0.72
+            }
+          ]
+        },
+        {
+          "datum_letter": "C",
+          "feature_id": "F007",
+          "surface_type": "cylindrical hole",
+          "description": "Datum C is interpreted as the right Ø16.95/16.85 bore; boxed C is adjacent to that bore callout.",
+          "evidence": [
+            {
+              "page_index": 1,
+              "image_name": "page_001_vlm_contrast.png",
+              "visual_location": "main front view, right Ø16.95/16.85 hole callout",
+              "cited_text": "Ø16.95 / 16.85; boxed C",
+              "evidence_type": "dimension",
+              "confidence": 0.72
+            }
+          ]
+        },
+        {
+          "datum_letter": "D",
+          "feature_id": "F008",
+          "surface_type": "cylindrical bore",
+          "description": "Datum D is the Ø72.19/71.89 bore/diameter shown in SECTION A-A with a datum feature symbol D.",
+          "evidence": [
+            {
+              "page_index": 1,
+              "image_name": "page_001_vlm_contrast.png",
+              "visual_location": "SECTION A-A, left bore callout",
+              "cited_text": "D; Ø72.19 / 71.89",
+              "evidence_type": "dimension",
+              "confidence": 0.83
+            }
+          ]
+        },
+        {
+          "datum_letter": "E",
+          "feature_id": "F010",
+          "surface_type": "coaxial cylindrical step or bore",
+          "description": "Datum E appears near the central/right diameter stack in SECTION A-A; interpreted as associated with the Ø74.00/central coaxial step. This is low-confidence due to legibility.",
+          "evidence": [
+            {
+              "page_index": 1,
+              "image_name": "page_001_vlm_contrast.png",
+              "visual_location": "SECTION A-A near Ø74.00 O/R feature-control frame",
+              "cited_text": "boxed E near Ø74.00 O/R / position control (partially legible)",
+              "evidence_type": "dimension",
+              "confidence": 0.48
+            }
+          ]
+        }
+      ],
+      "datum_hierarchy_notes": "Primary datum A appears to be a datum-target plane from A1-A4 pads. Datums B and C are interpreted as the two Ø16.90 locating bores. Datum D is a cylindrical bore in SECTION A-A. Datum E is visible but not fully legible; it is tentatively mapped to the Ø74.00 coaxial step. Section-cut labels A-A, B-B, C-C, and D-D were treated as section identifiers, not datums."
+    },
+    "sections_and_views": [
+      {
+        "view_name": "main front view",
+        "page_index": 1,
+        "orientation": "+Z primary face; front/profile view of housing",
+        "features_visible": [
+          "F001",
+          "F002",
+          "F003",
+          "F006",
+          "F007",
+          "F009",
+          "F013",
+          "F021",
+          "F022",
+          "F023",
+          "F024",
+          "F025",
+          "F026",
+          "F029"
+        ],
+        "notes": "Contains four M10 mounting bosses, A1-A4 datum targets, B/C datum bores, central annular/ribbed housing, irregular pockets, and exterior perimeter dimensions."
+      },
+      {
+        "view_name": "SECTION A-A",
+        "page_index": 1,
+        "orientation": "vertical section through central bore axis/profile",
+        "features_visible": [
+          "F001",
+          "F008",
+          "F009",
+          "F010",
+          "F011",
+          "F012",
+          "F013",
+          "F014",
+          "F015",
+          "F016"
+        ],
+        "notes": "Shows central coaxial diameter stack, datum D bore, taper/draft surfaces, lug bore dimensions, and marking-note surface."
+      },
+      {
+        "view_name": "SECTION B-B",
+        "page_index": 1,
+        "orientation": "horizontal section through central housing and support walls",
+        "features_visible": [
+          "F001",
+          "F005",
+          "F009",
+          "F011",
+          "F028"
+        ],
+        "notes": "Shows longest visible sectional dimensions 168.69 and 167.09, Ø82.71 O/R, R3.0, support-surface controls, and vertical envelope dimensions."
+      },
+      {
+        "view_name": "SECTION C-C",
+        "page_index": 1,
+        "orientation": "section through clevis/lug wall stack",
+        "features_visible": [
+          "F001",
+          "F018",
+          "F019",
+          "F020"
+        ],
+        "notes": "Shows repeated stepped dimensions 2X 3.00, 2X 11.50, 2X 8.50, and 2X 15.00."
+      },
+      {
+        "view_name": "SECTION D-D",
+        "page_index": 1,
+        "orientation": "section through mounting boss/nut insert area",
+        "features_visible": [
+          "F001",
+          "F002",
+          "F003",
+          "F004",
+          "F005",
+          "F029"
+        ],
+        "notes": "Shows 4X 17.50 insert/nut recess condition and note that nuts must not extend beyond bracket surface."
+      },
+      {
+        "view_name": "DETAIL X",
+        "page_index": 1,
+        "orientation": "enlarged local edge detail, scale 2:1",
+        "features_visible": [
+          "F023"
+        ],
+        "notes": "Shows local profile control of exterior edge surface, likely profile 1.0 to A/B/C."
+      },
+      {
+        "view_name": "DETAIL Y",
+        "page_index": 1,
+        "orientation": "enlarged local chamfer/edge detail, scale 2:1",
+        "features_visible": [
+          "F027"
+        ],
+        "notes": "Shows small 2X 1.1/0.9 and likely 2X 10° local edge relief/chamfer."
+      },
+      {
+        "view_name": "lower clevis detail views",
+        "page_index": 1,
+        "orientation": "detailed clevis views at bottom center",
+        "features_visible": [
+          "F017",
+          "F018",
+          "F019"
+        ],
+        "notes": "Shows 2X Ø10.65/10.35 holes, 55.35/55.05 clevis slot width, 4X 5.80, 87.26°, and profile controls for inner/outer clevis surfaces."
+      }
+    ],
+    "part_level_specs": {
+      "material": null,
+      "heat_treatment": null,
+      "coating": {
+        "raw_text": "4X M10X1.5 - 6H THREAD AFTER COATING; ZN-NI COAT INSERT NUTS",
+        "coating_type": "Zn-Ni coating / thread-after-coating requirement for insert nuts or threaded features",
+        "standard": null,
+        "coverage": "Insert nuts and/or M10 threaded features only; no whole-part coating boundary identified.",
+        "evidence": [
+          {
+            "page_index": 1,
+            "image_name": "page_001_vlm_contrast.png",
+            "visual_location": "main front view upper-left callout",
+            "cited_text": "THREAD AFTER COATING",
+            "evidence_type": "dimension",
+            "confidence": 0.88
+          },
+          {
+            "page_index": 1,
+            "image_name": "page_001_vlm_contrast.png",
+            "visual_location": "bottom-left general notes",
+            "cited_text": "ZN-NI COAT INSERT NUTS",
+            "evidence_type": "note",
+            "confidence": 0.7
+          }
+        ],
+        "confidence": 0.73
+      },
+      "general_tolerance_standard": null,
+      "general_notes": [
+        {
+          "note_text": "Break all sharp edges 0.5 max.",
+          "category": "deburr",
+          "evidence": [
+            {
+              "page_index": 1,
+              "image_name": "page_001_vlm_contrast.png",
+              "visual_location": "bottom-left notes block",
+              "cited_text": "BREAK ALL SHARP EDGES 0.5 MAX",
+              "evidence_type": "note",
+              "confidence": 0.86
+            }
+          ]
+        },
+        {
+          "note_text": "Part must be free of flash and/or sharp edges that may be detrimental to satisfactory assembly, safe handling, and function.",
+          "category": "deburr",
+          "evidence": [
+            {
+              "page_index": 1,
+              "image_name": "page_001_vlm_contrast.png",
+              "visual_location": "bottom-left notes block",
+              "cited_text": "MUST BE FREE OF FLASH AND/OR SHARP EDGES THAT MAY BE DETRIMENTAL TO SATISFACTORY ASSEMBLY, SAFE HANDLING, AND FUNCTION",
+              "evidence_type": "note",
+              "confidence": 0.82
+            }
+          ]
+        },
+        {
+          "note_text": "Restricted and reportable substance requirement per GMW3059.",
+          "category": "other",
+          "evidence": [
+            {
+              "page_index": 1,
+              "image_name": "page_001_vlm_contrast.png",
+              "visual_location": "bottom-left notes block",
+              "cited_text": "RESTRICTED AND REPORTABLE SUBSTANCE FOR PARTS PER GMW3059",
+              "evidence_type": "note",
+              "confidence": 0.78
+            }
+          ]
+        },
+        {
+          "note_text": "Indent the indicated surface with part number, customer part number, date code, and cavity number; 3 mm character height; 0.3 mm raised letters.",
+          "category": "marking",
+          "evidence": [
+            {
+              "page_index": 1,
+              "image_name": "page_001_vlm_contrast.png",
+              "visual_location": "SECTION A-A upper right note with leader",
+              "cited_text": "INDENT THIS SURFACE WITH P/N & CUSTOMER P/N DATE CODE & CAVITY NUMBER; 3mm CHARACTER HEIGHT; 0.3mm RAISED LETTERS",
+              "evidence_type": "note",
+              "confidence": 0.82
+            }
+          ]
+        },
+        {
+          "note_text": "Nuts must not extend beyond the surface of bracket, 4 places.",
+          "category": "process",
+          "evidence": [
+            {
+              "page_index": 1,
+              "image_name": "page_001_vlm_contrast.png",
+              "visual_location": "SECTION D-D note",
+              "cited_text": "NUTS MUST NOT EXTEND BEYOND THE SURFACE OF BRACKET 4 PLACES",
+              "evidence_type": "note",
+              "confidence": 0.88
+            }
+          ]
+        },
+        {
+          "note_text": "For any detail not shown refer to 3D model.",
+          "category": "other",
+          "evidence": [
+            {
+              "page_index": 1,
+              "image_name": "page_001_vlm_contrast.png",
+              "visual_location": "lower-right above title block",
+              "cited_text": "FOR ANY DETAIL NOT SHOWN REFER TO 3D MODEL",
+              "evidence_type": "note",
+              "confidence": 0.86
+            }
+          ]
+        },
+        {
+          "note_text": "Must conform to control plan / total number note in upper-left area; wording is partially legible.",
+          "category": "inspection",
+          "evidence": [
+            {
+              "page_index": 1,
+              "image_name": "page_001_vlm_contrast.png",
+              "visual_location": "upper-left notes",
+              "cited_text": "MUST CONFORM TO ... CONTROL PLAN; LAST NUMBER = 3; TOTAL NUMBER = 3",
+              "evidence_type": "note",
+              "confidence": 0.52
+            }
+          ]
+        }
+      ],
+      "testing_requirements": [
+        {
+          "test_type": "nut push-out force",
+          "standard": null,
+          "criteria": "Nut push-out force 2 kN minimum; test speed 60 mm/min.",
+          "evidence": [
+            {
+              "page_index": 1,
+              "image_name": "page_001_vlm_contrast.png",
+              "visual_location": "bottom-left notes block",
+              "cited_text": "NUT PUSH OUT FORCE 2 kN MIN, TEST SPEED 60 mm/min",
+              "evidence_type": "note",
+              "confidence": 0.86
+            }
+          ]
+        },
+        {
+          "test_type": "nut anti-rotate torque",
+          "standard": null,
+          "criteria": "Nut anti-rotate torque 80 Nm minimum.",
+          "evidence": [
+            {
+              "page_index": 1,
+              "image_name": "page_001_vlm_contrast.png",
+              "visual_location": "bottom-left notes block",
+              "cited_text": "NUT ANTI ROTATE TORQUE 80 Nm MIN",
+              "evidence_type": "note",
+              "confidence": 0.84
+            }
+          ]
+        },
+        {
+          "test_type": "bracket durability block test",
+          "standard": null,
+          "criteria": "Block-test load ranges and cycle counts per station are given in the table; notes indicate load polarity convention and repeat cycles per block 4 times per life.",
+          "evidence": [
+            {
+              "page_index": 1,
+              "image_name": "page_001_vlm_contrast.png",
+              "visual_location": "lower-right table",
+              "cited_text": "BRACKET DURABILITY BLOCK TEST; TEST STATION; CYCLES PER BLOCK REPEAT 4 TIMES FOR L-LIFE",
+              "evidence_type": "table",
+              "confidence": 0.72
+            }
+          ]
+        },
+        {
+          "test_type": "extreme jounce test",
+          "standard": null,
+          "criteria": "Load to the area of bounce bumper; test speed 60 mm/min; load until failure; target load mean - 3 sigma criteria shown, partially legible.",
+          "evidence": [
+            {
+              "page_index": 1,
+              "image_name": "page_001_vlm_contrast.png",
+              "visual_location": "bottom-left test notes",
+              "cited_text": "EXTREME JOUNCE TEST; LOAD TO THE AREA OF BOUNCE BUMPER; TEST SPEED 60mm/MIN; LOAD UNTIL FAILURE",
+              "evidence_type": "note",
+              "confidence": 0.7
+            }
+          ]
+        },
+        {
+          "test_type": "extreme rebound test",
+          "standard": null,
+          "criteria": "Load to the indicated area; test speed 60 mm/min; load until failure; target load mean - 3 sigma greater than 100 kN, partially legible.",
+          "evidence": [
+            {
+              "page_index": 1,
+              "image_name": "page_001_vlm_contrast.png",
+              "visual_location": "bottom-center test notes",
+              "cited_text": "EXTREME REBOUND TEST; TEST SPEED 60mm/MIN; LOAD UNTIL FAILURE; TARGET LOAD IS MEAN - 3σ > 100kN",
+              "evidence_type": "note",
+              "confidence": 0.68
+            }
+          ]
+        },
+        {
+          "test_type": "extreme joints test",
+          "standard": null,
+          "criteria": "Load to area of front and rear joints; test speed 60 mm/min; stretch to 40 kN then compress to 40 kN; no damage.",
+          "evidence": [
+            {
+              "page_index": 1,
+              "image_name": "page_001_vlm_contrast.png",
+              "visual_location": "bottom-center/right test notes",
+              "cited_text": "EXTREME JOINTS TEST; STRETCH TO 40kN THEN COMPRESS TO 40kN; NO DAMAGE",
+              "evidence_type": "note",
+              "confidence": 0.78
+            }
+          ]
+        }
+      ],
+      "packaging_requirements": null
+    },
+    "overall_complexity": "very_complex",
+    "graph_summary": "The drawing depicts a complex cast housing/bracket named HOUSING with a large central annular/bore structure, radial stiffening ribs, irregular lightening pockets, four M10x1.5-6H threaded mounting-boss locations with Ø40 datum target pads A1-A4, two Ø16.90 locating/datum bores B and C, a coaxial central/sectional bore stack including Ø72.04 datum D, Ø70.00, Ø74.00, Ø82.00/82.71, Ø90.02, and a large Ø143.60 annular profile. The part also includes clevis/lug geometry with Ø30.60, Ø20.10, and 2X Ø10.50 holes, U-shaped clevis slots 55.20 mm wide, controlled inner/outer clevis faces, stepped lug walls, and multiple radii/chamfers/fillets. Primary datum A is interpreted from four pad targets, B and C from the two Ø16.90 bores, and D from the Ø72.04 bore. Several GD&T profile/position/flatness controls are legible but some values and datum references remain low-confidence due to raster legibility."
+  },
+  "clarifications": [
+    {
+      "clarification_id": "C001",
+      "question": "Please confirm the material grade/specification from the title block.",
+      "why_it_matters": "Material is required for downstream quoting, weight estimation, and interpretation of casting/coating requirements; the raster title-block material field is not legible enough to extract safely.",
+      "blocks": [
+        "part_level_specs.material",
+        "part.material"
+      ],
+      "suggested_default": null,
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C002",
+      "question": "Please confirm the general tolerance standard/default tolerances shown in the title block, if any.",
+      "why_it_matters": "Many dimensions have no explicit ± tolerance; the default drawing tolerance controls these dimensions.",
+      "blocks": [
+        "part_level_specs.general_tolerance_standard",
+        "dimensional_tolerances for untoleranced dimensions"
+      ],
+      "suggested_default": null,
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C003",
+      "question": "Please confirm the M10 threaded insert/hole depth and whether the four M10 holes are blind, through, or insert-nut features only; also confirm the counterbore/recess diameter associated with 4X 17.50.",
+      "why_it_matters": "The thread callout is clear but the depth and recess diameter are not; these affect complete 3D reconstruction of the mounting bosses.",
+      "blocks": [
+        "F003",
+        "F004"
+      ],
+      "suggested_default": "Treat as threaded insert/nut features with no modeled thread depth until confirmed.",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C004",
+      "question": "Please confirm through-depth/wall-thickness values for the Ø16.90 datum bores and clevis holes if they are not simply through the local wall thickness shown in sections.",
+      "why_it_matters": "Hole features are identified, but local material thickness is not always explicitly dimensioned at each hole axis.",
+      "blocks": [
+        "F006",
+        "F007",
+        "F015",
+        "F016",
+        "F017",
+        "F018"
+      ],
+      "suggested_default": "Model as through holes/through slots through the local lug or wall thickness visible in section.",
+      "priority": "medium"
+    },
+    {
+      "clarification_id": "C005",
+      "question": "Please confirm the exact GD&T feature-control-frame values and datum references for the M10 pattern, Ø16.90 bores, Ø72.04 bore, Ø74/Ø30/Ø20 features, and clevis holes.",
+      "why_it_matters": "Several FCFs are present but small; extracted tolerances are low-confidence and may affect inspection datum relationships.",
+      "blocks": [
+        "F003",
+        "F006",
+        "F007",
+        "F008",
+        "F010",
+        "F015",
+        "F016",
+        "F017",
+        "datum_scheme"
+      ],
+      "suggested_default": "Use the extracted best-read values with low confidence until verified.",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C006",
+      "question": "Please confirm whether the irregular pockets/windows and radial ribs are controlled solely by the 3D model/profile controls, or whether additional dimensions exist not readable in the raster.",
+      "why_it_matters": "These large cast features are visible but not fully dimensioned on the 2D sheet; complete 3D reconstruction needs their boundaries/depths.",
+      "blocks": [
+        "F021",
+        "F022",
+        "F026"
+      ],
+      "suggested_default": "Treat them as cast/profile-controlled geometry per 3D model and visible drawing outline.",
+      "priority": "medium"
+    },
+    {
+      "clarification_id": "C007",
+      "question": "Please confirm the meaning of abbreviations O/R, I/P, U/R, A/C, and DRFT MAX on the drawing and whether those dimensions are finished dimensions, over-reference profile dimensions, or casting/draft controls.",
+      "why_it_matters": "The central diameter stack and several section dimensions use these abbreviations; exact interpretation affects feature classification and tolerance status.",
+      "blocks": [
+        "F009",
+        "F010",
+        "F011",
+        "F012",
+        "F013",
+        "F014",
+        "F015",
+        "F028"
+      ],
+      "suggested_default": "Treat O/R and I/P values as dimensional references and DRFT MAX as draft control until confirmed.",
+      "priority": "medium"
+    },
+    {
+      "clarification_id": "",
+      "question": "What is the depth of F021 (Cast lightening pockets/windows on main face)? No depth dimension was found on the drawing for this feature.",
+      "why_it_matters": "",
+      "blocks": [],
+      "suggested_default": null,
+      "priority": "medium"
+    },
+    {
+      "clarification_id": "C_LOW_F014",
+      "question": "Please verify feature F014 (Draft/taper surfaces in central section). It was extracted with low confidence (0.64). Confirm whether this feature exists and its dimensions are correct.",
+      "why_it_matters": "Low-confidence features may be misread dimensions or hallucinated geometry. Agent 2 needs accurate data to plan machining operations.",
+      "blocks": [
+        "F014"
+      ],
+      "suggested_default": "Accept as extracted if verified.",
+      "priority": "medium"
+    },
+    {
+      "clarification_id": "C_LOW_F022",
+      "question": "Please verify feature F022 (Radial stiffening ribs around central annulus). It was extracted with low confidence (0.55). Confirm whether this feature exists and its dimensions are correct.",
+      "why_it_matters": "Low-confidence features may be misread dimensions or hallucinated geometry. Agent 2 needs accurate data to plan machining operations.",
+      "blocks": [
+        "F022"
+      ],
+      "suggested_default": "Accept as extracted if verified.",
+      "priority": "medium"
+    },
+    {
+      "clarification_id": "C_LOW_F023",
+      "question": "Please verify feature F023 (Controlled exterior perimeter edge surface). It was extracted with low confidence (0.61). Confirm whether this feature exists and its dimensions are correct.",
+      "why_it_matters": "Low-confidence features may be misread dimensions or hallucinated geometry. Agent 2 needs accurate data to plan machining operations.",
+      "blocks": [
+        "F023"
+      ],
+      "suggested_default": "Accept as extracted if verified.",
+      "priority": "medium"
+    },
+    {
+      "clarification_id": "C_LOW_F027",
+      "question": "Please verify feature F027 (Detail Y local edge chamfers/reliefs). It was extracted with low confidence (0.62). Confirm whether this feature exists and its dimensions are correct.",
+      "why_it_matters": "Low-confidence features may be misread dimensions or hallucinated geometry. Agent 2 needs accurate data to plan machining operations.",
+      "blocks": [
+        "F027"
+      ],
+      "suggested_default": "Accept as extracted if verified.",
+      "priority": "medium"
+    }
+  ],
+  "assumptions": [],
+  "guardrail_results": [
+    {
+      "guardrail_id": "G001_title_block_first",
+      "status": "warn",
+      "message": "Title block and notes were reviewed first; title and units were extracted, but material and default tolerances were not legible enough for reliable extraction.",
+      "affected_ids": [
+        "part",
+        "part_level_specs.material",
+        "part_level_specs.general_tolerance_standard",
+        "C001",
+        "C002"
+      ]
+    },
+    {
+      "guardrail_id": "G002_envelope_from_max_values",
+      "status": "pass",
+      "message": "Envelope uses maximum visible dimensions from section/main views: 335.78 derived from 168.69+167.09, 232.62 main-view span, and Ø143.60 largest profile; no hole-count callout was misused as envelope width.",
+      "affected_ids": [
+        "feature_graph.part_envelope",
+        "F001"
+      ]
+    },
+    {
+      "guardrail_id": "G003_thread_completeness",
+      "status": "pass",
+      "message": "Thread scan found only one explicit metric thread callout: 4X M10X1.5-6H THREAD AFTER COATING. It is represented by F003.",
+      "affected_ids": [
+        "F003"
+      ]
+    },
+    {
+      "guardrail_id": "G004_hole_feature_completeness",
+      "status": "warn",
+      "message": "Major hole callouts with Ø symbols were captured: M10 thread pattern, Ø16.90 B/C bores, Ø72.04 bore, Ø70/74/82/90 central stack, Ø30.60, Ø20.10, and 2X Ø10.50 clevis holes. Some counts/depths remain uncertain due to section legibility.",
+      "affected_ids": [
+        "F003",
+        "F006",
+        "F007",
+        "F008",
+        "F009",
+        "F010",
+        "F011",
+        "F012",
+        "F015",
+        "F016",
+        "F017",
+        "C004",
+        "C005"
+      ]
+    },
+    {
+      "guardrail_id": "G005_depth_check",
+      "status": "warn",
+      "message": "Explicit 4X 17.50 recess depth was captured for F004. Through/depth conditions for several bores/slots were inferred from section geometry but exact local depths are not fully dimensioned, so clarifications were added.",
+      "affected_ids": [
+        "F003",
+        "F004",
+        "F006",
+        "F007",
+        "F015",
+        "F016",
+        "F017",
+        "F018",
+        "F021",
+        "C003",
+        "C004",
+        "C006"
+      ]
+    },
+    {
+      "guardrail_id": "G006_datum_disambiguation",
+      "status": "warn",
+      "message": "Section cuts A-A, B-B, C-C, D-D were separated from datum symbols. Datum A/B/C/D were identified with moderate confidence; datum E is low-confidence due to legibility.",
+      "affected_ids": [
+        "datum_scheme",
+        "F002",
+        "F006",
+        "F007",
+        "F008",
+        "F010",
+        "C005"
+      ]
+    },
+    {
+      "guardrail_id": "G007_relationship_completeness",
+      "status": "pass",
+      "message": "Each feature has at least one physical or datum relationship; symmetric coaxial/parallel relationships were created in both directions where used.",
+      "affected_ids": [
+        "feature_graph.relationships"
+      ]
+    },
+    {
+      "guardrail_id": "G008_surface_finish_scope",
+      "status": "pass",
+      "message": "No feature-specific Ra/surface-finish symbol was confidently visible. General deburr/flash/marking/coating notes were kept at part level instead of being applied as feature surface_finish requirements.",
+      "affected_ids": [
+        "part_level_specs.general_notes",
+        "features"
+      ]
+    }
+  ],
+  "confidence": {
+    "overall": 0.67,
+    "part_metadata": 0.62,
+    "feature_extraction": 0.68,
+    "relationships": 0.76,
+    "datum_scheme": 0.64,
+    "part_level_specs": 0.66
+  },
+  "analysis_trace": [
+    {
+      "step": "page_orientation",
+      "summary": "Processed one cropped contrast-enhanced drawing sheet. Main front/profile view is on the upper-left; sections and details surround it. Metric notation is used throughout.",
+      "issues": [
+        "Some title-block fields and small GD&T frames remain difficult to read at raster resolution."
+      ]
+    },
+    {
+      "step": "view_identification",
+      "summary": "Identified main front view, SECTION A-A, SECTION B-B, SECTION C-C, SECTION D-D, DETAIL X, DETAIL Y, lower clevis detail views, lower-left notes, lower-right test table, and lower-right title block.",
+      "issues": [
+        "Section letters A-A/B-B/C-C/D-D are cutting-plane identifiers and were not treated as datums."
+      ]
+    },
+    {
+      "step": "feature_extraction",
+      "summary": "Swept visible views and extracted body envelope, M10 thread pattern, datum pads, Ø16.90 datum bores, central coaxial bore/diameter stack, clevis holes/slots/faces, stepped wall geometry, perimeter surfaces, ribs, pockets, radii, chamfers, and fillets.",
+      "issues": [
+        "Irregular cast pockets/ribs are visually clear but not dimensioned in detail on the 2D sheet."
+      ]
+    },
+    {
+      "step": "cross_view_correlation",
+      "summary": "Correlated the central circular feature in the main view with the stepped coaxial diameters in SECTION A-A/B-B, and correlated clevis holes/slots across SECTION A-A, SECTION C-C, and lower detail views.",
+      "issues": [
+        "Some O/R, I/P, U/R, A/C abbreviations are not fully interpreted."
+      ]
+    },
+    {
+      "step": "graph_assembly",
+      "summary": "Assembled feature graph with physical relationships: M10 threads to pads/recesses, coaxial central bore train, clevis holes to lug faces, pockets/ribs to body, and perimeter radii/chamfers/fillets to parent edges.",
+      "issues": [
+        "Some relationships are inferred from visible section alignment rather than fully dimensioned coordinates."
+      ]
+    },
+    {
+      "step": "tolerance_embedding",
+      "summary": "Embedded limit dimensions and visible GD&T controls directly on feature nodes. Limit dimensions were converted to midpoint nominal values with plus/minus deviations. Profile, position, and flatness controls were attached to constrained features when legible.",
+      "issues": [
+        "Several feature-control-frame values/datum references have confidence below 0.75 and are flagged for clarification."
+      ]
+    },
+    {
+      "step": "datum_scheme",
+      "summary": "Interpreted datum A from the four Ø40 A1-A4 target pads, datum B and C from left/right Ø16.90 bores, datum D from the Ø72.04 bore in SECTION A-A, and tentative datum E near the Ø74 central step.",
+      "issues": [
+        "Datum E and some B/C GD&T references are low-confidence due to small text."
+      ]
+    },
+    {
+      "step": "part_level_specs",
+      "summary": "Captured part-level coating/thread-after-coating notes, deburr/flash restriction, marking note, restricted-substance note, nut protrusion note, and test requirements including nut push-out, anti-rotate torque, durability block test, extreme jounce/rebound/joints tests.",
+      "issues": [
+        "Material, heat treatment, and default tolerance standard could not be reliably extracted from the title block."
+      ]
+    },
+    {
+      "step": "self_review",
+      "summary": "Ran thread completeness, hole completeness, depth, dimension reread, relationship completeness, datum disambiguation, and envelope sanity checks. Confirmed only M10 thread callout was visible; confirmed Ø symbol was present before creating hole features; verified no random 2X/3X ordinate/count text was treated as a hole diameter without Ø.",
+      "issues": [
+        "Depths for several through features remain inferred; exact GD&T and material/tolerance fields need confirmation."
+      ]
+    }
+  ]
+}

@@ -10,7 +10,7 @@ export const metadata = {
 }
 
 export default async function ReportsListPage() {
-  const parts = await getPartsList()
+  const parts = await getPartsList("jal")
 
   return (
     <div className="min-h-screen bg-muted/20 p-8 md:p-12">
@@ -39,15 +39,9 @@ export default async function ReportsListPage() {
                         RFQ
                       </Badge>
                     </div>
-                    <CardTitle className="font-mono text-lg">{part.drawingNumber}</CardTitle>
+                    <CardTitle className="font-mono text-lg">{part.folderName}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <h3 className="font-semibold text-foreground line-clamp-2 mb-2">
-                      {part.partName}
-                    </h3>
-                    <p className="text-sm text-muted-foreground line-clamp-1 mb-4">
-                      {part.material}
-                    </p>
                     <div className="flex items-center text-xs font-semibold text-primary uppercase tracking-widest mt-auto pt-2 opacity-0 group-hover:opacity-100 transition-opacity">
                       View Report <ArrowRight className="w-3 h-3 ml-1" />
                     </div>

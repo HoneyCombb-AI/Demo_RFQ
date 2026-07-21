@@ -1,24 +1,23 @@
 "use server"
 
 import { cookies } from "next/headers"
-import { redirect } from "next/navigation"
+import { getOrgByCode } from "@/lib/org-config"
 
 export async function loginWithCode(code: string) {
-  // Hardcoded for now. 4521 = JAL
-  if (code === "4521") {
-    // Await the cookies() promise (Next.js 15+ requirement)
+  const org = getOrgByCode(code)
+
+  if (org) {
     const cookieStore = await cookies()
     cookieStore.set("org_code", code, {
       httpOnly: true,
       secure: process.env.NODE_ENV === "production",
       sameSite: "lax",
-      maxAge: 60 * 60 * 24 * 7, // 1 week
+      maxAge: 60 * 60 * 24 * 7,
       path: "/",
     })
-    
-    return { success: true, redirectUrl: "/jal" }
+
+    return { success: true, redirectUrl: `/${org.slug}` }
   }
 
-  // If wrong code, return an error message
   return { error: "Invalid organization code" }
 }

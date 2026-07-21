@@ -97,7 +97,7 @@ export interface PartInfo {
   name: string;
   drawing_number: string;
   revision: string | null;
-  material: string;
+  material: string | null;
   quantity: number | null;
   units: string;
   title_block_notes: string[];
@@ -420,7 +420,7 @@ export interface ComputedRouteData {
 }
 
 // ============================================================
-// TYPE DEFINITIONS — Excel Quote
+// TYPE DEFINITIONS — Excel Quote (JAL format)
 // ============================================================
 
 export interface QuoteStock {
@@ -475,6 +475,68 @@ export interface ExcelQuoteData {
 }
 
 // ============================================================
+// TYPE DEFINITIONS — Setup Quote (ALM format)
+// ============================================================
+
+export interface SetupQuoteMaterialCost {
+  material_key: string;
+  material_description: string;
+  stock_form: string;
+  stock_dimensions: Record<string, number | string>;
+  volume_cm3: number;
+  weight_kg: number;
+  price_per_kg_inr: number;
+  material_cost_per_piece_inr: number;
+  notes: string[];
+}
+
+export interface SetupCostItem {
+  setup_id: string;
+  setup_name: string;
+  machine_family: string;
+  hourly_rate_inr: number;
+  setup_time_min: number;
+  machining_time_per_piece_min: number;
+  setup_cost_inr: number;
+  machining_cost_per_piece_inr: number;
+  total_cost_per_piece_inr: number;
+  outside_process: boolean;
+  outside_cost_per_piece_inr: number;
+}
+
+export interface SetupQuoteSummary {
+  quantity: number;
+  currency: string;
+  material_cost_per_piece_inr: number;
+  machining_cost_per_piece_inr: number;
+  setup_cost_total_inr: number;
+  setup_cost_per_piece_inr: number;
+  outside_process_cost_per_piece_inr: number;
+  tool_cost_per_piece_inr: number;
+  rejection_cost_per_piece_inr: number;
+  subtotal_per_piece_inr: number;
+  overhead_percent: number;
+  overhead_per_piece_inr: number;
+  margin_percent: number;
+  margin_per_piece_inr: number;
+  final_price_per_piece_inr: number;
+  batch_total_inr: number;
+}
+
+export interface SetupQuoteData {
+  analysis_id: string;
+  part_name: string;
+  material: string;
+  quantity: number;
+  currency: string;
+  material_cost: SetupQuoteMaterialCost;
+  setup_costs: SetupCostItem[];
+  summary: SetupQuoteSummary;
+  warnings: string[];
+  assumptions: string[];
+}
+
+// ============================================================
 // UNIFIED REPORT DATA
 // ============================================================
 
@@ -487,12 +549,15 @@ export interface PartLevelSpec {
 export interface ReportData {
   slug: string;
   folderName: string;
+  orgSlug: string;
+  quoteFormat: "excel" | "setup";
   featureGraph: FeatureGraphData;
   specList: SpecItem[];
   feasibility: FeasibilityData;
   deconstructedRoute: DeconstructedRouteData;
   computedRoute: ComputedRouteData;
-  excelQuote: ExcelQuoteData;
+  excelQuote: ExcelQuoteData | null;
+  setupQuote: SetupQuoteData | null;
   partLevelSpecs: PartLevelSpec[];
   balloonedImageUrl: string;
   originalImageUrl: string;

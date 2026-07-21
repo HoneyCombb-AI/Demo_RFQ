@@ -9,12 +9,12 @@ type Props = {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
-  const data = await getReportData(slug)
-  
+  const data = await getReportData(slug, "jal")
+
   if (!data) {
     return { title: "Report Not Found" }
   }
-  
+
   return {
     title: `${data.featureGraph.part.drawing_number} | RFQ Report`,
     description: `Manufacturing analysis report for ${data.featureGraph.part.name}`,
@@ -22,17 +22,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export async function generateStaticParams() {
-  const parts = await getPartsList()
+  const parts = await getPartsList("jal")
   return parts.map((part) => ({
     slug: part.slug,
   }))
 }
 
 export default async function ReportPage({ params }: Props) {
-  // Await the params for Next.js 15+ App Router rules
   const { slug } = await params
-  
-  const data = await getReportData(slug)
+
+  const data = await getReportData(slug, "jal")
 
   if (!data) {
     notFound()

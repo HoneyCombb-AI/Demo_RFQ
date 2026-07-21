@@ -1,18 +1,18 @@
 import fs from "fs/promises";
 import path from "path";
-import { 
-  FeatureGraphData, 
-  SpecItem, 
-  FeasibilityData, 
-  DeconstructedRouteData, 
-  ComputedRouteData, 
+import {
+  FeatureGraphData,
+  SpecItem,
+  FeasibilityData,
+  DeconstructedRouteData,
+  ComputedRouteData,
   ExcelQuoteData,
+  SetupQuoteData,
   PartLevelSpec,
   ReportData,
   PartListItem
 } from "./data";
-
-const DATA_DIR = path.join(process.cwd(), "app", "jal");
+import { getOrgBySlug, OrgConfig } from "./org-config";
 
 export function slugify(name: string): string {
   return name
@@ -43,12 +43,15 @@ async function isDataDir(dirPath: string): Promise<boolean> {
   }
 }
 
-export async function getPartsList(): Promise<PartListItem[]> {
-  const entries = await fs.readdir(DATA_DIR);
+export async function getPartsList(orgSlug: string = "jal"): Promise<PartListItem[]> {
+  const org = getOrgBySlug(orgSlug);
+  if (!org) return [];
+
+  const entries = await fs.readdir(org.dataDir);
   const parts: PartListItem[] = [];
 
   for (const entry of entries) {
-    const fullPath = path.join(DATA_DIR, entry);
+    const fullPath = path.join(org.dataDir, entry);
     if (!(await isDataDir(fullPath))) continue;
 
     const fg = await readJson<FeatureGraphData>(
@@ -61,18 +64,21 @@ export async function getPartsList(): Promise<PartListItem[]> {
       folderName: entry,
       drawingNumber: fg.part.drawing_number,
       partName: fg.part.name,
-      material: fg.part.material,
+      material: fg.part.material ?? "Not specified",
     });
   }
 
   return parts;
 }
 
-export async function resolveSlug(slug: string): Promise<string | null> {
-  const entries = await fs.readdir(DATA_DIR);
+export async function resolveSlug(slug: string, orgSlug: string = "jal"): Promise<string | null> {
+  const org = getOrgBySlug(orgSlug);
+  if (!org) return null;
+
+  const entries = await fs.readdir(org.dataDir);
   for (const entry of entries) {
     if (slugify(entry) === slug) {
-      const fullPath = path.join(DATA_DIR, entry);
+      const fullPath = path.join(org.dataDir, entry);
       if (await isDataDir(fullPath)) return entry;
     }
   }
@@ -83,14 +89,15 @@ export function derivePartLevelSpecs(fg: FeatureGraphData): PartLevelSpec[] {
   const specs: PartLevelSpec[] = [];
   const features = fg.feature_graph.features;
 
-  const materialType = fg.part.material.toLowerCase().includes("case")
+  const mat = fg.part.material ?? "";
+  const materialType = mat.toLowerCase().includes("case")
     ? "case-hardening steel"
-    : fg.part.material.toLowerCase().includes("alloy")
+    : mat.toLowerCase().includes("alloy")
       ? "alloy steel"
       : "steel";
   specs.push({
     label: "MATERIAL",
-    value: fg.part.material,
+    value: mat || "Not specified",
     detail: `(${materialType})`,
   });
 
@@ -226,24 +233,38 @@ export function derivePartLevelSpecs(fg: FeatureGraphData): PartLevelSpec[] {
 
 export async function getReportData(
   slug: string,
+  orgSlug: string = "jal",
 ): Promise<ReportData | null> {
-  const folderName = await resolveSlug(slug);
+  const org = getOrgBySlug(orgSlug);
+  if (!org) return null;
+
+  const folderName = await resolveSlug(slug, orgSlug);
   if (!folderName) return null;
 
-  const dir = path.join(DATA_DIR, folderName);
+  const dir = path.join(org.dataDir, folderName);
 
-  const [featureGraph, specList, feasibility, deconstructedRoute, computedRoute, excelQuote] =
+  const [featureGraph, specList, feasibility, deconstructedRoute, computedRoute] =
     await Promise.all([
       readJson<FeatureGraphData>(path.join(dir, "feature_graph.json")),
       readJson<SpecItem[]>(path.join(dir, "spec_list.json")),
       readJson<FeasibilityData>(path.join(dir, "feasibility_result.json")),
       readJson<DeconstructedRouteData>(path.join(dir, "deconstructed_route.json")),
       readJson<ComputedRouteData>(path.join(dir, "computed_route.json")),
-      readJson<ExcelQuoteData>(path.join(dir, "excel_quote.json")),
     ]);
 
-  if (!featureGraph || !specList || !feasibility || !deconstructedRoute || !computedRoute || !excelQuote) {
+  if (!featureGraph || !specList || !feasibility || !deconstructedRoute || !computedRoute) {
     return null;
+  }
+
+  let excelQuote: ExcelQuoteData | null = null;
+  let setupQuote: SetupQuoteData | null = null;
+
+  if (org.quoteFormat === "excel") {
+    excelQuote = await readJson<ExcelQuoteData>(path.join(dir, org.quoteFile));
+    if (!excelQuote) return null;
+  } else {
+    setupQuote = await readJson<SetupQuoteData>(path.join(dir, org.quoteFile));
+    if (!setupQuote) return null;
   }
 
   const partLevelSpecs = derivePartLevelSpecs(featureGraph);
@@ -251,23 +272,29 @@ export async function getReportData(
   return {
     slug,
     folderName,
+    orgSlug,
+    quoteFormat: org.quoteFormat,
     featureGraph,
     specList,
     feasibility,
     deconstructedRoute,
     computedRoute,
     excelQuote,
+    setupQuote,
     partLevelSpecs,
-    balloonedImageUrl: `/api/images/${slug}/ballooned`,
-    originalImageUrl: `/api/images/${slug}/original`,
+    balloonedImageUrl: `/api/images/${orgSlug}/${slug}/ballooned`,
+    originalImageUrl: `/api/images/${orgSlug}/${slug}/original`,
   };
 }
 
 export function getImagePath(
   folderName: string,
   type: "ballooned" | "original",
+  orgSlug: string = "jal",
 ): string {
+  const org = getOrgBySlug(orgSlug);
+  const dataDir = org?.dataDir ?? path.join(process.cwd(), "app", "jal");
   const filename =
     type === "ballooned" ? "ballooned_drawing.png" : "page_001_original.png";
-  return path.join(DATA_DIR, folderName, filename);
+  return path.join(dataDir, folderName, filename);
 }

@@ -1,0 +1,98 @@
+{
+  "analysis_id": "route_rfq_CM03B364360-1_20260721T045809Z",
+  "part_name": "",
+  "material": "SAE J1392 Grade 1018 steel sheet, 2.00 \u00b10.05 mm gage",
+  "quantity": 1000,
+  "currency": "INR",
+  "material_cost": {
+    "material_key": "carbon_steel_mild",
+    "material_description": "Mild steel EN3, EN8, C45, 1018, 1045. Most common machining steel.",
+    "stock_form": "sheet",
+    "stock_dimensions": {
+      "width_mm": 54.0,
+      "thickness_mm": 2.0,
+      "notes": "Use 2.00 \u00b10.05 mm sheet/coil. Per-part transverse width is 54.00 mm from SECTION A-A. Developed flat blank length and total cut perimeter are not explicitly provided and must come from CAD flat-pattern development/tool tryout."
+    },
+    "volume_cm3": 0.0,
+    "weight_kg": 0.0,
+    "price_per_kg_inr": 75,
+    "material_cost_per_piece_inr": 0.0,
+    "notes": []
+  },
+  "setup_costs": [
+    {
+      "setup_id": "S001",
+      "setup_name": "Flat blank and form arched sheet plate",
+      "machine_family": "sheet_metal_stamping",
+      "hourly_rate_inr": 500,
+      "setup_time_min": 15.0,
+      "machining_time_per_piece_min": 2.1903,
+      "setup_cost_inr": 147.06,
+      "machining_cost_per_piece_inr": 21.47,
+      "total_cost_per_piece_inr": 21.62,
+      "outside_process": false,
+      "outside_cost_per_piece_inr": 0.0
+    },
+    {
+      "setup_id": "S002",
+      "setup_name": "Manual deburr and edge break before coating",
+      "machine_family": "finish_bench",
+      "hourly_rate_inr": 200,
+      "setup_time_min": 3.0,
+      "machining_time_per_piece_min": 0.8,
+      "setup_cost_inr": 11.76,
+      "machining_cost_per_piece_inr": 3.14,
+      "total_cost_per_piece_inr": 3.15,
+      "outside_process": false,
+      "outside_cost_per_piece_inr": 0.0
+    },
+    {
+      "setup_id": "S003",
+      "setup_name": "Clean, bond prep, and phosphate coat",
+      "machine_family": "plating_line",
+      "hourly_rate_inr": 300,
+      "setup_time_min": 0.0,
+      "machining_time_per_piece_min": 1.4,
+      "setup_cost_inr": 0.0,
+      "machining_cost_per_piece_inr": 8.24,
+      "total_cost_per_piece_inr": 8.24,
+      "outside_process": false,
+      "outside_cost_per_piece_inr": 0.0
+    },
+    {
+      "setup_id": "S004",
+      "setup_name": "Final dimensional and coating inspection",
+      "machine_family": "inspection",
+      "hourly_rate_inr": 250,
+      "setup_time_min": 3.0,
+      "machining_time_per_piece_min": 4.3,
+      "setup_cost_inr": 14.71,
+      "machining_cost_per_piece_inr": 21.08,
+      "total_cost_per_piece_inr": 21.09,
+      "outside_process": false,
+      "outside_cost_per_piece_inr": 0.0
+    }
+  ],
+  "summary": {
+    "quantity": 1000,
+    "currency": "INR",
+    "material_cost_per_piece_inr": 0.0,
+    "machining_cost_per_piece_inr": 53.92,
+    "setup_cost_total_inr": 173.53,
+    "setup_cost_per_piece_inr": 0.17,
+    "outside_process_cost_per_piece_inr": 0.0,
+    "tool_cost_per_piece_inr": 5.41,
+    "rejection_cost_per_piece_inr": 1.19,
+    "subtotal_per_piece_inr": 60.7,
+    "overhead_percent": 25.0,
+    "overhead_per_piece_inr": 15.17,
+    "margin_percent": 15.0,
+    "margin_per_piece_inr": 11.38,
+    "final_price_per_piece_inr": 87.25,
+    "batch_total_inr": 87253.38
+  },
+  "warnings": [
+    "Could not calculate stock volume from dimensions. Material cost is zero."
+  ],
+  "assumptions": []
+}

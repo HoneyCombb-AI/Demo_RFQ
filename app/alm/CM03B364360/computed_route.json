@@ -1,0 +1,526 @@
+{
+  "analysis_id": "route_rfq_CM03B364360-1_20260721T045809Z",
+  "source_deconstructed_route_path": "/Users/mirshahzadmubeen/Desktop/IN/RFQ/runs/CM03B364360/vlm/agent2/deconstructed_route.json",
+  "source_feature_graph_path": "/Users/mirshahzadmubeen/Desktop/IN/RFQ/runs/CM03B364360/vlm/agent1/feature_graph.json",
+  "shop_profile_basis": {
+    "profile_path": "/Users/mirshahzadmubeen/Desktop/IN/RFQ/config/shop_profile.yaml",
+    "profile_name": "Almity Automotive Component Manufacturing Profile",
+    "material_machinability_key": "sae_j1392_grade_1018_steel_sheet,_2.00_\u00b10.05_mm_gage",
+    "notes": []
+  },
+  "part_family": "sheet_metal",
+  "base_geometry": "complex formed arched sheet plate",
+  "material": "SAE J1392 Grade 1018 steel sheet, 2.00 \u00b10.05 mm gage",
+  "setups": [
+    {
+      "setup_id": "S001",
+      "sequence": 1,
+      "setup_name": "Flat blank and form arched sheet plate",
+      "machine_family": "sheet_metal_stamping",
+      "in_house": true,
+      "outside_process": false,
+      "sub_operations": [
+        {
+          "sub_op_id": "S001-01",
+          "sequence": 1,
+          "operation_type": "blanking",
+          "operation_name": "Blank developed flat profile from 2.00 mm 1018 sheet",
+          "formula_hint": "linear",
+          "target_feature_ids": [
+            "F001",
+            "F003",
+            "F004",
+            "F005"
+          ],
+          "formula_inputs_used": {
+            "process_type": "linear",
+            "sheet_thickness_mm": 2.0,
+            "material_machinability": "easy",
+            "tolerance_class": "standard"
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.377,
+            "non_cutting_time_min": 0.0133,
+            "total_time_min": 0.3903,
+            "formula_family": "linear",
+            "cutting_parameters": {
+              "cutting_speed_m_min": 60.0,
+              "rpm": 1194.0,
+              "rpm_capped": false,
+              "feed_per_rev_mm": null,
+              "feed_per_tooth_mm": 0.12,
+              "feed_rate_mm_min": 573.0,
+              "flute_count": 4,
+              "tool_diameter_mm": 16.0,
+              "step_over_mm": null,
+              "depth_per_pass_mm": 2.0,
+              "number_of_passes": 4,
+              "reversal_factor": null
+            },
+            "calculation_notes": [],
+            "confidence": "medium",
+            "warnings": []
+          },
+          "skipped": false,
+          "skip_reason": null
+        },
+        {
+          "sub_op_id": "S001-02",
+          "sequence": 2,
+          "operation_type": "forming",
+          "operation_name": "Press/roll form arched plate to outer R38.49 over 54.00 mm width",
+          "formula_hint": "fixed",
+          "target_feature_ids": [
+            "F001",
+            "F002",
+            "F003",
+            "F005",
+            "F006"
+          ],
+          "formula_inputs_used": {
+            "process_type": "fixed",
+            "external_diameter_mm": 76.98,
+            "sheet_thickness_mm": 2.0,
+            "number_of_bends": 1,
+            "bend_length_mm": 54.0,
+            "material_machinability": "easy",
+            "tolerance_class": "standard"
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.0,
+            "non_cutting_time_min": 0.5,
+            "total_time_min": 0.5,
+            "formula_family": "fixed",
+            "cutting_parameters": {
+              "cutting_speed_m_min": null,
+              "rpm": null,
+              "rpm_capped": false,
+              "feed_per_rev_mm": null,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": null,
+              "flute_count": null,
+              "tool_diameter_mm": null,
+              "step_over_mm": null,
+              "depth_per_pass_mm": null,
+              "number_of_passes": null,
+              "reversal_factor": null
+            },
+            "calculation_notes": [],
+            "confidence": "low",
+            "warnings": []
+          },
+          "skipped": false,
+          "skip_reason": null
+        },
+        {
+          "sub_op_id": "S001-03",
+          "sequence": 3,
+          "operation_type": "inspect_in_process",
+          "operation_name": "First-piece check of formed radius, width, thickness, and land features",
+          "formula_hint": "fixed",
+          "target_feature_ids": [
+            "F001",
+            "F002",
+            "F003",
+            "F004",
+            "F005",
+            "F006"
+          ],
+          "formula_inputs_used": {
+            "process_type": "fixed",
+            "milling_width_mm": 54.0,
+            "milling_length_mm": 76.98,
+            "external_diameter_mm": 76.98,
+            "sheet_thickness_mm": 2.0,
+            "number_of_bends": 1,
+            "bend_length_mm": 54.0,
+            "tolerance_class": "standard"
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.0,
+            "non_cutting_time_min": 1.0,
+            "total_time_min": 1.0,
+            "formula_family": "fixed",
+            "cutting_parameters": {
+              "cutting_speed_m_min": null,
+              "rpm": null,
+              "rpm_capped": false,
+              "feed_per_rev_mm": null,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": null,
+              "flute_count": null,
+              "tool_diameter_mm": null,
+              "step_over_mm": null,
+              "depth_per_pass_mm": null,
+              "number_of_passes": null,
+              "reversal_factor": null
+            },
+            "calculation_notes": [],
+            "confidence": "high",
+            "warnings": []
+          },
+          "skipped": false,
+          "skip_reason": null
+        }
+      ],
+      "time_summary": {
+        "setup_time_min": 15.0,
+        "handling_time_min": 0.3,
+        "total_cutting_time_min": 0.377,
+        "total_non_cutting_time_min": 1.5133,
+        "total_machining_time_min": 2.1903,
+        "sub_operation_count": 3,
+        "outside_process": false
+      }
+    },
+    {
+      "setup_id": "S002",
+      "sequence": 2,
+      "setup_name": "Manual deburr and edge break before coating",
+      "machine_family": "finish_bench",
+      "in_house": true,
+      "outside_process": false,
+      "sub_operations": [
+        {
+          "sub_op_id": "S002-01",
+          "sequence": 1,
+          "operation_type": "edge_break",
+          "operation_name": "Break all sharp edges 0.5 mm maximum",
+          "formula_hint": "fixed",
+          "target_feature_ids": [
+            "F007"
+          ],
+          "formula_inputs_used": {
+            "process_type": "fixed",
+            "chamfer_size_mm": 0.5,
+            "sheet_thickness_mm": 2.0,
+            "tolerance_class": "standard"
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.0,
+            "non_cutting_time_min": 0.5,
+            "total_time_min": 0.5,
+            "formula_family": "fixed",
+            "cutting_parameters": {
+              "cutting_speed_m_min": null,
+              "rpm": null,
+              "rpm_capped": false,
+              "feed_per_rev_mm": null,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": null,
+              "flute_count": null,
+              "tool_diameter_mm": null,
+              "step_over_mm": null,
+              "depth_per_pass_mm": null,
+              "number_of_passes": null,
+              "reversal_factor": null
+            },
+            "calculation_notes": [],
+            "confidence": "high",
+            "warnings": []
+          },
+          "skipped": false,
+          "skip_reason": null
+        }
+      ],
+      "time_summary": {
+        "setup_time_min": 3.0,
+        "handling_time_min": 0.3,
+        "total_cutting_time_min": 0.0,
+        "total_non_cutting_time_min": 0.5,
+        "total_machining_time_min": 0.8,
+        "sub_operation_count": 1,
+        "outside_process": false
+      }
+    },
+    {
+      "setup_id": "S003",
+      "sequence": 3,
+      "setup_name": "Clean, bond prep, and phosphate coat",
+      "machine_family": "plating_line",
+      "in_house": true,
+      "outside_process": false,
+      "sub_operations": [
+        {
+          "sub_op_id": "S003-01",
+          "sequence": 1,
+          "operation_type": "cleaning",
+          "operation_name": "Clean, degrease, and bond-prep all surfaces",
+          "formula_hint": "fixed",
+          "target_feature_ids": [
+            "F001",
+            "F002",
+            "F003",
+            "F004",
+            "F005",
+            "F006",
+            "F007"
+          ],
+          "formula_inputs_used": {
+            "process_type": "fixed",
+            "sheet_thickness_mm": 2.0,
+            "material_machinability": "easy",
+            "tolerance_class": "standard"
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.0,
+            "non_cutting_time_min": 0.3,
+            "total_time_min": 0.3,
+            "formula_family": "fixed",
+            "cutting_parameters": {
+              "cutting_speed_m_min": null,
+              "rpm": null,
+              "rpm_capped": false,
+              "feed_per_rev_mm": null,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": null,
+              "flute_count": null,
+              "tool_diameter_mm": null,
+              "step_over_mm": null,
+              "depth_per_pass_mm": null,
+              "number_of_passes": null,
+              "reversal_factor": null
+            },
+            "calculation_notes": [],
+            "confidence": "high",
+            "warnings": []
+          },
+          "skipped": false,
+          "skip_reason": null
+        },
+        {
+          "sub_op_id": "S003-02",
+          "sequence": 2,
+          "operation_type": "coating",
+          "operation_name": "Apply phosphate coating per PS-119.0 all around",
+          "formula_hint": "fixed",
+          "target_feature_ids": [
+            "F001",
+            "F002",
+            "F003",
+            "F004",
+            "F005",
+            "F006",
+            "F007"
+          ],
+          "formula_inputs_used": {
+            "process_type": "fixed",
+            "sheet_thickness_mm": 2.0,
+            "material_machinability": "easy",
+            "tolerance_class": "standard"
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.0,
+            "non_cutting_time_min": 0.5,
+            "total_time_min": 0.5,
+            "formula_family": "fixed",
+            "cutting_parameters": {
+              "cutting_speed_m_min": null,
+              "rpm": null,
+              "rpm_capped": false,
+              "feed_per_rev_mm": null,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": null,
+              "flute_count": null,
+              "tool_diameter_mm": null,
+              "step_over_mm": null,
+              "depth_per_pass_mm": null,
+              "number_of_passes": null,
+              "reversal_factor": null
+            },
+            "calculation_notes": [],
+            "confidence": "low",
+            "warnings": []
+          },
+          "skipped": false,
+          "skip_reason": null
+        },
+        {
+          "sub_op_id": "S003-03",
+          "sequence": 3,
+          "operation_type": "cleaning",
+          "operation_name": "Rinse and dry after phosphate treatment",
+          "formula_hint": "fixed",
+          "target_feature_ids": [
+            "F001",
+            "F002",
+            "F003",
+            "F004",
+            "F005",
+            "F006",
+            "F007"
+          ],
+          "formula_inputs_used": {
+            "process_type": "fixed",
+            "sheet_thickness_mm": 2.0,
+            "tolerance_class": "standard"
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.0,
+            "non_cutting_time_min": 0.3,
+            "total_time_min": 0.3,
+            "formula_family": "fixed",
+            "cutting_parameters": {
+              "cutting_speed_m_min": null,
+              "rpm": null,
+              "rpm_capped": false,
+              "feed_per_rev_mm": null,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": null,
+              "flute_count": null,
+              "tool_diameter_mm": null,
+              "step_over_mm": null,
+              "depth_per_pass_mm": null,
+              "number_of_passes": null,
+              "reversal_factor": null
+            },
+            "calculation_notes": [],
+            "confidence": "high",
+            "warnings": []
+          },
+          "skipped": false,
+          "skip_reason": null
+        }
+      ],
+      "time_summary": {
+        "setup_time_min": 0.0,
+        "handling_time_min": 0.3,
+        "total_cutting_time_min": 0.0,
+        "total_non_cutting_time_min": 1.1,
+        "total_machining_time_min": 1.4,
+        "sub_operation_count": 3,
+        "outside_process": false
+      }
+    },
+    {
+      "setup_id": "S004",
+      "sequence": 4,
+      "setup_name": "Final dimensional and coating inspection",
+      "machine_family": "inspection",
+      "in_house": true,
+      "outside_process": false,
+      "sub_operations": [
+        {
+          "sub_op_id": "S004-01",
+          "sequence": 1,
+          "operation_type": "inspection",
+          "operation_name": "Final dimensional inspection of formed sheet profile",
+          "formula_hint": "fixed",
+          "target_feature_ids": [
+            "F001",
+            "F002",
+            "F003",
+            "F004",
+            "F005",
+            "F006"
+          ],
+          "formula_inputs_used": {
+            "process_type": "fixed",
+            "milling_width_mm": 54.0,
+            "milling_length_mm": 76.98,
+            "external_diameter_mm": 76.98,
+            "sheet_thickness_mm": 2.0,
+            "number_of_bends": 1,
+            "bend_length_mm": 54.0,
+            "tolerance_class": "standard"
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.0,
+            "non_cutting_time_min": 2.0,
+            "total_time_min": 2.0,
+            "formula_family": "fixed",
+            "cutting_parameters": {
+              "cutting_speed_m_min": null,
+              "rpm": null,
+              "rpm_capped": false,
+              "feed_per_rev_mm": null,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": null,
+              "flute_count": null,
+              "tool_diameter_mm": null,
+              "step_over_mm": null,
+              "depth_per_pass_mm": null,
+              "number_of_passes": null,
+              "reversal_factor": null
+            },
+            "calculation_notes": [],
+            "confidence": "high",
+            "warnings": []
+          },
+          "skipped": false,
+          "skip_reason": null
+        },
+        {
+          "sub_op_id": "S004-02",
+          "sequence": 2,
+          "operation_type": "inspection",
+          "operation_name": "Final visual, coating, and edge-break inspection",
+          "formula_hint": "fixed",
+          "target_feature_ids": [
+            "F001",
+            "F002",
+            "F003",
+            "F004",
+            "F005",
+            "F006",
+            "F007"
+          ],
+          "formula_inputs_used": {
+            "process_type": "fixed",
+            "chamfer_size_mm": 0.5,
+            "sheet_thickness_mm": 2.0,
+            "tolerance_class": "standard"
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.0,
+            "non_cutting_time_min": 2.0,
+            "total_time_min": 2.0,
+            "formula_family": "fixed",
+            "cutting_parameters": {
+              "cutting_speed_m_min": null,
+              "rpm": null,
+              "rpm_capped": false,
+              "feed_per_rev_mm": null,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": null,
+              "flute_count": null,
+              "tool_diameter_mm": null,
+              "step_over_mm": null,
+              "depth_per_pass_mm": null,
+              "number_of_passes": null,
+              "reversal_factor": null
+            },
+            "calculation_notes": [],
+            "confidence": "high",
+            "warnings": []
+          },
+          "skipped": false,
+          "skip_reason": null
+        }
+      ],
+      "time_summary": {
+        "setup_time_min": 3.0,
+        "handling_time_min": 0.3,
+        "total_cutting_time_min": 0.0,
+        "total_non_cutting_time_min": 4.0,
+        "total_machining_time_min": 4.3,
+        "sub_operation_count": 2,
+        "outside_process": false
+      }
+    }
+  ],
+  "total_summary": {
+    "total_setups": 4,
+    "total_sub_operations": 9,
+    "total_setup_time_min": 21.0,
+    "total_handling_time_min": 1.2,
+    "total_cutting_time_min": 0.38,
+    "total_non_cutting_time_min": 7.11,
+    "total_machining_time_min": 8.69,
+    "total_time_min": 29.69,
+    "outside_process_count": 0,
+    "confidence": "medium"
+  },
+  "global_warnings": [],
+  "global_assumptions": []
+}

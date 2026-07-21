@@ -14,10 +14,10 @@ export function ReportLayout({ data }: { data: ReportData }) {
   return (
     <div className="flex flex-col h-screen overflow-hidden bg-background">
       {/* Header */}
-      <header className="border-b bg-background flex-shrink-0">
+      <header className="border-b bg-background shrink-0">
         <div className="px-6 py-4">
-          <Link 
-            href="/jal" 
+          <Link
+            href={`/${data.orgSlug}`}
             className="inline-flex items-center text-[10px] uppercase tracking-widest font-semibold text-muted-foreground hover:text-foreground mb-3 transition-colors"
           >
             <ChevronLeft className="w-3 h-3 mr-1" />
@@ -31,7 +31,7 @@ export function ReportLayout({ data }: { data: ReportData }) {
           </h1>
           
           <p className="text-sm text-muted-foreground font-medium">
-            {part.material}
+            {part.material ?? "Material not specified"}
           </p>
         </div>
 

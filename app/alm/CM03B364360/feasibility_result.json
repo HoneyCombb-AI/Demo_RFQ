@@ -1,0 +1,569 @@
+{
+  "analysis_id": "feas_rfq_CM03B364360-1_20260721T045809Z",
+  "source_feature_graph_id": "rfq_CM03B364360-1_20260721T045809Z",
+  "feasibility": {
+    "can_proceed": true,
+    "status": "feasible_with_risks",
+    "risk_level": "medium",
+    "blockers": [],
+    "risks": [
+      {
+        "risk_type": "formed_sheet_tooling_and_springback",
+        "description": "The part is a small 2.00 mm 1018 steel formed arched plate; the shop has sheet metal stamping/forming and tool-room capability, but the curved profile will require suitable tooling and springback control.",
+        "mitigation": "Use dedicated forming tooling/fixtures and verify first-off profile dimensions before production release.",
+        "affected_feature_ids": [
+          "F001",
+          "F002",
+          "F003",
+          "F006"
+        ]
+      },
+      {
+        "risk_type": "incoming_material_gage_control",
+        "description": "The 2.00 +/-0.05 mm gage requirement is achievable but depends on procuring and verifying compliant sheet material rather than only in-process machining control.",
+        "mitigation": "Require mill certificate/incoming inspection for SAE J1392 Grade 1018 sheet thickness and yield strength.",
+        "affected_feature_ids": [
+          "F001"
+        ]
+      },
+      {
+        "risk_type": "process_specification_confirmation",
+        "description": "The drawing calls out phosphate coating per PS-119.0 and bond prep all around part; the shop lists in-house coating/plating and cleaning capability, but the exact PS-119.0 phosphate and bond-prep qualification is not explicitly stated.",
+        "mitigation": "Confirm whether Almity's in-house coating/prep process is approved for PS-119.0 and the required bond-prep note; otherwise use an approved vendor.",
+        "affected_feature_ids": [
+          "F001"
+        ]
+      },
+      {
+        "risk_type": "ambiguous_extracted_geometry",
+        "description": "The 2X 1.50 lower land and 2X 5.5 A/C side land callouts were extracted as geometrically ambiguous and should be confirmed before tooling.",
+        "mitigation": "Clarify the drawing interpretation before final tool design or production release.",
+        "affected_feature_ids": [
+          "F004",
+          "F005"
+        ]
+      }
+    ],
+    "outside_processes_needed": [],
+    "material_machinable": true,
+    "tolerances_achievable": true,
+    "machines_available": true,
+    "part_fits_envelopes": true,
+    "assessment_notes": "SAE J1392 Grade 1018 steel is within the shop's common carbon/alloy steel capability, and the 76.98 x 54.0 x 39.99 mm envelope fits the listed sheet-metal, VMC, and inspection capacity. No tolerance is tighter than the shop's listed careful stamping capability of 0.05 mm or machining/inspection capability of 0.02 mm; the main risks are tooling/springback control for the formed shell, incoming sheet gage verification, and confirmation of coating/bond-prep specifications."
+  },
+  "feature_assessments": [
+    {
+      "feature_id": "F001",
+      "feature_name": "Formed arched sheet plate body",
+      "feature_type": "part_body",
+      "overall_verdict": "risk",
+      "spec_assessments": [
+        {
+          "feature_id": "F001",
+          "feature_name": "Formed arched sheet plate body",
+          "spec_category": "material_condition",
+          "spec_description": "Material SAE J1392 Grade 1018 steel",
+          "nominal_value": "SAE J1392 Grade 1018",
+          "tolerance_or_requirement": "Carbon steel material; as-shown minimum yield 340 MPa",
+          "verdict": "feasible",
+          "reasoning": "The shop profile lists steel/common carbon steel materials as supported and has sheet-metal stamping/forming capability suitable for low-carbon 1018 steel.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "sheet metal forming/stamping",
+          "shop_capability_reference": "material_capabilities.common_materials includes carbon_steel; machine_inventory.sheet_metal_stamping available"
+        },
+        {
+          "feature_id": "F001",
+          "feature_name": "Formed arched sheet plate body",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "Sheet gage thickness",
+          "nominal_value": "2.00 mm",
+          "tolerance_or_requirement": "+0.05 / -0.05 mm",
+          "verdict": "risk",
+          "reasoning": "The +/-0.05 mm gage requirement equals the shop's careful sheet-stamping tolerance capability and also depends on incoming sheet thickness control.",
+          "risk_description": "Thickness is controlled largely by purchased sheet gage and may vary during forming, though the drawing separately allows +/-30% variation in formed areas.",
+          "mitigation": "Verify sheet certificates and perform incoming thickness inspection; control forming to remain within the drawing's formed-area allowance.",
+          "required_process": "incoming material inspection and sheet forming",
+          "shop_capability_reference": "machine_inventory.sheet_metal_stamping.careful_tolerance_mm = 0.05; inspection.careful_dimensional_capability_mm = 0.02"
+        },
+        {
+          "feature_id": "F001",
+          "feature_name": "Formed arched sheet plate body",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "Overall transverse width",
+          "nominal_value": "54.00 mm",
+          "tolerance_or_requirement": "+/-0.25 mm",
+          "verdict": "feasible",
+          "reasoning": "The +/-0.25 mm width tolerance is looser than the shop's normal sheet-stamping tolerance capability of 0.10 mm.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "sheet metal blanking/forming",
+          "shop_capability_reference": "tolerance_capabilities.sheet_stamping_general_tolerance_mm = 0.1"
+        },
+        {
+          "feature_id": "F001",
+          "feature_name": "Formed arched sheet plate body",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "Half width to centerline",
+          "nominal_value": "27.0 mm",
+          "tolerance_or_requirement": "+/-0.5 mm",
+          "verdict": "feasible",
+          "reasoning": "The +/-0.5 mm general tolerance is well within the shop's listed sheet-metal stamping capability.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "sheet metal blanking/forming",
+          "shop_capability_reference": "tolerance_capabilities.sheet_stamping_general_tolerance_mm = 0.1"
+        },
+        {
+          "feature_id": "F001",
+          "feature_name": "Formed arched sheet plate body",
+          "spec_category": "geometry_parameter",
+          "spec_description": "Overall formed arched plate envelope",
+          "nominal_value": "76.98 mm length x 54.0 mm width x 39.99 mm height",
+          "tolerance_or_requirement": "Complex 3D formed arched sheet body",
+          "verdict": "feasible",
+          "reasoning": "The envelope is small relative to the shop's available sheet-metal forming capability and also fits the listed VMC inspection/support envelope if needed.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "sheet metal forming/stamping",
+          "shop_capability_reference": "machine_inventory.sheet_metal_stamping available; vmc_3axis travel 600 x 400 x 400 mm"
+        },
+        {
+          "feature_id": "F001",
+          "feature_name": "Formed arched sheet plate body",
+          "spec_category": "geometry_parameter",
+          "spec_description": "Nominal sheet wall thickness",
+          "nominal_value": "2.0 mm",
+          "tolerance_or_requirement": "Sheet body/wall thickness for formed plate",
+          "verdict": "feasible",
+          "reasoning": "A 2.0 mm low-carbon steel sheet is compatible with the shop's advertised sheet-metal stamping/forming capability.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "sheet metal forming/stamping",
+          "shop_capability_reference": "machine_inventory.sheet_metal_stamping processes include stamping and forming"
+        },
+        {
+          "feature_id": "F001",
+          "feature_name": "Formed arched sheet plate body",
+          "spec_category": "material_condition",
+          "spec_description": "Formed-area thickness variation allowance",
+          "nominal_value": "2.00 mm gage",
+          "tolerance_or_requirement": "Metal thickness variation +/-30% allowable in formed areas",
+          "verdict": "feasible",
+          "reasoning": "The +/-30% formed-area thickness allowance relaxes local thinning/thickening requirements and is compatible with a formed sheet part.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "sheet metal forming with inspection",
+          "shop_capability_reference": "machine_inventory.sheet_metal_stamping available; inspection available"
+        },
+        {
+          "feature_id": "F001",
+          "feature_name": "Formed arched sheet plate body",
+          "spec_category": "process_requirement",
+          "spec_description": "Phosphate coating per PS-119.0",
+          "nominal_value": "PHOSPHATE COAT",
+          "tolerance_or_requirement": "Coat per PS-119.0",
+          "verdict": "risk",
+          "reasoning": "The shop lists in-house coating/plating capability, but the profile specifically names alkaline zinc plating and powder coating rather than PS-119.0 phosphate coating.",
+          "risk_description": "Exact phosphate coating specification approval is not confirmed from the capability profile.",
+          "mitigation": "Confirm in-house PS-119.0 phosphate capability/approval or plan to use an approved coating vendor.",
+          "required_process": "phosphate coating",
+          "shop_capability_reference": "machine_inventory.plating_line processes include plating/coating; powder_coating_line available; PS-119.0 phosphate not explicitly listed"
+        },
+        {
+          "feature_id": "F001",
+          "feature_name": "Formed arched sheet plate body",
+          "spec_category": "process_requirement",
+          "spec_description": "Bond prep all around part",
+          "nominal_value": "BOND PREP ALL AROUND PART",
+          "tolerance_or_requirement": "Starred bond-prep note, applicability tied to part table",
+          "verdict": "info_missing",
+          "reasoning": "The shop has cleaning/finish-bench capability, but the feature graph notes uncertainty over which part-table row the starred bond-prep note applies to and does not define the bond-prep process standard.",
+          "risk_description": null,
+          "mitigation": "Clarify whether the RFQ part is CM03B364360 or CM03B364361 and obtain the required bond-prep specification if applicable.",
+          "required_process": "bond preparation / cleaning",
+          "shop_capability_reference": "finish_bench processes include cleaning; assembly_cell processes include cleaning"
+        }
+      ],
+      "notes": "The main body is manufacturable by sheet-metal forming/stamping in 1018 steel, but it carries risks for gage verification, forming/tooling control, and coating/bond-prep specification confirmation."
+    },
+    {
+      "feature_id": "F002",
+      "feature_name": "Outer convex formed radius",
+      "feature_type": "radius",
+      "overall_verdict": "feasible",
+      "spec_assessments": [
+        {
+          "feature_id": "F002",
+          "feature_name": "Outer convex formed radius",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "Outer formed radius",
+          "nominal_value": "R38.49 mm",
+          "tolerance_or_requirement": "+/-0.25 mm",
+          "verdict": "feasible",
+          "reasoning": "The +/-0.25 mm radius tolerance is looser than the shop's normal sheet-stamping tolerance capability, provided suitable forming tooling is used.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "sheet metal forming/stamping",
+          "shop_capability_reference": "tolerance_capabilities.sheet_stamping_general_tolerance_mm = 0.1; tool_room available"
+        },
+        {
+          "feature_id": "F002",
+          "feature_name": "Outer convex formed radius",
+          "spec_category": "geometry_parameter",
+          "spec_description": "Semicircular formed arc",
+          "nominal_value": "180 degree arc over 54.0 mm width",
+          "tolerance_or_requirement": "Formed outer convex profile",
+          "verdict": "feasible",
+          "reasoning": "A 180 degree arched sheet form is within the advertised sheet-metal forming capability when supported by dedicated tooling.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "sheet metal forming/stamping",
+          "shop_capability_reference": "machine_inventory.sheet_metal_stamping processes include forming; tool_room supports tool manufacturing"
+        },
+        {
+          "feature_id": "F002",
+          "feature_name": "Outer convex formed radius",
+          "spec_category": "material_condition",
+          "spec_description": "Formed area with thickness variation note",
+          "nominal_value": "Formed area",
+          "tolerance_or_requirement": "Thickness variation note applies",
+          "verdict": "feasible",
+          "reasoning": "The drawing's formed-area thickness variation allowance is compatible with normal sheet forming of 2.0 mm steel.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "sheet metal forming",
+          "shop_capability_reference": "machine_inventory.sheet_metal_stamping available"
+        }
+      ],
+      "notes": "The outer radius is within listed forming tolerance capability and does not create a hard feasibility issue."
+    },
+    {
+      "feature_id": "F003",
+      "feature_name": "Two inner arcuate radii",
+      "feature_type": "radius",
+      "overall_verdict": "feasible",
+      "spec_assessments": [
+        {
+          "feature_id": "F003",
+          "feature_name": "Two inner arcuate radii",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "Inner arcuate radius",
+          "nominal_value": "2X R32.30 mm",
+          "tolerance_or_requirement": "+/-0.25 mm",
+          "verdict": "feasible",
+          "reasoning": "The +/-0.25 mm radius tolerance is within the shop's sheet-stamping and profile-forming capability.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "sheet metal forming/stamping",
+          "shop_capability_reference": "tolerance_capabilities.sheet_stamping_general_tolerance_mm = 0.1"
+        },
+        {
+          "feature_id": "F003",
+          "feature_name": "Two inner arcuate radii",
+          "spec_category": "geometry_parameter",
+          "spec_description": "Two identical inner arcs",
+          "nominal_value": "2X inner arcuate features",
+          "tolerance_or_requirement": "Likely concentric/parallel to outer R38.49 profile; no explicit GD&T",
+          "verdict": "feasible",
+          "reasoning": "Producing two repeated inner/profile arcs is feasible with stamping/forming tooling and no tighter positional GD&T is specified.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "sheet metal blanking/forming",
+          "shop_capability_reference": "machine_inventory.sheet_metal_stamping available; tool_room available"
+        }
+      ],
+      "notes": "The inner arcs are feasible; no separate concentricity tolerance or datum scheme was specified."
+    },
+    {
+      "feature_id": "F004",
+      "feature_name": "Two lower end straight lands",
+      "feature_type": "flat_face",
+      "overall_verdict": "info_missing",
+      "spec_assessments": [
+        {
+          "feature_id": "F004",
+          "feature_name": "Two lower end straight lands",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "Lower end land height",
+          "nominal_value": "2X 1.50 mm",
+          "tolerance_or_requirement": "+/-0.25 mm",
+          "verdict": "info_missing",
+          "reasoning": "The +/-0.25 mm tolerance is physically achievable, but the feature graph states that the role of the 1.50 dimension is geometrically ambiguous.",
+          "risk_description": null,
+          "mitigation": "Confirm whether the 2X 1.50 callout defines lower end land height, straight extension length, or another profile detail.",
+          "required_process": "sheet metal blanking/forming or trimming",
+          "shop_capability_reference": "tolerance_capabilities.sheet_stamping_general_tolerance_mm = 0.1"
+        },
+        {
+          "feature_id": "F004",
+          "feature_name": "Two lower end straight lands",
+          "spec_category": "geometry_parameter",
+          "spec_description": "Two lower open-end lands",
+          "nominal_value": "2 lands at -X and +X lower ends",
+          "tolerance_or_requirement": "Geometry interpretation ambiguous in raster extraction",
+          "verdict": "info_missing",
+          "reasoning": "The shop can make small lands in 2.0 mm sheet, but the exact geometry needs clarification before final tooling.",
+          "risk_description": null,
+          "mitigation": "Confirm drawing interpretation before tool design.",
+          "required_process": "blanking/forming/trimming",
+          "shop_capability_reference": "machine_inventory.sheet_metal_stamping available; tool_room available"
+        },
+        {
+          "feature_id": "F004",
+          "feature_name": "Two lower end straight lands",
+          "spec_category": "material_condition",
+          "spec_description": "Same sheet gage as body",
+          "nominal_value": "2.0 mm sheet",
+          "tolerance_or_requirement": "Same material/gage condition as main body",
+          "verdict": "feasible",
+          "reasoning": "The lands use the same 2.0 mm 1018 sheet body material already assessed as processable.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "sheet metal forming/stamping",
+          "shop_capability_reference": "material_capabilities.common_materials includes carbon_steel; sheet_metal_stamping available"
+        }
+      ],
+      "notes": "Physical manufacturability is acceptable, but the extracted geometry needs confirmation."
+    },
+    {
+      "feature_id": "F005",
+      "feature_name": "Two transverse side lands or flanges",
+      "feature_type": "flange",
+      "overall_verdict": "info_missing",
+      "spec_assessments": [
+        {
+          "feature_id": "F005",
+          "feature_name": "Two transverse side lands or flanges",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "Side land width or offset",
+          "nominal_value": "2X 5.5 mm",
+          "tolerance_or_requirement": "+/-0.5 mm; callout text A/C ambiguous",
+          "verdict": "info_missing",
+          "reasoning": "The +/-0.5 mm tolerance is easily achievable, but the feature graph identifies the A/C callout interpretation and feature extraction confidence as uncertain.",
+          "risk_description": null,
+          "mitigation": "Verify whether 2X 5.5 A/C means as-cut side land offsets, flange widths, or another controlled feature.",
+          "required_process": "sheet metal blanking/forming",
+          "shop_capability_reference": "tolerance_capabilities.sheet_stamping_general_tolerance_mm = 0.1"
+        },
+        {
+          "feature_id": "F005",
+          "feature_name": "Two transverse side lands or flanges",
+          "spec_category": "geometry_parameter",
+          "spec_description": "Paired transverse side lands/flanges",
+          "nominal_value": "Two side features at +Y and -Y edges",
+          "tolerance_or_requirement": "Feature existence/dimensions extracted with low confidence",
+          "verdict": "info_missing",
+          "reasoning": "The shop has the required sheet-metal processes, but the exact side-land or flange geometry must be confirmed before manufacturing tooling.",
+          "risk_description": null,
+          "mitigation": "Clarify F005 geometry and update the manufacturing definition if the 5.5 A/C reading is incorrect.",
+          "required_process": "sheet metal forming/stamping",
+          "shop_capability_reference": "machine_inventory.sheet_metal_stamping available; tool_room available"
+        },
+        {
+          "feature_id": "F005",
+          "feature_name": "Two transverse side lands or flanges",
+          "spec_category": "material_condition",
+          "spec_description": "Same sheet gage as body",
+          "nominal_value": "2.0 mm sheet",
+          "tolerance_or_requirement": "Same material/gage condition as main body",
+          "verdict": "feasible",
+          "reasoning": "The feature uses the same processable 1018 sheet body material.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "sheet metal forming/stamping",
+          "shop_capability_reference": "material_capabilities.common_materials includes carbon_steel; sheet_metal_stamping available"
+        }
+      ],
+      "notes": "This feature is physically manufacturable, but the drawing extraction is uncertain and should be clarified."
+    },
+    {
+      "feature_id": "F006",
+      "feature_name": "Two top outside corner radii",
+      "feature_type": "radius",
+      "overall_verdict": "feasible",
+      "spec_assessments": [
+        {
+          "feature_id": "F006",
+          "feature_name": "Two top outside corner radii",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "Corner radius",
+          "nominal_value": "2X R2.0 mm",
+          "tolerance_or_requirement": "+/-0.5 mm",
+          "verdict": "feasible",
+          "reasoning": "The +/-0.5 mm radius tolerance is loose relative to the shop's sheet-stamping/forming capability.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "sheet metal forming/stamping or edge forming",
+          "shop_capability_reference": "tolerance_capabilities.sheet_stamping_general_tolerance_mm = 0.1"
+        },
+        {
+          "feature_id": "F006",
+          "feature_name": "Two top outside corner radii",
+          "spec_category": "geometry_parameter",
+          "spec_description": "Two top outside corner blends",
+          "nominal_value": "2X top corner radii at +Y and -Y edges",
+          "tolerance_or_requirement": "Blend side lands/flanges into adjacent top surfaces",
+          "verdict": "feasible",
+          "reasoning": "Small corner radii in 2.0 mm sheet are feasible through stamping/forming tooling or secondary edge forming.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "sheet metal forming/stamping",
+          "shop_capability_reference": "machine_inventory.sheet_metal_stamping available; tool_room available"
+        },
+        {
+          "feature_id": "F006",
+          "feature_name": "Two top outside corner radii",
+          "spec_category": "material_condition",
+          "spec_description": "Same sheet gage as body",
+          "nominal_value": "2.0 mm sheet",
+          "tolerance_or_requirement": "Same material/gage condition as main body",
+          "verdict": "feasible",
+          "reasoning": "The radii are part of the same 1018 sheet body and do not require a special material condition.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "sheet metal forming/stamping",
+          "shop_capability_reference": "material_capabilities.common_materials includes carbon_steel; sheet_metal_stamping available"
+        }
+      ],
+      "notes": "The top outside corner radii are feasible with the listed sheet-metal forming/tooling capability."
+    },
+    {
+      "feature_id": "F007",
+      "feature_name": "All sharp edges broken 0.5 max",
+      "feature_type": "edge_break",
+      "overall_verdict": "feasible",
+      "spec_assessments": [
+        {
+          "feature_id": "F007",
+          "feature_name": "All sharp edges broken 0.5 max",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "Edge break maximum",
+          "nominal_value": "0.5 mm max",
+          "tolerance_or_requirement": "Break all sharp edges 0.5 max",
+          "verdict": "feasible",
+          "reasoning": "The shop has finish-bench capability for manual deburr and edge break, and 0.5 mm max is a standard deburring requirement.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "deburr / edge break",
+          "shop_capability_reference": "machine_inventory.finish_bench processes include deburr and edge_break"
+        },
+        {
+          "feature_id": "F007",
+          "feature_name": "All sharp edges broken 0.5 max",
+          "spec_category": "geometry_parameter",
+          "spec_description": "General all-edge applicability",
+          "nominal_value": "All sharp external and internal edges",
+          "tolerance_or_requirement": "Applies generally unless otherwise radiused",
+          "verdict": "feasible",
+          "reasoning": "The feature graph lists access from all major directions, and the shop has manual finishing capability for accessible sheet-metal edges.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "manual deburr / edge break",
+          "shop_capability_reference": "machine_inventory.finish_bench available"
+        }
+      ],
+      "notes": "The general edge-break requirement is feasible in-house."
+    }
+  ],
+  "clarifications": [
+    {
+      "clarification_id": "C001",
+      "question": "Which part-table row is the RFQ intended to cover: CM03B364360 with process per AS SHOWN, or CM03B364361 with PS-135.22 and the starred bond-prep requirement?",
+      "why_it_matters": "The part table shows two related part numbers with different process entries, and the starred bond-prep note may apply only to the PS-135.22 row.",
+      "blocks": [
+        "part_metadata",
+        "part_level_specs"
+      ],
+      "suggested_default": "Use CM03B364360 / AS SHOWN, matching the RFQ file name, while retaining phosphate coat per PS-119.0 as a general note.",
+      "priority": "medium"
+    },
+    {
+      "clarification_id": "C002",
+      "question": "Confirm the intended interpretation of the SECTION A-A callout '2X 5.5 A/C' and the main-view '2X 1.50' callout: are these side land/as-cut offsets and lower end land heights respectively?",
+      "why_it_matters": "These dimensions define small edge/land features and affect the formed profile and tooling definition.",
+      "blocks": [
+        "F004",
+        "F005",
+        "part_envelope"
+      ],
+      "suggested_default": "Interpret 2X 5.5 A/C as two 5.5 mm side land offsets in SECTION A-A and 2X 1.50 as two lower end straight land heights below the main baseline.",
+      "priority": "medium"
+    },
+    {
+      "clarification_id": "C003",
+      "question": "Confirm the complete drawing number and revision, since the title-block drawing number appears as 'CM03B36436-' and the revision box is not clearly populated.",
+      "why_it_matters": "This affects document traceability, although it does not block physical manufacturability.",
+      "blocks": [
+        "part_metadata"
+      ],
+      "suggested_default": "Use drawing number CM03B36436- and revision null/blank as read from the title block.",
+      "priority": "low"
+    },
+    {
+      "clarification_id": "C_LOW_F005",
+      "question": "Please verify feature F005, Two transverse side lands or flanges, including whether the 2X 5.5 A/C callout was read correctly.",
+      "why_it_matters": "The feature was extracted with low confidence and could affect the detailed formed profile and die design.",
+      "blocks": [
+        "F005"
+      ],
+      "suggested_default": "Accept as extracted if verified.",
+      "priority": "medium"
+    },
+    {
+      "clarification_id": "C004",
+      "question": "Is Almity's in-house coating/prep process approved for phosphate coating per PS-119.0 and any required bond-prep specification?",
+      "why_it_matters": "The shop lists coating/plating capability, but the exact phosphate and bond-prep process approval is not explicit in the capability profile.",
+      "blocks": [
+        "part_level_specs",
+        "F001"
+      ],
+      "suggested_default": "Treat as feasible with risk and verify process approval before release.",
+      "priority": "medium"
+    }
+  ],
+  "assumptions": [
+    {
+      "assumption_id": "A001",
+      "text": "The RFQ is assumed to be for part CM03B364360 with process per AS SHOWN, matching the RFQ file name.",
+      "applies_to": [
+        "part_metadata",
+        "F001"
+      ],
+      "impact": "medium",
+      "confidence": 0.75
+    },
+    {
+      "assumption_id": "A002",
+      "text": "SAE J1392 Grade 1018 is treated as low-carbon steel sheet in a non-hardened condition; no heat treatment is required because none is specified.",
+      "applies_to": [
+        "material",
+        "F001"
+      ],
+      "impact": "medium",
+      "confidence": 0.9
+    },
+    {
+      "assumption_id": "A003",
+      "text": "The formed arched profile is intended to be produced as a sheet-metal formed/stamped part, consistent with the 2.00 mm gage note and formed-area thickness variation allowance.",
+      "applies_to": [
+        "F001",
+        "F002",
+        "F003",
+        "F006"
+      ],
+      "impact": "medium",
+      "confidence": 0.86
+    },
+    {
+      "assumption_id": "A004",
+      "text": "No additional unextracted holes, threads, datum-based GD&T controls, or surface finish requirements are present.",
+      "applies_to": [
+        "feature_graph"
+      ],
+      "impact": "medium",
+      "confidence": 0.84
+    }
+  ],
+  "reasoning_summary": "This is a small formed 2.00 mm SAE 1018 steel arched plate, and the shop has the required steel, sheet-metal stamping/forming, tool-room, deburr, coating, and inspection capabilities. The listed dimensional tolerances are achievable, and the part fits the available machine/envelope limits. The assessment can proceed with medium risk due to forming/tooling control, incoming gage verification, ambiguous extracted land/flange callouts, and confirmation of PS-119.0 phosphate/bond-prep requirements."
+}

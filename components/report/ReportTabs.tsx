@@ -10,6 +10,7 @@ import { SpecsTab } from "./tabs/SpecsTab"
 import { FeasibilityTab } from "./tabs/FeasibilityTab"
 import { RoutingTab } from "./tabs/RoutingTab"
 import { QuoteTab } from "./tabs/QuoteTab"
+import { SetupQuoteTab } from "./tabs/SetupQuoteTab"
 import { ClarificationsTab } from "./tabs/ClarificationsTab"
 import { AssumptionsTab } from "./tabs/AssumptionsTab"
 
@@ -17,7 +18,11 @@ export function ReportTabs({ data }: { data: ReportData }) {
   const specCount = data.specList?.length || 0
   const riskLevel = data.feasibility.feasibility.risk_level
   const setupCount = data.computedRoute.total_summary.total_setups
-  const price = formatCurrency(data.excelQuote.cost_summary.ex_works_price_per_piece_inr)
+  const price = data.quoteFormat === "excel" && data.excelQuote
+    ? formatCurrency(data.excelQuote.cost_summary.ex_works_price_per_piece_inr)
+    : data.setupQuote
+      ? formatCurrency(data.setupQuote.summary.final_price_per_piece_inr)
+      : "-"
   const clarificationsCount = data.feasibility.clarifications?.length || 0
   
   // Badge colors
@@ -97,7 +102,11 @@ export function ReportTabs({ data }: { data: ReportData }) {
             <RoutingTab data={data} />
           </TabsContent>
           <TabsContent value="quote" className="m-0 border-none outline-none">
-            <QuoteTab data={data} />
+            {data.quoteFormat === "excel" && data.excelQuote ? (
+              <QuoteTab data={data} />
+            ) : data.setupQuote ? (
+              <SetupQuoteTab quote={data.setupQuote} />
+            ) : null}
           </TabsContent>
           <TabsContent value="clarifications" className="m-0 border-none outline-none">
             <ClarificationsTab data={data} />

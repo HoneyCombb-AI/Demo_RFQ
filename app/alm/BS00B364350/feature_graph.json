@@ -1,0 +1,1504 @@
+{
+  "analysis_id": "rfq_BS00B364350-1_20260721T021526Z",
+  "source": {
+    "file": "/Users/mirshahzadmubeen/Desktop/IN/RFQ/input/Almity/BS00B364350-1.pdf",
+    "page_count": 1,
+    "prepared_images": [
+      {
+        "page_index": 1,
+        "image_path": "/Users/mirshahzadmubeen/Desktop/IN/RFQ/runs/BS00B364350/pages/page_001_vlm_contrast.png",
+        "image_name": "page_001_vlm_contrast.png",
+        "width_px": 3072,
+        "height_px": 2160,
+        "frame_crop_applied": true,
+        "frame_crop_confidence": 0.933
+      }
+    ]
+  },
+  "part": {
+    "name": "INNER COMPONENT - BALL STUD",
+    "drawing_number": "BS00B36435_ / RFQ part BS00B364350; parts table also lists BS00B364351",
+    "revision": ".",
+    "material": "SAE J403 GRADE 1045 CD",
+    "quantity": null,
+    "units": "metric",
+    "title_block_notes": [
+      "Parts table: BS00B364350 process per AS SHOWN, used on BS00B364351.",
+      "Parts table: BS00B364351 process per PS-135.22 *, used on MB05B764050 and MB05B764040.",
+      "Drawing title: INNER COMPONENT - BALL STUD.",
+      "Material: SAE J403 GRADE 1045 CD; minimum yield appears to be 690 MPa.",
+      "Metric dimensions and tolerances govern; English dimensions, if included, are for information only.",
+      "General note: ZINC NICKEL PLATE PER PS-152.17A.",
+      "General note: BREAK ALL SHARP EDGES 0.5 MAX."
+    ],
+    "evidence": [
+      {
+        "page_index": 1,
+        "image_name": "page_001_vlm_contrast.png",
+        "visual_location": "bottom-right title block",
+        "cited_text": "DRAWING TITLE: INNER COMPONENT - BALL STUD",
+        "evidence_type": "title_block",
+        "confidence": 0.93
+      },
+      {
+        "page_index": 1,
+        "image_name": "page_001_vlm_contrast.png",
+        "visual_location": "bottom-right title block material field",
+        "cited_text": "MATERIAL: SAE J403 GRADE 1045 CD",
+        "evidence_type": "title_block",
+        "confidence": 0.88
+      },
+      {
+        "page_index": 1,
+        "image_name": "page_001_vlm_contrast.png",
+        "visual_location": "upper-left parts/process table",
+        "cited_text": "PART NO. ... BS00B364350 ... AS SHOWN ... BS00B364351 / BS00B364351 ... PS-135.22 * ... MB05B764050, MB05B764040",
+        "evidence_type": "table",
+        "confidence": 0.82
+      }
+    ],
+    "confidence": 0.82
+  },
+  "feature_graph": {
+    "part_envelope": {
+      "length_mm": 122.5,
+      "width_mm": 63.0,
+      "height_mm": 63.0,
+      "max_diameter_mm": 63.0,
+      "estimated_volume_cm3": null,
+      "estimated_weight_kg": 1.31,
+      "envelope_shape": "cylindrical",
+      "evidence": [
+        {
+          "page_index": 1,
+          "image_name": "page_001_vlm_contrast.png",
+          "visual_location": "SECTION A-A, top overall length dimension",
+          "cited_text": "122.50",
+          "evidence_type": "dimension",
+          "confidence": 0.94
+        },
+        {
+          "page_index": 1,
+          "image_name": "page_001_vlm_contrast.png",
+          "visual_location": "SECTION A-A, left diameter dimension across spherical/bulged profile",
+          "cited_text": "\u00d863.00",
+          "evidence_type": "dimension",
+          "confidence": 0.93
+        },
+        {
+          "page_index": 1,
+          "image_name": "page_001_vlm_contrast.png",
+          "visual_location": "bottom-right title block, mass field",
+          "cited_text": "PART MASS: 1310",
+          "evidence_type": "title_block",
+          "confidence": 0.68
+        }
+      ]
+    },
+    "coordinate_system": {
+      "primary_axis": "X axis is the central axis of revolution shown horizontally in SECTION A-A; +X is from the left annular end face toward the right end of the cylindrical shank.",
+      "orientation_notes": "The left circular view is an axial end view showing concentric circular features. SECTION A-A is a longitudinal section through the central axis. Because this is an axisymmetric component, feature access is recorded as axial or radial rather than plate-face +Z/-Z access.",
+      "datum_origin": "No formal datum origin is shown. The left end plane/left extension line is used as the informal dimensional reference for the 122.50 overall length and the 33.50 ball-location dimension."
+    },
+    "features": [
+      {
+        "feature_id": "F001",
+        "feature_type": "part_body",
+        "name": "Axisymmetric ball-stud body envelope",
+        "description": "Overall rotational steel body consisting of a \u00d840 cylindrical stem with a larger \u00d863 spherical/bulged ball region and an axial through bore/counterbore system.",
+        "geometry": {
+          "diameter_mm": null,
+          "inner_diameter_mm": null,
+          "outer_diameter_mm": 63.0,
+          "length_mm": 122.5,
+          "depth_mm": 63.0,
+          "depth_condition": "THRU",
+          "width_mm": null,
+          "height_mm": null,
+          "taper_ratio": null,
+          "taper_included_angle_deg": null,
+          "radius_mm": 31.5,
+          "angle_deg": null,
+          "pitch_mm": null,
+          "thread_class": null,
+          "hole_count": null,
+          "pcd_mm": null,
+          "profile_length_mm": null,
+          "area_mm2": null,
+          "wall_thickness_mm": null,
+          "position_description": "Overall part length along X is 122.50 mm; maximum radial envelope is \u00d863.00 at the ball/bulged region.",
+          "axis_direction": "X"
+        },
+        "surface_finish": null,
+        "material_condition": "Finished steel component; material and coating are specified at part level.",
+        "access_directions": [
+          "axial",
+          "radial"
+        ],
+        "estimated_material_removal": null,
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "overall axial length",
+            "nominal_value_mm": 122.5,
+            "plus_mm": null,
+            "minus_mm": null,
+            "tolerance_class": "general title-block tolerance applies if no explicit limit is specified",
+            "is_critical": true,
+            "evidence": [
+              {
+                "page_index": 1,
+                "image_name": "page_001_vlm_contrast.png",
+                "visual_location": "SECTION A-A, top overall length dimension",
+                "cited_text": "122.50",
+                "evidence_type": "dimension",
+                "confidence": 0.94
+              }
+            ]
+          },
+          {
+            "dimension_type": "maximum outside diameter",
+            "nominal_value_mm": 63.0,
+            "plus_mm": null,
+            "minus_mm": null,
+            "tolerance_class": "general title-block tolerance applies if no explicit limit is specified",
+            "is_critical": true,
+            "evidence": [
+              {
+                "page_index": 1,
+                "image_name": "page_001_vlm_contrast.png",
+                "visual_location": "SECTION A-A, left side diameter callout",
+                "cited_text": "\u00d863.00",
+                "evidence_type": "dimension",
+                "confidence": 0.93
+              }
+            ]
+          }
+        ],
+        "gdt_controls": [],
+        "source_views": [
+          "Left end view",
+          "SECTION A-A"
+        ],
+        "evidence": [
+          {
+            "page_index": 1,
+            "image_name": "page_001_vlm_contrast.png",
+            "visual_location": "central drawing area, longitudinal section and end view",
+            "cited_text": "SECTION A-A; \u00d863.00; 122.50",
+            "evidence_type": "visual",
+            "confidence": 0.91
+          }
+        ],
+        "confidence": 0.91
+      },
+      {
+        "feature_id": "F002",
+        "feature_type": "flat_face",
+        "name": "Left annular end face",
+        "description": "Flat annular end face at the left end of the part, concentric with the axial bore and \u00d840 stem boundary. This face is the informal X=0 reference for axial dimensions.",
+        "geometry": {
+          "diameter_mm": null,
+          "inner_diameter_mm": 19.0,
+          "outer_diameter_mm": 40.0,
+          "length_mm": null,
+          "depth_mm": null,
+          "depth_condition": null,
+          "width_mm": null,
+          "height_mm": null,
+          "taper_ratio": null,
+          "taper_included_angle_deg": null,
+          "radius_mm": null,
+          "angle_deg": null,
+          "pitch_mm": null,
+          "thread_class": null,
+          "hole_count": null,
+          "pcd_mm": null,
+          "profile_length_mm": null,
+          "area_mm2": null,
+          "wall_thickness_mm": null,
+          "position_description": "At X=0, left side of SECTION A-A; visible as concentric circles in the left end view.",
+          "axis_direction": "normal to X"
+        },
+        "surface_finish": null,
+        "material_condition": null,
+        "access_directions": [
+          "axial"
+        ],
+        "estimated_material_removal": null,
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "source_views": [
+          "Left end view",
+          "SECTION A-A"
+        ],
+        "evidence": [
+          {
+            "page_index": 1,
+            "image_name": "page_001_vlm_contrast.png",
+            "visual_location": "left end view and left end of SECTION A-A",
+            "cited_text": "concentric end view with section line A-A",
+            "evidence_type": "visual",
+            "confidence": 0.82
+          }
+        ],
+        "confidence": 0.82
+      },
+      {
+        "feature_id": "F003",
+        "feature_type": "internal_bore",
+        "name": "Small axial through bore",
+        "description": "Central small bore coaxial with the part. The bore is dimensioned \u00d819.15/18.85 and forms the through passage, opening into the larger right-side counterbore.",
+        "geometry": {
+          "diameter_mm": 19.0,
+          "inner_diameter_mm": 19.0,
+          "outer_diameter_mm": null,
+          "length_mm": 122.5,
+          "depth_mm": 122.5,
+          "depth_condition": "THRU",
+          "width_mm": null,
+          "height_mm": null,
+          "taper_ratio": null,
+          "taper_included_angle_deg": null,
+          "radius_mm": null,
+          "angle_deg": null,
+          "pitch_mm": null,
+          "thread_class": null,
+          "hole_count": null,
+          "pcd_mm": null,
+          "profile_length_mm": null,
+          "area_mm2": null,
+          "wall_thickness_mm": null,
+          "position_description": "On central X axis. Small-diameter portion remains up to the right counterbore shoulder; as a passage it is through the full part.",
+          "axis_direction": "X"
+        },
+        "surface_finish": null,
+        "material_condition": null,
+        "access_directions": [
+          "axial"
+        ],
+        "estimated_material_removal": null,
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "small bore diameter limit",
+            "nominal_value_mm": 19.0,
+            "plus_mm": 0.15,
+            "minus_mm": -0.15,
+            "tolerance_class": null,
+            "is_critical": true,
+            "evidence": [
+              {
+                "page_index": 1,
+                "image_name": "page_001_vlm_contrast.png",
+                "visual_location": "SECTION A-A, central bore diameter callout near left/middle",
+                "cited_text": "\u00d819.15 / 18.85",
+                "evidence_type": "dimension",
+                "confidence": 0.9
+              }
+            ]
+          },
+          {
+            "dimension_type": "through depth based on overall part length",
+            "nominal_value_mm": 122.5,
+            "plus_mm": null,
+            "minus_mm": null,
+            "tolerance_class": "same as overall length unless otherwise specified",
+            "is_critical": false,
+            "evidence": [
+              {
+                "page_index": 1,
+                "image_name": "page_001_vlm_contrast.png",
+                "visual_location": "SECTION A-A, full part length",
+                "cited_text": "122.50",
+                "evidence_type": "dimension",
+                "confidence": 0.9
+              }
+            ]
+          }
+        ],
+        "gdt_controls": [],
+        "source_views": [
+          "Left end view",
+          "SECTION A-A"
+        ],
+        "evidence": [
+          {
+            "page_index": 1,
+            "image_name": "page_001_vlm_contrast.png",
+            "visual_location": "left end view inner circle and SECTION A-A central unhatched passage",
+            "cited_text": "\u00d819.15 / 18.85",
+            "evidence_type": "dimension",
+            "confidence": 0.9
+          }
+        ],
+        "confidence": 0.9
+      },
+      {
+        "feature_id": "F004",
+        "feature_type": "counterbore",
+        "name": "Right-side large internal counterbore",
+        "description": "Large coaxial bore/counterbore opening from the right end face. It is dimensioned \u00d831.77/31.57 and extends 50.00 mm nominal from the right end to an internal shoulder.",
+        "geometry": {
+          "diameter_mm": 31.67,
+          "inner_diameter_mm": 31.67,
+          "outer_diameter_mm": null,
+          "length_mm": 50.0,
+          "depth_mm": 50.0,
+          "depth_condition": "BLIND",
+          "width_mm": null,
+          "height_mm": null,
+          "taper_ratio": null,
+          "taper_included_angle_deg": null,
+          "radius_mm": null,
+          "angle_deg": null,
+          "pitch_mm": null,
+          "thread_class": null,
+          "hole_count": null,
+          "pcd_mm": null,
+          "profile_length_mm": null,
+          "area_mm2": null,
+          "wall_thickness_mm": 4.165,
+          "position_description": "Coaxial with small bore; opens from right end. Bottom/shoulder is approximately at X=72.50 mm from the left face, derived from 122.50 overall length minus 50.00 depth.",
+          "axis_direction": "X"
+        },
+        "surface_finish": null,
+        "material_condition": null,
+        "access_directions": [
+          "axial"
+        ],
+        "estimated_material_removal": null,
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "counterbore diameter limit",
+            "nominal_value_mm": 31.67,
+            "plus_mm": 0.1,
+            "minus_mm": -0.1,
+            "tolerance_class": null,
+            "is_critical": true,
+            "evidence": [
+              {
+                "page_index": 1,
+                "image_name": "page_001_vlm_contrast.png",
+                "visual_location": "SECTION A-A, right internal diameter callout",
+                "cited_text": "\u00d831.77 / 31.57",
+                "evidence_type": "dimension",
+                "confidence": 0.88
+              }
+            ]
+          },
+          {
+            "dimension_type": "counterbore depth / right bore length limit",
+            "nominal_value_mm": 50.0,
+            "plus_mm": 0.13,
+            "minus_mm": -0.13,
+            "tolerance_class": null,
+            "is_critical": true,
+            "evidence": [
+              {
+                "page_index": 1,
+                "image_name": "page_001_vlm_contrast.png",
+                "visual_location": "SECTION A-A, upper right axial length dimension",
+                "cited_text": "50.13 / 49.87",
+                "evidence_type": "dimension",
+                "confidence": 0.86
+              }
+            ]
+          }
+        ],
+        "gdt_controls": [],
+        "source_views": [
+          "SECTION A-A"
+        ],
+        "evidence": [
+          {
+            "page_index": 1,
+            "image_name": "page_001_vlm_contrast.png",
+            "visual_location": "right half of SECTION A-A, internal bore and shoulder",
+            "cited_text": "\u00d831.77 / 31.57; 50.13 / 49.87",
+            "evidence_type": "dimension",
+            "confidence": 0.87
+          }
+        ],
+        "confidence": 0.87
+      },
+      {
+        "feature_id": "F005",
+        "feature_type": "flat_face",
+        "name": "Internal counterbore shoulder face",
+        "description": "Annular internal shoulder face at the bottom of the right-side counterbore, where the \u00d831.67 counterbore steps down to the \u00d819.00 through bore.",
+        "geometry": {
+          "diameter_mm": null,
+          "inner_diameter_mm": 19.0,
+          "outer_diameter_mm": 31.67,
+          "length_mm": null,
+          "depth_mm": 50.0,
+          "depth_condition": "STEPPED",
+          "width_mm": null,
+          "height_mm": null,
+          "taper_ratio": null,
+          "taper_included_angle_deg": null,
+          "radius_mm": null,
+          "angle_deg": null,
+          "pitch_mm": null,
+          "thread_class": null,
+          "hole_count": null,
+          "pcd_mm": null,
+          "profile_length_mm": null,
+          "area_mm2": null,
+          "wall_thickness_mm": null,
+          "position_description": "Located 50.00 mm nominal inward from the right end face, approximately X=72.50 mm from the left face.",
+          "axis_direction": "normal to X"
+        },
+        "surface_finish": null,
+        "material_condition": null,
+        "access_directions": [
+          "axial"
+        ],
+        "estimated_material_removal": null,
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "shoulder axial location from right end",
+            "nominal_value_mm": 50.0,
+            "plus_mm": 0.13,
+            "minus_mm": -0.13,
+            "tolerance_class": null,
+            "is_critical": true,
+            "evidence": [
+              {
+                "page_index": 1,
+                "image_name": "page_001_vlm_contrast.png",
+                "visual_location": "SECTION A-A, upper right axial length dimension",
+                "cited_text": "50.13 / 49.87",
+                "evidence_type": "dimension",
+                "confidence": 0.84
+              }
+            ]
+          }
+        ],
+        "gdt_controls": [],
+        "source_views": [
+          "SECTION A-A"
+        ],
+        "evidence": [
+          {
+            "page_index": 1,
+            "image_name": "page_001_vlm_contrast.png",
+            "visual_location": "SECTION A-A, vertical internal step at left end of right counterbore",
+            "cited_text": "50.13 / 49.87",
+            "evidence_type": "dimension",
+            "confidence": 0.8
+          }
+        ],
+        "confidence": 0.8
+      },
+      {
+        "feature_id": "F006",
+        "feature_type": "external_cylinder",
+        "name": "\u00d840 external cylindrical stem/journal",
+        "description": "External cylindrical surface concentric with the part axis, dimensioned \u00d840.13/39.87. The right exposed straight shank length is 50.00 mm nominal; the same \u00d840 boundary is also shown at the left neck/end region.",
+        "geometry": {
+          "diameter_mm": 40.0,
+          "inner_diameter_mm": null,
+          "outer_diameter_mm": 40.0,
+          "length_mm": 50.0,
+          "depth_mm": null,
+          "depth_condition": null,
+          "width_mm": null,
+          "height_mm": null,
+          "taper_ratio": null,
+          "taper_included_angle_deg": null,
+          "radius_mm": null,
+          "angle_deg": null,
+          "pitch_mm": null,
+          "thread_class": null,
+          "hole_count": null,
+          "pcd_mm": null,
+          "profile_length_mm": null,
+          "area_mm2": null,
+          "wall_thickness_mm": 4.165,
+          "position_description": "Coaxial \u00d840 cylindrical stem. Right straight exposed segment runs from the ball/transition plane to the right end over 50.00 mm nominal; left neck/end uses the same diameter.",
+          "axis_direction": "X"
+        },
+        "surface_finish": null,
+        "material_condition": null,
+        "access_directions": [
+          "radial"
+        ],
+        "estimated_material_removal": null,
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "external cylinder diameter limit",
+            "nominal_value_mm": 40.0,
+            "plus_mm": 0.13,
+            "minus_mm": -0.13,
+            "tolerance_class": null,
+            "is_critical": true,
+            "evidence": [
+              {
+                "page_index": 1,
+                "image_name": "page_001_vlm_contrast.png",
+                "visual_location": "SECTION A-A, \u00d840 callouts at left and right",
+                "cited_text": "\u00d840.13 / 39.87",
+                "evidence_type": "dimension",
+                "confidence": 0.9
+              }
+            ]
+          },
+          {
+            "dimension_type": "right straight shank length limit",
+            "nominal_value_mm": 50.0,
+            "plus_mm": 0.13,
+            "minus_mm": -0.13,
+            "tolerance_class": null,
+            "is_critical": true,
+            "evidence": [
+              {
+                "page_index": 1,
+                "image_name": "page_001_vlm_contrast.png",
+                "visual_location": "SECTION A-A, upper right axial length dimension",
+                "cited_text": "50.13 / 49.87",
+                "evidence_type": "dimension",
+                "confidence": 0.86
+              }
+            ]
+          }
+        ],
+        "gdt_controls": [],
+        "source_views": [
+          "Left end view",
+          "SECTION A-A"
+        ],
+        "evidence": [
+          {
+            "page_index": 1,
+            "image_name": "page_001_vlm_contrast.png",
+            "visual_location": "left end view middle circle and SECTION A-A external cylindrical lines",
+            "cited_text": "\u00d840.13 / 39.87",
+            "evidence_type": "dimension",
+            "confidence": 0.88
+          }
+        ],
+        "confidence": 0.88
+      },
+      {
+        "feature_id": "F007",
+        "feature_type": "boss",
+        "name": "Spherical/bulged ball outer surface",
+        "description": "Large rotational ball/bulge surface around the \u00d840 stem. It has maximum \u00d863.00 and radius R31.50, with its axial center/locating construction line dimensioned 33.50 mm from the left end reference.",
+        "geometry": {
+          "diameter_mm": 63.0,
+          "inner_diameter_mm": null,
+          "outer_diameter_mm": 63.0,
+          "length_mm": null,
+          "depth_mm": null,
+          "depth_condition": null,
+          "width_mm": null,
+          "height_mm": null,
+          "taper_ratio": null,
+          "taper_included_angle_deg": null,
+          "radius_mm": 31.5,
+          "angle_deg": null,
+          "pitch_mm": null,
+          "thread_class": null,
+          "hole_count": null,
+          "pcd_mm": null,
+          "profile_length_mm": null,
+          "area_mm2": null,
+          "wall_thickness_mm": null,
+          "position_description": "Axisymmetric ball/bulged region centered on X axis; axial locating dimension 33.50 mm from left end plane to the ball center/vertical construction line.",
+          "axis_direction": "X"
+        },
+        "surface_finish": null,
+        "material_condition": "Local bond-prep callout points to a portion of this external area.",
+        "access_directions": [
+          "radial"
+        ],
+        "estimated_material_removal": null,
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "maximum ball outside diameter",
+            "nominal_value_mm": 63.0,
+            "plus_mm": null,
+            "minus_mm": null,
+            "tolerance_class": "general title-block tolerance applies if no explicit limit is specified",
+            "is_critical": true,
+            "evidence": [
+              {
+                "page_index": 1,
+                "image_name": "page_001_vlm_contrast.png",
+                "visual_location": "SECTION A-A, left side diameter callout",
+                "cited_text": "\u00d863.00",
+                "evidence_type": "dimension",
+                "confidence": 0.93
+              }
+            ]
+          },
+          {
+            "dimension_type": "spherical/bulge radius",
+            "nominal_value_mm": 31.5,
+            "plus_mm": null,
+            "minus_mm": null,
+            "tolerance_class": "general title-block tolerance applies if no explicit limit is specified",
+            "is_critical": true,
+            "evidence": [
+              {
+                "page_index": 1,
+                "image_name": "page_001_vlm_contrast.png",
+                "visual_location": "SECTION A-A, lower central radius callout",
+                "cited_text": "R31.50",
+                "evidence_type": "dimension",
+                "confidence": 0.92
+              }
+            ]
+          },
+          {
+            "dimension_type": "ball center axial offset from left end",
+            "nominal_value_mm": 33.5,
+            "plus_mm": null,
+            "minus_mm": null,
+            "tolerance_class": "general title-block tolerance applies if no explicit limit is specified",
+            "is_critical": true,
+            "evidence": [
+              {
+                "page_index": 1,
+                "image_name": "page_001_vlm_contrast.png",
+                "visual_location": "SECTION A-A, upper middle axial dimension",
+                "cited_text": "33.50",
+                "evidence_type": "dimension",
+                "confidence": 0.88
+              }
+            ]
+          }
+        ],
+        "gdt_controls": [],
+        "source_views": [
+          "Left end view",
+          "SECTION A-A"
+        ],
+        "evidence": [
+          {
+            "page_index": 1,
+            "image_name": "page_001_vlm_contrast.png",
+            "visual_location": "SECTION A-A, large hatched bulged region and left end-view outer circle",
+            "cited_text": "\u00d863.00; R31.50; 33.50",
+            "evidence_type": "dimension",
+            "confidence": 0.9
+          }
+        ],
+        "confidence": 0.9
+      },
+      {
+        "feature_id": "F008",
+        "feature_type": "fillet",
+        "name": "R2 ball-to-stem blend radii",
+        "description": "Circumferential R2.0 blend radii at the transitions between the spherical/bulged ball surface and the \u00d840 cylindrical stem, shown on both sides of the ball region in SECTION A-A.",
+        "geometry": {
+          "diameter_mm": null,
+          "inner_diameter_mm": null,
+          "outer_diameter_mm": null,
+          "length_mm": null,
+          "depth_mm": null,
+          "depth_condition": null,
+          "width_mm": null,
+          "height_mm": null,
+          "taper_ratio": null,
+          "taper_included_angle_deg": null,
+          "radius_mm": 2.0,
+          "angle_deg": null,
+          "pitch_mm": null,
+          "thread_class": null,
+          "hole_count": null,
+          "pcd_mm": null,
+          "profile_length_mm": null,
+          "area_mm2": null,
+          "wall_thickness_mm": null,
+          "position_description": "Two circumferential blend locations at the left and right tangent/transition regions of the ball to the \u00d840 cylinder.",
+          "axis_direction": "X"
+        },
+        "surface_finish": null,
+        "material_condition": null,
+        "access_directions": [
+          "radial"
+        ],
+        "estimated_material_removal": null,
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "transition fillet radius",
+            "nominal_value_mm": 2.0,
+            "plus_mm": null,
+            "minus_mm": null,
+            "tolerance_class": "general title-block tolerance applies if no explicit limit is specified",
+            "is_critical": false,
+            "evidence": [
+              {
+                "page_index": 1,
+                "image_name": "page_001_vlm_contrast.png",
+                "visual_location": "SECTION A-A, lower left and lower right transition callouts",
+                "cited_text": "R2.0",
+                "evidence_type": "dimension",
+                "confidence": 0.93
+              }
+            ]
+          }
+        ],
+        "gdt_controls": [],
+        "source_views": [
+          "SECTION A-A"
+        ],
+        "evidence": [
+          {
+            "page_index": 1,
+            "image_name": "page_001_vlm_contrast.png",
+            "visual_location": "SECTION A-A, leaders to lower transition radii on both sides of ball",
+            "cited_text": "R2.0",
+            "evidence_type": "dimension",
+            "confidence": 0.93
+          }
+        ],
+        "confidence": 0.93
+      },
+      {
+        "feature_id": "F009",
+        "feature_type": "flat_face",
+        "name": "Right annular end face",
+        "description": "Flat annular end face at the right side of the cylindrical shank. The face is bounded by the \u00d840 external cylinder and the \u00d831.67 counterbore opening.",
+        "geometry": {
+          "diameter_mm": null,
+          "inner_diameter_mm": 31.67,
+          "outer_diameter_mm": 40.0,
+          "length_mm": null,
+          "depth_mm": null,
+          "depth_condition": null,
+          "width_mm": null,
+          "height_mm": null,
+          "taper_ratio": null,
+          "taper_included_angle_deg": null,
+          "radius_mm": null,
+          "angle_deg": null,
+          "pitch_mm": null,
+          "thread_class": null,
+          "hole_count": null,
+          "pcd_mm": null,
+          "profile_length_mm": null,
+          "area_mm2": null,
+          "wall_thickness_mm": 4.165,
+          "position_description": "At X=122.50 mm, right terminal plane of the part.",
+          "axis_direction": "normal to X"
+        },
+        "surface_finish": null,
+        "material_condition": null,
+        "access_directions": [
+          "axial"
+        ],
+        "estimated_material_removal": null,
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "right end axial location from left end",
+            "nominal_value_mm": 122.5,
+            "plus_mm": null,
+            "minus_mm": null,
+            "tolerance_class": "general title-block tolerance applies if no explicit limit is specified",
+            "is_critical": true,
+            "evidence": [
+              {
+                "page_index": 1,
+                "image_name": "page_001_vlm_contrast.png",
+                "visual_location": "SECTION A-A, top overall length dimension terminating at right end face",
+                "cited_text": "122.50",
+                "evidence_type": "dimension",
+                "confidence": 0.94
+              }
+            ]
+          }
+        ],
+        "gdt_controls": [],
+        "source_views": [
+          "SECTION A-A"
+        ],
+        "evidence": [
+          {
+            "page_index": 1,
+            "image_name": "page_001_vlm_contrast.png",
+            "visual_location": "SECTION A-A, right vertical end line",
+            "cited_text": "122.50; \u00d840.13/39.87; \u00d831.77/31.57",
+            "evidence_type": "dimension",
+            "confidence": 0.84
+          }
+        ],
+        "confidence": 0.84
+      },
+      {
+        "feature_id": "F010",
+        "feature_type": "coating_zone",
+        "name": "Local bond-preparation surface zone",
+        "description": "Localized external surface area called out for bond preparation. The leader points to the lower outside of the spherical/bulged region near the transition toward the right shank; exact axial/circumferential limits are not dimensioned.",
+        "geometry": {
+          "diameter_mm": null,
+          "inner_diameter_mm": null,
+          "outer_diameter_mm": null,
+          "length_mm": null,
+          "depth_mm": null,
+          "depth_condition": null,
+          "width_mm": null,
+          "height_mm": null,
+          "taper_ratio": null,
+          "taper_included_angle_deg": null,
+          "radius_mm": null,
+          "angle_deg": null,
+          "pitch_mm": null,
+          "thread_class": null,
+          "hole_count": null,
+          "pcd_mm": null,
+          "profile_length_mm": null,
+          "area_mm2": null,
+          "wall_thickness_mm": null,
+          "position_description": "External area indicated by arrowed note 'BOND PREP THIS AREA *' on lower side of ball/stem transition in SECTION A-A.",
+          "axis_direction": "radial surface on X-axisymmetric body"
+        },
+        "surface_finish": null,
+        "material_condition": "BOND PREP THIS AREA *; related parts table process appears to reference PS-135.22 for BS00B364351.",
+        "access_directions": [
+          "radial"
+        ],
+        "estimated_material_removal": null,
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "source_views": [
+          "SECTION A-A"
+        ],
+        "evidence": [
+          {
+            "page_index": 1,
+            "image_name": "page_001_vlm_contrast.png",
+            "visual_location": "SECTION A-A, lower right leader pointing to external ball/stem surface",
+            "cited_text": "BOND PREP THIS AREA *",
+            "evidence_type": "note",
+            "confidence": 0.76
+          },
+          {
+            "page_index": 1,
+            "image_name": "page_001_vlm_contrast.png",
+            "visual_location": "upper-left parts/process table",
+            "cited_text": "BS00B364351 ... PS-135.22 *",
+            "evidence_type": "table",
+            "confidence": 0.78
+          }
+        ],
+        "confidence": 0.72
+      },
+      {
+        "feature_id": "F011",
+        "feature_type": "edge_break",
+        "name": "General sharp-edge break",
+        "description": "All sharp edges are to be broken to 0.5 mm maximum per general note.",
+        "geometry": {
+          "diameter_mm": null,
+          "inner_diameter_mm": null,
+          "outer_diameter_mm": null,
+          "length_mm": null,
+          "depth_mm": null,
+          "depth_condition": null,
+          "width_mm": null,
+          "height_mm": null,
+          "taper_ratio": null,
+          "taper_included_angle_deg": null,
+          "radius_mm": 0.5,
+          "angle_deg": null,
+          "pitch_mm": null,
+          "thread_class": null,
+          "hole_count": null,
+          "pcd_mm": null,
+          "profile_length_mm": null,
+          "area_mm2": null,
+          "wall_thickness_mm": null,
+          "position_description": "Applies to all otherwise-sharp external and internal edges unless superseded by explicit R2.0 blend radii.",
+          "axis_direction": "various"
+        },
+        "surface_finish": null,
+        "material_condition": "0.5 MAX edge break",
+        "access_directions": [
+          "axial",
+          "radial"
+        ],
+        "estimated_material_removal": null,
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "maximum edge break",
+            "nominal_value_mm": 0.5,
+            "plus_mm": null,
+            "minus_mm": null,
+            "tolerance_class": "MAX",
+            "is_critical": false,
+            "evidence": [
+              {
+                "page_index": 1,
+                "image_name": "page_001_vlm_contrast.png",
+                "visual_location": "bottom-left general notes",
+                "cited_text": "BREAK ALL SHARP EDGES 0.5 MAX.",
+                "evidence_type": "note",
+                "confidence": 0.95
+              }
+            ]
+          }
+        ],
+        "gdt_controls": [],
+        "source_views": [
+          "General notes"
+        ],
+        "evidence": [
+          {
+            "page_index": 1,
+            "image_name": "page_001_vlm_contrast.png",
+            "visual_location": "bottom-left general notes",
+            "cited_text": "BREAK ALL SHARP EDGES 0.5 MAX.",
+            "evidence_type": "note",
+            "confidence": 0.95
+          }
+        ],
+        "confidence": 0.95
+      }
+    ],
+    "relationships": [
+      {
+        "relationship_id": "REL001",
+        "from_feature_id": "F003",
+        "to_feature_id": "F004",
+        "relationship_type": "coaxial",
+        "detail": "Small through bore and right-side counterbore share the central X axis."
+      },
+      {
+        "relationship_id": "REL002",
+        "from_feature_id": "F004",
+        "to_feature_id": "F003",
+        "relationship_type": "coaxial",
+        "detail": "Right-side counterbore is coaxial with the small through bore."
+      },
+      {
+        "relationship_id": "REL003",
+        "from_feature_id": "F003",
+        "to_feature_id": "F006",
+        "relationship_type": "coaxial",
+        "detail": "Central bore and \u00d840 external cylinder share the same axis of revolution."
+      },
+      {
+        "relationship_id": "REL004",
+        "from_feature_id": "F006",
+        "to_feature_id": "F003",
+        "relationship_type": "coaxial",
+        "detail": "\u00d840 external cylinder is coaxial with the central bore."
+      },
+      {
+        "relationship_id": "REL005",
+        "from_feature_id": "F004",
+        "to_feature_id": "F006",
+        "relationship_type": "coaxial",
+        "detail": "Counterbore and external shank are coaxial, producing a uniform annular wall at the right end."
+      },
+      {
+        "relationship_id": "REL006",
+        "from_feature_id": "F006",
+        "to_feature_id": "F004",
+        "relationship_type": "coaxial",
+        "detail": "External shank and counterbore share the same X axis."
+      },
+      {
+        "relationship_id": "REL007",
+        "from_feature_id": "F007",
+        "to_feature_id": "F006",
+        "relationship_type": "coaxial",
+        "detail": "Spherical/bulged ball surface is generated about the same X axis as the \u00d840 cylinder."
+      },
+      {
+        "relationship_id": "REL008",
+        "from_feature_id": "F006",
+        "to_feature_id": "F007",
+        "relationship_type": "coaxial",
+        "detail": "\u00d840 cylindrical stem is coaxial with the ball/bulged surface."
+      },
+      {
+        "relationship_id": "REL009",
+        "from_feature_id": "F002",
+        "to_feature_id": "F009",
+        "relationship_type": "opposite_face",
+        "detail": "Left and right end faces are opposite axial end planes of the part."
+      },
+      {
+        "relationship_id": "REL010",
+        "from_feature_id": "F009",
+        "to_feature_id": "F002",
+        "relationship_type": "opposite_face",
+        "detail": "Right and left end faces are opposite axial end planes of the part."
+      },
+      {
+        "relationship_id": "REL011",
+        "from_feature_id": "F003",
+        "to_feature_id": "F002",
+        "relationship_type": "perpendicular",
+        "detail": "Small bore axis is normal to and opens through the left annular end face."
+      },
+      {
+        "relationship_id": "REL012",
+        "from_feature_id": "F004",
+        "to_feature_id": "F009",
+        "relationship_type": "perpendicular",
+        "detail": "Right counterbore axis is normal to the right annular end face."
+      },
+      {
+        "relationship_id": "REL013",
+        "from_feature_id": "F005",
+        "to_feature_id": "F004",
+        "relationship_type": "machining_dependency",
+        "detail": "Internal annular shoulder is the bottom face formed by the right counterbore."
+      },
+      {
+        "relationship_id": "REL014",
+        "from_feature_id": "F005",
+        "to_feature_id": "F009",
+        "relationship_type": "parallel",
+        "detail": "Internal counterbore shoulder face is parallel to the right end face."
+      },
+      {
+        "relationship_id": "REL015",
+        "from_feature_id": "F009",
+        "to_feature_id": "F005",
+        "relationship_type": "parallel",
+        "detail": "Right end face is parallel to the internal counterbore shoulder face."
+      },
+      {
+        "relationship_id": "REL016",
+        "from_feature_id": "F008",
+        "to_feature_id": "F007",
+        "relationship_type": "machining_dependency",
+        "detail": "R2.0 blend radii modify the edges of the spherical/bulged ball surface."
+      },
+      {
+        "relationship_id": "REL017",
+        "from_feature_id": "F008",
+        "to_feature_id": "F006",
+        "relationship_type": "machining_dependency",
+        "detail": "R2.0 blend radii modify the transition between ball and \u00d840 cylindrical stem."
+      },
+      {
+        "relationship_id": "REL018",
+        "from_feature_id": "F010",
+        "to_feature_id": "F007",
+        "relationship_type": "on_same_face",
+        "detail": "Bond-prep zone lies on the outside ball/bulged surface region indicated by the leader."
+      },
+      {
+        "relationship_id": "REL019",
+        "from_feature_id": "F010",
+        "to_feature_id": "F006",
+        "relationship_type": "on_same_face",
+        "detail": "Bond-prep zone extends/points near the ball-to-shank transition on the \u00d840 stem side."
+      },
+      {
+        "relationship_id": "REL020",
+        "from_feature_id": "F011",
+        "to_feature_id": "F001",
+        "relationship_type": "machining_dependency",
+        "detail": "General edge-break requirement applies to the sharp edges of the finished body."
+      },
+      {
+        "relationship_id": "REL021",
+        "from_feature_id": "F003",
+        "to_feature_id": "F001",
+        "relationship_type": "intersecting",
+        "detail": "Central bore passes through the part body."
+      },
+      {
+        "relationship_id": "REL022",
+        "from_feature_id": "F004",
+        "to_feature_id": "F001",
+        "relationship_type": "intersecting",
+        "detail": "Right counterbore removes material from the body and intersects the right end."
+      },
+      {
+        "relationship_id": "REL023",
+        "from_feature_id": "F006",
+        "to_feature_id": "F001",
+        "relationship_type": "coaxial",
+        "detail": "External \u00d840 cylinder is part of the axisymmetric body about X."
+      },
+      {
+        "relationship_id": "REL024",
+        "from_feature_id": "F001",
+        "to_feature_id": "F006",
+        "relationship_type": "coaxial",
+        "detail": "Part body envelope is coaxial with the \u00d840 cylinder."
+      },
+      {
+        "relationship_id": "REL025",
+        "from_feature_id": "F007",
+        "to_feature_id": "F001",
+        "relationship_type": "intersecting",
+        "detail": "Spherical/bulged ball region is integral with the main body."
+      },
+      {
+        "relationship_id": "REL026",
+        "from_feature_id": "F002",
+        "to_feature_id": "F001",
+        "relationship_type": "intersecting",
+        "detail": "Left annular end face bounds the part body."
+      },
+      {
+        "relationship_id": "REL027",
+        "from_feature_id": "F009",
+        "to_feature_id": "F001",
+        "relationship_type": "intersecting",
+        "detail": "Right annular end face bounds the part body."
+      },
+      {
+        "relationship_id": "REL028",
+        "from_feature_id": "F005",
+        "to_feature_id": "F003",
+        "relationship_type": "perpendicular",
+        "detail": "Internal shoulder face is normal to the central bore axis and surrounds the \u00d819 bore opening into the counterbore."
+      },
+      {
+        "relationship_id": "REL029",
+        "from_feature_id": "F002",
+        "to_feature_id": "F005",
+        "relationship_type": "on_same_face",
+        "detail": "[auto-enriched] Both F002 and F005 (flat_face) are accessed from the axial face"
+      }
+    ],
+    "datum_scheme": {
+      "datums": [],
+      "datum_hierarchy_notes": "No formal datum feature symbols or GD&T feature-control frames were identified. The letter A/A-A visible in the drawing is a section-cut designation, not a datum feature symbol."
+    },
+    "sections_and_views": [
+      {
+        "view_name": "Left end view",
+        "page_index": 1,
+        "orientation": "Axial circular end view looking along the part axis; shows concentric outer ball projection, \u00d840 stem/end circle, and central bore.",
+        "features_visible": [
+          "F001",
+          "F002",
+          "F003",
+          "F006",
+          "F007"
+        ],
+        "notes": "Section cutting line A-A is shown through this view; it is not a datum."
+      },
+      {
+        "view_name": "SECTION A-A",
+        "page_index": 1,
+        "orientation": "Longitudinal section through the central X axis, with left end at X=0 and right shank end at X=122.50.",
+        "features_visible": [
+          "F001",
+          "F002",
+          "F003",
+          "F004",
+          "F005",
+          "F006",
+          "F007",
+          "F008",
+          "F009",
+          "F010",
+          "F011"
+        ],
+        "notes": "Primary view for all diameters, axial lengths, bore/counterbore depth, R31.50 ball surface, and R2.0 blends."
+      }
+    ],
+    "part_level_specs": {
+      "material": {
+        "raw_text": "MATERIAL: SAE J403 GRADE 1045 CD; MIN. YIELD appears 690MPa",
+        "material_type": "steel",
+        "grade": "1045 cold drawn",
+        "standard": "SAE J403",
+        "hardness": null,
+        "evidence": [
+          {
+            "page_index": 1,
+            "image_name": "page_001_vlm_contrast.png",
+            "visual_location": "bottom-right title block, material and yield fields",
+            "cited_text": "MATERIAL: SAE J403 GRADE 1045 CD; MIN. YIELD: 690MPa",
+            "evidence_type": "title_block",
+            "confidence": 0.84
+          }
+        ],
+        "confidence": 0.84
+      },
+      "heat_treatment": null,
+      "coating": {
+        "raw_text": "ZINC NICKEL PLATE PER PS-152.17A",
+        "coating_type": "zinc nickel plate",
+        "standard": "PS-152.17A",
+        "coverage": "General plating requirement for the part unless otherwise superseded; local bond-prep area is separately called out.",
+        "evidence": [
+          {
+            "page_index": 1,
+            "image_name": "page_001_vlm_contrast.png",
+            "visual_location": "bottom-left general note",
+            "cited_text": "ZINC NICKEL PLATE PER PS-152.17A",
+            "evidence_type": "note",
+            "confidence": 0.95
+          }
+        ],
+        "confidence": 0.95
+      },
+      "general_tolerance_standard": "Metric dimensions govern. Title-block tolerance block is partly legible and appears to specify default metric tolerances approximately X.X \u00b10.5, X.XX \u00b10.25, and angles \u00b12\u00b0; use explicit limit dimensions where shown.",
+      "general_notes": [
+        {
+          "note_text": "ZINC NICKEL PLATE PER PS-152.17A",
+          "category": "finish",
+          "evidence": [
+            {
+              "page_index": 1,
+              "image_name": "page_001_vlm_contrast.png",
+              "visual_location": "bottom-left notes",
+              "cited_text": "ZINC NICKEL PLATE PER PS-152.17A",
+              "evidence_type": "note",
+              "confidence": 0.95
+            }
+          ]
+        },
+        {
+          "note_text": "BREAK ALL SHARP EDGES 0.5 MAX.",
+          "category": "deburr",
+          "evidence": [
+            {
+              "page_index": 1,
+              "image_name": "page_001_vlm_contrast.png",
+              "visual_location": "bottom-left notes",
+              "cited_text": "BREAK ALL SHARP EDGES 0.5 MAX.",
+              "evidence_type": "note",
+              "confidence": 0.95
+            }
+          ]
+        },
+        {
+          "note_text": "BOND PREP THIS AREA *",
+          "category": "process",
+          "evidence": [
+            {
+              "page_index": 1,
+              "image_name": "page_001_vlm_contrast.png",
+              "visual_location": "SECTION A-A, lower-right leader note",
+              "cited_text": "BOND PREP THIS AREA *",
+              "evidence_type": "note",
+              "confidence": 0.76
+            }
+          ]
+        },
+        {
+          "note_text": "Metric dimensions and tolerances govern the design; English dimensions, if included, are for information purposes only.",
+          "category": "tolerance",
+          "evidence": [
+            {
+              "page_index": 1,
+              "image_name": "page_001_vlm_contrast.png",
+              "visual_location": "bottom-right title block, tolerance notes",
+              "cited_text": "METRIC DIMENSIONS & TOLERANCES GOVERN THE DESIGN, ENGLISH DIMENSIONS IF INCLUDED ARE FOR INFORMATION PURPOSES ONLY.",
+              "evidence_type": "title_block",
+              "confidence": 0.78
+            }
+          ]
+        },
+        {
+          "note_text": "Parts/process table lists BS00B364350 as AS SHOWN and BS00B364351 as PS-135.22 *; used-on entries include BS00B364351 and MB05B764050/MB05B764040.",
+          "category": "process",
+          "evidence": [
+            {
+              "page_index": 1,
+              "image_name": "page_001_vlm_contrast.png",
+              "visual_location": "upper-left parts/process table",
+              "cited_text": "BS00B364350 ... AS SHOWN ... BS00B364351 / BS00B364351 ... PS-135.22 * ... MB05B764050, MB05B764040",
+              "evidence_type": "table",
+              "confidence": 0.82
+            }
+          ]
+        }
+      ],
+      "testing_requirements": [],
+      "packaging_requirements": null
+    },
+    "overall_complexity": "moderate",
+    "graph_summary": "The drawing defines an axisymmetric steel inner ball-stud component, 122.50 mm long along its central X axis, with a maximum \u00d863.00 spherical/bulged ball region located near the left side and a \u00d840.00 external cylindrical stem/journal. The central passage consists of a \u00d819.00 small through bore with limits \u00d819.15/18.85, coaxial with a right-side \u00d831.67 counterbore limited \u00d831.77/31.57 and 50.00 mm nominal deep from the right end with limits 50.13/49.87. The ball/bulge has R31.50 geometry and is located 33.50 mm from the left reference plane, blending into the \u00d840 stem with R2.0 circumferential radii. The part is SAE J403 Grade 1045 cold-drawn steel, zinc-nickel plated per PS-152.17A, with all sharp edges broken 0.5 mm maximum and a local bond-prep area called out on the external ball/stem region."
+  },
+  "clarifications": [
+    {
+      "clarification_id": "C001",
+      "question": "Confirm whether the RFQ is for BS00B364350 only or also includes the BS00B364351 configuration/process row.",
+      "why_it_matters": "The parts table lists BS00B364350 as 'AS SHOWN' and BS00B364351 as 'PS-135.22 *'. The starred bond-prep process may apply only to the 351 variant, which affects required surface processing.",
+      "blocks": [
+        "part_level_specs.coating",
+        "part_level_specs.general_notes",
+        "F010"
+      ],
+      "suggested_default": "Treat the RFQ item BS00B364350 as the as-shown geometry with zinc-nickel plating, and treat PS-135.22/bond-prep as conditional unless purchasing specifies BS00B364351.",
+      "priority": "medium"
+    },
+    {
+      "clarification_id": "C002",
+      "question": "What are the exact axial and circumferential boundaries of the 'BOND PREP THIS AREA *' zone?",
+      "why_it_matters": "The leader identifies a local surface-treatment area but no numeric boundary dimensions are visible; exact coverage may affect inspection and masking/preparation requirements.",
+      "blocks": [
+        "F010"
+      ],
+      "suggested_default": "Use the leader-indicated lower external spherical/transition surface only; do not assume full 360\u00b0 coverage unless the process standard PS-135.22 defines it.",
+      "priority": "medium"
+    },
+    {
+      "clarification_id": "C003",
+      "question": "Confirm the title-block general tolerance values for untoleranced metric dimensions.",
+      "why_it_matters": "The default tolerance block is small and partially legible. Explicit limit dimensions are clear, but untoleranced dimensions such as \u00d863.00, R31.50, R2.0, 33.50, and 122.50 depend on the default tolerance standard.",
+      "blocks": [
+        "part_level_specs.general_tolerance_standard",
+        "F001",
+        "F007",
+        "F008"
+      ],
+      "suggested_default": "Use explicit limit dimensions where present; for untoleranced dimensions use the title-block default as best-read: approximately X.X \u00b10.5, X.XX \u00b10.25, angles \u00b12\u00b0.",
+      "priority": "medium"
+    }
+  ],
+  "assumptions": [],
+  "guardrail_results": [
+    {
+      "guardrail_id": "G001_title_block_first",
+      "status": "pass",
+      "message": "Title block, parts/process table, material, coating note, and general edge-break note were reviewed before feature extraction.",
+      "affected_ids": [
+        "part",
+        "part_level_specs"
+      ]
+    },
+    {
+      "guardrail_id": "G002_part_envelope",
+      "status": "pass",
+      "message": "No ordinate dimensioning was present. Overall envelope was derived from the explicit overall length 122.50 and maximum diameter \u00d863.00.",
+      "affected_ids": [
+        "feature_graph.part_envelope",
+        "F001"
+      ]
+    },
+    {
+      "guardrail_id": "G003_view_identification",
+      "status": "pass",
+      "message": "Left axial end view and longitudinal SECTION A-A were identified. The A-A letters are section-cut labels, not datum symbols.",
+      "affected_ids": [
+        "sections_and_views",
+        "datum_scheme"
+      ]
+    },
+    {
+      "guardrail_id": "G004_thread_completeness",
+      "status": "pass",
+      "message": "Full drawing scan found no metric or other thread callouts such as M2, M3, M4, M5, M6, M8, M10, or M12.",
+      "affected_ids": []
+    },
+    {
+      "guardrail_id": "G005_hole_bore_completeness",
+      "status": "pass",
+      "message": "All visible diameter callouts with \u00d8 symbols were reviewed. The drawing contains coaxial bores/counterbore and external diameters, not hole patterns or repeated fastener holes.",
+      "affected_ids": [
+        "F003",
+        "F004",
+        "F006",
+        "F007"
+      ]
+    },
+    {
+      "guardrail_id": "G006_depth_check",
+      "status": "pass",
+      "message": "Counterbore depth was extracted from 50.13/49.87. Small bore is through by section continuity and opens through the counterbored passage. No slots or pockets are present.",
+      "affected_ids": [
+        "F003",
+        "F004",
+        "F005"
+      ]
+    },
+    {
+      "guardrail_id": "G007_datum_gdt_check",
+      "status": "pass",
+      "message": "No formal datum feature symbols or GD&T frames were identified. A-A is treated only as a section view.",
+      "affected_ids": [
+        "datum_scheme"
+      ]
+    },
+    {
+      "guardrail_id": "G008_relationship_completeness",
+      "status": "pass",
+      "message": "Every feature has at least one relationship, symmetric coaxial/opposite/parallel relationships are paired, and no duplicate feature IDs are present.",
+      "affected_ids": [
+        "relationships"
+      ]
+    },
+    {
+      "guardrail_id": "G009_ambiguity",
+      "status": "warn",
+      "message": "The process applicability for PS-135.22/bond-prep and the exact local bond-prep zone boundaries are not fully defined on the raster image.",
+      "affected_ids": [
+        "F010",
+        "part_level_specs.general_notes"
+      ]
+    }
+  ],
+  "confidence": {
+    "overall": 0.84,
+    "part_metadata": 0.82,
+    "feature_extraction": 0.87,
+    "relationships": 0.84,
+    "datum_scheme": 0.94,
+    "part_level_specs": 0.8
+  },
+  "analysis_trace": [
+    {
+      "step": "page_orientation",
+      "summary": "Single landscape drawing page with parts/process table at upper left, main end view and SECTION A-A in the center, notes at lower left, and title block at lower right.",
+      "issues": [
+        "Small title-block tolerance text is partly legible.",
+        "The drawing covers at least two suffix part numbers, BS00B364350 and BS00B364351."
+      ]
+    },
+    {
+      "step": "view_identification",
+      "summary": "Identified the left circular end view as an axial projection and SECTION A-A as the longitudinal section through the part centerline. The A-A labels are section-cut markers, not datum feature symbols.",
+      "issues": []
+    },
+    {
+      "step": "feature_extraction",
+      "summary": "Extracted the axisymmetric body, left and right end faces, \u00d819.00 small through bore, \u00d831.67 right counterbore, internal counterbore shoulder, \u00d840.00 external cylindrical stem, \u00d863/R31.50 spherical-bulged ball surface, R2.0 blend radii, local bond-prep zone, and general edge break.",
+      "issues": [
+        "Left neck/transition exact tangent locations are not separately dimensioned beyond R31.50, R2.0, 33.50, and \u00d840 dimensions."
+      ]
+    },
+    {
+      "step": "cross_view_correlation",
+      "summary": "Correlated the concentric circles in the left end view with the coaxial features shown in SECTION A-A: outer ball projection \u00d863, \u00d840 stem/end circle, and \u00d819 central bore.",
+      "issues": []
+    },
+    {
+      "step": "graph_assembly",
+      "summary": "Constructed an axisymmetric feature graph with coaxial bore/counterbore/cylinder/ball relationships, opposite end faces, internal shoulder, transition fillets, local surface-treatment zone, and parent body relationships.",
+      "issues": []
+    },
+    {
+      "step": "tolerance_embedding",
+      "summary": "Embedded all clearly visible limit dimensions into the constrained features: \u00d840.13/39.87, \u00d819.15/18.85, \u00d831.77/31.57, and 50.13/49.87. Untoleranced dimensions carry a general-title-block-tolerance note.",
+      "issues": [
+        "Default tolerance values were only partially legible, so they were recorded at part level with a clarification."
+      ]
+    },
+    {
+      "step": "datum_scheme",
+      "summary": "Scanned for datum feature symbols and GD&T frames. None were found. The A-A symbol is used only for a section view.",
+      "issues": []
+    },
+    {
+      "step": "part_level_specs",
+      "summary": "Extracted SAE J403 Grade 1045 CD material, zinc-nickel plating per PS-152.17A, general sharp-edge break 0.5 max, metric-dimension note, and process table entries for BS00B364350/351.",
+      "issues": [
+        "Applicability of PS-135.22/starred bond-prep to the RFQ part should be confirmed."
+      ]
+    },
+    {
+      "step": "self_review",
+      "summary": "Completed thread check, hole/bore completeness check, depth check, dimension re-read for lower-confidence items, relationship completeness review, and envelope sanity check. No thread callouts or hole patterns are present; all \u00d8 callouts were mapped to rotational features.",
+      "issues": [
+        "Exact bond-prep zone boundary and title-block default tolerance details remain clarification items."
+      ]
+    }
+  ]
+}

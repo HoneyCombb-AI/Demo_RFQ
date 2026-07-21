@@ -1,0 +1,1511 @@
+{
+  "analysis_id": "feas_rfq_CM00B337200-1_20260721T034642Z",
+  "source_feature_graph_id": "rfq_CM00B337200-1_20260721T034642Z",
+  "feasibility": {
+    "can_proceed": true,
+    "status": "feasible_with_risks",
+    "risk_level": "high",
+    "blockers": [],
+    "risks": [
+      {
+        "risk_type": "missing_material",
+        "description": "Material grade is not legible/provided, so machinability cannot be confirmed against the shop's listed material capabilities.",
+        "mitigation": "Confirm material specification; provisional assessment assumes a common automotive machinable material such as steel or aluminum.",
+        "affected_feature_ids": [
+          "F001"
+        ]
+      },
+      {
+        "risk_type": "casting_or_near_net_shape_source",
+        "description": "The part is described as a complex cast housing with ribs, draft, pockets/windows, and raised lettering, but the shop profile does not list in-house casting/foundry capability.",
+        "mitigation": "Confirm whether casting is customer-supplied or allow outside casting/foundry sourcing before in-house machining.",
+        "affected_feature_ids": [
+          "F001",
+          "F014",
+          "F021",
+          "F022"
+        ]
+      },
+      {
+        "risk_type": "missing_general_tolerance_standard",
+        "description": "Many dimensions have no explicit tolerance and the title-block general tolerance standard is missing.",
+        "mitigation": "Confirm the drawing general tolerance standard before final feasibility/routing decisions.",
+        "affected_feature_ids": [
+          "F001",
+          "F002",
+          "F004",
+          "F009",
+          "F010",
+          "F011",
+          "F012",
+          "F013",
+          "F014",
+          "F019",
+          "F020",
+          "F023",
+          "F024",
+          "F025",
+          "F027",
+          "F028",
+          "F029"
+        ]
+      },
+      {
+        "risk_type": "gd_t_verification",
+        "description": "Several profile/position controls are achievable by machining tolerance level, but in-house inspection profile says no CMM in-house.",
+        "mitigation": "Use outside CMM/FAI for datum-based profile and position verification, especially first article inspection.",
+        "affected_feature_ids": [
+          "F003",
+          "F006",
+          "F007",
+          "F008",
+          "F010",
+          "F015",
+          "F016",
+          "F017",
+          "F023"
+        ]
+      },
+      {
+        "risk_type": "coating_specificity",
+        "description": "The drawing calls for Zn-Ni coating/thread-after-coating for insert nuts or threaded features, while the shop profile lists alkaline zinc plating but not explicitly zinc-nickel plating.",
+        "mitigation": "Confirm coating specification and whether in-house plating line is qualified for Zn-Ni; otherwise outsource Zn-Ni coating.",
+        "affected_feature_ids": [
+          "F003",
+          "F004"
+        ]
+      },
+      {
+        "risk_type": "long_through_hole_access",
+        "description": "Several through holes/slots are modeled through up to 143.6 mm part thickness; these are within machine travel but may require careful fixturing, two-sided access, or long tooling.",
+        "mitigation": "Confirm local wall thicknesses from the 3D model and plan inspection/fixturing accordingly in Phase 2.",
+        "affected_feature_ids": [
+          "F006",
+          "F007",
+          "F015",
+          "F018"
+        ]
+      }
+    ],
+    "outside_processes_needed": [
+      {
+        "process": "casting/foundry or customer-supplied casting",
+        "reason": "Complex cast housing body is implied, but no in-house casting capability is listed.",
+        "sequence_position": "before machining",
+        "estimated_lead_time_days": null
+      },
+      {
+        "process": "cmm_fai",
+        "reason": "Datum-based profile and position controls on a complex housing likely require CMM verification; in-house inspection profile states cmm_in_house: false.",
+        "sequence_position": "after machining / first article inspection",
+        "estimated_lead_time_days": null
+      },
+      {
+        "process": "zinc-nickel coating qualification or outside Zn-Ni plating",
+        "reason": "Zn-Ni coating is called out, but shop profile only explicitly lists alkaline zinc plating.",
+        "sequence_position": "after insert/coating preparation as required by drawing",
+        "estimated_lead_time_days": null
+      },
+      {
+        "process": "special_testing",
+        "reason": "Drawing includes push-out, anti-rotate torque, durability, and high-load tests; shop has general test capability but the exact load/fixture capability is not specified.",
+        "sequence_position": "after manufacture/assembly as required by control plan",
+        "estimated_lead_time_days": null
+      }
+    ],
+    "material_machinable": true,
+    "tolerances_achievable": true,
+    "machines_available": true,
+    "part_fits_envelopes": true,
+    "assessment_notes": "The 335.78 x 232.62 x 143.6 mm complex housing fits the listed VMC travel of 600 x 400 x 400 mm and the listed lathe envelope where rotary features are applicable. Explicit dimensional tolerances and GD&T values are generally loose to moderate relative to 0.02 mm careful machining capability, but material, default tolerances, casting source, coating qualification, and CMM inspection are significant open risks."
+  },
+  "feature_assessments": [
+    {
+      "feature_id": "F001",
+      "feature_name": "Complex cast housing body",
+      "feature_type": "part_body",
+      "overall_verdict": "info_missing",
+      "spec_assessments": [
+        {
+          "feature_id": "F001",
+          "feature_name": "Complex cast housing body",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "Overall length, derived from two sectional dimensions",
+          "nominal_value": "335.78 mm",
+          "tolerance_or_requirement": "Tolerance not specified",
+          "verdict": "info_missing",
+          "reasoning": "The dimension is within VMC travel, but no explicit tolerance or general tolerance standard is available.",
+          "risk_description": null,
+          "mitigation": "Confirm title-block/general tolerance standard.",
+          "required_process": "milling/inspection",
+          "shop_capability_reference": "vmc_3axis travel_x_mm 600; tolerance_capabilities default_general_linear_tolerance_mm 0.05"
+        },
+        {
+          "feature_id": "F001",
+          "feature_name": "Complex cast housing body",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "Main-view maximum horizontal span",
+          "nominal_value": "232.62 mm",
+          "tolerance_or_requirement": "Tolerance not specified",
+          "verdict": "info_missing",
+          "reasoning": "The span is within machine envelope, but acceptance tolerance is missing.",
+          "risk_description": null,
+          "mitigation": "Confirm general tolerance standard.",
+          "required_process": "milling/inspection",
+          "shop_capability_reference": "vmc_3axis travel_y_mm 400; tolerance_capabilities default_general_linear_tolerance_mm 0.05"
+        },
+        {
+          "feature_id": "F001",
+          "feature_name": "Complex cast housing body",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "Largest profile/diameter shown",
+          "nominal_value": "143.60 mm",
+          "tolerance_or_requirement": "Tolerance not specified",
+          "verdict": "info_missing",
+          "reasoning": "The size fits the listed VMC and lathe envelopes, but no explicit tolerance is provided.",
+          "risk_description": null,
+          "mitigation": "Confirm whether this is a finished or cast/reference dimension and its tolerance.",
+          "required_process": "milling/turning/inspection",
+          "shop_capability_reference": "vmc_3axis travel_z_mm 400; cnc_lathe max_diameter_mm 200"
+        }
+      ],
+      "notes": "Overall body size fits shop envelopes, but material, casting source, and default tolerances are unresolved."
+    },
+    {
+      "feature_id": "F002",
+      "feature_name": "Datum target pad pattern A1-A4",
+      "feature_type": "pad",
+      "overall_verdict": "info_missing",
+      "spec_assessments": [
+        {
+          "feature_id": "F002",
+          "feature_name": "Datum target pad pattern A1-A4",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "Datum target pad diameter",
+          "nominal_value": "40.00 mm",
+          "tolerance_or_requirement": "Tolerance not specified",
+          "verdict": "info_missing",
+          "reasoning": "A 40 mm machined pad is within VMC milling capability, but the pad diameter tolerance is not defined.",
+          "risk_description": null,
+          "mitigation": "Confirm general tolerance or datum target size requirement.",
+          "required_process": "face milling/spotfacing",
+          "shop_capability_reference": "vmc_3axis milling; normal_tolerance_mm 0.05"
+        }
+      ],
+      "notes": "Machining datum pads is feasible; tolerance definition is missing."
+    },
+    {
+      "feature_id": "F003",
+      "feature_name": "4X M10 x 1.5 threaded mounting holes",
+      "feature_type": "internal_thread",
+      "overall_verdict": "risk",
+      "spec_assessments": [
+        {
+          "feature_id": "F003",
+          "feature_name": "4X M10 x 1.5 threaded mounting holes",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "Metric internal thread major size",
+          "nominal_value": "M10",
+          "tolerance_or_requirement": "6H thread class",
+          "verdict": "feasible",
+          "reasoning": "M10 internal tapping/threading is listed under VMC/SPM tapping and CNC threading capabilities.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "tapping/threading",
+          "shop_capability_reference": "vmc_3axis processes tapping; spm_milling_drilling processes tapping; inspection thread_gauge"
+        },
+        {
+          "feature_id": "F003",
+          "feature_name": "4X M10 x 1.5 threaded mounting holes",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "Metric thread pitch",
+          "nominal_value": "1.5 mm pitch",
+          "tolerance_or_requirement": "6H thread class",
+          "verdict": "feasible",
+          "reasoning": "Standard M10x1.5 internal thread pitch is compatible with listed tapping/threading processes.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "tapping/threading",
+          "shop_capability_reference": "vmc_3axis tapping; cnc_lathe threading; inspection thread_gauge"
+        },
+        {
+          "feature_id": "F003",
+          "feature_name": "4X M10 x 1.5 threaded mounting holes",
+          "spec_category": "gdt_control",
+          "spec_description": "Position of 4X M10 threaded mounting-hole pattern",
+          "nominal_value": "4X M10 pattern",
+          "tolerance_or_requirement": "Position 0.3 mm at MMC to A|B|C",
+          "verdict": "risk",
+          "reasoning": "A 0.3 mm positional tolerance is machinable, but datum-based pattern verification may require outside CMM because in-house CMM is not listed.",
+          "risk_description": "Inspection/FAI capability risk, not machining tolerance risk.",
+          "mitigation": "Use dedicated fixture and outside CMM/FAI if required.",
+          "required_process": "drilling/tapping with fixture; CMM inspection",
+          "shop_capability_reference": "vmc_3axis careful_tolerance_mm 0.02; inspection cmm_in_house false; outside_vendor cmm_fai"
+        },
+        {
+          "feature_id": "F003",
+          "feature_name": "4X M10 x 1.5 threaded mounting holes",
+          "spec_category": "geometry_parameter",
+          "spec_description": "Threaded hole count and thread form",
+          "nominal_value": "4 holes, M10x1.5-6H",
+          "tolerance_or_requirement": "Threaded after coating; depth not legible",
+          "verdict": "risk",
+          "reasoning": "The thread type is feasible, but missing depth and after-coating requirement affect complete manufacturing/inspection feasibility.",
+          "risk_description": "Thread depth and coating sequence are not fully defined.",
+          "mitigation": "Confirm thread depth and whether holes are blind, through, or insert-nut features.",
+          "required_process": "tapping/thread gauging",
+          "shop_capability_reference": "vmc_3axis tapping; inspection thread_gauge"
+        },
+        {
+          "feature_id": "F003",
+          "feature_name": "4X M10 x 1.5 threaded mounting holes",
+          "spec_category": "material_condition",
+          "spec_description": "Thread after coating",
+          "nominal_value": "thread after coating",
+          "tolerance_or_requirement": "Zn-Ni coat insert nuts / thread after coating",
+          "verdict": "risk",
+          "reasoning": "The shop has coating/plating capability, but Zn-Ni coating is not explicitly listed and thread-after-coating sequencing must be confirmed.",
+          "risk_description": "Coating qualification and sequence risk.",
+          "mitigation": "Confirm coating standard and whether in-house alkaline zinc plating is acceptable for Zn-Ni; otherwise outsource coating.",
+          "required_process": "coating/plating plus thread gauging",
+          "shop_capability_reference": "plating_line alkaline_zinc_plating; outside_vendor outside_process_candidate"
+        }
+      ],
+      "notes": "Threading is feasible, with risks around missing depth, coating specification, and GD&T verification."
+    },
+    {
+      "feature_id": "F004",
+      "feature_name": "4X insert/nut counterbore or recesses",
+      "feature_type": "counterbore",
+      "overall_verdict": "risk",
+      "spec_assessments": [
+        {
+          "feature_id": "F004",
+          "feature_name": "4X insert/nut counterbore or recesses",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "Insert/nut recess depth or axial dimension",
+          "nominal_value": "17.50 mm",
+          "tolerance_or_requirement": "Tolerance not specified",
+          "verdict": "info_missing",
+          "reasoning": "A 17.5 mm blind recess is within VMC boring/counterboring capability, but tolerance and recess diameter are missing.",
+          "risk_description": null,
+          "mitigation": "Confirm recess diameter and tolerance/general tolerance.",
+          "required_process": "counterboring/boring",
+          "shop_capability_reference": "vmc_3axis boring; normal_tolerance_mm 0.05"
+        },
+        {
+          "feature_id": "F004",
+          "feature_name": "4X insert/nut counterbore or recesses",
+          "spec_category": "geometry_parameter",
+          "spec_description": "Blind recess depth condition",
+          "nominal_value": "17.50 mm BLIND",
+          "tolerance_or_requirement": "Four blind recesses",
+          "verdict": "feasible",
+          "reasoning": "Blind counterbores/recesses of this depth are within VMC/SPM drilling and boring capability.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "counterboring/boring",
+          "shop_capability_reference": "vmc_3axis boring; spm_milling_drilling drilling"
+        },
+        {
+          "feature_id": "F004",
+          "feature_name": "4X insert/nut counterbore or recesses",
+          "spec_category": "material_condition",
+          "spec_description": "Nuts must remain flush or below bracket surface",
+          "nominal_value": "flush/below surface",
+          "tolerance_or_requirement": "4 places",
+          "verdict": "risk",
+          "reasoning": "Insert installation is listed, but final flushness depends on undefined recess diameter/tolerance and nut/coating details.",
+          "risk_description": "Assembly and recess-definition risk.",
+          "mitigation": "Confirm insert/nut specification, recess diameter, and flushness acceptance method.",
+          "required_process": "insert installation/inspection",
+          "shop_capability_reference": "assembly_cell insert_installation; finish_bench insert_installation"
+        }
+      ],
+      "notes": "Counterbore machining is feasible, but the recess definition and insert requirement are incomplete."
+    },
+    {
+      "feature_id": "F005",
+      "feature_name": "Four controlled support/outer flat surfaces",
+      "feature_type": "flat_face",
+      "overall_verdict": "risk",
+      "spec_assessments": [
+        {
+          "feature_id": "F005",
+          "feature_name": "Four controlled support/outer flat surfaces",
+          "spec_category": "gdt_control",
+          "spec_description": "Flatness of 4 controlled surfaces, common zone",
+          "nominal_value": "4 surfaces",
+          "tolerance_or_requirement": "Flatness 0.5 mm common zone",
+          "verdict": "feasible",
+          "reasoning": "A 0.5 mm flatness requirement is well within normal VMC milling capability.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "face milling/inspection",
+          "shop_capability_reference": "vmc_3axis normal_tolerance_mm 0.05"
+        },
+        {
+          "feature_id": "F005",
+          "feature_name": "Four controlled support/outer flat surfaces",
+          "spec_category": "gdt_control",
+          "spec_description": "Profile of controlled support surface set",
+          "nominal_value": "support surface set",
+          "tolerance_or_requirement": "Profile of surface 0.9 mm to A|B|C",
+          "verdict": "risk",
+          "reasoning": "The 0.9 mm profile is loose, but datum-referenced profile verification on a complex housing may require outside CMM.",
+          "risk_description": "Inspection method risk due no in-house CMM.",
+          "mitigation": "Use outside CMM/FAI or approved fixture inspection.",
+          "required_process": "milling/CMM inspection",
+          "shop_capability_reference": "vmc_3axis milling; inspection cmm_in_house false; outside_vendor cmm_fai"
+        }
+      ],
+      "notes": "Machining tolerance is feasible; datum-based profile verification is the main risk."
+    },
+    {
+      "feature_id": "F006",
+      "feature_name": "Left \u00d816.90 datum bore B",
+      "feature_type": "through_hole",
+      "overall_verdict": "risk",
+      "spec_assessments": [
+        {
+          "feature_id": "F006",
+          "feature_name": "Left \u00d816.90 datum bore B",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "Limit diameter 16.85-16.95",
+          "nominal_value": "16.90 mm",
+          "tolerance_or_requirement": "+0.05/-0.05 mm",
+          "verdict": "feasible",
+          "reasoning": "A \u00b10.05 mm bore tolerance is within listed normal/careful machining capability using drilling/reaming/boring.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "reaming or boring",
+          "shop_capability_reference": "vmc_3axis reaming/boring normal_tolerance_mm 0.05"
+        },
+        {
+          "feature_id": "F006",
+          "feature_name": "Left \u00d816.90 datum bore B",
+          "spec_category": "gdt_control",
+          "spec_description": "Position of left \u00d816.90 bore",
+          "nominal_value": "\u00d816.90 bore",
+          "tolerance_or_requirement": "Position 0.15 mm at MMC to datum A",
+          "verdict": "risk",
+          "reasoning": "0.15 mm position is above machining capability limits, but datum setup and CMM verification create risk.",
+          "risk_description": "Fixture/datum and CMM inspection risk.",
+          "mitigation": "Use dedicated fixture and outside CMM/FAI.",
+          "required_process": "reaming/boring with fixture; CMM inspection",
+          "shop_capability_reference": "vmc_3axis careful_tolerance_mm 0.02; outside_vendor cmm_fai"
+        },
+        {
+          "feature_id": "F006",
+          "feature_name": "Left \u00d816.90 datum bore B",
+          "spec_category": "geometry_parameter",
+          "spec_description": "Through bore depth",
+          "nominal_value": "143.6 mm THRU",
+          "tolerance_or_requirement": "Access from +Z and -Z",
+          "verdict": "risk",
+          "reasoning": "The depth is within VMC Z travel but is a relatively long \u00d816.9 through bore and may need two-sided access or careful tooling.",
+          "risk_description": "Long-hole straightness/alignment risk.",
+          "mitigation": "Confirm local wall thickness and allow two-sided machining/inspection if needed.",
+          "required_process": "drilling/reaming/boring",
+          "shop_capability_reference": "vmc_3axis travel_z_mm 400; drilling/reaming processes"
+        }
+      ],
+      "notes": "Diameter is feasible; long-hole and datum-position verification are risks."
+    },
+    {
+      "feature_id": "F007",
+      "feature_name": "Right \u00d816.90 datum bore C",
+      "feature_type": "through_hole",
+      "overall_verdict": "risk",
+      "spec_assessments": [
+        {
+          "feature_id": "F007",
+          "feature_name": "Right \u00d816.90 datum bore C",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "Limit diameter 16.85-16.95",
+          "nominal_value": "16.90 mm",
+          "tolerance_or_requirement": "+0.05/-0.05 mm",
+          "verdict": "feasible",
+          "reasoning": "A \u00b10.05 mm bore tolerance is within listed VMC/SPM reaming or boring capability.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "reaming or boring",
+          "shop_capability_reference": "vmc_3axis reaming/boring normal_tolerance_mm 0.05"
+        },
+        {
+          "feature_id": "F007",
+          "feature_name": "Right \u00d816.90 datum bore C",
+          "spec_category": "gdt_control",
+          "spec_description": "Position of right \u00d816.90 bore",
+          "nominal_value": "\u00d816.90 bore",
+          "tolerance_or_requirement": "Position 0.2 mm at MMC to A|B",
+          "verdict": "risk",
+          "reasoning": "0.2 mm position is machinable, but datum relationship to A and B should be verified by outside CMM/FAI.",
+          "risk_description": "Datum setup and inspection risk.",
+          "mitigation": "Use controlled fixture and outside CMM/FAI.",
+          "required_process": "reaming/boring with fixture; CMM inspection",
+          "shop_capability_reference": "vmc_3axis careful_tolerance_mm 0.02; outside_vendor cmm_fai"
+        },
+        {
+          "feature_id": "F007",
+          "feature_name": "Right \u00d816.90 datum bore C",
+          "spec_category": "geometry_parameter",
+          "spec_description": "Through bore depth",
+          "nominal_value": "143.6 mm THRU",
+          "tolerance_or_requirement": "Access from +Z and -Z",
+          "verdict": "risk",
+          "reasoning": "Depth fits VMC travel, but \u00d816.9 through 143.6 mm is a long-bore access condition.",
+          "risk_description": "Long tooling and alignment risk.",
+          "mitigation": "Confirm local wall thickness and use two-sided access if needed.",
+          "required_process": "drilling/reaming/boring",
+          "shop_capability_reference": "vmc_3axis travel_z_mm 400; drilling/reaming processes"
+        }
+      ],
+      "notes": "Similar to F006: machining is feasible with long-hole and datum verification risks."
+    },
+    {
+      "feature_id": "F008",
+      "feature_name": "Datum D bore \u00d872.04 limits",
+      "feature_type": "internal_bore",
+      "overall_verdict": "risk",
+      "spec_assessments": [
+        {
+          "feature_id": "F008",
+          "feature_name": "Datum D bore \u00d872.04 limits",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "Limit diameter 71.89-72.19",
+          "nominal_value": "72.04 mm",
+          "tolerance_or_requirement": "+0.15/-0.15 mm",
+          "verdict": "feasible",
+          "reasoning": "A \u00b10.15 mm bore tolerance is loose relative to VMC boring capability.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "boring/interpolation boring",
+          "shop_capability_reference": "vmc_3axis boring/interpolation_boring normal_tolerance_mm 0.05"
+        },
+        {
+          "feature_id": "F008",
+          "feature_name": "Datum D bore \u00d872.04 limits",
+          "spec_category": "gdt_control",
+          "spec_description": "Position of \u00d872.04 datum D bore",
+          "nominal_value": "\u00d872.04 bore",
+          "tolerance_or_requirement": "Position 0.3 mm at MMC to A|B|C",
+          "verdict": "risk",
+          "reasoning": "0.3 mm position is achievable, but datum verification on this central datum bore likely requires outside CMM.",
+          "risk_description": "Inspection and datum-correlation risk.",
+          "mitigation": "Use stable datum fixture and outside CMM/FAI.",
+          "required_process": "boring/CMM inspection",
+          "shop_capability_reference": "vmc_3axis careful_tolerance_mm 0.02; outside_vendor cmm_fai"
+        },
+        {
+          "feature_id": "F008",
+          "feature_name": "Datum D bore \u00d872.04 limits",
+          "spec_category": "geometry_parameter",
+          "spec_description": "Through internal bore",
+          "nominal_value": "\u00d872.04 THRU",
+          "tolerance_or_requirement": "Access from +Z and -Z",
+          "verdict": "feasible",
+          "reasoning": "A \u00d872 through/interpolated bore is within VMC machining envelope and boring capability.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "interpolation boring/boring",
+          "shop_capability_reference": "vmc_3axis boring; travel_z_mm 400"
+        }
+      ],
+      "notes": "Bore size is feasible; datum-position inspection is the main risk."
+    },
+    {
+      "feature_id": "F009",
+      "feature_name": "Central \u00d870.00 bore",
+      "feature_type": "internal_bore",
+      "overall_verdict": "info_missing",
+      "spec_assessments": [
+        {
+          "feature_id": "F009",
+          "feature_name": "Central \u00d870.00 bore",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "Central bore diameter",
+          "nominal_value": "70.00 mm",
+          "tolerance_or_requirement": "Tolerance not specified",
+          "verdict": "info_missing",
+          "reasoning": "The \u00d870 bore is within VMC boring capability, but no tolerance or default tolerance standard is provided.",
+          "risk_description": null,
+          "mitigation": "Confirm general tolerance and whether this is a functional bore or reference geometry.",
+          "required_process": "boring/interpolation boring",
+          "shop_capability_reference": "vmc_3axis boring normal_tolerance_mm 0.05"
+        },
+        {
+          "feature_id": "F009",
+          "feature_name": "Central \u00d870.00 bore",
+          "spec_category": "geometry_parameter",
+          "spec_description": "Stepped bore condition",
+          "nominal_value": "STEPPED",
+          "tolerance_or_requirement": "Coaxial with central bore train",
+          "verdict": "feasible",
+          "reasoning": "Stepped bores are compatible with VMC boring/interpolation and CNC turning where fixtured appropriately.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "boring/interpolation boring",
+          "shop_capability_reference": "vmc_3axis boring; cnc_lathe boring"
+        }
+      ],
+      "notes": "Geometry is manufacturable, but tolerance status is missing."
+    },
+    {
+      "feature_id": "F010",
+      "feature_name": "Coaxial \u00d874.00 cylindrical step",
+      "feature_type": "external_cylinder",
+      "overall_verdict": "risk",
+      "spec_assessments": [
+        {
+          "feature_id": "F010",
+          "feature_name": "Coaxial \u00d874.00 cylindrical step",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "Coaxial step outside diameter",
+          "nominal_value": "74.00 mm",
+          "tolerance_or_requirement": "Tolerance not specified",
+          "verdict": "info_missing",
+          "reasoning": "The diameter is within machining capability, but the tolerance is not defined.",
+          "risk_description": null,
+          "mitigation": "Confirm general tolerance and whether this is finished or reference geometry.",
+          "required_process": "turning/boring/profile milling",
+          "shop_capability_reference": "cnc_lathe max_diameter_mm 200; vmc_3axis milling"
+        },
+        {
+          "feature_id": "F010",
+          "feature_name": "Coaxial \u00d874.00 cylindrical step",
+          "spec_category": "gdt_control",
+          "spec_description": "Position of \u00d874.00 coaxial step",
+          "nominal_value": "\u00d874.00 step",
+          "tolerance_or_requirement": "Position 0.2 mm at MMC to datum D",
+          "verdict": "risk",
+          "reasoning": "0.2 mm position/concentric relationship is achievable, but datum-D verification likely needs CMM/FAI.",
+          "risk_description": "Datum coaxiality/position inspection risk.",
+          "mitigation": "Use controlled datum-D fixture and outside CMM/FAI.",
+          "required_process": "boring/turning plus CMM inspection",
+          "shop_capability_reference": "cnc_lathe careful_tolerance_mm 0.02; outside_vendor cmm_fai"
+        },
+        {
+          "feature_id": "F010",
+          "feature_name": "Coaxial \u00d874.00 cylindrical step",
+          "spec_category": "geometry_parameter",
+          "spec_description": "Coaxial cylindrical step",
+          "nominal_value": "\u00d874.00 coaxial to central bore train",
+          "tolerance_or_requirement": "Coaxial with F009/F008",
+          "verdict": "feasible",
+          "reasoning": "Coaxial cylindrical features are feasible with listed turning/boring capability within the 200 mm lathe diameter envelope.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "turning/boring",
+          "shop_capability_reference": "cnc_lathe max_diameter_mm 200; boring process"
+        }
+      ],
+      "notes": "Machining is feasible; tolerance interpretation and inspection are risks."
+    },
+    {
+      "feature_id": "F011",
+      "feature_name": "Coaxial \u00d882 cylindrical seat/step",
+      "feature_type": "external_cylinder",
+      "overall_verdict": "info_missing",
+      "spec_assessments": [
+        {
+          "feature_id": "F011",
+          "feature_name": "Coaxial \u00d882 cylindrical seat/step",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "Coaxial cylindrical diameter",
+          "nominal_value": "82.00 mm",
+          "tolerance_or_requirement": "Tolerance not specified",
+          "verdict": "info_missing",
+          "reasoning": "The \u00d882 feature is within machine capacity, but tolerance is not specified.",
+          "risk_description": null,
+          "mitigation": "Confirm general tolerance and feature interpretation.",
+          "required_process": "turning/boring/profile milling",
+          "shop_capability_reference": "cnc_lathe max_diameter_mm 200; vmc_3axis milling"
+        },
+        {
+          "feature_id": "F011",
+          "feature_name": "Coaxial \u00d882 cylindrical seat/step",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "Related over-reference diameter",
+          "nominal_value": "82.71 mm",
+          "tolerance_or_requirement": "O/R; tolerance not specified",
+          "verdict": "info_missing",
+          "reasoning": "The O/R meaning and tolerance status are unclear from the feature graph.",
+          "risk_description": null,
+          "mitigation": "Confirm meaning of O/R and whether it is inspectable finished geometry.",
+          "required_process": "turning/boring/profile milling",
+          "shop_capability_reference": "cnc_lathe max_diameter_mm 200; vmc_3axis milling"
+        }
+      ],
+      "notes": "Feature is manufacturable if tolerances are normal, but O/R interpretation is unresolved."
+    },
+    {
+      "feature_id": "F012",
+      "feature_name": "Coaxial \u00d890.02 outer cylindrical step",
+      "feature_type": "external_cylinder",
+      "overall_verdict": "info_missing",
+      "spec_assessments": [
+        {
+          "feature_id": "F012",
+          "feature_name": "Coaxial \u00d890.02 outer cylindrical step",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "Outer cylindrical diameter",
+          "nominal_value": "90.02 mm",
+          "tolerance_or_requirement": "O/R; tolerance not specified",
+          "verdict": "info_missing",
+          "reasoning": "The diameter fits the listed lathe/VMC envelopes, but O/R and tolerance meaning are unclear.",
+          "risk_description": null,
+          "mitigation": "Confirm O/R definition and tolerance requirement.",
+          "required_process": "turning/boring/profile milling",
+          "shop_capability_reference": "cnc_lathe max_diameter_mm 200; vmc_3axis milling"
+        }
+      ],
+      "notes": "No physical capacity issue; drawing interpretation is unresolved."
+    },
+    {
+      "feature_id": "F013",
+      "feature_name": "Large annular central profile \u00d8143.60",
+      "feature_type": "boss",
+      "overall_verdict": "info_missing",
+      "spec_assessments": [
+        {
+          "feature_id": "F013",
+          "feature_name": "Large annular central profile \u00d8143.60",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "Large annular/profile diameter",
+          "nominal_value": "143.60 mm",
+          "tolerance_or_requirement": "I/P; tolerance not specified",
+          "verdict": "info_missing",
+          "reasoning": "The \u00d8143.6 annular profile fits machine envelopes, but I/P meaning and tolerance status are unclear.",
+          "risk_description": null,
+          "mitigation": "Confirm I/P definition and whether this is cast or machined profile geometry.",
+          "required_process": "profile milling/turning if machined",
+          "shop_capability_reference": "vmc_3axis travel_x/y/z; cnc_lathe max_diameter_mm 200"
+        }
+      ],
+      "notes": "Envelope is acceptable; specification interpretation is missing."
+    },
+    {
+      "feature_id": "F014",
+      "feature_name": "Draft/taper surfaces in central section",
+      "feature_type": "tapered_external",
+      "overall_verdict": "risk",
+      "spec_assessments": [
+        {
+          "feature_id": "F014",
+          "feature_name": "Draft/taper surfaces in central section",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "Draft/taper angle",
+          "nominal_value": "1.5 degrees",
+          "tolerance_or_requirement": "Tolerance not specified",
+          "verdict": "info_missing",
+          "reasoning": "Small taper/draft geometry is machinable or castable, but tolerance and exact surface definition are not provided.",
+          "risk_description": null,
+          "mitigation": "Confirm angle tolerance and whether this is draft maximum or finished machining angle.",
+          "required_process": "profile milling or casting",
+          "shop_capability_reference": "vmc_3axis profile_milling; no casting capability listed"
+        },
+        {
+          "feature_id": "F014",
+          "feature_name": "Draft/taper surfaces in central section",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "Secondary draft/taper angle",
+          "nominal_value": "0.5 degrees",
+          "tolerance_or_requirement": "Tolerance not specified",
+          "verdict": "info_missing",
+          "reasoning": "The 0.5 degree draft/taper is process-feasible, but tolerance and exact interpretation are unclear.",
+          "risk_description": null,
+          "mitigation": "Confirm angle tolerance and DRFT MAX/O/R meanings.",
+          "required_process": "profile milling or casting",
+          "shop_capability_reference": "vmc_3axis profile_milling; no casting capability listed"
+        },
+        {
+          "feature_id": "F014",
+          "feature_name": "Draft/taper surfaces in central section",
+          "spec_category": "material_condition",
+          "spec_description": "Draft/taper indicated",
+          "nominal_value": "draft/taper indicated",
+          "tolerance_or_requirement": "Likely cast draft geometry",
+          "verdict": "risk",
+          "reasoning": "Draft implies a casting or near-net-shape process, which is not listed in-house.",
+          "risk_description": "Casting-source risk.",
+          "mitigation": "Confirm customer-supplied casting or outside foundry source.",
+          "required_process": "casting/foundry or profile milling",
+          "shop_capability_reference": "machine_inventory lacks casting/foundry; outside_vendor outside_process_candidate"
+        }
+      ],
+      "notes": "Draft features are feasible only if casting source/interpretation is confirmed."
+    },
+    {
+      "feature_id": "F015",
+      "feature_name": "Clevis/lug \u00d830.60 bore",
+      "feature_type": "through_hole",
+      "overall_verdict": "risk",
+      "spec_assessments": [
+        {
+          "feature_id": "F015",
+          "feature_name": "Clevis/lug \u00d830.60 bore",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "Limit diameter 30.45-30.75",
+          "nominal_value": "30.60 mm",
+          "tolerance_or_requirement": "+0.15/-0.15 mm",
+          "verdict": "feasible",
+          "reasoning": "A \u00b10.15 mm bore is readily within VMC boring/reaming capability.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "boring/reaming",
+          "shop_capability_reference": "vmc_3axis boring normal_tolerance_mm 0.05"
+        },
+        {
+          "feature_id": "F015",
+          "feature_name": "Clevis/lug \u00d830.60 bore",
+          "spec_category": "gdt_control",
+          "spec_description": "Position of \u00d830.60 lug bore",
+          "nominal_value": "\u00d830.60 bore",
+          "tolerance_or_requirement": "Position 0.2 mm to datum D",
+          "verdict": "risk",
+          "reasoning": "0.2 mm position is machinable, but datum-D setup and CMM verification are risks.",
+          "risk_description": "Datum setup and external CMM need.",
+          "mitigation": "Use robust fixturing and outside CMM/FAI.",
+          "required_process": "boring/CMM inspection",
+          "shop_capability_reference": "vmc_3axis careful_tolerance_mm 0.02; outside_vendor cmm_fai"
+        },
+        {
+          "feature_id": "F015",
+          "feature_name": "Clevis/lug \u00d830.60 bore",
+          "spec_category": "geometry_parameter",
+          "spec_description": "Through bore depth",
+          "nominal_value": "143.6 mm THRU",
+          "tolerance_or_requirement": "Access from +Z and -Z",
+          "verdict": "risk",
+          "reasoning": "The depth fits VMC travel, but through-boring the clevis/lug over this modeled depth may require careful alignment or two-sided machining.",
+          "risk_description": "Long through-bore access risk.",
+          "mitigation": "Confirm actual local lug thickness and allow two-sided access if needed.",
+          "required_process": "drilling/boring",
+          "shop_capability_reference": "vmc_3axis travel_z_mm 400; boring process"
+        }
+      ],
+      "notes": "Dimensional tolerance is feasible; access and datum verification are risks."
+    },
+    {
+      "feature_id": "F016",
+      "feature_name": "Clevis/lug \u00d820.10 hole set",
+      "feature_type": "hole_pattern",
+      "overall_verdict": "risk",
+      "spec_assessments": [
+        {
+          "feature_id": "F016",
+          "feature_name": "Clevis/lug \u00d820.10 hole set",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "Limit diameter 20.00-20.20",
+          "nominal_value": "20.10 mm",
+          "tolerance_or_requirement": "+0.10/-0.10 mm",
+          "verdict": "feasible",
+          "reasoning": "A \u00b10.10 mm hole tolerance is within normal drilling/reaming/boring capability.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "drilling/reaming/boring",
+          "shop_capability_reference": "vmc_3axis drilling/reaming normal_tolerance_mm 0.05"
+        },
+        {
+          "feature_id": "F016",
+          "feature_name": "Clevis/lug \u00d820.10 hole set",
+          "spec_category": "gdt_control",
+          "spec_description": "Position of \u00d820.10 clevis/lug hole set",
+          "nominal_value": "\u00d820.10 hole set",
+          "tolerance_or_requirement": "Position 0.2 mm to datum D",
+          "verdict": "risk",
+          "reasoning": "The 0.2 mm position is achievable, but datum-D verification may need outside CMM.",
+          "risk_description": "Datum inspection risk.",
+          "mitigation": "Use dedicated fixture and outside CMM/FAI.",
+          "required_process": "drilling/reaming/CMM inspection",
+          "shop_capability_reference": "vmc_3axis careful_tolerance_mm 0.02; outside_vendor cmm_fai"
+        },
+        {
+          "feature_id": "F016",
+          "feature_name": "Clevis/lug \u00d820.10 hole set",
+          "spec_category": "geometry_parameter",
+          "spec_description": "Through hole set depth",
+          "nominal_value": "THRU, depth not specified",
+          "tolerance_or_requirement": "2 holes, local thickness not explicit",
+          "verdict": "info_missing",
+          "reasoning": "Through-hole machining is feasible, but the actual local through-depth/wall thickness is not defined in the feature graph.",
+          "risk_description": null,
+          "mitigation": "Confirm local wall thickness from the 3D model or drawing sections.",
+          "required_process": "drilling/reaming",
+          "shop_capability_reference": "vmc_3axis drilling/reaming; travel_z_mm 400"
+        }
+      ],
+      "notes": "Hole size is feasible; position inspection and missing through-depth need confirmation."
+    },
+    {
+      "feature_id": "F017",
+      "feature_name": "2X \u00d810.50 clevis holes",
+      "feature_type": "hole_pattern",
+      "overall_verdict": "risk",
+      "spec_assessments": [
+        {
+          "feature_id": "F017",
+          "feature_name": "2X \u00d810.50 clevis holes",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "Limit diameter 10.35-10.65",
+          "nominal_value": "10.50 mm",
+          "tolerance_or_requirement": "+0.15/-0.15 mm",
+          "verdict": "feasible",
+          "reasoning": "A \u00b10.15 mm hole tolerance is easily within VMC/SPM drilling capability.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "drilling/reaming",
+          "shop_capability_reference": "vmc_3axis drilling normal_tolerance_mm 0.05"
+        },
+        {
+          "feature_id": "F017",
+          "feature_name": "2X \u00d810.50 clevis holes",
+          "spec_category": "gdt_control",
+          "spec_description": "Position of 2X \u00d810.50 clevis holes",
+          "nominal_value": "2X \u00d810.50 holes",
+          "tolerance_or_requirement": "Position 0.5 mm at MMC to A|B|C",
+          "verdict": "risk",
+          "reasoning": "0.5 mm position is loose and machinable, but datum-referenced verification on the housing may still require outside CMM/FAI.",
+          "risk_description": "Inspection/FAI risk.",
+          "mitigation": "Use fixture inspection or outside CMM as required by quality plan.",
+          "required_process": "drilling/CMM or fixture inspection",
+          "shop_capability_reference": "vmc_3axis drilling; inspection cmm_in_house false; outside_vendor cmm_fai"
+        },
+        {
+          "feature_id": "F017",
+          "feature_name": "2X \u00d810.50 clevis holes",
+          "spec_category": "geometry_parameter",
+          "spec_description": "Hole count and through condition",
+          "nominal_value": "2 holes, THRU",
+          "tolerance_or_requirement": "Access from +Z and -Z",
+          "verdict": "feasible",
+          "reasoning": "Two \u00d810.5 through holes are within listed VMC/SPM drilling capability.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "drilling",
+          "shop_capability_reference": "vmc_3axis drilling; spm_milling_drilling drilling"
+        }
+      ],
+      "notes": "Manufacturing is feasible; inspection method should be confirmed."
+    },
+    {
+      "feature_id": "F018",
+      "feature_name": "Clevis fork slots/openings",
+      "feature_type": "slot",
+      "overall_verdict": "risk",
+      "spec_assessments": [
+        {
+          "feature_id": "F018",
+          "feature_name": "Clevis fork slots/openings",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "Clevis slot width limit 55.05-55.35",
+          "nominal_value": "55.20 mm",
+          "tolerance_or_requirement": "+0.15/-0.15 mm",
+          "verdict": "feasible",
+          "reasoning": "A \u00b10.15 mm slot width is within VMC slotting/milling capability.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "slotting/milling",
+          "shop_capability_reference": "vmc_3axis slotting normal_tolerance_mm 0.05"
+        },
+        {
+          "feature_id": "F018",
+          "feature_name": "Clevis fork slots/openings",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "Clevis angular surface",
+          "nominal_value": "87.26 degrees",
+          "tolerance_or_requirement": "Tolerance not specified",
+          "verdict": "info_missing",
+          "reasoning": "The angular surface can be milled, but no angular tolerance is given.",
+          "risk_description": null,
+          "mitigation": "Confirm angular tolerance/general angular standard.",
+          "required_process": "profile milling/slotting",
+          "shop_capability_reference": "vmc_3axis profile_milling"
+        },
+        {
+          "feature_id": "F018",
+          "feature_name": "Clevis fork slots/openings",
+          "spec_category": "gdt_control",
+          "spec_description": "Profile of clevis slot/inner and outer surfaces",
+          "nominal_value": "clevis slot surfaces",
+          "tolerance_or_requirement": "Profile of surface 0.5 mm",
+          "verdict": "feasible",
+          "reasoning": "A 0.5 mm profile on milled clevis surfaces is within normal VMC capability if accessible.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "profile milling/inspection",
+          "shop_capability_reference": "vmc_3axis profile_milling normal_tolerance_mm 0.05"
+        },
+        {
+          "feature_id": "F018",
+          "feature_name": "Clevis fork slots/openings",
+          "spec_category": "geometry_parameter",
+          "spec_description": "Through slot depth/opening",
+          "nominal_value": "143.6 mm THRU",
+          "tolerance_or_requirement": "Access from +Z and -Z",
+          "verdict": "risk",
+          "reasoning": "The slot fits machine travel, but the modeled through depth is large and exact local slot depth is not dimensioned.",
+          "risk_description": "Access/local-depth uncertainty.",
+          "mitigation": "Confirm slot depth from 3D model and use two-sided access if required.",
+          "required_process": "slotting/milling",
+          "shop_capability_reference": "vmc_3axis travel_z_mm 400; slotting process"
+        }
+      ],
+      "notes": "Slot width/profile are feasible; angle tolerance and through-depth need confirmation."
+    },
+    {
+      "feature_id": "F019",
+      "feature_name": "Clevis inner/outer lug faces",
+      "feature_type": "flat_face",
+      "overall_verdict": "info_missing",
+      "spec_assessments": [
+        {
+          "feature_id": "F019",
+          "feature_name": "Clevis inner/outer lug faces",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "Clevis face/wall dimension",
+          "nominal_value": "5.80 mm",
+          "tolerance_or_requirement": "Tolerance not specified",
+          "verdict": "info_missing",
+          "reasoning": "A 5.8 mm wall/face dimension is machinable, but its tolerance is not provided.",
+          "risk_description": null,
+          "mitigation": "Confirm general tolerance and whether dimension is cast or machined.",
+          "required_process": "milling/inspection",
+          "shop_capability_reference": "vmc_3axis milling normal_tolerance_mm 0.05"
+        },
+        {
+          "feature_id": "F019",
+          "feature_name": "Clevis inner/outer lug faces",
+          "spec_category": "gdt_control",
+          "spec_description": "Profile of 4X outer and 4X inner clevis surfaces",
+          "nominal_value": "8 clevis surfaces",
+          "tolerance_or_requirement": "Profile of surface 0.5 mm",
+          "verdict": "feasible",
+          "reasoning": "A 0.5 mm profile tolerance is compatible with VMC milling capability for accessible faces.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "profile milling/inspection",
+          "shop_capability_reference": "vmc_3axis profile_milling normal_tolerance_mm 0.05"
+        }
+      ],
+      "notes": "Profile is feasible, but wall dimension tolerance is missing."
+    },
+    {
+      "feature_id": "F020",
+      "feature_name": "Stepped clevis wall stack in SECTION C-C",
+      "feature_type": "pad",
+      "overall_verdict": "info_missing",
+      "spec_assessments": [
+        {
+          "feature_id": "F020",
+          "feature_name": "Stepped clevis wall stack in SECTION C-C",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "Repeated step thickness/depth",
+          "nominal_value": "3.00 mm",
+          "tolerance_or_requirement": "Tolerance not specified",
+          "verdict": "info_missing",
+          "reasoning": "The small step is machinable, but no tolerance is supplied.",
+          "risk_description": null,
+          "mitigation": "Confirm general tolerance.",
+          "required_process": "milling",
+          "shop_capability_reference": "vmc_3axis milling normal_tolerance_mm 0.05"
+        },
+        {
+          "feature_id": "F020",
+          "feature_name": "Stepped clevis wall stack in SECTION C-C",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "Repeated wall offset",
+          "nominal_value": "11.50 mm",
+          "tolerance_or_requirement": "Tolerance not specified",
+          "verdict": "info_missing",
+          "reasoning": "The offset is machinable, but tolerance is not supplied.",
+          "risk_description": null,
+          "mitigation": "Confirm general tolerance.",
+          "required_process": "milling",
+          "shop_capability_reference": "vmc_3axis milling normal_tolerance_mm 0.05"
+        },
+        {
+          "feature_id": "F020",
+          "feature_name": "Stepped clevis wall stack in SECTION C-C",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "Repeated wall offset",
+          "nominal_value": "8.50 mm",
+          "tolerance_or_requirement": "Tolerance not specified",
+          "verdict": "info_missing",
+          "reasoning": "The offset is machinable, but tolerance is not supplied.",
+          "risk_description": null,
+          "mitigation": "Confirm general tolerance.",
+          "required_process": "milling",
+          "shop_capability_reference": "vmc_3axis milling normal_tolerance_mm 0.05"
+        },
+        {
+          "feature_id": "F020",
+          "feature_name": "Stepped clevis wall stack in SECTION C-C",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "Repeated step depth/height",
+          "nominal_value": "15.00 mm",
+          "tolerance_or_requirement": "Tolerance not specified",
+          "verdict": "info_missing",
+          "reasoning": "The 15 mm step is within VMC milling capability, but tolerance is not supplied.",
+          "risk_description": null,
+          "mitigation": "Confirm general tolerance.",
+          "required_process": "milling",
+          "shop_capability_reference": "vmc_3axis milling normal_tolerance_mm 0.05"
+        },
+        {
+          "feature_id": "F020",
+          "feature_name": "Stepped clevis wall stack in SECTION C-C",
+          "spec_category": "geometry_parameter",
+          "spec_description": "Stepped geometry depth condition",
+          "nominal_value": "15.00 mm STEPPED",
+          "tolerance_or_requirement": "Access from +Z/-Z/+Y/-Y",
+          "verdict": "feasible",
+          "reasoning": "Stepped wall machining is feasible within VMC travel and multi-side access envelope.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "milling",
+          "shop_capability_reference": "vmc_3axis travel_x/y/z 600/400/400"
+        }
+      ],
+      "notes": "Machining is feasible; all listed dimensions lack explicit tolerances."
+    },
+    {
+      "feature_id": "F021",
+      "feature_name": "Cast lightening pockets/windows on main face",
+      "feature_type": "pocket",
+      "overall_verdict": "risk",
+      "spec_assessments": [
+        {
+          "feature_id": "F021",
+          "feature_name": "Cast lightening pockets/windows on main face",
+          "spec_category": "geometry_parameter",
+          "spec_description": "Irregular pocket/window depths and boundaries",
+          "nominal_value": "not dimensioned",
+          "tolerance_or_requirement": "Refer to 3D model / likely cast relief geometry",
+          "verdict": "info_missing",
+          "reasoning": "The feature graph provides no individual pocket/window dimensions or depths, so complete manufacturability cannot be verified from the 2D extraction alone.",
+          "risk_description": null,
+          "mitigation": "Confirm pockets/windows from the 3D model and any profile controls.",
+          "required_process": "casting or pocket/profile machining",
+          "shop_capability_reference": "vmc_3axis pocketing/profile_milling; no casting capability listed"
+        },
+        {
+          "feature_id": "F021",
+          "feature_name": "Cast lightening pockets/windows on main face",
+          "spec_category": "material_condition",
+          "spec_description": "Likely cast relief geometry; machined/cast status not specified",
+          "nominal_value": "likely cast",
+          "tolerance_or_requirement": "Exact machined/cast status not specified",
+          "verdict": "risk",
+          "reasoning": "The shop has pocketing/profile milling but no listed in-house casting capability for cast relief geometry.",
+          "risk_description": "Casting-source and 3D-model definition risk.",
+          "mitigation": "Confirm customer-supplied casting or outside foundry source and model-controlled geometry.",
+          "required_process": "casting/foundry or profile milling",
+          "shop_capability_reference": "vmc_3axis pocketing; machine_inventory lacks casting/foundry"
+        }
+      ],
+      "notes": "This feature is not blocked if casting is supplied/outsourced, but it is underdefined in the extraction."
+    },
+    {
+      "feature_id": "F022",
+      "feature_name": "Radial stiffening ribs around central annulus",
+      "feature_type": "rib",
+      "overall_verdict": "risk",
+      "spec_assessments": [
+        {
+          "feature_id": "F022",
+          "feature_name": "Radial stiffening ribs around central annulus",
+          "spec_category": "geometry_parameter",
+          "spec_description": "Rib count and individual dimensions",
+          "nominal_value": "not explicitly legible",
+          "tolerance_or_requirement": "Likely controlled by casting/3D model",
+          "verdict": "info_missing",
+          "reasoning": "Rib count and dimensions are not fully specified in the feature graph.",
+          "risk_description": null,
+          "mitigation": "Confirm rib geometry from 3D model.",
+          "required_process": "casting or profile milling",
+          "shop_capability_reference": "vmc_3axis profile_milling; no casting capability listed"
+        },
+        {
+          "feature_id": "F022",
+          "feature_name": "Radial stiffening ribs around central annulus",
+          "spec_category": "material_condition",
+          "spec_description": "Likely cast rib geometry",
+          "nominal_value": "likely cast",
+          "tolerance_or_requirement": "Integral with housing body",
+          "verdict": "risk",
+          "reasoning": "Cast ribs imply a casting source, which is not listed in-house.",
+          "risk_description": "Casting-source risk.",
+          "mitigation": "Confirm customer-supplied casting or outside foundry source.",
+          "required_process": "casting/foundry",
+          "shop_capability_reference": "machine_inventory lacks casting/foundry; outside_vendor outside_process_candidate"
+        }
+      ],
+      "notes": "Rib geometry requires 3D-model/casting-source confirmation."
+    },
+    {
+      "feature_id": "F023",
+      "feature_name": "Controlled exterior perimeter edge surface",
+      "feature_type": "flat_face",
+      "overall_verdict": "risk",
+      "spec_assessments": [
+        {
+          "feature_id": "F023",
+          "feature_name": "Controlled exterior perimeter edge surface",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "Main-view perimeter span reference",
+          "nominal_value": "232.62 mm",
+          "tolerance_or_requirement": "Tolerance not specified",
+          "verdict": "info_missing",
+          "reasoning": "The span fits the VMC envelope, but its tolerance is not given.",
+          "risk_description": null,
+          "mitigation": "Confirm general tolerance and whether this is reference or finished perimeter geometry.",
+          "required_process": "profile milling/inspection",
+          "shop_capability_reference": "vmc_3axis travel_y_mm 400; profile_milling"
+        },
+        {
+          "feature_id": "F023",
+          "feature_name": "Controlled exterior perimeter edge surface",
+          "spec_category": "gdt_control",
+          "spec_description": "Profile of entire exterior edge/perimeter surface",
+          "nominal_value": "exterior perimeter",
+          "tolerance_or_requirement": "Profile of surface 1.5 mm to A|B|C",
+          "verdict": "risk",
+          "reasoning": "A 1.5 mm profile is loose and machinable, but full perimeter verification to A|B|C likely needs CMM or dedicated gauges.",
+          "risk_description": "Inspection and multi-face access risk.",
+          "mitigation": "Use outside CMM/FAI or approved checking fixture.",
+          "required_process": "profile milling/CMM inspection",
+          "shop_capability_reference": "vmc_3axis profile_milling; inspection cmm_in_house false; outside_vendor cmm_fai"
+        }
+      ],
+      "notes": "Machining envelope is acceptable; tolerance interpretation and inspection are risks."
+    },
+    {
+      "feature_id": "F024",
+      "feature_name": "2X R20.0 upper lobe radii",
+      "feature_type": "radius",
+      "overall_verdict": "info_missing",
+      "spec_assessments": [
+        {
+          "feature_id": "F024",
+          "feature_name": "2X R20.0 upper lobe radii",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "Repeated outside radius",
+          "nominal_value": "R20.0 mm",
+          "tolerance_or_requirement": "Tolerance not specified",
+          "verdict": "info_missing",
+          "reasoning": "R20 external radii are feasible by profile milling or casting, but no tolerance is specified.",
+          "risk_description": null,
+          "mitigation": "Confirm general radius tolerance and whether radii are cast or machined.",
+          "required_process": "profile milling or casting",
+          "shop_capability_reference": "vmc_3axis profile_milling"
+        }
+      ],
+      "notes": "No capacity issue; tolerance/cast-vs-machined status is missing."
+    },
+    {
+      "feature_id": "F025",
+      "feature_name": "R18.5 right-side transition radius",
+      "feature_type": "radius",
+      "overall_verdict": "info_missing",
+      "spec_assessments": [
+        {
+          "feature_id": "F025",
+          "feature_name": "R18.5 right-side transition radius",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "External transition radius",
+          "nominal_value": "R18.5 mm",
+          "tolerance_or_requirement": "Tolerance not specified",
+          "verdict": "info_missing",
+          "reasoning": "The transition radius is feasible by profile milling or casting, but no tolerance is provided.",
+          "risk_description": null,
+          "mitigation": "Confirm general radius tolerance and feature status.",
+          "required_process": "profile milling or casting",
+          "shop_capability_reference": "vmc_3axis profile_milling"
+        }
+      ],
+      "notes": "Feasible geometry with missing tolerance."
+    },
+    {
+      "feature_id": "F026",
+      "feature_name": "Typical narrow wall/rib sections 12.86 mm",
+      "feature_type": "rib",
+      "overall_verdict": "feasible",
+      "spec_assessments": [
+        {
+          "feature_id": "F026",
+          "feature_name": "Typical narrow wall/rib sections 12.86 mm",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "Typical rib/wall width limit 12.73-12.99",
+          "nominal_value": "12.86 mm",
+          "tolerance_or_requirement": "+0.13/-0.13 mm TYP",
+          "verdict": "feasible",
+          "reasoning": "A \u00b10.13 mm rib/wall width requirement is within normal VMC milling capability if machined, and also reasonable for controlled cast features with finish machining as needed.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "milling/inspection or casting control",
+          "shop_capability_reference": "vmc_3axis normal_tolerance_mm 0.05"
+        }
+      ],
+      "notes": "Explicit tolerance is achievable."
+    },
+    {
+      "feature_id": "F027",
+      "feature_name": "Detail Y local edge chamfers/reliefs",
+      "feature_type": "chamfer",
+      "overall_verdict": "info_missing",
+      "spec_assessments": [
+        {
+          "feature_id": "F027",
+          "feature_name": "Detail Y local edge chamfers/reliefs",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "Chamfer/relief size limit 0.9-1.1",
+          "nominal_value": "1.0 mm",
+          "tolerance_or_requirement": "+0.1/-0.1 mm",
+          "verdict": "feasible",
+          "reasoning": "A 1.0 \u00b10.1 mm edge relief is within VMC chamfering and manual finishing capability.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "chamfering/deburr",
+          "shop_capability_reference": "vmc_3axis chamfering; finish_bench edge_break"
+        },
+        {
+          "feature_id": "F027",
+          "feature_name": "Detail Y local edge chamfers/reliefs",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "Chamfer/relief angle",
+          "nominal_value": "10 degrees",
+          "tolerance_or_requirement": "Tolerance not specified",
+          "verdict": "info_missing",
+          "reasoning": "The 10 degree angle can be machined, but no angular tolerance is specified.",
+          "risk_description": null,
+          "mitigation": "Confirm angular tolerance or default drawing standard.",
+          "required_process": "chamfering/profile milling",
+          "shop_capability_reference": "vmc_3axis chamfering"
+        }
+      ],
+      "notes": "Size is feasible; angle tolerance is missing."
+    },
+    {
+      "feature_id": "F028",
+      "feature_name": "Internal fillet/corner relief R3.0",
+      "feature_type": "fillet",
+      "overall_verdict": "info_missing",
+      "spec_assessments": [
+        {
+          "feature_id": "F028",
+          "feature_name": "Internal fillet/corner relief R3.0",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "Internal fillet radius",
+          "nominal_value": "R3.0 mm",
+          "tolerance_or_requirement": "Tolerance not specified",
+          "verdict": "info_missing",
+          "reasoning": "R3 internal corner relief is feasible by milling/casting, but no radius tolerance is provided.",
+          "risk_description": null,
+          "mitigation": "Confirm general radius tolerance and whether relief is machined or cast.",
+          "required_process": "milling or casting",
+          "shop_capability_reference": "vmc_3axis milling"
+        },
+        {
+          "feature_id": "F028",
+          "feature_name": "Internal fillet/corner relief R3.0",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "Adjacent corner/condition dimension",
+          "nominal_value": "3.0 mm",
+          "tolerance_or_requirement": "A/C; tolerance not specified",
+          "verdict": "info_missing",
+          "reasoning": "The meaning of A/C and tolerance status are unclear from the extraction.",
+          "risk_description": null,
+          "mitigation": "Confirm A/C abbreviation and applicable tolerance.",
+          "required_process": "milling/deburr/inspection",
+          "shop_capability_reference": "vmc_3axis milling; finish_bench deburr"
+        }
+      ],
+      "notes": "Feature is process-feasible but underdefined."
+    },
+    {
+      "feature_id": "F029",
+      "feature_name": "2X \u00d841.07 local circular bosses",
+      "feature_type": "boss",
+      "overall_verdict": "info_missing",
+      "spec_assessments": [
+        {
+          "feature_id": "F029",
+          "feature_name": "2X \u00d841.07 local circular bosses",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "Local boss diameter",
+          "nominal_value": "41.07 mm",
+          "tolerance_or_requirement": "Tolerance not specified",
+          "verdict": "info_missing",
+          "reasoning": "The \u00d841.07 local bosses are within VMC/lathe capacity, but no tolerance is specified.",
+          "risk_description": null,
+          "mitigation": "Confirm general tolerance and whether bosses are cast or machined landings.",
+          "required_process": "profile milling/spotfacing or casting",
+          "shop_capability_reference": "vmc_3axis milling; cnc_lathe max_diameter_mm 200"
+        }
+      ],
+      "notes": "No envelope issue; tolerance and cast-vs-machined status are missing."
+    }
+  ],
+  "clarifications": [
+    {
+      "clarification_id": "C001",
+      "question": "Confirm the material grade/specification and condition from the title block or 3D model.",
+      "why_it_matters": "Material is required to confirm machinability, cutting method, coating compatibility, and whether heat treatment or special tooling is needed.",
+      "blocks": [
+        "material_machinable confirmation",
+        "F001"
+      ],
+      "suggested_default": "Assume common automotive steel/aluminum only for provisional feasibility.",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C002",
+      "question": "Confirm the general tolerance standard/default tolerances for untoleranced dimensions.",
+      "why_it_matters": "Many dimensions have no explicit tolerance, so their feasibility cannot be fully assessed without the default standard.",
+      "blocks": [
+        "all untoleranced dimensional_tolerance entries"
+      ],
+      "suggested_default": null,
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C003",
+      "question": "Confirm whether the housing is supplied as a casting, requires this shop to source casting, or is intended to be machined from another form.",
+      "why_it_matters": "The shop profile does not list in-house foundry/casting capability, while the feature graph describes a complex cast housing with ribs and draft.",
+      "blocks": [
+        "F001",
+        "F014",
+        "F021",
+        "F022"
+      ],
+      "suggested_default": "Treat casting as customer-supplied or outside-sourced until confirmed.",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C004",
+      "question": "Confirm M10 thread depth, blind/through status, insert/nut specification, and the 4X recess diameter associated with the 17.50 dimension.",
+      "why_it_matters": "Thread/recess completeness affects feasibility of insert installation, flushness, and thread-after-coating verification.",
+      "blocks": [
+        "F003",
+        "F004"
+      ],
+      "suggested_default": "Treat as insert/nut features with undefined depth until confirmed.",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C005",
+      "question": "Confirm exact GD&T values and datum references for the M10 pattern, \u00d816.90 bores, \u00d872.04 bore, \u00d874 step, \u00d830/\u00d820 clevis features, and clevis holes.",
+      "why_it_matters": "Extracted FCFs are low-confidence and affect datum fixturing and CMM inspection requirements.",
+      "blocks": [
+        "F003",
+        "F006",
+        "F007",
+        "F008",
+        "F010",
+        "F015",
+        "F016",
+        "F017"
+      ],
+      "suggested_default": "Use extracted values provisionally.",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C006",
+      "question": "Confirm coating standard and whether the required Zn-Ni coating is within the shop's alkaline zinc plating capability or must be outsourced.",
+      "why_it_matters": "The shop lists alkaline zinc plating but not explicitly Zn-Ni plating; thread-after-coating requirements depend on coating thickness/process.",
+      "blocks": [
+        "F003",
+        "F004",
+        "part_level_specs.coating"
+      ],
+      "suggested_default": "Assume outside Zn-Ni qualification if not confirmed in-house.",
+      "priority": "medium"
+    },
+    {
+      "clarification_id": "C007",
+      "question": "Confirm abbreviations O/R, I/P, A/C, and DRFT MAX and whether those dimensions are finished, reference, casting, or draft controls.",
+      "why_it_matters": "These abbreviations affect tolerance interpretation for the central diameter stack and relief features.",
+      "blocks": [
+        "F011",
+        "F012",
+        "F013",
+        "F014",
+        "F028"
+      ],
+      "suggested_default": "Treat as reference/casting-control dimensions until confirmed.",
+      "priority": "medium"
+    }
+  ],
+  "assumptions": [
+    {
+      "assumption_id": "A001",
+      "text": "Because material is missing, provisional feasibility assumes a common machinable automotive material within the shop's listed material capabilities, not hardened exotic material.",
+      "applies_to": [
+        "F001",
+        "aggregate material_machinable"
+      ],
+      "impact": "high",
+      "confidence": 0.45
+    },
+    {
+      "assumption_id": "A002",
+      "text": "Missing processes such as casting, Zn-Ni coating qualification, CMM FAI, and special testing may be outsourced because the routing policy does not require all processes to be in-house and an outside_vendor placeholder exists.",
+      "applies_to": [
+        "F001",
+        "F003",
+        "F004",
+        "F005",
+        "F006",
+        "F007",
+        "F008",
+        "F010",
+        "F015",
+        "F016",
+        "F017",
+        "F023"
+      ],
+      "impact": "high",
+      "confidence": 0.6
+    },
+    {
+      "assumption_id": "A003",
+      "text": "Untoleranced dimensions are treated as information-missing rather than blocked; if the eventual general tolerance is around 0.05 mm or looser, the shop's VMC/SPM/CNC capabilities should be adequate.",
+      "applies_to": [
+        "F001",
+        "F002",
+        "F004",
+        "F009",
+        "F010",
+        "F011",
+        "F012",
+        "F013",
+        "F014",
+        "F019",
+        "F020",
+        "F023",
+        "F024",
+        "F025",
+        "F027",
+        "F028",
+        "F029"
+      ],
+      "impact": "medium",
+      "confidence": 0.55
+    },
+    {
+      "assumption_id": "A004",
+      "text": "Through holes and slots with modeled 143.6 mm depth are assumed to be accessible from both +Z and -Z as indicated in the feature graph.",
+      "applies_to": [
+        "F006",
+        "F007",
+        "F015",
+        "F018"
+      ],
+      "impact": "medium",
+      "confidence": 0.6
+    }
+  ],
+  "reasoning_summary": "The part fits the listed machine envelopes and the explicit bore, slot, thread, and GD&T tolerances are generally within the shop's machining capability. The assessment is feasible with high risks because material, general tolerances, casting source, Zn-Ni coating qualification, CMM inspection, and several low-confidence drawing interpretations remain unresolved. No hard blocker is assigned because the missing/non-in-house processes appear outsourceable under the provided profile rather than prohibited."
+}
