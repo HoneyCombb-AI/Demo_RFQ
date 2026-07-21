@@ -10,9 +10,17 @@ import {
   SetupQuoteData,
   PartLevelSpec,
   ReportData,
-  PartListItem
+  PartListItem,
 } from "./data";
-import { getOrgBySlug, OrgConfig } from "./org-config";
+
+const ORG_CONFIGS: Record<string, { quoteFile: string; quoteFormat: "excel" | "setup" }> = {
+  jal: { quoteFile: "excel_quote.json", quoteFormat: "excel" },
+  alm: { quoteFile: "quote.json",       quoteFormat: "setup"  },
+};
+
+function orgDataDir(orgSlug: string): string {
+  return path.join(process.cwd(), "app", orgSlug);
+}
 
 export function slugify(name: string): string {
   return name
@@ -44,19 +52,16 @@ async function isDataDir(dirPath: string): Promise<boolean> {
 }
 
 export async function getPartsList(orgSlug: string = "jal"): Promise<PartListItem[]> {
-  const org = getOrgBySlug(orgSlug);
-  if (!org) return [];
-
-  const entries = await fs.readdir(org.dataDir);
+  if (!ORG_CONFIGS[orgSlug]) return [];
+  const dataDir = orgDataDir(orgSlug);
+  const entries = await fs.readdir(dataDir);
   const parts: PartListItem[] = [];
 
   for (const entry of entries) {
-    const fullPath = path.join(org.dataDir, entry);
+    const fullPath = path.join(dataDir, entry);
     if (!(await isDataDir(fullPath))) continue;
 
-    const fg = await readJson<FeatureGraphData>(
-      path.join(fullPath, "feature_graph.json"),
-    );
+    const fg = await readJson<FeatureGraphData>(path.join(fullPath, "feature_graph.json"));
     if (!fg) continue;
 
     parts.push({
@@ -72,13 +77,12 @@ export async function getPartsList(orgSlug: string = "jal"): Promise<PartListIte
 }
 
 export async function resolveSlug(slug: string, orgSlug: string = "jal"): Promise<string | null> {
-  const org = getOrgBySlug(orgSlug);
-  if (!org) return null;
-
-  const entries = await fs.readdir(org.dataDir);
+  if (!ORG_CONFIGS[orgSlug]) return null;
+  const dataDir = orgDataDir(orgSlug);
+  const entries = await fs.readdir(dataDir);
   for (const entry of entries) {
     if (slugify(entry) === slug) {
-      const fullPath = path.join(org.dataDir, entry);
+      const fullPath = path.join(dataDir, entry);
       if (await isDataDir(fullPath)) return entry;
     }
   }
@@ -102,7 +106,9 @@ export function derivePartLevelSpecs(fg: FeatureGraphData): PartLevelSpec[] {
   });
 
   // HEAT TREATMENT
-  const htNote = fg.feature_graph.part_level_specs?.general_notes?.find((n) => n.category === "heat_treatment")?.note_text;
+  const htNote = fg.feature_graph.part_level_specs?.general_notes?.find(
+    (n) => n.category === "heat_treatment",
+  )?.note_text;
   if (htNote) {
     specs.push({ label: "HEAT TREATMENT", value: htNote });
   } else {
@@ -134,21 +140,18 @@ export function derivePartLevelSpecs(fg: FeatureGraphData): PartLevelSpec[] {
 
   // GENERAL TOL
   if (fg.feature_graph.part_level_specs?.general_tolerance_standard) {
-    specs.push({ label: "GENERAL TOL.", value: fg.feature_graph.part_level_specs.general_tolerance_standard });
+    specs.push({
+      label: "GENERAL TOL.",
+      value: fg.feature_graph.part_level_specs.general_tolerance_standard,
+    });
   } else {
-    const edgeBreakFeature = features.find(
-      (f) => f.feature_type === "edge_break",
-    );
+    const edgeBreakFeature = features.find((f) => f.feature_type === "edge_break");
     if (edgeBreakFeature) {
       const dinTol = edgeBreakFeature.dimensional_tolerances.find(
-        (t) =>
-          t.tolerance_class?.includes("DIN") ||
-          t.tolerance_class?.includes("2768"),
+        (t) => t.tolerance_class?.includes("DIN") || t.tolerance_class?.includes("2768"),
       );
       if (dinTol?.tolerance_class) {
-        const dinMatch = dinTol.tolerance_class.match(
-          /DIN\s*ISO\s*2768[-\s]*\w+/i,
-        );
+        const dinMatch = dinTol.tolerance_class.match(/DIN\s*ISO\s*2768[-\s]*\w+/i);
         specs.push({
           label: "GENERAL TOL.",
           value: dinMatch ? dinMatch[0] : dinTol.tolerance_class,
@@ -157,7 +160,7 @@ export function derivePartLevelSpecs(fg: FeatureGraphData): PartLevelSpec[] {
     }
   }
 
-  // Map directly from general_notes
+  // General notes
   if (fg.feature_graph.part_level_specs?.general_notes) {
     const categoryMap: Record<string, string> = {
       deburr: "DEBURR",
@@ -166,35 +169,26 @@ export function derivePartLevelSpecs(fg: FeatureGraphData): PartLevelSpec[] {
       other: "OTHER",
       inspection: "INSPECTION",
     };
-
     for (const [cat, label] of Object.entries(categoryMap)) {
-      const note = fg.feature_graph.part_level_specs.general_notes.find((n) => n.category === cat);
+      const note = fg.feature_graph.part_level_specs.general_notes.find(
+        (n) => n.category === cat,
+      );
       if (note) {
         specs.push({ label, value: note.note_text });
       } else if (cat === "other") {
         specs.push({
           label: "OTHER",
-          value:
-            "RoHS and REACH compliant according to the valid EU directive at the time of delivery.",
+          value: "RoHS and REACH compliant according to the valid EU directive at the time of delivery.",
         });
       }
     }
   } else {
-    // Fallback if general_notes missing
-    const edgeBreakFeature = features.find(
-      (f) => f.feature_type === "edge_break",
-    );
-    
+    const edgeBreakFeature = features.find((f) => f.feature_type === "edge_break");
     const finishes = features
       .filter((f) => f.surface_finish)
-      .map((f) => ({
-        symbol: f.surface_finish!.finish_symbol,
-        notes: f.surface_finish!.notes,
-      }));
+      .map((f) => ({ symbol: f.surface_finish!.finish_symbol, notes: f.surface_finish!.notes }));
     if (finishes.length > 0) {
-      const finishSymbols = [...new Set(finishes.map((f) => f.symbol))].join(
-        ", ",
-      );
+      const finishSymbols = [...new Set(finishes.map((f) => f.symbol))].join(", ");
       const mainNote = finishes[0]?.notes || "";
       specs.push({
         label: "FINISH",
@@ -202,12 +196,8 @@ export function derivePartLevelSpecs(fg: FeatureGraphData): PartLevelSpec[] {
         detail: mainNote !== "" ? mainNote : undefined,
       });
     }
-
     if (edgeBreakFeature) {
-      specs.push({
-        label: "DEBURR",
-        value: "Sharp edges must be completely deburred; burrs removed.",
-      });
+      specs.push({ label: "DEBURR", value: "Sharp edges must be completely deburred; burrs removed." });
       const dinTol = edgeBreakFeature.dimensional_tolerances.find(
         (t) => t.tolerance_class?.includes("DIN"),
       );
@@ -218,7 +208,6 @@ export function derivePartLevelSpecs(fg: FeatureGraphData): PartLevelSpec[] {
         });
       }
     }
-
     const rohsNote = fg.part.title_block_notes.find(
       (n) => n.toLowerCase().includes("rohs") || n.toLowerCase().includes("reach"),
     );
@@ -235,13 +224,13 @@ export async function getReportData(
   slug: string,
   orgSlug: string = "jal",
 ): Promise<ReportData | null> {
-  const org = getOrgBySlug(orgSlug);
-  if (!org) return null;
+  const orgCfg = ORG_CONFIGS[orgSlug];
+  if (!orgCfg) return null;
 
   const folderName = await resolveSlug(slug, orgSlug);
   if (!folderName) return null;
 
-  const dir = path.join(org.dataDir, folderName);
+  const dir = path.join(orgDataDir(orgSlug), folderName);
 
   const [featureGraph, specList, feasibility, deconstructedRoute, computedRoute] =
     await Promise.all([
@@ -259,11 +248,11 @@ export async function getReportData(
   let excelQuote: ExcelQuoteData | null = null;
   let setupQuote: SetupQuoteData | null = null;
 
-  if (org.quoteFormat === "excel") {
-    excelQuote = await readJson<ExcelQuoteData>(path.join(dir, org.quoteFile));
+  if (orgCfg.quoteFormat === "excel") {
+    excelQuote = await readJson<ExcelQuoteData>(path.join(dir, orgCfg.quoteFile));
     if (!excelQuote) return null;
   } else {
-    setupQuote = await readJson<SetupQuoteData>(path.join(dir, org.quoteFile));
+    setupQuote = await readJson<SetupQuoteData>(path.join(dir, orgCfg.quoteFile));
     if (!setupQuote) return null;
   }
 
@@ -273,7 +262,7 @@ export async function getReportData(
     slug,
     folderName,
     orgSlug,
-    quoteFormat: org.quoteFormat,
+    quoteFormat: orgCfg.quoteFormat,
     featureGraph,
     specList,
     feasibility,
@@ -283,7 +272,7 @@ export async function getReportData(
     setupQuote,
     partLevelSpecs,
     balloonedImageUrl: `/api/images/${orgSlug}/${slug}/ballooned`,
-    originalImageUrl: `/api/images/${orgSlug}/${slug}/original`,
+    originalImageUrl:  `/api/images/${orgSlug}/${slug}/original`,
   };
 }
 
@@ -292,9 +281,6 @@ export function getImagePath(
   type: "ballooned" | "original",
   orgSlug: string = "jal",
 ): string {
-  const org = getOrgBySlug(orgSlug);
-  const dataDir = org?.dataDir ?? path.join(process.cwd(), "app", "jal");
-  const filename =
-    type === "ballooned" ? "ballooned_drawing.png" : "page_001_original.png";
-  return path.join(dataDir, folderName, filename);
+  const filename = type === "ballooned" ? "ballooned_drawing.png" : "page_001_original.png";
+  return path.join(orgDataDir(orgSlug), folderName, filename);
 }
