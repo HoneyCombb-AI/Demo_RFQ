@@ -197,7 +197,7 @@ export function FeasibilityTab({ data }: { data: ReportData }) {
               {f.outside_processes_needed && f.outside_processes_needed.length > 0 && (
                 <div className="mt-4 pt-4 border-t">
                   <span className="text-xs font-semibold uppercase text-muted-foreground mr-2">Outside Processes:</span>
-                  <span className="text-sm">{f.outside_processes_needed.join(", ")}</span>
+                  <span className="text-sm">{f.outside_processes_needed.map(p => p.process).join(", ")}</span>
                 </div>
               )}
             </div>
