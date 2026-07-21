@@ -209,7 +209,7 @@ export interface FeasibilityData {
     risk_level: string;
     blockers: string[];
     risks: FeasibilityRisk[];
-    outside_processes_needed: string[];
+    outside_processes_needed: { process: string; reason: string; sequence_position: string; estimated_lead_time_days: number | null }[];
     material_machinable: boolean;
     tolerances_achievable: boolean;
     machines_available: boolean;
