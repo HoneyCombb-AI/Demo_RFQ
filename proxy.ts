@@ -2,7 +2,6 @@ import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
  
 // Map each org route prefix to the code required to access it.
-// Edge runtime: keep this inline (cannot import lib/org-config, which uses `path`/`process.cwd()`).
 const ORG_ROUTE_CODES: Record<string, string> = {
   '/jal': '4521',
   '/alm': '5281',
