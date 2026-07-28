@@ -16,6 +16,7 @@ import {
 const ORG_CONFIGS: Record<string, { quoteFile: string; quoteFormat: "excel" | "setup" }> = {
   jal: { quoteFile: "excel_quote.json", quoteFormat: "excel" },
   alm: { quoteFile: "quote.json",       quoteFormat: "setup"  },
+  sfs: { quoteFile: "quote.json",       quoteFormat: "setup"  },
 };
 
 function orgDataDir(orgSlug: string): string {

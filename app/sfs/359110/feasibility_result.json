@@ -1,0 +1,998 @@
+{
+  "analysis_id": "feas_rfq_359110-VT_20260728T180058Z",
+  "source_feature_graph_id": "rfq_359110-VT_20260728T180058Z",
+  "feasibility": {
+    "can_proceed": true,
+    "status": "feasible_with_risks",
+    "risk_level": "medium",
+    "blockers": [],
+    "risks": [
+      {
+        "risk_type": "specified_cold_formed_process_not_explicitly_in_house",
+        "description": "The title calls the part cold formed, but the shop profile lists CNC turning, VMC, SPM drilling, sheet-metal stamping/forming, and tool room capability, not a dedicated cold-heading/cold-forming process for small cylindrical plungers.",
+        "mitigation": "Confirm whether machining from stock is acceptable or outsource/qualify cold forming/cold heading as an outside process candidate.",
+        "affected_feature_ids": [
+          "F001"
+        ]
+      },
+      {
+        "risk_type": "ambiguous_internal_depths",
+        "description": "Several stepped internal bore and seat depths/termination points are unclear in the extracted feature graph.",
+        "mitigation": "Clarify the SECTION A-A bore depth mapping before production release; use the suggested default only for provisional feasibility.",
+        "affected_feature_ids": [
+          "F005",
+          "F006",
+          "F007",
+          "F008",
+          "F009",
+          "F010",
+          "F011",
+          "F012"
+        ]
+      },
+      {
+        "risk_type": "functional_leakage_test_specificity",
+        "description": "The part has a 10 SCCM max check-valve leakage requirement, while the shop profile lists general test capability but not a specific leak/flow bench for this criterion.",
+        "mitigation": "Confirm in-house leak-test equipment and fixturing, or use an outside special-testing vendor.",
+        "affected_feature_ids": [
+          "F009",
+          "F010",
+          "F011"
+        ]
+      },
+      {
+        "risk_type": "no_cmm_in_house_for_datum_related_gdt",
+        "description": "Datum-related runout and form controls are moderate, but the inspection profile states CMM is not in house.",
+        "mitigation": "Use lathe/runout gaging and functional gages where acceptable; outsource CMM FAI if the customer requires full dimensional FAI.",
+        "affected_feature_ids": [
+          "F002",
+          "F004",
+          "F005",
+          "F007",
+          "F010"
+        ]
+      }
+    ],
+    "outside_processes_needed": [
+      {
+        "process": "cold forming / cold heading capability review",
+        "reason": "The part title explicitly states cold formed, but this exact process is not advertised in the machine inventory.",
+        "sequence_position": "before any finish machining or inspection, if cold-formed blank/process is mandatory",
+        "estimated_lead_time_days": null
+      },
+      {
+        "process": "special leakage testing",
+        "reason": "10 SCCM max check-valve leakage test may require specific leak-test equipment not explicitly listed.",
+        "sequence_position": "final inspection/test",
+        "estimated_lead_time_days": null
+      },
+      {
+        "process": "cmm_fai",
+        "reason": "Optional/likely if customer requires formal datum-related GD&T first-article inspection; CMM is not in-house.",
+        "sequence_position": "final inspection / FAI",
+        "estimated_lead_time_days": null
+      }
+    ],
+    "material_machinable": true,
+    "tolerances_achievable": true,
+    "machines_available": true,
+    "part_fits_envelopes": true,
+    "assessment_notes": "C10C low-carbon steel with no heat treatment is within the shop's stated common steel capability. The 9.65 mm long by \u00d89.12 mm cylindrical envelope easily fits the CNC lathe, VMC, SPM, and saw envelopes. Dimensional tolerances and GD&T controls are generally within the listed 0.05 mm normal and 0.02 mm careful machining/inspection capability, but the cold-formed process callout, unclear internal stepped depths, and leakage-test specificity require clarification."
+  },
+  "feature_assessments": [
+    {
+      "feature_id": "F001",
+      "feature_name": "Overall cold-formed cylindrical plunger body",
+      "feature_type": "part_body",
+      "overall_verdict": "risk",
+      "spec_assessments": [
+        {
+          "feature_id": "F001",
+          "feature_name": "Overall cold-formed cylindrical plunger body",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "overall_length",
+          "nominal_value": "9.65 mm",
+          "tolerance_or_requirement": "+0.13 / -0.13 mm",
+          "verdict": "feasible",
+          "reasoning": "A \u00b10.13 mm length tolerance is looser than the shop's 0.05 mm normal CNC lathe/VMC capability.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "facing / turning or equivalent forming control",
+          "shop_capability_reference": "cnc_lathe.normal_tolerance_mm=0.05; vmc_3axis.normal_tolerance_mm=0.05"
+        },
+        {
+          "feature_id": "F001",
+          "feature_name": "Overall cold-formed cylindrical plunger body",
+          "spec_category": "material_condition",
+          "spec_description": "Cold formed per title",
+          "nominal_value": "C10C steel part body",
+          "tolerance_or_requirement": "Part title specifies PLUNGER, LEAKDOWN (COLD FORMED)",
+          "verdict": "risk",
+          "reasoning": "The shop has steel machining and sheet-metal forming capability, but the profile does not explicitly list cold heading/cold forming for small cylindrical parts.",
+          "risk_description": "If the customer requires the part to be produced by cold forming rather than only meeting final geometry, the exact in-house process is not confirmed.",
+          "mitigation": "Confirm process acceptability with the customer or qualify/outsource cold forming as an outside process candidate.",
+          "required_process": "cold forming / cold heading if process-mandatory",
+          "shop_capability_reference": "sheet_metal_stamping.processes includes forming; outside_vendor includes outside_process_candidate; no dedicated cold_heading listed"
+        },
+        {
+          "feature_id": "F001",
+          "feature_name": "Overall cold-formed cylindrical plunger body",
+          "spec_category": "geometry_parameter",
+          "spec_description": "cylindrical envelope size",
+          "nominal_value": "\u00d89.12 mm x 9.65 mm long",
+          "tolerance_or_requirement": "Must fit available work envelope",
+          "verdict": "feasible",
+          "reasoning": "The part is far below the CNC lathe capacity of \u00d8200 mm by 500 mm length.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "turning / forming-compatible handling",
+          "shop_capability_reference": "cnc_lathe.max_diameter_mm=200; cnc_lathe.max_length_mm=500"
+        }
+      ],
+      "notes": "Geometry and material are suitable for the shop, but the explicit cold-formed title creates a process-qualification risk."
+    },
+    {
+      "feature_id": "F002",
+      "feature_name": "Main external cylindrical OD / datum A",
+      "feature_type": "external_cylinder",
+      "overall_verdict": "info_missing",
+      "spec_assessments": [
+        {
+          "feature_id": "F002",
+          "feature_name": "Main external cylindrical OD / datum A",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "outside_diameter",
+          "nominal_value": "\u00d89.12 mm",
+          "tolerance_or_requirement": "+0.025 / -0.025 mm",
+          "verdict": "feasible",
+          "reasoning": "The total 0.05 mm diameter tolerance is within the CNC lathe normal tolerance and looser than careful 0.02 mm capability.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "precision turning / sizing",
+          "shop_capability_reference": "cnc_lathe.normal_tolerance_mm=0.05; cnc_lathe.careful_tolerance_mm=0.02"
+        },
+        {
+          "feature_id": "F002",
+          "feature_name": "Main external cylindrical OD / datum A",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "od_control_zone_start_from_left_end",
+          "nominal_value": "1.73 mm",
+          "tolerance_or_requirement": "shown circled; exact tolerance convention unclear",
+          "verdict": "info_missing",
+          "reasoning": "The numeric value is present, but the feature graph states the circled-dimension tolerance convention is unclear.",
+          "risk_description": null,
+          "mitigation": "Clarify whether this is a basic/significant/control-zone coordinate before release.",
+          "required_process": "inspection interpretation",
+          "shop_capability_reference": "inspection.careful_dimensional_capability_mm=0.02; drawing convention unclear"
+        },
+        {
+          "feature_id": "F002",
+          "feature_name": "Main external cylindrical OD / datum A",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "od_control_zone_length_or_span",
+          "nominal_value": "6.48 mm",
+          "tolerance_or_requirement": "shown circled; exact tolerance convention unclear",
+          "verdict": "info_missing",
+          "reasoning": "The value is extractable, but its role as a control-zone span or special dimension is not fully defined.",
+          "risk_description": null,
+          "mitigation": "Clarify the circled-dimension convention and controlled axial zone.",
+          "required_process": "inspection interpretation",
+          "shop_capability_reference": "inspection.careful_dimensional_capability_mm=0.02; drawing convention unclear"
+        },
+        {
+          "feature_id": "F002",
+          "feature_name": "Main external cylindrical OD / datum A",
+          "spec_category": "gdt_control",
+          "spec_description": "circularity on main external OD cylindrical form",
+          "nominal_value": "OD \u00d89.12 mm",
+          "tolerance_or_requirement": "circularity 0.06 mm",
+          "verdict": "feasible",
+          "reasoning": "A 0.06 mm circularity requirement is compatible with CNC turning and standard roundness/runout checks at the stated capability level.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "turning and roundness/runout inspection",
+          "shop_capability_reference": "cnc_lathe.normal_tolerance_mm=0.05; inspection.normal_dimensional_capability_mm=0.05"
+        },
+        {
+          "feature_id": "F002",
+          "feature_name": "Main external cylindrical OD / datum A",
+          "spec_category": "gdt_control",
+          "spec_description": "straightness on main external OD line element/generator",
+          "nominal_value": "OD generator",
+          "tolerance_or_requirement": "straightness 0.06 mm",
+          "verdict": "feasible",
+          "reasoning": "A 0.06 mm straightness control over a 9.65 mm long turned surface is within normal CNC turning and inspection capability.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "turning and straightness inspection",
+          "shop_capability_reference": "cnc_lathe.normal_tolerance_mm=0.05; inspection.normal_dimensional_capability_mm=0.05"
+        },
+        {
+          "feature_id": "F002",
+          "feature_name": "Main external cylindrical OD / datum A",
+          "spec_category": "gdt_control",
+          "spec_description": "perpendicularity of main OD axis/surface relative to datum C",
+          "nominal_value": "OD datum axis to datum C",
+          "tolerance_or_requirement": "perpendicularity 0.127 mm to datum C",
+          "verdict": "feasible",
+          "reasoning": "The 0.127 mm perpendicularity requirement is looser than the shop's normal 0.05 mm machining/inspection capability.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "turning/facing with datum inspection",
+          "shop_capability_reference": "cnc_lathe.normal_tolerance_mm=0.05; inspection.normal_dimensional_capability_mm=0.05"
+        }
+      ],
+      "notes": "The OD size and form controls are achievable; only the circled control-zone dimensions need drawing-interpretation clarification."
+    },
+    {
+      "feature_id": "F003",
+      "feature_name": "Left end face / datum C",
+      "feature_type": "datum_face",
+      "overall_verdict": "feasible",
+      "spec_assessments": [
+        {
+          "feature_id": "F003",
+          "feature_name": "Left end face / datum C",
+          "spec_category": "geometry_parameter",
+          "spec_description": "flat axial datum face normal to X-axis",
+          "nominal_value": "\u00d89.12 mm end face",
+          "tolerance_or_requirement": "Datum C face, no separate dimensional or GD&T tolerance listed",
+          "verdict": "feasible",
+          "reasoning": "A small faced datum surface is within CNC lathe facing and standard inspection capability.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "facing / datum face inspection",
+          "shop_capability_reference": "cnc_lathe.processes includes facing; inspection.available=true"
+        }
+      ],
+      "notes": "No explicit dimensional tolerance, surface finish, or GD&T control is listed for this feature beyond its datum role."
+    },
+    {
+      "feature_id": "F004",
+      "feature_name": "Right end face / datum B",
+      "feature_type": "datum_face",
+      "overall_verdict": "feasible",
+      "spec_assessments": [
+        {
+          "feature_id": "F004",
+          "feature_name": "Right end face / datum B",
+          "spec_category": "gdt_control",
+          "spec_description": "runout of right-end face/edge region near datum B to datum A",
+          "nominal_value": "right-end face/edge",
+          "tolerance_or_requirement": "runout 0.04 mm to datum A",
+          "verdict": "feasible",
+          "reasoning": "A 0.04 mm runout on a very small turned/faced end is within careful CNC turning and standard runout inspection capability.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "facing and runout inspection",
+          "shop_capability_reference": "cnc_lathe.careful_tolerance_mm=0.02; inspection.careful_dimensional_capability_mm=0.02"
+        },
+        {
+          "feature_id": "F004",
+          "feature_name": "Right end face / datum B",
+          "spec_category": "geometry_parameter",
+          "spec_description": "flat axial datum face normal to X-axis",
+          "nominal_value": "\u00d89.12 mm end face at X=9.65 mm",
+          "tolerance_or_requirement": "Datum B face, no separate size tolerance listed",
+          "verdict": "feasible",
+          "reasoning": "The small end face geometry is readily accessible axially and compatible with CNC lathe facing.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "facing",
+          "shop_capability_reference": "cnc_lathe.processes includes facing"
+        }
+      ],
+      "notes": "The 0.04 mm datum-A runout is achievable with careful workholding and inspection."
+    },
+    {
+      "feature_id": "F005",
+      "feature_name": "Large right-end internal bore/cavity \u00d87.18",
+      "feature_type": "internal_bore",
+      "overall_verdict": "info_missing",
+      "spec_assessments": [
+        {
+          "feature_id": "F005",
+          "feature_name": "Large right-end internal bore/cavity \u00d87.18",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "internal_diameter",
+          "nominal_value": "\u00d87.18 mm",
+          "tolerance_or_requirement": "+0.1 / -0.1 mm",
+          "verdict": "feasible",
+          "reasoning": "A \u00b10.1 mm internal diameter tolerance is looser than normal CNC boring/drilling capability.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "boring / drilling",
+          "shop_capability_reference": "cnc_lathe.processes includes boring; normal_tolerance_mm=0.05"
+        },
+        {
+          "feature_id": "F005",
+          "feature_name": "Large right-end internal bore/cavity \u00d87.18",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "approx_wall_thickness_from_od_and_bore",
+          "nominal_value": "0.97 mm",
+          "tolerance_or_requirement": "derived from \u00d89.12 and \u00d87.18; not directly called out",
+          "verdict": "info_missing",
+          "reasoning": "This wall thickness is derived rather than directly specified, so no acceptance tolerance can be assessed.",
+          "risk_description": null,
+          "mitigation": "Treat as an informational derived value unless the customer identifies it as controlled.",
+          "required_process": "inspection interpretation",
+          "shop_capability_reference": "feature graph marks tolerance_class as derived/not directly called out"
+        },
+        {
+          "feature_id": "F005",
+          "feature_name": "Large right-end internal bore/cavity \u00d87.18",
+          "spec_category": "gdt_control",
+          "spec_description": "runout of \u00d87.18 internal bore/cavity to datum A",
+          "nominal_value": "\u00d87.18 bore/cavity",
+          "tolerance_or_requirement": "runout 0.25 mm to datum A",
+          "verdict": "feasible",
+          "reasoning": "A 0.25 mm runout control is loose relative to normal CNC turning/boring and inspection capability.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "coaxial boring and runout inspection",
+          "shop_capability_reference": "cnc_lathe.normal_tolerance_mm=0.05; inspection.normal_dimensional_capability_mm=0.05"
+        },
+        {
+          "feature_id": "F005",
+          "feature_name": "Large right-end internal bore/cavity \u00d87.18",
+          "spec_category": "geometry_parameter",
+          "spec_description": "stepped bore depth/termination",
+          "nominal_value": "depth not legible; depth_condition STEPPED",
+          "tolerance_or_requirement": "Exact axial depth/termination is obscured",
+          "verdict": "info_missing",
+          "reasoning": "The bore diameter is feasible, but the feature graph lacks the exact depth/termination needed to fully confirm manufacturability of the stepped internal form.",
+          "risk_description": null,
+          "mitigation": "Clarify the SECTION A-A stepped bore depths before production.",
+          "required_process": "boring / drilling with defined depth stops",
+          "shop_capability_reference": "cnc_lathe.processes includes boring and drilling_on_center; geometry depth missing"
+        }
+      ],
+      "notes": "Diameter and runout are achievable; the depth/termination information needs clarification."
+    },
+    {
+      "feature_id": "F006",
+      "feature_name": "Coaxial inner bore \u00d84",
+      "feature_type": "internal_bore",
+      "overall_verdict": "info_missing",
+      "spec_assessments": [
+        {
+          "feature_id": "F006",
+          "feature_name": "Coaxial inner bore \u00d84",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "internal_diameter",
+          "nominal_value": "\u00d84.0 mm",
+          "tolerance_or_requirement": "+0.25 / -0.25 mm general linear tolerance",
+          "verdict": "feasible",
+          "reasoning": "A \u00b10.25 mm bore tolerance is much looser than normal drilling/boring capability.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "drilling / boring",
+          "shop_capability_reference": "cnc_lathe.processes includes drilling_on_center and boring; spm_milling_drilling.processes includes drilling"
+        },
+        {
+          "feature_id": "F006",
+          "feature_name": "Coaxial inner bore \u00d84",
+          "spec_category": "geometry_parameter",
+          "spec_description": "stepped bore depth/termination",
+          "nominal_value": "depth not legible; depth_condition STEPPED",
+          "tolerance_or_requirement": "No explicit depth is legible",
+          "verdict": "info_missing",
+          "reasoning": "The diameter is feasible, but the axial extent of this bore segment is not defined in the extracted graph.",
+          "risk_description": null,
+          "mitigation": "Clarify the stepped internal profile depth map.",
+          "required_process": "drilling / boring with defined depth",
+          "shop_capability_reference": "geometry.depth_mm is null in feature graph"
+        }
+      ],
+      "notes": "Bore size is easy for the shop; depth clarification is needed."
+    },
+    {
+      "feature_id": "F007",
+      "feature_name": "Reduced coaxial orifice/bore \u00d82.4",
+      "feature_type": "internal_bore",
+      "overall_verdict": "info_missing",
+      "spec_assessments": [
+        {
+          "feature_id": "F007",
+          "feature_name": "Reduced coaxial orifice/bore \u00d82.4",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "internal_diameter",
+          "nominal_value": "\u00d82.4 mm",
+          "tolerance_or_requirement": "+0.15 / -0.15 mm",
+          "verdict": "feasible",
+          "reasoning": "A \u00d82.4 mm on-center bore with \u00b10.15 mm tolerance is within normal CNC/SPM drilling capability.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "small on-center drilling",
+          "shop_capability_reference": "cnc_lathe.processes includes drilling_on_center; spm_milling_drilling.processes includes drilling"
+        },
+        {
+          "feature_id": "F007",
+          "feature_name": "Reduced coaxial orifice/bore \u00d82.4",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "axial_coordinate_1",
+          "nominal_value": "1.26 mm",
+          "tolerance_or_requirement": "+0.13 / -0.13 mm",
+          "verdict": "feasible",
+          "reasoning": "A \u00b10.13 mm axial coordinate is looser than normal CNC positioning capability.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "controlled axial positioning",
+          "shop_capability_reference": "cnc_lathe.normal_tolerance_mm=0.05"
+        },
+        {
+          "feature_id": "F007",
+          "feature_name": "Reduced coaxial orifice/bore \u00d82.4",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "axial_coordinate_2",
+          "nominal_value": "1.52 mm",
+          "tolerance_or_requirement": "+0.05 / -0.05 mm",
+          "verdict": "feasible",
+          "reasoning": "A \u00b10.05 mm axial coordinate matches the shop's normal CNC tolerance and is achievable.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "controlled axial positioning",
+          "shop_capability_reference": "cnc_lathe.normal_tolerance_mm=0.05; inspection.normal_dimensional_capability_mm=0.05"
+        },
+        {
+          "feature_id": "F007",
+          "feature_name": "Reduced coaxial orifice/bore \u00d82.4",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "axial_coordinate_3",
+          "nominal_value": "2.33 mm",
+          "tolerance_or_requirement": "+0.05 / -0.05 mm",
+          "verdict": "feasible",
+          "reasoning": "A \u00b10.05 mm axial coordinate matches the shop's normal CNC tolerance and is achievable.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "controlled axial positioning",
+          "shop_capability_reference": "cnc_lathe.normal_tolerance_mm=0.05; inspection.normal_dimensional_capability_mm=0.05"
+        },
+        {
+          "feature_id": "F007",
+          "feature_name": "Reduced coaxial orifice/bore \u00d82.4",
+          "spec_category": "gdt_control",
+          "spec_description": "runout of reduced \u00d82.4 bore/orifice to datum A",
+          "nominal_value": "\u00d82.4 bore/orifice",
+          "tolerance_or_requirement": "runout 0.25 mm to datum A",
+          "verdict": "feasible",
+          "reasoning": "A 0.25 mm runout tolerance is loose relative to available CNC drilling/turning and inspection capability.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "coaxial drilling and runout inspection",
+          "shop_capability_reference": "cnc_lathe.normal_tolerance_mm=0.05; inspection.normal_dimensional_capability_mm=0.05"
+        },
+        {
+          "feature_id": "F007",
+          "feature_name": "Reduced coaxial orifice/bore \u00d82.4",
+          "spec_category": "geometry_parameter",
+          "spec_description": "orifice depth/axial length",
+          "nominal_value": "exact axial length not fully clear",
+          "tolerance_or_requirement": "depth_condition STEPPED; exact length unclear",
+          "verdict": "info_missing",
+          "reasoning": "The bore size and coordinates are feasible, but the extracted graph does not fully define the orifice segment length.",
+          "risk_description": null,
+          "mitigation": "Clarify the mapping of axial coordinates to the stepped bore/orifice geometry.",
+          "required_process": "small drilling with defined depth/through condition",
+          "shop_capability_reference": "geometry.depth_mm is null in feature graph"
+        }
+      ],
+      "notes": "All listed tolerances are achievable; missing axial-length interpretation remains."
+    },
+    {
+      "feature_id": "F008",
+      "feature_name": "Left formed counterbore/chamber \u00d84.763",
+      "feature_type": "counterbore",
+      "overall_verdict": "info_missing",
+      "spec_assessments": [
+        {
+          "feature_id": "F008",
+          "feature_name": "Left formed counterbore/chamber \u00d84.763",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "counterbore_or_chamber_diameter",
+          "nominal_value": "\u00d84.763 mm",
+          "tolerance_or_requirement": "+0.25 / -0.25 mm general linear tolerance",
+          "verdict": "feasible",
+          "reasoning": "A \u00b10.25 mm counterbore/chamber diameter tolerance is readily achievable with drilling/boring/form tooling.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "counterboring / forming / boring",
+          "shop_capability_reference": "cnc_lathe.processes includes boring and drilling_on_center; spm_milling_drilling.processes includes drilling"
+        },
+        {
+          "feature_id": "F008",
+          "feature_name": "Left formed counterbore/chamber \u00d84.763",
+          "spec_category": "geometry_parameter",
+          "spec_description": "counterbore/chamber depth",
+          "nominal_value": "exact depth not separately legible",
+          "tolerance_or_requirement": "depth_condition STEPPED",
+          "verdict": "info_missing",
+          "reasoning": "The chamber diameter is feasible, but depth/termination details are not fully extracted.",
+          "risk_description": null,
+          "mitigation": "Clarify the left chamber depth and transition into the \u00d82.4 orifice/seat.",
+          "required_process": "counterboring / forming with defined depth",
+          "shop_capability_reference": "geometry.depth_mm is null in feature graph"
+        }
+      ],
+      "notes": "Size is feasible; depth interpretation must be confirmed."
+    },
+    {
+      "feature_id": "F009",
+      "feature_name": "Spherical valve seat/cavity S\u00d83.175",
+      "feature_type": "internal_bore",
+      "overall_verdict": "risk",
+      "spec_assessments": [
+        {
+          "feature_id": "F009",
+          "feature_name": "Spherical valve seat/cavity S\u00d83.175",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "spherical_diameter",
+          "nominal_value": "S\u00d83.175 mm",
+          "tolerance_or_requirement": "+0.25 / -0.25 mm general linear tolerance; S\u00d8 symbol observed",
+          "verdict": "feasible",
+          "reasoning": "The spherical diameter tolerance is loose and can be produced with form tooling or equivalent seat-forming methods supported by CNC/tool-room capability.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "form seat generation / spherical form tooling",
+          "shop_capability_reference": "cnc_lathe.processes includes turning/boring; tool_room.processes includes tool_manufacturing"
+        },
+        {
+          "feature_id": "F009",
+          "feature_name": "Spherical valve seat/cavity S\u00d83.175",
+          "spec_category": "geometry_parameter",
+          "spec_description": "spherical seat radius",
+          "nominal_value": "R1.5875 mm from S\u00d83.175",
+          "tolerance_or_requirement": "Internal spherical valve-seat geometry",
+          "verdict": "risk",
+          "reasoning": "The geometry is physically manufacturable, but seat performance may depend on form-tool quality and leak-tight contact not fully defined by a surface-finish callout.",
+          "risk_description": "Leakage requirement may be sensitive to seat form/finish even though dimensional tolerance is loose.",
+          "mitigation": "Confirm acceptable seat-making method and perform leakage validation; consider special tooling/gaging.",
+          "required_process": "precision seat forming and leakage validation",
+          "shop_capability_reference": "tool_room.available=true; test_bench.available=true but no specific leak bench listed"
+        }
+      ],
+      "notes": "The spherical seat can be made, but it is functionally important for leakage."
+    },
+    {
+      "feature_id": "F010",
+      "feature_name": "Detail-B tapered seat/lip surface",
+      "feature_type": "tapered_bore",
+      "overall_verdict": "risk",
+      "spec_assessments": [
+        {
+          "feature_id": "F010",
+          "feature_name": "Detail-B tapered seat/lip surface",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "local_axial_land_length",
+          "nominal_value": "0.76 mm",
+          "tolerance_or_requirement": "+0.1 / -0.1 mm",
+          "verdict": "feasible",
+          "reasoning": "A \u00b10.1 mm local axial land tolerance is within normal CNC/form-tool positioning capability.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "controlled forming/turning of local land",
+          "shop_capability_reference": "cnc_lathe.normal_tolerance_mm=0.05"
+        },
+        {
+          "feature_id": "F010",
+          "feature_name": "Detail-B tapered seat/lip surface",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "taper_angle_deg",
+          "nominal_value": "15 deg",
+          "tolerance_or_requirement": "+2 / -2 deg",
+          "verdict": "feasible",
+          "reasoning": "A 15\u00b0 tapered feature with \u00b12\u00b0 angular tolerance is achievable with CNC turning/form tooling.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "taper turning / form tooling",
+          "shop_capability_reference": "cnc_lathe.processes includes turning; tool_room.available=true"
+        },
+        {
+          "feature_id": "F010",
+          "feature_name": "Detail-B tapered seat/lip surface",
+          "spec_category": "gdt_control",
+          "spec_description": "runout of Detail-B tapered/formed seat surface to datum A",
+          "nominal_value": "tapered seat/lip surface",
+          "tolerance_or_requirement": "runout 0.2 mm to datum A",
+          "verdict": "feasible",
+          "reasoning": "A 0.2 mm runout requirement is loose relative to the available turning and inspection capability.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "coaxial forming/turning and runout inspection",
+          "shop_capability_reference": "cnc_lathe.normal_tolerance_mm=0.05; inspection.normal_dimensional_capability_mm=0.05"
+        },
+        {
+          "feature_id": "F010",
+          "feature_name": "Detail-B tapered seat/lip surface",
+          "spec_category": "geometry_parameter",
+          "spec_description": "15 degree tapered bore/seat geometry",
+          "nominal_value": "15\u00b0 taper",
+          "tolerance_or_requirement": "Internal tapered/angled valve-seat or lip surface",
+          "verdict": "feasible",
+          "reasoning": "The shop can generate simple angled/tapered coaxial features using turning or dedicated form tooling.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "taper turning / form tooling",
+          "shop_capability_reference": "cnc_lathe.processes includes turning; tool_room.processes includes tool_manufacturing"
+        },
+        {
+          "feature_id": "F010",
+          "feature_name": "Detail-B tapered seat/lip surface",
+          "spec_category": "material_condition",
+          "spec_description": "No raised metal permitted at indicated edge",
+          "nominal_value": "Detail-B lip/edge",
+          "tolerance_or_requirement": "No raised metal permitted",
+          "verdict": "risk",
+          "reasoning": "The shop has deburr/cleaning and visual inspection capability, but this is a functionally sensitive valve-seat lip requirement.",
+          "risk_description": "Manual deburr or forming burrs could affect leakage and seating if not tightly controlled.",
+          "mitigation": "Use controlled deburr/edge conditioning and confirm by visual/functional inspection.",
+          "required_process": "deburr, cleaning, visual inspection",
+          "shop_capability_reference": "finish_bench.processes includes deburr, edge_break, cleaning; inspection.processes includes visual_inspection"
+        }
+      ],
+      "notes": "Dimensional and runout requirements are feasible; the no-raised-metal requirement is a functional quality risk."
+    },
+    {
+      "feature_id": "F011",
+      "feature_name": "Detail-B significant formed mouth diameter \u00d86.88",
+      "feature_type": "counterbore",
+      "overall_verdict": "risk",
+      "spec_assessments": [
+        {
+          "feature_id": "F011",
+          "feature_name": "Detail-B significant formed mouth diameter \u00d86.88",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "formed_mouth_diameter",
+          "nominal_value": "\u00d86.88 mm",
+          "tolerance_or_requirement": "+0.05 / -0.05 mm; Eaton significant characteristic",
+          "verdict": "feasible",
+          "reasoning": "A \u00b10.05 mm formed/internal diameter is at the shop's normal CNC tolerance and is achievable with controlled tooling and inspection.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "controlled boring/forming and inspection",
+          "shop_capability_reference": "cnc_lathe.normal_tolerance_mm=0.05; inspection.normal_dimensional_capability_mm=0.05"
+        },
+        {
+          "feature_id": "F011",
+          "feature_name": "Detail-B significant formed mouth diameter \u00d86.88",
+          "spec_category": "material_condition",
+          "spec_description": "No raised metal permitted nearby",
+          "nominal_value": "Detail-B mouth/lip area",
+          "tolerance_or_requirement": "No raised metal permitted nearby",
+          "verdict": "risk",
+          "reasoning": "The shop can deburr and inspect, but the requirement is near a significant characteristic and valve-seat lip.",
+          "risk_description": "Raised metal or burrs may cause leakage or inspection rejection.",
+          "mitigation": "Apply controlled edge conditioning and 100% visual/functional inspection if required.",
+          "required_process": "deburr, cleaning, inspection",
+          "shop_capability_reference": "finish_bench.available=true; inspection.available=true"
+        },
+        {
+          "feature_id": "F011",
+          "feature_name": "Detail-B significant formed mouth diameter \u00d86.88",
+          "spec_category": "geometry_parameter",
+          "spec_description": "formed mouth/counterbore depth/attachment ambiguity",
+          "nominal_value": "\u00d86.88 local formed mouth",
+          "tolerance_or_requirement": "Exact face/edge attachment slightly ambiguous",
+          "verdict": "info_missing",
+          "reasoning": "The diameter tolerance is feasible, but the feature graph notes ambiguity in the local leader/attachment position.",
+          "risk_description": null,
+          "mitigation": "Clarify the exact Detail-B attachment and controlled surface.",
+          "required_process": "inspection interpretation",
+          "shop_capability_reference": "feature graph position_description notes ambiguity"
+        }
+      ],
+      "notes": "The significant \u00d86.88 tolerance is feasible, but the lip condition and feature attachment need care."
+    },
+    {
+      "feature_id": "F012",
+      "feature_name": "Detail-B secondary formed diameter \u00d87.0",
+      "feature_type": "internal_bore",
+      "overall_verdict": "info_missing",
+      "spec_assessments": [
+        {
+          "feature_id": "F012",
+          "feature_name": "Detail-B secondary formed diameter \u00d87.0",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "formed_detail_diameter",
+          "nominal_value": "\u00d87.0 mm",
+          "tolerance_or_requirement": "+0.1 / -0.1 mm",
+          "verdict": "feasible",
+          "reasoning": "A \u00b10.1 mm local internal/form diameter is within normal CNC/form tooling capability.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "boring / forming",
+          "shop_capability_reference": "cnc_lathe.normal_tolerance_mm=0.05; tool_room.available=true"
+        },
+        {
+          "feature_id": "F012",
+          "feature_name": "Detail-B secondary formed diameter \u00d87.0",
+          "spec_category": "geometry_parameter",
+          "spec_description": "distinction from nearby \u00d87.18 section diameter",
+          "nominal_value": "\u00d87.0 local Detail-B diameter",
+          "tolerance_or_requirement": "Exact distinction from nearby \u00d87.18 section diameter is ambiguous",
+          "verdict": "info_missing",
+          "reasoning": "The local diameter can be made, but the extracted graph states its distinction from the \u00d87.18 section diameter is ambiguous.",
+          "risk_description": null,
+          "mitigation": "Clarify Detail-B geometry and which surface the \u00d87.0 callout controls.",
+          "required_process": "drawing interpretation",
+          "shop_capability_reference": "feature graph description notes ambiguity"
+        }
+      ],
+      "notes": "Manufacturable once the Detail-B surface interpretation is confirmed."
+    },
+    {
+      "feature_id": "F013",
+      "feature_name": "Detail-B local seat/lip radii group",
+      "feature_type": "radius",
+      "overall_verdict": "info_missing",
+      "spec_assessments": [
+        {
+          "feature_id": "F013",
+          "feature_name": "Detail-B local seat/lip radii group",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "local_radius_1",
+          "nominal_value": "R1.0 mm",
+          "tolerance_or_requirement": "+0.1 / -0.1 mm",
+          "verdict": "feasible",
+          "reasoning": "A \u00b10.1 mm local radius is achievable using form tooling, turning, or controlled deburr/forming.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "form radius generation",
+          "shop_capability_reference": "cnc_lathe.processes includes turning; tool_room.available=true"
+        },
+        {
+          "feature_id": "F013",
+          "feature_name": "Detail-B local seat/lip radii group",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "local_radius_2",
+          "nominal_value": "R0.2 mm",
+          "tolerance_or_requirement": "+0.1 / -0.1 mm",
+          "verdict": "feasible",
+          "reasoning": "The R0.2 \u00b10.1 mm feature is small but its tolerance is broad enough for controlled form tooling or edge conditioning.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "small form radius / edge conditioning",
+          "shop_capability_reference": "finish_bench.processes includes edge_break; tool_room.available=true"
+        },
+        {
+          "feature_id": "F013",
+          "feature_name": "Detail-B local seat/lip radii group",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "reference_radius",
+          "nominal_value": "R0.45 mm",
+          "tolerance_or_requirement": "reference dimension shown in parentheses",
+          "verdict": "info_missing",
+          "reasoning": "A reference radius is not normally an acceptance requirement, so no tolerance feasibility can be assessed.",
+          "risk_description": null,
+          "mitigation": "Treat as reference geometry unless the customer defines it as controlled.",
+          "required_process": "drawing interpretation",
+          "shop_capability_reference": "feature graph tolerance_class=reference dimension"
+        },
+        {
+          "feature_id": "F013",
+          "feature_name": "Detail-B local seat/lip radii group",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "local_radius_max_1",
+          "nominal_value": "R0.76 mm max",
+          "tolerance_or_requirement": "maximum limit",
+          "verdict": "feasible",
+          "reasoning": "Maintaining a radius at or below 0.76 mm is feasible with controlled tooling/edge conditioning.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "form radius / edge conditioning",
+          "shop_capability_reference": "tool_room.available=true; finish_bench.processes includes edge_break"
+        },
+        {
+          "feature_id": "F013",
+          "feature_name": "Detail-B local seat/lip radii group",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "local_radius_max_2",
+          "nominal_value": "R0.25 mm max",
+          "tolerance_or_requirement": "maximum limit",
+          "verdict": "feasible",
+          "reasoning": "A 0.25 mm max radius is aligned with the drawing's break-all-sharp-corners note and is feasible with edge conditioning.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "edge break / controlled radius",
+          "shop_capability_reference": "finish_bench.processes includes edge_break; part note says break all sharp corners 0.25 MAX"
+        }
+      ],
+      "notes": "Most radii are feasible; the reference radius is not a controlled acceptance spec without clarification."
+    },
+    {
+      "feature_id": "F014",
+      "feature_name": "Section A-A internal shoulder radius R0.25",
+      "feature_type": "radius",
+      "overall_verdict": "feasible",
+      "spec_assessments": [
+        {
+          "feature_id": "F014",
+          "feature_name": "Section A-A internal shoulder radius R0.25",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "internal_shoulder_radius",
+          "nominal_value": "R0.25 mm",
+          "tolerance_or_requirement": "+0.13 / -0.13 mm",
+          "verdict": "feasible",
+          "reasoning": "A small internal shoulder radius with \u00b10.13 mm tolerance is feasible using boring/form tooling or controlled edge break.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "internal form radius / boring",
+          "shop_capability_reference": "cnc_lathe.processes includes boring; tool_room.available=true"
+        }
+      ],
+      "notes": "The radius tolerance is loose and achievable."
+    },
+    {
+      "feature_id": "F015",
+      "feature_name": "Left external end chamfer / optional angle",
+      "feature_type": "chamfer",
+      "overall_verdict": "info_missing",
+      "spec_assessments": [
+        {
+          "feature_id": "F015",
+          "feature_name": "Left external end chamfer / optional angle",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "chamfer_size_range_midvalue",
+          "nominal_value": "0.375 mm",
+          "tolerance_or_requirement": "+0.095 / -0.095 mm; range 0.28 to 0.47 mm",
+          "verdict": "feasible",
+          "reasoning": "The chamfer size range is broad and within normal turning/chamfering capability.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "chamfering",
+          "shop_capability_reference": "cnc_lathe.processes includes chamfering; finish_bench.processes includes edge_break"
+        },
+        {
+          "feature_id": "F015",
+          "feature_name": "Left external end chamfer / optional angle",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "primary_chamfer_angle_deg",
+          "nominal_value": "45 deg",
+          "tolerance_or_requirement": "angle specified; optional 22\u00b0 alternative also allowed",
+          "verdict": "feasible",
+          "reasoning": "A 45\u00b0 external chamfer is a standard CNC turning/chamfering feature.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "chamfering",
+          "shop_capability_reference": "cnc_lathe.processes includes chamfering"
+        },
+        {
+          "feature_id": "F015",
+          "feature_name": "Left external end chamfer / optional angle",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "optional_chamfer_angle_deg",
+          "nominal_value": "22 deg",
+          "tolerance_or_requirement": "optional alternative",
+          "verdict": "info_missing",
+          "reasoning": "The optional 22\u00b0 alternative is manufacturable, but the drawing interpretation must confirm when this option is acceptable.",
+          "risk_description": null,
+          "mitigation": "Confirm whether either 45\u00b0 or 22\u00b0 may be supplied without further approval.",
+          "required_process": "chamfering",
+          "shop_capability_reference": "cnc_lathe.processes includes chamfering; tolerance_class=optional alternative"
+        },
+        {
+          "feature_id": "F015",
+          "feature_name": "Left external end chamfer / optional angle",
+          "spec_category": "geometry_parameter",
+          "spec_description": "external end chamfer geometry",
+          "nominal_value": "0.28/0.47 x 45\u00b0 with optional 22\u00b0",
+          "tolerance_or_requirement": "external left-end edge chamfer",
+          "verdict": "feasible",
+          "reasoning": "External edge chamfer geometry is accessible axially/radially and within standard lathe capability.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "chamfering / edge break",
+          "shop_capability_reference": "cnc_lathe.processes includes chamfering; finish_bench.processes includes edge_break"
+        }
+      ],
+      "notes": "Chamfer manufacture is feasible; optional-angle acceptance should be clarified."
+    },
+    {
+      "feature_id": "F016",
+      "feature_name": "Right external end radius R0.25",
+      "feature_type": "radius",
+      "overall_verdict": "feasible",
+      "spec_assessments": [
+        {
+          "feature_id": "F016",
+          "feature_name": "Right external end radius R0.25",
+          "spec_category": "dimensional_tolerance",
+          "spec_description": "external_edge_radius",
+          "nominal_value": "R0.25 mm",
+          "tolerance_or_requirement": "+0.13 / -0.13 mm",
+          "verdict": "feasible",
+          "reasoning": "An external R0.25 \u00b10.13 mm edge radius is feasible with turning, form tooling, or edge break.",
+          "risk_description": null,
+          "mitigation": null,
+          "required_process": "turning / edge break",
+          "shop_capability_reference": "cnc_lathe.processes includes turning; finish_bench.processes includes edge_break"
+        }
+      ],
+      "notes": "The external edge radius is straightforward for the listed capabilities."
+    }
+  ],
+  "clarifications": [
+    {
+      "clarification_id": "C001",
+      "question": "Confirm whether the SECTION A-A callout \u00d87.18\u00b10.1 is the large right-end internal bore/cavity diameter, rather than an external reduced diameter or another internal form diameter.",
+      "why_it_matters": "This affects feature classification, wall thickness interpretation, and bore/cavity depth.",
+      "blocks": [
+        "F005",
+        "F012"
+      ],
+      "suggested_default": "Treat \u00d87.18\u00b10.1 as a coaxial internal right-end cavity controlled to datum A.",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C002",
+      "question": "Confirm the exact axial depths/termination points of the \u00d87.18 cavity, \u00d84 bore, \u00d82.4 orifice, and \u00d84.763 left chamber in the stepped internal profile.",
+      "why_it_matters": "Exact stepped-bore depths are needed for production definition and final inspection.",
+      "blocks": [
+        "F005",
+        "F006",
+        "F007",
+        "F008"
+      ],
+      "suggested_default": "Use the SECTION A-A geometry as a stepped coaxial bore system and apply visible axial coordinates to the left seat/orifice region.",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C003",
+      "question": "Confirm whether cold formed is a mandatory manufacturing process or only a descriptive title/process history.",
+      "why_it_matters": "The shop profile does not explicitly list cold heading/cold forming for this type of cylindrical plunger.",
+      "blocks": [
+        "F001"
+      ],
+      "suggested_default": "Treat cold forming as a process requirement requiring supplier review/outside-process qualification.",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C004",
+      "question": "Confirm availability and acceptance method for the 10 SCCM max check-valve leakage test.",
+      "why_it_matters": "The shop has general test capability, but a specific leakage/flow test bench is not explicitly listed.",
+      "blocks": [
+        "F009",
+        "F010",
+        "F011"
+      ],
+      "suggested_default": "Use outside special testing if in-house leak testing is not available.",
+      "priority": "medium"
+    }
+  ],
+  "assumptions": [
+    {
+      "assumption_id": "A001",
+      "text": "C10C is treated as a common low-carbon steel with no heat treatment required, per the feature graph part-level material and heat-treatment fields.",
+      "applies_to": [
+        "material_machinable",
+        "F001"
+      ],
+      "impact": "low",
+      "confidence": 0.9
+    },
+    {
+      "assumption_id": "A002",
+      "text": "Tolerance capability values in the shop profile are interpreted as suitable for assessing the listed bilateral dimensional and GD&T requirements at a feasibility level.",
+      "applies_to": [
+        "all_features"
+      ],
+      "impact": "medium",
+      "confidence": 0.75
+    },
+    {
+      "assumption_id": "A003",
+      "text": "Missing internal depths and ambiguous Detail-B callout attachments are treated as clarification risks rather than hard feasibility blockers because the extracted diameters and accessible coaxial geometry are within available machine capability.",
+      "applies_to": [
+        "F005",
+        "F006",
+        "F007",
+        "F008",
+        "F011",
+        "F012"
+      ],
+      "impact": "medium",
+      "confidence": 0.7
+    }
+  ],
+  "reasoning_summary": "The part is a very small axisymmetric C10C steel plunger with moderate OD, bore, runout, taper, chamfer, and radius requirements that fit the shop envelope and are generally within the listed CNC turning/SPM/tool-room/inspection capabilities. Feasibility is not blocked, but it should proceed only with risks because the drawing calls the part cold formed, several stepped internal depths and Detail-B interpretations are unclear, and the 10 SCCM leakage-test capability is not explicitly confirmed in the shop profile."
+}

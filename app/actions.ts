@@ -7,6 +7,7 @@ import { cookies } from "next/headers"
 const ORG_CODES: Record<string, string> = {
   "4521": "jal",
   "5281": "alm",
+  "6061": "sfs",
 }
 
 export async function loginWithCode(code: string) {

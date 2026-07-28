@@ -1,0 +1,122 @@
+{
+  "analysis_id": "route_rfq_359110-VT_20260728T180058Z",
+  "part_name": "",
+  "material": "C10C low-carbon cold-heading steel",
+  "quantity": 1000,
+  "currency": "INR",
+  "material_cost": {
+    "material_key": "carbon_steel_mild",
+    "material_description": "Mild steel EN3, EN8, C45, 1018, 1045. Most common machining steel.",
+    "stock_form": "forging",
+    "stock_dimensions": {
+      "diameter_mm": 9.12,
+      "length_mm": 9.65,
+      "notes": "Use a near-net cold-formed/cold-headed blank. Finished envelope dimensions \u00d89.12 \u00d7 9.65 mm are shown here as the near-net bounding size because exact wire diameter, slug length, and die allowances are not provided in the feature graph."
+    },
+    "volume_cm3": 0.63,
+    "weight_kg": 0.005,
+    "price_per_kg_inr": 75,
+    "material_cost_per_piece_inr": 0.37,
+    "notes": []
+  },
+  "setup_costs": [
+    {
+      "setup_id": "S001",
+      "setup_name": "Outside cold-form near-net plunger blank",
+      "machine_family": "outside_vendor",
+      "hourly_rate_inr": 0,
+      "setup_time_min": 0.0,
+      "machining_time_per_piece_min": 0.0,
+      "setup_cost_inr": 0.0,
+      "machining_cost_per_piece_inr": 0.0,
+      "total_cost_per_piece_inr": 150.0,
+      "outside_process": true,
+      "outside_cost_per_piece_inr": 150
+    },
+    {
+      "setup_id": "S002",
+      "setup_name": "CNC lathe Op 1: finish datum C, datum-A OD, and left external chamfer",
+      "machine_family": "cnc_lathe",
+      "hourly_rate_inr": 250,
+      "setup_time_min": 15.0,
+      "machining_time_per_piece_min": 1.6467,
+      "setup_cost_inr": 73.53,
+      "machining_cost_per_piece_inr": 8.07,
+      "total_cost_per_piece_inr": 8.15,
+      "outside_process": false,
+      "outside_cost_per_piece_inr": 0.0
+    },
+    {
+      "setup_id": "S003",
+      "setup_name": "CNC lathe Op 2: finish datum B/right end and accessible right cavity",
+      "machine_family": "cnc_lathe",
+      "hourly_rate_inr": 250,
+      "setup_time_min": 15.0,
+      "machining_time_per_piece_min": 1.6467,
+      "setup_cost_inr": 73.53,
+      "machining_cost_per_piece_inr": 8.07,
+      "total_cost_per_piece_inr": 8.15,
+      "outside_process": false,
+      "outside_cost_per_piece_inr": 0.0
+    },
+    {
+      "setup_id": "S004",
+      "setup_name": "Manual deburr, edge break, and clean/dry seat",
+      "machine_family": "finish_bench",
+      "hourly_rate_inr": 200,
+      "setup_time_min": 3.0,
+      "machining_time_per_piece_min": 1.6,
+      "setup_cost_inr": 11.76,
+      "machining_cost_per_piece_inr": 6.27,
+      "total_cost_per_piece_inr": 6.29,
+      "outside_process": false,
+      "outside_cost_per_piece_inr": 0.0
+    },
+    {
+      "setup_id": "S005",
+      "setup_name": "Final dimensional and visual inspection",
+      "machine_family": "inspection",
+      "hourly_rate_inr": 250,
+      "setup_time_min": 3.0,
+      "machining_time_per_piece_min": 4.3,
+      "setup_cost_inr": 14.71,
+      "machining_cost_per_piece_inr": 21.08,
+      "total_cost_per_piece_inr": 21.09,
+      "outside_process": false,
+      "outside_cost_per_piece_inr": 0.0
+    },
+    {
+      "setup_id": "S006",
+      "setup_name": "Functional leakage test",
+      "machine_family": "test_bench",
+      "hourly_rate_inr": 400,
+      "setup_time_min": 15.0,
+      "machining_time_per_piece_min": 0.8,
+      "setup_cost_inr": 117.65,
+      "machining_cost_per_piece_inr": 6.27,
+      "total_cost_per_piece_inr": 6.39,
+      "outside_process": false,
+      "outside_cost_per_piece_inr": 0.0
+    }
+  ],
+  "summary": {
+    "quantity": 1000,
+    "currency": "INR",
+    "material_cost_per_piece_inr": 0.37,
+    "machining_cost_per_piece_inr": 49.77,
+    "setup_cost_total_inr": 291.18,
+    "setup_cost_per_piece_inr": 0.29,
+    "outside_process_cost_per_piece_inr": 150.0,
+    "tool_cost_per_piece_inr": 20.04,
+    "rejection_cost_per_piece_inr": 4.41,
+    "subtotal_per_piece_inr": 224.84,
+    "overhead_percent": 25.0,
+    "overhead_per_piece_inr": 56.21,
+    "margin_percent": 15.0,
+    "margin_per_piece_inr": 42.16,
+    "final_price_per_piece_inr": 323.21,
+    "batch_total_inr": 323213.13
+  },
+  "warnings": [],
+  "assumptions": []
+}
