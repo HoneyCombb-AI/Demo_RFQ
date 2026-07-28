@@ -11,14 +11,66 @@ interface SubOperationCardProps {
   deconstructedSubOp?: DeconstructedSubOp
 }
 
+/**
+ * Checks whether a parameter value is meaningful enough to display.
+ * Filters out: null, undefined, empty strings, 0 (numeric), false (boolean).
+ * Keeps: non-zero numbers, non-empty strings, true booleans.
+ */
+function isMeaningfulValue(value: unknown): boolean {
+  if (value === null || value === undefined || value === "") return false
+  if (typeof value === "number" && value === 0) return false
+  if (typeof value === "boolean" && value === false) return false
+  return true
+}
+
+/**
+ * Keys within cutting_parameters that should never render as a badge
+ * because they are better expressed as a textual note (e.g. rpm_capped)
+ * or are internal housekeeping fields.
+ */
+const CUTTING_PARAM_SKIP_KEYS = new Set(["rpm_capped"])
+
+/**
+ * Format a cutting-parameter key into a human-readable label with units
+ * embedded where appropriate.
+ */
+function formatCuttingParamLabel(key: string): string {
+  const MAP: Record<string, string> = {
+    cutting_speed_m_min: "CUTTING SPEED M/MIN",
+    rpm: "RPM",
+    feed_per_rev_mm: "FEED PER REV MM",
+    feed_per_tooth_mm: "FEED PER TOOTH MM",
+    feed_rate_mm_min: "FEED RATE MM/MIN",
+    flute_count: "FLUTE COUNT",
+    tool_diameter_mm: "TOOL DIAMETER MM",
+    step_over_mm: "STEP OVER MM",
+    depth_per_pass_mm: "DEPTH PER PASS MM",
+    number_of_passes: "NUMBER OF PASSES",
+    reversal_factor: "REVERSAL FACTOR",
+  }
+  return MAP[key] || key.replace(/_/g, " ").toUpperCase()
+}
+
 export function SubOperationCard({ subOp, deconstructedSubOp }: SubOperationCardProps) {
   const [expanded, setExpanded] = React.useState(false)
   const seqNumber = subOp.sequence.toString().padStart(2, "0")
 
+  // Build filtered formula-input entries (only meaningful values)
+  const formulaEntries = subOp.formula_inputs_used
+    ? Object.entries(subOp.formula_inputs_used).filter(([, value]) => isMeaningfulValue(value))
+    : []
+
+  // Build filtered cutting-parameter entries (only meaningful, non-skipped values)
+  const cuttingEntries = subOp.cycle_time?.cutting_parameters
+    ? Object.entries(subOp.cycle_time.cutting_parameters).filter(
+        ([key, value]) => !CUTTING_PARAM_SKIP_KEYS.has(key) && isMeaningfulValue(value)
+      )
+    : []
+
   const hasDetails = !!(
     deconstructedSubOp?.reason ||
-    (subOp.formula_inputs_used && Object.keys(subOp.formula_inputs_used).length > 0) ||
-    subOp.cycle_time?.cutting_parameters ||
+    formulaEntries.length > 0 ||
+    cuttingEntries.length > 0 ||
     (subOp.cycle_time?.calculation_notes && subOp.cycle_time.calculation_notes.length > 0)
   )
 
@@ -77,13 +129,12 @@ export function SubOperationCard({ subOp, deconstructedSubOp }: SubOperationCard
             </div>
           )}
 
-          {/* Formula Inputs */}
-          {subOp.formula_inputs_used && Object.keys(subOp.formula_inputs_used).length > 0 && (
+          {/* Formula Inputs — only non-null, non-zero, non-false values */}
+          {formulaEntries.length > 0 && (
             <div>
               <h5 className="text-[10px] uppercase tracking-widest font-semibold text-muted-foreground mb-2">Formula Inputs</h5>
               <div className="flex flex-wrap gap-2">
-                {Object.entries(subOp.formula_inputs_used).map(([key, value]) => {
-                  if (value === null || value === undefined) return null;
+                {formulaEntries.map(([key, value]) => {
                   const label = key.replace(/_/g, " ").toUpperCase()
                   return <ParamBadge key={key} label={label} value={value as string | number} />
                 })}
@@ -91,14 +142,13 @@ export function SubOperationCard({ subOp, deconstructedSubOp }: SubOperationCard
             </div>
           )}
 
-          {/* Cutting Parameters */}
-          {subOp.cycle_time?.cutting_parameters && (
+          {/* Cutting Parameters — only meaningful computed values */}
+          {cuttingEntries.length > 0 && (
             <div>
               <h5 className="text-[10px] uppercase tracking-widest font-semibold text-muted-foreground mb-2">Cutting Parameters</h5>
               <div className="flex flex-wrap gap-2">
-                {Object.entries(subOp.cycle_time.cutting_parameters).map(([key, value]) => {
-                  if (value === null || value === undefined) return null;
-                  const label = key.replace(/_/g, " ").toUpperCase()
+                {cuttingEntries.map(([key, value]) => {
+                  const label = formatCuttingParamLabel(key)
                   return <ParamBadge key={key} label={label} value={value as string | number} />
                 })}
               </div>
