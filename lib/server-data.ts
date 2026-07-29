@@ -14,9 +14,9 @@ import {
 } from "./data";
 
 const ORG_CONFIGS: Record<string, { quoteFile: string; quoteFormat: "excel" | "setup" }> = {
-  jal: { quoteFile: "excel_quote.json", quoteFormat: "excel" },
-  alm: { quoteFile: "quote.json",       quoteFormat: "setup"  },
-  sfs: { quoteFile: "quote.json",       quoteFormat: "setup"  },
+  jtt: { quoteFile: "excel_quote.json", quoteFormat: "excel" },
+  alt: { quoteFile: "quote.json",       quoteFormat: "setup"  },
+  sft: { quoteFile: "quote.json",       quoteFormat: "setup"  },
 };
 
 function orgDataDir(orgSlug: string): string {
@@ -52,7 +52,7 @@ async function isDataDir(dirPath: string): Promise<boolean> {
   }
 }
 
-export async function getPartsList(orgSlug: string = "jal"): Promise<PartListItem[]> {
+export async function getPartsList(orgSlug: string = "jtt"): Promise<PartListItem[]> {
   if (!ORG_CONFIGS[orgSlug]) return [];
   const dataDir = orgDataDir(orgSlug);
   const entries = await fs.readdir(dataDir);
@@ -77,7 +77,7 @@ export async function getPartsList(orgSlug: string = "jal"): Promise<PartListIte
   return parts;
 }
 
-export async function resolveSlug(slug: string, orgSlug: string = "jal"): Promise<string | null> {
+export async function resolveSlug(slug: string, orgSlug: string = "jtt"): Promise<string | null> {
   if (!ORG_CONFIGS[orgSlug]) return null;
   const dataDir = orgDataDir(orgSlug);
   const entries = await fs.readdir(dataDir);
@@ -223,7 +223,7 @@ export function derivePartLevelSpecs(fg: FeatureGraphData): PartLevelSpec[] {
 
 export async function getReportData(
   slug: string,
-  orgSlug: string = "jal",
+  orgSlug: string = "jtt",
 ): Promise<ReportData | null> {
   const orgCfg = ORG_CONFIGS[orgSlug];
   if (!orgCfg) return null;
@@ -280,7 +280,7 @@ export async function getReportData(
 export function getImagePath(
   folderName: string,
   type: "ballooned" | "original",
-  orgSlug: string = "jal",
+  orgSlug: string = "jtt",
 ): string {
   const filename = type === "ballooned" ? "ballooned_drawing.png" : "page_001_original.png";
   return path.join(orgDataDir(orgSlug), folderName, filename);

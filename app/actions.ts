@@ -5,9 +5,9 @@ import { cookies } from "next/headers"
 // Code → org slug. No external imports, no path module, nothing that can
 // fail during serverless module initialization.
 const ORG_CODES: Record<string, string> = {
-  "4521": "jal",
-  "5281": "alm",
-  "6061": "sfs",
+  "4521": "jtt",
+  "5281": "alt",
+  "6061": "sft",
 }
 
 export async function loginWithCode(code: string) {

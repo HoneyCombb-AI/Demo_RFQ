@@ -3,8 +3,8 @@ import type { NextRequest } from 'next/server'
  
 // Map each org route prefix to the code required to access it.
 const ORG_ROUTE_CODES: Record<string, string> = {
-  '/jal': '4521',
-  '/alm': '5281',
+  '/jtt': '4521',
+  '/alt': '5281',
 }
 
 export function proxy(request: NextRequest) {

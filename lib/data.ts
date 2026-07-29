@@ -420,7 +420,7 @@ export interface ComputedRouteData {
 }
 
 // ============================================================
-// TYPE DEFINITIONS — Excel Quote (JAL format)
+// TYPE DEFINITIONS — Excel Quote (jtt format)
 // ============================================================
 
 export interface QuoteStock {
@@ -475,7 +475,7 @@ export interface ExcelQuoteData {
 }
 
 // ============================================================
-// TYPE DEFINITIONS — Setup Quote (ALM format)
+// TYPE DEFINITIONS — Setup Quote (alt format)
 // ============================================================
 
 export interface SetupQuoteMaterialCost {

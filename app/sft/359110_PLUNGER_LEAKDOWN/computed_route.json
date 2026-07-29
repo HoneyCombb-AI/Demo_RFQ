@@ -1,0 +1,1090 @@
+{
+  "analysis_id": "route_rfq_359110-VT_20260728T180058Z",
+  "source_deconstructed_route_path": "/Users/mirshahzadmubeen/Desktop/IN/RFQ/runs/359110/vlm/agent2/deconstructed_route.json",
+  "source_feature_graph_path": "/Users/mirshahzadmubeen/Desktop/IN/RFQ/runs/359110/vlm/agent1/feature_graph.json",
+  "shop_profile_basis": {
+    "profile_path": "/Users/mirshahzadmubeen/Desktop/IN/RFQ/config/shop_profile.yaml",
+    "profile_name": "alt Automotive Component Manufacturing Profile",
+    "material_machinability_key": "c10c_low_carbon_cold_heading_steel",
+    "notes": []
+  },
+  "part_family": "hybrid",
+  "base_geometry": "cylindrical",
+  "material": "C10C low-carbon cold-heading steel",
+  "setups": [
+    {
+      "setup_id": "S001",
+      "sequence": 1,
+      "setup_name": "Outside cold-form near-net plunger blank",
+      "machine_family": "outside_vendor",
+      "in_house": false,
+      "outside_process": true,
+      "sub_operations": [
+        {
+          "sub_op_id": "S001-01",
+          "sequence": 1,
+          "operation_type": "blank_preparation",
+          "operation_name": "Prepare C10C cold-heading slug/wire volume for 2.3 g plunger",
+          "formula_hint": "cold_heading_blank_preparation",
+          "target_feature_ids": [
+            "F001"
+          ],
+          "formula_inputs_used": {
+            "process_type": "cold_heading_blank_preparation",
+            "start_diameter_mm": 9.12,
+            "finish_diameter_mm": 9.12,
+            "cut_length_mm": 9.65,
+            "external_diameter_mm": 9.12,
+            "bar_diameter_mm": 9.12,
+            "blank_length_mm": 9.65,
+            "forging_net_weight_kg": 0.0023,
+            "die_type": "progressive cold-heading / cold-extrusion die",
+            "material_machinability": "easy",
+            "tolerance_class": "standard"
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.0,
+            "non_cutting_time_min": 0.0,
+            "total_time_min": 0.0,
+            "formula_family": "outside",
+            "cutting_parameters": {
+              "cutting_speed_m_min": null,
+              "rpm": null,
+              "rpm_capped": false,
+              "feed_per_rev_mm": null,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": null,
+              "flute_count": null,
+              "tool_diameter_mm": null,
+              "step_over_mm": null,
+              "depth_per_pass_mm": null,
+              "number_of_passes": null,
+              "reversal_factor": null
+            },
+            "calculation_notes": [
+              "Outside process \u2014 no in-house cycle time."
+            ],
+            "confidence": "low",
+            "warnings": []
+          },
+          "skipped": true,
+          "skip_reason": "Outside process"
+        },
+        {
+          "sub_op_id": "S001-02",
+          "sequence": 2,
+          "operation_type": "forming",
+          "operation_name": "Cold form main cylindrical shell, datum-A precursor OD, and large right cavity \u00d87.18",
+          "formula_hint": "cold_heading_forming",
+          "target_feature_ids": [
+            "F001",
+            "F002",
+            "F005",
+            "F014"
+          ],
+          "formula_inputs_used": {
+            "process_type": "cold_heading_forming",
+            "start_diameter_mm": 9.12,
+            "finish_diameter_mm": 9.12,
+            "cut_length_mm": 9.65,
+            "hole_diameter_mm": 7.18,
+            "hole_count": 1,
+            "bore_finish_diameter_mm": 7.18,
+            "external_diameter_mm": 9.12,
+            "bar_diameter_mm": 9.12,
+            "blank_length_mm": 9.65,
+            "forging_net_weight_kg": 0.0023,
+            "die_type": "progressive cold-extrusion die",
+            "material_machinability": "easy",
+            "tolerance_class": "standard"
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.0,
+            "non_cutting_time_min": 0.0,
+            "total_time_min": 0.0,
+            "formula_family": "outside",
+            "cutting_parameters": {
+              "cutting_speed_m_min": null,
+              "rpm": null,
+              "rpm_capped": false,
+              "feed_per_rev_mm": null,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": null,
+              "flute_count": null,
+              "tool_diameter_mm": null,
+              "step_over_mm": null,
+              "depth_per_pass_mm": null,
+              "number_of_passes": null,
+              "reversal_factor": null
+            },
+            "calculation_notes": [
+              "Outside process \u2014 no in-house cycle time."
+            ],
+            "confidence": "low",
+            "warnings": []
+          },
+          "skipped": true,
+          "skip_reason": "Outside process"
+        },
+        {
+          "sub_op_id": "S001-03",
+          "sequence": 3,
+          "operation_type": "forming",
+          "operation_name": "Cold form coaxial inner bore \u00d84",
+          "formula_hint": "cold_heading_forming",
+          "target_feature_ids": [
+            "F006"
+          ],
+          "formula_inputs_used": {
+            "process_type": "cold_heading_forming",
+            "cut_length_mm": 9.65,
+            "hole_diameter_mm": 4.0,
+            "hole_count": 1,
+            "bore_finish_diameter_mm": 4.0,
+            "external_diameter_mm": 9.12,
+            "blank_length_mm": 9.65,
+            "forging_net_weight_kg": 0.0023,
+            "die_type": "stepped internal forming punch",
+            "material_machinability": "easy",
+            "tolerance_class": "loose"
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.0,
+            "non_cutting_time_min": 0.0,
+            "total_time_min": 0.0,
+            "formula_family": "outside",
+            "cutting_parameters": {
+              "cutting_speed_m_min": null,
+              "rpm": null,
+              "rpm_capped": false,
+              "feed_per_rev_mm": null,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": null,
+              "flute_count": null,
+              "tool_diameter_mm": null,
+              "step_over_mm": null,
+              "depth_per_pass_mm": null,
+              "number_of_passes": null,
+              "reversal_factor": null
+            },
+            "calculation_notes": [
+              "Outside process \u2014 no in-house cycle time."
+            ],
+            "confidence": "low",
+            "warnings": []
+          },
+          "skipped": true,
+          "skip_reason": "Outside process"
+        },
+        {
+          "sub_op_id": "S001-04",
+          "sequence": 4,
+          "operation_type": "forming",
+          "operation_name": "Cold form reduced coaxial orifice \u00d82.4",
+          "formula_hint": "cold_heading_forming",
+          "target_feature_ids": [
+            "F007"
+          ],
+          "formula_inputs_used": {
+            "process_type": "cold_heading_forming",
+            "cut_length_mm": 9.65,
+            "hole_diameter_mm": 2.4,
+            "hole_count": 1,
+            "bore_finish_diameter_mm": 2.4,
+            "external_diameter_mm": 9.12,
+            "blank_length_mm": 9.65,
+            "forging_net_weight_kg": 0.0023,
+            "die_type": "reduced-orifice forming punch",
+            "material_machinability": "easy",
+            "tolerance_class": "standard"
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.0,
+            "non_cutting_time_min": 0.0,
+            "total_time_min": 0.0,
+            "formula_family": "outside",
+            "cutting_parameters": {
+              "cutting_speed_m_min": null,
+              "rpm": null,
+              "rpm_capped": false,
+              "feed_per_rev_mm": null,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": null,
+              "flute_count": null,
+              "tool_diameter_mm": null,
+              "step_over_mm": null,
+              "depth_per_pass_mm": null,
+              "number_of_passes": null,
+              "reversal_factor": null
+            },
+            "calculation_notes": [
+              "Outside process \u2014 no in-house cycle time."
+            ],
+            "confidence": "low",
+            "warnings": []
+          },
+          "skipped": true,
+          "skip_reason": "Outside process"
+        },
+        {
+          "sub_op_id": "S001-05",
+          "sequence": 5,
+          "operation_type": "forming",
+          "operation_name": "Cold form left chamber \u00d84.763 and spherical seat S\u00d83.175",
+          "formula_hint": "cold_heading_forming",
+          "target_feature_ids": [
+            "F008",
+            "F009"
+          ],
+          "formula_inputs_used": {
+            "process_type": "cold_heading_forming",
+            "hole_diameter_mm": 3.175,
+            "hole_count": 1,
+            "counterbore_diameter_mm": 4.763,
+            "bore_finish_diameter_mm": 3.175,
+            "external_diameter_mm": 9.12,
+            "forging_net_weight_kg": 0.0023,
+            "die_type": "spherical-seat forming punch",
+            "material_machinability": "easy",
+            "tolerance_class": "standard"
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.0,
+            "non_cutting_time_min": 0.0,
+            "total_time_min": 0.0,
+            "formula_family": "outside",
+            "cutting_parameters": {
+              "cutting_speed_m_min": null,
+              "rpm": null,
+              "rpm_capped": false,
+              "feed_per_rev_mm": null,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": null,
+              "flute_count": null,
+              "tool_diameter_mm": null,
+              "step_over_mm": null,
+              "depth_per_pass_mm": null,
+              "number_of_passes": null,
+              "reversal_factor": null
+            },
+            "calculation_notes": [
+              "Outside process \u2014 no in-house cycle time."
+            ],
+            "confidence": "low",
+            "warnings": []
+          },
+          "skipped": true,
+          "skip_reason": "Outside process"
+        },
+        {
+          "sub_op_id": "S001-06",
+          "sequence": 6,
+          "operation_type": "forming",
+          "operation_name": "Cold form Detail-B mouth \u00d86.88, \u00d87.0 lip, 15\u00b0 taper, and local radii",
+          "formula_hint": "cold_heading_forming",
+          "target_feature_ids": [
+            "F010",
+            "F011",
+            "F012",
+            "F013"
+          ],
+          "formula_inputs_used": {
+            "process_type": "cold_heading_forming",
+            "cut_length_mm": 0.76,
+            "chamfer_angle_deg": 15.0,
+            "hole_diameter_mm": 7.0,
+            "hole_count": 1,
+            "counterbore_diameter_mm": 6.88,
+            "countersink_angle_deg": 15.0,
+            "bore_finish_diameter_mm": 7.0,
+            "external_diameter_mm": 9.12,
+            "forging_net_weight_kg": 0.0023,
+            "die_type": "Detail-B lip and taper forming die",
+            "material_machinability": "easy",
+            "tolerance_class": "tight"
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.0,
+            "non_cutting_time_min": 0.0,
+            "total_time_min": 0.0,
+            "formula_family": "outside",
+            "cutting_parameters": {
+              "cutting_speed_m_min": null,
+              "rpm": null,
+              "rpm_capped": false,
+              "feed_per_rev_mm": null,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": null,
+              "flute_count": null,
+              "tool_diameter_mm": null,
+              "step_over_mm": null,
+              "depth_per_pass_mm": null,
+              "number_of_passes": null,
+              "reversal_factor": null
+            },
+            "calculation_notes": [
+              "Outside process \u2014 no in-house cycle time."
+            ],
+            "confidence": "low",
+            "warnings": []
+          },
+          "skipped": true,
+          "skip_reason": "Outside process"
+        }
+      ],
+      "time_summary": {
+        "setup_time_min": 0.0,
+        "handling_time_min": 0.0,
+        "total_cutting_time_min": 0.0,
+        "total_non_cutting_time_min": 0.0,
+        "total_machining_time_min": 0.0,
+        "sub_operation_count": 6,
+        "outside_process": true
+      }
+    },
+    {
+      "setup_id": "S002",
+      "sequence": 2,
+      "setup_name": "CNC lathe Op 1: finish datum C, datum-A OD, and left external chamfer",
+      "machine_family": "cnc_lathe",
+      "in_house": true,
+      "outside_process": false,
+      "sub_operations": [
+        {
+          "sub_op_id": "S002-01",
+          "sequence": 1,
+          "operation_type": "face",
+          "operation_name": "Face left end to establish datum C",
+          "formula_hint": "cylindrical",
+          "target_feature_ids": [
+            "F003",
+            "F001"
+          ],
+          "formula_inputs_used": {
+            "process_type": "cylindrical",
+            "start_diameter_mm": 9.12,
+            "finish_diameter_mm": 9.12,
+            "external_diameter_mm": 9.12,
+            "blank_length_mm": 9.65,
+            "material_machinability": "easy",
+            "tolerance_class": "standard"
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.0292,
+            "non_cutting_time_min": 0.0033,
+            "total_time_min": 0.0325,
+            "formula_family": "cylindrical",
+            "cutting_parameters": {
+              "cutting_speed_m_min": 130.0,
+              "rpm": 4000.0,
+              "rpm_capped": true,
+              "feed_per_rev_mm": 0.12,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": null,
+              "flute_count": null,
+              "tool_diameter_mm": null,
+              "step_over_mm": null,
+              "depth_per_pass_mm": 0.0,
+              "number_of_passes": 1,
+              "reversal_factor": null
+            },
+            "calculation_notes": [
+              "RPM capped at 4000"
+            ],
+            "confidence": "high",
+            "warnings": []
+          },
+          "skipped": false,
+          "skip_reason": null
+        },
+        {
+          "sub_op_id": "S002-02",
+          "sequence": 2,
+          "operation_type": "finish_turn_od",
+          "operation_name": "Finish turn datum-A OD to \u00d89.12 \u00b10.025 over 9.65 length",
+          "formula_hint": "cylindrical",
+          "target_feature_ids": [
+            "F002"
+          ],
+          "formula_inputs_used": {
+            "process_type": "cylindrical",
+            "start_diameter_mm": 9.12,
+            "finish_diameter_mm": 9.12,
+            "cut_length_mm": 9.65,
+            "number_of_passes": 1,
+            "external_diameter_mm": 9.12,
+            "blank_length_mm": 9.65,
+            "material_machinability": "easy",
+            "tolerance_class": "tight"
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.0284,
+            "non_cutting_time_min": 0.0033,
+            "total_time_min": 0.0318,
+            "formula_family": "cylindrical",
+            "cutting_parameters": {
+              "cutting_speed_m_min": 130.0,
+              "rpm": 4000.0,
+              "rpm_capped": true,
+              "feed_per_rev_mm": 0.12,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": null,
+              "flute_count": null,
+              "tool_diameter_mm": null,
+              "step_over_mm": null,
+              "depth_per_pass_mm": 0.0,
+              "number_of_passes": 1,
+              "reversal_factor": null
+            },
+            "calculation_notes": [
+              "RPM capped at 4000"
+            ],
+            "confidence": "high",
+            "warnings": []
+          },
+          "skipped": false,
+          "skip_reason": null
+        },
+        {
+          "sub_op_id": "S002-03",
+          "sequence": 3,
+          "operation_type": "chamfer_turn",
+          "operation_name": "Turn left external chamfer 0.28\u20130.47 \u00d7 45\u00b0 nominal 0.375 \u00d7 45\u00b0",
+          "formula_hint": "cylindrical",
+          "target_feature_ids": [
+            "F015"
+          ],
+          "formula_inputs_used": {
+            "process_type": "cylindrical",
+            "start_diameter_mm": 9.12,
+            "chamfer_size_mm": 0.375,
+            "chamfer_angle_deg": 45.0,
+            "external_diameter_mm": 9.12,
+            "material_machinability": "easy",
+            "tolerance_class": "standard"
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.0292,
+            "non_cutting_time_min": 0.0033,
+            "total_time_min": 0.0325,
+            "formula_family": "cylindrical",
+            "cutting_parameters": {
+              "cutting_speed_m_min": 130.0,
+              "rpm": 4000.0,
+              "rpm_capped": true,
+              "feed_per_rev_mm": 0.12,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": null,
+              "flute_count": null,
+              "tool_diameter_mm": null,
+              "step_over_mm": null,
+              "depth_per_pass_mm": 0.0,
+              "number_of_passes": 1,
+              "reversal_factor": null
+            },
+            "calculation_notes": [
+              "RPM capped at 4000"
+            ],
+            "confidence": "high",
+            "warnings": []
+          },
+          "skipped": false,
+          "skip_reason": null
+        },
+        {
+          "sub_op_id": "S002-04",
+          "sequence": 4,
+          "operation_type": "inspect_in_process",
+          "operation_name": "In-process check datum C face and datum-A OD",
+          "formula_hint": "inspection",
+          "target_feature_ids": [
+            "F002",
+            "F003",
+            "F015"
+          ],
+          "formula_inputs_used": {
+            "process_type": "inspection",
+            "finish_diameter_mm": 9.12,
+            "cut_length_mm": 9.65,
+            "chamfer_size_mm": 0.375,
+            "chamfer_angle_deg": 45.0,
+            "external_diameter_mm": 9.12,
+            "tolerance_class": "tight"
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.0,
+            "non_cutting_time_min": 1.0,
+            "total_time_min": 1.0,
+            "formula_family": "fixed",
+            "cutting_parameters": {
+              "cutting_speed_m_min": null,
+              "rpm": null,
+              "rpm_capped": false,
+              "feed_per_rev_mm": null,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": null,
+              "flute_count": null,
+              "tool_diameter_mm": null,
+              "step_over_mm": null,
+              "depth_per_pass_mm": null,
+              "number_of_passes": null,
+              "reversal_factor": null
+            },
+            "calculation_notes": [],
+            "confidence": "high",
+            "warnings": []
+          },
+          "skipped": false,
+          "skip_reason": null
+        }
+      ],
+      "time_summary": {
+        "setup_time_min": 15.0,
+        "handling_time_min": 0.3,
+        "total_cutting_time_min": 0.0868,
+        "total_non_cutting_time_min": 1.2599,
+        "total_machining_time_min": 1.6467,
+        "sub_operation_count": 4,
+        "outside_process": false
+      }
+    },
+    {
+      "setup_id": "S003",
+      "sequence": 3,
+      "setup_name": "CNC lathe Op 2: finish datum B/right end and accessible right cavity",
+      "machine_family": "cnc_lathe",
+      "in_house": true,
+      "outside_process": false,
+      "sub_operations": [
+        {
+          "sub_op_id": "S003-01",
+          "sequence": 1,
+          "operation_type": "face",
+          "operation_name": "Face right end to final overall length 9.65 \u00b10.13 and establish datum B",
+          "formula_hint": "cylindrical",
+          "target_feature_ids": [
+            "F004",
+            "F001"
+          ],
+          "formula_inputs_used": {
+            "process_type": "cylindrical",
+            "start_diameter_mm": 9.12,
+            "finish_diameter_mm": 9.12,
+            "cut_length_mm": 9.65,
+            "number_of_passes": 1,
+            "external_diameter_mm": 9.12,
+            "blank_length_mm": 9.65,
+            "material_machinability": "easy",
+            "tolerance_class": "standard"
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.0284,
+            "non_cutting_time_min": 0.0033,
+            "total_time_min": 0.0318,
+            "formula_family": "cylindrical",
+            "cutting_parameters": {
+              "cutting_speed_m_min": 130.0,
+              "rpm": 4000.0,
+              "rpm_capped": true,
+              "feed_per_rev_mm": 0.12,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": null,
+              "flute_count": null,
+              "tool_diameter_mm": null,
+              "step_over_mm": null,
+              "depth_per_pass_mm": 0.0,
+              "number_of_passes": 1,
+              "reversal_factor": null
+            },
+            "calculation_notes": [
+              "RPM capped at 4000"
+            ],
+            "confidence": "high",
+            "warnings": []
+          },
+          "skipped": false,
+          "skip_reason": null
+        },
+        {
+          "sub_op_id": "S003-02",
+          "sequence": 2,
+          "operation_type": "finish_turn_id",
+          "operation_name": "Finish/skim accessible right-end cavity \u00d87.18 and internal R0.25 shoulder if required",
+          "formula_hint": "cylindrical",
+          "target_feature_ids": [
+            "F005",
+            "F014"
+          ],
+          "formula_inputs_used": {
+            "process_type": "cylindrical",
+            "start_diameter_mm": 7.18,
+            "finish_diameter_mm": 7.18,
+            "number_of_passes": 1,
+            "hole_diameter_mm": 7.18,
+            "hole_count": 1,
+            "bore_start_diameter_mm": 7.18,
+            "bore_finish_diameter_mm": 7.18,
+            "external_diameter_mm": 9.12,
+            "material_machinability": "easy",
+            "tolerance_class": "standard"
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.0292,
+            "non_cutting_time_min": 0.0033,
+            "total_time_min": 0.0325,
+            "formula_family": "cylindrical",
+            "cutting_parameters": {
+              "cutting_speed_m_min": 130.0,
+              "rpm": 4000.0,
+              "rpm_capped": true,
+              "feed_per_rev_mm": 0.12,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": null,
+              "flute_count": null,
+              "tool_diameter_mm": null,
+              "step_over_mm": null,
+              "depth_per_pass_mm": 0.0,
+              "number_of_passes": 1,
+              "reversal_factor": null
+            },
+            "calculation_notes": [
+              "RPM capped at 4000"
+            ],
+            "confidence": "high",
+            "warnings": []
+          },
+          "skipped": false,
+          "skip_reason": null
+        },
+        {
+          "sub_op_id": "S003-03",
+          "sequence": 3,
+          "operation_type": "chamfer_turn",
+          "operation_name": "Turn right external corner radius R0.25 nominal",
+          "formula_hint": "cylindrical",
+          "target_feature_ids": [
+            "F016"
+          ],
+          "formula_inputs_used": {
+            "process_type": "cylindrical",
+            "start_diameter_mm": 9.12,
+            "chamfer_size_mm": 0.25,
+            "external_diameter_mm": 9.12,
+            "material_machinability": "easy",
+            "tolerance_class": "standard"
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.0292,
+            "non_cutting_time_min": 0.0033,
+            "total_time_min": 0.0325,
+            "formula_family": "cylindrical",
+            "cutting_parameters": {
+              "cutting_speed_m_min": 130.0,
+              "rpm": 4000.0,
+              "rpm_capped": true,
+              "feed_per_rev_mm": 0.12,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": null,
+              "flute_count": null,
+              "tool_diameter_mm": null,
+              "step_over_mm": null,
+              "depth_per_pass_mm": 0.0,
+              "number_of_passes": 1,
+              "reversal_factor": null
+            },
+            "calculation_notes": [
+              "RPM capped at 4000"
+            ],
+            "confidence": "high",
+            "warnings": []
+          },
+          "skipped": false,
+          "skip_reason": null
+        },
+        {
+          "sub_op_id": "S003-04",
+          "sequence": 4,
+          "operation_type": "inspect_in_process",
+          "operation_name": "In-process check overall length, right face runout, and right cavity mouth",
+          "formula_hint": "inspection",
+          "target_feature_ids": [
+            "F001",
+            "F004",
+            "F005",
+            "F016"
+          ],
+          "formula_inputs_used": {
+            "process_type": "inspection",
+            "finish_diameter_mm": 9.12,
+            "cut_length_mm": 9.65,
+            "chamfer_size_mm": 0.25,
+            "hole_diameter_mm": 7.18,
+            "hole_count": 1,
+            "bore_finish_diameter_mm": 7.18,
+            "external_diameter_mm": 9.12,
+            "tolerance_class": "standard"
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.0,
+            "non_cutting_time_min": 1.0,
+            "total_time_min": 1.0,
+            "formula_family": "fixed",
+            "cutting_parameters": {
+              "cutting_speed_m_min": null,
+              "rpm": null,
+              "rpm_capped": false,
+              "feed_per_rev_mm": null,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": null,
+              "flute_count": null,
+              "tool_diameter_mm": null,
+              "step_over_mm": null,
+              "depth_per_pass_mm": null,
+              "number_of_passes": null,
+              "reversal_factor": null
+            },
+            "calculation_notes": [],
+            "confidence": "high",
+            "warnings": []
+          },
+          "skipped": false,
+          "skip_reason": null
+        }
+      ],
+      "time_summary": {
+        "setup_time_min": 15.0,
+        "handling_time_min": 0.3,
+        "total_cutting_time_min": 0.0868,
+        "total_non_cutting_time_min": 1.2599,
+        "total_machining_time_min": 1.6467,
+        "sub_operation_count": 4,
+        "outside_process": false
+      }
+    },
+    {
+      "setup_id": "S004",
+      "sequence": 4,
+      "setup_name": "Manual deburr, edge break, and clean/dry seat",
+      "machine_family": "finish_bench",
+      "in_house": true,
+      "outside_process": false,
+      "sub_operations": [
+        {
+          "sub_op_id": "S004-01",
+          "sequence": 1,
+          "operation_type": "deburr_edge",
+          "operation_name": "Deburr and break all sharp corners 0.25 max; remove raised metal at Detail-B lip",
+          "formula_hint": "fixed",
+          "target_feature_ids": [
+            "F010",
+            "F013",
+            "F014",
+            "F015",
+            "F016"
+          ],
+          "formula_inputs_used": {
+            "process_type": "fixed",
+            "chamfer_size_mm": 0.25,
+            "external_diameter_mm": 9.12,
+            "tolerance_class": "standard"
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.0,
+            "non_cutting_time_min": 1.0,
+            "total_time_min": 1.0,
+            "formula_family": "fixed",
+            "cutting_parameters": {
+              "cutting_speed_m_min": null,
+              "rpm": null,
+              "rpm_capped": false,
+              "feed_per_rev_mm": null,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": null,
+              "flute_count": null,
+              "tool_diameter_mm": null,
+              "step_over_mm": null,
+              "depth_per_pass_mm": null,
+              "number_of_passes": null,
+              "reversal_factor": null
+            },
+            "calculation_notes": [],
+            "confidence": "high",
+            "warnings": []
+          },
+          "skipped": false,
+          "skip_reason": null
+        },
+        {
+          "sub_op_id": "S004-02",
+          "sequence": 2,
+          "operation_type": "cleaning",
+          "operation_name": "Clean and dry internal check-valve seat and passages",
+          "formula_hint": "fixed",
+          "target_feature_ids": [
+            "F005",
+            "F006",
+            "F007",
+            "F008",
+            "F009",
+            "F010",
+            "F011",
+            "F012"
+          ],
+          "formula_inputs_used": {
+            "process_type": "fixed",
+            "cut_length_mm": 9.65,
+            "hole_diameter_mm": 2.4,
+            "hole_count": 1,
+            "counterbore_diameter_mm": 6.88,
+            "external_diameter_mm": 9.12,
+            "tolerance_class": "standard"
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.0,
+            "non_cutting_time_min": 0.3,
+            "total_time_min": 0.3,
+            "formula_family": "fixed",
+            "cutting_parameters": {
+              "cutting_speed_m_min": null,
+              "rpm": null,
+              "rpm_capped": false,
+              "feed_per_rev_mm": null,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": null,
+              "flute_count": null,
+              "tool_diameter_mm": null,
+              "step_over_mm": null,
+              "depth_per_pass_mm": null,
+              "number_of_passes": null,
+              "reversal_factor": null
+            },
+            "calculation_notes": [],
+            "confidence": "high",
+            "warnings": []
+          },
+          "skipped": false,
+          "skip_reason": null
+        }
+      ],
+      "time_summary": {
+        "setup_time_min": 3.0,
+        "handling_time_min": 0.3,
+        "total_cutting_time_min": 0.0,
+        "total_non_cutting_time_min": 1.3,
+        "total_machining_time_min": 1.6,
+        "sub_operation_count": 2,
+        "outside_process": false
+      }
+    },
+    {
+      "setup_id": "S005",
+      "sequence": 5,
+      "setup_name": "Final dimensional and visual inspection",
+      "machine_family": "inspection",
+      "in_house": true,
+      "outside_process": false,
+      "sub_operations": [
+        {
+          "sub_op_id": "S005-01",
+          "sequence": 1,
+          "operation_type": "inspection",
+          "operation_name": "Inspect OD, overall length, end faces, chamfer, and radius",
+          "formula_hint": "inspection",
+          "target_feature_ids": [
+            "F001",
+            "F002",
+            "F003",
+            "F004",
+            "F015",
+            "F016"
+          ],
+          "formula_inputs_used": {
+            "process_type": "inspection",
+            "finish_diameter_mm": 9.12,
+            "cut_length_mm": 9.65,
+            "chamfer_size_mm": 0.375,
+            "chamfer_angle_deg": 45.0,
+            "external_diameter_mm": 9.12,
+            "tolerance_class": "tight"
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.0,
+            "non_cutting_time_min": 2.0,
+            "total_time_min": 2.0,
+            "formula_family": "fixed",
+            "cutting_parameters": {
+              "cutting_speed_m_min": null,
+              "rpm": null,
+              "rpm_capped": false,
+              "feed_per_rev_mm": null,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": null,
+              "flute_count": null,
+              "tool_diameter_mm": null,
+              "step_over_mm": null,
+              "depth_per_pass_mm": null,
+              "number_of_passes": null,
+              "reversal_factor": null
+            },
+            "calculation_notes": [],
+            "confidence": "high",
+            "warnings": []
+          },
+          "skipped": false,
+          "skip_reason": null
+        },
+        {
+          "sub_op_id": "S005-02",
+          "sequence": 2,
+          "operation_type": "inspection",
+          "operation_name": "Inspect internal formed profile, significant \u00d86.88, runouts to datum A, and no raised metal",
+          "formula_hint": "inspection",
+          "target_feature_ids": [
+            "F005",
+            "F006",
+            "F007",
+            "F008",
+            "F009",
+            "F010",
+            "F011",
+            "F012",
+            "F013",
+            "F014"
+          ],
+          "formula_inputs_used": {
+            "process_type": "inspection",
+            "cut_length_mm": 0.76,
+            "chamfer_size_mm": 0.25,
+            "chamfer_angle_deg": 15.0,
+            "hole_diameter_mm": 7.18,
+            "hole_count": 1,
+            "counterbore_diameter_mm": 6.88,
+            "countersink_angle_deg": 15.0,
+            "bore_finish_diameter_mm": 7.18,
+            "external_diameter_mm": 9.12,
+            "tolerance_class": "tight"
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.0,
+            "non_cutting_time_min": 2.0,
+            "total_time_min": 2.0,
+            "formula_family": "fixed",
+            "cutting_parameters": {
+              "cutting_speed_m_min": null,
+              "rpm": null,
+              "rpm_capped": false,
+              "feed_per_rev_mm": null,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": null,
+              "flute_count": null,
+              "tool_diameter_mm": null,
+              "step_over_mm": null,
+              "depth_per_pass_mm": null,
+              "number_of_passes": null,
+              "reversal_factor": null
+            },
+            "calculation_notes": [],
+            "confidence": "high",
+            "warnings": []
+          },
+          "skipped": false,
+          "skip_reason": null
+        }
+      ],
+      "time_summary": {
+        "setup_time_min": 3.0,
+        "handling_time_min": 0.3,
+        "total_cutting_time_min": 0.0,
+        "total_non_cutting_time_min": 4.0,
+        "total_machining_time_min": 4.3,
+        "sub_operation_count": 2,
+        "outside_process": false
+      }
+    },
+    {
+      "setup_id": "S006",
+      "sequence": 6,
+      "setup_name": "Functional leakage test",
+      "machine_family": "test_bench",
+      "in_house": true,
+      "outside_process": false,
+      "sub_operations": [
+        {
+          "sub_op_id": "S006-01",
+          "sequence": 1,
+          "operation_type": "testing",
+          "operation_name": "Check valve leakage test: 10 SCCM max, seat clean and dry",
+          "formula_hint": "testing",
+          "target_feature_ids": [
+            "F005",
+            "F006",
+            "F007",
+            "F008",
+            "F009",
+            "F010",
+            "F011",
+            "F012",
+            "F013"
+          ],
+          "formula_inputs_used": {
+            "process_type": "testing",
+            "cut_length_mm": 9.65,
+            "hole_diameter_mm": 2.4,
+            "hole_count": 1,
+            "counterbore_diameter_mm": 6.88,
+            "external_diameter_mm": 9.12,
+            "tolerance_class": "standard"
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.0,
+            "non_cutting_time_min": 0.5,
+            "total_time_min": 0.5,
+            "formula_family": "fixed",
+            "cutting_parameters": {
+              "cutting_speed_m_min": null,
+              "rpm": null,
+              "rpm_capped": false,
+              "feed_per_rev_mm": null,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": null,
+              "flute_count": null,
+              "tool_diameter_mm": null,
+              "step_over_mm": null,
+              "depth_per_pass_mm": null,
+              "number_of_passes": null,
+              "reversal_factor": null
+            },
+            "calculation_notes": [],
+            "confidence": "low",
+            "warnings": []
+          },
+          "skipped": false,
+          "skip_reason": null
+        }
+      ],
+      "time_summary": {
+        "setup_time_min": 15.0,
+        "handling_time_min": 0.3,
+        "total_cutting_time_min": 0.0,
+        "total_non_cutting_time_min": 0.5,
+        "total_machining_time_min": 0.8,
+        "sub_operation_count": 1,
+        "outside_process": false
+      }
+    }
+  ],
+  "total_summary": {
+    "total_setups": 6,
+    "total_sub_operations": 19,
+    "total_setup_time_min": 51.0,
+    "total_handling_time_min": 1.5,
+    "total_cutting_time_min": 0.17,
+    "total_non_cutting_time_min": 8.32,
+    "total_machining_time_min": 9.99,
+    "total_time_min": 60.99,
+    "outside_process_count": 1,
+    "confidence": "medium"
+  },
+  "global_warnings": [],
+  "global_assumptions": []
+}
