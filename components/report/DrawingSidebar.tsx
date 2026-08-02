@@ -107,7 +107,7 @@ export function DrawingSidebar({ balloonedImageUrl, originalImageUrl }: DrawingS
   const currentImageUrl = activeImage === "ballooned" ? balloonedImageUrl : originalImageUrl
 
   return (
-    <div className="w-95 shrink-0 flex flex-col border-r border-border bg-muted/20">
+    <div data-tour="drawing-sidebar" className="w-95 shrink-0 flex flex-col border-r border-border bg-muted/20">
       <div className="p-4 border-b">
         <ToggleGroup 
           value={[activeImage]} 
@@ -137,7 +137,7 @@ export function DrawingSidebar({ balloonedImageUrl, originalImageUrl }: DrawingS
       <ScrollArea className="flex-1 p-4">
         <Dialog>
           <DialogTrigger>
-            <div className="rounded-md border bg-card p-1 shadow-sm cursor-zoom-in hover:shadow-md transition-shadow">
+            <div data-tour="drawing-image" className="rounded-md border bg-card p-1 shadow-sm cursor-zoom-in hover:shadow-md transition-shadow">
               {/* Using standard img since it comes from API route and might change */}
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img 
