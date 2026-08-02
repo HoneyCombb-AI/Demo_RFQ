@@ -67,9 +67,8 @@ export function ReportLayout({ data }: { data: ReportData }) {
 
           {tourEnabled && (
             <Button
-              size="sm"
               onClick={() => setIsTourOpen(true)}
-              className="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white font-semibold shadow-md gap-2 border border-amber-400/30"
+              className="py-2 bg-linear-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white font-semibold shadow-md gap-2 border border-amber-400/30"
             >
               <Sparkles className="w-4 h-4" />
               Executive Tour (Ravi Sir)
