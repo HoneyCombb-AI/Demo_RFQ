@@ -1,9 +1,13 @@
+"use client"
+
 import * as React from "react"
 import Link from "next/link"
-import { ChevronLeft } from "lucide-react"
+import { ChevronLeft, Sparkles } from "lucide-react"
 import { ReportData } from "@/lib/data"
 import { DrawingSidebar } from "./DrawingSidebar"
 import { ReportTabs } from "./ReportTabs"
+import { JoyrideTour } from "./JoyrideTour"
+import { Button } from "@/components/ui/button"
 
 export function ReportLayout({ data }: { data: ReportData }) {
   const part = data.featureGraph.part
@@ -11,28 +15,49 @@ export function ReportLayout({ data }: { data: ReportData }) {
   const setupCount = data.computedRoute.total_summary.total_setups
   const subOpCount = data.computedRoute.total_summary.total_sub_operations
 
+  const [activeTab, setActiveTab] = React.useState("specs")
+  const [isTourOpen, setIsTourOpen] = React.useState(data.orgSlug === "jtt")
+
   return (
     <div className="flex flex-col h-screen overflow-hidden bg-background">
+      {/* Executive Guided Tour overlay */}
+      <JoyrideTour 
+        isOpen={isTourOpen} 
+        onClose={() => setIsTourOpen(false)} 
+        onTabChange={setActiveTab} 
+      />
+
       {/* Header */}
-      <header className="border-b bg-background shrink-0">
-        <div className="px-6 py-4">
-          <Link
-            href={`/${data.orgSlug}`}
-            className="inline-flex items-center text-[10px] uppercase tracking-widest font-semibold text-muted-foreground hover:text-foreground mb-3 transition-colors"
+      <header className="border-b bg-background shrink-0" data-tour="header-info">
+        <div className="px-6 py-4 flex items-start justify-between">
+          <div>
+            <Link
+              href={`/${data.orgSlug}`}
+              className="inline-flex items-center text-[10px] uppercase tracking-widest font-semibold text-muted-foreground hover:text-foreground mb-3 transition-colors"
+            >
+              <ChevronLeft className="w-3 h-3 mr-1" />
+              All Reports
+            </Link>
+            
+            <h1 className="text-2xl font-bold tracking-tight mb-1">
+              <span className="font-mono mr-2">{part.drawing_number}</span>
+              <span className="text-muted-foreground font-normal mx-2">—</span>
+              {part.name}
+            </h1>
+            
+            <p className="text-sm text-muted-foreground font-medium">
+              {part.material ?? "Material not specified"}
+            </p>
+          </div>
+
+          <Button
+            size="sm"
+            onClick={() => setIsTourOpen(true)}
+            className="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white font-semibold shadow-md gap-2 border border-amber-400/30"
           >
-            <ChevronLeft className="w-3 h-3 mr-1" />
-            All Reports
-          </Link>
-          
-          <h1 className="text-2xl font-bold tracking-tight mb-1">
-            <span className="font-mono mr-2">{part.drawing_number}</span>
-            <span className="text-muted-foreground font-normal mx-2">—</span>
-            {part.name}
-          </h1>
-          
-          <p className="text-sm text-muted-foreground font-medium">
-            {part.material ?? "Material not specified"}
-          </p>
+            <Sparkles className="w-4 h-4" />
+            Executive Tour (Ravi Sir)
+          </Button>
         </div>
 
         {/* Stats Bar */}
@@ -58,8 +83,13 @@ export function ReportLayout({ data }: { data: ReportData }) {
           balloonedImageUrl={data.balloonedImageUrl} 
           originalImageUrl={data.originalImageUrl} 
         />
-        <ReportTabs data={data} />
+        <ReportTabs 
+          data={data} 
+          activeTab={activeTab} 
+          onTabChange={setActiveTab} 
+        />
       </main>
     </div>
   )
 }
+
