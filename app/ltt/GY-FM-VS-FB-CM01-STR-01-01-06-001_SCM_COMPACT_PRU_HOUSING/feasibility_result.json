@@ -1,0 +1,70 @@
+{
+    "analysis_id": "feas_GY-FM-VS-FB-CM01-STR-01-01-06-001_SCM_COMPACT_PRU_HOUSING",
+    "source_feature_graph_id": "GY-FM-VS-FB-CM01-STR-01-01-06-001_SCM_COMPACT_PRU_HOUSING",
+    "feasibility": {
+        "can_proceed": true,
+        "status": "feasible",
+        "risk_level": "medium",
+        "blockers": [],
+        "risks": [
+            {
+                "risk_type": "machine_envelope_and_workholding",
+                "description": "Overall envelope 671.1 x 443.9 x approximately 309 mm exceeds the published vmc_3axis X/Y travels, so machining must use dedicated SPM fixtures, indexed setups, or qualified large-capacity partner support.",
+                "mitigation": "Use spm_milling_drilling with tool-room designed modular fixtures; verify actual machine envelope before order release.",
+                "affected_feature_ids": [
+                    "F001",
+                    "F002",
+                    "F003"
+                ]
+            },
+            {
+                "risk_type": "missing_hole_and_pocket_depths",
+                "description": "Several H7 holes, central bores, counterbores, pockets and section cavities have missing or partly legible depths/diameters.",
+                "mitigation": "Release route as provisional; obtain native CAD/released drawing values before CNC programming and fixture/gauge design.",
+                "affected_feature_ids": [
+                    "F012",
+                    "F013",
+                    "F014",
+                    "F025",
+                    "F026",
+                    "F027",
+                    "F030",
+                    "F046",
+                    "F052",
+                    "F053",
+                    "F054",
+                    "F055",
+                    "F057",
+                    "F060",
+                    "F061",
+                    "F063",
+                    "F064",
+                    "F067",
+                    "F068",
+                    "F069"
+                ]
+            },
+            {
+                "risk_type": "heat_treatment_distortion",
+                "description": "Large asymmetric 15CDV6 housing heat treated to 31-38 HRC can distort; H7 holes and precision bores must retain position after post-HT finishing.",
+                "mitigation": "Rough/semi-machine before HT, leave finishing stock on precision bores and datum surfaces, use controlled quench, and perform post-HT grinding/honing/verification.",
+                "affected_feature_ids": [
+                    "F013",
+                    "F046",
+                    "F054",
+                    "F055",
+                    "F067",
+                    "F068"
+                ]
+            },
+            {
+                "risk_type": "cadmium_plating_capability",
+                "description": "Shop profile lists in-house alkaline zinc plating; cadmium plating chemistry is specified but not explicitly confirmed.",
+                "mitigation": "Confirm whether plating_line is approved for cadmium 8-12 microns; otherwise qualify an outside cadmium plating supplier and hydrogen-embrittlement bake.",
+                "affected_feature_ids": [
+                    "F001"
+                ]
+            }
+        ]
+    }
+}

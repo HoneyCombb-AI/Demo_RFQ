@@ -1,0 +1,1657 @@
+{
+  "analysis_id": "route_rfq_PRU_unified_20260804",
+  "source_deconstructed_route_path": "/Users/mirshahzadmubeen/Desktop/IN/RFQ/runs/PRU/vlm/agent2/deconstructed_route.json",
+  "source_feature_graph_path": "/Users/mirshahzadmubeen/Desktop/IN/RFQ/runs/PRU/vlm/agent1/feature_graph.json",
+  "shop_profile_basis": {
+    "profile_path": "/Users/mirshahzadmubeen/Desktop/IN/RFQ/config/shop_profile.yaml",
+    "profile_name": "Almity Automotive Component Manufacturing Profile",
+    "material_machinability_key": "15cdv6_alloy_steel",
+    "notes": []
+  },
+  "part_family": "hybrid",
+  "base_geometry": "complex",
+  "material": "15CDV6 alloy steel",
+  "setups": [
+    {
+      "setup_id": "S001",
+      "sequence": 1,
+      "setup_name": "Procure near-net forged housing blank",
+      "machine_family": "outside_vendor",
+      "in_house": false,
+      "outside_process": true,
+      "sub_operations": [
+        {
+          "sub_op_id": "S001-01",
+          "sequence": 1,
+          "operation_type": "outside_process_candidate",
+          "operation_name": "Closed/open-die forge near-net 15CDV6 housing blank, trim and descale",
+          "formula_hint": "forging",
+          "target_feature_ids": [
+            "F001",
+            "F004",
+            "F006",
+            "F007",
+            "F049",
+            "F050",
+            "F051"
+          ],
+          "formula_inputs_used": {
+            "process_type": "forging",
+            "blank_length_mm": 681.1,
+            "forging_net_weight_kg": 109.0,
+            "billet_weight_kg": 130.8,
+            "flash_allowance_pct": 20.0,
+            "die_type": "closed_die_or_open_die_near_net",
+            "max_section_thickness_mm": 309.0,
+            "material_machinability": "medium"
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.0,
+            "non_cutting_time_min": 0.0,
+            "total_time_min": 0.0,
+            "formula_family": "outside",
+            "cutting_parameters": {
+              "cutting_speed_m_min": null,
+              "rpm": null,
+              "rpm_capped": false,
+              "feed_per_rev_mm": null,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": null,
+              "flute_count": null,
+              "tool_diameter_mm": null,
+              "step_over_mm": null,
+              "depth_per_pass_mm": null,
+              "number_of_passes": null,
+              "reversal_factor": null
+            },
+            "calculation_notes": [
+              "Outside process \u2014 no in-house cycle time."
+            ],
+            "confidence": "low",
+            "warnings": []
+          },
+          "skipped": true,
+          "skip_reason": "Outside process"
+        }
+      ],
+      "time_summary": {
+        "setup_time_min": 0.0,
+        "handling_time_min": 0.0,
+        "total_cutting_time_min": 0.0,
+        "total_non_cutting_time_min": 0.0,
+        "total_machining_time_min": 0.0,
+        "sub_operation_count": 1,
+        "outside_process": true
+      }
+    },
+    {
+      "setup_id": "S002",
+      "sequence": 2,
+      "setup_name": "Rough establish primary datum faces and datum network",
+      "machine_family": "spm_milling_drilling",
+      "in_house": true,
+      "outside_process": false,
+      "sub_operations": [
+        {
+          "sub_op_id": "S002-01",
+          "sequence": 1,
+          "operation_type": "rough_face_mill",
+          "operation_name": "Rough face mill +Z/-Z broad faces and primary datum surfaces",
+          "formula_hint": "linear",
+          "target_feature_ids": [
+            "F002",
+            "F003",
+            "F038",
+            "F039",
+            "F042",
+            "F043",
+            "F047"
+          ],
+          "formula_inputs_used": {
+            "process_type": "linear",
+            "depth_of_cut_mm": 2.0,
+            "number_of_passes": 2,
+            "milling_width_mm": 443.9,
+            "milling_length_mm": 671.1,
+            "axial_depth_mm": 2.0,
+            "material_machinability": "medium",
+            "tolerance_class": "standard"
+          },
+          "cycle_time": {
+            "cutting_time_min": 2.3565,
+            "non_cutting_time_min": 0.0067,
+            "total_time_min": 2.3632,
+            "formula_family": "linear",
+            "cutting_parameters": {
+              "cutting_speed_m_min": 60.0,
+              "rpm": 1194.0,
+              "rpm_capped": false,
+              "feed_per_rev_mm": null,
+              "feed_per_tooth_mm": 0.12,
+              "feed_rate_mm_min": 573.0,
+              "flute_count": 4,
+              "tool_diameter_mm": 16.0,
+              "step_over_mm": null,
+              "depth_per_pass_mm": 2.0,
+              "number_of_passes": 2,
+              "reversal_factor": null
+            },
+            "calculation_notes": [],
+            "confidence": "high",
+            "warnings": []
+          },
+          "skipped": false,
+          "skip_reason": null
+        },
+        {
+          "sub_op_id": "S002-02",
+          "sequence": 2,
+          "operation_type": "rough_face_mill",
+          "operation_name": "Rough mill side/end datums C, D, E and G shoulder pickup faces",
+          "formula_hint": "linear",
+          "target_feature_ids": [
+            "F040",
+            "F041",
+            "F044",
+            "F045",
+            "F048"
+          ],
+          "formula_inputs_used": {
+            "process_type": "linear",
+            "depth_of_cut_mm": 2.0,
+            "number_of_passes": 2,
+            "milling_width_mm": 95.0,
+            "milling_length_mm": 130.0,
+            "axial_depth_mm": 2.0,
+            "material_machinability": "medium",
+            "tolerance_class": "standard"
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.4677,
+            "non_cutting_time_min": 0.0067,
+            "total_time_min": 0.4744,
+            "formula_family": "linear",
+            "cutting_parameters": {
+              "cutting_speed_m_min": 60.0,
+              "rpm": 1194.0,
+              "rpm_capped": false,
+              "feed_per_rev_mm": null,
+              "feed_per_tooth_mm": 0.12,
+              "feed_rate_mm_min": 573.0,
+              "flute_count": 4,
+              "tool_diameter_mm": 16.0,
+              "step_over_mm": null,
+              "depth_per_pass_mm": 2.0,
+              "number_of_passes": 2,
+              "reversal_factor": null
+            },
+            "calculation_notes": [],
+            "confidence": "high",
+            "warnings": []
+          },
+          "skipped": false,
+          "skip_reason": null
+        }
+      ],
+      "time_summary": {
+        "setup_time_min": 15.0,
+        "handling_time_min": 0.3,
+        "total_cutting_time_min": 2.8242,
+        "total_non_cutting_time_min": 0.0967,
+        "total_machining_time_min": 3.2209,
+        "sub_operation_count": 2,
+        "outside_process": false
+      }
+    },
+    {
+      "setup_id": "S003",
+      "sequence": 3,
+      "setup_name": "Rough and semi-finish external profiles, pockets, slots and radii",
+      "machine_family": "spm_milling_drilling",
+      "in_house": true,
+      "outside_process": false,
+      "sub_operations": [
+        {
+          "sub_op_id": "S003-01",
+          "sequence": 1,
+          "operation_type": "profile_mill",
+          "operation_name": "Profile mill saddle, pads, flanges, ribs and boss outline features",
+          "formula_hint": "linear",
+          "target_feature_ids": [
+            "F004",
+            "F005",
+            "F006",
+            "F007",
+            "F008",
+            "F009",
+            "F010",
+            "F011",
+            "F031",
+            "F032",
+            "F049",
+            "F050",
+            "F051",
+            "F056",
+            "F059",
+            "F071"
+          ],
+          "formula_inputs_used": {
+            "process_type": "linear",
+            "number_of_passes": 3,
+            "profile_length_mm": 671.1,
+            "axial_depth_mm": 3.0,
+            "wall_height_mm": 443.9,
+            "external_diameter_mm": 100.0,
+            "material_machinability": "medium",
+            "tolerance_class": "standard"
+          },
+          "cycle_time": {
+            "cutting_time_min": 3.5348,
+            "non_cutting_time_min": 0.01,
+            "total_time_min": 3.5448,
+            "formula_family": "linear",
+            "cutting_parameters": {
+              "cutting_speed_m_min": 60.0,
+              "rpm": 1194.0,
+              "rpm_capped": false,
+              "feed_per_rev_mm": null,
+              "feed_per_tooth_mm": 0.12,
+              "feed_rate_mm_min": 573.0,
+              "flute_count": 4,
+              "tool_diameter_mm": 16.0,
+              "step_over_mm": null,
+              "depth_per_pass_mm": 2.0,
+              "number_of_passes": 3,
+              "reversal_factor": null
+            },
+            "calculation_notes": [],
+            "confidence": "high",
+            "warnings": []
+          },
+          "skipped": false,
+          "skip_reason": null
+        },
+        {
+          "sub_op_id": "S003-02",
+          "sequence": 2,
+          "operation_type": "pocket_mill",
+          "operation_name": "Rough pocket mill repeated pockets and internal cavities",
+          "formula_hint": "linear",
+          "target_feature_ids": [
+            "F025",
+            "F027",
+            "F052",
+            "F057",
+            "F060",
+            "F061",
+            "F062",
+            "F065"
+          ],
+          "formula_inputs_used": {
+            "process_type": "linear",
+            "pocket_area_mm2": 6968.0,
+            "axial_depth_mm": 5.7,
+            "step_over_mm": 8.0,
+            "material_machinability": "medium",
+            "tolerance_class": "standard"
+          },
+          "cycle_time": {
+            "cutting_time_min": 6.8722,
+            "non_cutting_time_min": 0.03,
+            "total_time_min": 6.9022,
+            "formula_family": "linear",
+            "cutting_parameters": {
+              "cutting_speed_m_min": 60.0,
+              "rpm": 2387.0,
+              "rpm_capped": false,
+              "feed_per_rev_mm": null,
+              "feed_per_tooth_mm": 0.12,
+              "feed_rate_mm_min": 1145.9,
+              "flute_count": 4,
+              "tool_diameter_mm": 8.0,
+              "step_over_mm": 8.0,
+              "depth_per_pass_mm": 2.0,
+              "number_of_passes": 9,
+              "reversal_factor": null
+            },
+            "calculation_notes": [],
+            "confidence": "high",
+            "warnings": []
+          },
+          "skipped": false,
+          "skip_reason": null
+        },
+        {
+          "sub_op_id": "S003-03",
+          "sequence": 3,
+          "operation_type": "slot_mill",
+          "operation_name": "Rough slot and channel features after adjacent pockets are opened",
+          "formula_hint": "linear",
+          "target_feature_ids": [
+            "F026",
+            "F028",
+            "F029",
+            "F030",
+            "F063",
+            "F064"
+          ],
+          "formula_inputs_used": {
+            "process_type": "linear",
+            "slot_width_mm": 20.0,
+            "slot_depth_mm": 28.5,
+            "slot_length_mm": 173.5,
+            "material_machinability": "medium",
+            "tolerance_class": "standard"
+          },
+          "cycle_time": {
+            "cutting_time_min": 4.6469,
+            "non_cutting_time_min": 0.05,
+            "total_time_min": 4.6969,
+            "formula_family": "linear",
+            "cutting_parameters": {
+              "cutting_speed_m_min": 60.0,
+              "rpm": 1194.0,
+              "rpm_capped": false,
+              "feed_per_rev_mm": null,
+              "feed_per_tooth_mm": 0.12,
+              "feed_rate_mm_min": 573.0,
+              "flute_count": 4,
+              "tool_diameter_mm": 16.0,
+              "step_over_mm": null,
+              "depth_per_pass_mm": 2.0,
+              "number_of_passes": 15,
+              "reversal_factor": null
+            },
+            "calculation_notes": [],
+            "confidence": "medium",
+            "warnings": []
+          },
+          "skipped": false,
+          "skip_reason": null
+        },
+        {
+          "sub_op_id": "S003-04",
+          "sequence": 4,
+          "operation_type": "chamfer_mill",
+          "operation_name": "Machine specified chamfers and formed/radius rest-machining groups",
+          "formula_hint": "fixed",
+          "target_feature_ids": [
+            "F033",
+            "F034",
+            "F035",
+            "F036",
+            "F037",
+            "F058",
+            "F072",
+            "F073",
+            "F074",
+            "F075"
+          ],
+          "formula_inputs_used": {
+            "process_type": "fixed",
+            "chamfer_size_mm": 1.0,
+            "chamfer_angle_deg": 45.0,
+            "material_machinability": "medium",
+            "tolerance_class": "standard"
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.0,
+            "non_cutting_time_min": 0.5,
+            "total_time_min": 0.5,
+            "formula_family": "fixed",
+            "cutting_parameters": {
+              "cutting_speed_m_min": null,
+              "rpm": null,
+              "rpm_capped": false,
+              "feed_per_rev_mm": null,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": null,
+              "flute_count": null,
+              "tool_diameter_mm": null,
+              "step_over_mm": null,
+              "depth_per_pass_mm": null,
+              "number_of_passes": null,
+              "reversal_factor": null
+            },
+            "calculation_notes": [],
+            "confidence": "low",
+            "warnings": []
+          },
+          "skipped": false,
+          "skip_reason": null
+        }
+      ],
+      "time_summary": {
+        "setup_time_min": 15.0,
+        "handling_time_min": 0.3,
+        "total_cutting_time_min": 15.0539,
+        "total_non_cutting_time_min": 0.84,
+        "total_machining_time_min": 16.1939,
+        "sub_operation_count": 4,
+        "outside_process": false
+      }
+    },
+    {
+      "setup_id": "S004",
+      "sequence": 4,
+      "setup_name": "Pre-heat-treatment hole making, thread making and rough precision bores",
+      "machine_family": "spm_milling_drilling",
+      "in_house": true,
+      "outside_process": false,
+      "sub_operations": [
+        {
+          "sub_op_id": "S004-01",
+          "sequence": 1,
+          "operation_type": "bore",
+          "operation_name": "Rough bore central boss openings and G-G coaxial bore stack",
+          "formula_hint": "cylindrical",
+          "target_feature_ids": [
+            "F012",
+            "F053",
+            "F054",
+            "F055",
+            "F056"
+          ],
+          "formula_inputs_used": {
+            "process_type": "cylindrical",
+            "number_of_passes": 3,
+            "hole_count": 3,
+            "bore_start_diameter_mm": 35.0,
+            "bore_finish_diameter_mm": 38.5,
+            "external_diameter_mm": 100.0,
+            "material_machinability": "medium",
+            "tolerance_class": "tight"
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.3108,
+            "non_cutting_time_min": 0.0033,
+            "total_time_min": 0.3142,
+            "formula_family": "cylindrical",
+            "cutting_parameters": {
+              "cutting_speed_m_min": 130.0,
+              "rpm": 1126.0,
+              "rpm_capped": false,
+              "feed_per_rev_mm": 0.12,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": null,
+              "flute_count": null,
+              "tool_diameter_mm": null,
+              "step_over_mm": null,
+              "depth_per_pass_mm": 0.583,
+              "number_of_passes": 3,
+              "reversal_factor": null
+            },
+            "calculation_notes": [],
+            "confidence": "high",
+            "warnings": []
+          },
+          "skipped": false,
+          "skip_reason": null
+        },
+        {
+          "sub_op_id": "S004-02",
+          "sequence": 2,
+          "operation_type": "center_drill",
+          "operation_name": "Spot drill all precision, clearance and threaded hole locations",
+          "formula_hint": "point",
+          "target_feature_ids": [
+            "F013",
+            "F015",
+            "F016",
+            "F017",
+            "F018",
+            "F019",
+            "F020",
+            "F021",
+            "F022",
+            "F023",
+            "F024",
+            "F046",
+            "F066",
+            "F067",
+            "F068",
+            "F069",
+            "F070"
+          ],
+          "formula_inputs_used": {
+            "process_type": "point",
+            "hole_diameter_mm": 8.0,
+            "hole_count": 60,
+            "material_machinability": "medium",
+            "tolerance_class": "tight"
+          },
+          "cycle_time": {
+            "cutting_time_min": 8.6314,
+            "non_cutting_time_min": 0.12,
+            "total_time_min": 8.7514,
+            "formula_family": "point",
+            "cutting_parameters": {
+              "cutting_speed_m_min": 27.5,
+              "rpm": 1094.0,
+              "rpm_capped": false,
+              "feed_per_rev_mm": 0.108,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": null,
+              "flute_count": null,
+              "tool_diameter_mm": 8.0,
+              "step_over_mm": null,
+              "depth_per_pass_mm": null,
+              "number_of_passes": 60,
+              "reversal_factor": null
+            },
+            "calculation_notes": [],
+            "confidence": "medium",
+            "warnings": []
+          },
+          "skipped": false,
+          "skip_reason": null
+        },
+        {
+          "sub_op_id": "S004-03",
+          "sequence": 3,
+          "operation_type": "drill",
+          "operation_name": "Drill precision and clearance holes undersize/final as applicable",
+          "formula_hint": "point",
+          "target_feature_ids": [
+            "F013",
+            "F046",
+            "F067",
+            "F068",
+            "F069"
+          ],
+          "formula_inputs_used": {
+            "process_type": "point",
+            "hole_diameter_mm": 11.0,
+            "hole_count": 25,
+            "material_machinability": "medium",
+            "tolerance_class": "tight"
+          },
+          "cycle_time": {
+            "cutting_time_min": 4.2387,
+            "non_cutting_time_min": 0.05,
+            "total_time_min": 4.2887,
+            "formula_family": "point",
+            "cutting_parameters": {
+              "cutting_speed_m_min": 27.5,
+              "rpm": 796.0,
+              "rpm_capped": false,
+              "feed_per_rev_mm": 0.126,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": null,
+              "flute_count": null,
+              "tool_diameter_mm": 11.0,
+              "step_over_mm": null,
+              "depth_per_pass_mm": null,
+              "number_of_passes": 25,
+              "reversal_factor": null
+            },
+            "calculation_notes": [],
+            "confidence": "medium",
+            "warnings": []
+          },
+          "skipped": false,
+          "skip_reason": null
+        },
+        {
+          "sub_op_id": "S004-04",
+          "sequence": 4,
+          "operation_type": "counterbore",
+          "operation_name": "Machine \u00d833 spotfaces for \u00d815 H7 hole pattern",
+          "formula_hint": "point",
+          "target_feature_ids": [
+            "F014"
+          ],
+          "formula_inputs_used": {
+            "process_type": "point",
+            "hole_diameter_mm": 15.0,
+            "hole_count": 12,
+            "counterbore_diameter_mm": 33.0,
+            "material_machinability": "medium",
+            "tolerance_class": "tight"
+          },
+          "cycle_time": {
+            "cutting_time_min": 2.3305,
+            "non_cutting_time_min": 0.024,
+            "total_time_min": 2.3545,
+            "formula_family": "point",
+            "cutting_parameters": {
+              "cutting_speed_m_min": 27.5,
+              "rpm": 584.0,
+              "rpm_capped": false,
+              "feed_per_rev_mm": 0.15,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": null,
+              "flute_count": null,
+              "tool_diameter_mm": 15.0,
+              "step_over_mm": null,
+              "depth_per_pass_mm": null,
+              "number_of_passes": 12,
+              "reversal_factor": null
+            },
+            "calculation_notes": [],
+            "confidence": "medium",
+            "warnings": []
+          },
+          "skipped": false,
+          "skip_reason": null
+        },
+        {
+          "sub_op_id": "S004-05",
+          "sequence": 5,
+          "operation_type": "tap",
+          "operation_name": "Drill/tap all M8 internal thread groups",
+          "formula_hint": "pitch_locked",
+          "target_feature_ids": [
+            "F015",
+            "F016",
+            "F017",
+            "F018",
+            "F019"
+          ],
+          "formula_inputs_used": {
+            "process_type": "pitch_locked",
+            "hole_diameter_mm": 8.0,
+            "hole_count": 33,
+            "thread_pitch_mm": 1.0,
+            "thread_depth_mm": 14.0,
+            "thread_major_diameter_mm": 8.0,
+            "material_machinability": "medium",
+            "tolerance_class": "standard"
+          },
+          "cycle_time": {
+            "cutting_time_min": 1.6889,
+            "non_cutting_time_min": 0.044,
+            "total_time_min": 1.7329,
+            "formula_family": "pitch_locked",
+            "cutting_parameters": {
+              "cutting_speed_m_min": 16.5,
+              "rpm": 657.0,
+              "rpm_capped": false,
+              "feed_per_rev_mm": 1.0,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": null,
+              "flute_count": null,
+              "tool_diameter_mm": null,
+              "step_over_mm": null,
+              "depth_per_pass_mm": null,
+              "number_of_passes": 33,
+              "reversal_factor": 2.1
+            },
+            "calculation_notes": [],
+            "confidence": "high",
+            "warnings": []
+          },
+          "skipped": false,
+          "skip_reason": null
+        },
+        {
+          "sub_op_id": "S004-06",
+          "sequence": 6,
+          "operation_type": "tap",
+          "operation_name": "Drill/tap all M5x0.8 internal thread groups",
+          "formula_hint": "pitch_locked",
+          "target_feature_ids": [
+            "F020",
+            "F021",
+            "F022",
+            "F023",
+            "F024",
+            "F066",
+            "F070"
+          ],
+          "formula_inputs_used": {
+            "process_type": "pitch_locked",
+            "hole_diameter_mm": 5.0,
+            "hole_count": 8,
+            "thread_pitch_mm": 0.8,
+            "thread_depth_mm": 11.0,
+            "thread_major_diameter_mm": 5.0,
+            "material_machinability": "medium",
+            "tolerance_class": "standard"
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.2599,
+            "non_cutting_time_min": 0.0107,
+            "total_time_min": 0.2706,
+            "formula_family": "pitch_locked",
+            "cutting_parameters": {
+              "cutting_speed_m_min": 16.5,
+              "rpm": 1050.0,
+              "rpm_capped": false,
+              "feed_per_rev_mm": 0.8,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": null,
+              "flute_count": null,
+              "tool_diameter_mm": null,
+              "step_over_mm": null,
+              "depth_per_pass_mm": null,
+              "number_of_passes": 8,
+              "reversal_factor": 2.1
+            },
+            "calculation_notes": [],
+            "confidence": "high",
+            "warnings": []
+          },
+          "skipped": false,
+          "skip_reason": null
+        }
+      ],
+      "time_summary": {
+        "setup_time_min": 15.0,
+        "handling_time_min": 0.3,
+        "total_cutting_time_min": 17.4602,
+        "total_non_cutting_time_min": 0.6687,
+        "total_machining_time_min": 18.4289,
+        "sub_operation_count": 6,
+        "outside_process": false
+      }
+    },
+    {
+      "setup_id": "S005",
+      "sequence": 5,
+      "setup_name": "Pre-heat-treatment deburr and clean",
+      "machine_family": "finish_bench",
+      "in_house": true,
+      "outside_process": false,
+      "sub_operations": [
+        {
+          "sub_op_id": "S005-01",
+          "sequence": 1,
+          "operation_type": "deburr_edge",
+          "operation_name": "Remove sharp edges, hole burrs and prepare general 1 x 45 chamfers before heat treatment",
+          "formula_hint": "fixed",
+          "target_feature_ids": [
+            "F034",
+            "F075",
+            "F013",
+            "F014",
+            "F015",
+            "F016",
+            "F017",
+            "F018",
+            "F019",
+            "F020",
+            "F021",
+            "F022",
+            "F023",
+            "F024",
+            "F066",
+            "F067",
+            "F068",
+            "F069",
+            "F070"
+          ],
+          "formula_inputs_used": {
+            "process_type": "fixed",
+            "chamfer_size_mm": 1.0,
+            "chamfer_angle_deg": 45.0
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.0,
+            "non_cutting_time_min": 1.0,
+            "total_time_min": 1.0,
+            "formula_family": "fixed",
+            "cutting_parameters": {
+              "cutting_speed_m_min": null,
+              "rpm": null,
+              "rpm_capped": false,
+              "feed_per_rev_mm": null,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": null,
+              "flute_count": null,
+              "tool_diameter_mm": null,
+              "step_over_mm": null,
+              "depth_per_pass_mm": null,
+              "number_of_passes": null,
+              "reversal_factor": null
+            },
+            "calculation_notes": [],
+            "confidence": "high",
+            "warnings": []
+          },
+          "skipped": false,
+          "skip_reason": null
+        },
+        {
+          "sub_op_id": "S005-02",
+          "sequence": 2,
+          "operation_type": "cleaning",
+          "operation_name": "Degrease and dry before heat treatment",
+          "formula_hint": "fixed",
+          "target_feature_ids": [
+            "F001"
+          ],
+          "formula_inputs_used": {
+            "process_type": "fixed",
+            "blank_length_mm": 671.1
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.0,
+            "non_cutting_time_min": 0.3,
+            "total_time_min": 0.3,
+            "formula_family": "fixed",
+            "cutting_parameters": {
+              "cutting_speed_m_min": null,
+              "rpm": null,
+              "rpm_capped": false,
+              "feed_per_rev_mm": null,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": null,
+              "flute_count": null,
+              "tool_diameter_mm": null,
+              "step_over_mm": null,
+              "depth_per_pass_mm": null,
+              "number_of_passes": null,
+              "reversal_factor": null
+            },
+            "calculation_notes": [],
+            "confidence": "high",
+            "warnings": []
+          },
+          "skipped": false,
+          "skip_reason": null
+        }
+      ],
+      "time_summary": {
+        "setup_time_min": 3.0,
+        "handling_time_min": 0.3,
+        "total_cutting_time_min": 0.0,
+        "total_non_cutting_time_min": 1.3,
+        "total_machining_time_min": 1.6,
+        "sub_operation_count": 2,
+        "outside_process": false
+      }
+    },
+    {
+      "setup_id": "S006",
+      "sequence": 6,
+      "setup_name": "Heat treat to 31-38 HRC",
+      "machine_family": "outside_vendor",
+      "in_house": false,
+      "outside_process": true,
+      "sub_operations": [
+        {
+          "sub_op_id": "S006-01",
+          "sequence": 1,
+          "operation_type": "heat_treat",
+          "operation_name": "Quench and temper / approved heat treatment to 31-38 HRC",
+          "formula_hint": "fixed",
+          "target_feature_ids": [
+            "F001"
+          ],
+          "formula_inputs_used": {
+            "process_type": "fixed",
+            "target_hardness_hrc": 38.0,
+            "max_section_thickness_mm": 309.0,
+            "heat_treat_process": "quench_temper_to_31_38_HRC"
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.0,
+            "non_cutting_time_min": 0.0,
+            "total_time_min": 0.0,
+            "formula_family": "outside",
+            "cutting_parameters": {
+              "cutting_speed_m_min": null,
+              "rpm": null,
+              "rpm_capped": false,
+              "feed_per_rev_mm": null,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": null,
+              "flute_count": null,
+              "tool_diameter_mm": null,
+              "step_over_mm": null,
+              "depth_per_pass_mm": null,
+              "number_of_passes": null,
+              "reversal_factor": null
+            },
+            "calculation_notes": [
+              "Outside process \u2014 no in-house cycle time."
+            ],
+            "confidence": "low",
+            "warnings": []
+          },
+          "skipped": true,
+          "skip_reason": "Outside process"
+        }
+      ],
+      "time_summary": {
+        "setup_time_min": 0.0,
+        "handling_time_min": 0.0,
+        "total_cutting_time_min": 0.0,
+        "total_non_cutting_time_min": 0.0,
+        "total_machining_time_min": 0.0,
+        "sub_operation_count": 1,
+        "outside_process": true
+      }
+    },
+    {
+      "setup_id": "S007",
+      "sequence": 7,
+      "setup_name": "Post-heat-treatment datum grinding and precision bore/hole finishing",
+      "machine_family": "outside_vendor",
+      "in_house": false,
+      "outside_process": true,
+      "sub_operations": [
+        {
+          "sub_op_id": "S007-01",
+          "sequence": 1,
+          "operation_type": "grinding",
+          "operation_name": "Surface grind/recover critical datum faces after heat treatment",
+          "formula_hint": "grinding",
+          "target_feature_ids": [
+            "F002",
+            "F003",
+            "F043",
+            "F044",
+            "F045",
+            "F047"
+          ],
+          "formula_inputs_used": {
+            "process_type": "grinding",
+            "surface_grind_area_mm2": 207369.9,
+            "surface_grind_length_mm": 671.1,
+            "surface_grind_width_mm": 309.0,
+            "surface_grind_stock_mm": 0.3,
+            "tolerance_class": "tight",
+            "material_hardness_hrc": 38.0
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.0,
+            "non_cutting_time_min": 0.0,
+            "total_time_min": 0.0,
+            "formula_family": "outside",
+            "cutting_parameters": {
+              "cutting_speed_m_min": null,
+              "rpm": null,
+              "rpm_capped": false,
+              "feed_per_rev_mm": null,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": null,
+              "flute_count": null,
+              "tool_diameter_mm": null,
+              "step_over_mm": null,
+              "depth_per_pass_mm": null,
+              "number_of_passes": null,
+              "reversal_factor": null
+            },
+            "calculation_notes": [
+              "Outside process \u2014 no in-house cycle time."
+            ],
+            "confidence": "low",
+            "warnings": []
+          },
+          "skipped": true,
+          "skip_reason": "Outside process"
+        },
+        {
+          "sub_op_id": "S007-02",
+          "sequence": 2,
+          "operation_type": "grinding",
+          "operation_name": "ID grind G-G precision bores to pre-hone size",
+          "formula_hint": "grinding",
+          "target_feature_ids": [
+            "F054",
+            "F055"
+          ],
+          "formula_inputs_used": {
+            "process_type": "grinding",
+            "hole_count": 2,
+            "grinding_stock_radial_mm": 0.1,
+            "grinding_diameter_mm": 38.5,
+            "tolerance_class": "tight",
+            "material_hardness_hrc": 38.0
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.0,
+            "non_cutting_time_min": 0.0,
+            "total_time_min": 0.0,
+            "formula_family": "outside",
+            "cutting_parameters": {
+              "cutting_speed_m_min": null,
+              "rpm": null,
+              "rpm_capped": false,
+              "feed_per_rev_mm": null,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": null,
+              "flute_count": null,
+              "tool_diameter_mm": null,
+              "step_over_mm": null,
+              "depth_per_pass_mm": null,
+              "number_of_passes": null,
+              "reversal_factor": null
+            },
+            "calculation_notes": [
+              "Outside process \u2014 no in-house cycle time."
+            ],
+            "confidence": "low",
+            "warnings": []
+          },
+          "skipped": true,
+          "skip_reason": "Outside process"
+        },
+        {
+          "sub_op_id": "S007-03",
+          "sequence": 3,
+          "operation_type": "honing",
+          "operation_name": "Hone final H7/H8 precision bores and holes",
+          "formula_hint": "honing",
+          "target_feature_ids": [
+            "F013",
+            "F046",
+            "F054",
+            "F055",
+            "F067",
+            "F068"
+          ],
+          "formula_inputs_used": {
+            "process_type": "honing",
+            "hole_count": 18,
+            "honing_diameter_mm": 15.0,
+            "honing_stock_on_diameter_mm": 0.02,
+            "tolerance_class": "tight",
+            "material_hardness_hrc": 38.0
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.0,
+            "non_cutting_time_min": 0.0,
+            "total_time_min": 0.0,
+            "formula_family": "outside",
+            "cutting_parameters": {
+              "cutting_speed_m_min": null,
+              "rpm": null,
+              "rpm_capped": false,
+              "feed_per_rev_mm": null,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": null,
+              "flute_count": null,
+              "tool_diameter_mm": null,
+              "step_over_mm": null,
+              "depth_per_pass_mm": null,
+              "number_of_passes": null,
+              "reversal_factor": null
+            },
+            "calculation_notes": [
+              "Outside process \u2014 no in-house cycle time."
+            ],
+            "confidence": "low",
+            "warnings": []
+          },
+          "skipped": true,
+          "skip_reason": "Outside process"
+        },
+        {
+          "sub_op_id": "S007-04",
+          "sequence": 4,
+          "operation_type": "inspection",
+          "operation_name": "Verify post-HT precision bores before release to plating",
+          "formula_hint": "fixed",
+          "target_feature_ids": [
+            "F013",
+            "F046",
+            "F054",
+            "F055",
+            "F067",
+            "F068"
+          ],
+          "formula_inputs_used": {
+            "process_type": "fixed",
+            "hole_diameter_mm": 15.0,
+            "hole_count": 18,
+            "tolerance_class": "tight",
+            "material_hardness_hrc": 38.0
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.0,
+            "non_cutting_time_min": 0.0,
+            "total_time_min": 0.0,
+            "formula_family": "outside",
+            "cutting_parameters": {
+              "cutting_speed_m_min": null,
+              "rpm": null,
+              "rpm_capped": false,
+              "feed_per_rev_mm": null,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": null,
+              "flute_count": null,
+              "tool_diameter_mm": null,
+              "step_over_mm": null,
+              "depth_per_pass_mm": null,
+              "number_of_passes": null,
+              "reversal_factor": null
+            },
+            "calculation_notes": [
+              "Outside process \u2014 no in-house cycle time."
+            ],
+            "confidence": "low",
+            "warnings": []
+          },
+          "skipped": true,
+          "skip_reason": "Outside process"
+        }
+      ],
+      "time_summary": {
+        "setup_time_min": 0.0,
+        "handling_time_min": 0.0,
+        "total_cutting_time_min": 0.0,
+        "total_non_cutting_time_min": 0.0,
+        "total_machining_time_min": 0.0,
+        "sub_operation_count": 4,
+        "outside_process": true
+      }
+    },
+    {
+      "setup_id": "S008",
+      "sequence": 8,
+      "setup_name": "Post-grind clean, protect precision features and mask for plating",
+      "machine_family": "finish_bench",
+      "in_house": true,
+      "outside_process": false,
+      "sub_operations": [
+        {
+          "sub_op_id": "S008-01",
+          "sequence": 1,
+          "operation_type": "cleaning",
+          "operation_name": "Clean grinding/honing residue and mask precision holes, bores and threads",
+          "formula_hint": "fixed",
+          "target_feature_ids": [
+            "F012",
+            "F013",
+            "F014",
+            "F015",
+            "F016",
+            "F017",
+            "F018",
+            "F019",
+            "F020",
+            "F021",
+            "F022",
+            "F023",
+            "F024",
+            "F046",
+            "F053",
+            "F054",
+            "F055",
+            "F066",
+            "F067",
+            "F068",
+            "F069",
+            "F070"
+          ],
+          "formula_inputs_used": {
+            "process_type": "fixed",
+            "hole_diameter_mm": 8.0,
+            "hole_count": 60,
+            "tolerance_class": "tight"
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.0,
+            "non_cutting_time_min": 0.3,
+            "total_time_min": 0.3,
+            "formula_family": "fixed",
+            "cutting_parameters": {
+              "cutting_speed_m_min": null,
+              "rpm": null,
+              "rpm_capped": false,
+              "feed_per_rev_mm": null,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": null,
+              "flute_count": null,
+              "tool_diameter_mm": null,
+              "step_over_mm": null,
+              "depth_per_pass_mm": null,
+              "number_of_passes": null,
+              "reversal_factor": null
+            },
+            "calculation_notes": [],
+            "confidence": "high",
+            "warnings": []
+          },
+          "skipped": false,
+          "skip_reason": null
+        }
+      ],
+      "time_summary": {
+        "setup_time_min": 3.0,
+        "handling_time_min": 0.3,
+        "total_cutting_time_min": 0.0,
+        "total_non_cutting_time_min": 0.3,
+        "total_machining_time_min": 0.6,
+        "sub_operation_count": 1,
+        "outside_process": false
+      }
+    },
+    {
+      "setup_id": "S009",
+      "sequence": 9,
+      "setup_name": "Cadmium plating 8-12 microns and embrittlement relief bake",
+      "machine_family": "plating_line",
+      "in_house": true,
+      "outside_process": false,
+      "sub_operations": [
+        {
+          "sub_op_id": "S009-01",
+          "sequence": 1,
+          "operation_type": "plating",
+          "operation_name": "Cadmium plate 8-12 microns with hydrogen embrittlement relief bake",
+          "formula_hint": "fixed",
+          "target_feature_ids": [
+            "F001",
+            "F002",
+            "F003",
+            "F004",
+            "F005",
+            "F006",
+            "F007",
+            "F008",
+            "F009",
+            "F010",
+            "F011",
+            "F012",
+            "F013",
+            "F014",
+            "F015",
+            "F016",
+            "F017",
+            "F018",
+            "F019",
+            "F020",
+            "F021",
+            "F022",
+            "F023",
+            "F024",
+            "F025",
+            "F026",
+            "F027",
+            "F028",
+            "F029",
+            "F030",
+            "F031",
+            "F032",
+            "F033",
+            "F034",
+            "F035",
+            "F036",
+            "F037",
+            "F038",
+            "F039",
+            "F040",
+            "F041",
+            "F042",
+            "F043",
+            "F044",
+            "F045",
+            "F046",
+            "F047",
+            "F048",
+            "F049",
+            "F050",
+            "F051",
+            "F052",
+            "F053",
+            "F054",
+            "F055",
+            "F056",
+            "F057",
+            "F058",
+            "F059",
+            "F060",
+            "F061",
+            "F062",
+            "F063",
+            "F064",
+            "F065",
+            "F066",
+            "F067",
+            "F068",
+            "F069",
+            "F070",
+            "F071",
+            "F072",
+            "F073",
+            "F074",
+            "F075"
+          ],
+          "formula_inputs_used": {
+            "process_type": "fixed",
+            "blank_length_mm": 671.1,
+            "target_hardness_hrc": 38.0,
+            "max_section_thickness_mm": 309.0,
+            "material_hardness_hrc": 38.0
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.0,
+            "non_cutting_time_min": 0.5,
+            "total_time_min": 0.5,
+            "formula_family": "fixed",
+            "cutting_parameters": {
+              "cutting_speed_m_min": null,
+              "rpm": null,
+              "rpm_capped": false,
+              "feed_per_rev_mm": null,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": null,
+              "flute_count": null,
+              "tool_diameter_mm": null,
+              "step_over_mm": null,
+              "depth_per_pass_mm": null,
+              "number_of_passes": null,
+              "reversal_factor": null
+            },
+            "calculation_notes": [],
+            "confidence": "low",
+            "warnings": []
+          },
+          "skipped": false,
+          "skip_reason": null
+        }
+      ],
+      "time_summary": {
+        "setup_time_min": 0.0,
+        "handling_time_min": 0.3,
+        "total_cutting_time_min": 0.0,
+        "total_non_cutting_time_min": 0.5,
+        "total_machining_time_min": 0.8,
+        "sub_operation_count": 1,
+        "outside_process": false
+      }
+    },
+    {
+      "setup_id": "S010",
+      "sequence": 10,
+      "setup_name": "Remove masking, final clean and mark part number",
+      "machine_family": "finish_bench",
+      "in_house": true,
+      "outside_process": false,
+      "sub_operations": [
+        {
+          "sub_op_id": "S010-01",
+          "sequence": 1,
+          "operation_type": "cleaning",
+          "operation_name": "Remove masking and clean plated part",
+          "formula_hint": "fixed",
+          "target_feature_ids": [
+            "F001"
+          ],
+          "formula_inputs_used": {
+            "process_type": "fixed",
+            "blank_length_mm": 671.1
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.0,
+            "non_cutting_time_min": 0.3,
+            "total_time_min": 0.3,
+            "formula_family": "fixed",
+            "cutting_parameters": {
+              "cutting_speed_m_min": null,
+              "rpm": null,
+              "rpm_capped": false,
+              "feed_per_rev_mm": null,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": null,
+              "flute_count": null,
+              "tool_diameter_mm": null,
+              "step_over_mm": null,
+              "depth_per_pass_mm": null,
+              "number_of_passes": null,
+              "reversal_factor": null
+            },
+            "calculation_notes": [],
+            "confidence": "high",
+            "warnings": []
+          },
+          "skipped": false,
+          "skip_reason": null
+        },
+        {
+          "sub_op_id": "S010-02",
+          "sequence": 2,
+          "operation_type": "marking",
+          "operation_name": "Mark part number per drawing note",
+          "formula_hint": "fixed",
+          "target_feature_ids": [
+            "F001"
+          ],
+          "formula_inputs_used": {
+            "process_type": "fixed",
+            "blank_length_mm": 671.1
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.0,
+            "non_cutting_time_min": 0.2,
+            "total_time_min": 0.2,
+            "formula_family": "fixed",
+            "cutting_parameters": {
+              "cutting_speed_m_min": null,
+              "rpm": null,
+              "rpm_capped": false,
+              "feed_per_rev_mm": null,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": null,
+              "flute_count": null,
+              "tool_diameter_mm": null,
+              "step_over_mm": null,
+              "depth_per_pass_mm": null,
+              "number_of_passes": null,
+              "reversal_factor": null
+            },
+            "calculation_notes": [],
+            "confidence": "high",
+            "warnings": []
+          },
+          "skipped": false,
+          "skip_reason": null
+        }
+      ],
+      "time_summary": {
+        "setup_time_min": 3.0,
+        "handling_time_min": 0.3,
+        "total_cutting_time_min": 0.0,
+        "total_non_cutting_time_min": 0.5,
+        "total_machining_time_min": 0.8,
+        "sub_operation_count": 2,
+        "outside_process": false
+      }
+    },
+    {
+      "setup_id": "S011",
+      "sequence": 11,
+      "setup_name": "Final dimensional, thread, coating and documentation inspection",
+      "machine_family": "outside_vendor",
+      "in_house": false,
+      "outside_process": true,
+      "sub_operations": [
+        {
+          "sub_op_id": "S011-01",
+          "sequence": 1,
+          "operation_type": "cmm_fai",
+          "operation_name": "Final CMM/FAI for datum-controlled hole patterns, bores and envelope",
+          "formula_hint": "fixed",
+          "target_feature_ids": [
+            "F001",
+            "F002",
+            "F003",
+            "F013",
+            "F017",
+            "F018",
+            "F019",
+            "F038",
+            "F039",
+            "F040",
+            "F041",
+            "F042",
+            "F043",
+            "F044",
+            "F045",
+            "F046",
+            "F047",
+            "F048",
+            "F054",
+            "F055",
+            "F067",
+            "F068",
+            "F069"
+          ],
+          "formula_inputs_used": {
+            "process_type": "fixed",
+            "hole_diameter_mm": 15.0,
+            "hole_count": 25,
+            "blank_length_mm": 671.1,
+            "tolerance_class": "tight",
+            "material_hardness_hrc": 38.0
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.0,
+            "non_cutting_time_min": 0.0,
+            "total_time_min": 0.0,
+            "formula_family": "outside",
+            "cutting_parameters": {
+              "cutting_speed_m_min": null,
+              "rpm": null,
+              "rpm_capped": false,
+              "feed_per_rev_mm": null,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": null,
+              "flute_count": null,
+              "tool_diameter_mm": null,
+              "step_over_mm": null,
+              "depth_per_pass_mm": null,
+              "number_of_passes": null,
+              "reversal_factor": null
+            },
+            "calculation_notes": [
+              "Outside process \u2014 no in-house cycle time."
+            ],
+            "confidence": "low",
+            "warnings": []
+          },
+          "skipped": true,
+          "skip_reason": "Outside process"
+        },
+        {
+          "sub_op_id": "S011-02",
+          "sequence": 2,
+          "operation_type": "inspection",
+          "operation_name": "Final thread, coating thickness, hardness and visual inspection",
+          "formula_hint": "fixed",
+          "target_feature_ids": [
+            "F015",
+            "F016",
+            "F017",
+            "F018",
+            "F019",
+            "F020",
+            "F021",
+            "F022",
+            "F023",
+            "F024",
+            "F066",
+            "F070",
+            "F001"
+          ],
+          "formula_inputs_used": {
+            "process_type": "fixed",
+            "hole_count": 41,
+            "thread_pitch_mm": 1.0,
+            "thread_depth_mm": 14.0,
+            "thread_major_diameter_mm": 8.0,
+            "target_hardness_hrc": 38.0,
+            "tolerance_class": "standard",
+            "material_hardness_hrc": 38.0
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.0,
+            "non_cutting_time_min": 0.0,
+            "total_time_min": 0.0,
+            "formula_family": "outside",
+            "cutting_parameters": {
+              "cutting_speed_m_min": null,
+              "rpm": null,
+              "rpm_capped": false,
+              "feed_per_rev_mm": null,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": null,
+              "flute_count": null,
+              "tool_diameter_mm": null,
+              "step_over_mm": null,
+              "depth_per_pass_mm": null,
+              "number_of_passes": null,
+              "reversal_factor": null
+            },
+            "calculation_notes": [
+              "Outside process \u2014 no in-house cycle time."
+            ],
+            "confidence": "low",
+            "warnings": []
+          },
+          "skipped": true,
+          "skip_reason": "Outside process"
+        },
+        {
+          "sub_op_id": "S011-03",
+          "sequence": 3,
+          "operation_type": "packaging",
+          "operation_name": "Protect plated precision housing for shipment",
+          "formula_hint": "fixed",
+          "target_feature_ids": [
+            "F001"
+          ],
+          "formula_inputs_used": {
+            "process_type": "fixed",
+            "blank_length_mm": 671.1,
+            "forging_net_weight_kg": 109.0
+          },
+          "cycle_time": {
+            "cutting_time_min": 0.0,
+            "non_cutting_time_min": 0.0,
+            "total_time_min": 0.0,
+            "formula_family": "outside",
+            "cutting_parameters": {
+              "cutting_speed_m_min": null,
+              "rpm": null,
+              "rpm_capped": false,
+              "feed_per_rev_mm": null,
+              "feed_per_tooth_mm": null,
+              "feed_rate_mm_min": null,
+              "flute_count": null,
+              "tool_diameter_mm": null,
+              "step_over_mm": null,
+              "depth_per_pass_mm": null,
+              "number_of_passes": null,
+              "reversal_factor": null
+            },
+            "calculation_notes": [
+              "Outside process \u2014 no in-house cycle time."
+            ],
+            "confidence": "low",
+            "warnings": []
+          },
+          "skipped": true,
+          "skip_reason": "Outside process"
+        }
+      ],
+      "time_summary": {
+        "setup_time_min": 0.0,
+        "handling_time_min": 0.0,
+        "total_cutting_time_min": 0.0,
+        "total_non_cutting_time_min": 0.0,
+        "total_machining_time_min": 0.0,
+        "sub_operation_count": 3,
+        "outside_process": true
+      }
+    }
+  ],
+  "total_summary": {
+    "total_setups": 11,
+    "total_sub_operations": 27,
+    "total_setup_time_min": 54.0,
+    "total_handling_time_min": 2.1,
+    "total_cutting_time_min": 35.34,
+    "total_non_cutting_time_min": 4.21,
+    "total_machining_time_min": 41.64,
+    "total_time_min": 95.64,
+    "outside_process_count": 4,
+    "confidence": "low"
+  },
+  "global_warnings": [],
+  "global_assumptions": []
+}
