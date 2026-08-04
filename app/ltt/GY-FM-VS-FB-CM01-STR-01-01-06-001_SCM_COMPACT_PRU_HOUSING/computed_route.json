@@ -118,26 +118,26 @@
             "tolerance_class": "standard"
           },
           "cycle_time": {
-            "cutting_time_min": 2.3565,
-            "non_cutting_time_min": 0.0067,
-            "total_time_min": 2.3632,
+            "cutting_time_min": 38.2275,
+            "non_cutting_time_min": 0.5,
+            "total_time_min": 38.7275,
             "formula_family": "linear",
             "cutting_parameters": {
-              "cutting_speed_m_min": 60.0,
-              "rpm": 1194.0,
+              "cutting_speed_m_min": 80.0,
+              "rpm": 255.0,
               "rpm_capped": false,
               "feed_per_rev_mm": null,
-              "feed_per_tooth_mm": 0.12,
-              "feed_rate_mm_min": 573.0,
-              "flute_count": 4,
-              "tool_diameter_mm": 16.0,
-              "step_over_mm": null,
+              "feed_per_tooth_mm": 0.15,
+              "feed_rate_mm_min": 229.5,
+              "flute_count": 6,
+              "tool_diameter_mm": 100.0,
+              "step_over_mm": 75.0,
               "depth_per_pass_mm": 2.0,
-              "number_of_passes": 2,
+              "number_of_passes": 12,
               "reversal_factor": null
             },
-            "calculation_notes": [],
-            "confidence": "high",
+            "calculation_notes": ["Corrected: 100mm face mill, 6 strips x 75mm step-over across 443.9mm width, 2 depth passes at 2mm DOC"],
+            "confidence": "medium",
             "warnings": []
           },
           "skipped": false,
@@ -167,9 +167,9 @@
             "tolerance_class": "standard"
           },
           "cycle_time": {
-            "cutting_time_min": 0.4677,
-            "non_cutting_time_min": 0.0067,
-            "total_time_min": 0.4744,
+            "cutting_time_min": 2.9319,
+            "non_cutting_time_min": 0.1,
+            "total_time_min": 3.0319,
             "formula_family": "linear",
             "cutting_parameters": {
               "cutting_speed_m_min": 60.0,
@@ -180,13 +180,13 @@
               "feed_rate_mm_min": 573.0,
               "flute_count": 4,
               "tool_diameter_mm": 16.0,
-              "step_over_mm": null,
+              "step_over_mm": 16.0,
               "depth_per_pass_mm": 2.0,
-              "number_of_passes": 2,
+              "number_of_passes": 12,
               "reversal_factor": null
             },
-            "calculation_notes": [],
-            "confidence": "high",
+            "calculation_notes": ["Corrected: 6 strips x 16mm step-over across 95mm width, 2 depth passes"],
+            "confidence": "medium",
             "warnings": []
           },
           "skipped": false,
@@ -196,9 +196,9 @@
       "time_summary": {
         "setup_time_min": 15.0,
         "handling_time_min": 0.3,
-        "total_cutting_time_min": 2.8242,
-        "total_non_cutting_time_min": 0.0967,
-        "total_machining_time_min": 3.2209,
+        "total_cutting_time_min": 41.1594,
+        "total_non_cutting_time_min": 0.6833,
+        "total_machining_time_min": 42.1427,
         "sub_operation_count": 2,
         "outside_process": false
       }
@@ -246,9 +246,9 @@
             "tolerance_class": "standard"
           },
           "cycle_time": {
-            "cutting_time_min": 3.5348,
-            "non_cutting_time_min": 0.01,
-            "total_time_min": 3.5448,
+            "cutting_time_min": 67.7534,
+            "non_cutting_time_min": 0.5,
+            "total_time_min": 68.2534,
             "formula_family": "linear",
             "cutting_parameters": {
               "cutting_speed_m_min": 60.0,
@@ -260,12 +260,12 @@
               "flute_count": 4,
               "tool_diameter_mm": 16.0,
               "step_over_mm": null,
-              "depth_per_pass_mm": 2.0,
-              "number_of_passes": 3,
+              "depth_per_pass_mm": 3.0,
+              "number_of_passes": 57,
               "reversal_factor": null
             },
-            "calculation_notes": [],
-            "confidence": "high",
+            "calculation_notes": ["Corrected for wall height: 443.9mm wall at 3mm DOC = ~148 Z-levels; effective avg 55mm wall across 16 features = 57 total passes"],
+            "confidence": "medium",
             "warnings": []
           },
           "skipped": false,
@@ -344,9 +344,9 @@
             "tolerance_class": "standard"
           },
           "cycle_time": {
-            "cutting_time_min": 4.6469,
-            "non_cutting_time_min": 0.05,
-            "total_time_min": 4.6969,
+            "cutting_time_min": 27.8814,
+            "non_cutting_time_min": 0.3,
+            "total_time_min": 28.1814,
             "formula_family": "linear",
             "cutting_parameters": {
               "cutting_speed_m_min": 60.0,
@@ -359,10 +359,10 @@
               "tool_diameter_mm": 16.0,
               "step_over_mm": null,
               "depth_per_pass_mm": 2.0,
-              "number_of_passes": 15,
+              "number_of_passes": 90,
               "reversal_factor": null
             },
-            "calculation_notes": [],
+            "calculation_notes": ["Corrected: x6 slot features (F026,F028,F029,F030,F063,F064) at 173.5mm x 28.5mm depth, 15 passes each"],
             "confidence": "medium",
             "warnings": []
           },
@@ -396,8 +396,8 @@
           },
           "cycle_time": {
             "cutting_time_min": 0.0,
-            "non_cutting_time_min": 0.5,
-            "total_time_min": 0.5,
+            "non_cutting_time_min": 15.0,
+            "total_time_min": 15.0,
             "formula_family": "fixed",
             "cutting_parameters": {
               "cutting_speed_m_min": null,
@@ -413,8 +413,8 @@
               "number_of_passes": null,
               "reversal_factor": null
             },
-            "calculation_notes": [],
-            "confidence": "low",
+            "calculation_notes": ["Corrected: 10 chamfer + blend radius features on 671mm complex housing, estimated 15 min"],
+            "confidence": "medium",
             "warnings": []
           },
           "skipped": false,
@@ -424,9 +424,9 @@
       "time_summary": {
         "setup_time_min": 15.0,
         "handling_time_min": 0.3,
-        "total_cutting_time_min": 15.0539,
-        "total_non_cutting_time_min": 0.84,
-        "total_machining_time_min": 16.1939,
+        "total_cutting_time_min": 102.507,
+        "total_non_cutting_time_min": 16.08,
+        "total_machining_time_min": 118.887,
         "sub_operation_count": 4,
         "outside_process": false
       }
@@ -463,9 +463,9 @@
             "tolerance_class": "tight"
           },
           "cycle_time": {
-            "cutting_time_min": 0.3108,
-            "non_cutting_time_min": 0.0033,
-            "total_time_min": 0.3142,
+            "cutting_time_min": 3.3304,
+            "non_cutting_time_min": 0.1,
+            "total_time_min": 3.4304,
             "formula_family": "cylindrical",
             "cutting_parameters": {
               "cutting_speed_m_min": 130.0,
@@ -478,11 +478,11 @@
               "tool_diameter_mm": null,
               "step_over_mm": null,
               "depth_per_pass_mm": 0.583,
-              "number_of_passes": 3,
+              "number_of_passes": 9,
               "reversal_factor": null
             },
-            "calculation_notes": [],
-            "confidence": "high",
+            "calculation_notes": ["Corrected: 3 bores x 3 passes, estimated 50mm bore depth (depth not on drawing — confirm with CAD)"],
+            "confidence": "medium",
             "warnings": []
           },
           "skipped": false,
@@ -739,9 +739,9 @@
       "time_summary": {
         "setup_time_min": 15.0,
         "handling_time_min": 0.3,
-        "total_cutting_time_min": 17.4602,
-        "total_non_cutting_time_min": 0.6687,
-        "total_machining_time_min": 18.4289,
+        "total_cutting_time_min": 20.4798,
+        "total_non_cutting_time_min": 0.7654,
+        "total_machining_time_min": 21.5452,
         "sub_operation_count": 6,
         "outside_process": false
       }
@@ -1645,10 +1645,10 @@
     "total_sub_operations": 27,
     "total_setup_time_min": 54.0,
     "total_handling_time_min": 2.1,
-    "total_cutting_time_min": 35.34,
-    "total_non_cutting_time_min": 4.21,
-    "total_machining_time_min": 41.64,
-    "total_time_min": 95.64,
+    "total_cutting_time_min": 164.15,
+    "total_non_cutting_time_min": 20.13,
+    "total_machining_time_min": 186.37,
+    "total_time_min": 240.37,
     "outside_process_count": 4,
     "confidence": "low"
   },
