@@ -209,17 +209,17 @@ export interface FeasibilityData {
     risk_level: string;
     blockers: string[];
     risks: FeasibilityRisk[];
-    outside_processes_needed: { process: string; reason: string; sequence_position: string; estimated_lead_time_days: number | null }[];
-    material_machinable: boolean;
-    tolerances_achievable: boolean;
-    machines_available: boolean;
-    part_fits_envelopes: boolean;
-    assessment_notes: string;
+    outside_processes_needed?: { process: string; reason: string; sequence_position: string; estimated_lead_time_days: number | null }[];
+    material_machinable?: boolean;
+    tolerances_achievable?: boolean;
+    machines_available?: boolean;
+    part_fits_envelopes?: boolean;
+    assessment_notes?: string;
   };
-  feature_assessments: FeatureAssessment[];
-  clarifications: Clarification[];
-  assumptions: Assumption[];
-  reasoning_summary: string;
+  feature_assessments?: FeatureAssessment[];
+  clarifications?: Clarification[];
+  assumptions?: Assumption[];
+  reasoning_summary?: string;
 }
 
 // ============================================================
@@ -559,8 +559,8 @@ export interface ReportData {
   excelQuote: ExcelQuoteData | null;
   setupQuote: SetupQuoteData | null;
   partLevelSpecs: PartLevelSpec[];
-  balloonedImageUrl: string;
-  originalImageUrl: string;
+  balloonedImageUrls: string[];
+  originalImageUrls: string[];
 }
 
 export interface PartListItem {

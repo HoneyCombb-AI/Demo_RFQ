@@ -66,5 +66,379 @@
                 ]
             }
         ]
+    },
+    "clarifications": [
+        {
+            "clarification_id": "S1_C001",
+            "question": "Confirm the true through-depth/width of the overall housing: is the visible 309 mm dimension the maximum Z-depth, or should another value from sheet 2 govern?",
+            "why_it_matters": "The part envelope uses 671.1 x 443.9 x approximately 309 mm; Z-depth affects feature depths, weight/volume estimates, and interpretation of through features.",
+            "blocks": [
+                "part_envelope",
+                "F001",
+                "F002",
+                "F003"
+            ],
+            "suggested_default": "Use 309.0 mm as the maximum housing depth from this sheet.",
+            "priority": "medium"
+        },
+        {
+            "clarification_id": "S1_C002",
+            "question": "Are the Ø15 H7 holes through holes, and what is the required depth of the Ø33 spotfaces?",
+            "why_it_matters": "The Ø15 H7 and Ø33 spotface pattern is critical and has position tolerance; hole and spotface depths are not legible/explicit on this sheet.",
+            "blocks": [
+                "F013",
+                "F014"
+            ],
+            "suggested_default": "Treat Ø15 H7 holes as through unless otherwise specified; spotface depth to clean up only if no depth is specified.",
+            "priority": "high"
+        },
+        {
+            "clarification_id": "S1_C003",
+            "question": "Confirm the pitch-circle diameter(s) for the M8x1x14 bolt-circle patterns; the PCD values appear to be around Ø78 or Ø73 but are not fully legible.",
+            "why_it_matters": "The M8 threaded bolt-circle patterns F017-F019 depend on exact PCD and count for functional fit and inspection.",
+            "blocks": [
+                "F017",
+                "F018",
+                "F019"
+            ],
+            "suggested_default": "Use the printed PCD from the released drawing; do not rely on the approximate Ø78 mm extraction.",
+            "priority": "high"
+        },
+        {
+            "clarification_id": "S1_C004",
+            "question": "Confirm whether the SECTION A-A M5x0.8 tapped hole has an 11 mm depth like the other M5 callouts, or a different/deeper requirement.",
+            "why_it_matters": "F021 is explicitly M5x0.8 but the depth is not readable; tapped depth affects thread engagement.",
+            "blocks": [
+                "F021"
+            ],
+            "suggested_default": "If no separate depth is specified, use M5x0.8 x 11 deep to match adjacent M5 callouts.",
+            "priority": "medium"
+        },
+        {
+            "clarification_id": "S1_C005",
+            "question": "Confirm the full dimensions and depth scheme for DETAIL-E rounded rectangular pockets typical at 5 locations.",
+            "why_it_matters": "DETAIL-E dimensions are partially legible and control five repeated pocket/recess features.",
+            "blocks": [
+                "F025"
+            ],
+            "suggested_default": "Use visible values R20/R8 and 5.7 local step, with final dimensions checked against source CAD/drawing text.",
+            "priority": "medium"
+        },
+        {
+            "clarification_id": "S1_C006",
+            "question": "Confirm exact datum feature surfaces for datum A and datum K.",
+            "why_it_matters": "GD&T controls reference datums A/B/C and possibly C/K; the raster shows boxed A and K but the datum triangle/targeted surface is difficult to disambiguate from section/detail leaders.",
+            "blocks": [
+                "datum_scheme",
+                "F038",
+                "F042",
+                "F013"
+            ],
+            "suggested_default": "Use the boxed datum letters as identified and associate A/K with the adjacent main-view reference surfaces.",
+            "priority": "medium"
+        },
+        {
+            "clarification_id": "S1_C007",
+            "question": "Confirm the default surface finish value represented by the title-block surface-finish symbols.",
+            "why_it_matters": "The title block and general note show machining finish symbols in microns, but the exact default symbol/value is unclear; no feature-specific Ra values were applied.",
+            "blocks": [
+                "part_level_specs"
+            ],
+            "suggested_default": "Apply only the explicit general note and do not assign per-feature Ra values unless a clear surface-finish symbol is provided.",
+            "priority": "low"
+        },
+        {
+            "clarification_id": "S1_UNNAMED_001",
+            "question": "What is the depth of F026 (Central vertical slot/recess in web)? No depth dimension was found on the drawing for this feature.",
+            "why_it_matters": "",
+            "blocks": [],
+            "suggested_default": null,
+            "priority": "medium"
+        },
+        {
+            "clarification_id": "S1_UNNAMED_002",
+            "question": "What is the depth of F027 (Lower left/right rounded rectangular pockets)? No depth dimension was found on the drawing for this feature.",
+            "why_it_matters": "",
+            "blocks": [],
+            "suggested_default": null,
+            "priority": "medium"
+        },
+        {
+            "clarification_id": "S1_UNNAMED_003",
+            "question": "What is the depth of F030 (Diagonal internal slot/cavity in SECTION S-S)? No depth dimension was found on the drawing for this feature.",
+            "why_it_matters": "",
+            "blocks": [],
+            "suggested_default": null,
+            "priority": "medium"
+        },
+        {
+            "clarification_id": "S1_C_LOW_F004",
+            "question": "Please verify feature F004 (Large curved upper saddle/flange). It was extracted with low confidence (0.64). Confirm whether this feature exists and its dimensions are correct.",
+            "why_it_matters": "Low-confidence features may be misread dimensions or hallucinated geometry. Agent 2 needs accurate data to plan machining operations.",
+            "blocks": [
+                "F004"
+            ],
+            "suggested_default": "Accept as extracted if verified.",
+            "priority": "medium"
+        },
+        {
+            "clarification_id": "S1_C_LOW_F012",
+            "question": "Please verify feature F012 (Central bores in circular bosses). It was extracted with low confidence (0.55). Confirm whether this feature exists and its dimensions are correct.",
+            "why_it_matters": "Low-confidence features may be misread dimensions or hallucinated geometry. Agent 2 needs accurate data to plan machining operations.",
+            "blocks": [
+                "F012"
+            ],
+            "suggested_default": "Accept as extracted if verified.",
+            "priority": "medium"
+        },
+        {
+            "clarification_id": "S1_C_LOW_F026",
+            "question": "Please verify feature F026 (Central vertical slot/recess in web). It was extracted with low confidence (0.62). Confirm whether this feature exists and its dimensions are correct.",
+            "why_it_matters": "Low-confidence features may be misread dimensions or hallucinated geometry. Agent 2 needs accurate data to plan machining operations.",
+            "blocks": [
+                "F026"
+            ],
+            "suggested_default": "Accept as extracted if verified.",
+            "priority": "medium"
+        },
+        {
+            "clarification_id": "S1_C_LOW_F027",
+            "question": "Please verify feature F027 (Lower left/right rounded rectangular pockets). It was extracted with low confidence (0.62). Confirm whether this feature exists and its dimensions are correct.",
+            "why_it_matters": "Low-confidence features may be misread dimensions or hallucinated geometry. Agent 2 needs accurate data to plan machining operations.",
+            "blocks": [
+                "F027"
+            ],
+            "suggested_default": "Accept as extracted if verified.",
+            "priority": "medium"
+        },
+        {
+            "clarification_id": "S2_C001",
+            "question": "Confirm the complete finished overall length, width and height of the housing, since this sheet is marked SHEET 2 OF 2 and does not clearly show full envelope dimensions.",
+            "why_it_matters": "The part envelope cannot be reconstructed from local section/detail dimensions alone; complete envelope dimensions affect downstream interpretation of stock size, inspection setup and feature positions.",
+            "blocks": [
+                "part_envelope"
+            ],
+            "suggested_default": "Use sheet 1 overall dimensions if available; leave envelope dimensions null for this sheet-only extraction.",
+            "priority": "high"
+        },
+        {
+            "clarification_id": "S2_C002",
+            "question": "Confirm the partially legible SECTION G-G diameter and GD&T callouts, especially Ø38.5H8, Ø35.5H8/Ø33.5h6, Ø100, and the feature control frames reading 0.05 G and possibly Ø0.01 G.",
+            "why_it_matters": "These appear to define precision coaxial bore/boss features and datum-G controls; exact values and GD&T type are critical for accurate geometry and tolerance embedding.",
+            "blocks": [
+                "F054",
+                "F055",
+                "F056",
+                "F057",
+                "datum_scheme"
+            ],
+            "suggested_default": "Treat Ø38.5H8, Ø35.5H8 and Ø100 as best-read values with low confidence; treat the 0.05-to-G frame as a low-confidence runout/related control until confirmed.",
+            "priority": "high"
+        },
+        {
+            "clarification_id": "S2_C003",
+            "question": "Confirm whether the DETAIL-H Ø11H7 and Ø10.5 hole groups are through holes and provide the plate/wall thickness or blind depths if not through.",
+            "why_it_matters": "The callouts identify diameters and counts but do not show THRU or a depth symbol on this sheet; depth condition is needed for complete 3D feature definition.",
+            "blocks": [
+                "F067",
+                "F068",
+                "F069"
+            ],
+            "suggested_default": "Assume through holes only if sheet 1 or associated sections confirm the wall thickness; otherwise keep depth null.",
+            "priority": "medium"
+        },
+        {
+            "clarification_id": "S2_C004",
+            "question": "Confirm the count, depth and exact location for the DETAIL-H M5x0.8 tapped hole callout on the inclined pad.",
+            "why_it_matters": "A separate SECTION N-N callout clearly defines 2 M5x0.8 tapped holes 11 deep, but the DETAIL-H tapped-hole leader is not fully legible and may represent an additional tapped feature.",
+            "blocks": [
+                "F070",
+                "F071"
+            ],
+            "suggested_default": "Model as one additional M5x0.8 tapped feature with unknown depth unless confirmed as the same feature as SECTION N-N.",
+            "priority": "medium"
+        },
+        {
+            "clarification_id": "S2_C005",
+            "question": "Confirm the machining surface finish table values in the bottom-left general notes block.",
+            "why_it_matters": "The note heading 'MACHINING FINISH IN MICRONS' is visible, but the exact symbol/value mapping is not fully legible; surface finish may apply generally or to specific machining symbols.",
+            "blocks": [
+                "part_level_specs"
+            ],
+            "suggested_default": "Record only the visible heading and do not assign feature-specific Ra values without a clear symbol/value callout.",
+            "priority": "low"
+        },
+        {
+            "clarification_id": "S2_UNNAMED_001",
+            "question": "What is the depth of F011 (SECTION F-F arched rectangular cavity)? No depth dimension was found on the drawing for this feature.",
+            "why_it_matters": "",
+            "blocks": [],
+            "suggested_default": null,
+            "priority": "medium"
+        },
+        {
+            "clarification_id": "S2_UNNAMED_002",
+            "question": "What is the depth of F016 (SECTION G-G stepped internal recess/profile)? No depth dimension was found on the drawing for this feature.",
+            "why_it_matters": "",
+            "blocks": [],
+            "suggested_default": null,
+            "priority": "medium"
+        },
+        {
+            "clarification_id": "S2_UNNAMED_003",
+            "question": "What is the depth of F019 (SECTION J-J rectangular central cavity/channel)? No depth dimension was found on the drawing for this feature.",
+            "why_it_matters": "",
+            "blocks": [],
+            "suggested_default": null,
+            "priority": "medium"
+        },
+        {
+            "clarification_id": "S2_UNNAMED_004",
+            "question": "What is the depth of F020 (SECTION K-K symmetric side pocket/cavity)? No depth dimension was found on the drawing for this feature.",
+            "why_it_matters": "",
+            "blocks": [],
+            "suggested_default": null,
+            "priority": "medium"
+        },
+        {
+            "clarification_id": "S2_UNNAMED_005",
+            "question": "What is the depth of F022 (SECTION P-P large curved internal channel)? No depth dimension was found on the drawing for this feature.",
+            "why_it_matters": "",
+            "blocks": [],
+            "suggested_default": null,
+            "priority": "medium"
+        },
+        {
+            "clarification_id": "S2_UNNAMED_006",
+            "question": "What is the depth of F023 (SECTION Q-Q U-shaped channel)? No depth dimension was found on the drawing for this feature.",
+            "why_it_matters": "",
+            "blocks": [],
+            "suggested_default": null,
+            "priority": "medium"
+        },
+        {
+            "clarification_id": "S2_C_LOW_F005",
+            "question": "Please verify feature F005 (Datum H hole/axis in Detail-H). It was extracted with low confidence (0.64). Confirm whether this feature exists and its dimensions are correct.",
+            "why_it_matters": "Low-confidence features may be misread dimensions or hallucinated geometry. Agent 2 needs accurate data to plan machining operations.",
+            "blocks": [
+                "F046"
+            ],
+            "suggested_default": "Accept as extracted if verified.",
+            "priority": "medium"
+        },
+        {
+            "clarification_id": "S2_C_LOW_F006",
+            "question": "Please verify feature F006 (Datum J plane/face in Detail-H). It was extracted with low confidence (0.62). Confirm whether this feature exists and its dimensions are correct.",
+            "why_it_matters": "Low-confidence features may be misread dimensions or hallucinated geometry. Agent 2 needs accurate data to plan machining operations.",
+            "blocks": [
+                "F047"
+            ],
+            "suggested_default": "Accept as extracted if verified.",
+            "priority": "medium"
+        },
+        {
+            "clarification_id": "S2_C_LOW_F007",
+            "question": "Please verify feature F007 (Referenced datum D feature). It was extracted with low confidence (0.50). Confirm whether this feature exists and its dimensions are correct.",
+            "why_it_matters": "Low-confidence features may be misread dimensions or hallucinated geometry. Agent 2 needs accurate data to plan machining operations.",
+            "blocks": [
+                "F048"
+            ],
+            "suggested_default": "Accept as extracted if verified.",
+            "priority": "medium"
+        },
+        {
+            "clarification_id": "S2_C_LOW_F012",
+            "question": "Please verify feature F012 (Central circular opening in SECTION F-F). It was extracted with low confidence (0.55). Confirm whether this feature exists and its dimensions are correct.",
+            "why_it_matters": "Low-confidence features may be misread dimensions or hallucinated geometry. Agent 2 needs accurate data to plan machining operations.",
+            "blocks": [
+                "F053"
+            ],
+            "suggested_default": "Accept as extracted if verified.",
+            "priority": "medium"
+        },
+        {
+            "clarification_id": "S2_C_LOW_F014",
+            "question": "Please verify feature F014 (SECTION G-G smaller coaxial precision bore/step). It was extracted with low confidence (0.55). Confirm whether this feature exists and its dimensions are correct.",
+            "why_it_matters": "Low-confidence features may be misread dimensions or hallucinated geometry. Agent 2 needs accurate data to plan machining operations.",
+            "blocks": [
+                "F055"
+            ],
+            "suggested_default": "Accept as extracted if verified.",
+            "priority": "medium"
+        },
+        {
+            "clarification_id": "S2_C_LOW_F015",
+            "question": "Please verify feature F015 (SECTION G-G Ø100 external cylindrical boss surface). It was extracted with low confidence (0.63). Confirm whether this feature exists and its dimensions are correct.",
+            "why_it_matters": "Low-confidence features may be misread dimensions or hallucinated geometry. Agent 2 needs accurate data to plan machining operations.",
+            "blocks": [
+                "F056"
+            ],
+            "suggested_default": "Accept as extracted if verified.",
+            "priority": "medium"
+        },
+        {
+            "clarification_id": "S2_C_LOW_F016",
+            "question": "Please verify feature F016 (SECTION G-G stepped internal recess/profile). It was extracted with low confidence (0.62). Confirm whether this feature exists and its dimensions are correct.",
+            "why_it_matters": "Low-confidence features may be misread dimensions or hallucinated geometry. Agent 2 needs accurate data to plan machining operations.",
+            "blocks": [
+                "F057"
+            ],
+            "suggested_default": "Accept as extracted if verified.",
+            "priority": "medium"
+        }
+    ],
+      "assumptions": [
+    {
+      "assumption_id": "A002",
+      "text": "Near-net forging is selected as starting stock because 15CDV6 is a forgeable alloy steel and machining the 109 kg complex housing from block would be highly wasteful.",
+      "applies_to": [
+        "stock",
+        "S001"
+      ],
+      "impact": "high",
+      "confidence": 0.62
+    },
+    {
+      "assumption_id": "A003",
+      "text": "SPM milling/drilling with dedicated fixtures can accommodate the large housing by indexing or extended supports, despite smaller published VMC travel.",
+      "applies_to": [
+        "S002",
+        "S003",
+        "S004"
+      ],
+      "impact": "high",
+      "confidence": 0.55
+    },
+    {
+      "assumption_id": "A004",
+      "text": "Where hole or pocket depths are missing, formula_inputs leave depths null and use available diameter/count/area values only.",
+      "applies_to": [
+        "S003",
+        "S004",
+        "S007"
+      ],
+      "impact": "medium",
+      "confidence": 0.9
+    },
+    {
+      "assumption_id": "A005",
+      "text": "Heat treatment to 31-38 HRC is performed after rough/semi machining and before post-HT hard finishing of precision bores/datums.",
+      "applies_to": [
+        "S006",
+        "S007"
+      ],
+      "impact": "high",
+      "confidence": 0.72
+    },
+    {
+      "assumption_id": "A006",
+      "text": "Cadmium plating is performed after all machining; precision holes, bores and threads are masked unless customer specification confirms coating allowance.",
+      "applies_to": [
+        "S008",
+        "S009"
+      ],
+      "impact": "medium",
+      "confidence": 0.75
     }
+  ]
 }

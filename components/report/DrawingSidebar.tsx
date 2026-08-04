@@ -14,8 +14,8 @@ import {
 } from "@/components/ui/dialog"
 
 interface DrawingSidebarProps {
-  balloonedImageUrl: string
-  originalImageUrl: string
+  balloonedImageUrls: string[]
+  originalImageUrls: string[]
 }
 
 function InteractiveImageZoom({ imageUrl, altText }: { imageUrl: string; altText: string }) {
@@ -53,7 +53,7 @@ function InteractiveImageZoom({ imageUrl, altText }: { imageUrl: string; altText
 
   return (
     <div className="relative w-full h-full flex items-center justify-center overflow-hidden bg-muted/30 rounded-md touch-none group">
-      
+
       {/* Zoom Controls Overlay */}
       <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 flex items-center gap-1 bg-background/80 backdrop-blur-md p-1.5 rounded-full border shadow-lg transition-opacity opacity-0 group-hover:opacity-100 focus-within:opacity-100">
         <Button variant="ghost" size="icon" onClick={handleZoomOut} disabled={scale <= 0.5} className="h-8 w-8 rounded-full">
@@ -72,7 +72,7 @@ function InteractiveImageZoom({ imageUrl, altText }: { imageUrl: string; altText
       </div>
 
       {/* Image Container */}
-      <div 
+      <div
         className={`w-full h-full flex items-center justify-center ${isDragging ? 'cursor-grabbing' : 'cursor-grab'}`}
         onPointerDown={handlePointerDown}
         onPointerMove={handlePointerMove}
@@ -85,11 +85,11 @@ function InteractiveImageZoom({ imageUrl, altText }: { imageUrl: string; altText
         }}
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img 
-          src={imageUrl} 
+        <img
+          src={imageUrl}
           alt={altText}
           draggable={false}
-          style={{ 
+          style={{
             transform: `translate(${position.x}px, ${position.y}px) scale(${scale})`,
             transition: isDragging ? 'none' : 'transform 0.15s ease-out'
           }}
@@ -101,31 +101,32 @@ function InteractiveImageZoom({ imageUrl, altText }: { imageUrl: string; altText
 }
 
 
-export function DrawingSidebar({ balloonedImageUrl, originalImageUrl }: DrawingSidebarProps) {
+export function DrawingSidebar({ balloonedImageUrls, originalImageUrls }: DrawingSidebarProps) {
   const [activeImage, setActiveImage] = React.useState<"ballooned" | "original">("ballooned")
-  
-  const currentImageUrl = activeImage === "ballooned" ? balloonedImageUrl : originalImageUrl
+
+  const currentUrls = activeImage === "ballooned" ? balloonedImageUrls : originalImageUrls
+  const isMultiPage = currentUrls.length > 1
 
   return (
     <div data-tour="drawing-sidebar" className="w-95 shrink-0 flex flex-col border-r border-border bg-muted/20">
       <div className="p-4 border-b">
-        <ToggleGroup 
-          value={[activeImage]} 
+        <ToggleGroup
+          value={[activeImage]}
           onValueChange={(val: any) => {
             const newVal = Array.isArray(val) ? val[0] : val;
             if (newVal === "ballooned" || newVal === "original") setActiveImage(newVal);
           }}
           className="justify-start w-full"
         >
-          <ToggleGroupItem 
-            value="ballooned" 
+          <ToggleGroupItem
+            value="ballooned"
             aria-label="Show ballooned drawing"
             className="flex-1 uppercase text-xs tracking-widest font-semibold data-[state=on]:bg-foreground data-[state=on]:text-background"
           >
             Ballooned
           </ToggleGroupItem>
-          <ToggleGroupItem 
-            value="original" 
+          <ToggleGroupItem
+            value="original"
             aria-label="Show original drawing"
             className="flex-1 uppercase text-xs tracking-widest font-semibold data-[state=on]:bg-foreground data-[state=on]:text-background"
           >
@@ -133,31 +134,46 @@ export function DrawingSidebar({ balloonedImageUrl, originalImageUrl }: DrawingS
           </ToggleGroupItem>
         </ToggleGroup>
       </div>
-      
+
       <ScrollArea className="flex-1 p-4">
-        <Dialog>
-          <DialogTrigger>
-            <div data-tour="drawing-image" className="rounded-md border bg-card p-1 shadow-sm cursor-zoom-in hover:shadow-md transition-shadow">
-              {/* Using standard img since it comes from API route and might change */}
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img 
-                src={currentImageUrl} 
-                alt={`${activeImage} drawing`}
-                className="w-full h-auto rounded-sm object-contain"
-              />
+        <div className="space-y-4">
+          {currentUrls.map((url, i) => (
+            <div key={url}>
+              {isMultiPage && (
+                <div className="text-[10px] uppercase tracking-widest font-semibold text-muted-foreground mb-2 px-1">
+                  Page {i + 1} of {currentUrls.length}
+                </div>
+              )}
+              <Dialog>
+                <DialogTrigger>
+                  <div
+                    data-tour={i === 0 ? "drawing-image" : undefined}
+                    className="rounded-md border bg-card p-1 shadow-sm cursor-zoom-in hover:shadow-md transition-shadow"
+                  >
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={url}
+                      alt={`${activeImage} drawing${isMultiPage ? ` page ${i + 1}` : ""}`}
+                      className="w-full h-auto rounded-sm object-contain"
+                    />
+                  </div>
+                </DialogTrigger>
+                <DialogContent className="max-w-[95vw] sm:max-w-[95vw] h-[95vh] w-full p-2 bg-background border-none shadow-2xl flex flex-col">
+                  <div className="sr-only">
+                    <DialogTitle>Drawing Preview</DialogTitle>
+                    <DialogDescription>
+                      Full screen view of the {activeImage} engineering drawing{isMultiPage ? ` (page ${i + 1} of ${currentUrls.length})` : ""}.
+                    </DialogDescription>
+                  </div>
+                  <div className="flex-1 overflow-hidden rounded-md border border-border">
+                    <InteractiveImageZoom imageUrl={url} altText={`${activeImage} drawing full`} />
+                  </div>
+                </DialogContent>
+              </Dialog>
             </div>
-          </DialogTrigger>
-          <DialogContent className="max-w-[95vw] sm:max-w-[95vw] h-[95vh] w-full p-2 bg-background border-none shadow-2xl flex flex-col">
-            <div className="sr-only">
-              <DialogTitle>Drawing Preview</DialogTitle>
-              <DialogDescription>Full screen view of the {activeImage} engineering drawing.</DialogDescription>
-            </div>
-            <div className="flex-1 overflow-hidden rounded-md border border-border">
-              <InteractiveImageZoom imageUrl={currentImageUrl} altText={`${activeImage} drawing full`} />
-            </div>
-          </DialogContent>
-        </Dialog>
-        
+          ))}
+        </div>
+
         <div className="mt-4 text-center text-xs text-muted-foreground">
           Click image to expand
         </div>

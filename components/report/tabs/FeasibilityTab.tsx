@@ -121,9 +121,16 @@ export function FeasibilityTab({ data }: { data: ReportData }) {
   const [searchTerm, setSearchTerm] = React.useState("")
   const f = data.feasibility.feasibility
 
+  const hasChecklistFields =
+    f.material_machinable !== undefined ||
+    f.tolerances_achievable !== undefined ||
+    f.machines_available !== undefined ||
+    f.part_fits_envelopes !== undefined
+
   // Flatten all spec assessments from all features
   const allSpecs = React.useMemo(() => {
-    return data.feasibility.feature_assessments.flatMap((fa) => 
+    if (!data.feasibility.feature_assessments) return []
+    return data.feasibility.feature_assessments.flatMap((fa) =>
       fa.spec_assessments.map((sa) => ({
         ...sa,
         feature_id: fa.feature_id,
@@ -136,8 +143,8 @@ export function FeasibilityTab({ data }: { data: ReportData }) {
   const filteredSpecs = React.useMemo(() => {
     const term = searchTerm.toLowerCase()
     if (!term) return allSpecs
-    
-    return allSpecs.filter((sa) => 
+
+    return allSpecs.filter((sa) =>
       sa.spec_description.toLowerCase().includes(term) ||
       sa.feature_name.toLowerCase().includes(term) ||
       sa.feature_id.toLowerCase().includes(term) ||
@@ -151,7 +158,6 @@ export function FeasibilityTab({ data }: { data: ReportData }) {
   if (f.status.toLowerCase().includes("risk")) statusColor = "bg-amber-100 text-amber-700"
   if (f.status.toLowerCase().includes("not")) statusColor = "bg-red-100 text-red-700"
 
-  // Check items helper
   const CheckItem = ({ label, passed }: { label: string; passed: boolean }) => (
     <div className="flex items-center gap-2 text-sm">
       {passed ? (
@@ -180,78 +186,131 @@ export function FeasibilityTab({ data }: { data: ReportData }) {
           </div>
         </CardHeader>
         <CardContent>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-            <div className="space-y-2 bg-muted/30 p-4 rounded-lg">
-              <h4 className="text-xs uppercase tracking-widest font-semibold text-muted-foreground mb-3">Capabilities Checklist</h4>
-              <CheckItem label="Material Machinable" passed={f.material_machinable} />
-              <CheckItem label="Tolerances Achievable" passed={f.tolerances_achievable} />
-              <CheckItem label="Machines Available" passed={f.machines_available} />
-              <CheckItem label="Part Fits Envelopes" passed={f.part_fits_envelopes} />
-            </div>
-            
-            <div className="space-y-2">
-              <h4 className="text-xs uppercase tracking-widest font-semibold text-muted-foreground mb-3">Assessment Notes</h4>
-              <p className="text-sm leading-relaxed text-foreground">
-                {f.assessment_notes}
-              </p>
-              {f.outside_processes_needed && f.outside_processes_needed.length > 0 && (
-                <div className="mt-4 pt-4 border-t">
-                  <span className="text-xs font-semibold uppercase text-muted-foreground mr-2">Outside Processes:</span>
-                  <span className="text-sm">{f.outside_processes_needed.map(p => p.process).join(", ")}</span>
-                </div>
-              )}
-            </div>
+          <div className={`grid grid-cols-1 ${hasChecklistFields || f.assessment_notes ? "md:grid-cols-2" : ""} gap-6 mb-6`}>
+            {hasChecklistFields && (
+              <div className="space-y-2 bg-muted/30 p-4 rounded-lg">
+                <h4 className="text-xs uppercase tracking-widest font-semibold text-muted-foreground mb-3">Capabilities Checklist</h4>
+                {f.material_machinable !== undefined && <CheckItem label="Material Machinable" passed={f.material_machinable} />}
+                {f.tolerances_achievable !== undefined && <CheckItem label="Tolerances Achievable" passed={f.tolerances_achievable} />}
+                {f.machines_available !== undefined && <CheckItem label="Machines Available" passed={f.machines_available} />}
+                {f.part_fits_envelopes !== undefined && <CheckItem label="Part Fits Envelopes" passed={f.part_fits_envelopes} />}
+              </div>
+            )}
+
+            {(f.assessment_notes || (f.outside_processes_needed && f.outside_processes_needed.length > 0)) && (
+              <div className="space-y-2">
+                {f.assessment_notes && (
+                  <>
+                    <h4 className="text-xs uppercase tracking-widest font-semibold text-muted-foreground mb-3">Assessment Notes</h4>
+                    <p className="text-sm leading-relaxed text-foreground">
+                      {f.assessment_notes}
+                    </p>
+                  </>
+                )}
+                {f.outside_processes_needed && f.outside_processes_needed.length > 0 && (
+                  <div className="mt-4 pt-4 border-t">
+                    <span className="text-xs font-semibold uppercase text-muted-foreground mr-2">Outside Processes:</span>
+                    <span className="text-sm">{f.outside_processes_needed.map(p => p.process).join(", ")}</span>
+                  </div>
+                )}
+              </div>
+            )}
           </div>
         </CardContent>
       </Card>
 
-      {/* Flattened Spec Assessments Table */}
-      <section>
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
-          <h3 className="text-lg font-semibold">Spec Assessments</h3>
-          <div className="flex items-center gap-3">
-            <div className="relative max-w-sm w-full sm:w-64">
-              <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
-              <Input
-                type="search"
-                placeholder="Filter specs..."
-                className="pl-9 bg-background"
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-              />
-            </div>
-            <div className="text-sm text-muted-foreground font-mono whitespace-nowrap">
-              {filteredSpecs.length} specs
+      {/* Risks Section */}
+      {f.risks && f.risks.length > 0 && (
+        <section>
+          <h3 className="text-lg font-semibold mb-4">Risks</h3>
+          <div className="space-y-3">
+            {f.risks.map((risk, i) => (
+              <div key={i} className="bg-amber-50 border border-amber-200 rounded-lg p-4 dark:bg-amber-950/20 dark:border-amber-800">
+                <div className="flex items-start gap-3">
+                  <AlertTriangle className="w-4 h-4 text-amber-600 mt-0.5 shrink-0" />
+                  <div className="flex-1 min-w-0">
+                    <div className="font-semibold text-sm text-amber-800 dark:text-amber-200 mb-1">
+                      {formatText(risk.risk_type)}
+                    </div>
+                    <p className="text-sm text-amber-900 dark:text-amber-300 mb-2">{risk.description}</p>
+                    {risk.mitigation && (
+                      <p className="text-sm text-amber-700 dark:text-amber-400">
+                        <span className="font-semibold">Mitigation:</span> {risk.mitigation}
+                      </p>
+                    )}
+                    {risk.affected_feature_ids.length > 0 && (
+                      <div className="mt-2 flex flex-wrap gap-1">
+                        {risk.affected_feature_ids.map(id => (
+                          <Badge key={id} variant="outline" className="text-[10px] font-mono border-amber-300 text-amber-700 dark:border-amber-700 dark:text-amber-400">
+                            {id}
+                          </Badge>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* Spec Assessments Section */}
+      {data.feasibility.feature_assessments && data.feasibility.feature_assessments.length > 0 ? (
+        <section>
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
+            <h3 className="text-lg font-semibold">Spec Assessments</h3>
+            <div className="flex items-center gap-3">
+              <div className="relative max-w-sm w-full sm:w-64">
+                <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
+                <Input
+                  type="search"
+                  placeholder="Filter specs..."
+                  className="pl-9 bg-background"
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                />
+              </div>
+              <div className="text-sm text-muted-foreground font-mono whitespace-nowrap">
+                {filteredSpecs.length} specs
+              </div>
             </div>
           </div>
-        </div>
 
-        <div className="rounded-lg border bg-background shadow-sm overflow-hidden">
-          {filteredSpecs.length === 0 ? (
-            <div className="text-center py-12 text-muted-foreground bg-muted/20 border-dashed">
-              No spec assessments match your search.
-            </div>
-          ) : (
-            <Table>
-              <TableHeader>
-                <TableRow className="bg-muted/70 hover:bg-muted/70 border-b-2 border-border/50">
-                  <TableHead className="w-9 px-2"></TableHead>
-                  <TableHead className="text-[11px] font-bold tracking-wider uppercase text-foreground/80">Specification</TableHead>
-                  <TableHead className="text-[11px] font-bold tracking-wider uppercase text-foreground/80">Nominal</TableHead>
-                  <TableHead className="text-[11px] font-bold tracking-wider uppercase text-foreground/80">Verdict</TableHead>
-                  <TableHead className="text-[11px] font-bold tracking-wider uppercase text-foreground/80">Process</TableHead>
-                  <TableHead className="text-[11px] font-bold tracking-wider uppercase text-foreground/80 text-right">Feature</TableHead>
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                {filteredSpecs.map((sa, i) => (
-                  <SpecRow key={`${sa.feature_id}-${i}`} sa={sa} />
-                ))}
-              </TableBody>
-            </Table>
-          )}
-        </div>
-      </section>
+          <div className="rounded-lg border bg-background shadow-sm overflow-hidden">
+            {filteredSpecs.length === 0 ? (
+              <div className="text-center py-12 text-muted-foreground bg-muted/20 border-dashed">
+                No spec assessments match your search.
+              </div>
+            ) : (
+              <Table>
+                <TableHeader>
+                  <TableRow className="bg-muted/70 hover:bg-muted/70 border-b-2 border-border/50">
+                    <TableHead className="w-9 px-2"></TableHead>
+                    <TableHead className="text-[11px] font-bold tracking-wider uppercase text-foreground/80">Specification</TableHead>
+                    <TableHead className="text-[11px] font-bold tracking-wider uppercase text-foreground/80">Nominal</TableHead>
+                    <TableHead className="text-[11px] font-bold tracking-wider uppercase text-foreground/80">Verdict</TableHead>
+                    <TableHead className="text-[11px] font-bold tracking-wider uppercase text-foreground/80">Process</TableHead>
+                    <TableHead className="text-[11px] font-bold tracking-wider uppercase text-foreground/80 text-right">Feature</TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  {filteredSpecs.map((sa, i) => (
+                    <SpecRow key={`${sa.feature_id}-${i}`} sa={sa} />
+                  ))}
+                </TableBody>
+              </Table>
+            )}
+          </div>
+        </section>
+      ) : (
+        <section>
+          <h3 className="text-lg font-semibold mb-4">Spec Assessments</h3>
+          <div className="rounded-lg border border-dashed bg-muted/20 p-12 text-center text-muted-foreground">
+            No spec-level assessments available for this part.
+          </div>
+        </section>
+      )}
     </div>
   )
 }

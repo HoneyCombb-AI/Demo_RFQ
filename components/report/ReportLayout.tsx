@@ -95,9 +95,9 @@ export function ReportLayout({ data }: { data: ReportData }) {
 
       {/* Main Content Area */}
       <main className="flex-1 flex flex-row overflow-hidden min-h-0">
-        <DrawingSidebar 
-          balloonedImageUrl={data.balloonedImageUrl} 
-          originalImageUrl={data.originalImageUrl} 
+        <DrawingSidebar
+          balloonedImageUrls={data.balloonedImageUrls}
+          originalImageUrls={data.originalImageUrls}
         />
         <ReportTabs 
           data={data} 

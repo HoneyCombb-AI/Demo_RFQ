@@ -1,5 +1,5 @@
 import { NextRequest } from "next/server"
-import { resolveSlug, getImagePath } from "@/lib/server-data"
+import { resolveSlug, findImageFile } from "@/lib/server-data"
 import fs from "fs/promises"
 
 type Params = {
@@ -13,13 +13,20 @@ export async function GET(request: NextRequest, { params }: Params) {
     return new Response("Invalid image type", { status: 400 })
   }
 
+  const pageParam = request.nextUrl.searchParams.get("page")
+  const page = pageParam ? parseInt(pageParam, 10) : 1
+
   try {
     const folderName = await resolveSlug(slug, org)
     if (!folderName) {
       return new Response("Part not found", { status: 404 })
     }
 
-    const imagePath = getImagePath(folderName, type as "ballooned" | "original", org)
+    const imagePath = await findImageFile(folderName, type as "ballooned" | "original", org, page)
+    if (!imagePath) {
+      return new Response("Image not found", { status: 404 })
+    }
+
     const fileBuffer = await fs.readFile(imagePath)
 
     return new Response(fileBuffer, {

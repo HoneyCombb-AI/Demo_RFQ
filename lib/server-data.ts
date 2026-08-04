@@ -17,6 +17,7 @@ const ORG_CONFIGS: Record<string, { quoteFile: string; quoteFormat: "excel" | "s
   jtt: { quoteFile: "excel_quote.json", quoteFormat: "excel" },
   alt: { quoteFile: "quote.json",       quoteFormat: "setup"  },
   sft: { quoteFile: "quote.json",       quoteFormat: "setup"  },
+  ltt: { quoteFile: "quote.json",       quoteFormat: "setup"  },
 };
 
 function orgDataDir(orgSlug: string): string {
@@ -259,6 +260,9 @@ export async function getReportData(
 
   const partLevelSpecs = derivePartLevelSpecs(featureGraph);
 
+  const apiBase = `/api/images/${orgSlug}/${slug}`;
+  const { balloonedImageUrls, originalImageUrls } = await getDrawingPageUrls(dir, orgSlug, slug);
+
   return {
     slug,
     folderName,
@@ -272,16 +276,55 @@ export async function getReportData(
     excelQuote,
     setupQuote,
     partLevelSpecs,
-    balloonedImageUrl: `/api/images/${orgSlug}/${slug}/ballooned`,
-    originalImageUrl:  `/api/images/${orgSlug}/${slug}/original`,
+    balloonedImageUrls,
+    originalImageUrls,
   };
 }
 
-export function getImagePath(
+async function getDrawingPageUrls(
+  dir: string,
+  orgSlug: string,
+  slug: string,
+): Promise<{ balloonedImageUrls: string[]; originalImageUrls: string[] }> {
+  const apiBase = `/api/images/${orgSlug}/${slug}`;
+  try {
+    const files = await fs.readdir(dir);
+    const balloonedMulti = files.filter((f) => /^ballooned_drawing_\d+\.png$/i.test(f)).sort();
+    const originalMulti = files.filter((f) => /^page_\d+_vlm\.png$/i.test(f)).sort();
+    if (balloonedMulti.length > 0) {
+      return {
+        balloonedImageUrls: balloonedMulti.map((_, i) => `${apiBase}/ballooned?page=${i + 1}`),
+        originalImageUrls: originalMulti.map((_, i) => `${apiBase}/original?page=${i + 1}`),
+      };
+    }
+  } catch {
+    // fall through
+  }
+  return {
+    balloonedImageUrls: [`${apiBase}/ballooned`],
+    originalImageUrls: [`${apiBase}/original`],
+  };
+}
+
+export async function findImageFile(
   folderName: string,
   type: "ballooned" | "original",
   orgSlug: string = "jtt",
-): string {
-  const filename = type === "ballooned" ? "ballooned_drawing.png" : "page_001_original.png";
-  return path.join(orgDataDir(orgSlug), folderName, filename);
+  page: number = 1,
+): Promise<string | null> {
+  const dir = path.join(orgDataDir(orgSlug), folderName);
+  const p = String(page).padStart(3, "0");
+  const candidates =
+    type === "ballooned"
+      ? [`ballooned_drawing.png`, `ballooned_drawing_${p}.png`]
+      : [`page_001_original.png`, `page_${p}_original.png`, `page_${p}_vlm.png`];
+  for (const name of candidates) {
+    try {
+      await fs.access(path.join(dir, name));
+      return path.join(dir, name);
+    } catch {
+      // try next
+    }
+  }
+  return null;
 }
