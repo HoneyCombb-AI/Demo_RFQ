@@ -16,12 +16,6 @@ import {
   ChevronLeft,
   X,
   CheckCircle2,
-  Mail,
-  FileSearch,
-  Layers,
-  Clock,
-  Calculator,
-  FileSpreadsheet,
 } from "lucide-react"
 
 interface StepData {
@@ -29,7 +23,7 @@ interface StepData {
   icon?: React.ReactNode
 }
 
-interface TourStepDef {
+export interface TourStepDef {
   target: string
   targetTab?: string
   placement: Step["placement"]
@@ -38,85 +32,6 @@ interface TourStepDef {
   icon: React.ReactNode
   content: string
 }
-
-const TOUR_STEP_DEFS: TourStepDef[] = [
-  {
-    target: "body",
-    placement: "center",
-    title: "Welcome Ravi Sir to Honeycomb AI!",
-    subtitle: "Automated RFQ Analysis",
-    icon: <Sparkles className="w-4 h-4 text-amber-500" />,
-    content:
-      "Welcome Ravi Sir. Here is the complete end-to-end RFQ automation from customer drawing in to final quote out.",
-  },
-  {
-    target: '[data-tour="header-info"]',
-    placement: "bottom",
-    title: "Email & Input Ingestion",
-    subtitle: "Input Processing",
-    icon: <Mail className="w-4 h-4 text-blue-500" />,
-    content:
-      "Your team forwards customer emails to our tracked inbox. Attached 2D drawings and email requirements are automatically pulled in.",
-  },
-  {
-    target: '[data-tour="drawing-image"]',
-    placement: "right",
-    title: "Automated 2D Drawing Ballooning",
-    subtitle: "2D Drawing & CAD Analysis",
-    icon: <FileSearch className="w-4 h-4 text-purple-500" />,
-    content:
-      "The attached 2D drawing is automatically parsed, vectorized, and ballooned with full characteristic numbers and tolerances.",
-  },
-  {
-    target: '[data-tour="tab-specs"]',
-    targetTab: "specs",
-    placement: "bottom",
-    title: "Extracted Part Specifications",
-    subtitle: "Switching to the Specs tab",
-    icon: <Layers className="w-4 h-4 text-emerald-500" />,
-    content:
-      "All drawing parameters, dimensions, threads, and tolerances are extracted into structured specification tables.",
-  },
-  {
-    target: '[data-tour="tab-feasibility"]',
-    targetTab: "feasibility",
-    placement: "bottom",
-    title: "Feasibility Summary",
-    subtitle: "Switching to the Feasibility tab",
-    icon: <CheckCircle2 className="w-4 h-4 text-teal-500" />,
-    content:
-      "Exact spec-wise feasibility report generated in your team's exact requested format.",
-  },
-  {
-    target: '[data-tour="tab-routing"]',
-    targetTab: "routing",
-    placement: "bottom",
-    title: "Routing & Cycle Time Calculation",
-    subtitle: "Switching to the Routing tab",
-    icon: <Clock className="w-4 h-4 text-indigo-500" />,
-    content:
-      "Detailed step-wise machines, processors, etc. used creating the incoming RFQ component (routing)- along with cycle times. Cycle times are calculated strictly using your company's excel sheets and engineering logic.",
-  },
-  {
-    target: '[data-tour="tab-quote"]',
-    targetTab: "quote",
-    placement: "bottom",
-    title: "Commercial Quote & Margins",
-    subtitle: "Switching to the Quote tab",
-    icon: <Calculator className="w-4 h-4 text-green-600" />,
-    content:
-      "Final quote displayed and broken down in your segments. Final quote for this RFQ verified by your team.",
-  },
-  {
-    target: "body",
-    placement: "center",
-    title: "Native Excel Output",
-    subtitle: "Complete Integration",
-    icon: <FileSpreadsheet className="w-4 h-4 text-emerald-600" />,
-    content:
-      "Everything is also automatically exported into your company's native Excel sheet format that they have been currently using for their RFQ quoting process. Excel sheet output for this RFQ attached in the email sent. Honeycomb AI analyses your RFQ within 15 mins.",
-  },
-]
 
 function TourTooltip({
   backProps,
@@ -243,12 +158,13 @@ interface JoyrideTourProps {
   isOpen: boolean
   onClose: () => void
   onTabChange?: (tab: string) => void
+  stepDefs: TourStepDef[]
 }
 
-export function JoyrideTour({ isOpen, onClose, onTabChange }: JoyrideTourProps) {
+export function JoyrideTour({ isOpen, onClose, onTabChange, stepDefs }: JoyrideTourProps) {
   const steps = React.useMemo<Step[]>(
     () =>
-      TOUR_STEP_DEFS.map((def) => ({
+      stepDefs.map((def) => ({
         target: def.target,
         placement: def.placement,
         title: def.title,
@@ -266,7 +182,7 @@ export function JoyrideTour({ isOpen, onClose, onTabChange }: JoyrideTourProps) 
             }
           : undefined,
       })),
-    [onTabChange]
+    [onTabChange, stepDefs]
   )
 
   const handleEvent = React.useCallback(
