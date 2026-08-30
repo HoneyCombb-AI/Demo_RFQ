@@ -62,6 +62,10 @@ export interface SurfaceFinish {
 export interface DimensionalTolerance {
   dimension_type: string;
   nominal_value_mm: number;
+  nominal_mm?: number;
+  upper_limit_mm?: number;
+  lower_limit_mm?: number;
+  qualifier?: string;
   plus_mm: number | null;
   minus_mm: number | null;
   tolerance_class: string | null;
@@ -537,6 +541,66 @@ export interface SetupQuoteData {
 }
 
 // ============================================================
+// TYPE DEFINITIONS — OBSC Quote (obsc format)
+// ============================================================
+
+export interface ObscQuoteWeights {
+  raw_bar_dia_mm: number;
+  actual_bar_dia_mm: number;
+  gross_weight_kg: number;
+  net_weight_kg: number;
+  scrap_weight_kg: number;
+}
+
+export interface ObscDirectCost {
+  material_cost_inr: number;
+  material_rate_per_kg_inr: number;
+  machining_cost_inr: number;
+  direct_base_inr: number;
+}
+
+export interface ObscCifAndOverheads {
+  packaging_charges_inr: number;
+  overhead_25_pct_inr: number;
+  logistics_cost_inr: number;
+  total_cif_inr: number;
+  scrap_recovery_credit_inr: number;
+  total_cost_per_pc_inr: number;
+}
+
+export interface ObscPricingAndDuties {
+  profit_10_pct_inr: number;
+  actual_cost_inr: number;
+  icc_and_rejection_inr: number;
+  custom_duty_3_5_pct_inr: number;
+  warehouse_cost_4_pct_inr: number;
+  final_landed_price_inr: number;
+}
+
+export interface ObscMachiningOp {
+  sequence: number;
+  operation_name: string;
+  machine_family: string;
+  cycle_time_sec: number;
+  hourly_rate_inr: number;
+  efficiency: number;
+  cost_per_piece_inr: number;
+  cost_per_piece_raw: number;
+}
+
+export interface ObscQuoteData {
+  drawing_number: string;
+  part_name: string;
+  material: string;
+  quantity: number;
+  weights: ObscQuoteWeights;
+  direct_cost: ObscDirectCost;
+  cif_and_overheads: ObscCifAndOverheads;
+  pricing_and_duties: ObscPricingAndDuties;
+  machining_operations: ObscMachiningOp[];
+}
+
+// ============================================================
 // UNIFIED REPORT DATA
 // ============================================================
 
@@ -550,7 +614,7 @@ export interface ReportData {
   slug: string;
   folderName: string;
   orgSlug: string;
-  quoteFormat: "excel" | "setup";
+  quoteFormat: "excel" | "setup" | "obsc";
   featureGraph: FeatureGraphData;
   specList: SpecItem[];
   feasibility: FeasibilityData;
@@ -558,6 +622,7 @@ export interface ReportData {
   computedRoute: ComputedRouteData;
   excelQuote: ExcelQuoteData | null;
   setupQuote: SetupQuoteData | null;
+  obscQuote: ObscQuoteData | null;
   partLevelSpecs: PartLevelSpec[];
   balloonedImageUrls: string[];
   originalImageUrls: string[];

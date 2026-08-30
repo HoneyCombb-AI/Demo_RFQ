@@ -11,6 +11,7 @@ import { FeasibilityTab } from "./tabs/FeasibilityTab"
 import { RoutingTab } from "./tabs/RoutingTab"
 import { QuoteTab } from "./tabs/QuoteTab"
 import { SetupQuoteTab } from "./tabs/SetupQuoteTab"
+import { ObscQuoteTab } from "./tabs/ObscQuoteTab"
 import { ClarificationsTab } from "./tabs/ClarificationsTab"
 import { AssumptionsTab } from "./tabs/AssumptionsTab"
 
@@ -28,15 +29,12 @@ export function ReportTabs({
   const setupCount = data.computedRoute.total_summary.total_setups
   const price = data.quoteFormat === "excel" && data.excelQuote
     ? formatCurrency(data.excelQuote.cost_summary.ex_works_price_per_piece_inr)
-    : data.setupQuote
-      ? formatCurrency(data.setupQuote.summary.final_price_per_piece_inr)
-      : "-"
+    : data.quoteFormat === "obsc" && data.obscQuote
+      ? formatCurrency(data.obscQuote.pricing_and_duties.final_landed_price_inr, "INR")
+      : data.setupQuote
+        ? formatCurrency(data.setupQuote.summary.final_price_per_piece_inr)
+        : "-"
   const clarificationsCount = data.feasibility.clarifications?.length || 0
-  
-  // Badge colors
-  let riskColor = "bg-green-100 text-green-700 hover:bg-green-100"
-  if (riskLevel.toLowerCase() === "medium") riskColor = "bg-amber-100 text-amber-700 hover:bg-amber-100"
-  if (riskLevel.toLowerCase() === "high") riskColor = "bg-red-100 text-red-700 hover:bg-red-100"
 
   const [internalTab, setInternalTab] = React.useState("specs")
   const currentTab = activeTab !== undefined ? activeTab : internalTab
@@ -67,7 +65,6 @@ export function ReportTabs({
               className="rounded-none border-b-2 border-transparent data-[state=active]:border-transparent data-[state=active]:border-b-primary data-[state=active]:bg-transparent data-[state=active]:text-foreground data-[state=active]:shadow-none data-active:border-transparent data-active:border-b-primary data-active:bg-transparent data-active:text-foreground data-active:shadow-none px-4 py-3 text-xs tracking-widest uppercase font-mono font-semibold"
             >
               Feasibility
-              <Badge className={`ml-2 text-[10px] uppercase font-sans ${riskColor}`}>{riskLevel}</Badge>
             </TabsTrigger>
             
             <TabsTrigger 
@@ -125,6 +122,8 @@ export function ReportTabs({
           <TabsContent value="quote" data-tour="quote-content" className="m-0 border-none outline-none">
             {data.quoteFormat === "excel" && data.excelQuote ? (
               <QuoteTab data={data} />
+            ) : data.quoteFormat === "obsc" && data.obscQuote ? (
+              <ObscQuoteTab quote={data.obscQuote} />
             ) : data.setupQuote ? (
               <SetupQuoteTab quote={data.setupQuote} />
             ) : null}

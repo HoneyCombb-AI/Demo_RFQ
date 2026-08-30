@@ -6,7 +6,8 @@ const ORG_ROUTE_CODES: Record<string, string> = {
   '/jtt': '4521',
   '/alt': '5281',
   '/sft': '6061',
-  '/ltt': '7041'
+  '/ltt': '7041',
+  '/obsc': '8191'
 }
 
 export function proxy(request: NextRequest) {

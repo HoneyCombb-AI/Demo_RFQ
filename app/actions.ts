@@ -9,6 +9,7 @@ const ORG_CODES: Record<string, string> = {
   "5281": "alt",
   "6061": "sft",
   "7041": "ltt",
+  "8191": "obsc",
 }
 
 export async function loginWithCode(code: string) {

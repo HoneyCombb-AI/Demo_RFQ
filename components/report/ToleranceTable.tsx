@@ -40,7 +40,7 @@ export function ToleranceTable({ tolerances }: ToleranceTableProps) {
                   {formatDimensionType(tol.dimension_type)}
                 </TableCell>
                 <TableCell className="font-mono text-sm">
-                  {tol.nominal_value_mm}
+                  {tol.nominal_value_mm ?? tol.nominal_mm ?? "-"}
                 </TableCell>
                 <TableCell className="font-mono text-sm whitespace-nowrap">
                   {formatTolerance(tol.plus_mm, tol.minus_mm)}
