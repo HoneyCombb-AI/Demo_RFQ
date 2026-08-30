@@ -103,6 +103,18 @@ function SpecRow({ sa }: { sa: SpecAssessment & { feature_id: string; feature_na
                   )}
                 </div>
               )}
+              {(sa as any).tolerance_or_requirement && (
+                <div>
+                  <span className="font-semibold text-foreground">Tolerance / Requirement: </span>
+                  <span className="text-muted-foreground font-mono text-xs">{(sa as any).tolerance_or_requirement}</span>
+                </div>
+              )}
+              {(sa as any).shop_capability_reference && (
+                <div>
+                  <span className="font-semibold text-foreground">Shop Capability Reference: </span>
+                  <span className="text-muted-foreground font-mono text-xs">{(sa as any).shop_capability_reference}</span>
+                </div>
+              )}
               {!sa.risk_description && sa.mitigation && (
                 <div>
                   <span className="font-semibold text-foreground">Mitigation: </span>
@@ -127,17 +139,27 @@ export function FeasibilityTab({ data }: { data: ReportData }) {
     f.machines_available !== undefined ||
     f.part_fits_envelopes !== undefined
 
-  // Flatten all spec assessments from all features
+  // Flatten all spec assessments from direct spec_assessments or feature_assessments
   const allSpecs = React.useMemo(() => {
+    if (data.feasibility.spec_assessments && data.feasibility.spec_assessments.length > 0) {
+      return data.feasibility.spec_assessments.map((sa: any) => ({
+        ...sa,
+        spec_description: sa.spec_description || sa.description || sa.spec_type || "",
+        feature_id: sa.feature_id || "",
+        feature_name: sa.feature_name || "",
+        nominal_value: sa.nominal_value ?? sa.tolerance_or_requirement ?? "-",
+      }))
+    }
     if (!data.feasibility.feature_assessments) return []
     return data.feasibility.feature_assessments.flatMap((fa) =>
       fa.spec_assessments.map((sa) => ({
         ...sa,
+        spec_description: sa.spec_description || (sa as any).description || "",
         feature_id: fa.feature_id,
         feature_name: fa.feature_name,
       }))
     )
-  }, [data.feasibility.feature_assessments])
+  }, [data.feasibility.feature_assessments, data.feasibility.spec_assessments])
 
   // Filter based on search term
   const filteredSpecs = React.useMemo(() => {
@@ -145,11 +167,12 @@ export function FeasibilityTab({ data }: { data: ReportData }) {
     if (!term) return allSpecs
 
     return allSpecs.filter((sa) =>
-      sa.spec_description.toLowerCase().includes(term) ||
-      sa.feature_name.toLowerCase().includes(term) ||
-      sa.feature_id.toLowerCase().includes(term) ||
-      sa.verdict.toLowerCase().includes(term) ||
-      (sa.nominal_value && sa.nominal_value.toLowerCase().includes(term))
+      (sa.spec_description && sa.spec_description.toLowerCase().includes(term)) ||
+      (sa.feature_name && sa.feature_name.toLowerCase().includes(term)) ||
+      (sa.feature_id && sa.feature_id.toLowerCase().includes(term)) ||
+      (sa.verdict && sa.verdict.toLowerCase().includes(term)) ||
+      (sa.nominal_value && String(sa.nominal_value).toLowerCase().includes(term)) ||
+      ((sa as any).required_process && (sa as any).required_process.toLowerCase().includes(term))
     )
   }, [allSpecs, searchTerm])
 
@@ -256,7 +279,7 @@ export function FeasibilityTab({ data }: { data: ReportData }) {
       )}
 
       {/* Spec Assessments Section */}
-      {data.feasibility.feature_assessments && data.feasibility.feature_assessments.length > 0 ? (
+      {allSpecs.length > 0 ? (
         <section>
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
             <h3 className="text-lg font-semibold">Spec Assessments</h3>

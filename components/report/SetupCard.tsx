@@ -47,10 +47,10 @@ export function SetupCard({ computedSetup, deconstructedSetup }: SetupCardProps)
           {/* Right side times */}
           <div className="text-right">
             <div className="text-sm font-mono text-foreground font-semibold">
-              {computedSetup.time_summary.total_machining_time_min.toFixed(2)} min <span className="text-muted-foreground font-normal font-sans">cycle</span>
+              {(computedSetup.time_summary?.total_machining_time_min ?? (computedSetup as any).total_machining_time_min ?? 0).toFixed(2)} min <span className="text-muted-foreground font-normal font-sans">cycle</span>
             </div>
             <div className="text-xs font-mono text-muted-foreground mt-0.5">
-              {computedSetup.time_summary.setup_time_min.toFixed(2)} min <span className="font-sans">setup</span>
+              {(computedSetup.time_summary?.setup_time_min ?? (computedSetup as any).setup_time_min ?? 0).toFixed(2)} min <span className="font-sans">setup</span>
             </div>
           </div>
         </div>

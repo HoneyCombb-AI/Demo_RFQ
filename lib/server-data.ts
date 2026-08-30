@@ -3,19 +3,21 @@ import path from "path";
 import {
   FeatureGraphData,
   SpecItem,
+  ComponentSpecData,
   FeasibilityData,
   DeconstructedRouteData,
   ComputedRouteData,
   ExcelQuoteData,
   SetupQuoteData,
   ObscQuoteData,
+  JttQuoteData,
   PartLevelSpec,
   ReportData,
   PartListItem,
 } from "./data";
 
-const ORG_CONFIGS: Record<string, { quoteFile: string; quoteFormat: "excel" | "setup" | "obsc" }> = {
-  jtt:  { quoteFile: "excel_quote.json", quoteFormat: "excel" },
+const ORG_CONFIGS: Record<string, { quoteFile: string; quoteFormat: "excel" | "setup" | "obsc" | "jtt" }> = {
+  jtt:  { quoteFile: "quote.json",       quoteFormat: "jtt"   },
   alt:  { quoteFile: "quote.json",       quoteFormat: "setup" },
   sft:  { quoteFile: "quote.json",       quoteFormat: "setup" },
   ltt:  { quoteFile: "quote.json",       quoteFormat: "setup" },
@@ -601,12 +603,399 @@ async function loadObscReportData(
     quoteFormat: "obsc",
     featureGraph,
     specList,
+    componentSpec: null,
     feasibility,
     deconstructedRoute,
     computedRoute,
     excelQuote: null,
     setupQuote: null,
     obscQuote: quote,
+    jttQuote: null,
+    partLevelSpecs,
+    balloonedImageUrls,
+    originalImageUrls,
+  };
+}
+
+async function loadJttReportData(
+  dir: string,
+  slug: string,
+  folderName: string,
+  orgSlug: string
+): Promise<ReportData | null> {
+  const [fgr, specList, componentSpec, feasRaw, routeResult, cycleTimeResult, quote] = await Promise.all([
+    readJson<any>(path.join(dir, "feature_graph_result.json")),
+    readJson<SpecItem[]>(path.join(dir, "spec_list.json")),
+    readJson<ComponentSpecData>(path.join(dir, "component_spec.json")),
+    readJson<any>(path.join(dir, "feasibility_result.json")),
+    readJson<any>(path.join(dir, "route_result.json")),
+    readJson<any>(path.join(dir, "cycle_time_result.json")),
+    readJson<JttQuoteData>(path.join(dir, "quote.json")),
+  ]);
+
+  if (!fgr || !specList || !routeResult || !cycleTimeResult || !quote) {
+    return null;
+  }
+
+  // 1. Synthesize FeatureGraphData
+  const partName = fgr.part?.name || feasRaw?.source_drawing || quote.part_name || folderName;
+  const drawingNumber = fgr.part?.drawing_number || feasRaw?.drawing_number || quote.drawing_number || folderName;
+  const material = fgr.part?.material || feasRaw?.material || quote.material || "16MnCr5";
+  const titleBlockNotes: string[] = [];
+  if (feasRaw?.heat_treatment) {
+    titleBlockNotes.push(`Heat Treatment: ${feasRaw.heat_treatment}`);
+  }
+
+  const envelope = fgr.feature_graph?.part_envelope || {};
+  const features = (fgr.feature_graph?.features || []).map((feat: any) => ({
+    ...feat,
+    dimensional_tolerances: (feat.dimensional_tolerances || []).map((tol: any) => ({
+      ...tol,
+      nominal_value_mm: tol.nominal_value_mm ?? tol.nominal_mm ?? 0,
+      nominal_mm: tol.nominal_mm ?? tol.nominal_value_mm ?? 0,
+      plus_mm: tol.plus_mm ?? null,
+      minus_mm: tol.minus_mm ?? null,
+      tolerance_class: tol.tolerance_class ?? null,
+      is_critical: tol.is_critical ?? false,
+    })),
+  }));
+
+  const featureGraph: FeatureGraphData = {
+    analysis_id: fgr.analysis_id || `analysis_${folderName}`,
+    source: {
+      file: `${folderName}.pdf`,
+      page_count: 1,
+      prepared_images: [
+        {
+          page_index: 1,
+          image_path: path.join(dir, "page_001_original.png"),
+          image_name: "page_001_original.png",
+          width_px: 3000,
+          height_px: 2000,
+        },
+      ],
+    },
+    part: {
+      drawing_number: drawingNumber,
+      name: partName,
+      revision: fgr.part?.revision || null,
+      material,
+      quantity: fgr.part?.quantity || quote.quantity || 100,
+      units: fgr.part?.units || "mm",
+      title_block_notes: titleBlockNotes,
+      confidence: 1,
+    },
+    feature_graph: {
+      part_envelope: {
+        length_mm: envelope.length_mm ?? 0,
+        width_mm: envelope.width_mm ?? envelope.max_diameter_mm ?? envelope.height_mm ?? 0,
+        height_mm: envelope.height_mm ?? envelope.max_diameter_mm ?? 0,
+        max_diameter_mm: envelope.max_diameter_mm ?? null,
+        estimated_volume_cm3: envelope.estimated_volume_cm3 ?? null,
+        estimated_weight_kg: envelope.estimated_weight_kg ?? quote.weights?.gross_weight_kg ?? null,
+        envelope_shape: envelope.envelope_shape ?? "cylindrical",
+      },
+      coordinate_system: fgr.feature_graph?.coordinate_system || {
+        primary_axis: "Z",
+        orientation_notes: "",
+        datum_origin: "",
+      },
+      features,
+      part_level_specs: {
+        general_tolerance_standard: null,
+        general_notes: feasRaw?.heat_treatment
+          ? [{ note_text: feasRaw.heat_treatment, category: "heat_treatment" }]
+          : [],
+      },
+    },
+  };
+
+  // 2. Synthesize FeasibilityData
+  const clarifications = (routeResult.clarifications || fgr.clarifications || []).map((c: any) => ({
+    clarification_id: c.clarification_id || "C01",
+    question: c.question || "",
+    why_it_matters: c.why_it_matters || "",
+    blocks: Array.isArray(c.blocks) ? c.blocks.map(String) : [],
+    suggested_default: c.suggested_default || null,
+    priority: c.priority || "medium",
+  }));
+
+  const assumptions = (routeResult.assumptions || fgr.assumptions || []).map((a: any) => ({
+    assumption_id: a.assumption_id || "A01",
+    text: a.text || "",
+    applies_to: a.applies_to || [],
+    impact: a.impact || "medium",
+    confidence: a.confidence || 0.9,
+  }));
+
+  const outsideOps = (routeResult.operations || []).filter((o: any) => o.in_house === false);
+
+  const feasibility: FeasibilityData = {
+    analysis_id: feasRaw?.analysis_id || `feasibility_${folderName}`,
+    source_feature_graph_id: featureGraph.analysis_id,
+    feasibility: {
+      can_proceed: feasRaw?.feasibility?.can_proceed ?? true,
+      status: feasRaw?.feasibility?.status ?? "feasible_with_risks",
+      risk_level: feasRaw?.feasibility?.risk_level ?? "medium",
+      blockers: feasRaw?.feasibility?.blockers ?? [],
+      risks: (feasRaw?.feasibility?.risks || []).map((r: any) => ({
+        risk_type: r.risk_type,
+        description: r.description,
+        mitigation: r.mitigation,
+        affected_feature_ids: r.affected_spec_ids || r.affected_feature_ids || [],
+      })),
+      outside_processes_needed:
+        feasRaw?.feasibility?.outside_processes_needed && feasRaw.feasibility.outside_processes_needed.length > 0
+          ? feasRaw.feasibility.outside_processes_needed
+          : outsideOps.map((o: any) => ({
+              process: o.name,
+              reason: o.setup_note || "Outside processing required",
+              sequence_position: `Op ${o.sequence}`,
+              estimated_lead_time_days: null,
+            })),
+      material_machinable: feasRaw?.feasibility?.material_machinable ?? true,
+      tolerances_achievable: feasRaw?.feasibility?.tolerances_achievable ?? true,
+      machines_available: feasRaw?.feasibility?.machines_available ?? true,
+      part_fits_envelopes: feasRaw?.feasibility?.part_fits_envelopes ?? true,
+      assessment_notes:
+        feasRaw?.feasibility?.assessment_notes ||
+        (feasRaw?.heat_treatment
+          ? `Heat Treatment: ${feasRaw.heat_treatment}`
+          : "Manufacturing analysis confirms part is feasible on CNC Turning, Gear Hobbing, and Grinding equipment."),
+    },
+    spec_assessments: feasRaw?.spec_assessments || [],
+    clarifications,
+    assumptions,
+  };
+
+  // 3. Synthesize DeconstructedRouteData and ComputedRouteData
+  const deconstructedSetups: any[] = [];
+  const computedSetups: any[] = [];
+
+  let totalCuttingTime = 0;
+  let totalNonCuttingTime = 0;
+  let totalMachiningTime = 0;
+  let totalSetupTime = 0;
+  let totalHandlingTime = 0;
+  let totalSubOpsCount = 0;
+
+  const rawOps: any[] = routeResult.operations || [];
+  const ctOps: any[] = cycleTimeResult.operations || [];
+
+  for (const op of rawOps) {
+    const setupId = `S${String(op.sequence).padStart(3, "0")}`;
+    const ctOp = ctOps.find((o: any) => o.sequence === op.sequence);
+
+    const deconstructedSubOps: any[] = [];
+    const computedSubOps: any[] = [];
+
+    let setupCuttingTime = 0;
+    let setupNonCuttingTime = 0;
+
+    const rawSubOps: any[] = op.sub_operations || [];
+    const ctSubOps: any[] = ctOp?.sub_op_results || [];
+
+    for (const subOp of rawSubOps) {
+      totalSubOpsCount++;
+      const subOpId = `${setupId}_OP${String(subOp.sequence).padStart(2, "0")}`;
+      const subOpRes = ctSubOps.find((r: any) => r.sub_op_seq === subOp.sequence);
+
+      const tCut = subOpRes?.t_cut_min ?? 0;
+      const tTool = subOpRes?.t_tool_min ?? 0;
+      const tRapid = subOpRes?.t_rapid_min ?? 0;
+      const tSubTotal = subOpRes?.t_sub_total_min ?? tCut;
+
+      setupCuttingTime += tCut;
+      setupNonCuttingTime += tTool + tRapid;
+
+      deconstructedSubOps.push({
+        sub_op_id: subOpId,
+        sequence: subOp.sequence,
+        operation_type: subOp.operation_type,
+        operation_name: (subOp.operation_type || "").replace(/_/g, " ").toUpperCase(),
+        target_feature_ids: subOp.target_feature_ids || [],
+        reason: subOp.reason || "",
+        formula_hint: subOp.inputs?.kind || subOp.operation_type,
+        formula_inputs: subOp.inputs || { process_type: subOp.operation_type },
+      });
+
+      computedSubOps.push({
+        sub_op_id: subOpId,
+        sequence: subOp.sequence,
+        operation_type: subOp.operation_type,
+        operation_name: (subOp.operation_type || "").replace(/_/g, " ").toUpperCase(),
+        formula_hint: subOp.inputs?.kind || subOp.operation_type,
+        target_feature_ids: subOp.target_feature_ids || [],
+        formula_inputs_used: subOp.inputs || { process_type: subOp.operation_type },
+        cycle_time: {
+          cutting_time_min: tCut,
+          non_cutting_time_min: tTool + tRapid,
+          total_time_min: tSubTotal,
+          formula_family: subOpRes?.kind ?? subOp.operation_type,
+          cutting_parameters: {
+            cutting_speed_m_min: subOpRes?.trace?.Vc ?? null,
+            rpm: subOpRes?.rpm ?? subOpRes?.trace?.rpm ?? null,
+            rpm_capped: false,
+            feed_per_rev_mm: subOpRes?.trace?.fn ?? null,
+            feed_per_tooth_mm: subOpRes?.trace?.fz ?? null,
+            feed_rate_mm_min: subOpRes?.feed_mm_min ?? subOpRes?.trace?.feed_rate ?? null,
+            flute_count: subOpRes?.trace?.flute_count ?? null,
+            tool_diameter_mm: subOpRes?.trace?.tool_diameter ?? null,
+            step_over_mm: subOpRes?.trace?.ae ?? null,
+            depth_per_pass_mm: subOpRes?.trace?.ap ?? null,
+            number_of_passes: subOpRes?.trace?.steps ?? subOpRes?.trace?.pass_count ?? null,
+            reversal_factor: null,
+          },
+          calculation_notes: subOpRes?.trace
+            ? Object.entries(subOpRes.trace).map(([k, v]) => `${k}: ${v}`)
+            : [],
+          confidence: "high",
+          warnings: subOpRes?.warnings || [],
+        },
+        skipped: false,
+        skip_reason: null,
+      });
+    }
+
+    const sTime = ctOp?.setup_time_min ?? op.setup_time_min ?? 0;
+    const hTime = ctOp?.t_handling_min ?? 0;
+    const mTime =
+      ctOp?.t_machining_min ??
+      (ctOp?.t_op_total_min ? ctOp.t_op_total_min - (ctOp.t_setup_per_piece_min ?? 0) : setupCuttingTime);
+
+    totalCuttingTime += setupCuttingTime;
+    totalNonCuttingTime += setupNonCuttingTime;
+    totalMachiningTime += mTime;
+    totalSetupTime += sTime;
+    deconstructedSetups.push({
+      setup_id: setupId,
+      sequence: op.sequence,
+      setup_name: op.name,
+      machine_family: op.machine_family,
+      machine_reason: op.setup_note || `${op.name} utilizing ${op.machine_family}`,
+      workholding: {
+        method: op.setup_note?.split(".")[0] || "Standard fixturing",
+        grip_description: op.setup_note || "",
+        special_fixture_required: false,
+        fixture_notes: null,
+      },
+      datum_references: op.datum_references || [],
+      stock_state_before: "Preceding operation state",
+      stock_state_after: "Completed operation state",
+      access_directions: [],
+      sub_operations: deconstructedSubOps,
+    });
+
+    computedSetups.push({
+      setup_id: setupId,
+      sequence: op.sequence,
+      setup_name: op.name,
+      machine_family: op.machine_family,
+      in_house: op.in_house ?? true,
+      outside_process: !(op.in_house ?? true),
+      sub_operations: computedSubOps,
+      time_summary: {
+        setup_time_min: sTime,
+        handling_time_min: hTime,
+        total_cutting_time_min: setupCuttingTime,
+        total_non_cutting_time_min: setupNonCuttingTime,
+        total_machining_time_min: mTime,
+        sub_operation_count: rawSubOps.length,
+        outside_process: !(op.in_house ?? true),
+      },
+    });
+  }
+
+  const stockForm = "round_bar";
+  const stockDiameter = quote.weights?.actual_bar_dia_mm || quote.weights?.raw_bar_dia_mm || envelope.max_diameter_mm || null;
+  const stockLength = envelope.length_mm ? envelope.length_mm + 2.0 : null;
+
+  const deconstructedRoute: DeconstructedRouteData = {
+    analysis_id: `route_${folderName}`,
+    source_feature_graph_id: featureGraph.analysis_id,
+    stock: {
+      form: stockForm,
+      material: material,
+      starting_dimensions: {
+        diameter_mm: stockDiameter,
+        length_mm: stockLength,
+        width_mm: envelope.width_mm || null,
+        height_mm: envelope.height_mm || null,
+        thickness_mm: null,
+        notes: quote.weights
+          ? `Raw bar Ø: ${quote.weights.raw_bar_dia_mm}mm, Actual Ø: ${quote.weights.actual_bar_dia_mm}mm, Gross weight: ${quote.weights.gross_weight_kg}kg`
+          : null,
+      },
+      machining_allowance_mm: 1.0,
+      why: assumptions.find((a: any) => a.assumption_id === "A01")?.text || "Stock selected based on envelope and minimal material removal",
+      confidence: 0.95,
+    },
+    route: {
+      route_name: `Manufacturing Route for ${drawingNumber}`,
+      route_reason: `${routeResult.part_family || "Rotational"} component routing utilizing ${rawOps.length} manufacturing operations.`,
+      part_family: routeResult.part_family || "rotational",
+      base_geometry: routeResult.base_geometry || "rotational",
+      total_setups: rawOps.length,
+      total_sub_operations: totalSubOpsCount,
+      setups: deconstructedSetups,
+    },
+    clarifications,
+    assumptions,
+    confidence: {
+      overall: 0.95,
+      feasibility: 0.95,
+      stock_selection: 0.95,
+      route_planning: 0.95,
+      formula_inputs: 0.95,
+    },
+  };
+
+  const computedRoute: ComputedRouteData = {
+    analysis_id: `computed_route_${folderName}`,
+    shop_profile_basis: {
+      profile_path: "profiles/jtt_gear_standard.json",
+      profile_name: "JTT Gear & Shaft Production Profile",
+      material_machinability_key: "case_hardened_steel",
+      notes: ["CNC Turning, Gear Hobbing, Gear Shaving, Vacuum Carburizing Heat Treatment, OD/ID/Gear Grinding"],
+    },
+    part_family: routeResult.part_family || "rotational",
+    base_geometry: routeResult.base_geometry || "rotational",
+    material: material,
+    setups: computedSetups,
+    total_summary: {
+      total_setups: rawOps.length,
+      total_sub_operations: totalSubOpsCount,
+      total_setup_time_min: totalSetupTime,
+      total_handling_time_min: totalHandlingTime,
+      total_cutting_time_min: totalCuttingTime,
+      total_non_cutting_time_min: totalNonCuttingTime,
+      total_machining_time_min: totalMachiningTime,
+      total_time_min: cycleTimeResult.t_cycle_per_part_min || totalMachiningTime + totalHandlingTime,
+      outside_process_count: outsideOps.length,
+      confidence: "high",
+    },
+    global_warnings: cycleTimeResult.warnings || [],
+    global_assumptions: assumptions.map((a: any) => a.text),
+  };
+
+  const partLevelSpecs = derivePartLevelSpecs(featureGraph);
+  const { balloonedImageUrls, originalImageUrls } = await getDrawingPageUrls(dir, orgSlug, slug);
+
+  return {
+    slug,
+    folderName,
+    orgSlug,
+    quoteFormat: "jtt",
+    featureGraph,
+    specList,
+    componentSpec,
+    feasibility,
+    deconstructedRoute,
+    computedRoute,
+    excelQuote: null,
+    setupQuote: null,
+    obscQuote: null,
+    jttQuote: quote,
     partLevelSpecs,
     balloonedImageUrls,
     originalImageUrls,
@@ -627,6 +1016,10 @@ export async function getReportData(
 
   if (orgSlug === "obsc" || orgCfg.quoteFormat === "obsc") {
     return loadObscReportData(dir, slug, folderName, orgSlug);
+  }
+
+  if (orgSlug === "jtt" || orgCfg.quoteFormat === "jtt") {
+    return loadJttReportData(dir, slug, folderName, orgSlug);
   }
 
   const [featureGraph, specList, feasibility, deconstructedRoute, computedRoute] =
@@ -665,12 +1058,14 @@ export async function getReportData(
     quoteFormat: orgCfg.quoteFormat,
     featureGraph,
     specList,
+    componentSpec: null,
     feasibility,
     deconstructedRoute,
     computedRoute,
     excelQuote,
     setupQuote,
     obscQuote: null,
+    jttQuote: null,
     partLevelSpecs,
     balloonedImageUrls,
     originalImageUrls,

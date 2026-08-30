@@ -220,6 +220,7 @@ export interface FeasibilityData {
     part_fits_envelopes?: boolean;
     assessment_notes?: string;
   };
+  spec_assessments?: Array<SpecAssessment & { spec_id?: string; spec_type?: string; tolerance_or_requirement?: string }>;
   feature_assessments?: FeatureAssessment[];
   clarifications?: Clarification[];
   assumptions?: Assumption[];
@@ -601,6 +602,80 @@ export interface ObscQuoteData {
 }
 
 // ============================================================
+// TYPE DEFINITIONS — JTT Quote (new jtt format)
+// ============================================================
+
+export interface JttQuoteWeights {
+  raw_bar_dia_mm: number;
+  actual_bar_dia_mm: number;
+  pcs_per_5m_bar?: number;
+  gross_weight_kg: number;
+  net_weight_kg: number;
+  scrap_weight_kg: number;
+}
+
+export interface JttDirectCost {
+  material_cost_inr: number;
+  machining_cost_inr: number;
+  heat_treatment_cost_inr?: number;
+  direct_cost_subtotal_inr: number;
+}
+
+export interface JttOverheadsAndSurcharges {
+  factory_overhead_margin_inr?: number;
+  tooling_inr: number;
+  rejection_inr: number;
+  inspection_inr: number;
+  cleaning_inr: number;
+  scrap_recovery_credit_inr: number;
+  export_packaging_inr?: number;
+  fob_freight_inr?: number;
+  packaging_and_fob_inr: number;
+}
+
+export interface JttPricingSummary {
+  subtotal_before_margin_inr: number;
+  overhead_and_margin_inr: number;
+  final_ex_works_price_inr: number;
+}
+
+export interface JttQuoteData {
+  drawing_number: string;
+  part_name: string;
+  material: string;
+  quantity: number;
+  weights: JttQuoteWeights;
+  direct_cost: JttDirectCost;
+  overheads_and_surcharges: JttOverheadsAndSurcharges;
+  pricing_summary: JttPricingSummary;
+  machining_operations: ObscMachiningOp[];
+}
+
+// ============================================================
+// TYPE DEFINITIONS — Component Specifications (Gear Parameters)
+// ============================================================
+
+export interface ComponentSpecParameter {
+  parameter_name: string;
+  symbol?: string;
+  unit?: string;
+  value_raw: string;
+  value_numeric?: number;
+  plus_tolerance?: number;
+  minus_tolerance?: number;
+  standard_ref?: string;
+  row_notes?: string;
+}
+
+export interface ComponentSpecData {
+  section_id: string;
+  component_type: string;
+  spec_title: string;
+  parameters: ComponentSpecParameter[];
+  extraction_notes?: string;
+}
+
+// ============================================================
 // UNIFIED REPORT DATA
 // ============================================================
 
@@ -614,15 +689,17 @@ export interface ReportData {
   slug: string;
   folderName: string;
   orgSlug: string;
-  quoteFormat: "excel" | "setup" | "obsc";
+  quoteFormat: "excel" | "setup" | "obsc" | "jtt";
   featureGraph: FeatureGraphData;
   specList: SpecItem[];
+  componentSpec: ComponentSpecData | null;
   feasibility: FeasibilityData;
   deconstructedRoute: DeconstructedRouteData;
   computedRoute: ComputedRouteData;
   excelQuote: ExcelQuoteData | null;
   setupQuote: SetupQuoteData | null;
   obscQuote: ObscQuoteData | null;
+  jttQuote: JttQuoteData | null;
   partLevelSpecs: PartLevelSpec[];
   balloonedImageUrls: string[];
   originalImageUrls: string[];

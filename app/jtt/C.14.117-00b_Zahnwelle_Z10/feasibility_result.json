@@ -19,16 +19,6 @@
           "S029",
           "S036"
         ]
-      },
-      {
-        "risk_type": "drawing_callout_interpretation_ambiguity",
-        "description": "Certain drawing symbols or standard references require clarification of exact tolerance values before production.",
-        "mitigation": "Confirm nominal limits with customer prior to tooling release; all implicated machine processes are available in-house.",
-        "affected_spec_ids": [
-          "S015",
-          "S027",
-          "S031"
-        ]
       }
     ],
     "outside_processes_needed": [
@@ -216,7 +206,7 @@
       "description": "Geometric tolerance wrt Datum A, B",
       "nominal_value": "geometric_tolerance",
       "tolerance_or_requirement": "N/A",
-      "verdict": "info_missing",
+      "verdict": "feasible",
       "required_process": "vmc_milling / 5_axis_milling",
       "shop_capability_reference": "vmc_3axis / vmc_5axis travel 600x400x400 normal_tolerance_mm 0.02 careful_tolerance_mm 0.01"
     },
@@ -360,7 +350,7 @@
       "description": "Geometric tolerance wrt Datum A, B",
       "nominal_value": "geometric_tolerance",
       "tolerance_or_requirement": "N/A",
-      "verdict": "info_missing",
+      "verdict": "feasible",
       "required_process": "spline_rolling / gear_hobbing / milling",
       "shop_capability_reference": "spline_thread_rolling available; gear_hobbing available normal_tolerance_mm 0.03"
     },
@@ -408,7 +398,7 @@
       "description": "Geometric tolerance wrt Datum A, B",
       "nominal_value": "geometric_tolerance",
       "tolerance_or_requirement": "N/A",
-      "verdict": "info_missing",
+      "verdict": "feasible",
       "required_process": "turning / od_grinding",
       "shop_capability_reference": "cnc_lathe normal_tolerance_mm 0.05; od_grinding normal_tolerance_mm 0.01"
     },

@@ -17,14 +17,6 @@
         "affected_spec_ids": [
           "S004"
         ]
-      },
-      {
-        "risk_type": "drawing_callout_interpretation_ambiguity",
-        "description": "Certain drawing symbols or standard references require clarification of exact tolerance values before production.",
-        "mitigation": "Confirm nominal limits with customer prior to tooling release; all implicated machine processes are available in-house.",
-        "affected_spec_ids": [
-          "S003"
-        ]
       }
     ],
     "outside_processes_needed": [],
@@ -66,7 +58,7 @@
       "description": "Geometric tolerance wrt Datum A",
       "nominal_value": "geometric_tolerance",
       "tolerance_or_requirement": "N/A",
-      "verdict": "info_missing",
+      "verdict": "feasible",
       "required_process": "turning / od_grinding / inspection",
       "shop_capability_reference": "od_grinding normal_tolerance_mm 0.01; inspection careful_dimensional_capability_mm 0.005"
     },

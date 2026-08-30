@@ -14,6 +14,7 @@ import {
   TableRow,
 } from "@/components/ui/table"
 import { FeatureCard } from "../FeatureCard"
+import { ComponentSpecTable } from "./ComponentSpecTable"
 import { Search, List, LayoutGrid, AlertCircle } from "lucide-react"
 
 function ExtractedSpecsView({ specs, searchTerm }: { specs: SpecItem[]; searchTerm: string }) {
@@ -215,6 +216,16 @@ export function SpecsTab({ data }: { data: ReportData }) {
           </div>
         )}
       </section>
+
+      {/* Component Specification Table (Drawing Table Extracted Parameters) */}
+      {data.componentSpec && (
+        <>
+          <Separator />
+          <section>
+            <ComponentSpecTable spec={data.componentSpec} />
+          </section>
+        </>
+      )}
     </div>
   )
 }

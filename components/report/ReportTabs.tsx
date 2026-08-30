@@ -12,6 +12,7 @@ import { RoutingTab } from "./tabs/RoutingTab"
 import { QuoteTab } from "./tabs/QuoteTab"
 import { SetupQuoteTab } from "./tabs/SetupQuoteTab"
 import { ObscQuoteTab } from "./tabs/ObscQuoteTab"
+import { JttQuoteTab } from "./tabs/JttQuoteTab"
 import { ClarificationsTab } from "./tabs/ClarificationsTab"
 import { AssumptionsTab } from "./tabs/AssumptionsTab"
 
@@ -31,9 +32,11 @@ export function ReportTabs({
     ? formatCurrency(data.excelQuote.cost_summary.ex_works_price_per_piece_inr)
     : data.quoteFormat === "obsc" && data.obscQuote
       ? formatCurrency(data.obscQuote.pricing_and_duties.final_landed_price_inr, "INR")
-      : data.setupQuote
-        ? formatCurrency(data.setupQuote.summary.final_price_per_piece_inr)
-        : "-"
+      : data.quoteFormat === "jtt" && data.jttQuote
+        ? formatCurrency(data.jttQuote.pricing_summary.final_ex_works_price_inr, "INR")
+        : data.setupQuote
+          ? formatCurrency(data.setupQuote.summary.final_price_per_piece_inr)
+          : "-"
   const clarificationsCount = data.feasibility.clarifications?.length || 0
 
   const [internalTab, setInternalTab] = React.useState("specs")
@@ -124,6 +127,8 @@ export function ReportTabs({
               <QuoteTab data={data} />
             ) : data.quoteFormat === "obsc" && data.obscQuote ? (
               <ObscQuoteTab quote={data.obscQuote} />
+            ) : data.quoteFormat === "jtt" && data.jttQuote ? (
+              <JttQuoteTab quote={data.jttQuote} />
             ) : data.setupQuote ? (
               <SetupQuoteTab quote={data.setupQuote} />
             ) : null}
