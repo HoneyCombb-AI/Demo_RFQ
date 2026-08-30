@@ -1,0 +1,141 @@
+{
+  "section_id": "component_spec_table",
+  "component_type": "helical_gear",
+  "spec_title": "Schrägstirnrad außenverzahnt / helical gear external geared",
+  "parameters": [
+    {
+      "parameter_name": "Zähnezahl / number of teeth",
+      "symbol": "z",
+      "value_raw": "61",
+      "value_numeric": 61.0
+    },
+    {
+      "parameter_name": "Normalmodul / normal module",
+      "symbol": "m",
+      "unit": "mm",
+      "value_raw": "1",
+      "value_numeric": 1.0
+    },
+    {
+      "parameter_name": "Teilkreisdurchmesser / pitch diameter",
+      "symbol": "d",
+      "unit": "mm",
+      "value_raw": "63,152",
+      "value_numeric": 63.152
+    },
+    {
+      "parameter_name": "Grundkreisdurchmesser / base diameter",
+      "symbol": "d_b",
+      "unit": "mm",
+      "value_raw": "59,096",
+      "value_numeric": 59.096
+    },
+    {
+      "parameter_name": "Erzeugter Fußkreisdurchmesser / generated root circle diameter",
+      "symbol": "d_f",
+      "unit": "mm",
+      "value_raw": "58,928 -0,088",
+      "value_numeric": 58.928,
+      "plus_tolerance": 0.0,
+      "minus_tolerance": 0.088
+    },
+    {
+      "parameter_name": "Fußnutzkreis / effective root diameter",
+      "symbol": "d_Nf",
+      "unit": "mm",
+      "value_raw": "61,102 -0,118",
+      "value_numeric": 61.102,
+      "plus_tolerance": 0.0,
+      "minus_tolerance": 0.118
+    },
+    {
+      "parameter_name": "Bezugsprofil / basic rack tooth profile",
+      "value_raw": "DIN 3972 / II",
+      "standard_ref": "DIN 3972 / II"
+    },
+    {
+      "parameter_name": "Eingriffswinkel / pressure angle",
+      "symbol": "α",
+      "value_raw": "20°",
+      "value_numeric": 20.0
+    },
+    {
+      "parameter_name": "Kopfhöhenänderung / change in head height",
+      "symbol": "k",
+      "unit": "mm",
+      "value_raw": "0,0",
+      "value_numeric": 0.0
+    },
+    {
+      "parameter_name": "Schrägungswinkel / helix angle",
+      "symbol": "β",
+      "value_raw": "15°",
+      "value_numeric": 15.0
+    },
+    {
+      "parameter_name": "Flankenrichtung / flank direction",
+      "value_raw": "links-steigend / left-rising",
+      "row_notes": "Value spans two lines in original, formatted with slash separator."
+    },
+    {
+      "parameter_name": "Kopfrundung / tooth tip rounding",
+      "symbol": "r_k",
+      "unit": "mm",
+      "value_raw": "?",
+      "row_notes": "Value is written as a question mark, likely indicating a missing specification."
+    },
+    {
+      "parameter_name": "Profilverschiebungsfaktor / addendum modification coefficient",
+      "symbol": "x*",
+      "value_raw": "-0,774",
+      "value_numeric": -0.774
+    },
+    {
+      "parameter_name": "Achsabstand im Gehäuse mit Abmaßen / distance between axles in box with tolerance",
+      "symbol": "a",
+      "unit": "mm",
+      "value_raw": "37 ±0.032",
+      "value_numeric": 37.0,
+      "plus_tolerance": 0.032,
+      "minus_tolerance": 0.032
+    },
+    {
+      "parameter_name": "Qualität / quality",
+      "value_raw": "DIN 58405 / 8 d",
+      "standard_ref": "DIN 58405 / 8 d"
+    },
+    {
+      "parameter_name": "Maß über Zähne gemessen/ n=6 / gauge above teeth n=6",
+      "symbol": "Am",
+      "unit": "mm",
+      "value_raw": "16,590 -0,030",
+      "value_numeric": 16.59,
+      "plus_tolerance": 0.0,
+      "minus_tolerance": 0.03,
+      "row_notes": "Parameter name spans multiple lines and includes 'n=6' right-aligned in the cell."
+    },
+    {
+      "parameter_name": "Zweiflanken-Wälzsprung / two flank working error",
+      "symbol": "fi″",
+      "unit": "µm",
+      "value_raw": "16",
+      "value_numeric": 16.0
+    },
+    {
+      "parameter_name": "Zweiflanken-Wälzabweichung / radial compositeerror",
+      "symbol": "Fi″",
+      "unit": "µm",
+      "value_raw": "45",
+      "value_numeric": 45.0,
+      "row_notes": "'compositeerror' is copied verbatim without spacing as printed."
+    },
+    {
+      "parameter_name": "Gegenradsachnummer / counter wheel articlecode",
+      "symbol": "z=11",
+      "unit": "rechts",
+      "value_raw": "C.14.225-00",
+      "row_notes": "The draftsman placed 'z=11' in the symbol column and 'rechts' in the unit column. These are extracted verbatim as requested."
+    }
+  ],
+  "extraction_notes": "Table contains instances where structural assumptions (like unit column strictly containing units) are bypassed by the draftsman (e.g. 'rechts' in unit column for article code). Handled verbatim."
+}

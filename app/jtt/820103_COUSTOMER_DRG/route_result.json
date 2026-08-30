@@ -1,0 +1,780 @@
+{
+  "analysis_id": "820103_COUSTOMER_DRG_merge_20260826T213342Z",
+  "source_feature_graph_id": "820103_COUSTOMER_DRG_merge_20260826T213342Z",
+  "quantity": 100,
+  "part_family": "turned",
+  "base_geometry": "rotational",
+  "stock": {
+    "form": "round_bar",
+    "diameter_mm": 68.0,
+    "length_mm": 16.0,
+    "weight_kg": 0.456,
+    "machining_allowance_mm": 2.0
+  },
+  "operations": [
+    {
+      "sequence": 1,
+      "name": "Saw Cut Gear Blanks",
+      "machine_family": "saw",
+      "setup_note": "Cut individual blanks from round bar with sufficient axial stock for facing both sides. Segregate blanks by heat and material batch.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "setup_time_min": 3.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "saw_cut",
+          "target_feature_ids": [
+            "F01"
+          ],
+          "inputs": {
+            "kind": "saw_cut",
+            "cut_diameter_mm": 68.0,
+            "cut_count": 1
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 2,
+      "name": "CNC Turn \u2013 First Blank Setup",
+      "machine_family": "cnc_lathe",
+      "setup_note": "Grip the sawn blank in chuck jaws, face the first side, and machine the blank OD before opening the central bore. Establish a provisional datum A axis while leaving controlled stock on the bore and face for post-heat-treatment hard turning.",
+      "datum_references": [
+        "A"
+      ],
+      "material_machinability": "medium",
+      "setup_time_min": 15.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "face_turn",
+          "target_feature_ids": [
+            "F01"
+          ],
+          "inputs": {
+            "kind": "radial_turn",
+            "start_diameter_mm": 68.0,
+            "finish_diameter_mm": 0.0,
+            "groove_count": 1
+          }
+        },
+        {
+          "sequence": 2,
+          "operation_type": "rough_turn_od",
+          "target_feature_ids": [
+            "F02"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 68.0,
+            "finish_diameter_mm": 64.44,
+            "cut_length_mm": 10.0
+          }
+        },
+        {
+          "sequence": 3,
+          "operation_type": "finish_turn_od",
+          "target_feature_ids": [
+            "F02"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 64.44,
+            "finish_diameter_mm": 63.64,
+            "cut_length_mm": 10.0
+          }
+        },
+        {
+          "sequence": 4,
+          "operation_type": "center_drill",
+          "target_feature_ids": [
+            "F03"
+          ],
+          "inputs": {
+            "kind": "point_drill",
+            "hole_diameter_mm": 4.0,
+            "hole_depth_mm": 2.0,
+            "hole_count": 1,
+            "through_hole": false
+          }
+        },
+        {
+          "sequence": 5,
+          "operation_type": "drill",
+          "target_feature_ids": [
+            "F03"
+          ],
+          "inputs": {
+            "kind": "point_drill",
+            "hole_diameter_mm": 12.0,
+            "hole_depth_mm": 10.0,
+            "hole_count": 1,
+            "through_hole": true
+          }
+        },
+        {
+          "sequence": 6,
+          "operation_type": "rough_bore_id",
+          "target_feature_ids": [
+            "F03"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 12.0,
+            "finish_diameter_mm": 14.0,
+            "cut_length_mm": 10.0
+          }
+        },
+        {
+          "sequence": 7,
+          "operation_type": "semi_finish_bore_id",
+          "target_feature_ids": [
+            "F03"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 14.0,
+            "finish_diameter_mm": 14.6,
+            "cut_length_mm": 10.0
+          }
+        },
+        {
+          "sequence": 8,
+          "operation_type": "finish_bore_id",
+          "target_feature_ids": [
+            "F03"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 14.6,
+            "finish_diameter_mm": 14.8,
+            "cut_length_mm": 10.0
+          }
+        },
+        {
+          "sequence": 9,
+          "operation_type": "chamfer_turn",
+          "target_feature_ids": [
+            "F03"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 14.8,
+            "finish_diameter_mm": 15.4,
+            "cut_length_mm": 0.52
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 3,
+      "name": "CNC Turn \u2013 Second Blank Setup",
+      "machine_family": "cnc_lathe",
+      "setup_note": "Reverse the soft blank into bored soft jaws located from the machined OD and provisional datum axis. Face the second side parallel to the first and form the opposite bore-entry chamfer while retaining hard-turn stock on both faces.",
+      "datum_references": [
+        "A"
+      ],
+      "material_machinability": "medium",
+      "setup_time_min": 12.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "face_turn",
+          "target_feature_ids": [
+            "F01"
+          ],
+          "inputs": {
+            "kind": "radial_turn",
+            "start_diameter_mm": 63.64,
+            "finish_diameter_mm": 14.8,
+            "groove_count": 1
+          }
+        },
+        {
+          "sequence": 2,
+          "operation_type": "chamfer_turn",
+          "target_feature_ids": [
+            "F03"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 14.8,
+            "finish_diameter_mm": 15.4,
+            "cut_length_mm": 0.52
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 4,
+      "name": "Finish Blank Inspection Gate",
+      "machine_family": "inspection",
+      "setup_note": "Locate the soft blank from its bore and face. Verify blank OD, bore size, face flatness, parallelism, and machining allowance before releasing it to tooth generation.",
+      "datum_references": [
+        "A"
+      ],
+      "material_machinability": "medium",
+      "setup_time_min": 5.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "manual_inspect",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "inspection",
+            "dimension_count": 2,
+            "gdt_count": 1,
+            "sampling_rate_pct": 100.0,
+            "requires_fixture": false
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 5,
+      "name": "Helical Gear Hobbing",
+      "machine_family": "gear_hobbing",
+      "setup_note": "Mount the inspected blank on a bore-locating arbor with axial face support. Generate the 61-tooth left-hand helical form relative to the provisional datum A axis, leaving the prescribed shaving stock.",
+      "datum_references": [
+        "A"
+      ],
+      "material_machinability": "medium",
+      "setup_time_min": 30.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "hob_teeth",
+          "target_feature_ids": [
+            "F02"
+          ],
+          "inputs": {
+            "kind": "gear_hob",
+            "number_of_teeth": 61,
+            "normal_module_mm": 1.0,
+            "face_width_mm": 10.0,
+            "whole_depth_mm": 2.356,
+            "helix_angle_deg": 15.0,
+            "hob_starts": 1,
+            "number_of_cuts": 2
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 6,
+      "name": "Soft Gear Shaving",
+      "machine_family": "gear_shaving",
+      "setup_note": "Locate the hobbed gear from its bore and reference face. Shave the unhardened tooth flanks to achieve the DIN quality 8 profile, lead, pitch, and surface condition before heat treatment.",
+      "datum_references": [
+        "A"
+      ],
+      "material_machinability": "medium",
+      "setup_time_min": 25.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "shave_teeth",
+          "target_feature_ids": [
+            "F02"
+          ],
+          "inputs": {
+            "kind": "gear_finish",
+            "number_of_teeth": 61,
+            "normal_module_mm": 1.0,
+            "face_width_mm": 10.0,
+            "stock_per_flank_mm": 0.05,
+            "helix_angle_deg": 15.0,
+            "gear_quality_class": 8
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 7,
+      "name": "Pre-Heat-Treatment Deburr",
+      "machine_family": "finish_bench",
+      "setup_note": "Support the shaved gear on a clean bench fixture. Remove hobbing and shaving burrs from tooth ends, roots, bore entries, and blank edges without performing the required final post-heat-treatment tooth chamfer.",
+      "datum_references": [
+        "A"
+      ],
+      "material_machinability": "medium",
+      "setup_time_min": 4.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "deburr",
+          "target_feature_ids": [
+            "F02",
+            "F03"
+          ],
+          "inputs": {
+            "kind": "manual",
+            "complexity": "high",
+            "edge_length_mm": 570.0
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 8,
+      "name": "Pre-Heat-Treatment Inspection Gate",
+      "machine_family": "inspection",
+      "setup_note": "Inspect the shaved and deburred gear from datum A. Verify span measurement, profile, lead, pitch, blank OD, and bore condition before furnace release.",
+      "datum_references": [
+        "A"
+      ],
+      "material_machinability": "medium",
+      "setup_time_min": 10.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "manual_inspect",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "inspection",
+            "dimension_count": 2,
+            "gdt_count": 1,
+            "sampling_rate_pct": 100.0,
+            "requires_fixture": true
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 9,
+      "name": "Pre-Heat-Treatment Washing",
+      "machine_family": "finish_bench",
+      "setup_note": "Wash and fully dry the accepted gears before furnace loading. Remove cutting oil, coolant, loose abrasive, marker residue, and fingerprints from all exposed surfaces.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "setup_time_min": 3.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "clean_degrease",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "manual",
+            "complexity": "low",
+            "estimated_time_min": 0.75
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 10,
+      "name": "Case Harden, Quench and Temper",
+      "machine_family": "sealed_quench_furnace",
+      "setup_note": "Rack the gears with separation and axial support for uniform atmosphere exposure and distortion control; the 100-piece order may be treated as one batch if validated furnace loading permits. Carburize, quench, and temper to the drawing hardness and effective case-depth requirements.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "setup_time_min": 10.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "load_unload",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "manual",
+            "complexity": "low",
+            "feature_count": 1,
+            "estimated_time_min": 0.5
+          }
+        },
+        {
+          "sequence": 2,
+          "operation_type": "carburize",
+          "target_feature_ids": [
+            "F01",
+            "F02",
+            "F03"
+          ],
+          "inputs": {
+            "kind": "furnace_cycle",
+            "batch_size_parts": 100,
+            "part_mass_kg": 0.456,
+            "max_section_thickness_mm": 10.0,
+            "case_depth_mm": 0.4
+          }
+        },
+        {
+          "sequence": 3,
+          "operation_type": "austenitize_quench",
+          "target_feature_ids": [
+            "F01",
+            "F02",
+            "F03"
+          ],
+          "inputs": {
+            "kind": "furnace_cycle",
+            "batch_size_parts": 100,
+            "part_mass_kg": 0.456,
+            "max_section_thickness_mm": 10.0
+          }
+        },
+        {
+          "sequence": 4,
+          "operation_type": "temper",
+          "target_feature_ids": [
+            "F01",
+            "F02",
+            "F03"
+          ],
+          "inputs": {
+            "kind": "furnace_cycle",
+            "batch_size_parts": 100,
+            "part_mass_kg": 0.456,
+            "max_section_thickness_mm": 10.0
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 11,
+      "name": "Post-Heat-Treatment Teeth Chamfering",
+      "machine_family": "vmc_5axis",
+      "setup_note": "Locate the hardened gear in a bore-and-pitch-indexing fixture on the 5-axis VMC dedicated to this operation. Chamfer the hardened tooth end faces and tip edges before blasting, without recutting the tooth flanks.",
+      "datum_references": [
+        "A"
+      ],
+      "material_machinability": "hardened",
+      "setup_time_min": 25.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "teeth_chamfer",
+          "target_feature_ids": [
+            "F02"
+          ],
+          "inputs": {
+            "kind": "gear_finish",
+            "number_of_teeth": 61,
+            "normal_module_mm": 1.0,
+            "face_width_mm": 10.0,
+            "stock_per_flank_mm": 0.3,
+            "helix_angle_deg": 15.0,
+            "gear_quality_class": 8
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 12,
+      "name": "Post-Heat-Treatment Shot Blast",
+      "machine_family": "surface_finishing",
+      "setup_note": "Blast the chamfered hardened gears using controlled media and exposure. Remove heat-treatment scale and residual burrs without damaging the tooth profile or consuming the remaining hard-turn allowance.",
+      "datum_references": [],
+      "material_machinability": "hardened",
+      "setup_time_min": 8.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "shot_blast",
+          "target_feature_ids": [
+            "F02",
+            "F03"
+          ],
+          "inputs": {
+            "kind": "surface_treat",
+            "treated_area_mm2": 8480.0,
+            "batch_size_parts": 100,
+            "requires_bake": false
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 13,
+      "name": "Heat-Treatment Verification",
+      "machine_family": "inspection",
+      "setup_note": "Inspect blasted gears and the associated witness coupon before hard machining. Verify surface hardness, effective case depth certification, and unacceptable heat-treatment distortion.",
+      "datum_references": [
+        "A"
+      ],
+      "material_machinability": "hardened",
+      "setup_time_min": 6.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "hardness_test",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "inspection",
+            "dimension_count": 1,
+            "gdt_count": 0,
+            "sampling_rate_pct": 100.0,
+            "requires_fixture": false
+          }
+        },
+        {
+          "sequence": 2,
+          "operation_type": "manual_inspect",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "inspection",
+            "dimension_count": 2,
+            "gdt_count": 0,
+            "sampling_rate_pct": 100.0,
+            "requires_fixture": false
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 14,
+      "name": "CNC Hard Turn \u2013 Bore and Faces",
+      "machine_family": "cnc_lathe",
+      "setup_note": "Locate the hardened gear from its tooth pitch geometry in a qualified narrow-contact fixture with opposed-access tooling. Hard turn the bore to establish final datum A, then finish both faces and bore entries in the same qualified operation while preserving tooth-to-bore runout.",
+      "datum_references": [
+        "A"
+      ],
+      "material_machinability": "hardened",
+      "setup_time_min": 30.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "finish_bore_id",
+          "target_feature_ids": [
+            "F03"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 14.8,
+            "finish_diameter_mm": 15.0,
+            "cut_length_mm": 10.0
+          }
+        },
+        {
+          "sequence": 2,
+          "operation_type": "face_turn",
+          "target_feature_ids": [
+            "F01"
+          ],
+          "inputs": {
+            "kind": "radial_turn",
+            "start_diameter_mm": 63.64,
+            "finish_diameter_mm": 15.0,
+            "groove_count": 1
+          }
+        },
+        {
+          "sequence": 3,
+          "operation_type": "face_turn",
+          "target_feature_ids": [
+            "F01"
+          ],
+          "inputs": {
+            "kind": "radial_turn",
+            "start_diameter_mm": 63.64,
+            "finish_diameter_mm": 15.0,
+            "groove_count": 1
+          }
+        },
+        {
+          "sequence": 4,
+          "operation_type": "chamfer_turn",
+          "target_feature_ids": [
+            "F03"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 15.0,
+            "finish_diameter_mm": 15.6,
+            "cut_length_mm": 0.52
+          }
+        },
+        {
+          "sequence": 5,
+          "operation_type": "chamfer_turn",
+          "target_feature_ids": [
+            "F03"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 15.0,
+            "finish_diameter_mm": 15.6,
+            "cut_length_mm": 0.52
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 15,
+      "name": "Post-Hard-Turning Washing",
+      "machine_family": "finish_bench",
+      "setup_note": "Wash the hard-turned gears as a standalone operation. Remove cutting oil, CBN swarf, loose chips, and residue from the finished bore, faces, and teeth before final measurement.",
+      "datum_references": [],
+      "material_machinability": "hardened",
+      "setup_time_min": 3.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "clean_degrease",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "manual",
+            "complexity": "low",
+            "estimated_time_min": 0.75
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 16,
+      "name": "Final Dimensional and Gear Inspection",
+      "machine_family": "inspection",
+      "setup_note": "Thermally stabilize and inspect the clean finished gear from final datum A. Verify the \u00d815 H7 bore, face width, OD-to-bore runout, tooth span, profile, lead, pitch, and DIN 58405 quality requirements.",
+      "datum_references": [
+        "A"
+      ],
+      "material_machinability": "hardened",
+      "setup_time_min": 12.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "manual_inspect",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "inspection",
+            "dimension_count": 2,
+            "gdt_count": 1,
+            "sampling_rate_pct": 100.0,
+            "requires_fixture": true
+          }
+        },
+        {
+          "sequence": 2,
+          "operation_type": "gear_check",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "inspection",
+            "dimension_count": 4,
+            "gdt_count": 1,
+            "sampling_rate_pct": 100.0,
+            "requires_fixture": true
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 17,
+      "name": "Final Edge and Burr Verification",
+      "machine_family": "finish_bench",
+      "setup_note": "Handle the accepted gear on a protected bench and verify that no loose burrs or hazardous sharp edges remain after inspection. Perform only non-cutting hand cleanup that does not alter the H7 bore, tooth geometry, or controlled runout surfaces.",
+      "datum_references": [
+        "A"
+      ],
+      "material_machinability": "hardened",
+      "setup_time_min": 2.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "deburr",
+          "target_feature_ids": [
+            "F02",
+            "F03"
+          ],
+          "inputs": {
+            "kind": "manual",
+            "complexity": "low",
+            "estimated_time_min": 0.75
+          }
+        }
+      ]
+    }
+  ],
+  "clarifications": [
+    {
+      "clarification_id": "C01",
+      "question": "What tooth-tip rounding value is required for parameter r_k?",
+      "blocks": [
+        5,
+        6,
+        11
+      ],
+      "suggested_default": "Use the standard DIN 3972 profile II tool geometry with no special tooth-tip rounding beyond the specified edge-break requirement.",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C02",
+      "question": "Which specific surfaces are assigned the bracketed Rz 6 and Rz 2.5 finish requirements?",
+      "blocks": [
+        2,
+        3,
+        14,
+        16
+      ],
+      "suggested_default": "Apply general Rz 25 unless a feature-specific leader is confirmed; provisionally apply Rz 6 to the H7 bore and do not apply Rz 2.5 without a confirmed leader.",
+      "priority": "medium"
+    },
+    {
+      "clarification_id": "C03",
+      "question": "Is a dedicated setup on the listed 5-axis VMC acceptable for the required post-heat-treatment tooth chamfering operation?",
+      "blocks": [
+        11
+      ],
+      "suggested_default": "Use the VMC 5-axis as a separate indexed hard-chamfering operation because no dedicated teeth-chamfer machine family is listed in the shop inventory.",
+      "priority": "medium"
+    }
+  ],
+  "assumptions": [
+    {
+      "assumption_id": "A01",
+      "text": "At 100 pieces, machining from round bar is preferred over developing a forging process; provisional 68 mm diameter by 16 mm blanks follow the stated bar-stock allowance guidance."
+    },
+    {
+      "assumption_id": "A02",
+      "text": "The stock weight is estimated from the provisional blank dimensions using nominal steel density; purchasing weight may vary with actual bar tolerance and saw kerf."
+    },
+    {
+      "assumption_id": "A03",
+      "text": "The soft-machined bore and both faces retain controlled stock for the corrected post-heat-treatment CNC hard-turning operation rather than being accepted at final size before carburizing."
+    },
+    {
+      "assumption_id": "A04",
+      "text": "Per GEAR-002, post-heat-treatment ID grinding, bore honing, face grinding, and OD grinding are removed and replaced by one CNC hard-turning operation covering the bore and both faces."
+    },
+    {
+      "assumption_id": "A05",
+      "text": "Per GEAR-001, gear grinding and teeth honing are omitted because DIN quality 8 is achieved by soft hobbing followed by shaving."
+    },
+    {
+      "assumption_id": "A06",
+      "text": "Turning-template grooving, threading, and part-off steps are omitted because no grooves or threads exist and individually sawn blanks are used; hole-making pilot drilling, peck drilling, reaming, tapping, and counterboring are omitted because they are not required by the short central through-bore."
+    },
+    {
+      "assumption_id": "A07",
+      "text": "The bore-finishing template's post-hardening grinding, honing, and lapping stages are superseded by the authoritative hard-turning correction; final bore verification remains in final inspection."
+    },
+    {
+      "assumption_id": "A08",
+      "text": "No coating is specified, so the plating/coating sequence, masking, curing, unmasking, and coating inspection are omitted; post-heat-treatment shot blasting is retained solely for scale and burr removal."
+    },
+    {
+      "assumption_id": "A09",
+      "text": "Heat-treatment masking, straightening, and separate stress relief are omitted because no selectively soft areas are specified and the part is a short disc rather than a slender shaft; furnace loading, cleaning, quenching, tempering, descaling, and hardness verification remain included."
+    },
+    {
+      "assumption_id": "A10",
+      "text": "The single corrected hard-turning operation assumes qualified tooth-pitch workholding and opposed-access tooling can finish the through-bore and both faces without losing the established tooth-to-bore relationship."
+    }
+  ]
+}

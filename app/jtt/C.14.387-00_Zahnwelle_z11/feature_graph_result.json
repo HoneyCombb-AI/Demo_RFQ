@@ -1,0 +1,660 @@
+{
+  "analysis_id": "C.14.387-00_Zahnwelle_z11_merge_20260829T144717Z",
+  "part": {
+    "name": "Zahnwelle z11 rechts B20",
+    "drawing_number": "C.14.387-00",
+    "material": "1.7139 (16MnCrS5) (Pb<0,1%)",
+    "units": "mm"
+  },
+  "feature_graph": {
+    "part_envelope": {
+      "length_mm": 14.25,
+      "width_mm": 61.4,
+      "height_mm": 14.25,
+      "max_diameter_mm": 14.25,
+      "envelope_shape": "cylindrical"
+    },
+    "coordinate_system": {
+      "primary_axis": "X",
+      "orientation_notes": "Primary shaft axis is X per FRONT and RIGHT views; the right view looks along -X. Datums A and B define the A-B datum axis along X.",
+      "datum_origin": "A-B"
+    },
+    "features": [
+      {
+        "feature_id": "F01",
+        "feature_type": "internal_bore",
+        "name": "Left center hole",
+        "description": "Standard center hole on the left end face of the shaft.",
+        "geometry": {
+          "axis_direction": "-X"
+        },
+        "access_directions": [
+          "-X",
+          "axial"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "source_views": [
+          "main_view",
+          "isometric_view"
+        ]
+      },
+      {
+        "feature_id": "F02",
+        "feature_type": "external_cylinder",
+        "name": "Left journal (Datum A)",
+        "description": "Leftmost shaft journal, defined as Datum A.",
+        "geometry": {
+          "diameter_mm": 7.0,
+          "length_mm": 9.0,
+          "axis_direction": "X"
+        },
+        "access_directions": [
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 7.0,
+            "tolerance_class": "n6"
+          },
+          {
+            "dimension_type": "length",
+            "nominal_mm": 9.0,
+            "plus_mm": 0.1,
+            "minus_mm": 0.1
+          }
+        ],
+        "gdt_controls": [],
+        "source_views": [
+          "main_view",
+          "isometric_view"
+        ]
+      },
+      {
+        "feature_id": "F03",
+        "feature_type": "external_cylinder",
+        "name": "Left shoulder step",
+        "description": "Short cylindrical step directly to the left of the gear section.",
+        "geometry": {
+          "diameter_mm": 11.0,
+          "length_mm": 1.45,
+          "depth_mm": 0.2,
+          "radius_mm": 0.4,
+          "angle_deg": 15.0,
+          "axis_direction": "X"
+        },
+        "access_directions": [
+          "radial"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "source_views": [
+          "main_view",
+          "detail_a",
+          "isometric_view"
+        ]
+      },
+      {
+        "feature_id": "F04",
+        "feature_type": "spline",
+        "name": "Helical gear section",
+        "description": "Central external helical gear body.",
+        "geometry": {
+          "diameter_mm": 14.25,
+          "length_mm": 21.5,
+          "axis_direction": "X"
+        },
+        "access_directions": [
+          "radial",
+          "-X"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "length",
+            "nominal_mm": 21.5,
+            "plus_mm": 0.1,
+            "minus_mm": 0.1
+          },
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 14.25,
+            "plus_mm": 0.0,
+            "minus_mm": 0.05
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "runout",
+            "tolerance_value_mm": 0.03,
+            "datum_references": [
+              "A-B"
+            ],
+            "applied_to": "Gear tip outer diameter"
+          }
+        ],
+        "source_views": [
+          "main_view",
+          "auxiliary_view",
+          "isometric_view"
+        ]
+      },
+      {
+        "feature_id": "F05",
+        "feature_type": "external_cylinder",
+        "name": "Middle shaft section",
+        "description": "Cylindrical shaft section between the gear and the runout-controlled journal.",
+        "geometry": {
+          "diameter_mm": 9.0,
+          "length_mm": 23.5,
+          "axis_direction": "X"
+        },
+        "access_directions": [
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 9.0,
+            "plus_mm": 0.0,
+            "minus_mm": 0.05
+          },
+          {
+            "dimension_type": "length",
+            "nominal_mm": 23.5,
+            "plus_mm": 0.1,
+            "minus_mm": 0.1
+          }
+        ],
+        "gdt_controls": [],
+        "source_views": [
+          "main_view",
+          "isometric_view"
+        ]
+      },
+      {
+        "feature_id": "F06",
+        "feature_type": "external_cylinder",
+        "name": "Right journal (Runout)",
+        "description": "Right-hand journal surface with circular runout control relative to datums A-B.",
+        "geometry": {
+          "diameter_mm": 9.0,
+          "length_mm": 16.0,
+          "axis_direction": "X"
+        },
+        "access_directions": [
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 9.0,
+            "tolerance_class": "x6"
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "runout",
+            "tolerance_value_mm": 0.02,
+            "datum_references": [
+              "A-B"
+            ],
+            "applied_to": "External cylindrical surface of the Ø 9x6 journal"
+          }
+        ],
+        "source_views": [
+          "main_view",
+          "isometric_view"
+        ]
+      },
+      {
+        "feature_id": "F07",
+        "feature_type": "undercut",
+        "name": "Profile Undercut",
+        "description": "Relief or grinding undercut with an inner radius, an outer transition radius, a specified width, depth, and an angled runout.",
+        "geometry": {
+          "depth_mm": 0.2,
+          "width_mm": 1.45,
+          "radius_mm": 0.4,
+          "angle_deg": 15.0,
+          "axis_direction": "axial"
+        },
+        "access_directions": [
+          "radial"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "source_views": [
+          "main_view",
+          "detail_b",
+          "isometric_view"
+        ]
+      },
+      {
+        "feature_id": "F08",
+        "feature_type": "external_cylinder",
+        "name": "Rightmost journal (Datum B)",
+        "description": "Rightmost bearing journal, defined as Datum B.",
+        "geometry": {
+          "diameter_mm": 6.0,
+          "length_mm": 5.9,
+          "axis_direction": "X"
+        },
+        "access_directions": [
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 6.0,
+            "tolerance_class": "k6"
+          }
+        ],
+        "gdt_controls": [],
+        "source_views": [
+          "main_view",
+          "isometric_view"
+        ]
+      },
+      {
+        "feature_id": "F09",
+        "feature_type": "chamfer",
+        "name": "Right end chamfer",
+        "description": "Chamfer on the right edge of the Datum B journal.",
+        "geometry": {
+          "length_mm": 0.5,
+          "angle_deg": 45.0
+        },
+        "access_directions": [
+          "radial",
+          "+X"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "source_views": [
+          "main_view"
+        ]
+      },
+      {
+        "feature_id": "F10",
+        "feature_type": "internal_bore",
+        "name": "Right center hole",
+        "description": "Standard center hole on the right end face of the shaft.",
+        "geometry": {
+          "axis_direction": "+X"
+        },
+        "access_directions": [
+          "+X"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "source_views": [
+          "main_view"
+        ]
+      },
+      {
+        "feature_id": "F11",
+        "feature_type": "chamfer",
+        "name": "Left journal chamfer",
+        "description": "Chamfer on the left edge of the Datum A journal.",
+        "geometry": {
+          "length_mm": 1.0,
+          "angle_deg": 30.0
+        },
+        "access_directions": [
+          "-X",
+          "radial"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "source_views": [
+          "main_view"
+        ]
+      },
+      {
+        "feature_id": "F12",
+        "feature_type": "chamfer",
+        "name": "Left shoulder chamfer",
+        "description": "Chamfer on the left edge of the diameter 11 shoulder step.",
+        "geometry": {
+          "length_mm": 0.2,
+          "angle_deg": 45.0
+        },
+        "access_directions": [
+          "radial"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "source_views": [
+          "main_view"
+        ]
+      },
+      {
+        "feature_id": "F13",
+        "feature_type": "chamfer",
+        "name": "Gear left chamfer",
+        "description": "Chamfer on the left face of the gear section.",
+        "geometry": {
+          "length_mm": 0.3,
+          "angle_deg": 45.0
+        },
+        "access_directions": [
+          "radial"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "source_views": [
+          "main_view"
+        ]
+      },
+      {
+        "feature_id": "F14",
+        "feature_type": "chamfer",
+        "name": "Gear right chamfer",
+        "description": "Chamfer on the right face of the gear section.",
+        "geometry": {
+          "length_mm": 0.3,
+          "angle_deg": 45.0
+        },
+        "access_directions": [
+          "radial"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "source_views": [
+          "main_view"
+        ]
+      },
+      {
+        "feature_id": "F15",
+        "feature_type": "radius",
+        "name": "Gear to shaft radius",
+        "description": "Transition radius from the right face of the gear section to the middle shaft.",
+        "geometry": {
+          "radius_mm": 1.0
+        },
+        "access_directions": [
+          "radial"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "source_views": [
+          "main_view"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "relationship_id": "R01",
+        "from_feature_id": "F06",
+        "to_feature_id": "F02",
+        "relationship_type": "datum_referenced",
+        "detail": "Runout 0.02 to datum A per F11_GDT1"
+      },
+      {
+        "relationship_id": "R02",
+        "from_feature_id": "F06",
+        "to_feature_id": "F08",
+        "relationship_type": "datum_referenced",
+        "detail": "Runout 0.02 to datum B per F11_GDT1"
+      },
+      {
+        "relationship_id": "R03",
+        "from_feature_id": "F04",
+        "to_feature_id": "F02",
+        "relationship_type": "datum_referenced",
+        "detail": "Runout 0.03 to datum A per F1_GDT1"
+      },
+      {
+        "relationship_id": "R04",
+        "from_feature_id": "F04",
+        "to_feature_id": "F08",
+        "relationship_type": "datum_referenced",
+        "detail": "Runout 0.03 to datum B per F1_GDT1"
+      },
+      {
+        "relationship_id": "R05",
+        "from_feature_id": "F12",
+        "to_feature_id": "F03",
+        "relationship_type": "on_same_face",
+        "detail": "Chamfer on the left shoulder step edge"
+      },
+      {
+        "relationship_id": "R06",
+        "from_feature_id": "F13",
+        "to_feature_id": "F04",
+        "relationship_type": "on_same_face",
+        "detail": "Chamfer on gear left face"
+      },
+      {
+        "relationship_id": "R07",
+        "from_feature_id": "F14",
+        "to_feature_id": "F04",
+        "relationship_type": "on_same_face",
+        "detail": "Chamfer on gear right face"
+      },
+      {
+        "relationship_id": "R08",
+        "from_feature_id": "F09",
+        "to_feature_id": "F08",
+        "relationship_type": "on_same_face",
+        "detail": "Chamfer on Datum B journal edge"
+      },
+      {
+        "relationship_id": "R09",
+        "from_feature_id": "F15",
+        "to_feature_id": "F04",
+        "relationship_type": "intersecting",
+        "detail": "Fillet R1 at transition from gear to middle shaft"
+      },
+      {
+        "relationship_id": "R10",
+        "from_feature_id": "F15",
+        "to_feature_id": "F05",
+        "relationship_type": "intersecting",
+        "detail": "Fillet R1 blends gear to Ø9 cylinder"
+      }
+    ],
+    "datum_scheme": {
+      "datums": [
+        {
+          "datum_letter": "A",
+          "feature_id": "F02",
+          "surface_type": "cylindrical",
+          "description": "Leftmost Ø7n6 journal surface."
+        },
+        {
+          "datum_letter": "B",
+          "feature_id": "F08",
+          "surface_type": "cylindrical",
+          "description": "Rightmost Ø6k6 journal surface."
+        }
+      ],
+      "datum_hierarchy_notes": "Datums A and B are opposed cylindrical journals defining the common datum axis A-B used for runout controls."
+    },
+    "part_notes": "Material: 1.7139 (16MnCrS5) (Pb<0,1%). Scale: 5:1. General tolerance: DIN ISO 2768-mK. Projection: first angle. Heat treatment: Für Material 16MnCrS5 / For material 16MnCrS5: Einsatzgehärtet und angelassen 700+100HV10; Eht=0,3+0,2mm / case-hardened and tempered 700+100HV10; hardening depth=Eht=0,3+0,2mm. Coating: none specified. General notes: DEBURR: Kanten müssen vollständig entgratet sein / sharp edges must be removed. PROCESS: Für Material 16MnCrS5 / For material 16MnCrS5: Einsatzgehärtet und angelassen 700+100HV10; Eht=0,3+0,2mm / case-hardened and tempered 700+100HV10; hardening depth=Eht=0,3+0,2mm. RoHS- und REACH-konform nach zum Lieferzeitpunkt gültiger EU Richtlinie / RoHS and REACH compliant according to at time of delivery valid EC Directive. Extraction notes: Surface finish and edge break symbols are present in the notes block: general finish Rz 16, specific Rz 6 and Rz 2,5. Edge break default specified as -0,3x45° or R 0,4.",
+    "overall_complexity": "moderate"
+  },
+  "component_specs": [
+    {
+      "section_id": "gear_data_table",
+      "component_type": "helical_gear",
+      "spec_title": "Schrägstirnrad außenverzahnt / helical gear external geared",
+      "parameters": [
+        {
+          "parameter_name": "Zähnezahl / number of teeth",
+          "symbol": "z",
+          "value_raw": "11",
+          "value_numeric": 11.0
+        },
+        {
+          "parameter_name": "Normalmodul / normal module",
+          "symbol": "m",
+          "unit": "mm",
+          "value_raw": "1",
+          "value_numeric": 1.0
+        },
+        {
+          "parameter_name": "Teilkreisdurchmesser / pitch diameter",
+          "symbol": "d",
+          "unit": "mm",
+          "value_raw": "11,388",
+          "value_numeric": 11.388
+        },
+        {
+          "parameter_name": "Grundkreisdurchmesser / base diameter",
+          "symbol": "d_b",
+          "unit": "mm",
+          "value_raw": "10,657",
+          "value_numeric": 10.657
+        },
+        {
+          "parameter_name": "Erzeugter Fußkreisdurchmesser / generated root circle diameter",
+          "symbol": "d_f",
+          "unit": "mm",
+          "value_raw": "9,791 -0,062",
+          "value_numeric": 9.791,
+          "plus_tolerance": 0.0,
+          "minus_tolerance": 0.062
+        },
+        {
+          "parameter_name": "Fußnutzkreis / effective root diameter",
+          "symbol": "d_Nf",
+          "unit": "mm",
+          "value_raw": "10,770 -0,075",
+          "value_numeric": 10.77,
+          "plus_tolerance": 0.0,
+          "minus_tolerance": 0.075
+        },
+        {
+          "parameter_name": "Bezugsprofil / basic rack tooth profile",
+          "value_raw": "DIN 3972 / II",
+          "standard_ref": "DIN 3972 / II"
+        },
+        {
+          "parameter_name": "Eingriffswinkel / pressure angle",
+          "symbol": "α",
+          "value_raw": "20°",
+          "value_numeric": 20.0
+        },
+        {
+          "parameter_name": "Kopfhöhenänderung / change in head height",
+          "symbol": "k",
+          "unit": "mm",
+          "value_raw": "0,0",
+          "value_numeric": 0.0
+        },
+        {
+          "parameter_name": "Schrägungswinkel / helix angle",
+          "symbol": "β",
+          "value_raw": "15°",
+          "value_numeric": 15.0
+        },
+        {
+          "parameter_name": "Flankenrichtung / flank direction",
+          "value_raw": "rechts-steigend right-rising"
+        },
+        {
+          "parameter_name": "Kopfrundung / tooth tip rounding",
+          "symbol": "r_k",
+          "unit": "mm",
+          "value_raw": "0,0",
+          "value_numeric": 0.0
+        },
+        {
+          "parameter_name": "Profilverschiebungsfaktor / addendum modification coefficient",
+          "symbol": "x*",
+          "value_raw": "0,511",
+          "value_numeric": 0.511
+        },
+        {
+          "parameter_name": "Achsabstand im Gehäuse mit Abmaßen / distance between axles in box with tolerance",
+          "symbol": "a",
+          "unit": "mm",
+          "value_raw": "37,0 ±0.032",
+          "value_numeric": 37.0,
+          "plus_tolerance": 0.032,
+          "minus_tolerance": 0.032
+        },
+        {
+          "parameter_name": "Qualität / quality",
+          "value_raw": "DIN 58405 / 8 d",
+          "standard_ref": "DIN 58405 / 8 d"
+        },
+        {
+          "parameter_name": "Maß über Zähne gemessen/ n=3 gauge above teeth n=3",
+          "symbol": "Am",
+          "unit": "mm",
+          "value_raw": "7,859 -0,021",
+          "value_numeric": 7.859,
+          "plus_tolerance": 0.0,
+          "minus_tolerance": 0.021,
+          "row_notes": "Parameter name spans two lines and incorporates 'n=3' in both languages."
+        },
+        {
+          "parameter_name": "Zweiflanken-Wälzsprung / two flank working error",
+          "symbol": "fi ″",
+          "unit": "µm",
+          "value_raw": "11",
+          "value_numeric": 11.0
+        },
+        {
+          "parameter_name": "Zweiflanken-Wälzabweichung / radial compositeerror",
+          "symbol": "Fi ″",
+          "unit": "µm",
+          "value_raw": "32",
+          "value_numeric": 32.0,
+          "row_notes": "Spelling 'compositeerror' preserved verbatim from drawing."
+        },
+        {
+          "parameter_name": "Gegenradsachnummer / counter wheel articlecode",
+          "symbol": "z=61",
+          "unit": "links",
+          "value_raw": "C.14.386-00",
+          "row_notes": "The unit column contains 'links' (direction) and the symbol column contains 'z=61', which deviate from the standard header definitions but have been captured in their physical columns."
+        }
+      ]
+    }
+  ],
+  "component_spec_links": [
+    {
+      "spec_section_id": "gear_data_table",
+      "feature_ids": [
+        "F04"
+      ],
+      "link_notes": "Spec table defines the external helical gear. Linked to the gear body in the front view and its tip-OD in the right/isometric views."
+    }
+  ],
+  "clarifications": [
+  ],
+  "assumptions": [
+    {
+      "assumption_id": "A01",
+      "text": "Grouped auxiliary_view:F1 (gear tip OD), main_view:F6 (helical gear section), and isometric_view:F4 as the same physical gear feature based on view correspondence and GD&T to A-B."
+    },
+    {
+      "assumption_id": "A02",
+      "text": "DETAIL A is an enlargement of the left shoulder/undercut zone; grouped detail_a:F1 with main_view:F4 and isometric_view:F3."
+    },
+    {
+      "assumption_id": "A03",
+      "text": "DETAIL B provides the authoritative geometry for the right undercut; chose detail_b:F3 as canonical over main_view:F12 where values conflict (width 1.45 vs 1 and angle 15° vs 10°)."
+    },
+    {
+      "assumption_id": "A04",
+      "text": "Assigned unattached callout UC3 (23.5 ±0.1) to main_view:F10 as the controlling span from gear right face to the start of the 16 mm journal, used to derive F10 length."
+    },
+    {
+      "assumption_id": "A05",
+      "text": "Dropped unattached callout UC2 (46.5 ±0.1) as a redundant chain dimension equal to 9 ±0.1 + 21.5 ±0.1 + 16 already dimensioned on individual features."
+    },
+    {
+      "assumption_id": "A06",
+      "text": "Dropped unattached callout UC1 (61.4 REF) as an overall reference length not required for machining individual features."
+    },
+    {
+      "assumption_id": "A07",
+      "text": "Set the right-side center hole to match the left side as DIN 332-R2x4,25."
+    }
+  ]
+}

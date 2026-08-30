@@ -1,0 +1,122 @@
+{
+  "analysis_id": "feas_C.14.373-00_jal",
+  "source_drawing": "C.14.373-00 Stirnrad z39 links LevMix",
+  "drawing_number": "C.14.373-00",
+  "material": "16MnCrS5 1.7139 (Pb<0,1%)",
+  "heat_treatment": "Einsatzgeh\u00e4rtet und angelassen 630+100HV10; Eht=0,3+0,2mm / case-hardened and tempered 630+100HV10; hardening depth=Eht=0,3+0,2mm",
+  "feasibility": {
+    "can_proceed": true,
+    "status": "feasible_with_risks",
+    "risk_level": "medium",
+    "blockers": [],
+    "risks": [
+      {
+        "risk_type": "tight_fit_class_journals_and_bores",
+        "description": "Precision fit tolerances (e.g. ISO IT6/IT7 fit classes) on hardened diameters require post-heat-treatment OD/ID grinding, lapping or precision hard turning with close dimensional inspection.",
+        "mitigation": "Provide grinding/hard-turning allowances, control heat-treat distortion, finish grind/lap to ISO 286 limits, and verify on in-house inspection equipment.",
+        "affected_spec_ids": [
+          "S004"
+        ]
+      },
+      {
+        "risk_type": "drawing_callout_interpretation_ambiguity",
+        "description": "Certain drawing symbols or standard references require clarification of exact tolerance values before production.",
+        "mitigation": "Confirm nominal limits with customer prior to tooling release; all implicated machine processes are available in-house.",
+        "affected_spec_ids": [
+          "S003"
+        ]
+      }
+    ],
+    "outside_processes_needed": [],
+    "material_machinable": true,
+    "tolerances_achievable": true,
+    "machines_available": true,
+    "part_fits_envelopes": true
+  },
+  "spec_assessments": [
+    {
+      "spec_id": "S001",
+      "feature_id": "F1",
+      "feature_name": "Outer diameter",
+      "spec_type": "dimensional_tolerance",
+      "description": "Diameter dimension",
+      "nominal_value": "39.79 mm",
+      "tolerance_or_requirement": "+0.0/-0.05 mm",
+      "verdict": "feasible",
+      "required_process": "turning/facing / cnc_lathe",
+      "shop_capability_reference": "cnc_lathe normal_tolerance_mm 0.05 max_diameter_mm 200 max_length_mm 500"
+    },
+    {
+      "spec_id": "S002",
+      "feature_id": "F1",
+      "feature_name": "Outer diameter",
+      "spec_type": "dimensional_tolerance",
+      "description": "Length dimension",
+      "nominal_value": "14.0 mm",
+      "tolerance_or_requirement": "General Tol",
+      "verdict": "feasible",
+      "required_process": "turning/facing / cnc_lathe",
+      "shop_capability_reference": "cnc_lathe normal_tolerance_mm 0.05 max_diameter_mm 200 max_length_mm 500"
+    },
+    {
+      "spec_id": "S003",
+      "feature_id": "F1",
+      "feature_name": "Outer diameter",
+      "spec_type": "geometric_tolerance",
+      "description": "Geometric tolerance wrt Datum A",
+      "nominal_value": "geometric_tolerance",
+      "tolerance_or_requirement": "N/A",
+      "verdict": "info_missing",
+      "required_process": "turning / od_grinding / inspection",
+      "shop_capability_reference": "od_grinding normal_tolerance_mm 0.01; inspection careful_dimensional_capability_mm 0.005"
+    },
+    {
+      "spec_id": "S004",
+      "feature_id": "F2",
+      "feature_name": "Central bore",
+      "spec_type": "dimensional_tolerance",
+      "description": "Diameter dimension",
+      "nominal_value": "9.0 mm",
+      "tolerance_or_requirement": "Class H7",
+      "verdict": "risk",
+      "required_process": "drilling_on_center / boring / hard_turning / id_grinding",
+      "shop_capability_reference": "cnc_lathe careful_tolerance_mm 0.02; id_grinding normal_tolerance_mm 0.01 careful_tolerance_mm 0.005"
+    },
+    {
+      "spec_id": "S005",
+      "feature_id": "F3",
+      "feature_name": "External edge chamfers",
+      "spec_type": "dimensional_tolerance",
+      "description": "Chamfer dimension",
+      "nominal_value": "0.3 mm",
+      "tolerance_or_requirement": "General Tol",
+      "verdict": "feasible",
+      "required_process": "chamfering / deburr / finish_bench",
+      "shop_capability_reference": "cnc_lathe processes chamfering; finish_bench processes edge_break, deburr"
+    },
+    {
+      "spec_id": "S006",
+      "feature_id": "F4",
+      "feature_name": "Internal bore chamfers",
+      "spec_type": "dimensional_tolerance",
+      "description": "Length dimension",
+      "nominal_value": "0.7 mm",
+      "tolerance_or_requirement": "General Tol",
+      "verdict": "feasible",
+      "required_process": "drilling_on_center / boring",
+      "shop_capability_reference": "cnc_lathe normal_tolerance_mm 0.05 careful_tolerance_mm 0.02"
+    },
+    {
+      "spec_id": "S007",
+      "feature_id": "F4",
+      "feature_name": "Internal bore chamfers",
+      "spec_type": "dimensional_tolerance",
+      "description": "Angle deg dimension",
+      "nominal_value": "30.0 mm",
+      "tolerance_or_requirement": "General Tol",
+      "verdict": "feasible",
+      "required_process": "chamfer_turn / deburr",
+      "shop_capability_reference": "cnc_lathe processes chamfering; normal_tolerance_mm 0.05"
+    }
+  ]
+}

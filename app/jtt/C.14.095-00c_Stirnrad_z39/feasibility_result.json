@@ -1,0 +1,259 @@
+{
+  "analysis_id": "feas_C.14.095-00c_Stirnrad_z39_jal",
+  "source_drawing": "Stirnrad z39",
+  "drawing_number": "C.14.095-00",
+  "material": "16MnCr5 / ESP 65 // alternativ: 42CrMoPb4",
+  "heat_treatment": "F\u00fcr Material 16MnCr5 - ESP 65 // For material 16MnCr5 / ESP 65: Einsatzgeh\u00e4rtet und angelassen 600+100HV10; Eht=0,3+0,2mm/ case-hardened and tempered 600+100HV10; hardening depth=Eht=0,3+0,2mm alternativ / alternative F\u00fcr Material 42CrMoPb4 Psitionen induktionsgeh\u00e4rtet / For material 42CrMoPb4 positions induction-hardened: a.) - 520+100HV10; Rth425=0,5+0,5mm b.) - 520+100HV10; Rth425=0,2+0,3mm gemessen unter Fu\u00dfkreisdurchmesser/measured under root diameter",
+  "feasibility": {
+    "can_proceed": true,
+    "status": "feasible_with_risks",
+    "risk_level": "medium",
+    "blockers": [],
+    "risks": [
+      {
+        "risk_type": "tight_fit_class_journals_and_bores",
+        "description": "Precision fit tolerances (e.g. ISO IT6/IT7 fit classes) on hardened diameters require post-heat-treatment OD/ID grinding, lapping or precision hard turning with close dimensional inspection.",
+        "mitigation": "Provide grinding/hard-turning allowances, control heat-treat distortion, finish grind/lap to ISO 286 limits, and verify on in-house inspection equipment.",
+        "affected_spec_ids": [
+          "S007"
+        ]
+      },
+      {
+        "risk_type": "drawing_callout_interpretation_ambiguity",
+        "description": "Certain drawing symbols or standard references require clarification of exact tolerance values before production.",
+        "mitigation": "Confirm nominal limits with customer prior to tooling release; all implicated machine processes are available in-house.",
+        "affected_spec_ids": [
+          "S006",
+          "S013",
+          "S018"
+        ]
+      }
+    ],
+    "outside_processes_needed": [
+      "dedicated_gear_teeth_chamfering",
+      "shot_blasting"
+    ],
+    "material_machinable": true,
+    "tolerances_achievable": true,
+    "machines_available": true,
+    "part_fits_envelopes": true
+  },
+  "spec_assessments": [
+    {
+      "spec_id": "S001",
+      "feature_id": "F1",
+      "feature_name": "Profile Undercut",
+      "spec_type": "dimensional_tolerance",
+      "description": "Radius dimension",
+      "nominal_value": "0.4 mm",
+      "tolerance_or_requirement": "General Tol",
+      "verdict": "feasible",
+      "required_process": "turning / grooving / deburr",
+      "shop_capability_reference": "cnc_lathe normal_tolerance_mm 0.05; finish_bench processes deburr"
+    },
+    {
+      "spec_id": "S002",
+      "feature_id": "F1",
+      "feature_name": "Profile Undercut",
+      "spec_type": "dimensional_tolerance",
+      "description": "Width dimension",
+      "nominal_value": "2.0 mm",
+      "tolerance_or_requirement": "General Tol",
+      "verdict": "feasible",
+      "required_process": "turning / grooving / deburr",
+      "shop_capability_reference": "cnc_lathe normal_tolerance_mm 0.05; finish_bench processes deburr"
+    },
+    {
+      "spec_id": "S003",
+      "feature_id": "F1",
+      "feature_name": "Profile Undercut",
+      "spec_type": "dimensional_tolerance",
+      "description": "Depth dimension",
+      "nominal_value": "0.2 mm",
+      "tolerance_or_requirement": "+0.0/-0.1 mm",
+      "verdict": "feasible",
+      "required_process": "turning / grooving / deburr",
+      "shop_capability_reference": "cnc_lathe normal_tolerance_mm 0.05; finish_bench processes deburr"
+    },
+    {
+      "spec_id": "S004",
+      "feature_id": "F1",
+      "feature_name": "Profile Undercut",
+      "spec_type": "dimensional_tolerance",
+      "description": "Angle deg dimension",
+      "nominal_value": "15.0 mm",
+      "tolerance_or_requirement": "General Tol",
+      "verdict": "feasible",
+      "required_process": "turning / grooving / deburr",
+      "shop_capability_reference": "cnc_lathe normal_tolerance_mm 0.05; finish_bench processes deburr"
+    },
+    {
+      "spec_id": "S005",
+      "feature_id": "F1",
+      "feature_name": "Central bore with two flats",
+      "spec_type": "dimensional_tolerance",
+      "description": "Width dimension",
+      "nominal_value": "9.03 mm",
+      "tolerance_or_requirement": "+0.1/-0.0 mm",
+      "verdict": "feasible",
+      "required_process": "drilling_on_center / boring",
+      "shop_capability_reference": "cnc_lathe normal_tolerance_mm 0.05 careful_tolerance_mm 0.02"
+    },
+    {
+      "spec_id": "S006",
+      "feature_id": "F1",
+      "feature_name": "Central bore with two flats",
+      "spec_type": "geometric_tolerance",
+      "description": "Geometric tolerance wrt Datum A",
+      "nominal_value": "geometric_tolerance",
+      "tolerance_or_requirement": "N/A",
+      "verdict": "info_missing",
+      "required_process": "drilling_on_center / boring",
+      "shop_capability_reference": "cnc_lathe normal_tolerance_mm 0.05 careful_tolerance_mm 0.02"
+    },
+    {
+      "spec_id": "S007",
+      "feature_id": "F1",
+      "feature_name": "Central Bore",
+      "spec_type": "dimensional_tolerance",
+      "description": "Diameter dimension",
+      "nominal_value": "12.0 mm",
+      "tolerance_or_requirement": "Class H7",
+      "verdict": "risk",
+      "required_process": "drilling_on_center / boring / hard_turning / id_grinding",
+      "shop_capability_reference": "cnc_lathe careful_tolerance_mm 0.02; id_grinding normal_tolerance_mm 0.01 careful_tolerance_mm 0.005"
+    },
+    {
+      "spec_id": "S008",
+      "feature_id": "F1",
+      "feature_name": "Central Bore",
+      "spec_type": "dimensional_tolerance",
+      "description": "Chamfer dimension",
+      "nominal_value": "0.5 mm",
+      "tolerance_or_requirement": "General Tol",
+      "verdict": "feasible",
+      "required_process": "chamfer_turn / deburr",
+      "shop_capability_reference": "cnc_lathe processes chamfering; normal_tolerance_mm 0.05"
+    },
+    {
+      "spec_id": "S009",
+      "feature_id": "F2",
+      "feature_name": "Gear Outer Cylinder",
+      "spec_type": "dimensional_tolerance",
+      "description": "Diameter dimension",
+      "nominal_value": "40.181 mm",
+      "tolerance_or_requirement": "+0.2/-0.2 mm",
+      "verdict": "feasible",
+      "required_process": "turning / gear_hobbing / gear_shaving / gear_grinding",
+      "shop_capability_reference": "cnc_lathe normal_tolerance_mm 0.05; gear_hobbing 30 machines; gear_grinding careful_tolerance_mm 0.005"
+    },
+    {
+      "spec_id": "S010",
+      "feature_id": "F2",
+      "feature_name": "Gear Outer Cylinder",
+      "spec_type": "dimensional_tolerance",
+      "description": "Width dimension",
+      "nominal_value": "10.0 mm",
+      "tolerance_or_requirement": "+0.1/-0.1 mm",
+      "verdict": "feasible",
+      "required_process": "gear_hobbing / gear_shaving / gear_grinding / inspection",
+      "shop_capability_reference": "gear_hobbing 30 machines normal_tolerance_mm 0.03; gear_shaving normal_tolerance_mm 0.02; gear_grinding careful_tolerance_mm 0.005"
+    },
+    {
+      "spec_id": "S011",
+      "feature_id": "F2",
+      "feature_name": "Gear Outer Cylinder",
+      "spec_type": "dimensional_tolerance",
+      "description": "Length dimension",
+      "nominal_value": "0.5 mm",
+      "tolerance_or_requirement": "General Tol",
+      "verdict": "feasible",
+      "required_process": "gear_hobbing / gear_shaving / gear_grinding / inspection",
+      "shop_capability_reference": "gear_hobbing normal_tolerance_mm 0.03; gear_shaving normal_tolerance_mm 0.02; inspection gear_measurement"
+    },
+    {
+      "spec_id": "S012",
+      "feature_id": "F2",
+      "feature_name": "Gear Outer Cylinder",
+      "spec_type": "dimensional_tolerance",
+      "description": "Angle deg dimension",
+      "nominal_value": "15.0 mm",
+      "tolerance_or_requirement": "General Tol",
+      "verdict": "feasible",
+      "required_process": "gear_hobbing / gear_shaving / gear_grinding / inspection",
+      "shop_capability_reference": "gear_hobbing normal_tolerance_mm 0.03; gear_shaving normal_tolerance_mm 0.02; inspection gear_measurement"
+    },
+    {
+      "spec_id": "S013",
+      "feature_id": "F2",
+      "feature_name": "Gear Outer Cylinder",
+      "spec_type": "geometric_tolerance",
+      "description": "Geometric tolerance wrt Datum A",
+      "nominal_value": "geometric_tolerance",
+      "tolerance_or_requirement": "N/A",
+      "verdict": "info_missing",
+      "required_process": "gear_hobbing / gear_shaving / gear_grinding / inspection",
+      "shop_capability_reference": "gear_hobbing 30 machines normal_tolerance_mm 0.03; gear_shaving normal_tolerance_mm 0.02; gear_grinding careful_tolerance_mm 0.005"
+    },
+    {
+      "spec_id": "S014",
+      "feature_id": "F3",
+      "feature_name": "Hub",
+      "spec_type": "dimensional_tolerance",
+      "description": "Diameter dimension",
+      "nominal_value": "24.0 mm",
+      "tolerance_or_requirement": "Class u6",
+      "verdict": "feasible",
+      "required_process": "turning / od_grinding",
+      "shop_capability_reference": "cnc_lathe normal_tolerance_mm 0.05; od_grinding normal_tolerance_mm 0.01"
+    },
+    {
+      "spec_id": "S015",
+      "feature_id": "F3",
+      "feature_name": "Hub",
+      "spec_type": "dimensional_tolerance",
+      "description": "Length dimension",
+      "nominal_value": "10.0 mm",
+      "tolerance_or_requirement": "+0.3/-0.3 mm",
+      "verdict": "feasible",
+      "required_process": "turning/facing",
+      "shop_capability_reference": "cnc_lathe normal_tolerance_mm 0.05; careful_tolerance_mm 0.02"
+    },
+    {
+      "spec_id": "S016",
+      "feature_id": "F3",
+      "feature_name": "Hub",
+      "spec_type": "dimensional_tolerance",
+      "description": "Length dimension",
+      "nominal_value": "1.0 mm",
+      "tolerance_or_requirement": "General Tol",
+      "verdict": "feasible",
+      "required_process": "turning/facing",
+      "shop_capability_reference": "cnc_lathe normal_tolerance_mm 0.05; careful_tolerance_mm 0.02"
+    },
+    {
+      "spec_id": "S017",
+      "feature_id": "F3",
+      "feature_name": "Hub",
+      "spec_type": "dimensional_tolerance",
+      "description": "Angle deg dimension",
+      "nominal_value": "10.0 mm",
+      "tolerance_or_requirement": "General Tol",
+      "verdict": "feasible",
+      "required_process": "turning / od_grinding",
+      "shop_capability_reference": "cnc_lathe normal_tolerance_mm 0.05; od_grinding normal_tolerance_mm 0.01"
+    },
+    {
+      "spec_id": "S018",
+      "feature_id": "F3",
+      "feature_name": "Hub",
+      "spec_type": "geometric_tolerance",
+      "description": "Geometric tolerance wrt Datum A",
+      "nominal_value": "geometric_tolerance",
+      "tolerance_or_requirement": "N/A",
+      "verdict": "info_missing",
+      "required_process": "turning / od_grinding",
+      "shop_capability_reference": "cnc_lathe normal_tolerance_mm 0.05; od_grinding normal_tolerance_mm 0.01"
+    }
+  ]
+}

@@ -1,0 +1,910 @@
+{
+  "analysis_id": "C.14.031-00e_Rührwelle_HF_1G_merge_20260829T142440Z",
+  "part": {
+    "name": "Rührwelle HF 1G",
+    "drawing_number": "C.14.031-00",
+    "revision": "e",
+    "material": "C45+C 1.0503 / C45E+C 1.1191 (Pb<0,1%)",
+    "units": "mm"
+  },
+  "feature_graph": {
+    "part_envelope": {
+      "width_mm": 156.6,
+      "max_diameter_mm": 25.0,
+      "envelope_shape": "cylindrical"
+    },
+    "coordinate_system": {
+      "primary_axis": "X",
+      "orientation_notes": "X is the shaft/rotation axis per front and section A-A views; Y vertical; Z depth into/out of page per view notes. Isometric note suggesting Z as shaft axis is superseded by orthographic/section definitions.",
+      "datum_origin": "A"
+    },
+    "features": [
+      {
+        "feature_id": "F01",
+        "feature_type": "part_body",
+        "name": "Shaft body",
+        "description": "Overall turned shaft with multiple stepped diameters, grooves, wrench flats at one end, and center holes at both ends.",
+        "geometry": {
+          "length_mm": 156.6
+        },
+        "access_directions": [
+          "radial",
+          "+Z",
+          "-Z",
+          "axial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "length",
+            "nominal_mm": 104.5,
+            "plus_mm": 0.1,
+            "minus_mm": 0.1
+          },
+          {
+            "dimension_type": "length",
+            "nominal_mm": 95.5,
+            "plus_mm": 0.05,
+            "minus_mm": 0.05
+          },
+          {
+            "dimension_type": "length",
+            "nominal_mm": 82.5,
+            "plus_mm": 0.1,
+            "minus_mm": 0.1
+          }
+        ],
+        "gdt_controls": [],
+        "source_views": [
+          "main_view",
+          "isometric_view"
+        ]
+      },
+      {
+        "feature_id": "F02",
+        "feature_type": "flat_face",
+        "name": "Wrench flats",
+        "description": "Opposing flat faces on the right end forming a journal for a wrench (SW19).",
+        "geometry": {
+          "width_mm": 19.0
+        },
+        "instance_count": 2,
+        "access_directions": [
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "width",
+            "nominal_mm": 19.0,
+            "plus_mm": 0.0,
+            "minus_mm": 0.2
+          }
+        ],
+        "gdt_controls": [],
+        "source_views": [
+          "main_view",
+          "isometric_view"
+        ]
+      },
+      {
+        "feature_id": "F03",
+        "feature_type": "internal_bore",
+        "name": "Right Center Hole",
+        "description": "Standard center hole on the right end face.",
+        "geometry": {
+          "depth_condition": "BLIND",
+          "axis_direction": "X"
+        },
+        "access_directions": [
+          "-X",
+          "axial"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [
+          {
+            "gdt_type": "runout",
+            "tolerance_value_mm": 0.08,
+            "datum_references": [
+              "A",
+              "B"
+            ],
+            "applied_to": "internal conical surface"
+          }
+        ],
+        "source_views": [
+          "section_a_a",
+          "isometric_view"
+        ]
+      },
+      {
+        "feature_id": "F04",
+        "feature_type": "undercut",
+        "name": "Undercut X1",
+        "description": "Relief/undercut between Ø8 and Ø14 segments. Geometry detailed in Detail X.",
+        "geometry": {
+          "length_mm": 1.6,
+          "depth_mm": 0.2,
+          "radius_mm": 0.5,
+          "angle_deg": 15.0,
+          "axis_direction": "radial"
+        },
+        "access_directions": [
+          "radial"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "source_views": [
+          "section_a_a",
+          "detail_x"
+        ]
+      },
+      {
+        "feature_id": "F05",
+        "feature_type": "undercut",
+        "name": "Undercut X2",
+        "description": "Relief/undercut between Ø22 and Ø25 segments.",
+        "geometry": {
+          "length_mm": 1.6,
+          "depth_mm": 0.2,
+          "radius_mm": 0.5,
+          "angle_deg": 15.0,
+          "axis_direction": "radial"
+        },
+        "access_directions": [
+          "radial"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "source_views": [
+          "section_a_a",
+          "detail_x"
+        ]
+      },
+      {
+        "feature_id": "F06",
+        "feature_type": "groove",
+        "name": "120 Degree V-Groove",
+        "description": "V-shaped groove cut into the main shaft diameter.",
+        "geometry": {
+          "radius_mm": 0.1,
+          "angle_deg": 120.0
+        },
+        "access_directions": [
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "radius",
+            "nominal_mm": 0.1,
+            "upper_limit_mm": 0.1,
+            "qualifier": "MAX"
+          }
+        ],
+        "gdt_controls": [],
+        "source_views": [
+          "section_a_a",
+          "main_view"
+        ]
+      },
+      {
+        "feature_id": "F07",
+        "feature_type": "undercut",
+        "name": "Undercut Profile",
+        "description": "Complex stepped profile with multiple transition radii and an angled face, revealed in cross-section.",
+        "geometry": {
+          "length_mm": 2.3,
+          "radius_mm": 2.0,
+          "angle_deg": 15.0
+        },
+        "access_directions": [],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "source_views": [
+          "detail_y"
+        ]
+      },
+      {
+        "feature_id": "F08",
+        "feature_type": "chamfer",
+        "name": "Right side chamfer",
+        "description": "Chamfer adjacent to the wrench flat section, indicated by a leader line with a revision marker.",
+        "geometry": {},
+        "access_directions": [
+          "axial",
+          "radial"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "source_views": [
+          "isometric_view"
+        ]
+      },
+      {
+        "feature_id": "F09",
+        "feature_type": "groove",
+        "name": "Shaft grooves",
+        "description": "Two narrow circumferential grooves on the main cylindrical body.",
+        "geometry": {},
+        "instance_count": 2,
+        "access_directions": [
+          "radial"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "source_views": [
+          "isometric_view"
+        ]
+      },
+      {
+        "feature_id": "F10",
+        "feature_type": "external_cylinder",
+        "name": "Left end cylinder",
+        "description": "First cylindrical step on the left end of the shaft.",
+        "geometry": {
+          "diameter_mm": 10.0
+        },
+        "access_directions": [
+          "radial"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "source_views": [
+          "main_view"
+        ]
+      },
+      {
+        "feature_id": "F11",
+        "feature_type": "external_cylinder",
+        "name": "Ground cylinder step",
+        "description": "Cylindrical step adjacent to the left end, with specific grinding requirements indicated by a surface finish and a note.",
+        "geometry": {},
+        "access_directions": [
+          "radial"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "source_views": [
+          "main_view"
+        ]
+      },
+      {
+        "feature_id": "F12",
+        "feature_type": "external_cylinder",
+        "name": "Datum C cylinder",
+        "description": "Cylindrical surface defining Datum C with a specified surface finish.",
+        "geometry": {},
+        "access_directions": [
+          "radial"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "source_views": [
+          "main_view"
+        ]
+      },
+      {
+        "feature_id": "F13",
+        "feature_type": "external_cylinder",
+        "name": "Right end cylinder section",
+        "description": "Cylindrical step on the right end adjacent to the wrench flats.",
+        "geometry": {
+          "length_mm": 10.0
+        },
+        "access_directions": [
+          "radial"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "source_views": [
+          "main_view"
+        ]
+      },
+      {
+        "feature_id": "F14",
+        "feature_type": "internal_bore",
+        "name": "Left Center Hole",
+        "description": "Standard center hole on the left end face of the shaft.",
+        "geometry": {
+          "axis_direction": "X"
+        },
+        "access_directions": [
+          "+X"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "source_views": [
+          "section_a_a"
+        ]
+      },
+      {
+        "feature_id": "F15",
+        "feature_type": "external_cylinder",
+        "name": "Cylinder Ø17 (Datum B)",
+        "description": "Short bearing or locating journal defining Datum B.",
+        "geometry": {
+          "diameter_mm": 17.0,
+          "length_mm": 3.0,
+          "axis_direction": "X"
+        },
+        "access_directions": [
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 17.0,
+            "tolerance_class": "j6"
+          }
+        ],
+        "gdt_controls": [],
+        "source_views": [
+          "section_a_a"
+        ]
+      },
+      {
+        "feature_id": "F16",
+        "feature_type": "external_cylinder",
+        "name": "Cylinder Ø22",
+        "description": "Stepped up cylindrical segment.",
+        "geometry": {
+          "diameter_mm": 22.0,
+          "axis_direction": "X"
+        },
+        "access_directions": [
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 22.0,
+            "plus_mm": 0.0,
+            "minus_mm": 0.2
+          }
+        ],
+        "gdt_controls": [],
+        "source_views": [
+          "section_a_a"
+        ]
+      },
+      {
+        "feature_id": "F17",
+        "feature_type": "flat_face",
+        "name": "Vertical Face Ø22 to Ø25",
+        "description": "Shoulder face between the Ø22 and Ø25 cylinders.",
+        "geometry": {
+          "axis_direction": "X"
+        },
+        "access_directions": [
+          "+X",
+          "-X"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [
+          {
+            "gdt_type": "runout",
+            "tolerance_value_mm": 0.1,
+            "datum_references": [
+              "A",
+              "B"
+            ],
+            "applied_to": "shoulder face"
+          }
+        ],
+        "source_views": [
+          "section_a_a"
+        ]
+      },
+      {
+        "feature_id": "F18",
+        "feature_type": "external_cylinder",
+        "name": "Max Diameter Cylinder Ø25",
+        "description": "Largest diameter cylindrical section of the shaft.",
+        "geometry": {
+          "diameter_mm": 24.8,
+          "axis_direction": "X"
+        },
+        "access_directions": [
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 24.8,
+            "upper_limit_mm": 24.9,
+            "lower_limit_mm": 24.7
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "runout",
+            "tolerance_value_mm": 0.1,
+            "datum_references": [
+              "A",
+              "B"
+            ],
+            "applied_to": "cylindrical surface"
+          }
+        ],
+        "source_views": [
+          "section_a_a"
+        ]
+      },
+      {
+        "feature_id": "F19",
+        "feature_type": "external_cylinder",
+        "name": "Cylinder Ø23.5",
+        "description": "Segment following the V-groove.",
+        "geometry": {
+          "diameter_mm": 23.5,
+          "axis_direction": "X"
+        },
+        "access_directions": [
+          "radial"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "source_views": [
+          "section_a_a"
+        ]
+      },
+      {
+        "feature_id": "F20",
+        "feature_type": "radius",
+        "name": "Transition Radius R1.2",
+        "description": "Fillet radius stepping down from Ø23.5 to Ø13.4.",
+        "geometry": {
+          "radius_mm": 1.2
+        },
+        "access_directions": [
+          "radial"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "source_views": [
+          "section_a_a"
+        ]
+      },
+      {
+        "feature_id": "F21",
+        "feature_type": "external_cylinder",
+        "name": "Cylinder Ø13.4",
+        "description": "Cylindrical segment before the threaded end.",
+        "geometry": {
+          "diameter_mm": 13.4,
+          "length_mm": 9.8,
+          "axis_direction": "X"
+        },
+        "access_directions": [
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 13.4,
+            "plus_mm": 0.0,
+            "minus_mm": 0.1
+          }
+        ],
+        "gdt_controls": [],
+        "source_views": [
+          "section_a_a"
+        ]
+      },
+      {
+        "feature_id": "F22",
+        "feature_type": "chamfer",
+        "name": "Inner Chamfer on Ø13.4",
+        "description": "Chamfer separating Ø13.4 section from thread relief.",
+        "geometry": {
+          "length_mm": 0.5,
+          "angle_deg": 45.0
+        },
+        "access_directions": [
+          "radial",
+          "-X"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "source_views": [
+          "section_a_a"
+        ]
+      },
+      {
+        "feature_id": "F23",
+        "feature_type": "external_cylinder",
+        "name": "Leftmost Cylinder (Datum A)",
+        "description": "First cylindrical segment on the left end.",
+        "geometry": {
+          "diameter_mm": 8.0,
+          "length_mm": 9.1,
+          "axis_direction": "X"
+        },
+        "access_directions": [
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 8.0,
+            "tolerance_class": "f6"
+          }
+        ],
+        "gdt_controls": [],
+        "source_views": [
+          "section_a_a"
+        ]
+      },
+      {
+        "feature_id": "F24",
+        "feature_type": "thread_relief",
+        "name": "Thread Relief Groove",
+        "description": "Groove providing runout for the external thread.",
+        "geometry": {
+          "width_mm": 3.0
+        },
+        "access_directions": [
+          "radial"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "source_views": [
+          "section_a_a"
+        ]
+      },
+      {
+        "feature_id": "F25",
+        "feature_type": "external_thread",
+        "name": "Right End Thread",
+        "description": "Threaded portion on the right end of the shaft.",
+        "geometry": {
+          "length_mm": 13.0,
+          "axis_direction": "X"
+        },
+        "access_directions": [
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "length",
+            "nominal_mm": 13.0,
+            "plus_mm": 0.0,
+            "minus_mm": 0.2
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "runout",
+            "tolerance_value_mm": 0.03,
+            "datum_references": [
+              "A",
+              "B"
+            ],
+            "applied_to": "thread major cylinder"
+          }
+        ],
+        "source_views": [
+          "section_a_a"
+        ]
+      },
+      {
+        "feature_id": "F26",
+        "feature_type": "chamfer",
+        "name": "Right End Chamfer",
+        "description": "Entry chamfer for the external thread.",
+        "geometry": {
+          "length_mm": 1.5,
+          "angle_deg": 45.0
+        },
+        "access_directions": [
+          "radial",
+          "-X"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "source_views": [
+          "section_a_a"
+        ]
+      },
+      {
+        "feature_id": "F27",
+        "feature_type": "chamfer",
+        "name": "Left End Chamfer",
+        "description": "Chamfer on the leftmost end face.",
+        "geometry": {
+          "length_mm": 1.0,
+          "angle_deg": 45.0
+        },
+        "access_directions": [
+          "radial",
+          "+X"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "source_views": [
+          "section_a_a"
+        ]
+      },
+      {
+        "feature_id": "F28",
+        "feature_type": "external_cylinder",
+        "name": "Cylinder Ø14",
+        "description": "Cylindrical segment following the first undercut.",
+        "geometry": {
+          "diameter_mm": 14.054,
+          "axis_direction": "X"
+        },
+        "access_directions": [
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 14.054,
+            "upper_limit_mm": 14.059,
+            "lower_limit_mm": 14.049
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "runout",
+            "tolerance_value_mm": 0.02,
+            "datum_references": [
+              "A",
+              "B"
+            ],
+            "applied_to": "cylindrical surface"
+          }
+        ],
+        "source_views": [
+          "section_a_a"
+        ]
+      },
+      {
+        "feature_id": "F29",
+        "feature_type": "external_cylinder",
+        "name": "Main Long Cylinder Ø16.8",
+        "description": "Long cylindrical body segment of the shaft.",
+        "geometry": {
+          "diameter_mm": 16.8,
+          "length_mm": 68.0,
+          "axis_direction": "X"
+        },
+        "access_directions": [
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 16.8,
+            "plus_mm": 0.0,
+            "minus_mm": 0.15
+          }
+        ],
+        "gdt_controls": [],
+        "source_views": [
+          "section_a_a"
+        ]
+      },
+      {
+        "feature_id": "F30",
+        "feature_type": "tapered_external",
+        "name": "15 Degree Taper",
+        "description": "Tapered transition down to Ø16.2 segment.",
+        "geometry": {
+          "angle_deg": 15.0,
+          "axis_direction": "X"
+        },
+        "access_directions": [
+          "radial"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "source_views": [
+          "section_a_a"
+        ]
+      },
+      {
+        "feature_id": "F31",
+        "feature_type": "external_cylinder",
+        "name": "Cylinder Ø16.2",
+        "description": "Segment after the 15 degree taper.",
+        "geometry": {
+          "diameter_mm": 16.2,
+          "length_mm": 11.1,
+          "axis_direction": "X"
+        },
+        "access_directions": [
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 16.2,
+            "plus_mm": 0.0,
+            "minus_mm": 0.1
+          },
+          {
+            "dimension_type": "length",
+            "nominal_mm": 11.1,
+            "plus_mm": 0.0,
+            "minus_mm": 0.1
+          }
+        ],
+        "gdt_controls": [],
+        "source_views": [
+          "section_a_a"
+        ]
+      },
+      {
+        "feature_id": "F32",
+        "feature_type": "groove",
+        "name": "Groove before Datum B",
+        "description": "Relief groove with internal radius.",
+        "geometry": {
+          "width_mm": 1.1,
+          "radius_mm": 0.5
+        },
+        "access_directions": [
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "width",
+            "nominal_mm": 1.1,
+            "plus_mm": 0.2,
+            "minus_mm": 0.0
+          }
+        ],
+        "gdt_controls": [],
+        "source_views": [
+          "section_a_a"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "relationship_id": "R01",
+        "from_feature_id": "F15",
+        "to_feature_id": "F23",
+        "relationship_type": "coaxial",
+        "detail": "Datum B journal coaxial with Datum A journal along shaft axis X."
+      },
+      {
+        "relationship_id": "R02",
+        "from_feature_id": "F28",
+        "to_feature_id": "F23",
+        "relationship_type": "datum_referenced",
+        "detail": "Runout controlled to A"
+      },
+      {
+        "relationship_id": "R03",
+        "from_feature_id": "F28",
+        "to_feature_id": "F15",
+        "relationship_type": "datum_referenced",
+        "detail": "Runout controlled to B"
+      },
+      {
+        "relationship_id": "R04",
+        "from_feature_id": "F17",
+        "to_feature_id": "F23",
+        "relationship_type": "datum_referenced",
+        "detail": "Runout controlled to A"
+      },
+      {
+        "relationship_id": "R05",
+        "from_feature_id": "F17",
+        "to_feature_id": "F15",
+        "relationship_type": "datum_referenced",
+        "detail": "Runout controlled to B"
+      },
+      {
+        "relationship_id": "R06",
+        "from_feature_id": "F18",
+        "to_feature_id": "F23",
+        "relationship_type": "datum_referenced",
+        "detail": "Runout controlled to A"
+      },
+      {
+        "relationship_id": "R07",
+        "from_feature_id": "F18",
+        "to_feature_id": "F15",
+        "relationship_type": "datum_referenced",
+        "detail": "Runout controlled to B"
+      },
+      {
+        "relationship_id": "R08",
+        "from_feature_id": "F25",
+        "to_feature_id": "F23",
+        "relationship_type": "datum_referenced",
+        "detail": "Runout controlled to A"
+      },
+      {
+        "relationship_id": "R09",
+        "from_feature_id": "F25",
+        "to_feature_id": "F15",
+        "relationship_type": "datum_referenced",
+        "detail": "Runout controlled to B"
+      },
+      {
+        "relationship_id": "R10",
+        "from_feature_id": "F03",
+        "to_feature_id": "F23",
+        "relationship_type": "datum_referenced",
+        "detail": "Runout controlled to A"
+      },
+      {
+        "relationship_id": "R11",
+        "from_feature_id": "F03",
+        "to_feature_id": "F15",
+        "relationship_type": "datum_referenced",
+        "detail": "Runout controlled to B"
+      }
+    ],
+    "datum_scheme": {
+      "datums": [
+        {
+          "datum_letter": "A",
+          "feature_id": "F23",
+          "surface_type": "cylindrical",
+          "description": "Leftmost Ø8 cylindrical journal."
+        },
+        {
+          "datum_letter": "B",
+          "feature_id": "F15",
+          "surface_type": "cylindrical",
+          "description": "Ø17 j6 cylindrical journal."
+        },
+        {
+          "datum_letter": "C",
+          "feature_id": "F12",
+          "surface_type": "cylindrical",
+          "description": "Cylindrical surface near the middle of the shaft (Rz 6,3)."
+        }
+      ],
+      "datum_hierarchy_notes": "A and B are coaxial cylindrical datums establishing the primary/secondary datum axis; C is a tertiary cylindrical datum near the mid-right section."
+    },
+    "part_notes": "Material: C45+C 1.0503 / C45E+C 1.1191 (Pb<0,1%). Scale: 2:1. General tolerance: DIN ISO 2768 mittel. Projection: first angle. Heat treatment: induktiv gehärtet auf 520+100HV5; Rht425=0,5+0,5mm. Coating: Brueniert. General notes: PROCESS: ohne Ansatz schleifen bzw. hartdrehen. Testing: Prüfmethode Rundlauf 0.22 zu A-B (Prüfdorn (mit 7-10Nm angezogen)). Extraction notes: A general surface finish symbol is present indicating Rz 16 with 'geschliffen' and 'hartdrehen' pointing to Rz 2.5.",
+    "overall_complexity": "complex"
+  },
+  "component_specs": [],
+  "component_spec_links": [],
+  "clarifications": [
+  ],
+  "assumptions": [
+    {
+      "assumption_id": "A01",
+      "text": "Grouped the middle groove seen in front view (main_view:F4) with the 120° V-groove in section A-A (section_a_a:F15). Evidence: same axial location and both describe a circumferential groove; front view shows edge finish while section cut shows included angle."
+    },
+    {
+      "assumption_id": "A02",
+      "text": "Detail X (detail_x:F1) is a shared aggregate enlargement for both undercuts (section_a_a:F4 and section_a_a:F13). It is included as aggregate_refs in both groups and is not canonical."
+    },
+    {
+      "assumption_id": "A03",
+      "text": "Primary machining/part axis set to X per front and section A-A notes, overriding the isometric note that assumed Z as the shaft axis."
+    },
+    {
+      "assumption_id": "A04",
+      "text": "Unattached stack-length callouts UC1–UC4 were temporarily assigned to the overall part body (main_view:F1) while awaiting endpoint clarification, to preserve them in the model."
+    },
+     {
+    "assumption_id": "A05",
+    "text": "Set the 104,5 ±0,1 length (UC1) from the left end face to the shoulder preceding the Ø25 maximum-diameter section."
+  },
+  {
+    "assumption_id": "A06",
+    "text": "Set the 95,5 ±0,05 length (UC2) from the left end face to the right shoulder of the Ø16,8 main cylinder."
+  },
+  {
+    "assumption_id": "A07",
+    "text": "Set the 82,5 ±0,1 length (UC3) from the left end face to the shoulder before the Ø22 segment."
+  },
+  {
+    "assumption_id": "A08",
+    "text": "Set the 52,1 length (UC4) as the complementary right-hand stack length, such that 104,5 + 52,1 = the overall 156,6 length."
+  },
+  {
+    "assumption_id": "A09",
+    "text": "Set Detail Y to define the local relief/undercut at the left-end transition adjacent to the ground step."
+  }
+  ]
+}
