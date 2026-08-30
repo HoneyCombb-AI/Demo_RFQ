@@ -1,0 +1,410 @@
+{
+  "analysis_id": "11-964_merge_20260829T164412Z",
+  "source_feature_graph_id": "11-964_merge_20260829T164412Z",
+  "quantity": 100,
+  "part_family": "milled",
+  "base_geometry": "flat_plate",
+  "stock": {
+    "form": "flat_bar"
+  },
+  "operations": [
+    {
+      "sequence": 1,
+      "name": "Saw \u2013 Cut Flat-Bar Blank",
+      "machine_family": "saw",
+      "setup_note": "Cut ASTM B221 extruded flat bar to an oversize blank suitable for facing and profile milling. Preserve sufficient perimeter material for secure workholding.",
+      "datum_references": [],
+      "material_machinability": "easy",
+      "setup_time_min": 5.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "saw_cut",
+          "target_feature_ids": [
+            "F01"
+          ],
+          "inputs": {
+            "kind": "saw_cut",
+            "cut_width_mm": 18.2,
+            "cut_height_mm": 1.5,
+            "cut_count": 1
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 2,
+      "name": "VMC \u2013 Establish Datum A",
+      "machine_family": "vmc_3axis",
+      "setup_note": "Support the thin blank on a flat sacrificial fixture with the rear surface exposed. Lightly face the rear surface to establish Datum A without distorting the plate.",
+      "datum_references": [
+        "A"
+      ],
+      "material_machinability": "easy",
+      "setup_time_min": 15.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "face_mill",
+          "target_feature_ids": [
+            "F04"
+          ],
+          "inputs": {
+            "kind": "face_mill",
+            "mill_length_mm": 24.4,
+            "mill_width_mm": 18.2,
+            "total_stock_mm": 0.05,
+            "face_count": 1
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 3,
+      "name": "VMC \u2013 Finish Face, Profile and Hole Pattern",
+      "machine_family": "vmc_3axis",
+      "setup_note": "Locate Datum A against a supported vacuum or adhesive fixture with drill and contour relief. Finish the opposite face, external contour and hole pattern in one setup to preserve positional relationship and control the thin plate.",
+      "datum_references": [
+        "A"
+      ],
+      "material_machinability": "easy",
+      "setup_time_min": 30.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "face_mill",
+          "target_feature_ids": [
+            "F01"
+          ],
+          "inputs": {
+            "kind": "face_mill",
+            "mill_length_mm": 24.4,
+            "mill_width_mm": 18.2,
+            "total_stock_mm": 0.05,
+            "face_count": 1
+          }
+        },
+        {
+          "sequence": 2,
+          "operation_type": "profile_mill",
+          "target_feature_ids": [
+            "F05"
+          ],
+          "inputs": {
+            "kind": "contour_mill",
+            "path_length_mm": 1.571,
+            "radial_width_mm": 1.0,
+            "total_depth_mm": 1.5,
+            "path_count": 2
+          }
+        },
+        {
+          "sequence": 3,
+          "operation_type": "profile_mill",
+          "target_feature_ids": [
+            "F03"
+          ],
+          "inputs": {
+            "kind": "contour_mill",
+            "path_length_mm": 0.707,
+            "radial_width_mm": 0.5,
+            "total_depth_mm": 1.5,
+            "path_count": 4
+          }
+        },
+        {
+          "sequence": 4,
+          "operation_type": "spot_drill",
+          "target_feature_ids": [
+            "F02"
+          ],
+          "inputs": {
+            "kind": "point_drill",
+            "hole_diameter_mm": 2.2,
+            "hole_depth_mm": 0.3,
+            "hole_count": 3,
+            "through_hole": false
+          }
+        },
+        {
+          "sequence": 5,
+          "operation_type": "drill",
+          "target_feature_ids": [
+            "F02"
+          ],
+          "inputs": {
+            "kind": "point_drill",
+            "hole_diameter_mm": 2.2,
+            "hole_depth_mm": 1.5,
+            "hole_count": 3,
+            "through_hole": true
+          }
+        },
+        {
+          "sequence": 6,
+          "operation_type": "countersink",
+          "target_feature_ids": [
+            "F02"
+          ],
+          "inputs": {
+            "kind": "point_drill",
+            "hole_diameter_mm": 4.0,
+            "hole_depth_mm": 0.3,
+            "hole_count": 3,
+            "pilot_diameter_mm": 2.2,
+            "through_hole": false
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 4,
+      "name": "Bench Deburr and Edge Finish",
+      "machine_family": "finish_bench",
+      "setup_note": "Support the completed plate on a protected bench surface. Remove profile and through-hole exit burrs while maintaining the specified corner geometry and general edge-break limits.",
+      "datum_references": [],
+      "material_machinability": "easy",
+      "setup_time_min": 4.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "deburr",
+          "target_feature_ids": [
+            "F01",
+            "F02",
+            "F03",
+            "F05"
+          ],
+          "inputs": {
+            "kind": "manual",
+            "complexity": "medium",
+            "edge_length_mm": 229.0
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 5,
+      "name": "Pre-Anodize Dimensional Inspection",
+      "machine_family": "inspection",
+      "setup_note": "Seat Datum A on a surface plate or inspection fixture and verify plate envelope, thickness, external contour, hole size and hole-pattern position before releasing the parts for anodizing.",
+      "datum_references": [
+        "A"
+      ],
+      "material_machinability": "easy",
+      "setup_time_min": 12.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "manual_inspect",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "inspection",
+            "dimension_count": 10,
+            "gdt_count": 1,
+            "sampling_rate_pct": 100.0,
+            "requires_fixture": false
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 6,
+      "name": "Outside Process \u2013 Type II Class I Anodize",
+      "machine_family": "outside_vendor",
+      "setup_note": "Send the complete order as a vendor batch for cleaning, MIL-A-8625 Type II Class I anodizing and sealing. Treat all surfaces unless the customer identifies areas requiring masking.",
+      "datum_references": [],
+      "material_machinability": "easy",
+      "setup_time_min": 0.0,
+      "in_house": false,
+      "outside_process": "anodize_type_ii_class_i",
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "clean_degrease",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "manual",
+            "complexity": "low",
+            "estimated_time_min": 0.5
+          }
+        },
+        {
+          "sequence": 2,
+          "operation_type": "anodize",
+          "target_feature_ids": [
+            "F01",
+            "F02",
+            "F03",
+            "F04",
+            "F05"
+          ],
+          "inputs": {
+            "kind": "surface_treat",
+            "treated_area_mm2": 1016.0,
+            "batch_size_parts": 100,
+            "requires_bake": false
+          }
+        },
+        {
+          "sequence": 3,
+          "operation_type": "cure_bake",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "furnace_cycle",
+            "batch_size_parts": 100,
+            "part_mass_kg": 0.0018,
+            "max_section_thickness_mm": 1.5
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 7,
+      "name": "Final Inspection",
+      "machine_family": "inspection",
+      "setup_note": "Inspect the sealed anodized parts for complete coverage, finish defects and handling damage, then reverify critical dimensions and the hole-pattern position from Datum A.",
+      "datum_references": [
+        "A"
+      ],
+      "material_machinability": "easy",
+      "setup_time_min": 8.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "manual_inspect",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "inspection",
+            "dimension_count": 10,
+            "gdt_count": 1,
+            "sampling_rate_pct": 100.0,
+            "requires_fixture": false
+          }
+        }
+      ]
+    }
+  ],
+  "clarifications": [
+    {
+      "clarification_id": "C01",
+      "question": "Does F02 represent three mounting holes or only the single right-side hole indicated by its instance_count?",
+      "blocks": [
+        3,
+        5
+      ],
+      "suggested_default": "Machine three interchangeable holes in accordance with the TYP.3 extraction notes.",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C02",
+      "question": "Is the \u00d84 recess on F02 a 90-degree countersink or a flat-bottom counterbore?",
+      "blocks": [
+        3
+      ],
+      "suggested_default": "Use a 90-degree countersink based on the authoritative section-view extraction assumption.",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C03",
+      "question": "Is the 14 mm length recorded for F02 erroneous, given that the hole passes through a 1.5 mm thick plate?",
+      "blocks": [
+        3
+      ],
+      "suggested_default": "Treat F02 as through the 1.5 mm plate and disregard the 14 mm extracted length.",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C04",
+      "question": "What basic XY locations and secondary datum references define the positional tolerance of the F02 hole pattern?",
+      "blocks": [
+        3,
+        5,
+        7
+      ],
+      "suggested_default": "Use the basic hole coordinates on the authoritative drawing views and use Datum A as the primary setup plane.",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C05",
+      "question": "Are F03 and F05 in-plane external contour features or through-thickness edge treatments?",
+      "blocks": [
+        3
+      ],
+      "suggested_default": "Treat both as in-plane external contour geometry produced during profile milling.",
+      "priority": "medium"
+    },
+    {
+      "clarification_id": "C06",
+      "question": "What commercially available ASTM B221 flat-bar size is approved for the starting blank?",
+      "blocks": [
+        1,
+        2,
+        3
+      ],
+      "suggested_default": "Use the nearest oversize 6061-T6510/T6511 extruded flat bar that provides facing and perimeter-profile allowance.",
+      "priority": "medium"
+    },
+    {
+      "clarification_id": "C07",
+      "question": "Are any faces or holes required to remain free of anodize?",
+      "blocks": [
+        6
+      ],
+      "suggested_default": "Anodize all surfaces without masking.",
+      "priority": "medium"
+    }
+  ],
+  "assumptions": [
+    {
+      "assumption_id": "A01",
+      "text": "The internal-thread visual classification is disregarded; F02 is routed as an unthreaded through-hole feature."
+    },
+    {
+      "assumption_id": "A02",
+      "text": "F02 is treated as a three-hole pattern based on the TYP.3 extraction assumptions, pending confirmation of the conflicting instance_count."
+    },
+    {
+      "assumption_id": "A03",
+      "text": "The \u00d84 secondary geometry on F02 is treated as a 90-degree countersink pending confirmation."
+    },
+    {
+      "assumption_id": "A04",
+      "text": "F02 passes through the 1.5 mm plate; its extracted 14 mm length is treated as erroneous, so pilot and deep-hole peck drilling are omitted."
+    },
+    {
+      "assumption_id": "A05",
+      "text": "Oversize extruded flat bar is selected to remain consistent with ASTM B221 and the T6510/T6511 material condition; exact procurement dimensions remain pending."
+    },
+    {
+      "assumption_id": "A06",
+      "text": "At 100 pieces, machining from extruded flat bar is preferred over dedicated blanking or stamping tooling."
+    },
+    {
+      "assumption_id": "A07",
+      "text": "F03 corner chamfers and F05 radii are treated as portions of the external plan-view contour rather than edge bevels or roundovers."
+    },
+    {
+      "assumption_id": "A08",
+      "text": "Pocket and slot milling steps are omitted because the feature graph contains no pockets or slots."
+    },
+    {
+      "assumption_id": "A09",
+      "text": "Pilot drilling, peck drilling, reaming, precision boring and tapping are omitted because F02 is assumed to be a short, standard drilled clearance hole without a fit or thread requirement."
+    },
+    {
+      "assumption_id": "A10",
+      "text": "Masking and unmasking are omitted because no threads, H7 bores, electrical contacts or no-anodize areas are identified."
+    },
+    {
+      "assumption_id": "A11",
+      "text": "The turning corrections do not apply because this is not a rotational bar pin or turned component; the VMC correction examples also introduce no additional slotting, flats or cross-holes absent from the feature graph."
+    }
+  ]
+}

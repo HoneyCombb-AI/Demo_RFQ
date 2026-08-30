@@ -1,0 +1,208 @@
+{
+  "analysis_id": "11-965_merge_20260829T164751Z",
+  "part": {
+    "name": "LOCKER PLUG",
+    "drawing_number": "11-964-3379",
+    "material": "AL 6061-T6510, ACC. TO ASTM B-221.",
+    "units": "mm"
+  },
+  "feature_graph": {
+    "part_envelope": {
+      "width_mm": 4.6,
+      "height_mm": 28.0,
+      "max_diameter_mm": 28.0,
+      "envelope_shape": "cylindrical"
+    },
+    "coordinate_system": {
+      "primary_axis": "X",
+      "orientation_notes": "Axis of revolution is the primary machining axis. Section view depicts it along X with radial directions along Y; isometric note referenced Z as primary. For quoting and setup we treat X as the primary spindle axis."
+    },
+    "features": [
+      {
+        "feature_id": "F01",
+        "feature_type": "part_body",
+        "name": "Overall Part Body",
+        "description": "Cylindrical plug or cap featuring an outer raised rim and a recessed flat central face with multiple through-holes.",
+        "geometry": {},
+        "access_directions": [
+          "+Z",
+          "-Z"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "source_views": [
+          "isometric_view"
+        ]
+      },
+      {
+        "feature_id": "F02",
+        "feature_type": "external_thread",
+        "name": "Outer threaded surface",
+        "description": "The outermost cylindrical profile of the plug, featuring an external thread.",
+        "geometry": {
+          "diameter_mm": 28.0,
+          "outer_diameter_mm": 28.0,
+          "length_mm": 4.6,
+          "thread_spec": "1.25-20UN-2A",
+          "axis_direction": "X"
+        },
+        "access_directions": [
+          "radial"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "source_views": [
+          "main_cross_section"
+        ]
+      },
+      {
+        "feature_id": "F03",
+        "feature_type": "internal_bore",
+        "name": "Main internal recess",
+        "description": "The large stepped counterbore opening to the right face.",
+        "geometry": {
+          "diameter_mm": 26.0,
+          "depth_mm": 2.6,
+          "depth_condition": "BLIND",
+          "axis_direction": "X"
+        },
+        "access_directions": [
+          "+X"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "source_views": [
+          "main_cross_section"
+        ]
+      },
+      {
+        "feature_id": "F04",
+        "feature_type": "hole_pattern",
+        "name": "Through holes",
+        "description": "Four equally spaced through holes located on a pitch circle, with entry chamfers on the left face.",
+        "geometry": {
+          "diameter_mm": 3.0,
+          "hole_count": 4,
+          "pcd_mm": 22.0,
+          "axis_direction": "X"
+        },
+        "instance_count": 4,
+        "access_directions": [],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "source_views": [
+          "main_cross_section"
+        ]
+      },
+      {
+        "feature_id": "F05",
+        "feature_type": "web",
+        "name": "Central plate",
+        "description": "The solid material thickness between the left outer face and the inner recess face.",
+        "geometry": {
+          "wall_thickness_mm": 1.0,
+          "axis_direction": "X"
+        },
+        "access_directions": [
+          "+X",
+          "-X"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "source_views": [
+          "main_cross_section"
+        ]
+      },
+      {
+        "feature_id": "F06",
+        "feature_type": "chamfer",
+        "name": "Outer edge chamfer",
+        "description": "Chamfer on the top and bottom outer edges of the right face.",
+        "geometry": {
+          "length_mm": 0.5,
+          "angle_deg": 45.0
+        },
+        "instance_count": 2,
+        "access_directions": [],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "source_views": [
+          "main_cross_section"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "relationship_id": "R01",
+        "from_feature_id": "F03",
+        "to_feature_id": "F02",
+        "relationship_type": "coaxial",
+        "detail": "Internal recess shares the part’s rotational axis with the external thread."
+      },
+      {
+        "relationship_id": "R02",
+        "from_feature_id": "F04",
+        "to_feature_id": "F02",
+        "relationship_type": "coaxial",
+        "detail": "Hole pattern axis is aligned with the main axis of the externally threaded body."
+      },
+      {
+        "relationship_id": "R03",
+        "from_feature_id": "F06",
+        "to_feature_id": "F02",
+        "relationship_type": "coaxial",
+        "detail": "Outer edge chamfers are on the circumference of the same outer cylindrical surface as the external thread."
+      },
+      {
+        "relationship_id": "R04",
+        "from_feature_id": "F05",
+        "to_feature_id": "F02",
+        "relationship_type": "perpendicular",
+        "detail": "Central plate (web) faces are normal to the cylinder axis shown in section."
+      },
+      {
+        "relationship_id": "R05",
+        "from_feature_id": "F04",
+        "to_feature_id": "F05",
+        "relationship_type": "intersecting",
+        "detail": "Through holes pass through the central plate thickness."
+      },
+      {
+        "relationship_id": "R06",
+        "from_feature_id": "F04",
+        "to_feature_id": "F03",
+        "relationship_type": "intersecting",
+        "detail": "PCD 22 < Ø26 recess indicates the through holes open into the counterbore volume."
+      }
+    ],
+    "datum_scheme": {
+      "datums": [],
+      "datum_hierarchy_notes": "No datum features defined in provided sections."
+    },
+    "part_notes": "Material: AL 6061-T6510, ACC. TO ASTM B-221.. Material standard: ASTM B-221. Heat treatment: none specified. Coating: (al) CHROMATE CONVERSION COATING (YELLOW) PER MIL-C-5541F, TYPE II, CLASS 1A.. General notes: TOLERANCE: LINEAR TOLERANCE ±0.1. TOLERANCE: ANGULAR TOLERANCE ±0.5°. DEBURR: EDGES R0.5 MAX OR CHAMFER 0.5X45° MAX. PROCESS: INSIDE CORNERS R0.25 MAX. FINISH: General surface finish: 125.",
+    "overall_complexity": "simple"
+  },
+  "component_specs": [],
+  "component_spec_links": [],
+  "clarifications": [
+    {
+      "clarification_id": "C01",
+      "question": "Please confirm the geometry of the tapered transition between the Ø26 straight bore and the inner flat face on the internal recess (feature F2): provide the taper angle/length or specify if it should be a simple chamfer or fillet.",
+      "blocks": [
+        "main_cross_section:F2"
+      ],
+      "suggested_default": "If unspecified, treat as a 0.5 × 45° chamfer to match other chamfer conventions on the drawing.",
+      "priority": "high"
+    }
+  ],
+  "assumptions": [
+    {
+      "assumption_id": "A01",
+      "text": "The isometric_view:F1 part_body is an overall depiction only and is not grouped with any specific feature; all individual machinable features are taken from main_cross_section."
+    },
+    {
+      "assumption_id": "A02",
+      "text": "Primary machining axis set to X based on the section view orientation, despite the isometric note referencing Z as primary."
+    }
+  ]
+}

@@ -1,0 +1,453 @@
+{
+  "analysis_id": "11-965_merge_20260829T164751Z",
+  "source_feature_graph_id": "11-965_merge_20260829T164751Z",
+  "quantity": 100,
+  "part_family": "hybrid",
+  "base_geometry": "rotational",
+  "stock": {
+    "form": "round_bar",
+    "diameter_mm": 32.0
+  },
+  "operations": [
+    {
+      "sequence": 1,
+      "name": "Saw \u2013 Prepare Bar Lengths",
+      "machine_family": "saw",
+      "setup_note": "Support the extruded round bar and cut it into machine-length sections suitable for repeated chucking or bar feeding; individual part blanks are not sawn because parts are separated on the lathe.",
+      "datum_references": [],
+      "material_machinability": "easy",
+      "setup_time_min": 5.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "saw_cut",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "saw_cut",
+            "cut_diameter_mm": 32.0,
+            "cut_count": 1
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 2,
+      "name": "CNC Turn \u2013 Complete Bar-Fed Profile",
+      "machine_family": "cnc_lathe",
+      "setup_note": "Grip the round bar in a collet or chuck and establish the exposed axial face as the process reference. Machine the complete concentric profile, recess, thread, both outer-edge chamfers, and cutoff in one spindle orientation.",
+      "datum_references": [],
+      "material_machinability": "easy",
+      "setup_time_min": 15.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "face_turn",
+          "target_feature_ids": [
+            "F05"
+          ],
+          "inputs": {
+            "kind": "radial_turn",
+            "start_diameter_mm": 32.0,
+            "finish_diameter_mm": 0.0,
+            "groove_count": 1
+          }
+        },
+        {
+          "sequence": 2,
+          "operation_type": "rough_turn_od",
+          "target_feature_ids": [
+            "F02"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 32.0,
+            "finish_diameter_mm": 28.8,
+            "cut_length_mm": 4.6
+          }
+        },
+        {
+          "sequence": 3,
+          "operation_type": "finish_turn_od",
+          "target_feature_ids": [
+            "F02"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 28.8,
+            "finish_diameter_mm": 28.0,
+            "cut_length_mm": 4.6
+          }
+        },
+        {
+          "sequence": 4,
+          "operation_type": "center_drill",
+          "target_feature_ids": [
+            "F03"
+          ],
+          "inputs": {
+            "kind": "point_drill",
+            "hole_diameter_mm": 4.0,
+            "hole_depth_mm": 1.0,
+            "hole_count": 1,
+            "through_hole": false
+          }
+        },
+        {
+          "sequence": 5,
+          "operation_type": "drill",
+          "target_feature_ids": [
+            "F03"
+          ],
+          "inputs": {
+            "kind": "point_drill",
+            "hole_diameter_mm": 6.0,
+            "hole_depth_mm": 2.6,
+            "hole_count": 1,
+            "through_hole": false
+          }
+        },
+        {
+          "sequence": 6,
+          "operation_type": "rough_bore_id",
+          "target_feature_ids": [
+            "F03"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 6.0,
+            "finish_diameter_mm": 25.2,
+            "cut_length_mm": 2.6
+          }
+        },
+        {
+          "sequence": 7,
+          "operation_type": "finish_bore_id",
+          "target_feature_ids": [
+            "F03",
+            "F05"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 25.2,
+            "finish_diameter_mm": 26.0,
+            "cut_length_mm": 2.6
+          }
+        },
+        {
+          "sequence": 8,
+          "operation_type": "undercut_groove",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "radial_turn",
+            "start_diameter_mm": 28.0,
+            "finish_diameter_mm": 26.44,
+            "groove_width_mm": 1.3,
+            "groove_count": 1
+          }
+        },
+        {
+          "sequence": 9,
+          "operation_type": "thread_od_single_point",
+          "target_feature_ids": [
+            "F02"
+          ],
+          "inputs": {
+            "kind": "thread_cut",
+            "major_diameter_mm": 28.0,
+            "minor_diameter_mm": 26.44,
+            "thread_length_mm": 4.6,
+            "pitch_mm": 1.27,
+            "thread_starts": 1
+          }
+        },
+        {
+          "sequence": 10,
+          "operation_type": "chamfer_turn",
+          "target_feature_ids": [
+            "F06"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 28.0,
+            "finish_diameter_mm": 27.0,
+            "cut_length_mm": 0.5
+          }
+        },
+        {
+          "sequence": 11,
+          "operation_type": "part_off",
+          "target_feature_ids": [
+            "F05"
+          ],
+          "inputs": {
+            "kind": "radial_turn",
+            "start_diameter_mm": 28.0,
+            "finish_diameter_mm": 0.0,
+            "groove_width_mm": 2.0,
+            "groove_count": 1
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 3,
+      "name": "VMC \u2013 Through-Hole Pattern",
+      "machine_family": "vmc_3axis",
+      "setup_note": "Locate the thin turned part in a dedicated soft nest from the finished OD axis and recess-side face, leaving the opposite face accessible. Spot and drill the complete four-hole pattern before machining the specified entry chamfers.",
+      "datum_references": [],
+      "material_machinability": "easy",
+      "setup_time_min": 20.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "spot_drill",
+          "target_feature_ids": [
+            "F04"
+          ],
+          "inputs": {
+            "kind": "point_drill",
+            "hole_diameter_mm": 4.0,
+            "hole_depth_mm": 0.5,
+            "hole_count": 4,
+            "through_hole": false
+          }
+        },
+        {
+          "sequence": 2,
+          "operation_type": "drill",
+          "target_feature_ids": [
+            "F04"
+          ],
+          "inputs": {
+            "kind": "point_drill",
+            "hole_diameter_mm": 3.0,
+            "hole_depth_mm": 1.0,
+            "hole_count": 4,
+            "through_hole": true
+          }
+        },
+        {
+          "sequence": 3,
+          "operation_type": "countersink",
+          "target_feature_ids": [
+            "F04"
+          ],
+          "inputs": {
+            "kind": "point_drill",
+            "hole_diameter_mm": 4.0,
+            "hole_depth_mm": 0.5,
+            "hole_count": 4,
+            "pilot_diameter_mm": 3.0,
+            "through_hole": false
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 4,
+      "name": "Bench \u2013 Deburr, Clean and Mask",
+      "machine_family": "finish_bench",
+      "setup_note": "Remove burrs from the drilled-hole exits, recess intersections, cutoff face, and thread ends, then clean and degrease all surfaces. Mask the external thread before conversion coating unless the drawing authority permits all-over treatment.",
+      "datum_references": [],
+      "material_machinability": "easy",
+      "setup_time_min": 5.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "deburr",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "manual",
+            "complexity": "medium",
+            "edge_length_mm": 333.0
+          }
+        },
+        {
+          "sequence": 2,
+          "operation_type": "clean_degrease",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "manual",
+            "complexity": "low",
+            "estimated_time_min": 1.0
+          }
+        },
+        {
+          "sequence": 3,
+          "operation_type": "mask",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "manual",
+            "complexity": "medium",
+            "feature_count": 1,
+            "estimated_time_min": 1.5
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 5,
+      "name": "Chromate Conversion Coating",
+      "machine_family": "plating_line",
+      "setup_note": "Rack the cleaned parts and apply yellow Type II, Class 1A chromate conversion coating per the drawing specification. Process the full order as one batch when rack capacity permits.",
+      "datum_references": [],
+      "material_machinability": "easy",
+      "setup_time_min": 10.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "plate",
+          "target_feature_ids": [
+            "F03",
+            "F04",
+            "F05",
+            "F06"
+          ],
+          "inputs": {
+            "kind": "surface_treat",
+            "treated_area_mm2": 1486.0,
+            "batch_size_parts": 100,
+            "masked_area_mm2": 405.0,
+            "requires_bake": false
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 6,
+      "name": "Bench \u2013 Remove Masking",
+      "machine_family": "finish_bench",
+      "setup_note": "Remove the thread masking after the conversion coating has dried and verify that no masking residue or chemical contamination remains on the thread.",
+      "datum_references": [],
+      "material_machinability": "easy",
+      "setup_time_min": 3.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "unmask",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "manual",
+            "complexity": "low",
+            "feature_count": 1,
+            "estimated_time_min": 0.75
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 7,
+      "name": "Final Inspection",
+      "machine_family": "inspection",
+      "setup_note": "Inspect overall thickness, recess, hole pattern, edge condition, and coating coverage, and verify the external thread with the confirmed go/no-go ring gauge.",
+      "datum_references": [],
+      "material_machinability": "easy",
+      "setup_time_min": 10.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "manual_inspect",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "inspection",
+            "dimension_count": 10,
+            "gdt_count": 0,
+            "sampling_rate_pct": 100.0,
+            "requires_fixture": false
+          }
+        }
+      ]
+    }
+  ],
+  "clarifications": [
+    {
+      "clarification_id": "C01",
+      "question": "Is the external thread actually 1.25-20 UN-2A, despite its 31.75 mm nominal major diameter conflicting with the stated \u00d828 mm maximum envelope?",
+      "blocks": [
+        1,
+        2,
+        7
+      ],
+      "suggested_default": "For provisional planning, interpret the intended thread as 1-1/8-20 UNEF-2A and retain \u00d832 mm round stock; obtain drawing-authority approval before production.",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C02",
+      "question": "Must the external thread receive the chromate conversion coating, or must it be masked?",
+      "blocks": [
+        4,
+        5,
+        6
+      ],
+      "suggested_default": "Mask the external thread during conversion coating.",
+      "priority": "medium"
+    },
+    {
+      "clarification_id": "C03",
+      "question": "What finished size is required for the entry chamfers on the four \u00d83 mm holes?",
+      "blocks": [
+        3
+      ],
+      "suggested_default": "Use a 0.5 mm maximum edge chamfer in accordance with the general deburr note.",
+      "priority": "medium"
+    },
+    {
+      "clarification_id": "C04",
+      "question": "What included angle is required for the entry chamfers on the four \u00d83 mm holes?",
+      "blocks": [
+        3
+      ],
+      "suggested_default": "Use a 90-degree included-angle countersink to produce a 45-degree edge chamfer.",
+      "priority": "medium"
+    }
+  ],
+  "assumptions": [
+    {
+      "assumption_id": "A01",
+      "text": "The isometric-view part body is treated as an overall depiction only; machinable features are taken from the main cross-section."
+    },
+    {
+      "assumption_id": "A02",
+      "text": "The primary spindle axis is treated as X based on the section view, despite the isometric orientation note."
+    },
+    {
+      "assumption_id": "A03",
+      "text": "A \u00d832 mm ASTM B221 extruded round bar is used provisionally for the 100-piece machining route, pending resolution of the thread-diameter conflict."
+    },
+    {
+      "assumption_id": "A04",
+      "text": "The controlled parting cycle can produce the opposing face within the general \u00b10.1 mm and 125 surface-finish requirements, so a second lathe facing setup is not required."
+    },
+    {
+      "assumption_id": "A05",
+      "text": "A process-only runout groove is cut at the eventual cutoff location before threading and is removed by the final part-off operation."
+    },
+    {
+      "assumption_id": "A06",
+      "text": "Prismatic face milling, profile milling, pocket milling, and slot milling are omitted because the lathe produces the cylindrical body and no prismatic milled features are present."
+    },
+    {
+      "assumption_id": "A07",
+      "text": "The \u00d83 mm holes are treated as short, standard-tolerance through-holes, so pilot drilling, peck drilling, reaming, boring, and tapping are not applicable."
+    },
+    {
+      "assumption_id": "A08",
+      "text": "The specified chromate conversion coating does not require a separate thermal cure or hydrogen-embrittlement relief bake."
+    },
+    {
+      "assumption_id": "A09",
+      "text": "The external thread is masked by default during coating until the drawing authority confirms whether all-over conversion treatment is required."
+    },
+    {
+      "assumption_id": "A10",
+      "text": "The controlled-vocabulary operation type plate is used to represent the in-house chromate conversion coating process."
+    }
+  ]
+}

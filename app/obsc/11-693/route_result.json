@@ -1,0 +1,492 @@
+{
+  "analysis_id": "11-693_merge_20260829T165426Z",
+  "source_feature_graph_id": "11-693_merge_20260829T165426Z",
+  "quantity": 100,
+  "part_family": "hybrid",
+  "base_geometry": "rotational",
+  "stock": {
+    "form": "tube"
+  },
+  "operations": [
+    {
+      "sequence": 1,
+      "name": "Saw \u2013 Tube Stock Preparation",
+      "machine_family": "saw",
+      "setup_note": "Cut the ASTM B221 extrusion into lathe-loading lengths rather than individual thin blanks. Maintain sufficient end allowance for initial facing and stable bar feeding.",
+      "datum_references": [],
+      "material_machinability": "easy",
+      "setup_time_min": 5.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "saw_cut",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "saw_cut",
+            "cut_diameter_mm": 19.05,
+            "bore_diameter_mm": 12.7,
+            "cut_count": 1
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 2,
+      "name": "CNC Turn \u2013 Bar-Feed First Operation",
+      "machine_family": "cnc_lathe",
+      "setup_note": "Hold the tube extrusion in a collet with sufficient projection for one component and parting allowance. Establish manufacturing datum A on the faced end and machine concentric features about manufacturing axis B, using pre-anodize targets that account for the specified coating growth.",
+      "datum_references": [
+        "A",
+        "B"
+      ],
+      "material_machinability": "easy",
+      "setup_time_min": 15.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "face_turn",
+          "target_feature_ids": [
+            "F01"
+          ],
+          "inputs": {
+            "kind": "radial_turn",
+            "start_diameter_mm": 19.05,
+            "finish_diameter_mm": 12.7,
+            "groove_count": 1
+          }
+        },
+        {
+          "sequence": 2,
+          "operation_type": "rough_turn_od",
+          "target_feature_ids": [
+            "F01"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 19.05,
+            "finish_diameter_mm": 19.036,
+            "cut_length_mm": 3.5
+          }
+        },
+        {
+          "sequence": 3,
+          "operation_type": "rough_bore_id",
+          "target_feature_ids": [
+            "F02"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 12.7,
+            "finish_diameter_mm": 14.4,
+            "cut_length_mm": 3.5
+          }
+        },
+        {
+          "sequence": 4,
+          "operation_type": "finish_bore_id",
+          "target_feature_ids": [
+            "F02"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 14.4,
+            "finish_diameter_mm": 15.2,
+            "cut_length_mm": 3.5
+          }
+        },
+        {
+          "sequence": 5,
+          "operation_type": "finish_turn_od",
+          "target_feature_ids": [
+            "F01"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 19.036,
+            "finish_diameter_mm": 19.022,
+            "cut_length_mm": 3.5
+          }
+        },
+        {
+          "sequence": 6,
+          "operation_type": "thread_od_single_point",
+          "target_feature_ids": [
+            "F01"
+          ],
+          "inputs": {
+            "kind": "thread_cut",
+            "major_diameter_mm": 19.022,
+            "minor_diameter_mm": 18.077,
+            "thread_length_mm": 3.5,
+            "pitch_mm": 0.79375,
+            "thread_starts": 1
+          }
+        },
+        {
+          "sequence": 7,
+          "operation_type": "chamfer_turn",
+          "target_feature_ids": [
+            "F04"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 19.022,
+            "finish_diameter_mm": 18.122,
+            "cut_length_mm": 0.45
+          }
+        },
+        {
+          "sequence": 8,
+          "operation_type": "part_off",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "radial_turn",
+            "start_diameter_mm": 19.022,
+            "finish_diameter_mm": 0.0,
+            "groove_width_mm": 2.0,
+            "groove_count": 1
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 3,
+      "name": "CNC Turn \u2013 Second Operation",
+      "machine_family": "cnc_lathe",
+      "setup_note": "Locate the parted component from finished bore axis B using a short expanding mandrel and seat the first face against datum A. Protect the external thread while facing to final thickness and cutting the second specified outer-edge chamfer.",
+      "datum_references": [
+        "A",
+        "B"
+      ],
+      "material_machinability": "easy",
+      "setup_time_min": 20.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "face_turn",
+          "target_feature_ids": [
+            "F01"
+          ],
+          "inputs": {
+            "kind": "radial_turn",
+            "start_diameter_mm": 19.022,
+            "finish_diameter_mm": 15.2,
+            "groove_count": 1
+          }
+        },
+        {
+          "sequence": 2,
+          "operation_type": "chamfer_turn",
+          "target_feature_ids": [
+            "F04"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 19.022,
+            "finish_diameter_mm": 18.122,
+            "cut_length_mm": 0.45
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 4,
+      "name": "VMC \u2013 Four-Slot Milling",
+      "machine_family": "vmc_3axis",
+      "setup_note": "Seat the finished face on a dedicated nest and center from bore axis B, using thread-protecting soft clamping around the OD. Mill all four through scallop slots in one indexed XY setup without perimeter profiling, pocketing, or cosmetic blend operations.",
+      "datum_references": [
+        "A",
+        "B"
+      ],
+      "material_machinability": "easy",
+      "setup_time_min": 20.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "slot_mill",
+          "target_feature_ids": [
+            "F03"
+          ],
+          "inputs": {
+            "kind": "contour_mill",
+            "path_length_mm": 3.1416,
+            "radial_width_mm": 2.0,
+            "total_depth_mm": 3.5,
+            "path_count": 4
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 5,
+      "name": "Bench Deburr",
+      "machine_family": "finish_bench",
+      "setup_note": "Deburr the slot-to-bore intersections, thread ends, bore edges, and parted face without changing the specified chamfers or thread form. The parts remain in the soft aluminium condition and must be fully burr-free before anodizing.",
+      "datum_references": [],
+      "material_machinability": "easy",
+      "setup_time_min": 3.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "deburr",
+          "target_feature_ids": [
+            "F01",
+            "F02",
+            "F03",
+            "F04"
+          ],
+          "inputs": {
+            "kind": "manual",
+            "complexity": "medium",
+            "edge_length_mm": 268.0
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 6,
+      "name": "Outside Anodize \u2013 Pretreatment Cleaning",
+      "machine_family": "outside_vendor",
+      "setup_note": "Send the complete order as one batch for chemical cleaning, rinsing, and surface activation immediately before anodizing. All machining and mechanical deburring are complete before this operation.",
+      "datum_references": [],
+      "material_machinability": "easy",
+      "setup_time_min": 0.0,
+      "in_house": false,
+      "outside_process": "Type II anodize pretreatment",
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "clean_degrease",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "manual",
+            "complexity": "low",
+            "feature_count": 1,
+            "estimated_time_min": 0.75
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 7,
+      "name": "Outside Anodize \u2013 Mask Thread",
+      "machine_family": "outside_vendor",
+      "setup_note": "Mask the external Class 2A thread before treatment under the stated default interpretation. Masking requirements are subject to customer confirmation because the drawing also states that dimensions apply after coating.",
+      "datum_references": [],
+      "material_machinability": "easy",
+      "setup_time_min": 0.0,
+      "in_house": false,
+      "outside_process": "anodize masking",
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "mask",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "manual",
+            "complexity": "medium",
+            "feature_count": 1,
+            "estimated_time_min": 1.0
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 8,
+      "name": "Outside Anodize \u2013 Type II Class II",
+      "machine_family": "outside_vendor",
+      "setup_note": "Anodize the unmasked surfaces to MIL-A-8625 Type II, Class II, olive drab 34088, at the specified thickness, then seal the coating. The 100-piece order may be processed as one rack batch subject to the vendor's loading limits.",
+      "datum_references": [],
+      "material_machinability": "easy",
+      "setup_time_min": 0.0,
+      "in_house": false,
+      "outside_process": "MIL-A-8625 Type II Class II anodizing",
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "anodize",
+          "target_feature_ids": [
+            "F02",
+            "F03",
+            "F04"
+          ],
+          "inputs": {
+            "kind": "surface_treat",
+            "treated_area_mm2": 427.0,
+            "batch_size_parts": 100,
+            "coating_thickness_um": 7.5,
+            "masked_area_mm2": 155.0,
+            "requires_bake": false
+          }
+        },
+        {
+          "sequence": 2,
+          "operation_type": "cure_bake",
+          "target_feature_ids": [
+            "F02",
+            "F03",
+            "F04"
+          ],
+          "inputs": {
+            "kind": "furnace_cycle",
+            "batch_size_parts": 100,
+            "part_mass_kg": 0.0009,
+            "max_section_thickness_mm": 3.5
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 9,
+      "name": "Outside Anodize \u2013 Unmask",
+      "machine_family": "outside_vendor",
+      "setup_note": "Remove the external-thread masking after sealing without damaging adjacent anodized chamfers. Verify that no masking residue or anodize intrusion remains on the thread.",
+      "datum_references": [],
+      "material_machinability": "easy",
+      "setup_time_min": 0.0,
+      "in_house": false,
+      "outside_process": "anodize unmasking",
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "unmask",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "manual",
+            "complexity": "low",
+            "feature_count": 1,
+            "estimated_time_min": 0.5
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 10,
+      "name": "Final Dimensional and Finish Inspection",
+      "machine_family": "inspection",
+      "setup_note": "Inspect the stabilized parts after coating because all drawing dimensions are specified after coating. Verify the external thread by ring gauge, bore and slot dimensions, finished thickness, chamfers, anodize thickness, coverage, and olive-drab color.",
+      "datum_references": [
+        "A",
+        "B"
+      ],
+      "material_machinability": "easy",
+      "setup_time_min": 10.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "manual_inspect",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "inspection",
+            "dimension_count": 7,
+            "gdt_count": 0,
+            "sampling_rate_pct": 100.0,
+            "requires_fixture": false
+          }
+        },
+        {
+          "sequence": 2,
+          "operation_type": "manual_inspect",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "inspection",
+            "dimension_count": 7,
+            "gdt_count": 0,
+            "sampling_rate_pct": 100.0,
+            "requires_fixture": false
+          }
+        },
+        {
+          "sequence": 3,
+          "operation_type": "manual_inspect",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "inspection",
+            "dimension_count": 7,
+            "gdt_count": 0,
+            "sampling_rate_pct": 100.0,
+            "requires_fixture": false
+          }
+        }
+      ]
+    }
+  ],
+  "clarifications": [
+    {
+      "clarification_id": "C01",
+      "question": "Can ASTM B221 Al6061-T6510/T6511 tube be procured with sufficient OD and ID machining stock around the finished \u00d819.022 external thread and \u00d815.2 bore?",
+      "blocks": [
+        1,
+        2
+      ],
+      "suggested_default": "Procure an extruded tube with OD above the finished thread blank and ID below the finished bore; use round bar and add pilot drilling only if suitable tube is unavailable.",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C02",
+      "question": "Should the 3/4-32UN-2A external thread be anodized or masked during Type II treatment?",
+      "blocks": [
+        7,
+        8,
+        9
+      ],
+      "suggested_default": "Mask the external thread in accordance with the standard surface-treatment routing rule and inspect it after unmasking.",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C03",
+      "question": "Which features require the extracted 63 microinch surface finish rather than the general 125 microinch finish?",
+      "blocks": [
+        2,
+        3,
+        4
+      ],
+      "suggested_default": "Apply 125 microinch to machined surfaces and do not impose the 63 microinch value where its drawing location cannot be established.",
+      "priority": "medium"
+    }
+  ],
+  "assumptions": [
+    {
+      "assumption_id": "A01",
+      "text": "Extruded tube was selected instead of solid round bar because boring the \u00d815.2 opening from solid would remove more than 60 percent of the starting cross-sectional area; final stock dimensions remain subject to availability confirmation."
+    },
+    {
+      "assumption_id": "A02",
+      "text": "The first faced end is treated as manufacturing datum A and the common bore/thread axis as manufacturing datum B; these are process datums because the drawing defines no formal datum scheme."
+    },
+    {
+      "assumption_id": "A03",
+      "text": "The turning template's center-drilling step was omitted because the component has a very low length-to-diameter ratio and remains supported by the collet or expanding mandrel."
+    },
+    {
+      "assumption_id": "A04",
+      "text": "The turning template's grooving and thread-relief step was omitted because no groove or relief feature exists in the feature graph and the external thread exits at chamfered free edges rather than terminating against a shoulder."
+    },
+    {
+      "assumption_id": "A05",
+      "text": "The milling template's face milling, profile milling, pocketing, drilling, reaming, tapping, countersinking, and counterboring steps were dropped because the part has no corresponding prismatic or hole features; lathe-machined faces and bore establish the VMC location."
+    },
+    {
+      "assumption_id": "A06",
+      "text": "The matched cylindrical milling corrections were applied by producing all four F03 slots in one VMC setup and by adding no perimeter profiling, cosmetic blending, separate VMC chamfering, flats, or cross-hole operations."
+    },
+    {
+      "assumption_id": "A07",
+      "text": "Duplicate stock preparation, deburring, and final-inspection steps from the turning and milling templates were merged into shared operations 1, 5, and 10 respectively."
+    },
+    {
+      "assumption_id": "A08",
+      "text": "The surface-treatment template's complete-all-machining prerequisite is satisfied by operations 1 through 5 rather than represented as a separate nonproductive operation."
+    },
+    {
+      "assumption_id": "A09",
+      "text": "Until clarification C02 is answered, F01 is routed as masked while F02, F03, and F04 receive the specified anodize; pre-coating machining dimensions must be compensated so final dimensions comply after coating."
+    }
+  ]
+}

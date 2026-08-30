@@ -1,0 +1,97 @@
+{
+  "drawing_number": "11-964-3373",
+  "part_name": "ADAPTER WIRE COVER",
+  "material": "AL 6061-T6510/T6511",
+  "quantity": 100,
+  "weights": {
+    "raw_bar_dia_mm": 14.0,
+    "actual_bar_dia_mm": 14.07,
+    "gross_weight_kg": 0.0115,
+    "net_weight_kg": 0.001,
+    "scrap_weight_kg": 0.0105
+  },
+  "direct_cost": {
+    "material_cost_inr": 0.86,
+    "material_rate_per_kg_inr": 75.0,
+    "machining_cost_inr": 18.93,
+    "direct_base_inr": 19.79
+  },
+  "cif_and_overheads": {
+    "packaging_charges_inr": 1.0,
+    "overhead_25_pct_inr": 4.95,
+    "logistics_cost_inr": 0.04,
+    "total_cif_inr": 25.78,
+    "scrap_recovery_credit_inr": -1.26,
+    "total_cost_per_pc_inr": 24.52
+  },
+  "pricing_and_duties": {
+    "profit_10_pct_inr": 1.98,
+    "actual_cost_inr": 26.5,
+    "icc_and_rejection_inr": 0.41,
+    "custom_duty_3_5_pct_inr": 0.93,
+    "warehouse_cost_4_pct_inr": 1.06,
+    "final_landed_price_inr": 28.49
+  },
+  "machining_operations": [
+    {
+      "sequence": 1,
+      "operation_name": "Saw – Cut Flat-Bar Blank",
+      "machine_family": "saw",
+      "cycle_time_sec": 39.0,
+      "hourly_rate_inr": 290.0,
+      "efficiency": 0.85,
+      "cost_per_piece_inr": 3.7,
+      "cost_per_piece_raw": 3.696078431372549
+    },
+    {
+      "sequence": 2,
+      "operation_name": "VMC – Establish Datum A",
+      "machine_family": "vmc_3axis",
+      "cycle_time_sec": 34.2,
+      "hourly_rate_inr": 450.0,
+      "efficiency": 0.85,
+      "cost_per_piece_inr": 5.03,
+      "cost_per_piece_raw": 5.029411764705883
+    },
+    {
+      "sequence": 3,
+      "operation_name": "VMC – Finish Face, Profile and Hole Pattern",
+      "machine_family": "vmc_3axis",
+      "cycle_time_sec": 35.4,
+      "hourly_rate_inr": 450.0,
+      "efficiency": 0.85,
+      "cost_per_piece_inr": 5.21,
+      "cost_per_piece_raw": 5.205882352941177
+    },
+    {
+      "sequence": 4,
+      "operation_name": "Bench Deburr and Edge Finish",
+      "machine_family": "finish_bench",
+      "cycle_time_sec": 55.2,
+      "hourly_rate_inr": 200.0,
+      "efficiency": 0.85,
+      "cost_per_piece_inr": 3.0,
+      "cost_per_piece_raw": 3.0
+    },
+    {
+      "sequence": 5,
+      "operation_name": "Pre-Anodize Dimensional Inspection",
+      "machine_family": "inspection",
+      "cycle_time_sec": 229.2,
+      "hourly_rate_inr": 250.0,
+      "efficiency": 0.85,
+      "cost_per_piece_inr": 1.0,
+      "cost_per_piece_raw": 1.0
+    },
+    {
+      "sequence": 7,
+      "operation_name": "Final Inspection",
+      "machine_family": "inspection",
+      "cycle_time_sec": 229.2,
+      "hourly_rate_inr": 250.0,
+      "efficiency": 0.85,
+      "cost_per_piece_inr": 1.0,
+      "cost_per_piece_raw": 1.0
+    }
+  ]
+}

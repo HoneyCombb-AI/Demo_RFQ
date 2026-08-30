@@ -1,0 +1,413 @@
+{
+  "analysis_id": "11-944_merge_20260829T150336Z",
+  "source_feature_graph_id": "11-944_merge_20260829T150336Z",
+  "quantity": 100,
+  "part_family": "hybrid",
+  "base_geometry": "cylindrical",
+  "stock": {
+    "form": "round_bar",
+    "diameter_mm": 19.05,
+    "length_mm": 6.5,
+    "weight_kg": 0.0052,
+    "machining_allowance_mm": 1.6
+  },
+  "operations": [
+    {
+      "sequence": 1,
+      "name": "Saw \u2013 Bar Preparation",
+      "machine_family": "saw",
+      "setup_note": "Cut the extruded round bar into machine-compatible feeder lengths rather than individual thin blanks. Per-part stock length represents equivalent bar consumption, including facing and parting allowance.",
+      "datum_references": [],
+      "material_machinability": "easy",
+      "setup_time_min": 5.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "saw_cut",
+          "target_feature_ids": [
+            "F04"
+          ],
+          "inputs": {
+            "kind": "saw_cut",
+            "cut_diameter_mm": 19.05,
+            "cut_count": 1
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 2,
+      "name": "CNC Turn \u2013 Bar-Fed Profile",
+      "machine_family": "cnc_lathe",
+      "setup_note": "Hold the bar in a collet, establish manufacturing face datum A and spindle axis B, and complete all accessible concentric work in one orientation before parting. Use consolidated canned roughing and finishing cycles per ALM-ROUTE-001.",
+      "datum_references": [
+        "A",
+        "B"
+      ],
+      "material_machinability": "easy",
+      "setup_time_min": 25.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "face_turn",
+          "target_feature_ids": [
+            "F04"
+          ],
+          "inputs": {
+            "kind": "radial_turn",
+            "start_diameter_mm": 19.05,
+            "finish_diameter_mm": 0.0,
+            "groove_count": 1
+          }
+        },
+        {
+          "sequence": 2,
+          "operation_type": "rough_turn_od",
+          "target_feature_ids": [
+            "F01"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 19.05,
+            "finish_diameter_mm": 16.647,
+            "cut_length_mm": 4.0
+          }
+        },
+        {
+          "sequence": 3,
+          "operation_type": "finish_turn_od",
+          "target_feature_ids": [
+            "F01"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 16.647,
+            "finish_diameter_mm": 15.847,
+            "cut_length_mm": 4.0
+          }
+        },
+        {
+          "sequence": 4,
+          "operation_type": "center_drill",
+          "target_feature_ids": [
+            "F02"
+          ],
+          "inputs": {
+            "kind": "point_drill",
+            "hole_diameter_mm": 3.0,
+            "hole_depth_mm": 1.5,
+            "hole_count": 1,
+            "through_hole": false
+          }
+        },
+        {
+          "sequence": 5,
+          "operation_type": "drill",
+          "target_feature_ids": [
+            "F02"
+          ],
+          "inputs": {
+            "kind": "point_drill",
+            "hole_diameter_mm": 6.0,
+            "hole_depth_mm": 4.0,
+            "hole_count": 1,
+            "through_hole": true
+          }
+        },
+        {
+          "sequence": 6,
+          "operation_type": "thread_od_single_point",
+          "target_feature_ids": [
+            "F01"
+          ],
+          "inputs": {
+            "kind": "thread_cut",
+            "major_diameter_mm": 15.847,
+            "minor_diameter_mm": 14.864,
+            "thread_length_mm": 4.0,
+            "pitch_mm": 0.9071,
+            "thread_starts": 1
+          }
+        },
+        {
+          "sequence": 7,
+          "operation_type": "chamfer_turn",
+          "target_feature_ids": [
+            "F01"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 15.847,
+            "finish_diameter_mm": 15.247,
+            "cut_length_mm": 0.3,
+            "taper_included_angle_deg": 90.0
+          }
+        },
+        {
+          "sequence": 8,
+          "operation_type": "part_off",
+          "target_feature_ids": [
+            "F04"
+          ],
+          "inputs": {
+            "kind": "radial_turn",
+            "start_diameter_mm": 19.05,
+            "finish_diameter_mm": 0.0,
+            "groove_width_mm": 2.0,
+            "groove_count": 1
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 3,
+      "name": "VMC \u2013 Second Face and Hole Pattern",
+      "machine_family": "vmc_3axis",
+      "setup_note": "Locate the parted component against face datum A and on the central bore axis B using a low-profile expanding arbor or equivalent dedicated nest. Finish the parted face first, then machine the rear thread chamfer and both off-center holes without reclamping.",
+      "datum_references": [
+        "A",
+        "B"
+      ],
+      "material_machinability": "easy",
+      "setup_time_min": 25.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "face_mill",
+          "target_feature_ids": [
+            "F04"
+          ],
+          "inputs": {
+            "kind": "face_mill",
+            "mill_length_mm": 19.05,
+            "mill_width_mm": 19.05,
+            "total_stock_mm": 0.5,
+            "face_count": 1
+          }
+        },
+        {
+          "sequence": 2,
+          "operation_type": "chamfer_mill",
+          "target_feature_ids": [
+            "F01"
+          ],
+          "inputs": {
+            "kind": "contour_mill",
+            "path_length_mm": 49.785,
+            "radial_width_mm": 0.3,
+            "total_depth_mm": 0.3,
+            "path_count": 1
+          }
+        },
+        {
+          "sequence": 3,
+          "operation_type": "spot_drill",
+          "target_feature_ids": [
+            "F03"
+          ],
+          "inputs": {
+            "kind": "point_drill",
+            "hole_diameter_mm": 1.5,
+            "hole_depth_mm": 0.5,
+            "hole_count": 2,
+            "through_hole": false
+          }
+        },
+        {
+          "sequence": 4,
+          "operation_type": "drill",
+          "target_feature_ids": [
+            "F03"
+          ],
+          "inputs": {
+            "kind": "point_drill",
+            "hole_diameter_mm": 2.0,
+            "hole_depth_mm": 4.0,
+            "hole_count": 2,
+            "through_hole": true
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 4,
+      "name": "Bench Deburr",
+      "machine_family": "finish_bench",
+      "setup_note": "Hand-deburr both faces, the central bore, the two through holes, and the thread entrances while keeping edge breaks within the drawing limits. Protect the external thread from impact or abrasive damage.",
+      "datum_references": [],
+      "material_machinability": "easy",
+      "setup_time_min": 3.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "deburr",
+          "target_feature_ids": [
+            "F01",
+            "F02",
+            "F03",
+            "F04"
+          ],
+          "inputs": {
+            "kind": "manual",
+            "complexity": "low",
+            "edge_length_mm": 162.4
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 5,
+      "name": "Outside Type II Class II Anodize",
+      "machine_family": "outside_vendor",
+      "setup_note": "Process the full order as one rack batch where vendor capacity permits; clean, mask the external Class 2A thread, apply olive-drab Type II Class II anodize, seal, and remove masking. Maintain the specified 0.005\u20130.01 mm coating thickness on exposed surfaces.",
+      "datum_references": [],
+      "material_machinability": "easy",
+      "setup_time_min": 0.0,
+      "in_house": false,
+      "outside_process": "MIL-A-8625 Type II Class II anodizing",
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "clean_degrease",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "manual",
+            "complexity": "low",
+            "feature_count": 1,
+            "estimated_time_min": 0.5
+          }
+        },
+        {
+          "sequence": 2,
+          "operation_type": "mask",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "manual",
+            "complexity": "medium",
+            "feature_count": 1,
+            "estimated_time_min": 1.0
+          }
+        },
+        {
+          "sequence": 3,
+          "operation_type": "anodize",
+          "target_feature_ids": [
+            "F02",
+            "F03",
+            "F04"
+          ],
+          "inputs": {
+            "kind": "surface_treat",
+            "treated_area_mm2": 451.0,
+            "batch_size_parts": 100,
+            "coating_thickness_um": 7.5,
+            "masked_area_mm2": 199.1,
+            "requires_bake": false
+          }
+        },
+        {
+          "sequence": 4,
+          "operation_type": "cure_bake",
+          "target_feature_ids": [
+            "F02",
+            "F03",
+            "F04"
+          ],
+          "inputs": {
+            "kind": "furnace_cycle",
+            "batch_size_parts": 100,
+            "part_mass_kg": 0.0052,
+            "max_section_thickness_mm": 4.0
+          }
+        },
+        {
+          "sequence": 5,
+          "operation_type": "unmask",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "manual",
+            "complexity": "low",
+            "feature_count": 1,
+            "estimated_time_min": 0.5
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 6,
+      "name": "Final Inspection",
+      "machine_family": "inspection",
+      "setup_note": "Inspect finished dimensions and coating appearance, verify the two-hole pattern, and gauge the external 0.625-28UN-2A thread after masking removal. Confirm all burrs and masking residue have been removed.",
+      "datum_references": [
+        "A",
+        "B"
+      ],
+      "material_machinability": "easy",
+      "setup_time_min": 12.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "manual_inspect",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "inspection",
+            "dimension_count": 6,
+            "gdt_count": 0,
+            "sampling_rate_pct": 100.0,
+            "requires_fixture": false
+          }
+        }
+      ]
+    }
+  ],
+  "clarifications": [
+    {
+      "clarification_id": "C01",
+      "question": "Should the external 0.625-28UN-2A thread be masked during anodizing?",
+      "blocks": [
+        5
+      ],
+      "suggested_default": "Mask the external thread to preserve Class 2A gauging, while anodizing the remaining exposed surfaces.",
+      "priority": "medium"
+    }
+  ],
+  "assumptions": [
+    {
+      "assumption_id": "A01",
+      "text": "A standard 19.05 mm extruded round bar is selected, with 6.5 mm equivalent consumption per part for the finished length, facing stock, and parting kerf."
+    },
+    {
+      "assumption_id": "A02",
+      "text": "Because the drawing defines no datum scheme, the first finished face is treated as manufacturing datum A and the common thread/bore axis as manufacturing datum B."
+    },
+    {
+      "assumption_id": "A03",
+      "text": "The turning template's rough- and finish-boring steps are replaced by full-size on-center drilling because the \u00d86 bore has only the general \u00b10.2 mm tolerance and no precision-fit callout."
+    },
+    {
+      "assumption_id": "A04",
+      "text": "Turning grooving is omitted because no groove or thread-relief feature is defined; the external thread terminates with the specified entry and exit chamfers."
+    },
+    {
+      "assumption_id": "A05",
+      "text": "Pilot drilling, peck drilling, reaming, tapping, counterboring, pocketing, slotting, and profile milling are omitted because the corresponding features, depth ratios, or precision tolerances are absent."
+    },
+    {
+      "assumption_id": "A06",
+      "text": "ALM-TURN-002's mandatory two-lathe-setup rule is not invoked because this part is a thin threaded disc rather than a double-ended bar pin; the opposed face is finished in the VMC setup before drilling."
+    },
+    {
+      "assumption_id": "A07",
+      "text": "The saw operation prepares feeder-length bar sections rather than individual 6.5 mm blanks, since individual blanks would not provide practical lathe gripping length."
+    },
+    {
+      "assumption_id": "A08",
+      "text": "The anodize sealing stage is represented by cure_bake, the closest controlled-vocabulary operation for the required post-anodize seal."
+    }
+  ]
+}

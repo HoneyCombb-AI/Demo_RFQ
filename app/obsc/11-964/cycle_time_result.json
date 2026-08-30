@@ -1,0 +1,431 @@
+{
+  "analysis_id": "11-964_merge_20260829T164412Z",
+  "quantity": 100,
+  "t_cycle_per_part_min": 14.23,
+  "t_cycle_per_part_sec": 853.8,
+  "t_cycle_total_batch_min": 1423.0,
+  "t_cycle_total_batch_hrs": 23.72,
+  "operations": [
+    {
+      "sequence": 1,
+      "name": "Saw – Cut Flat-Bar Blank",
+      "machine_family": "saw",
+      "in_house": true,
+      "setup_time_min": 5.0,
+      "t_setup_per_piece_min": 0.05,
+      "t_handling_min": 0.47,
+      "t_machining_min": 0.15,
+      "t_op_total_min": 0.65,
+      "t_op_total_sec": 39.0,
+      "sub_op_results": [
+        {
+          "operation_seq": 1,
+          "sub_op_seq": 1,
+          "operation_type": "saw_cut",
+          "kind": "saw_cut",
+          "rpm": null,
+          "feed_mm_min": null,
+          "t_cut_min": 0.15,
+          "t_tool_min": 0.0,
+          "t_rapid_min": 0.0,
+          "t_sub_total_min": 0.15,
+          "trace": {
+            "operation_type": "saw_cut",
+            "kind": "saw_cut",
+            "machinability": "easy",
+            "area": 27.3,
+            "cut_rate": 8500,
+            "blade_return": 0.15,
+            "t_cut": 0.153212
+          },
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "sequence": 2,
+      "name": "VMC – Establish Datum A",
+      "machine_family": "vmc_3axis",
+      "in_house": true,
+      "setup_time_min": 15.0,
+      "t_setup_per_piece_min": 0.15,
+      "t_handling_min": 0.47,
+      "t_machining_min": 0.09,
+      "t_op_total_min": 0.57,
+      "t_op_total_sec": 34.2,
+      "sub_op_results": [
+        {
+          "operation_seq": 2,
+          "sub_op_seq": 1,
+          "operation_type": "face_mill",
+          "kind": "face_mill",
+          "rpm": null,
+          "feed_mm_min": null,
+          "t_cut_min": 0.07,
+          "t_tool_min": 0.0,
+          "t_rapid_min": 0.01,
+          "t_sub_total_min": 0.09,
+          "trace": {
+            "operation_type": "face_mill",
+            "kind": "face_mill",
+            "machinability": "easy",
+            "tool_dia": 80.0,
+            "Vc": 300,
+            "fz": 0.15,
+            "axial": 3.5,
+            "rpm": 1193.66,
+            "feed_rate": 1074.3,
+            "w_passes": 1,
+            "z_passes": 1,
+            "path_length": 80.4,
+            "t_cut": 0.0748397
+          },
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "sequence": 3,
+      "name": "VMC – Finish Face, Profile and Hole Pattern",
+      "machine_family": "vmc_3axis",
+      "in_house": true,
+      "setup_time_min": 30.0,
+      "t_setup_per_piece_min": 0.3,
+      "t_handling_min": 0.47,
+      "t_machining_min": 0.11,
+      "t_op_total_min": 0.59,
+      "t_op_total_sec": 35.4,
+      "sub_op_results": [
+        {
+          "operation_seq": 3,
+          "sub_op_seq": 1,
+          "operation_type": "face_mill",
+          "kind": "face_mill",
+          "rpm": null,
+          "feed_mm_min": null,
+          "t_cut_min": 0.07,
+          "t_tool_min": 0.0,
+          "t_rapid_min": 0.01,
+          "t_sub_total_min": 0.09,
+          "trace": {
+            "operation_type": "face_mill",
+            "kind": "face_mill",
+            "machinability": "easy",
+            "tool_dia": 80.0,
+            "Vc": 300,
+            "fz": 0.15,
+            "axial": 3.5,
+            "rpm": 1193.66,
+            "feed_rate": 1074.3,
+            "w_passes": 1,
+            "z_passes": 1,
+            "path_length": 80.4,
+            "t_cut": 0.0748397
+          },
+          "warnings": []
+        },
+        {
+          "operation_seq": 3,
+          "sub_op_seq": 2,
+          "operation_type": "profile_mill",
+          "kind": "contour_mill",
+          "rpm": null,
+          "feed_mm_min": null,
+          "t_cut_min": 0.0,
+          "t_tool_min": 0.0,
+          "t_rapid_min": 0.0,
+          "t_sub_total_min": 0.0,
+          "trace": {
+            "operation_type": "profile_mill",
+            "kind": "contour_mill",
+            "machinability": "easy",
+            "tool_dia": 16.0,
+            "Vc": 300,
+            "fz": 0.1,
+            "axial": 10.0,
+            "rpm": 5968.31,
+            "feed_rate": 2387.32,
+            "z_passes": 1,
+            "r_passes": 1,
+            "t_cut": 0.00131612
+          },
+          "warnings": []
+        },
+        {
+          "operation_seq": 3,
+          "sub_op_seq": 3,
+          "operation_type": "profile_mill",
+          "kind": "contour_mill",
+          "rpm": null,
+          "feed_mm_min": null,
+          "t_cut_min": 0.0,
+          "t_tool_min": 0.0,
+          "t_rapid_min": 0.0,
+          "t_sub_total_min": 0.0,
+          "trace": {
+            "operation_type": "profile_mill",
+            "kind": "contour_mill",
+            "machinability": "easy",
+            "tool_dia": 16.0,
+            "Vc": 300,
+            "fz": 0.1,
+            "axial": 10.0,
+            "rpm": 5968.31,
+            "feed_rate": 2387.32,
+            "z_passes": 1,
+            "r_passes": 1,
+            "t_cut": 0.00118459
+          },
+          "warnings": []
+        },
+        {
+          "operation_seq": 3,
+          "sub_op_seq": 4,
+          "operation_type": "spot_drill",
+          "kind": "point_drill",
+          "rpm": null,
+          "feed_mm_min": null,
+          "t_cut_min": 0.0,
+          "t_tool_min": 0.0,
+          "t_rapid_min": 0.0,
+          "t_sub_total_min": 0.0,
+          "trace": {
+            "operation_type": "spot_drill",
+            "kind": "point_drill",
+            "machinability": "easy",
+            "Vc": 80,
+            "fn": 0.2,
+            "rpm": 8000,
+            "total_depth": 1.96,
+            "peck_retracts": 0,
+            "t_one": 0.001225,
+            "t_cut": 0.003675,
+            "feed_mm_min": 1600.0
+          },
+          "warnings": []
+        },
+        {
+          "operation_seq": 3,
+          "sub_op_seq": 5,
+          "operation_type": "drill",
+          "kind": "point_drill",
+          "rpm": null,
+          "feed_mm_min": null,
+          "t_cut_min": 0.01,
+          "t_tool_min": 0.0,
+          "t_rapid_min": 0.0,
+          "t_sub_total_min": 0.01,
+          "trace": {
+            "operation_type": "drill",
+            "kind": "point_drill",
+            "machinability": "easy",
+            "Vc": 80,
+            "fn": 0.2,
+            "rpm": 8000,
+            "total_depth": 3.49,
+            "peck_retracts": 0,
+            "t_one": 0.00218125,
+            "t_cut": 0.00654375,
+            "feed_mm_min": 1600.0
+          },
+          "warnings": []
+        },
+        {
+          "operation_seq": 3,
+          "sub_op_seq": 6,
+          "operation_type": "countersink",
+          "kind": "point_drill",
+          "rpm": null,
+          "feed_mm_min": null,
+          "t_cut_min": 0.01,
+          "t_tool_min": 0.0,
+          "t_rapid_min": 0.0,
+          "t_sub_total_min": 0.01,
+          "trace": {
+            "operation_type": "countersink",
+            "kind": "point_drill",
+            "machinability": "easy",
+            "Vc": 80,
+            "fn": 0.2,
+            "rpm": 6366.2,
+            "total_depth": 2.5,
+            "peck_retracts": 0,
+            "t_one": 0.0019635,
+            "t_cut": 0.00589049,
+            "feed_mm_min": 1273.24,
+            "pilot_diameter_mm": 2.2
+          },
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "sequence": 4,
+      "name": "Bench Deburr and Edge Finish",
+      "machine_family": "finish_bench",
+      "in_house": true,
+      "setup_time_min": 4.0,
+      "t_setup_per_piece_min": 0.04,
+      "t_handling_min": 0.47,
+      "t_machining_min": 0.38,
+      "t_op_total_min": 0.92,
+      "t_op_total_sec": 55.2,
+      "sub_op_results": [
+        {
+          "operation_seq": 4,
+          "sub_op_seq": 1,
+          "operation_type": "deburr",
+          "kind": "manual",
+          "rpm": null,
+          "feed_mm_min": null,
+          "t_cut_min": 0.38,
+          "t_tool_min": 0.0,
+          "t_rapid_min": 0.0,
+          "t_sub_total_min": 0.38,
+          "trace": {
+            "operation_type": "deburr",
+            "base": 0.381667,
+            "complexity_mult": 1.0,
+            "sec_per_feat": 2.0,
+            "t_cut_min": 0.381667
+          },
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "sequence": 5,
+      "name": "Pre-Anodize Dimensional Inspection",
+      "machine_family": "inspection",
+      "in_house": true,
+      "setup_time_min": 12.0,
+      "t_setup_per_piece_min": 0.12,
+      "t_handling_min": 0.29,
+      "t_machining_min": 3.0,
+      "t_op_total_min": 3.82,
+      "t_op_total_sec": 229.2,
+      "sub_op_results": [
+        {
+          "operation_seq": 5,
+          "sub_op_seq": 1,
+          "operation_type": "manual_inspect",
+          "kind": "inspection",
+          "rpm": null,
+          "feed_mm_min": null,
+          "t_cut_min": 3.0,
+          "t_tool_min": 0.0,
+          "t_rapid_min": 0.0,
+          "t_sub_total_min": 3.0,
+          "trace": {
+            "t_full": 3.0,
+            "t_cut": 3.0
+          },
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "sequence": 6,
+      "name": "Outside Process – Type II Class I Anodize",
+      "machine_family": "outside_vendor",
+      "in_house": false,
+      "setup_time_min": 0.0,
+      "t_setup_per_piece_min": 0.0,
+      "t_handling_min": 0.47,
+      "t_machining_min": 2.88,
+      "t_op_total_min": 3.86,
+      "t_op_total_sec": 231.6,
+      "sub_op_results": [
+        {
+          "operation_seq": 6,
+          "sub_op_seq": 1,
+          "operation_type": "clean_degrease",
+          "kind": "manual",
+          "rpm": null,
+          "feed_mm_min": null,
+          "t_cut_min": 0.35,
+          "t_tool_min": 0.0,
+          "t_rapid_min": 0.0,
+          "t_sub_total_min": 0.35,
+          "trace": {
+            "operation_type": "clean_degrease",
+            "base": 0.5,
+            "complexity_mult": 0.7,
+            "sec_per_feat": 15.0,
+            "t_cut_min": 0.35
+          },
+          "warnings": []
+        },
+        {
+          "operation_seq": 6,
+          "sub_op_seq": 2,
+          "operation_type": "anodize",
+          "kind": "surface_treat",
+          "rpm": null,
+          "feed_mm_min": null,
+          "t_cut_min": 1.68,
+          "t_tool_min": 0.0,
+          "t_rapid_min": 0.0,
+          "t_sub_total_min": 1.68,
+          "trace": {
+            "cycle": 118.333,
+            "batch": 100,
+            "dwell": 83.3333
+          },
+          "warnings": []
+        },
+        {
+          "operation_seq": 6,
+          "sub_op_seq": 3,
+          "operation_type": "cure_bake",
+          "kind": "furnace_cycle",
+          "rpm": null,
+          "feed_mm_min": null,
+          "t_cut_min": 0.85,
+          "t_tool_min": 0.0,
+          "t_rapid_min": 0.0,
+          "t_sub_total_min": 0.85,
+          "trace": {
+            "ramp_min": 10,
+            "soak_min": 30,
+            "cycle_min": 55,
+            "eff_batch": 100
+          },
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "sequence": 7,
+      "name": "Final Inspection",
+      "machine_family": "inspection",
+      "in_house": true,
+      "setup_time_min": 8.0,
+      "t_setup_per_piece_min": 0.08,
+      "t_handling_min": 0.29,
+      "t_machining_min": 3.0,
+      "t_op_total_min": 3.82,
+      "t_op_total_sec": 229.2,
+      "sub_op_results": [
+        {
+          "operation_seq": 7,
+          "sub_op_seq": 1,
+          "operation_type": "manual_inspect",
+          "kind": "inspection",
+          "rpm": null,
+          "feed_mm_min": null,
+          "t_cut_min": 3.0,
+          "t_tool_min": 0.0,
+          "t_rapid_min": 0.0,
+          "t_sub_total_min": 3.0,
+          "trace": {
+            "t_full": 3.0,
+            "t_cut": 3.0
+          },
+          "warnings": []
+        }
+      ]
+    }
+  ],
+  "warnings": []
+}

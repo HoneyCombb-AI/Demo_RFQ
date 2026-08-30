@@ -1,0 +1,189 @@
+{
+  "analysis_id": "11-944_merge_20260829T150336Z",
+  "part": {
+    "drawing_number": "11-944-4395",
+    "material": "AL.7075-T7351, ACC. TO ASTM B-221.",
+    "units": "mm"
+  },
+  "feature_graph": {
+    "part_envelope": {
+      "length_mm": 4.0,
+      "envelope_shape": "prismatic"
+    },
+    "coordinate_system": {
+      "primary_axis": "Z",
+      "orientation_notes": "Z is the main cylindrical/thread and bore axis. Main view is a section cut viewed along X; front/rear faces are normal to Z. No datum origin specified."
+    },
+    "features": [
+      {
+        "feature_id": "F01",
+        "feature_type": "external_thread",
+        "name": "Outer Thread",
+        "description": "Main external threaded body of the part with entry and exit chamfers.",
+        "geometry": {
+          "diameter_mm": 15.847,
+          "outer_diameter_mm": 15.847,
+          "length_mm": 4.0,
+          "depth_condition": "THRU",
+          "thread_spec": "0.625-28UN-2A",
+          "thread_class": "2A",
+          "axis_direction": "Z"
+        },
+        "access_directions": [
+          "radial",
+          "+Z",
+          "-Z"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "thread_spec",
+            "nominal_mm": 0.0,
+            "tolerance_class": "2A"
+          },
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 15.847,
+            "minus_mm": 0.165,
+            "qualifier": "Major Diameter"
+          },
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 15.257,
+            "minus_mm": 0.095,
+            "qualifier": "Pitch Diameter"
+          },
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 14.864,
+            "upper_limit_mm": 14.864,
+            "qualifier": "MAX FORM LIMIT"
+          }
+        ],
+        "gdt_controls": [],
+        "source_views": [
+          "main_view",
+          "detail_view"
+        ]
+      },
+      {
+        "feature_id": "F02",
+        "feature_type": "internal_bore",
+        "name": "Central Bore",
+        "description": "Smooth central through hole.",
+        "geometry": {
+          "diameter_mm": 6.0,
+          "depth_condition": "THRU",
+          "axis_direction": "Z"
+        },
+        "access_directions": [
+          "+Z",
+          "-Z"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "source_views": [
+          "main_view",
+          "isometric_view"
+        ]
+      },
+      {
+        "feature_id": "F03",
+        "feature_type": "hole_pattern",
+        "name": "Off-center Through Holes",
+        "description": "Pattern of two small through holes located on a pitch circle diameter.",
+        "geometry": {
+          "diameter_mm": 2.0,
+          "depth_condition": "THRU",
+          "hole_count": 2,
+          "pcd_mm": 9.0,
+          "axis_direction": "Z"
+        },
+        "instance_count": 2,
+        "access_directions": [
+          "+Z",
+          "-Z"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 9.0,
+            "plus_mm": 0.2,
+            "minus_mm": 0.0
+          },
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 2.0,
+            "plus_mm": 0.2,
+            "minus_mm": 0.0,
+            "qualifier": "x2"
+          }
+        ],
+        "gdt_controls": [],
+        "source_views": [
+          "main_view",
+          "isometric_view"
+        ]
+      },
+      {
+        "feature_id": "F04",
+        "feature_type": "part_body",
+        "name": "Main cylindrical body",
+        "description": "Overall disc-like cylindrical body of the part.",
+        "geometry": {},
+        "access_directions": [
+          "+Z",
+          "-Z",
+          "radial"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "source_views": [
+          "isometric_view"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "relationship_id": "R01",
+        "from_feature_id": "F01",
+        "to_feature_id": "F02",
+        "relationship_type": "coaxial",
+        "detail": "External thread and central bore share the turned part’s Z axis per main_view; both features annotated with axis_direction: Z."
+      },
+      {
+        "relationship_id": "R02",
+        "from_feature_id": "F03",
+        "to_feature_id": "F02",
+        "relationship_type": "radial_pattern",
+        "detail": "2X through-hole pattern on a PCD about the central bore axis (Ø9 PCD around the Ø6 central bore)."
+      }
+    ],
+    "datum_scheme": {
+      "datums": [],
+      "datum_hierarchy_notes": "No datum features or datum targets are defined in the provided sections."
+    },
+    "part_notes": "Material: AL.7075-T7351, ACC. TO ASTM B-221.. Material standard: ASTM B-221. Heat treatment: none specified. Coating: ANODIZATION IAW MIL-A-8625 TYPE II CLASS II. COLOR: OLIVE DRAB 34088 IAW FED-STD-595B. THICKNESS 0.005-0.01mm.. General notes: TOLERANCE: IF NOT MARKED OTHERWISE: LINEAR TOLERANCE ±0.2. TOLERANCE: IF NOT MARKED OTHERWISE: ANGULAR TOLERANCE ±1°. DEBURR: IF NOT MARKED OTHERWISE: EDGES R0.3 MAX OR CHAMFER 0.3X45° MAX. TOLERANCE: IF NOT MARKED OTHERWISE: INSIDE CORNERS R0.25 MAX. FINISH: General surface finish: 125.",
+    "overall_complexity": "simple"
+  },
+  "component_specs": [],
+  "component_spec_links": [],
+  "clarifications": [],
+  "assumptions": [
+    {
+      "assumption_id": "A01",
+      "text": "detail_view:F1 and main_view:F1 are the same external thread based on matching feature_type and thread_spec (0.625-28UN-2A) despite no explicit cross-reference label (Signal 5)."
+    },
+    {
+      "assumption_id": "A02",
+      "text": "isometric_view:F2 is the same central bore as main_view:F3; the isometric provides context only while the section cut supplies dimensions."
+    },
+    {
+      "assumption_id": "A03",
+      "text": "isometric_view:F3 is the same 2X hole pattern as main_view:F2; grouped by feature_type and depiction of two diametrically opposed holes on a PCD."
+    },
+    {
+      "assumption_id": "A04",
+      "text": "Coaxial relationship between the external thread (main_view:F1) and central bore (main_view:F3) inferred from turned-part geometry and shared Z axis annotation."
+    }
+  ]
+}
