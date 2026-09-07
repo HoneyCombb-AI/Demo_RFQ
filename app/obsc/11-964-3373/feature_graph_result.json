@@ -1,0 +1,187 @@
+{
+  "analysis_id": "11-964_merge_20260829T164412Z",
+  "part": {
+    "name": "ADAPTER WIRE COVER",
+    "drawing_number": "11-964-3373",
+    "material": "AL 6061-T6510/T6511",
+    "units": "mm"
+  },
+  "feature_graph": {
+    "part_envelope": {
+      "length_mm": 1.5,
+      "width_mm": 24.4,
+      "height_mm": 18.2,
+      "envelope_shape": "prismatic"
+    },
+    "coordinate_system": {
+      "primary_axis": "Z",
+      "orientation_notes": "Front view: X horizontal, Y vertical, Z into page. Section A-A views along X; hole axes align with Z and are normal to Datum A. Use Datum A rear face as origin for Z.",
+      "datum_origin": "A"
+    },
+    "features": [
+      {
+        "feature_id": "F01",
+        "feature_type": "part_body",
+        "name": "Main Plate",
+        "description": "Overall rectangular plate body.",
+        "geometry": {
+          "depth_mm": 1.5,
+          "width_mm": 24.4,
+          "height_mm": 18.2,
+          "wall_thickness_mm": 1.5
+        },
+        "access_directions": [
+          "+Z",
+          "-Z"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "source_views": [
+          "front_view",
+          "section_aa",
+          "isometric_view"
+        ]
+      },
+      {
+        "feature_id": "F02",
+        "feature_type": "hole_pattern",
+        "name": "Right Mounting Hole",
+        "description": "Single centrally aligned hole on the right side, shown as concentric solid circles suggesting a counterbore or stepped bore.",
+        "geometry": {
+          "diameter_mm": 2.2,
+          "inner_diameter_mm": 2.2,
+          "outer_diameter_mm": 4.0,
+          "length_mm": 14.0,
+          "depth_mm": 0.3,
+          "depth_condition": "THRU",
+          "angle_deg": 90.0,
+          "hole_count": 1,
+          "axis_direction": "Z"
+        },
+        "instance_count": 1,
+        "access_directions": [
+          "-Z",
+          "+Z"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [
+          {
+            "gdt_type": "position",
+            "tolerance_value_mm": 0.1,
+            "material_condition": "RFS",
+            "datum_references": [
+              "A"
+            ],
+            "applied_to": "Inner bore of the 3 countersunk holes"
+          }
+        ],
+        "source_views": [
+          "front_view",
+          "section_aa",
+          "isometric_view"
+        ]
+      },
+      {
+        "feature_id": "F03",
+        "feature_type": "chamfer",
+        "name": "Corner Chamfers",
+        "description": "Chamfers on the four corners of the rectangular plate.",
+        "geometry": {
+          "angle_deg": 45.0
+        },
+        "instance_count": 4,
+        "access_directions": [],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "source_views": [
+          "front_view"
+        ]
+      },
+      {
+        "feature_id": "F04",
+        "feature_type": "datum_face",
+        "name": "Datum A Rear Face",
+        "description": "Flat rear surface of the plate, defined as Datum A.",
+        "geometry": {},
+        "access_directions": [
+          "+Z"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "source_views": [
+          "section_aa"
+        ]
+      },
+      {
+        "feature_id": "F05",
+        "feature_type": "radius",
+        "name": "Outer edge radii",
+        "description": "Rounded outer boundary edges of the plate.",
+        "geometry": {
+          "radius_mm": 1.0,
+          "hole_count": 2
+        },
+        "access_directions": [],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "source_views": [
+          "section_aa"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "relationship_id": "R01",
+        "from_feature_id": "F02",
+        "to_feature_id": "F04",
+        "relationship_type": "datum_referenced",
+        "detail": "Hole pattern has position tol to Datum A per section_aa:F3 GD&T; referenced via the group's canonical member."
+      },
+      {
+        "relationship_id": "R02",
+        "from_feature_id": "F02",
+        "to_feature_id": "F01",
+        "relationship_type": "intersecting",
+        "detail": "Mounting holes pass through the plate body."
+      }
+    ],
+    "datum_scheme": {
+      "datums": [
+        {
+          "datum_letter": "A",
+          "feature_id": "F04",
+          "surface_type": "planar",
+          "description": "Flat rear face of the plate"
+        }
+      ],
+      "datum_hierarchy_notes": "Datum A is the primary planar datum defined on the rear face. The 3X hole pattern has a position control relative to A."
+    },
+    "part_notes": "Material: AL 6061-T6510/T6511. Material standard: ASTM B-221. Heat treatment: none specified. Coating: ANODIZATION I.A.W MIL-A-8625 TYPE II CLASS I. General notes: PROCESS: MATERIAL: AL 6061-T6510/T6511, I.A.W.ASTM B-221.. FINISH: ANODIZATION I.A.W MIL-A-8625 TYPE II CLASS I.. TOLERANCE: IF NOT MARKED OTHERWISE: LINEAR TOLERANCE ±0.1. TOLERANCE: IF NOT MARKED OTHERWISE: ANGULAR TOLERANCE ±0.15°. DEBURR: IF NOT MARKED OTHERWISE: EDGES R0.5 MAX OR CHAMFER 0.5X45° MAX. TOLERANCE: IF NOT MARKED OTHERWISE: INSIDE CORNERS R0.25 MAX. Extraction notes: Title block information is sparse, missing scale, rev, drawn by/date. Tolerance table information duplicated in part in the title block section.",
+    "overall_complexity": "moderate"
+  },
+  "component_specs": [],
+  "component_spec_links": [],
+  "clarifications": [],
+  "assumptions": [
+    {
+      "assumption_id": "A01",
+      "text": "Isometric_view:F2 labeled internal_thread is treated as a visual misclassification; authoritative section A-A defines the features as countersunk through holes. No threads will be assumed."
+    },
+    {
+      "assumption_id": "A02",
+      "text": "The three mounting holes are interchangeable instances of the same countersunk through-hole specification (TYP.3). They are modeled as one group with instance count coming from the aggregate observations."
+    },
+    {
+      "assumption_id": "A03",
+      "text": "Canonical for the hole group is front_view:F4 (a single, non-aggregate observation with explicit location info). Aggregate observations front_view:F3, section_aa:F3, and isometric_view:F2 contribute geometry/GD&T but are not canonical."
+    },
+    {
+      "assumption_id": "A04",
+      "text": "Canonical for the part body is front_view:F1 (it carries overall width and height). Section A-A F1 supplies thickness via union."
+    },
+    {
+      "assumption_id": "A05",
+      "text": "feature_type for the hole group is overridden from section_aa:F3 to represent the pattern/countersink definition rather than the generic internal_bore from front_view entries."
+    }
+  ]
+}

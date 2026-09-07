@@ -1,0 +1,596 @@
+{
+  "analysis_id": "11-966_merge_20260829T165207Z",
+  "part": {
+    "name": "LOCKER",
+    "drawing_number": "11-964-3385",
+    "material": "AL 7075-T7351 IAW ASTM B-221",
+    "units": "mm"
+  },
+  "feature_graph": {
+    "part_envelope": {
+      "length_mm": 8.6,
+      "max_diameter_mm": 27.1,
+      "envelope_shape": "cylindrical"
+    },
+    "coordinate_system": {
+      "primary_axis": "Z",
+      "orientation_notes": "Z is the central axis (datum A). X and Y are radial. Datum B is the right planar face establishing the +Z direction reference.",
+      "datum_origin": "A"
+    },
+    "features": [
+      {
+        "feature_id": "F01",
+        "feature_type": "internal_thread",
+        "name": "Central threaded bore",
+        "description": "Central through-hole with internal threads and countersinks on both near and far sides. Serves as Datum A.",
+        "geometry": {
+          "diameter_mm": 2.11,
+          "depth_condition": "THRU",
+          "thread_spec": "3-56 UNF - 3B",
+          "thread_class": "3B",
+          "axis_direction": "+Z"
+        },
+        "access_directions": [
+          "+Z",
+          "-Z"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "thread_spec",
+            "nominal_mm": 0.0,
+            "tolerance_class": "3B",
+            "qualifier": "THRU ALL"
+          }
+        ],
+        "gdt_controls": [],
+        "source_views": [
+          "main_view_front",
+          "isometric_view_1"
+        ]
+      },
+      {
+        "feature_id": "F02",
+        "feature_type": "external_cylinder",
+        "name": "Central hub boss",
+        "description": "Inner central cylindrical hub that connects to the spokes.",
+        "geometry": {
+          "diameter_mm": 8.5,
+          "outer_diameter_mm": 8.5,
+          "axis_direction": "+Z"
+        },
+        "access_directions": [
+          "+Z",
+          "-Z"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "source_views": [
+          "main_view_front",
+          "isometric_view_1"
+        ]
+      },
+      {
+        "feature_id": "F03",
+        "feature_type": "radius",
+        "name": "Top outer radius",
+        "description": "Convex radius on the upper outer corner of the profile.",
+        "geometry": {
+          "radius_mm": 0.35
+        },
+        "access_directions": [],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "radius",
+            "nominal_mm": 0.35,
+            "minus_mm": 0.1
+          }
+        ],
+        "gdt_controls": [],
+        "source_views": [
+          "detail_b"
+        ]
+      },
+      {
+        "feature_id": "F04",
+        "feature_type": "flat_face",
+        "name": "Lip width step",
+        "description": "Small vertical face or step width on the protruding lip.",
+        "geometry": {
+          "width_mm": 0.25
+        },
+        "access_directions": [],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "width",
+            "nominal_mm": 0.25,
+            "plus_mm": 0.05,
+            "minus_mm": 0.05
+          }
+        ],
+        "gdt_controls": [],
+        "source_views": [
+          "detail_b"
+        ]
+      },
+      {
+        "feature_id": "F05",
+        "feature_type": "radius",
+        "name": "Bottom outer radius",
+        "description": "Convex radius on the lower outer corner of the lip.",
+        "geometry": {
+          "radius_mm": 0.35
+        },
+        "access_directions": [],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "radius",
+            "nominal_mm": 0.35,
+            "minus_mm": 0.1
+          }
+        ],
+        "gdt_controls": [],
+        "source_views": [
+          "detail_b"
+        ]
+      },
+      {
+        "feature_id": "F06",
+        "feature_type": "fillet",
+        "name": "Inner fillet",
+        "description": "Concave fillet transitioning from the protruding lip into the main part body.",
+        "geometry": {
+          "radius_mm": 1.0
+        },
+        "access_directions": [],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "radius",
+            "nominal_mm": 1.0,
+            "minus_mm": 0.1
+          }
+        ],
+        "gdt_controls": [],
+        "source_views": [
+          "detail_b"
+        ]
+      },
+      {
+        "feature_id": "F07",
+        "feature_type": "part_body",
+        "name": "Main Body",
+        "description": "Wheel-like locker component featuring an outer rim and four radial spokes in a cross pattern.",
+        "geometry": {},
+        "access_directions": [
+          "+Z",
+          "-Z"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "source_views": [
+          "isometric_view_1"
+        ]
+      },
+      {
+        "feature_id": "F08",
+        "feature_type": "pocket",
+        "name": "Sector Cutouts",
+        "description": "Four large sector-shaped through-pockets that define the spokes of the wheel.",
+        "geometry": {
+          "hole_count": 4,
+          "axis_direction": "+Z"
+        },
+        "instance_count": 4,
+        "access_directions": [
+          "+Z",
+          "-Z"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "source_views": [
+          "isometric_view_1"
+        ]
+      },
+      {
+        "feature_id": "F09",
+        "feature_type": "part_body",
+        "name": "Wheel-like component",
+        "description": "Overall part geometry consisting of an outer rim, three radial spokes, and a central cylindrical hub with a through bore.",
+        "geometry": {},
+        "access_directions": [
+          "+Z",
+          "-Z",
+          "+X",
+          "-X",
+          "+Y",
+          "-Y"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "source_views": [
+          "isometric_view_2"
+        ]
+      },
+      {
+        "feature_id": "F10",
+        "feature_type": "arm",
+        "name": "Radial spokes",
+        "description": "Four radial spokes connecting the inner hub to the outer ring.",
+        "geometry": {
+          "width_mm": 3.0
+        },
+        "instance_count": 4,
+        "access_directions": [
+          "+Z",
+          "-Z"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "source_views": [
+          "main_view_front"
+        ]
+      },
+      {
+        "feature_id": "F11",
+        "feature_type": "fillet",
+        "name": "Hub/spoke fillets",
+        "description": "Fillet radii at the interior corners where the four spokes meet the central hub.",
+        "geometry": {
+          "radius_mm": 2.5
+        },
+        "instance_count": 8,
+        "access_directions": [
+          "+Z",
+          "-Z"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "source_views": [
+          "main_view_front"
+        ]
+      },
+      {
+        "feature_id": "F12",
+        "feature_type": "external_cylinder",
+        "name": "Outer body cylinder",
+        "description": "Overall outer cylindrical envelope of the locker.",
+        "geometry": {
+          "diameter_mm": 27.1,
+          "outer_diameter_mm": 27.1,
+          "length_mm": 8.6,
+          "radius_mm": 1.0,
+          "axis_direction": "Z"
+        },
+        "access_directions": [
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "length",
+            "nominal_mm": 8.6,
+            "plus_mm": 0.0,
+            "minus_mm": 0.05
+          }
+        ],
+        "gdt_controls": [],
+        "source_views": [
+          "section_a_a"
+        ]
+      },
+      {
+        "feature_id": "F13",
+        "feature_type": "internal_bore",
+        "name": "Entry step bore",
+        "description": "First shallow internal step at the left face.",
+        "geometry": {
+          "diameter_mm": 24.3,
+          "depth_mm": 1.8,
+          "axis_direction": "Z"
+        },
+        "access_directions": [
+          "-Z"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 24.3,
+            "plus_mm": 0.1,
+            "minus_mm": 0.0
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "position",
+            "tolerance_value_mm": 0.05,
+            "datum_references": [
+              "A",
+              "B"
+            ],
+            "applied_to": "Entry step bore diameter"
+          }
+        ],
+        "source_views": [
+          "section_a_a"
+        ]
+      },
+      {
+        "feature_id": "F14",
+        "feature_type": "internal_bore",
+        "name": "Main cavity bore",
+        "description": "Deepest internal cylindrical bore ending at the central web.",
+        "geometry": {
+          "diameter_mm": 23.5,
+          "depth_mm": 6.7,
+          "radius_mm": 4.0,
+          "axis_direction": "Z"
+        },
+        "access_directions": [
+          "-Z"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 23.5,
+            "plus_mm": 0.0,
+            "minus_mm": 0.1
+          },
+          {
+            "dimension_type": "depth",
+            "nominal_mm": 6.7,
+            "plus_mm": 0.0,
+            "minus_mm": 0.05
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "position",
+            "tolerance_value_mm": 0.05,
+            "datum_references": [
+              "A",
+              "B"
+            ],
+            "applied_to": "Main cavity bore diameter"
+          }
+        ],
+        "source_views": [
+          "section_a_a"
+        ]
+      },
+      {
+        "feature_id": "F15",
+        "feature_type": "through_hole",
+        "name": "Center through hole",
+        "description": "Central bore passing entirely through the internal web.",
+        "geometry": {
+          "diameter_mm": 4.4,
+          "depth_condition": "THRU",
+          "axis_direction": "Z"
+        },
+        "access_directions": [
+          "+Z",
+          "-Z"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "source_views": [
+          "section_a_a"
+        ]
+      },
+      {
+        "feature_id": "F16",
+        "feature_type": "datum_face",
+        "name": "Right side face",
+        "description": "Rightmost flat face of the part defining Datum B.",
+        "geometry": {
+          "axis_direction": "+Z"
+        },
+        "access_directions": [
+          "+Z"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [
+          {
+            "gdt_type": "perpendicularity",
+            "tolerance_value_mm": 0.05,
+            "datum_references": [
+              "A"
+            ],
+            "applied_to": "Right flat datum face"
+          }
+        ],
+        "source_views": [
+          "section_a_a"
+        ]
+      },
+      {
+        "feature_id": "F17",
+        "feature_type": "pocket",
+        "name": "Right side lobes",
+        "description": "Cutouts or scalloped lobes on the right side of the part.",
+        "geometry": {
+          "depth_mm": 4.0,
+          "radius_mm": 2.5
+        },
+        "access_directions": [
+          "+Z"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "source_views": [
+          "section_a_a"
+        ]
+      },
+      {
+        "feature_id": "F18",
+        "feature_type": "web",
+        "name": "Internal dividing web",
+        "description": "Solid material wall separating the left deep cavity from the right pockets.",
+        "geometry": {
+          "wall_thickness_mm": 1.5
+        },
+        "access_directions": [
+          "-Z",
+          "+Z"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "source_views": [
+          "section_a_a"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "relationship_id": "R01",
+        "from_feature_id": "F02",
+        "to_feature_id": "F01",
+        "relationship_type": "coaxial",
+        "detail": "Central hub boss shares axis with the central threaded bore (datum A)."
+      },
+      {
+        "relationship_id": "R02",
+        "from_feature_id": "F13",
+        "to_feature_id": "F01",
+        "relationship_type": "coaxial",
+        "detail": "Entry step bore is shown on the section cut as centered on the same Z-axis as datum A."
+      },
+      {
+        "relationship_id": "R03",
+        "from_feature_id": "F14",
+        "to_feature_id": "F01",
+        "relationship_type": "coaxial",
+        "detail": "Main cavity bore shares the central axis with datum A."
+      },
+      {
+        "relationship_id": "R04",
+        "from_feature_id": "F15",
+        "to_feature_id": "F01",
+        "relationship_type": "coaxial",
+        "detail": "Center through hole in section A-A is on the same axis as datum A."
+      },
+      {
+        "relationship_id": "R05",
+        "from_feature_id": "F16",
+        "to_feature_id": "F01",
+        "relationship_type": "perpendicular",
+        "detail": "Datum B right face is controlled perpendicular to datum A."
+      },
+      {
+        "relationship_id": "R06",
+        "from_feature_id": "F13",
+        "to_feature_id": "F01",
+        "relationship_type": "datum_referenced",
+        "detail": "Section A-A F2 position callout references datum A."
+      },
+      {
+        "relationship_id": "R07",
+        "from_feature_id": "F13",
+        "to_feature_id": "F16",
+        "relationship_type": "datum_referenced",
+        "detail": "Section A-A F2 position callout references datum B."
+      },
+      {
+        "relationship_id": "R08",
+        "from_feature_id": "F14",
+        "to_feature_id": "F01",
+        "relationship_type": "datum_referenced",
+        "detail": "Section A-A F3 position callout references datum A."
+      },
+      {
+        "relationship_id": "R09",
+        "from_feature_id": "F14",
+        "to_feature_id": "F16",
+        "relationship_type": "datum_referenced",
+        "detail": "Section A-A F3 position callout references datum B."
+      },
+      {
+        "relationship_id": "R10",
+        "from_feature_id": "F10",
+        "to_feature_id": "F01",
+        "relationship_type": "radial_pattern",
+        "detail": "Four spokes patterned equally around the datum A axis."
+      },
+      {
+        "relationship_id": "R11",
+        "from_feature_id": "F08",
+        "to_feature_id": "F01",
+        "relationship_type": "radial_pattern",
+        "detail": "Four sector cutouts patterned about the datum A axis."
+      }
+    ],
+    "datum_scheme": {
+      "datums": [
+        {
+          "datum_letter": "A",
+          "feature_id": "F01",
+          "surface_type": "cylindrical",
+          "description": "Central axis of the main threaded bore."
+        },
+        {
+          "datum_letter": "B",
+          "feature_id": "F16",
+          "surface_type": "planar",
+          "description": "Rightmost flat face of the part."
+        }
+      ],
+      "datum_hierarchy_notes": "A is the primary datum axis defined by the central threaded bore; B is a secondary planar datum perpendicular to A. Section A-A shows position tolerances to A|B."
+    },
+    "part_notes": "Material: AL 7075-T7351 IAW ASTM B-221. Material standard: ASTM B-221. Heat treatment: none specified. Coating: (al) SULFURIC ANODIZE NATURAL PER MIL-A-8625C TYPE II, CLASS 1.. General notes: TOLERANCE: ALL DIMENTIONS ARE AFTER TREATMENTS AND COATINGS.. INSPECTION: INSPECT WITH GO/NOGO GAGE FOR 3B CLASS THREAD. INSPECT FULL LENGTH OF THREAD. INSPECT FROM BOTH SIDES. 100% INSPECTION IS REQUIRED.. DEBURR: EDGES R0.5 MAX OR CHAMFER 0.5X45° MAX. TOLERANCE: INSIDE CORNERS R0.25 MAX. TOLERANCE: ALL DIMENSIONS ARE AFTER COATING.",
+    "overall_complexity": "moderate"
+  },
+  "component_specs": [],
+  "component_spec_links": [],
+  "clarifications": [
+    {
+      "clarification_id": "C01",
+      "question": "The central hole is shown as 3-56 UNF (Ø2.11) THRU in the front view (main_view_front:F1) but as an unthreaded Ø4.4 THRU hole in Section A-A (section_a_a:F4). Which specification is correct for the central hole?",
+      "blocks": [
+        "main_view_front:F1",
+        "section_a_a:F4",
+        "isometric_view_1:F2"
+      ],
+      "priority": "high"
+    }
+  ],
+  "assumptions": [
+    {
+      "assumption_id": "A01",
+      "text": "Grouped isometric_view_1:F2 with main_view_front:F1 as the same central hole based on spatial context and alignment; used main_view_front:F1 as canonical due to explicit dimensions and datum A definition."
+    },
+    {
+      "assumption_id": "A02",
+      "text": "Grouped isometric_view_1:F3 with main_view_front:F2 as the same central hub boss; canonical set to main_view_front:F2 which carries the diameter."
+    },
+    {
+      "assumption_id": "A03",
+      "text": "Did not group section_a_a:F4 with the central threaded bore group because its Ø4.4 size conflicts with the 3-56 UNF (Ø2.11) thread; treated as a distinct feature pending clarification."
+    },
+    {
+      "assumption_id": "A04",
+      "text": "Left all Detail B features (detail_b:F1–F4) as singletons because the parent section does not identify a specific host feature via cross_ref_labels; they likely belong to the entry lip region but there is insufficient certainty to merge."
+    },
+    {
+      "assumption_id": "A05",
+      "text": "Coaxial relationships between section_a_a internal bores/holes (F2, F3, F4) and datum A were asserted from section-cut geometry and axis annotations (axis_direction=Z)."
+    },
+    {
+      "assumption_id": "A06",
+      "text": "Set the coordinate system primary axis to Z with origin along datum A, consistent across isometric and orthographic notes."
+    },
+    {
+      "assumption_id": "A07",
+      "text": "Used radial_pattern relationships for the spokes (main_view_front:F3) and the sector cutouts (isometric_view_1:F4) about the datum A axis based on their 4X count and visual symmetry."
+    },
+    {
+      "assumption_id": "A08",
+      "text": "Set the right-side lobe/cutout radius features to 4X R2.5 to match the four-spoke layout."
+    },
+    {
+      "assumption_id": "A09",
+      "text": "Set the Detail B lip features to apply 360° around the entry lip."
+    },
+    {
+      "assumption_id": "A10",
+      "text": "The 3-56 UNF - 3B (Ø2.11) THRU specification in the front view correctly defines the central threaded hole, whereas the Ø4.4 dimension in Section A-A specifies the outer diameter of the central boss."
+    }
+  ]
+}

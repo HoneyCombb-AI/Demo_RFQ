@@ -1,0 +1,212 @@
+{
+  "analysis_id": "11-693_merge_20260829T165426Z",
+  "part": {
+    "name": "NUT FOR CONNECTOR 27 PIN",
+    "drawing_number": "233777-4",
+    "revision": "02",
+    "material": "Al6061-T6510/T6511, ACC. TO ASTM B-221.",
+    "units": "mm"
+  },
+  "feature_graph": {
+    "part_envelope": {
+      "length_mm": 3.5,
+      "height_mm": 19.05,
+      "max_diameter_mm": 19.05,
+      "envelope_shape": "cylindrical"
+    },
+    "coordinate_system": {
+      "primary_axis": "Z",
+      "orientation_notes": "Z is the part/thread axis: in Front View Z is depth into the page; in Right Side View Z is horizontal (thickness). XY plane corresponds to the circular face in Front View. No datum origin defined."
+    },
+    "features": [
+      {
+        "feature_id": "F01",
+        "feature_type": "external_thread",
+        "name": "3/4\"-32UN-2A external thread",
+        "description": "Detailed cross-sectional profile of an external thread showing major, pitch, and minor diameters.",
+        "geometry": {
+          "diameter_mm": 19.022,
+          "outer_diameter_mm": 19.022,
+          "length_mm": 3.5,
+          "thread_spec": "3/4\"-32UN-2A",
+          "thread_class": "2A",
+          "axis_direction": "Z"
+        },
+        "access_directions": [
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "length",
+            "nominal_mm": 3.5,
+            "plus_mm": 0.1,
+            "minus_mm": 0.1
+          },
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 19.022,
+            "plus_mm": 0.0,
+            "minus_mm": 0.152
+          },
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 18.077,
+            "upper_limit_mm": 18.077,
+            "qualifier": "MAX FLANK LIMIT"
+          },
+          {
+            "dimension_type": "thread_spec",
+            "nominal_mm": 0.0,
+            "tolerance_class": "2A"
+          }
+        ],
+        "gdt_controls": [],
+        "source_views": [
+          "right_side_view",
+          "thread_detail"
+        ]
+      },
+      {
+        "feature_id": "F02",
+        "feature_type": "internal_bore",
+        "name": "Central bore",
+        "description": "Main central bore of the nut.",
+        "geometry": {
+          "diameter_mm": 15.2,
+          "hole_count": 1,
+          "axis_direction": "+Z"
+        },
+        "instance_count": 1,
+        "access_directions": [
+          "+Z",
+          "-Z"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 15.2,
+            "plus_mm": 0.1
+          }
+        ],
+        "gdt_controls": [],
+        "source_views": [
+          "front_view"
+        ]
+      },
+      {
+        "feature_id": "F03",
+        "feature_type": "slot",
+        "name": "4X Radial slots",
+        "description": "Four semi-circular slots cut into the internal bore, arranged radially.",
+        "geometry": {
+          "length_mm": 8.8,
+          "radius_mm": 1.0,
+          "hole_count": 4,
+          "position_description": "Centers located radially 8.8mm from the main axis.",
+          "axis_direction": "+Z"
+        },
+        "instance_count": 4,
+        "access_directions": [
+          "+Z",
+          "-Z"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "radius",
+            "nominal_mm": 1.0,
+            "plus_mm": 0.1,
+            "minus_mm": 0.1,
+            "qualifier": "4x"
+          },
+          {
+            "dimension_type": "length",
+            "nominal_mm": 8.8,
+            "minus_mm": 0.1,
+            "qualifier": "4x"
+          }
+        ],
+        "gdt_controls": [],
+        "source_views": [
+          "front_view"
+        ]
+      },
+      {
+        "feature_id": "F04",
+        "feature_type": "chamfer",
+        "name": "Outer Edge Chamfers",
+        "description": "Chamfers on both the front and rear outer edges of the external thread.",
+        "geometry": {
+          "length_mm": 0.45,
+          "angle_deg": 45.0,
+          "axis_direction": "Z"
+        },
+        "instance_count": 2,
+        "access_directions": [
+          "+Z",
+          "-Z"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "source_views": [
+          "right_side_view"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "relationship_id": "R01",
+        "from_feature_id": "F02",
+        "to_feature_id": "F01",
+        "relationship_type": "coaxial",
+        "detail": "Central bore shares the same axis as the external thread/part axis."
+      },
+      {
+        "relationship_id": "R02",
+        "from_feature_id": "F03",
+        "to_feature_id": "F02",
+        "relationship_type": "intersecting",
+        "detail": "Each of the 4 semi-circular radial notches cuts into the internal bore wall."
+      }
+    ],
+    "datum_scheme": {
+      "datums": [],
+      "datum_hierarchy_notes": "No datum features defined in the provided sections."
+    },
+    "part_notes": "Material: Al6061-T6510/T6511, ACC. TO ASTM B-221.. Material standard: ASTM B-221. Scale: 2:1. Heat treatment: none specified. Coating: ANODIZATION IAW MIL-A-8625 TYPE II, CLASS II. COLOR: OLIVE DRAB 34088 IAW FED-STD-595B. THICKNESS 5-10 μm.. General notes: MATERIAL: Al6061-T6510/T6511, ACC. TO ASTM B-221.. FINISH: COATING: ANODIZATION IAW MIL-A-8625 TYPE II, CLASS II. COLOR: OLIVE DRAB 34088 IAW FED-STD-595B. THICKNESS 5-10 μm.. TOLERANCE: ALL DIMENSIONS ARE AFTER COATING.. DEBURR: REMOVE BURRS.. TOLERANCE: UNLESS OTHERWISE SPECIFIED TOLERANCES ARE LINEAR ± 0.1 ANGULAR ± 0.1°. Extraction notes: General surface finish requirement shown as 125 and (63) microinches (implied), units are not explicitly declared.",
+    "overall_complexity": "moderate"
+  },
+  "component_specs": [],
+  "component_spec_links": [],
+  "clarifications": [
+  ],
+  "assumptions": [
+    {
+      "assumption_id": "A01",
+      "text": "Grouped right_side_view:F1 and thread_detail:F1 as the same external thread based on matching thread_spec \"3/4\"-32UN-2A\" and the THREAD DETAIL context (Signal 5/detail-view logic)."
+    },
+    {
+      "assumption_id": "A02",
+      "text": "Selected thread_detail:F1 as canonical for the external thread because it provides the detailed major/pitch/minor diameters with tolerances; thread length will be taken from right_side_view:F1 via union."
+    },
+    {
+      "assumption_id": "A03",
+      "text": "Declared the central bore (front_view:F1) coaxial with the external thread group given common axis evidence across views; no explicit GD&T provided."
+    },
+    {
+      "assumption_id": "A04",
+      "text": "Treated the 4X radial slots (front_view:F2) as an aggregate pattern not individually modeled elsewhere; left as a single feature with count=4 and no separate identity groups."
+    },
+    {
+      "assumption_id": "A05",
+      "text": "Set the central bore Ø15.2 to run THRU across the full part thickness (nominal 3.5 mm)."
+    },
+    {
+      "assumption_id": "A06",
+      "text": "Set the 4X R1 radial slots to break out on one face only."
+    },
+    {
+      "assumption_id": "A07",
+      "text": "The 4X R1 slots are assumed to be through-features extending through the full axial length of the component bore, as no partial depth is specified."
+    }
+  ]
+}

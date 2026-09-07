@@ -1,0 +1,124 @@
+{
+  "drawing_number": "11-964-3385",
+  "part_name": "LOCKER",
+  "material": "AL 7075-T7351 IAW ASTM B-221",
+  "quantity": 100,
+  "quote_status": "complete",
+  "weights": {
+    "raw_bar_dia_mm": 31.75,
+    "actual_bar_dia_mm": 31.988,
+    "pcs_per_5m_bar": 342,
+    "gross_weight_kg": 0.0317,
+    "gross_weight_g": 31.7,
+    "net_weight_kg": 0.0017,
+    "net_weight_g": 1.7,
+    "scrap_weight_kg": 0.03,
+    "scrap_weight_g": 30.0,
+    "net_weight_source": "routing"
+  },
+  "direct_cost": {
+    "material_cost_inr": 1.5,
+    "machining_cost_inr": 60.82,
+    "heat_treatment_cost_inr": 0.06,
+    "direct_cost_subtotal_inr": 62.38
+  },
+  "overheads_and_surcharges": {
+    "factory_overhead_margin_inr": 62.38,
+    "tooling_inr": 12.48,
+    "rejection_inr": 2.74,
+    "inspection_inr": 2.5,
+    "cleaning_inr": 1.25,
+    "scrap_recovery_credit_inr": -0.64,
+    "export_packaging_inr": 0.03,
+    "fob_freight_inr": 0.03,
+    "packaging_and_fob_inr": 0.06
+  },
+  "pricing_summary": {
+    "subtotal_before_margin_inr": 80.77,
+    "overhead_and_margin_inr": 62.38,
+    "final_ex_works_price_inr": 143.16
+  },
+  "machining_operations": [
+    {
+      "sequence": 2,
+      "operation_name": "CNC Turn – Establish Datum B, Datum A and OD",
+      "machine_family": "cnc_lathe",
+      "cycle_time_sec": 113.2,
+      "hourly_rate_inr": 250.0,
+      "cost_per_piece_inr": 7.86,
+      "cost_per_piece_raw": 7.861111111111111
+    },
+    {
+      "sequence": 3,
+      "operation_name": "CNC Turn – Left Face and Stepped Cavity",
+      "machine_family": "cnc_lathe",
+      "cycle_time_sec": 179.6,
+      "hourly_rate_inr": 250.0,
+      "cost_per_piece_inr": 12.47,
+      "cost_per_piece_raw": 12.472222222222221
+    },
+    {
+      "sequence": 4,
+      "operation_name": "VMC Mill – Right Pockets and Spoke Profile",
+      "machine_family": "vmc_3axis",
+      "cycle_time_sec": 63.5,
+      "hourly_rate_inr": 400.0,
+      "cost_per_piece_inr": 7.06,
+      "cost_per_piece_raw": 7.055555555555555
+    },
+    {
+      "sequence": 5,
+      "operation_name": "Bench Deburr and Edge Break",
+      "machine_family": "finish_bench",
+      "cycle_time_sec": 79.9,
+      "hourly_rate_inr": 200.0,
+      "cost_per_piece_inr": 4.44,
+      "cost_per_piece_raw": 4.438888888888889
+    },
+    {
+      "sequence": 7,
+      "operation_name": "Anodize Surface Preparation",
+      "machine_family": "surface_finishing",
+      "cycle_time_sec": 85.4,
+      "hourly_rate_inr": 200.0,
+      "cost_per_piece_inr": 4.74,
+      "cost_per_piece_raw": 4.7444444444444445
+    },
+    {
+      "sequence": 8,
+      "operation_name": "Mask Thread and Controlled Surfaces",
+      "machine_family": "finish_bench",
+      "cycle_time_sec": 135.9,
+      "hourly_rate_inr": 200.0,
+      "cost_per_piece_inr": 7.55,
+      "cost_per_piece_raw": 7.55
+    },
+    {
+      "sequence": 9,
+      "operation_name": "Sulfuric Type II Natural Anodize",
+      "machine_family": "surface_finishing",
+      "cycle_time_sec": 125.4,
+      "hourly_rate_inr": 200.0,
+      "cost_per_piece_inr": 6.97,
+      "cost_per_piece_raw": 6.966666666666667
+    },
+    {
+      "sequence": 10,
+      "operation_name": "Remove Masking and Final Clean",
+      "machine_family": "finish_bench",
+      "cycle_time_sec": 134.6,
+      "hourly_rate_inr": 200.0,
+      "cost_per_piece_inr": 7.48,
+      "cost_per_piece_raw": 7.477777777777778
+    },
+    {
+      "sequence": 12,
+      "operation_name": "Final Mark and Release",
+      "machine_family": "finish_bench",
+      "cycle_time_sec": 40.6,
+      "hourly_rate_inr": 200.0,
+      "cost_per_piece_inr": 2.26,
+      "cost_per_piece_raw": 2.2555555555555555
+    }
+  ]
+}

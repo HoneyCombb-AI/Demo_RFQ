@@ -1,0 +1,800 @@
+{
+  "analysis_id": "11-966_merge_20260829T165207Z",
+  "source_feature_graph_id": "11-966_merge_20260829T165207Z",
+  "quantity": 100,
+  "part_family": "hybrid",
+  "base_geometry": "cylindrical",
+  "stock": {
+    "form": "round_bar",
+    "diameter_mm": 31.75,
+    "length_mm": 15.6,
+    "machining_allowance_mm": 0.5
+  },
+  "operations": [
+    {
+      "sequence": 1,
+      "name": "Saw Cut Blanks",
+      "machine_family": "saw",
+      "setup_note": "Cut individual blanks from 7075 bar with allowance for facing both ends; process the 100-piece order as one saw lot.",
+      "datum_references": [],
+      "material_machinability": "easy",
+      "setup_time_min": 5.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "saw_cut",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "saw_cut",
+            "cut_diameter_mm": 31.75,
+            "cut_count": 1
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 2,
+      "name": "CNC Turn \u2013 Establish Datum B, Datum A and OD",
+      "machine_family": "cnc_lathe",
+      "setup_note": "Grip the sawed blank in soft jaws on the stock OD. Face the right side as datum B, turn the OD, and produce the central threaded hole coaxially in the same spindle setup.",
+      "datum_references": [
+        "A",
+        "B"
+      ],
+      "material_machinability": "easy",
+      "setup_time_min": 15.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "face_turn",
+          "target_feature_ids": [
+            "F16"
+          ],
+          "inputs": {
+            "kind": "radial_turn",
+            "start_diameter_mm": 31.75,
+            "finish_diameter_mm": 0.0,
+            "groove_count": 1,
+            "total_stock_mm": 3.5
+          }
+        },
+        {
+          "sequence": 2,
+          "operation_type": "rough_turn_od",
+          "target_feature_ids": [
+            "F12"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 31.75,
+            "finish_diameter_mm": 27.9,
+            "cut_length_mm": 8.6
+          }
+        },
+        {
+          "sequence": 3,
+          "operation_type": "finish_turn_od",
+          "target_feature_ids": [
+            "F12"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 27.9,
+            "finish_diameter_mm": 27.1,
+            "cut_length_mm": 8.6
+          }
+        },
+        {
+          "sequence": 4,
+          "operation_type": "spot_drill",
+          "target_feature_ids": [
+            "F01"
+          ],
+          "inputs": {
+            "kind": "point_drill",
+            "hole_diameter_mm": 2.11,
+            "hole_depth_mm": 1.0,
+            "hole_count": 1,
+            "through_hole": false
+          }
+        },
+        {
+          "sequence": 5,
+          "operation_type": "peck_drill",
+          "target_feature_ids": [
+            "F01"
+          ],
+          "inputs": {
+            "kind": "point_drill",
+            "hole_diameter_mm": 2.11,
+            "hole_depth_mm": 12.1,
+            "hole_count": 1,
+            "through_hole": true
+          }
+        },
+        {
+          "sequence": 6,
+          "operation_type": "tap",
+          "target_feature_ids": [
+            "F01"
+          ],
+          "inputs": {
+            "kind": "tap",
+            "major_diameter_mm": 2.515,
+            "thread_depth_mm": 12.1,
+            "pitch_mm": 0.635,
+            "hole_count": 1
+          }
+        },
+        {
+          "sequence": 7,
+          "operation_type": "countersink",
+          "target_feature_ids": [
+            "F01"
+          ],
+          "inputs": {
+            "kind": "point_drill",
+            "hole_diameter_mm": 3.11,
+            "hole_depth_mm": 0.5,
+            "hole_count": 1,
+            "pilot_diameter_mm": 2.11,
+            "through_hole": false
+          }
+        },
+        {
+          "sequence": 8,
+          "operation_type": "chamfer_turn",
+          "target_feature_ids": [
+            "F12"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 27.1,
+            "finish_diameter_mm": 26.1,
+            "cut_length_mm": 0.5
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 3,
+      "name": "CNC Turn \u2013 Left Face and Stepped Cavity",
+      "machine_family": "cnc_lathe",
+      "setup_note": "Hold the finished OD in full-wrap soft jaws, seat datum B against an axial stop, and indicate the datum A threaded-hole axis. Finish the left face and coaxial cavity features using light clamping to protect the thin rim.",
+      "datum_references": [
+        "A",
+        "B"
+      ],
+      "material_machinability": "easy",
+      "setup_time_min": 20.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "face_turn",
+          "target_feature_ids": [
+            "F12"
+          ],
+          "inputs": {
+            "kind": "radial_turn",
+            "start_diameter_mm": 27.1,
+            "finish_diameter_mm": 2.11,
+            "groove_count": 1,
+            "total_stock_mm": 3.5
+          }
+        },
+        {
+          "sequence": 2,
+          "operation_type": "countersink",
+          "target_feature_ids": [
+            "F01"
+          ],
+          "inputs": {
+            "kind": "point_drill",
+            "hole_diameter_mm": 3.11,
+            "hole_depth_mm": 0.5,
+            "hole_count": 1,
+            "pilot_diameter_mm": 2.11,
+            "through_hole": false
+          }
+        },
+        {
+          "sequence": 3,
+          "operation_type": "rough_bore_id",
+          "target_feature_ids": [
+            "F14"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 2.11,
+            "finish_diameter_mm": 22.7,
+            "cut_length_mm": 6.7
+          }
+        },
+        {
+          "sequence": 4,
+          "operation_type": "rough_bore_id",
+          "target_feature_ids": [
+            "F13"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 22.7,
+            "finish_diameter_mm": 23.5,
+            "cut_length_mm": 1.8
+          }
+        },
+        {
+          "sequence": 5,
+          "operation_type": "finish_bore_id",
+          "target_feature_ids": [
+            "F14"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 22.7,
+            "finish_diameter_mm": 23.5,
+            "cut_length_mm": 6.7
+          }
+        },
+        {
+          "sequence": 6,
+          "operation_type": "face_turn",
+          "target_feature_ids": [
+            "F14",
+            "F18"
+          ],
+          "inputs": {
+            "kind": "radial_turn",
+            "start_diameter_mm": 23.5,
+            "finish_diameter_mm": 2.11,
+            "groove_count": 1,
+            "total_stock_mm": 0.3
+          }
+        },
+        {
+          "sequence": 7,
+          "operation_type": "finish_bore_id",
+          "target_feature_ids": [
+            "F13"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 23.5,
+            "finish_diameter_mm": 24.3,
+            "cut_length_mm": 1.8
+          }
+        },
+        {
+          "sequence": 8,
+          "operation_type": "face_turn",
+          "target_feature_ids": [
+            "F13"
+          ],
+          "inputs": {
+            "kind": "radial_turn",
+            "start_diameter_mm": 24.3,
+            "finish_diameter_mm": 23.5,
+            "groove_count": 1,
+            "total_stock_mm": 0.3
+          }
+        },
+        {
+          "sequence": 9,
+          "operation_type": "form_turn",
+          "target_feature_ids": [
+            "F04"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 27.1,
+            "finish_diameter_mm": 26.6,
+            "cut_length_mm": 0.25
+          }
+        },
+        {
+          "sequence": 10,
+          "operation_type": "form_turn",
+          "target_feature_ids": [
+            "F03"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 27.1,
+            "finish_diameter_mm": 26.4,
+            "cut_length_mm": 0.35
+          }
+        },
+        {
+          "sequence": 11,
+          "operation_type": "form_turn",
+          "target_feature_ids": [
+            "F05"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 27.1,
+            "finish_diameter_mm": 26.4,
+            "cut_length_mm": 0.35
+          }
+        },
+        {
+          "sequence": 12,
+          "operation_type": "form_turn",
+          "target_feature_ids": [
+            "F06"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 27.1,
+            "finish_diameter_mm": 25.1,
+            "cut_length_mm": 1.0
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 4,
+      "name": "VMC Mill \u2013 Right Pockets and Spoke Profile",
+      "machine_family": "vmc_3axis",
+      "setup_note": "Support the left rim and cavity on a dedicated fixture, locate rotationally and radially from datum A, and probe the exposed datum B face for Z. Clamp through the hub without obstructing the right-side pockets.",
+      "datum_references": [
+        "A",
+        "B"
+      ],
+      "material_machinability": "easy",
+      "setup_time_min": 30.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "pocket_mill",
+          "target_feature_ids": [
+            "F17"
+          ],
+          "inputs": {
+            "kind": "pocket_mill",
+            "pocket_area_mm2": 19.63,
+            "pocket_depth_mm": 4.0,
+            "corner_radius_mm": 2.5,
+            "pocket_count": 4
+          }
+        },
+        {
+          "sequence": 2,
+          "operation_type": "pocket_mill",
+          "target_feature_ids": [
+            "F08"
+          ],
+          "inputs": {
+            "kind": "pocket_mill",
+            "pocket_area_mm2": 72.0,
+            "pocket_depth_mm": 8.6,
+            "corner_radius_mm": 2.5,
+            "pocket_count": 4
+          }
+        },
+        {
+          "sequence": 3,
+          "operation_type": "profile_mill",
+          "target_feature_ids": [
+            "F02"
+          ],
+          "inputs": {
+            "kind": "contour_mill",
+            "path_length_mm": 26.7,
+            "radial_width_mm": 0.5,
+            "total_depth_mm": 4.0,
+            "path_count": 1
+          }
+        },
+        {
+          "sequence": 4,
+          "operation_type": "profile_mill",
+          "target_feature_ids": [
+            "F10"
+          ],
+          "inputs": {
+            "kind": "contour_mill",
+            "path_length_mm": 15.0,
+            "radial_width_mm": 0.5,
+            "total_depth_mm": 8.6,
+            "path_count": 4
+          }
+        },
+        {
+          "sequence": 5,
+          "operation_type": "profile_mill",
+          "target_feature_ids": [
+            "F11"
+          ],
+          "inputs": {
+            "kind": "contour_mill",
+            "path_length_mm": 3.93,
+            "radial_width_mm": 0.5,
+            "total_depth_mm": 8.6,
+            "path_count": 8
+          }
+        },
+        {
+          "sequence": 6,
+          "operation_type": "chamfer_mill",
+          "target_feature_ids": [
+            "F02",
+            "F08",
+            "F10",
+            "F17"
+          ],
+          "inputs": {
+            "kind": "contour_mill",
+            "path_length_mm": 250.0,
+            "radial_width_mm": 0.5,
+            "total_depth_mm": 0.5,
+            "path_count": 1
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 5,
+      "name": "Bench Deburr and Edge Break",
+      "machine_family": "finish_bench",
+      "setup_note": "Hand-deburr all pocket, bore, thread and profile edges before anodizing while maintaining the specified maximum edge breaks and inside-corner radii.",
+      "datum_references": [
+        "A",
+        "B"
+      ],
+      "material_machinability": "easy",
+      "setup_time_min": 5.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "deburr",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "manual",
+            "complexity": "medium",
+            "edge_length_mm": 450.0
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 6,
+      "name": "Pre-Anodize Inspection",
+      "machine_family": "inspection",
+      "setup_note": "Inspect machined dimensions with the planned anodize growth allowance and verify the A-to-B relationships before releasing the lot for surface treatment.",
+      "datum_references": [
+        "A",
+        "B"
+      ],
+      "material_machinability": "easy",
+      "setup_time_min": 15.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "cmm_inspect",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "inspection",
+            "dimension_count": 8,
+            "gdt_count": 3,
+            "sampling_rate_pct": 10.0,
+            "requires_fixture": true
+          }
+        },
+        {
+          "sequence": 2,
+          "operation_type": "manual_inspect",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "inspection",
+            "dimension_count": 1,
+            "gdt_count": 0,
+            "sampling_rate_pct": 100.0,
+            "requires_fixture": true
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 7,
+      "name": "Anodize Surface Preparation",
+      "machine_family": "surface_finishing",
+      "setup_note": "Rack and chemically clean the parts as a controlled lot, including degreasing, etching, desmutting and rinsing appropriate for 7075 aluminium.",
+      "datum_references": [],
+      "material_machinability": "easy",
+      "setup_time_min": 10.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "clean_degrease",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "manual",
+            "complexity": "low",
+            "estimated_time_min": 1.0
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 8,
+      "name": "Mask Thread and Controlled Surfaces",
+      "machine_family": "finish_bench",
+      "setup_note": "Using clean handling, plug the 3-56 UNF-3B thread and any approved no-anodize surfaces before returning the rack to the anodize line.",
+      "datum_references": [
+        "A"
+      ],
+      "material_machinability": "easy",
+      "setup_time_min": 10.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "mask",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "manual",
+            "complexity": "medium",
+            "feature_count": 3,
+            "estimated_time_min": 1.5
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 9,
+      "name": "Sulfuric Type II Natural Anodize",
+      "machine_family": "surface_finishing",
+      "setup_note": "Process the order to MIL-A-8625C Type II, Class 1 and seal the coating; rack as one controlled lot if capacity permits, otherwise use matched processing lots.",
+      "datum_references": [],
+      "material_machinability": "easy",
+      "setup_time_min": 10.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "anodize",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "surface_treat",
+            "treated_area_mm2": 1900.0,
+            "batch_size_parts": 100,
+            "coating_thickness_um": 12.5,
+            "masked_area_mm2": 900.0,
+            "requires_bake": false
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 10,
+      "name": "Remove Masking and Final Clean",
+      "machine_family": "finish_bench",
+      "setup_note": "Remove all thread plugs without damaging the anodize, clear any masking residue, and verify that no coating has breached the protected thread.",
+      "datum_references": [
+        "A"
+      ],
+      "material_machinability": "easy",
+      "setup_time_min": 5.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "unmask",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "manual",
+            "complexity": "medium",
+            "feature_count": 3,
+            "estimated_time_min": 1.0
+          }
+        },
+        {
+          "sequence": 2,
+          "operation_type": "clean_degrease",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "manual",
+            "complexity": "low",
+            "estimated_time_min": 0.75
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 11,
+      "name": "Final Inspection \u2013 100 Percent",
+      "machine_family": "inspection",
+      "setup_note": "Inspect all finished dimensions after coating and verify position and perpendicularity to datums A and B. Gauge the full 3-56 UNF-3B thread from both sides with GO/NO-GO gauges on every part.",
+      "datum_references": [
+        "A",
+        "B"
+      ],
+      "material_machinability": "easy",
+      "setup_time_min": 20.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "cmm_inspect",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "inspection",
+            "dimension_count": 8,
+            "gdt_count": 3,
+            "sampling_rate_pct": 100.0,
+            "requires_fixture": true
+          }
+        },
+        {
+          "sequence": 2,
+          "operation_type": "manual_inspect",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "inspection",
+            "dimension_count": 1,
+            "gdt_count": 0,
+            "sampling_rate_pct": 100.0,
+            "requires_fixture": true
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 12,
+      "name": "Final Mark and Release",
+      "machine_family": "finish_bench",
+      "setup_note": "After acceptance, apply the required non-damaging identification and release the cleaned 100-piece lot for packaging.",
+      "datum_references": [],
+      "material_machinability": "easy",
+      "setup_time_min": 3.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "mark_stamp",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "manual",
+            "complexity": "low",
+            "feature_count": 1,
+            "estimated_time_min": 0.3
+          }
+        }
+      ]
+    }
+  ],
+  "clarifications": [
+    {
+      "clarification_id": "C01",
+      "question": "Is F15 truly a separate \u00d84.4 through-hole, or is that dimension an extraction error associated with an external boss?",
+      "blocks": [
+        2,
+        3,
+        4,
+        8,
+        11
+      ],
+      "suggested_default": "Treat F15 as an extraction error and manufacture only the explicitly specified 3-56 UNF-3B through-thread on the central axis.",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C02",
+      "question": "What finished diameter is required for each countersink at the two ends of F01?",
+      "blocks": [
+        2,
+        3
+      ],
+      "suggested_default": "Use a thread lead-in chamfer extending approximately 0.25 mm radially beyond the 3-56 major diameter.",
+      "priority": "medium"
+    },
+    {
+      "clarification_id": "C03",
+      "question": "What included angle is required for the two F01 countersinks?",
+      "blocks": [
+        2,
+        3
+      ],
+      "suggested_default": "Use a 90-degree included angle.",
+      "priority": "medium"
+    },
+    {
+      "clarification_id": "C04",
+      "question": "Do F03 through F06 form a continuous 360-degree turned profile on the left entry lip?",
+      "blocks": [
+        3
+      ],
+      "suggested_default": "Treat F03 through F06 as a continuous 360-degree profile at the left-side entry lip.",
+      "priority": "medium"
+    },
+    {
+      "clarification_id": "C05",
+      "question": "Are the four through sector cutouts F08 geometrically separate from the 4 mm-deep right-side lobe pockets F17?",
+      "blocks": [
+        4
+      ],
+      "suggested_default": "Treat F08 and F17 as separate pocket sets and machine both from the right side.",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C06",
+      "question": "What finished sulfuric Type II anodize thickness range is required?",
+      "blocks": [
+        2,
+        3,
+        4,
+        9
+      ],
+      "suggested_default": "Use the supplier's controlled 10\u201315 micrometre total oxide thickness and compensate machined dimensions for approximately half that thickness as outward growth.",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C07",
+      "question": "Should the 3-56 UNF-3B thread F01 be masked during anodizing?",
+      "blocks": [
+        8,
+        9,
+        11
+      ],
+      "suggested_default": "Mask the complete thread and both gauging lead-ins to preserve the Class 3B fit.",
+      "priority": "medium"
+    }
+  ],
+  "assumptions": [
+    {
+      "assumption_id": "A01",
+      "text": "Round bar is used because the part has a dominant cylindrical envelope; the quantity of 100 and geometry do not justify forging or casting."
+    },
+    {
+      "assumption_id": "A02",
+      "text": "F15 is omitted from production pending C01 because a \u00d84.4 through-hole cannot coexist coaxially with the specified 3-56 UNF-3B thread."
+    },
+    {
+      "assumption_id": "A03",
+      "text": "F08 and F17 are routed as separate right-side pocket sets pending clarification."
+    },
+    {
+      "assumption_id": "A04",
+      "text": "F03 through F06 are treated as individual controlled elements of one 360-degree left entry-lip profile."
+    },
+    {
+      "assumption_id": "A05",
+      "text": "The central thread is masked during anodizing so the required Class 3B GO/NO-GO condition is preserved."
+    },
+    {
+      "assumption_id": "A06",
+      "text": "Turning-template part-off is omitted because individual blanks are sawed and the second lathe setup faces the part to final length."
+    },
+    {
+      "assumption_id": "A07",
+      "text": "A spot drill for the central threaded hole fulfills the center-drilling requirement; tailstock support is unnecessary for the low length-to-diameter ratio."
+    },
+    {
+      "assumption_id": "A08",
+      "text": "Grooving and thread-relief operations are omitted because F01 is a through-tapped hole without a terminating thread shoulder."
+    },
+    {
+      "assumption_id": "A09",
+      "text": "Milling-template face milling, slot milling and reaming are omitted because datum B is turned, no slot is identified, and no reamed hole is specified."
+    },
+    {
+      "assumption_id": "A10",
+      "text": "Hole-route pilot drilling and reaming are omitted because the small tap-drill hole can be peck drilled directly and the finished feature is threaded rather than reamed."
+    },
+    {
+      "assumption_id": "A11",
+      "text": "The anodize sealing stage is included in the anodize sub-operation, so no separate cure-bake operation is required."
+    },
+    {
+      "assumption_id": "A12",
+      "text": "No heat treatment or grinding is included because the material is supplied in the specified T7351 condition and the drawing calls for no subsequent hardening."
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+{
+  "drawing_number": "11-944-4395",
+  "part_name": "",
+  "material": "AL.7075-T7351, ACC. TO ASTM B-221.",
+  "quantity": 100,
+  "quote_status": "complete",
+  "weights": {
+    "raw_bar_dia_mm": 19.05,
+    "actual_bar_dia_mm": 19.193,
+    "pcs_per_5m_bar": 500,
+    "gross_weight_kg": 0.0078,
+    "gross_weight_g": 7.8,
+    "net_weight_kg": 0.002,
+    "net_weight_g": 2.0,
+    "scrap_weight_kg": 0.0058,
+    "scrap_weight_g": 5.8,
+    "net_weight_source": "routing"
+  },
+  "direct_cost": {
+    "material_cost_inr": 0.51,
+    "machining_cost_inr": 44.42,
+    "heat_treatment_cost_inr": 0.08,
+    "direct_cost_subtotal_inr": 45.0
+  },
+  "overheads_and_surcharges": {
+    "factory_overhead_margin_inr": 45.0,
+    "tooling_inr": 9.0,
+    "rejection_inr": 1.98,
+    "inspection_inr": 1.8,
+    "cleaning_inr": 0.9,
+    "scrap_recovery_credit_inr": -0.12,
+    "export_packaging_inr": 0.04,
+    "fob_freight_inr": 0.03,
+    "packaging_and_fob_inr": 0.07
+  },
+  "pricing_summary": {
+    "subtotal_before_margin_inr": 58.63,
+    "overhead_and_margin_inr": 45.0,
+    "final_ex_works_price_inr": 103.64
+  },
+  "machining_operations": [
+    {
+      "sequence": 2,
+      "operation_name": "CNC Turn – Main Operation",
+      "machine_family": "cnc_lathe",
+      "cycle_time_sec": 132.8,
+      "hourly_rate_inr": 250.0,
+      "cost_per_piece_inr": 9.22,
+      "cost_per_piece_raw": 9.222222222222221
+    },
+    {
+      "sequence": 3,
+      "operation_name": "CNC Turn – Back Face",
+      "machine_family": "cnc_lathe",
+      "cycle_time_sec": 80.5,
+      "hourly_rate_inr": 250.0,
+      "cost_per_piece_inr": 5.59,
+      "cost_per_piece_raw": 5.590277777777778
+    },
+    {
+      "sequence": 4,
+      "operation_name": "VMC Drill – Off-Center Hole Pattern",
+      "machine_family": "vmc_3axis",
+      "cycle_time_sec": 39.6,
+      "hourly_rate_inr": 400.0,
+      "cost_per_piece_inr": 4.4,
+      "cost_per_piece_raw": 4.4
+    },
+    {
+      "sequence": 5,
+      "operation_name": "Bench Deburr",
+      "machine_family": "finish_bench",
+      "cycle_time_sec": 46.1,
+      "hourly_rate_inr": 200.0,
+      "cost_per_piece_inr": 2.56,
+      "cost_per_piece_raw": 2.561111111111111
+    },
+    {
+      "sequence": 7,
+      "operation_name": "Clean and Degrease",
+      "machine_family": "surface_finishing",
+      "cycle_time_sec": 60.7,
+      "hourly_rate_inr": 200.0,
+      "cost_per_piece_inr": 3.37,
+      "cost_per_piece_raw": 3.3722222222222222
+    },
+    {
+      "sequence": 8,
+      "operation_name": "Mask External Threads",
+      "machine_family": "surface_finishing",
+      "cycle_time_sec": 109.6,
+      "hourly_rate_inr": 200.0,
+      "cost_per_piece_inr": 6.09,
+      "cost_per_piece_raw": 6.088888888888889
+    },
+    {
+      "sequence": 9,
+      "operation_name": "Type II Class II Anodize",
+      "machine_family": "surface_finishing",
+      "cycle_time_sec": 176.6,
+      "hourly_rate_inr": 200.0,
+      "cost_per_piece_inr": 9.81,
+      "cost_per_piece_raw": 9.811111111111112
+    },
+    {
+      "sequence": 10,
+      "operation_name": "Remove Anodize Masking",
+      "machine_family": "surface_finishing",
+      "cycle_time_sec": 60.7,
+      "hourly_rate_inr": 200.0,
+      "cost_per_piece_inr": 3.37,
+      "cost_per_piece_raw": 3.3722222222222222
+    }
+  ]
+}

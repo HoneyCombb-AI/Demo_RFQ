@@ -5,6 +5,7 @@ const CODE_MAP: Record<string, string> = {
   "5281": "/almity",
   "1001": "/generic",
   "1324": "/sauto",
+  "8191": "/obsc",
 }
 
 export async function loginWithCode(

@@ -1,0 +1,102 @@
+{
+  "analysis_id": "11-963_merge_20260829T163904Z",
+  "part": {
+    "name": "MANDREL",
+    "drawing_number": "421456-4",
+    "revision": "03",
+    "material": "ALLUMINUM ALLOY,COMPOSITION 6061-T6 OR T651 I.A.W ASTM B221.",
+    "units": "mm"
+  },
+  "feature_graph": {
+    "part_envelope": {
+      "length_mm": 10.0,
+      "width_mm": 14.0,
+      "height_mm": 10.0,
+      "max_diameter_mm": 10.0,
+      "envelope_shape": "cylindrical"
+    },
+    "coordinate_system": {
+      "primary_axis": "X",
+      "orientation_notes": "X is the part’s central/rotation axis (outer OD and bore). Y is vertical per note. Z is out-of-plane of this view. Datum origin not defined on drawing."
+    },
+    "features": [
+      {
+        "feature_id": "F01",
+        "feature_type": "external_cylinder",
+        "name": "Outer Cylinder",
+        "description": "Main external cylindrical body of the part.",
+        "geometry": {
+          "diameter_mm": 10.0,
+          "outer_diameter_mm": 10.0,
+          "length_mm": 14.0,
+          "axis_direction": "X"
+        },
+        "access_directions": [
+          "+Y",
+          "-Y"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 10.0,
+            "minus_mm": 0.2
+          },
+          {
+            "dimension_type": "length",
+            "nominal_mm": 14.0,
+            "minus_mm": 0.2
+          }
+        ],
+        "gdt_controls": [],
+        "source_views": [
+          "main_view"
+        ]
+      },
+      {
+        "feature_id": "F02",
+        "feature_type": "through_hole",
+        "name": "Central Bore",
+        "description": "Through hole running along the central axis.",
+        "geometry": {
+          "diameter_mm": 4.3,
+          "depth_condition": "THRU",
+          "axis_direction": "X"
+        },
+        "access_directions": [
+          "+X",
+          "-X"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 4.3,
+            "plus_mm": 0.2
+          }
+        ],
+        "gdt_controls": [],
+        "source_views": [
+          "main_view"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "relationship_id": "R01",
+        "from_feature_id": "F02",
+        "to_feature_id": "F01",
+        "relationship_type": "coaxial",
+        "detail": "Central through bore and outer cylinder share the X-axis per axis_direction in main_view and sectional depiction."
+      }
+    ],
+    "datum_scheme": {
+      "datums": [],
+      "datum_hierarchy_notes": "No datum features are defined in the provided section."
+    },
+    "part_notes": "Material: ALLUMINUM ALLOY,COMPOSITION 6061-T6 OR T651 I.A.W ASTM B221.. Material standard: ASTM B221. Scale: 6:1. Heat treatment: none specified. Coating: CHEMICAL CONVERSION COATING ACCORDING TO MIL-DTL-5541, TYPE II, CLASS 1 A.. General notes: 1. MATERIAL: ALLUMINUM ALLOY,COMPOSITION 6061-T6 OR T651 I.A.W ASTM B221.. FINISH: 2. CHEMICAL CONVERSION COATING ACCORDING TO MIL-DTL-5541, TYPE II, CLASS 1 A.. 3. CORRESPONDS TO ROUND SPACER (PART NO. M0663 4 A 7) OF RAF ELECTRONIC HARDWARE.. FINISH: General surface roughness 125. TOLERANCE: IF NOT MARKED OTHERWISE: LINEAR TOLERANCE ±0.25, ANGULAR TOLERANCE ±0.5°, EDGES R0.5 MAX OR CHAMFER 0.5X45° MAX, INSIDE CORNERS R0.25 MAX.",
+    "overall_complexity": "simple"
+  },
+  "component_specs": [],
+  "component_spec_links": [],
+  "clarifications": [],
+  "assumptions": []
+}
