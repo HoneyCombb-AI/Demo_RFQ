@@ -26,9 +26,10 @@ export function ClarificationsTab({ data }: { data: ReportData }) {
 
       {clarifications.map((clarification) => {
         let priorityColor = "bg-secondary text-secondary-foreground"
-        if (clarification.priority.toUpperCase() === "HIGH") {
+        const priorityUpper = clarification.priority?.toUpperCase()
+        if (priorityUpper === "HIGH") {
           priorityColor = "bg-destructive text-destructive-foreground hover:bg-destructive/90"
-        } else if (clarification.priority.toUpperCase() === "MEDIUM") {
+        } else if (priorityUpper === "MEDIUM") {
           priorityColor = "border border-amber-500 text-amber-600 bg-amber-50"
         }
 
@@ -44,9 +45,11 @@ export function ClarificationsTab({ data }: { data: ReportData }) {
                     {clarification.question}
                   </h3>
                 </div>
-                <Badge className={`${priorityColor} uppercase text-[10px] tracking-wider shrink-0`}>
-                  {clarification.priority} PRIORITY
-                </Badge>
+                {clarification.priority && (
+                  <Badge className={`${priorityColor} uppercase text-[10px] tracking-wider shrink-0`}>
+                    {clarification.priority} PRIORITY
+                  </Badge>
+                )}
               </div>
             </CardHeader>
             <CardContent className="pt-4 space-y-4">

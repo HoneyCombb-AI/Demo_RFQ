@@ -1,0 +1,97 @@
+{
+  "drawing_number": "BP00B358780",
+  "part_name": "BAR PIN",
+  "material": "6082-T6-FRG-CR-1 PER TM-2005",
+  "quantity": 100,
+  "weights": {
+    "raw_bar_dia_mm": 81.0,
+    "actual_bar_dia_mm": 81.405,
+    "gross_weight_kg": 0.733,
+    "net_weight_kg": 0.4118,
+    "scrap_weight_kg": 0.3212
+  },
+  "direct_cost": {
+    "material_cost_inr": 256.55,
+    "material_rate_per_kg_inr": 350.0,
+    "machining_cost_inr": 39.27,
+    "direct_base_inr": 434.1
+  },
+  "cif_and_overheads": {
+    "packaging_charges_inr": 1.0,
+    "overhead_25_pct_inr": 108.52,
+    "logistics_cost_inr": 16.86,
+    "total_cif_inr": 560.49,
+    "scrap_recovery_credit_inr": 0.0,
+    "total_cost_per_pc_inr": 560.49
+  },
+  "pricing_and_duties": {
+    "profit_10_pct_inr": 43.41,
+    "actual_cost_inr": 603.9,
+    "icc_and_rejection_inr": 13.81,
+    "custom_duty_3_5_pct_inr": 21.14,
+    "warehouse_cost_4_pct_inr": 24.16,
+    "final_landed_price_inr": 649.19
+  },
+  "machining_operations": [
+    {
+      "sequence": 2,
+      "operation_name": "Forge Flash Trim and Blend",
+      "machine_family": "finish_bench",
+      "cycle_time_sec": 116.4,
+      "hourly_rate_inr": 200.0,
+      "efficiency": 0.85,
+      "cost_per_piece_inr": 3.0,
+      "cost_per_piece_raw": 3.0
+    },
+    {
+      "sequence": 4,
+      "operation_name": "CNC Turn – First End",
+      "machine_family": "cnc_lathe",
+      "cycle_time_sec": 60.6,
+      "hourly_rate_inr": 280.0,
+      "efficiency": 0.85,
+      "cost_per_piece_inr": 5.55,
+      "cost_per_piece_raw": 5.545098039215686
+    },
+    {
+      "sequence": 5,
+      "operation_name": "CNC Turn – Second End",
+      "machine_family": "cnc_lathe",
+      "cycle_time_sec": 46.2,
+      "hourly_rate_inr": 280.0,
+      "efficiency": 0.85,
+      "cost_per_piece_inr": 4.23,
+      "cost_per_piece_raw": 4.227450980392157
+    },
+    {
+      "sequence": 6,
+      "operation_name": "VMC – Straddle Milling, Slotting and Cross Drilling",
+      "machine_family": "vmc_3axis",
+      "cycle_time_sec": 153.0,
+      "hourly_rate_inr": 450.0,
+      "efficiency": 0.85,
+      "cost_per_piece_inr": 22.5,
+      "cost_per_piece_raw": 22.5
+    },
+    {
+      "sequence": 7,
+      "operation_name": "Final Bench Deburr and Clean",
+      "machine_family": "finish_bench",
+      "cycle_time_sec": 316.2,
+      "hourly_rate_inr": 200.0,
+      "efficiency": 0.85,
+      "cost_per_piece_inr": 3.0,
+      "cost_per_piece_raw": 3.0
+    },
+    {
+      "sequence": 8,
+      "operation_name": "Final Shop-Floor Inspection",
+      "machine_family": "inspection",
+      "cycle_time_sec": 688.2,
+      "hourly_rate_inr": 250.0,
+      "efficiency": 0.85,
+      "cost_per_piece_inr": 1.0,
+      "cost_per_piece_raw": 1.0
+    }
+  ]
+}

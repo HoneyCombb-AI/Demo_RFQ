@@ -1,31 +1,39 @@
 "use server"
 
-import { cookies } from "next/headers"
-
-// Code → org slug. No external imports, no path module, nothing that can
-// fail during serverless module initialization.
-const ORG_CODES: Record<string, string> = {
-  "4521": "jtt",
-  "5281": "alt",
-  "6061": "sft",
-  "7041": "ltt",
-  "8191": "obsc",
+// Server actions & helpers
+// OTP / password authentication has been removed in favor of direct organization selection.
+export interface OrganizationInfo {
+  id: string
+  name: string
+  subtitle: string
+  slug: string
+  profileType: string
+  description: string
+  capabilities: string[]
 }
 
-export async function loginWithCode(code: string) {
-  const orgSlug = ORG_CODES[code]
+export const ORGANIZATIONS: OrganizationInfo[] = [
+  {
+    id: "org_j",
+    name: "Organisation J",
+    subtitle: "Org J Manufacturing Facility",
+    slug: "jal",
+    profileType: "Gear & Shaft Profile",
+    description: "Specialized CNC turning, gear hobbing, heat treatment, and precision grinding workflows.",
+    capabilities: ["Automated 2D Ballooning", "Gear Hobbing & Heat Treatment", "Route & Cycle Times", "Margin Analysis"],
+  },
+  {
+    id: "org_a",
+    name: "Organisation A",
+    subtitle: "Org A Precision Components",
+    slug: "almity",
+    profileType: "Automotive & VMC Profile",
+    description: "Automotive precision turning, 3-axis VMC milling, and surface treatment costing.",
+    capabilities: ["Full GD&T Extraction", "VMC Setup Costing", "Multi-part RFQ Pipeline", "Native Excel Output"],
+  },
+]
 
-  if (orgSlug) {
-    const cookieStore = await cookies()
-    cookieStore.set("org_code", code, {
-      httpOnly: true,
-      secure: process.env.NODE_ENV === "production",
-      sameSite: "lax",
-      maxAge: 60 * 60 * 24 * 7,
-      path: "/",
-    })
-    return { success: true, redirectUrl: `/${orgSlug}` }
-  }
-
-  return { error: "Invalid organization code" }
+export async function getOrganizations(): Promise<OrganizationInfo[]> {
+  return ORGANIZATIONS
 }
+

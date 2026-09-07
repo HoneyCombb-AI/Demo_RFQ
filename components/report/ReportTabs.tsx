@@ -10,9 +10,6 @@ import { SpecsTab } from "./tabs/SpecsTab"
 import { FeasibilityTab } from "./tabs/FeasibilityTab"
 import { RoutingTab } from "./tabs/RoutingTab"
 import { QuoteTab } from "./tabs/QuoteTab"
-import { SetupQuoteTab } from "./tabs/SetupQuoteTab"
-import { ObscQuoteTab } from "./tabs/ObscQuoteTab"
-import { JttQuoteTab } from "./tabs/JttQuoteTab"
 import { ClarificationsTab } from "./tabs/ClarificationsTab"
 import { AssumptionsTab } from "./tabs/AssumptionsTab"
 
@@ -28,15 +25,12 @@ export function ReportTabs({
   const specCount = data.specList?.length || 0
   const riskLevel = data.feasibility.feasibility.risk_level
   const setupCount = data.computedRoute.total_summary.total_setups
-  const price = data.quoteFormat === "excel" && data.excelQuote
-    ? formatCurrency(data.excelQuote.cost_summary.ex_works_price_per_piece_inr)
-    : data.quoteFormat === "obsc" && data.obscQuote
-      ? formatCurrency(data.obscQuote.pricing_and_duties.final_landed_price_inr, "INR")
-      : data.quoteFormat === "jtt" && data.jttQuote
-        ? formatCurrency(data.jttQuote.pricing_summary.final_ex_works_price_inr, "INR")
-        : data.setupQuote
-          ? formatCurrency(data.setupQuote.summary.final_price_per_piece_inr)
-          : "-"
+  const quoteData = data.quote
+  const finalPrice =
+    quoteData?.pricing_summary?.final_ex_works_price_inr ??
+    quoteData?.pricing_and_duties?.final_landed_price_inr ??
+    null
+  const price = finalPrice != null ? formatCurrency(finalPrice, "INR") : "-"
   const clarificationsCount = data.feasibility.clarifications?.length || 0
 
   const [internalTab, setInternalTab] = React.useState("specs")
@@ -123,15 +117,7 @@ export function ReportTabs({
             <RoutingTab data={data} />
           </TabsContent>
           <TabsContent value="quote" data-tour="quote-content" className="m-0 border-none outline-none">
-            {data.quoteFormat === "excel" && data.excelQuote ? (
-              <QuoteTab data={data} />
-            ) : data.quoteFormat === "obsc" && data.obscQuote ? (
-              <ObscQuoteTab quote={data.obscQuote} />
-            ) : data.quoteFormat === "jtt" && data.jttQuote ? (
-              <JttQuoteTab quote={data.jttQuote} />
-            ) : data.setupQuote ? (
-              <SetupQuoteTab quote={data.setupQuote} />
-            ) : null}
+            <QuoteTab quote={quoteData} />
           </TabsContent>
           <TabsContent value="clarifications" className="m-0 border-none outline-none">
             <ClarificationsTab data={data} />

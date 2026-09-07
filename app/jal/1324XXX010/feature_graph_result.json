@@ -1,0 +1,1724 @@
+{
+  "analysis_id": "1324_XXX_010_merge_20260906T140310Z",
+  "part": {
+    "name": "INPUT SHAFT",
+    "drawing_number": "1324XXX010",
+    "material": "ZF7B",
+    "units": "mm"
+  },
+  "feature_graph": {
+    "part_envelope": {
+      "length_mm": 145.0,
+      "width_mm": 6.86,
+      "max_diameter_mm": 119.1
+    },
+    "coordinate_system": {
+      "primary_axis": "X shaft axis in main_view; equivalent shaft-axis direction is labelled Z in several detail and section notes.",
+      "orientation_notes": "The part is a turned shaft. Main-view X is axial and Y is radial. Transverse/detail views use their local radial directions for groove and spline details. Coaxial features are interpreted about the common shaft axis defined functionally by datum pair Z1-Z8.",
+      "datum_origin": "Z1-Z8 combined datum axis"
+    },
+    "features": [
+      {
+        "feature_id": "F01",
+        "feature_type": "spline",
+        "name": "External Spline SAE 10C 1 3/4",
+        "description": "10-tooth external spline profile. Solid cross-section indicates it is machined on the shaft OD.",
+        "geometry": {
+          "diameter_mm": 44.0,
+          "outer_diameter_mm": 44.0,
+          "length_mm": 4.0,
+          "width_mm": 6.86,
+          "radius_mm": 40.0,
+          "axis_direction": "+Z"
+        },
+        "instance_count": 10,
+        "surface_finish": {
+          "rz_value": 20.0,
+          "finish_symbol": "Rz 7"
+        },
+        "access_directions": [
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 44.0,
+            "plus_mm": 0.0,
+            "minus_mm": 0.2
+          },
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 35.8,
+            "plus_mm": 0.0,
+            "minus_mm": 1.0
+          },
+          {
+            "dimension_type": "width",
+            "nominal_mm": 6.86,
+            "plus_mm": 0.0,
+            "minus_mm": 0.05
+          },
+          {
+            "dimension_type": "chamfer",
+            "nominal_mm": 0.4,
+            "upper_limit_mm": 0.4,
+            "qualifier": "MAX"
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "main_view",
+          "section_aa",
+          "section_bb"
+        ]
+      },
+      {
+        "feature_id": "F02",
+        "feature_type": "external_cylinder",
+        "name": "Cylinder \u00d852",
+        "description": "External cylindrical stepped surface.",
+        "geometry": {
+          "diameter_mm": 52.0,
+          "axis_direction": "+X"
+        },
+        "access_directions": [
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 52.0,
+            "tolerance_class": "h11"
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "cylindricity",
+            "tolerance_value_mm": 0.005,
+            "datum_references": [],
+            "applied_to": "\u00d852 cylinder surface"
+          },
+          {
+            "gdt_type": "runout",
+            "tolerance_value_mm": 0.05,
+            "datum_references": [
+              "Z1-Z8"
+            ],
+            "applied_to": "\u00d852 cylinder surface"
+          }
+        ],
+        "callout_qualifiers": [],
+        "source_views": [
+          "main_view",
+          "detail_u"
+        ]
+      },
+      {
+        "feature_id": "F03",
+        "feature_type": "spline",
+        "name": "Right External Spline",
+        "description": "Large external splined or geared section on the right end of the part.",
+        "geometry": {
+          "diameter_mm": 119.1,
+          "outer_diameter_mm": 119.1,
+          "length_mm": 0.7,
+          "angle_deg": 0.0333,
+          "axis_direction": "+X"
+        },
+        "surface_finish": {
+          "finish_symbol": "Rz 40"
+        },
+        "access_directions": [
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 119.1,
+            "plus_mm": 0.0,
+            "minus_mm": 0.1
+          },
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 98.0,
+            "plus_mm": 0.0,
+            "minus_mm": 0.65
+          },
+          {
+            "dimension_type": "chamfer",
+            "nominal_mm": 7.0,
+            "plus_mm": 0.2,
+            "minus_mm": 0.0
+          },
+          {
+            "dimension_type": "angle_deg",
+            "nominal_mm": 45.0,
+            "plus_mm": 1.0,
+            "minus_mm": 0.0
+          },
+          {
+            "dimension_type": "chamfer",
+            "nominal_mm": 0.2,
+            "upper_limit_mm": 0.2,
+            "qualifier": "max"
+          },
+          {
+            "dimension_type": "chamfer",
+            "nominal_mm": 0.2,
+            "upper_limit_mm": 0.2,
+            "qualifier": "max"
+          },
+          {
+            "dimension_type": "chamfer",
+            "nominal_mm": 0.2,
+            "upper_limit_mm": 0.2,
+            "qualifier": "max"
+          },
+          {
+            "dimension_type": "chamfer",
+            "nominal_mm": 0.3,
+            "plus_mm": 0.4,
+            "minus_mm": 0.0
+          },
+          {
+            "dimension_type": "chamfer",
+            "nominal_mm": 0.3,
+            "plus_mm": 0.4,
+            "minus_mm": 0.0
+          },
+          {
+            "dimension_type": "chamfer",
+            "nominal_mm": 0.2,
+            "upper_limit_mm": 0.2,
+            "qualifier": "max"
+          },
+          {
+            "dimension_type": "chamfer",
+            "nominal_mm": 0.3,
+            "plus_mm": 0.4,
+            "minus_mm": 0.0
+          },
+          {
+            "dimension_type": "chamfer",
+            "nominal_mm": 0.3,
+            "plus_mm": 0.4,
+            "minus_mm": 0.0
+          },
+          {
+            "dimension_type": "chamfer",
+            "nominal_mm": 1.3,
+            "upper_limit_mm": 1.3,
+            "qualifier": "max"
+          },
+          {
+            "dimension_type": "chamfer",
+            "nominal_mm": 1.3,
+            "upper_limit_mm": 1.3,
+            "qualifier": "max"
+          },
+          {
+            "dimension_type": "length",
+            "nominal_mm": 0.7,
+            "plus_mm": 0.6,
+            "minus_mm": 0.6
+          },
+          {
+            "dimension_type": "length",
+            "nominal_mm": 0.4,
+            "plus_mm": 0.3,
+            "minus_mm": 0.3
+          },
+          {
+            "dimension_type": "length",
+            "nominal_mm": 0.65,
+            "plus_mm": 0.65,
+            "minus_mm": 0.65
+          },
+          {
+            "dimension_type": "length",
+            "nominal_mm": 0.4,
+            "plus_mm": 0.4,
+            "minus_mm": 0.4
+          },
+          {
+            "dimension_type": "length",
+            "nominal_mm": 0.65,
+            "plus_mm": 0.65,
+            "minus_mm": 0.65
+          },
+          {
+            "dimension_type": "length",
+            "nominal_mm": 0.4,
+            "plus_mm": 0.4,
+            "minus_mm": 0.4
+          },
+          {
+            "dimension_type": "length",
+            "nominal_mm": 0.7,
+            "plus_mm": 0.6,
+            "minus_mm": 0.6
+          },
+          {
+            "dimension_type": "length",
+            "nominal_mm": 0.4,
+            "plus_mm": 0.3,
+            "minus_mm": 0.3
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "runout",
+            "tolerance_value_mm": 0.1,
+            "datum_references": [
+              "Z1-Z8"
+            ],
+            "applied_to": "Pitch diameter d=104.732 and Tip diameter da=119.1"
+          },
+          {
+            "gdt_type": "profile_of_surface",
+            "tolerance_value_mm": 0.003,
+            "datum_references": [
+              "K6"
+            ],
+            "applied_to": "Spline tooth flank"
+          },
+          {
+            "gdt_type": "runout",
+            "tolerance_value_mm": 0.02,
+            "datum_references": [
+              "Z1-Z8"
+            ],
+            "applied_to": "Spline tooth profile"
+          }
+        ],
+        "callout_qualifiers": [],
+        "source_views": [
+          "main_view",
+          "detail_w",
+          "detail_t_sketch",
+          "detail_t_alt"
+        ]
+      },
+      {
+        "feature_id": "F04",
+        "feature_type": "groove",
+        "name": "Relief Groove D1.2",
+        "description": "Alternative profile for a relief groove (Freistich D1.2) featuring specified flank angles, a flat bottom, and a corner radius.",
+        "geometry": {
+          "depth_mm": 0.55,
+          "width_mm": 2.6,
+          "radius_mm": 1.2,
+          "angle_deg": 20.0
+        },
+        "access_directions": [
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "angle_deg",
+            "nominal_mm": 20.0,
+            "plus_mm": 5.0,
+            "minus_mm": 5.0
+          },
+          {
+            "dimension_type": "depth",
+            "nominal_mm": 0.55,
+            "plus_mm": 0.2,
+            "minus_mm": 0.2
+          },
+          {
+            "dimension_type": "width",
+            "nominal_mm": 2.6,
+            "plus_mm": 0.4,
+            "minus_mm": 0.4
+          },
+          {
+            "dimension_type": "radius",
+            "nominal_mm": 1.2,
+            "plus_mm": 0.2,
+            "minus_mm": 0.2
+          },
+          {
+            "dimension_type": "depth",
+            "nominal_mm": 2.6,
+            "plus_mm": 0.4,
+            "minus_mm": 0.4
+          },
+          {
+            "dimension_type": "angle_deg",
+            "nominal_mm": 20.0,
+            "plus_mm": 5.0,
+            "minus_mm": 5.0
+          },
+          {
+            "dimension_type": "width",
+            "nominal_mm": 0.55,
+            "plus_mm": 0.2,
+            "minus_mm": 0.2
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "detail_alt_relief_groove"
+        ]
+      },
+      {
+        "feature_id": "F05",
+        "feature_type": "undercut",
+        "name": "Relief Groove A1.2",
+        "description": "Relief groove profile showing depth, width, flank angle, and corner radii.",
+        "geometry": {
+          "depth_mm": 0.4,
+          "width_mm": 2.75,
+          "radius_mm": 0.6,
+          "angle_deg": 25.0
+        },
+        "surface_finish": {
+          "finish_symbol": "y"
+        },
+        "access_directions": [],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "width",
+            "nominal_mm": 2.75,
+            "plus_mm": 0.25,
+            "minus_mm": 0.25
+          },
+          {
+            "dimension_type": "depth",
+            "nominal_mm": 0.4,
+            "plus_mm": 0.15,
+            "minus_mm": 0.15
+          },
+          {
+            "dimension_type": "angle_deg",
+            "nominal_mm": 25.0,
+            "plus_mm": 5.0,
+            "minus_mm": 5.0
+          },
+          {
+            "dimension_type": "width",
+            "nominal_mm": 0.2,
+            "upper_limit_mm": 0.2,
+            "qualifier": "MAX"
+          },
+          {
+            "dimension_type": "radius",
+            "nominal_mm": 0.6,
+            "upper_limit_mm": 0.8,
+            "lower_limit_mm": 0.4
+          },
+          {
+            "dimension_type": "radius",
+            "nominal_mm": 1.2,
+            "plus_mm": 0.2,
+            "minus_mm": 0.2
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "detail_e1_e3"
+        ]
+      },
+      {
+        "feature_id": "F06",
+        "feature_type": "undercut",
+        "name": "Relief Groove A1.2",
+        "description": "External relief groove on a shaft, featuring an angled left flank and specific transition radii.",
+        "geometry": {
+          "length_mm": 0.2,
+          "depth_mm": 0.4,
+          "width_mm": 2.75,
+          "radius_mm": 0.6,
+          "angle_deg": 25.0
+        },
+        "surface_finish": {
+          "finish_symbol": "y"
+        },
+        "access_directions": [
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "width",
+            "nominal_mm": 2.75,
+            "plus_mm": 0.25,
+            "minus_mm": 0.25
+          },
+          {
+            "dimension_type": "depth",
+            "nominal_mm": 0.4,
+            "plus_mm": 0.15,
+            "minus_mm": 0.15
+          },
+          {
+            "dimension_type": "angle_deg",
+            "nominal_mm": 25.0,
+            "plus_mm": 5.0,
+            "minus_mm": 5.0
+          },
+          {
+            "dimension_type": "radius",
+            "nominal_mm": 0.6,
+            "upper_limit_mm": 0.8,
+            "lower_limit_mm": 0.4
+          },
+          {
+            "dimension_type": "radius_edge",
+            "nominal_mm": 1.2,
+            "plus_mm": 0.2,
+            "minus_mm": 0.2
+          },
+          {
+            "dimension_type": "length",
+            "nominal_mm": 0.2,
+            "upper_limit_mm": 0.2,
+            "qualifier": "MAX"
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "detail_e2"
+        ]
+      },
+      {
+        "feature_id": "F07",
+        "feature_type": "groove",
+        "name": "Radial Groove",
+        "description": "A narrow radial groove with a specified width, distinct edge breaks (K) on the top entry corners, and maximum radii in the bottom corners.",
+        "geometry": {
+          "width_mm": 2.15,
+          "radius_mm": 0.2
+        },
+        "access_directions": [
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "width",
+            "nominal_mm": 2.15,
+            "tolerance_class": "H13"
+          },
+          {
+            "dimension_type": "chamfer",
+            "nominal_mm": 0.05,
+            "upper_limit_mm": 0.05,
+            "qualifier": "MAX"
+          },
+          {
+            "dimension_type": "chamfer",
+            "nominal_mm": 0.2,
+            "upper_limit_mm": 0.2,
+            "qualifier": "MAX"
+          },
+          {
+            "dimension_type": "radius",
+            "nominal_mm": 0.2,
+            "upper_limit_mm": 0.2,
+            "qualifier": "MAX"
+          },
+          {
+            "dimension_type": "radius",
+            "nominal_mm": 0.2,
+            "upper_limit_mm": 0.2,
+            "qualifier": "MAX"
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "detail_e5"
+        ]
+      },
+      {
+        "feature_id": "F08",
+        "feature_type": "groove",
+        "name": "Internal groove",
+        "description": "Internal groove with an axial width of 2mm.",
+        "geometry": {
+          "width_mm": 2.0
+        },
+        "access_directions": [
+          "+Z",
+          "-Z"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "width",
+            "nominal_mm": 2.0,
+            "plus_mm": 0.2,
+            "minus_mm": 0.2
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "detail_s"
+        ]
+      },
+      {
+        "feature_id": "F09",
+        "feature_type": "chamfer",
+        "name": "Internal taper",
+        "description": "Internal angled transition surface at 30 degrees.",
+        "geometry": {
+          "angle_deg": 30.0
+        },
+        "access_directions": [
+          "+Z",
+          "-Z"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "angle_deg",
+            "nominal_mm": 30.0,
+            "plus_mm": 3.0,
+            "minus_mm": 3.0
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "detail_s"
+        ]
+      },
+      {
+        "feature_id": "F10",
+        "feature_type": "radius",
+        "name": "Transition radius",
+        "description": "Concave transition radius or relief groove between the left cylindrical surface and the tapered section.",
+        "geometry": {
+          "depth_mm": 0.3,
+          "radius_mm": 10.0,
+          "axis_direction": "radial"
+        },
+        "surface_finish": {
+          "rz_value": 16.0,
+          "finish_symbol": "Rz16"
+        },
+        "access_directions": [],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "depth",
+            "nominal_mm": 0.3,
+            "upper_limit_mm": 0.3,
+            "qualifier": "max"
+          },
+          {
+            "dimension_type": "radius",
+            "nominal_mm": 10.0,
+            "plus_mm": 0.0,
+            "minus_mm": 1.0
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "detail_u"
+        ]
+      },
+      {
+        "feature_id": "F11",
+        "feature_type": "tapered_external",
+        "name": "Tapered transition",
+        "description": "Conical transition section expanding outwards from the radius to the right cylindrical segment.",
+        "geometry": {
+          "angle_deg": 20.0,
+          "axis_direction": "+X"
+        },
+        "surface_finish": {
+          "rz_value": 16.0,
+          "finish_symbol": "Rz16"
+        },
+        "access_directions": [],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "angle_deg",
+            "nominal_mm": 20.0,
+            "plus_mm": 2.0,
+            "minus_mm": 2.0
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "detail_u"
+        ]
+      },
+      {
+        "feature_id": "F12",
+        "feature_type": "external_cylinder",
+        "name": "Cylindrical surface K8",
+        "description": "Short straight cylindrical segment on the shaft following the tapered section.",
+        "geometry": {
+          "length_mm": 2.0,
+          "axis_direction": "+X"
+        },
+        "access_directions": [],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "length",
+            "nominal_mm": 2.0,
+            "plus_mm": 0.4,
+            "minus_mm": 0.0
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "detail_u"
+        ]
+      },
+      {
+        "feature_id": "F13",
+        "feature_type": "radius",
+        "name": "Transition Radius",
+        "description": "Concave transition radius on the profiled section.",
+        "geometry": {
+          "radius_mm": 1.8
+        },
+        "access_directions": [
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "radius",
+            "nominal_mm": 1.8,
+            "plus_mm": 0.0,
+            "minus_mm": 0.6
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "detail_v"
+        ]
+      },
+      {
+        "feature_id": "F14",
+        "feature_type": "chamfer",
+        "name": "Chamfered Face",
+        "description": "Angled face or chamfer adjacent to the transition radius.",
+        "geometry": {
+          "angle_deg": 45.0
+        },
+        "access_directions": [
+          "radial",
+          "axial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "angle_deg",
+            "nominal_mm": 45.0,
+            "plus_mm": 5.0,
+            "minus_mm": 5.0
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "detail_v"
+        ]
+      },
+      {
+        "feature_id": "F15",
+        "feature_type": "external_cylinder",
+        "name": "Left outer cylinder",
+        "description": "Cylindrical shaft surface to the left of the main groove, ending in a vertical face with an edge break.",
+        "geometry": {},
+        "access_directions": [
+          "+Y"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "chamfer",
+            "nominal_mm": 0.3,
+            "upper_limit_mm": 0.3,
+            "qualifier": "MAX"
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "detail_x"
+        ]
+      },
+      {
+        "feature_id": "F16",
+        "feature_type": "groove",
+        "name": "Shaft groove",
+        "description": "External annular groove with radiused bottom corners.",
+        "geometry": {
+          "diameter_mm": 94.5,
+          "width_mm": 3.5,
+          "radius_mm": 1.4
+        },
+        "access_directions": [
+          "+Y",
+          "-Z",
+          "+Z"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "width",
+            "nominal_mm": 3.5,
+            "plus_mm": 0.4,
+            "minus_mm": 0.0
+          },
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 94.5,
+            "plus_mm": 0.0,
+            "minus_mm": 1.0
+          },
+          {
+            "dimension_type": "radius",
+            "nominal_mm": 1.4,
+            "plus_mm": 0.0,
+            "minus_mm": 1.0
+          },
+          {
+            "dimension_type": "radius",
+            "nominal_mm": 1.4,
+            "plus_mm": 0.0,
+            "minus_mm": 1.0
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "detail_x"
+        ]
+      },
+      {
+        "feature_id": "F17",
+        "feature_type": "external_cylinder",
+        "name": "Cylinder Z11",
+        "description": "Cylindrical surface directly to the right of the main groove, leading to the taper.",
+        "geometry": {
+          "diameter_mm": 94.0
+        },
+        "surface_finish": {
+          "rz_value": 20.0,
+          "finish_symbol": "Rz 20"
+        },
+        "access_directions": [
+          "+Y"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 94.0,
+            "plus_mm": 0.0,
+            "minus_mm": 0.1
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "detail_x"
+        ]
+      },
+      {
+        "feature_id": "F18",
+        "feature_type": "tapered_external",
+        "name": "Taper K3",
+        "description": "Conical taper transitioning between the lower and upper cylindrical steps.",
+        "geometry": {
+          "angle_deg": 15.0
+        },
+        "surface_finish": {
+          "rz_value": 10.0,
+          "finish_symbol": "Rz 10"
+        },
+        "access_directions": [
+          "+Y",
+          "-Z"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "angle_deg",
+            "nominal_mm": 15.0,
+            "plus_mm": 5.0,
+            "minus_mm": 5.0
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "detail_x"
+        ]
+      },
+      {
+        "feature_id": "F19",
+        "feature_type": "external_cylinder",
+        "name": "Short cylinder Z12",
+        "description": "Short cylindrical step located between the taper and the vertical step face.",
+        "geometry": {
+          "diameter_mm": 95.6,
+          "length_mm": 0.4
+        },
+        "surface_finish": {
+          "rz_value": 10.0,
+          "finish_symbol": "Rz 10"
+        },
+        "access_directions": [
+          "+Y"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 95.6,
+            "plus_mm": 0.0,
+            "minus_mm": 0.9
+          },
+          {
+            "dimension_type": "length",
+            "nominal_mm": 0.4,
+            "plus_mm": 0.3,
+            "minus_mm": 0.0
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "detail_x"
+        ]
+      },
+      {
+        "feature_id": "F20",
+        "feature_type": "shaft_step",
+        "name": "Step face F10",
+        "description": "Vertical step face with a root fillet.",
+        "geometry": {
+          "radius_mm": 1.8
+        },
+        "access_directions": [
+          "-Z"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "position_z",
+            "nominal_mm": 2.3,
+            "plus_mm": 0.4,
+            "minus_mm": 0.0
+          },
+          {
+            "dimension_type": "radius",
+            "nominal_mm": 1.8,
+            "plus_mm": 0.0,
+            "minus_mm": 1.0
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "detail_x"
+        ]
+      },
+      {
+        "feature_id": "F21",
+        "feature_type": "external_cylinder",
+        "name": "Outer cylinder",
+        "description": "Largest external cylindrical surface on the right side.",
+        "geometry": {
+          "diameter_mm": 99.6
+        },
+        "surface_finish": {
+          "rz_value": 63.0,
+          "finish_symbol": "Rz 63"
+        },
+        "access_directions": [
+          "+Y"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 99.6,
+            "tolerance_class": "h11"
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "detail_x"
+        ]
+      },
+      {
+        "feature_id": "F22",
+        "feature_type": "tapered_bore",
+        "name": "Stepped Center Hole (K4/K5)",
+        "description": "Center hole at the end of the shaft consisting of two distinct conical sections labeled K4 (outer) and K5 (inner).",
+        "geometry": {
+          "depth_mm": 2.0,
+          "depth_condition": "BLIND",
+          "angle_deg": 30.0
+        },
+        "surface_finish": {
+          "finish_symbol": "y"
+        },
+        "access_directions": [
+          "axial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "depth",
+            "nominal_mm": 2.0,
+            "plus_mm": 1.0,
+            "minus_mm": 0.0
+          },
+          {
+            "dimension_type": "depth",
+            "nominal_mm": 0.5,
+            "plus_mm": 1.0,
+            "minus_mm": 0.0
+          },
+          {
+            "dimension_type": "angle_deg",
+            "nominal_mm": 30.0,
+            "plus_mm": 1.0,
+            "minus_mm": 1.0
+          },
+          {
+            "dimension_type": "angle_deg",
+            "nominal_mm": 60.0,
+            "plus_mm": 10.0,
+            "minus_mm": 10.0
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "detail_y"
+        ]
+      },
+      {
+        "feature_id": "F23",
+        "feature_type": "chamfer",
+        "name": "Outer Edge Chamfer",
+        "description": "Chamfer on the outer diameter edge of the main end face.",
+        "geometry": {
+          "length_mm": 0.6
+        },
+        "access_directions": [],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "chamfer",
+            "nominal_mm": 0.6,
+            "plus_mm": 0.4,
+            "minus_mm": 0.0
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "detail_z"
+        ]
+      },
+      {
+        "feature_id": "F24",
+        "feature_type": "flat_face",
+        "name": "Offset End Face",
+        "description": "Inner flat face that is axially offset from the main outer face.",
+        "geometry": {
+          "depth_mm": 0.5
+        },
+        "access_directions": [],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "depth",
+            "nominal_mm": 0.5,
+            "upper_limit_mm": 0.5,
+            "qualifier": "MAX"
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "detail_z"
+        ]
+      },
+      {
+        "feature_id": "F25",
+        "feature_type": "internal_bore",
+        "name": "Inner Bore",
+        "description": "Internal bore or circular recess at the part end.",
+        "geometry": {
+          "diameter_mm": 96.0
+        },
+        "access_directions": [],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 96.0,
+            "plus_mm": 0.0,
+            "minus_mm": 1.0
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "detail_z"
+        ]
+      },
+      {
+        "feature_id": "F26",
+        "feature_type": "part_body",
+        "name": "Input Shaft",
+        "description": "Overall solid body of the input shaft showing its primary stepped cylindrical form, splines, and large head.",
+        "geometry": {
+          "length_mm": 145.0
+        },
+        "access_directions": [
+          "axial",
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "length",
+            "nominal_mm": 145.0,
+            "plus_mm": 0.0,
+            "minus_mm": 1.0
+          },
+          {
+            "dimension_type": "length",
+            "nominal_mm": 93.0,
+            "plus_mm": 0.0,
+            "minus_mm": 1.0
+          },
+          {
+            "dimension_type": "length",
+            "nominal_mm": 75.5,
+            "plus_mm": 0.0,
+            "minus_mm": 1.0
+          },
+          {
+            "dimension_type": "length",
+            "nominal_mm": 60.0,
+            "plus_mm": 0.0,
+            "minus_mm": 0.5
+          },
+          {
+            "dimension_type": "length",
+            "nominal_mm": 51.5,
+            "plus_mm": 0.5,
+            "minus_mm": 0.0
+          },
+          {
+            "dimension_type": "length",
+            "nominal_mm": 46.0,
+            "plus_mm": 0.5,
+            "minus_mm": 0.5
+          },
+          {
+            "dimension_type": "length",
+            "nominal_mm": 42.5,
+            "plus_mm": 0.0,
+            "minus_mm": 0.1
+          },
+          {
+            "dimension_type": "length",
+            "nominal_mm": 31.0,
+            "plus_mm": 0.0,
+            "minus_mm": 1.0
+          },
+          {
+            "dimension_type": "length",
+            "nominal_mm": 54.5,
+            "plus_mm": 0.3,
+            "minus_mm": 0.0
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "isometric_view"
+        ]
+      },
+      {
+        "feature_id": "F27",
+        "feature_type": "tapered_bore",
+        "name": "Left Center Hole",
+        "description": "Conical center hole on the left end of the shaft.",
+        "geometry": {
+          "depth_mm": 2.5,
+          "angle_deg": 30.0,
+          "axis_direction": "-X"
+        },
+        "surface_finish": {
+          "finish_symbol": "Rz 7"
+        },
+        "access_directions": [
+          "-X"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "angle_deg",
+            "nominal_mm": 30.0,
+            "plus_mm": 5.0,
+            "minus_mm": 5.0
+          },
+          {
+            "dimension_type": "depth",
+            "nominal_mm": 2.5,
+            "plus_mm": 1.0,
+            "minus_mm": 0.0
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "main_view"
+        ]
+      },
+      {
+        "feature_id": "F28",
+        "feature_type": "external_cylinder",
+        "name": "Stepped Cylinders (\u00d844, \u00d858, \u00d869)",
+        "description": "Multiple external cylindrical steps leading up to the cross hole.",
+        "geometry": {
+          "diameter_mm": 44.0,
+          "radius_mm": 2.0,
+          "axis_direction": "+X"
+        },
+        "access_directions": [
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 44.0,
+            "plus_mm": 0.0,
+            "minus_mm": 0.5
+          },
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 58.0,
+            "plus_mm": 0.0,
+            "minus_mm": 0.5
+          },
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 69.0,
+            "plus_mm": 0.0,
+            "minus_mm": 0.1,
+            "qualifier": "2x"
+          },
+          {
+            "dimension_type": "radius",
+            "nominal_mm": 2.0,
+            "plus_mm": 0.0,
+            "minus_mm": 1.0
+          },
+          {
+            "dimension_type": "radius",
+            "nominal_mm": 3.0,
+            "plus_mm": 0.0,
+            "minus_mm": 1.0
+          },
+          {
+            "dimension_type": "radius",
+            "nominal_mm": 1.0,
+            "plus_mm": 0.0,
+            "minus_mm": 0.5
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "runout",
+            "tolerance_value_mm": 0.03,
+            "datum_references": [
+              "Z1-Z8"
+            ],
+            "applied_to": "\u00d869 cylinder surface"
+          }
+        ],
+        "callout_qualifiers": [],
+        "source_views": [
+          "main_view"
+        ]
+      },
+      {
+        "feature_id": "F29",
+        "feature_type": "through_hole",
+        "name": "Stepped Cross Hole",
+        "description": "Radial through hole passing through the shaft with two different diameters.",
+        "geometry": {
+          "diameter_mm": 6.0,
+          "length_mm": 11.0,
+          "depth_condition": "THRU",
+          "axis_direction": "radial"
+        },
+        "access_directions": [
+          "+Y",
+          "-Y"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "length",
+            "nominal_mm": 11.0,
+            "plus_mm": 0.5,
+            "minus_mm": 0.0
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "main_view"
+        ]
+      },
+      {
+        "feature_id": "F30",
+        "feature_type": "external_cylinder",
+        "name": "Bearing Journal \u00d871.476",
+        "description": "Precision external cylinder acting as a bearing seat or journal.",
+        "geometry": {
+          "diameter_mm": 71.476,
+          "axis_direction": "+X"
+        },
+        "surface_finish": {
+          "finish_symbol": "Rz 3 / Rz 1"
+        },
+        "access_directions": [
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 71.476,
+            "tolerance_class": "h5"
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "runout",
+            "tolerance_value_mm": 0.05,
+            "datum_references": [
+              "Z1-Z8"
+            ],
+            "applied_to": "\u00d871.476 cylinder surface"
+          }
+        ],
+        "callout_qualifiers": [],
+        "source_views": [
+          "main_view"
+        ]
+      },
+      {
+        "feature_id": "F31",
+        "feature_type": "flat_face",
+        "name": "Angled Right Face",
+        "description": "Conical or angled face on the extreme right of the external spline.",
+        "geometry": {
+          "angle_deg": 21.4667,
+          "axis_direction": "+X"
+        },
+        "access_directions": [
+          "+X"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "angle_deg",
+            "nominal_mm": 21.4667,
+            "plus_mm": 0.0222,
+            "minus_mm": 0.0222
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "main_view"
+        ]
+      },
+      {
+        "feature_id": "F32",
+        "feature_type": "internal_bore",
+        "name": "Right Internal Bore",
+        "description": "Complex stepped internal bore on the right side of the shaft.",
+        "geometry": {
+          "diameter_mm": 70.0,
+          "length_mm": 15.0,
+          "axis_direction": "+X"
+        },
+        "surface_finish": {
+          "finish_symbol": "Rz 16"
+        },
+        "access_directions": [
+          "+X"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 70.0,
+            "plus_mm": 0.5,
+            "minus_mm": 0.0
+          },
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 61.0,
+            "tolerance_class": "H12"
+          },
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 58.0,
+            "plus_mm": 0.1,
+            "minus_mm": 0.0,
+            "qualifier": "2x"
+          },
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 51.0,
+            "plus_mm": 0.5,
+            "minus_mm": 0.0
+          },
+          {
+            "dimension_type": "length",
+            "nominal_mm": 15.0,
+            "plus_mm": 0.5,
+            "minus_mm": 0.5
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "runout",
+            "tolerance_value_mm": 0.05,
+            "datum_references": [
+              "Z1-Z8"
+            ],
+            "applied_to": "\u00d861 H12 internal bore surface"
+          },
+          {
+            "gdt_type": "runout",
+            "tolerance_value_mm": 0.1,
+            "datum_references": [
+              "Z1-Z8"
+            ],
+            "applied_to": "\u00d870 +0.5 internal bore surface"
+          }
+        ],
+        "callout_qualifiers": [],
+        "source_views": [
+          "main_view"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "relationship_id": "R01",
+        "from_feature_id": "F27",
+        "to_feature_id": "F01",
+        "relationship_type": "coaxial",
+        "detail": "Left centre hole and left external spline share the shaft axis."
+      },
+      {
+        "relationship_id": "R02",
+        "from_feature_id": "F01",
+        "to_feature_id": "F02",
+        "relationship_type": "coaxial",
+        "detail": "Left external spline and \u00d852 cylindrical shaft surface are on the common shaft axis."
+      },
+      {
+        "relationship_id": "R03",
+        "from_feature_id": "F02",
+        "to_feature_id": "F28",
+        "relationship_type": "coaxial",
+        "detail": "Adjacent external cylindrical shaft steps share the common shaft axis."
+      },
+      {
+        "relationship_id": "R04",
+        "from_feature_id": "F28",
+        "to_feature_id": "F30",
+        "relationship_type": "coaxial",
+        "detail": "Stepped cylinders and bearing journal \u00d871.476 are coaxial shaft features."
+      },
+      {
+        "relationship_id": "R05",
+        "from_feature_id": "F30",
+        "to_feature_id": "F03",
+        "relationship_type": "coaxial",
+        "detail": "Bearing journal and right external spline/geared section share the shaft axis."
+      },
+      {
+        "relationship_id": "R06",
+        "from_feature_id": "F03",
+        "to_feature_id": "F32",
+        "relationship_type": "coaxial",
+        "detail": "Right external spline/geared section and right internal bore are concentric about the shaft axis."
+      },
+      {
+        "relationship_id": "R07",
+        "from_feature_id": "F29",
+        "to_feature_id": "F28",
+        "relationship_type": "intersecting",
+        "detail": "Radial stepped through-hole passes through the cylindrical shaft body in the stepped-cylinder region."
+      },
+      {
+        "relationship_id": "R08",
+        "from_feature_id": "F08",
+        "to_feature_id": "F32",
+        "relationship_type": "intersecting",
+        "detail": "Internal groove is cut into the right internal bore region shown in the main view."
+      },
+      {
+        "relationship_id": "R09",
+        "from_feature_id": "F09",
+        "to_feature_id": "F32",
+        "relationship_type": "intersecting",
+        "detail": "Internal taper is a transition surface within the right internal bore region."
+      },
+      {
+        "relationship_id": "R10",
+        "from_feature_id": "F22",
+        "to_feature_id": "F32",
+        "relationship_type": "coaxial",
+        "detail": "Stepped centre hole detail lies on the same axis as the right internal bore."
+      },
+      {
+        "relationship_id": "R11",
+        "from_feature_id": "F25",
+        "to_feature_id": "F32",
+        "relationship_type": "coaxial",
+        "detail": "Inner bore in Detail Z is coaxial with the right internal bore system."
+      },
+      {
+        "relationship_id": "R12",
+        "from_feature_id": "F10",
+        "to_feature_id": "F02",
+        "relationship_type": "intersecting",
+        "detail": "Transition radius in Detail U blends into the \u00d852/K7 cylindrical shaft surface."
+      },
+      {
+        "relationship_id": "R13",
+        "from_feature_id": "F10",
+        "to_feature_id": "F11",
+        "relationship_type": "intersecting",
+        "detail": "Transition radius and tapered transition meet in the Detail U profile."
+      },
+      {
+        "relationship_id": "R14",
+        "from_feature_id": "F11",
+        "to_feature_id": "F12",
+        "relationship_type": "intersecting",
+        "detail": "Tapered transition meets the short K8 cylindrical segment."
+      },
+      {
+        "relationship_id": "R15",
+        "from_feature_id": "F02",
+        "to_feature_id": "F27",
+        "relationship_type": "datum_referenced",
+        "detail": "Runout control on \u00d852 cylinder references combined datum axis Z1-Z8; this edge records the Z1 datum feature."
+      },
+      {
+        "relationship_id": "R16",
+        "from_feature_id": "F02",
+        "to_feature_id": "F30",
+        "relationship_type": "datum_referenced",
+        "detail": "Runout control on \u00d852 cylinder references combined datum axis Z1-Z8; this edge records the Z8 datum feature."
+      },
+      {
+        "relationship_id": "R17",
+        "from_feature_id": "F28",
+        "to_feature_id": "F27",
+        "relationship_type": "datum_referenced",
+        "detail": "Runout control on \u00d869 stepped-cylinder surface references combined datum axis Z1-Z8; this edge records the Z1 datum feature."
+      },
+      {
+        "relationship_id": "R18",
+        "from_feature_id": "F28",
+        "to_feature_id": "F30",
+        "relationship_type": "datum_referenced",
+        "detail": "Runout control on \u00d869 stepped-cylinder surface references combined datum axis Z1-Z8; this edge records the Z8 datum feature."
+      },
+      {
+        "relationship_id": "R19",
+        "from_feature_id": "F30",
+        "to_feature_id": "F27",
+        "relationship_type": "datum_referenced",
+        "detail": "Runout control on the bearing journal references combined datum axis Z1-Z8; this edge records the Z1 datum feature."
+      },
+      {
+        "relationship_id": "R20",
+        "from_feature_id": "F30",
+        "to_feature_id": "F30",
+        "relationship_type": "datum_referenced",
+        "detail": "Bearing journal is the Z8 datum feature and is also controlled relative to the combined Z1-Z8 datum axis."
+      },
+      {
+        "relationship_id": "R21",
+        "from_feature_id": "F03",
+        "to_feature_id": "F27",
+        "relationship_type": "datum_referenced",
+        "detail": "Runout controls on right external spline/geared section reference combined datum axis Z1-Z8; this edge records the Z1 datum feature."
+      },
+      {
+        "relationship_id": "R22",
+        "from_feature_id": "F03",
+        "to_feature_id": "F30",
+        "relationship_type": "datum_referenced",
+        "detail": "Runout controls on right external spline/geared section reference combined datum axis Z1-Z8; this edge records the Z8 datum feature."
+      },
+      {
+        "relationship_id": "R23",
+        "from_feature_id": "F03",
+        "to_feature_id": "F31",
+        "relationship_type": "datum_referenced",
+        "detail": "Profile control on the spline tooth flank references datum K6 on the angled right face."
+      },
+      {
+        "relationship_id": "R24",
+        "from_feature_id": "F32",
+        "to_feature_id": "F27",
+        "relationship_type": "datum_referenced",
+        "detail": "Runout controls on right internal bore surfaces reference combined datum axis Z1-Z8; this edge records the Z1 datum feature."
+      },
+      {
+        "relationship_id": "R25",
+        "from_feature_id": "F32",
+        "to_feature_id": "F30",
+        "relationship_type": "datum_referenced",
+        "detail": "Runout controls on right internal bore surfaces reference combined datum axis Z1-Z8; this edge records the Z8 datum feature."
+      }
+    ],
+    "datum_scheme": {
+      "datums": [
+        {
+          "datum_letter": "Z1",
+          "feature_id": "F27",
+          "surface_type": "conical",
+          "description": "Left center hole face"
+        },
+        {
+          "datum_letter": "Z8",
+          "feature_id": "F30",
+          "surface_type": "cylindrical",
+          "description": "Main bearing journal \u00d871.476"
+        },
+        {
+          "datum_letter": "K6",
+          "feature_id": "F31",
+          "surface_type": "conical",
+          "description": "Angled face on the extreme right"
+        },
+        {
+          "datum_letter": "P1",
+          "feature_id": "F01",
+          "surface_type": "cylindrical",
+          "description": "Outer diameter of the external spline"
+        }
+      ],
+      "datum_hierarchy_notes": "Most runout controls reference the combined Z1-Z8 datum axis, defined by the left centre hole face and the \u00d871.476 bearing journal. Datum K6 is the angled right face used for the spline tooth flank profile control. Datum P1 is defined on the OD of the left external spline in Section A-A and appears as a local datum/inspection reference for that spline profile."
+    },
+    "part_notes": "Material: ZF7B. General tolerance: ISO 2768-2. Projection: first angle. Heat treatment: EINSATZGEHAERTET NACH N 417 / CASE HARDENED ACC. TO N 417. Coating: --- +). General notes: ONLY FOR QUOTATION. Deutscher Text ist bindend / German text is binding. Wahlweise 20MnCr5 nach DIN EN 10084 / Optional 20MnCr5 acc. to DIN EN 10084. MARKING: Gekennzeichnet nach N 2011 X / Marked acc. to N 2011 X. MARKING: Kennzeichnungsort wahlweise / Marking location optional. Siehe M-Blatt-Nr. 1324 302 010 GGR000 / See M-sheet no. 1324 302 010 GGR000. FINISH: Behandlungszustand Y+Z nach N 161 / Treatment status Y+Z acc. to N 161. PROCESS: Merkmale gefertigt nach 0000 702 184 / features manufactured acc. to 0000 702 184. TOLERANCE: Schmiedetoleranzen nach DIN EN 10243 / Forging tolerances acc. to DIN EN 10243. DEBURR: Unbemasste Kanten bearbeiteter Flaechen / Undimensioned edges on machined surfaces Aussen : Gratfrei oder gebrochen K 1 max / External: Deburred or chamfered. TOLERANCE: Toleranzen untolerierter Masse fuer Durchgangs- und Sackbohrungen : > \u00d81 <= \u00d830 +0.2 / -0.1 / Tolerance of untoleranced dimensions for Clearance and blind holes. TOLERANCE: Tiefe von Bohrungen: +2 / Depth tolerance of blind holes: +2. TOLERANCE: Gewindelaengen: Nennmass = Mindestmass / Thread length: nominal dimension = minimal. FINISH: Fuer Oberflaechen ohne Rautiefenangabe / For unspecified surfaces: x = Rz 4, y = Rz 25, z = Rz 100, r = unmachined. Testing: Oberflaechenhaerte / Surface hardness 59 BIS/TO 63HRC. Einsatzhaertungstiefe CHD 610 / Case hardening depth 0.5 BIS/TO 1 mm. Kernhaerte / Core hardness >=295 HBW. Extraction notes: A fit size limits table and a variant dimensions table are present but their data is not mapped to explicit fields in this schema. The general surface roughness values are included as a general note.",
+    "overall_complexity": "complex"
+  },
+  "component_specs": [
+    {
+      "section_id": "gear_data_table",
+      "component_type": "spur_gear_bevel_gear",
+      "spec_title": "Stirnrad, Kegelrad\nSpur gear, bevel gear",
+      "parameters": [
+        {
+          "parameter_name": "Zaehnezahl / Normalmodul\nNo. of teeth / normal module",
+          "value_raw": "z = 48 / mn = 2,0 | z = 26 / mn =3,54",
+          "row_notes": "Table contains two sets of tooth data (Verz. V2 and Verz. V1). Values combined from both columns."
+        },
+        {
+          "parameter_name": "Eingriffswinkel\nPressure angle",
+          "value_raw": "\u03b1 = 30\u00b0 | \u03b1 = 17\u00b030\u2032",
+          "row_notes": "Values combined from both columns."
+        },
+        {
+          "parameter_name": "Schraegungswinkel\nHelix angle",
+          "value_raw": "\u03b2 = ... | \u03b2 = 28\u00b030\u2032",
+          "row_notes": "Values combined from both columns."
+        },
+        {
+          "parameter_name": "Schraegungsrichtung\nHand of helix",
+          "value_raw": "= ...\n... | = links\nleft",
+          "row_notes": "Values combined from both columns."
+        },
+        {
+          "parameter_name": "Achsabstand im Gehaeuse\nCentre distance in housing",
+          "value_raw": "a = ... | a = 130",
+          "row_notes": "Values combined from both columns."
+        },
+        {
+          "parameter_name": "Gegenrad-Mat-Nr./Zaehnezahl\nMating gear item No./No. of teeth",
+          "value_raw": "1307 302 259 / z= 48 | 1324 303 007 / z= 36",
+          "row_notes": "Values combined from both columns."
+        },
+        {
+          "parameter_name": "Einstelldaten nach M. Nr.\nSetting data acc. to M.-No.",
+          "value_raw": "= 1304 302 256 GFI200(n) | = **",
+          "row_notes": "Values combined from both columns."
+        },
+        {
+          "parameter_name": "Verz.Freigabe\nGear release",
+          "value_raw": "... | ...",
+          "row_notes": "Values combined from both columns."
+        }
+      ],
+      "extraction_notes": "This table is structured with two columns of values for two different sets of tooth data ('Verz. V2' and 'Verz. V1'). The values have been combined with a pipe '|' delimiter to capture both in a single row object, as the schema expects one entry per parameter row. Some symbols like '\u03b1', '\u03b2', 'a', 'z', 'mn' are embedded in the value cells rather than a dedicated symbol column."
+    }
+  ],
+  "component_spec_links": [
+    {
+      "spec_section_id": "gear_data_table",
+      "feature_ids": [
+        "F03"
+      ],
+      "link_notes": "The gear table tooth data includes z=48 and mn=2.0, matching the right external spline/geared section noted in the main view as similar to DIN 5480 W100x2x48x12F. Detail W gives tooth flank/helix correction, and the T sketch/detail features give tooth edge-break information for the same gear/spline tooth zone. The separate left SAE 10C 10-tooth spline does not match this table."
+    }
+  ],
+  "assumptions": [
+    {
+      "assumption_id": "A01",
+      "text": "Grouped main_view:F2, section_aa:F1, and section_bb:F1 as the same left external spline using the A-A and B-B section-cut references. section_aa:F1 was chosen canonical because it contains the spline profile dimensions, tooth count, surface finish, and datum P1 definition."
+    },
+    {
+      "assumption_id": "A02",
+      "text": "Grouped main_view:F3 with detail_u:F1 as the \u00d852/K7 cylindrical surface because Detail U is called out on the \u00d852 transition area and detail_u:F1 carries the K7 surface label. main_view:F3 was chosen canonical because it contains the explicit \u00d852 diameter and GD&T."
+    },
+    {
+      "assumption_id": "A03",
+      "text": "Grouped main_view:F7 with detail_w:F1 and the T-sketch tooth edge-break features because these detail views describe corrections and edge conditions of the right gear/spline tooth zone rather than independent part features. main_view:F7 was chosen canonical because it contains the principal diameters, GD&T, and DIN 5480 reference."
+    },
+    {
+      "assumption_id": "A04",
+      "text": "Did not group main_view:F1 with detail_x despite a reused Detail X label, because the extracted detail_x section describes right-hand external groove/cylinder/taper geometry rather than the left conical centre hole. The drawing contains multiple X callouts, so feature-type and geometry consistency were prioritized over the duplicate label."
+    },
+    {
+      "assumption_id": "A05",
+      "text": "Left the E1/E3 and E2 relief-groove detail features as separate feature observations despite similar A1.2 dimensions, because their view labels indicate distinct groove locations and no parent feature in the main view unambiguously identifies them as the same physical groove."
+    },
+    {
+      "assumption_id": "A06",
+      "text": "Assigned unattached main-view baseline length callouts UC1 through UC8 and UC10 to isometric_view:F1 as global shaft/body axial dimensions because the extraction did not create individual shoulder-face nodes for each baseline target."
+    },
+    {
+      "assumption_id": "A07",
+      "text": "Assigned unattached callout UC9 to main_view:F5 because the 11 +0.5 dimension is located with the radial cross-hole callout cluster and most plausibly locates the stepped cross-hole feature."
+    },
+    {
+      "assumption_id": "A08",
+      "text": "Assigned unattached chamfer/angle callouts UC11 and UC12 to main_view:F7 because they are in the right-hand gear/spline end-region callout cluster and no separate main-view chamfer feature was extracted there."
+    },
+    {
+      "assumption_id": "A09",
+      "text": "Assigned unattached radius callouts UC13, UC14, and UC15 to main_view:F4 as transition radii for the stepped-cylinder region, since their labels appear in the central stepped-shaft area and no individual radius nodes were extracted in the main view."
+    },
+    {
+      "assumption_id": "A10",
+      "text": "Accepted the transcribed Detail X dimensions as authoritative despite the extraction note that the \u00d894.5 groove bottom appears visually inconsistent with the adjacent \u00d894 cylinder; no identity merge was made that would force those values to conflict."
+    },
+    {
+      "assumption_id": "A11",
+      "clarification_id": "C01",
+      "text": "The \u00d88 portion of the stepped radial through-hole extends from the outer diameter (\u00d871.476 h5) to the central axis of the shaft, where it transitions to the \u00d86 portion at the centerline."
+    }
+  ]
+}

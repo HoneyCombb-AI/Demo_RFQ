@@ -1,0 +1,539 @@
+{
+  "analysis_id": "C.14.096-00c_Schiebeblock_merge_20260903T082751Z",
+  "source_feature_graph_id": "C.14.096-00c_Schiebeblock_merge_20260903T082751Z",
+  "quantity": 100,
+  "part_family": "turned",
+  "base_geometry": "rotational",
+  "stock": {
+    "form": "round_bar"
+  },
+  "operations": [
+    {
+      "sequence": 1,
+      "name": "Saw Cut \u2013 Round Bar Blank",
+      "machine_family": "saw",
+      "setup_note": "Cut individual billets from round bar with sufficient axial stock for facing, chucking, and part-off. Material grade and required blank diameter remain to be confirmed.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "setup_time_min": 5.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "saw_cut",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "saw_cut",
+            "cut_diameter_mm": 50.0,
+            "cut_count": 1
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 2,
+      "name": "CNC Turn \u2013 Gear Blank First Op",
+      "machine_family": "cnc_lathe",
+      "setup_note": "Clamp the sawed billet on raw OD with sufficient projection for the complete blank profile. Face the exposed end, machine the coaxial OD and bore in one setup to establish datum axis A, cut the annular groove, then part off.",
+      "datum_references": [
+        "A"
+      ],
+      "material_machinability": "medium",
+      "setup_time_min": 20.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "face_turn",
+          "target_feature_ids": [
+            "F01"
+          ],
+          "inputs": {
+            "kind": "radial_turn",
+            "start_diameter_mm": 50.0,
+            "finish_diameter_mm": 0.0,
+            "groove_count": 1,
+            "total_stock_mm": 2.0
+          }
+        },
+        {
+          "sequence": 2,
+          "operation_type": "rough_turn_od",
+          "target_feature_ids": [
+            "F06",
+            "F07"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 50.0,
+            "finish_diameter_mm": 45.8,
+            "cut_length_mm": 20.0
+          }
+        },
+        {
+          "sequence": 3,
+          "operation_type": "finish_turn_od",
+          "target_feature_ids": [
+            "F06",
+            "F07"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 45.8,
+            "finish_diameter_mm": 45.0,
+            "cut_length_mm": 20.0
+          }
+        },
+        {
+          "sequence": 4,
+          "operation_type": "center_drill",
+          "target_feature_ids": [
+            "F02"
+          ],
+          "inputs": {
+            "kind": "point_drill",
+            "hole_diameter_mm": 4.0,
+            "hole_depth_mm": 2.5,
+            "hole_count": 1,
+            "through_hole": false
+          }
+        },
+        {
+          "sequence": 5,
+          "operation_type": "drill",
+          "target_feature_ids": [
+            "F02"
+          ],
+          "inputs": {
+            "kind": "point_drill",
+            "hole_diameter_mm": 16.0,
+            "hole_depth_mm": 22.7,
+            "hole_count": 1,
+            "pilot_diameter_mm": 4.0,
+            "through_hole": true
+          }
+        },
+        {
+          "sequence": 6,
+          "operation_type": "rough_bore_id",
+          "target_feature_ids": [
+            "F02"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 16.0,
+            "finish_diameter_mm": 19.4,
+            "cut_length_mm": 22.7
+          }
+        },
+        {
+          "sequence": 7,
+          "operation_type": "finish_bore_id",
+          "target_feature_ids": [
+            "F02"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 19.4,
+            "finish_diameter_mm": 20.0,
+            "cut_length_mm": 22.7
+          }
+        },
+        {
+          "sequence": 8,
+          "operation_type": "groove_od",
+          "target_feature_ids": [
+            "F03"
+          ],
+          "inputs": {
+            "kind": "radial_turn",
+            "start_diameter_mm": 45.0,
+            "finish_diameter_mm": 39.4,
+            "groove_width_mm": 2.5,
+            "groove_count": 1
+          }
+        },
+        {
+          "sequence": 9,
+          "operation_type": "groove_od",
+          "target_feature_ids": [
+            "F03",
+            "F04"
+          ],
+          "inputs": {
+            "kind": "radial_turn",
+            "start_diameter_mm": 45.0,
+            "finish_diameter_mm": 39.0,
+            "groove_width_mm": 0.1,
+            "groove_count": 1
+          }
+        },
+        {
+          "sequence": 10,
+          "operation_type": "groove_od",
+          "target_feature_ids": [
+            "F03",
+            "F05"
+          ],
+          "inputs": {
+            "kind": "radial_turn",
+            "start_diameter_mm": 45.0,
+            "finish_diameter_mm": 39.0,
+            "groove_width_mm": 0.1,
+            "groove_count": 1
+          }
+        },
+        {
+          "sequence": 11,
+          "operation_type": "part_off",
+          "target_feature_ids": [
+            "F01"
+          ],
+          "inputs": {
+            "kind": "radial_turn",
+            "start_diameter_mm": 45.0,
+            "finish_diameter_mm": 0.0,
+            "groove_width_mm": 2.5,
+            "groove_count": 1
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 3,
+      "name": "CNC Turn \u2013 Second Face",
+      "machine_family": "cnc_lathe",
+      "setup_note": "Locate the parted blank on datum bore A using an expanding mandrel and seat it against the finished first face. Face the parted end to establish the final 22.7 mm axial width while maintaining perpendicularity to A.",
+      "datum_references": [
+        "A"
+      ],
+      "material_machinability": "medium",
+      "setup_time_min": 15.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "face_turn",
+          "target_feature_ids": [
+            "F01"
+          ],
+          "inputs": {
+            "kind": "radial_turn",
+            "start_diameter_mm": 45.0,
+            "finish_diameter_mm": 20.0,
+            "groove_count": 1,
+            "total_stock_mm": 1.0
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 4,
+      "name": "Hob External Gear Teeth",
+      "machine_family": "gear_hobbing",
+      "setup_note": "Mount the soft gear blank on datum bore A against an axial face stop. Hob both axial geared sections in one indexed cycle so their tooth phase remains common across the intervening groove.",
+      "datum_references": [
+        "A"
+      ],
+      "material_machinability": "medium",
+      "setup_time_min": 25.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "hob_teeth",
+          "target_feature_ids": [
+            "F06",
+            "F07"
+          ],
+          "inputs": {
+            "kind": "gear_hob",
+            "number_of_teeth": 43,
+            "normal_module_mm": 1.0,
+            "face_width_mm": 20.0,
+            "whole_depth_mm": 2.25,
+            "helix_angle_deg": 0.0,
+            "hob_starts": 1,
+            "number_of_cuts": 1
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 5,
+      "name": "Deburr and Clean",
+      "machine_family": "finish_bench",
+      "setup_note": "Deburr the bore, groove, faces, and hobbed tooth edges without altering the controlled surfaces. Degrease the completed soft-machined component before inspection.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "setup_time_min": 5.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "deburr",
+          "target_feature_ids": [
+            "F02",
+            "F03",
+            "F04",
+            "F05",
+            "F06",
+            "F07"
+          ],
+          "inputs": {
+            "kind": "manual",
+            "complexity": "medium",
+            "edge_length_mm": 1100.0
+          }
+        },
+        {
+          "sequence": 2,
+          "operation_type": "clean_degrease",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "manual",
+            "complexity": "low",
+            "feature_count": 1,
+            "estimated_time_min": 1.0
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 6,
+      "name": "Final Dimensional and Gear Inspection",
+      "machine_family": "inspection",
+      "setup_note": "Locate from datum bore A and an axial face. Verify axial width, bore contour, groove width, face perpendicularity, gear-section runout, and the specified gear geometry.",
+      "datum_references": [
+        "A"
+      ],
+      "material_machinability": "medium",
+      "setup_time_min": 20.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "cmm_inspect",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "inspection",
+            "dimension_count": 1,
+            "gdt_count": 4,
+            "sampling_rate_pct": 100.0,
+            "requires_fixture": true
+          }
+        },
+        {
+          "sequence": 2,
+          "operation_type": "gear_check",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "inspection",
+            "dimension_count": 1,
+            "gdt_count": 4,
+            "sampling_rate_pct": 100.0,
+            "requires_fixture": true
+          }
+        }
+      ]
+    }
+  ],
+  "clarifications": [
+    {
+      "clarification_id": "C01",
+      "question": "What material grade is specified for the component?",
+      "blocks": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "suggested_default": "Machinable carbon or alloy steel suitable for hobbing",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C02",
+      "question": "What is the supplied material condition or hardness?",
+      "blocks": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "suggested_default": "Annealed or normalized, below 35 HRC",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C03",
+      "question": "Is the drawing intended to represent one monolithic component?",
+      "blocks": [
+        2,
+        3,
+        4
+      ],
+      "suggested_default": "Yes, manufacture as one component",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C04",
+      "question": "Are F06 and F07 intended to carry generated external gear teeth?",
+      "blocks": [
+        4
+      ],
+      "suggested_default": "Yes",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C05",
+      "question": "What number of gear teeth is required?",
+      "blocks": [
+        4
+      ],
+      "suggested_default": "43 teeth",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C06",
+      "question": "What gear module is required?",
+      "blocks": [
+        4
+      ],
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C07",
+      "question": "What gear pressure angle is required?",
+      "blocks": [
+        4
+      ],
+      "suggested_default": "20 degrees",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C08",
+      "question": "What gear helix angle is required?",
+      "blocks": [
+        4
+      ],
+      "suggested_default": "0 degrees, straight spur teeth",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C09",
+      "question": "What is the finished tooth-tip outside diameter of F06 and F07?",
+      "blocks": [
+        1,
+        2,
+        4
+      ],
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C10",
+      "question": "What is the complete dimensioned internal contour of bore F02?",
+      "blocks": [
+        2,
+        3,
+        4
+      ],
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C11",
+      "question": "What dimensional tolerance applies to bore F02?",
+      "blocks": [
+        2,
+        3,
+        4
+      ],
+      "suggested_default": "Finish bore under the drawing's general tolerance",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C12",
+      "question": "What is the bottom diameter of annular groove F03?",
+      "blocks": [
+        2
+      ],
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C13",
+      "question": "What is the axial location of annular groove F03?",
+      "blocks": [
+        2
+      ],
+      "suggested_default": "Centered within the 22.7 mm overall width",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C14",
+      "question": "What DIN or ISO gear quality grade is required?",
+      "blocks": [
+        4,
+        6
+      ],
+      "suggested_default": "Commercial hobbed quality with no shaving or hard finishing",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C15",
+      "question": "Must the left and right gear sections have matching angular tooth phase?",
+      "blocks": [
+        4
+      ],
+      "suggested_default": "Yes, hob both sections under common indexing",
+      "priority": "medium"
+    }
+  ],
+  "assumptions": [
+    {
+      "assumption_id": "A01",
+      "text": "The component is routed as a single monolithic rotational part."
+    },
+    {
+      "assumption_id": "A02",
+      "text": "Because the material callout is missing, the provisional route assumes annealed or normalized steel with medium machinability."
+    },
+    {
+      "assumption_id": "A03",
+      "text": "Round bar is selected for 100 pieces because the part is compact and rotational, no forming requirement is specified, and the quantity is below the stated forging-volume guideline."
+    },
+    {
+      "assumption_id": "A04",
+      "text": "Stock diameter, billet length, mass, and machining allowance are left unresolved because the finished outside diameter and material density are absent."
+    },
+    {
+      "assumption_id": "A05",
+      "text": "The curved through bore is provisionally produced by drilling followed by rough and finish contour boring; reaming is omitted because the bore is not described as a constant-diameter cylindrical hole."
+    },
+    {
+      "assumption_id": "A06",
+      "text": "F06 and F07 are treated as two axial sections of one 43-tooth straight spur gear with common tooth indexing, based on the extraction assumptions."
+    },
+    {
+      "assumption_id": "A07",
+      "text": "No heat treatment is included because none is specified; all operations therefore remain in the soft material state."
+    },
+    {
+      "assumption_id": "A08",
+      "text": "Gear shaving, case hardening, face grinding, bore honing, gear grinding, and teeth honing are omitted because no heat treatment, gear quality grade, bore fit, or hardened finish requirement is specified."
+    },
+    {
+      "assumption_id": "A09",
+      "text": "Milling-template operations are omitted because the extracted component has no prismatic, off-axis, pocket, slot, or cross-hole features."
+    },
+    {
+      "assumption_id": "A10",
+      "text": "Threading, tapping, countersinking, and counterboring are omitted because no threaded or fastener-hole features exist in the feature graph."
+    },
+    {
+      "assumption_id": "A11",
+      "text": "A separate dimensional chamfering operation is omitted because no chamfer feature or size is extracted; unspecified sharp-edge treatment is covered by bench deburring."
+    },
+    {
+      "assumption_id": "A12",
+      "text": "The two gear blank ODs are assumed to share one finished diameter, permitting them to be rough-turned and finish-turned as a common-diameter feature group."
+    }
+  ]
+}

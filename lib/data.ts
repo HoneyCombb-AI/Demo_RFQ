@@ -105,7 +105,7 @@ export interface PartInfo {
   quantity: number | null;
   units: string;
   title_block_notes: string[];
-  confidence: number;
+  confidence: number | null;
 }
 
 export interface FeatureGraphData {
@@ -233,6 +233,7 @@ export interface FeasibilityData {
 
 export interface StockStartingDimensions {
   diameter_mm: number | null;
+  bore_diameter_mm: number | null;
   length_mm: number | null;
   width_mm: number | null;
   height_mm: number | null;
@@ -241,12 +242,12 @@ export interface StockStartingDimensions {
 }
 
 export interface StockInfo {
-  form: string;
-  material: string;
+  form: string | null;
+  material: string | null;
   starting_dimensions: StockStartingDimensions;
-  machining_allowance_mm: number;
-  why: string;
-  confidence: number;
+  machining_allowance_mm: number | null;
+  why: string | null;
+  confidence: number | null;
 }
 
 export interface Workholding {
@@ -322,7 +323,7 @@ export interface DeconstructedRouteData {
     stock_selection: number;
     route_planning: number;
     formula_inputs: number;
-  };
+  } | null;
 }
 
 // ============================================================
@@ -351,7 +352,7 @@ export interface CycleTime {
   formula_family: string;
   cutting_parameters: CuttingParameters;
   calculation_notes: string[];
-  confidence: string;
+  confidence: string | null;
   warnings: string[];
 }
 
@@ -401,10 +402,11 @@ export interface TotalSummary {
   total_handling_time_min: number;
   total_cutting_time_min: number;
   total_non_cutting_time_min: number;
+  total_pure_machining_time_min: number;
   total_machining_time_min: number;
   total_time_min: number;
   outside_process_count: number;
-  confidence: string;
+  confidence: string | null;
 }
 
 export interface ComputedRouteData {
@@ -689,17 +691,14 @@ export interface ReportData {
   slug: string;
   folderName: string;
   orgSlug: string;
-  quoteFormat: "excel" | "setup" | "obsc" | "jtt";
   featureGraph: FeatureGraphData;
   specList: SpecItem[];
   componentSpec: ComponentSpecData | null;
+  componentSpecs?: ComponentSpecData[] | null;
   feasibility: FeasibilityData;
   deconstructedRoute: DeconstructedRouteData;
   computedRoute: ComputedRouteData;
-  excelQuote: ExcelQuoteData | null;
-  setupQuote: SetupQuoteData | null;
-  obscQuote: ObscQuoteData | null;
-  jttQuote: JttQuoteData | null;
+  quote: any;
   partLevelSpecs: PartLevelSpec[];
   balloonedImageUrls: string[];
   originalImageUrls: string[];
@@ -710,7 +709,7 @@ export interface PartListItem {
   folderName: string;
   drawingNumber: string;
   partName: string;
-  material: string;
+  material: string | null;
 }
 
 // ============================================================

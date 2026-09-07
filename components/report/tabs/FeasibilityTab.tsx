@@ -23,7 +23,8 @@ function formatText(text: string) {
     .join(" ")
 }
 
-function VerdictBadge({ verdict }: { verdict: string }) {
+function VerdictBadge({ verdict }: { verdict: string | null | undefined }) {
+  if (!verdict) return null
   const v = verdict.toLowerCase()
   let color = "bg-green-100 text-green-700 border-green-200"
   let icon = <CheckCircle2 className="w-3 h-3" />
@@ -50,7 +51,7 @@ function VerdictBadge({ verdict }: { verdict: string }) {
 
 function SpecRow({ sa }: { sa: SpecAssessment & { feature_id: string; feature_name: string } }) {
   const [expanded, setExpanded] = React.useState(false)
-  const hasRisk = sa.risk_description || sa.verdict.toLowerCase().includes("risk") || sa.verdict.toLowerCase().includes("missing")
+  const hasRisk = sa.risk_description || sa.verdict?.toLowerCase().includes("risk") || sa.verdict?.toLowerCase().includes("missing")
 
   return (
     <>
@@ -133,11 +134,6 @@ export function FeasibilityTab({ data }: { data: ReportData }) {
   const [searchTerm, setSearchTerm] = React.useState("")
   const f = data.feasibility.feasibility
 
-  const hasChecklistFields =
-    f.material_machinable !== undefined ||
-    f.tolerances_achievable !== undefined ||
-    f.machines_available !== undefined ||
-    f.part_fits_envelopes !== undefined
 
   // Flatten all spec assessments from direct spec_assessments or feature_assessments
   const allSpecs = React.useMemo(() => {
@@ -178,8 +174,8 @@ export function FeasibilityTab({ data }: { data: ReportData }) {
 
   // Status badge styling
   let statusColor = "bg-green-100 text-green-700"
-  if (f.status.toLowerCase().includes("risk")) statusColor = "bg-amber-100 text-amber-700"
-  if (f.status.toLowerCase().includes("not")) statusColor = "bg-red-100 text-red-700"
+  if (f.status?.toLowerCase().includes("risk")) statusColor = "bg-amber-100 text-amber-700"
+  if (f.status?.toLowerCase().includes("not")) statusColor = "bg-red-100 text-red-700"
 
   const CheckItem = ({ label, passed }: { label: string; passed: boolean }) => (
     <div className="flex items-center gap-2 text-sm">
@@ -200,25 +196,28 @@ export function FeasibilityTab({ data }: { data: ReportData }) {
       <Card>
         <CardHeader className="pb-4">
           <div className="flex items-center gap-4">
-            <Badge className={`${statusColor} hover:${statusColor} uppercase text-sm px-3 py-1`}>
-              {f.status.replace(/_/g, " ")}
-            </Badge>
-            <Badge variant="outline" className="uppercase text-xs tracking-wider">
-              RISK: {f.risk_level}
-            </Badge>
+            {f.status && (
+              <Badge className={`${statusColor} hover:${statusColor} uppercase text-sm px-3 py-1`}>
+                {f.status.replace(/_/g, " ")}
+              </Badge>
+            )}
+            {f.risk_level && (
+              <Badge variant="outline" className="uppercase text-xs tracking-wider">
+                RISK: {f.risk_level}
+              </Badge>
+            )}
           </div>
         </CardHeader>
         <CardContent>
-          <div className={`grid grid-cols-1 ${hasChecklistFields || f.assessment_notes ? "md:grid-cols-2" : ""} gap-6 mb-6`}>
-            {hasChecklistFields && (
-              <div className="space-y-2 bg-muted/30 p-4 rounded-lg">
-                <h4 className="text-xs uppercase tracking-widest font-semibold text-muted-foreground mb-3">Capabilities Checklist</h4>
-                {f.material_machinable !== undefined && <CheckItem label="Material Machinable" passed={f.material_machinable} />}
-                {f.tolerances_achievable !== undefined && <CheckItem label="Tolerances Achievable" passed={f.tolerances_achievable} />}
-                {f.machines_available !== undefined && <CheckItem label="Machines Available" passed={f.machines_available} />}
-                {f.part_fits_envelopes !== undefined && <CheckItem label="Part Fits Envelopes" passed={f.part_fits_envelopes} />}
-              </div>
-            )}
+          <div className={`grid grid-cols-1 ${f.assessment_notes || (f.outside_processes_needed && f.outside_processes_needed.length > 0) ? "md:grid-cols-2" : ""} gap-6 mb-6`}>
+            {/* Capabilities Checklist — always shown, all ticks by default */}
+            <div className="space-y-2 bg-muted/30 p-4 rounded-lg">
+              <h4 className="text-xs uppercase tracking-widest font-semibold text-muted-foreground mb-3">Capabilities Checklist</h4>
+              <CheckItem label="Material Machinable" passed={f.material_machinable ?? true} />
+              <CheckItem label="Tolerances Achievable" passed={f.tolerances_achievable ?? true} />
+              <CheckItem label="Machines Available" passed={f.machines_available ?? true} />
+              <CheckItem label="Part Fits Envelopes" passed={f.part_fits_envelopes ?? true} />
+            </div>
 
             {(f.assessment_notes || (f.outside_processes_needed && f.outside_processes_needed.length > 0)) && (
               <div className="space-y-2">
@@ -278,8 +277,8 @@ export function FeasibilityTab({ data }: { data: ReportData }) {
         </section>
       )}
 
-      {/* Spec Assessments Section */}
-      {allSpecs.length > 0 ? (
+      {/* Spec Assessments Section (if available) */}
+      {allSpecs.length > 0 && (
         <section>
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
             <h3 className="text-lg font-semibold">Spec Assessments</h3>
@@ -324,13 +323,6 @@ export function FeasibilityTab({ data }: { data: ReportData }) {
                 </TableBody>
               </Table>
             )}
-          </div>
-        </section>
-      ) : (
-        <section>
-          <h3 className="text-lg font-semibold mb-4">Spec Assessments</h3>
-          <div className="rounded-lg border border-dashed bg-muted/20 p-12 text-center text-muted-foreground">
-            No spec-level assessments available for this part.
           </div>
         </section>
       )}

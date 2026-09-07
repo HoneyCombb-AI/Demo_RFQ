@@ -1,0 +1,217 @@
+{
+  "drawing_number": "M01XX953",
+  "part_name": "GEAR PLANET",
+  "material": "TL0321 - 19CrNiMo7-6+FP",
+  "quantity": 100000,
+  "weights": {
+    "gross_weight_kg": 0.3321,
+    "net_weight_kg": 0.1536,
+    "scrap_weight_kg": 0.1786,
+    "net_weight_source": "routing"
+  },
+  "direct_cost": {
+    "material_cost_inr": 24.91,
+    "machining_cost_inr": 598.97,
+    "direct_cost_subtotal_inr": 623.88
+  },
+  "overheads_and_surcharges": {
+    "overhead_inr": 0.0,
+    "rejection_inr": 12.48,
+    "margin_inr": 95.45
+  },
+  "pricing_summary": {
+    "subtotal_before_margin_inr": 636.36,
+    "final_ex_works_price_inr": 731.81
+  },
+  "machining_operations": [
+    {
+      "sequence": 1,
+      "operation_name": "Saw Cut Gear Blanks",
+      "machine_family": "saw",
+      "cycle_time_sec": 46.9,
+      "hourly_rate_inr": 320.0,
+      "cost_per_piece_inr": 4.17,
+      "cost_per_piece_raw": 4.168888888888889
+    },
+    {
+      "sequence": 2,
+      "operation_name": "CNC Turn – First Soft-Machining Setup",
+      "machine_family": "cnc_lathe",
+      "cycle_time_sec": 96.6,
+      "hourly_rate_inr": 265.0,
+      "cost_per_piece_inr": 7.11,
+      "cost_per_piece_raw": 7.110833333333333
+    },
+    {
+      "sequence": 3,
+      "operation_name": "CNC Turn – Second Soft-Machining Setup",
+      "machine_family": "cnc_lathe",
+      "cycle_time_sec": 43.3,
+      "hourly_rate_inr": 265.0,
+      "cost_per_piece_inr": 3.19,
+      "cost_per_piece_raw": 3.187361111111111
+    },
+    {
+      "sequence": 4,
+      "operation_name": "Hob Helical Gear Teeth",
+      "machine_family": "gear_hobbing",
+      "cycle_time_sec": 182.5,
+      "hourly_rate_inr": 800.0,
+      "cost_per_piece_inr": 40.56,
+      "cost_per_piece_raw": 40.55555555555556
+    },
+    {
+      "sequence": 5,
+      "operation_name": "Pre-Heat-Treat Gear Shaving",
+      "machine_family": "gear_shaving",
+      "cycle_time_sec": 114.5,
+      "hourly_rate_inr": 450.0,
+      "cost_per_piece_inr": 14.31,
+      "cost_per_piece_raw": 14.3125
+    },
+    {
+      "sequence": 6,
+      "operation_name": "Pre-Heat-Treat Tooth Deburr",
+      "machine_family": "finish_bench",
+      "cycle_time_sec": 104.0,
+      "hourly_rate_inr": 200.0,
+      "cost_per_piece_inr": 5.78,
+      "cost_per_piece_raw": 5.777777777777778
+    },
+    {
+      "sequence": 7,
+      "operation_name": "Pre-Heat-Treat Cleaning",
+      "machine_family": "finish_bench",
+      "cycle_time_sec": 59.3,
+      "hourly_rate_inr": 200.0,
+      "cost_per_piece_inr": 3.29,
+      "cost_per_piece_raw": 3.2944444444444443
+    },
+    {
+      "sequence": 8,
+      "operation_name": "Carburize and Quench",
+      "machine_family": "sealed_quench_furnace",
+      "cycle_time_sec": 231.5,
+      "hourly_rate_inr": 250.0,
+      "cost_per_piece_inr": 16.08,
+      "cost_per_piece_raw": 16.07638888888889
+    },
+    {
+      "sequence": 9,
+      "operation_name": "Temper Hardened Gears",
+      "machine_family": "sealed_quench_furnace",
+      "cycle_time_sec": 92.1,
+      "hourly_rate_inr": 250.0,
+      "cost_per_piece_inr": 6.4,
+      "cost_per_piece_raw": 6.395833333333333
+    },
+    {
+      "sequence": 10,
+      "operation_name": "Post-Heat-Treat Cleaning",
+      "machine_family": "finish_bench",
+      "cycle_time_sec": 66.4,
+      "hourly_rate_inr": 200.0,
+      "cost_per_piece_inr": 3.69,
+      "cost_per_piece_raw": 3.6888888888888896
+    },
+    {
+      "sequence": 11,
+      "operation_name": "Heat-Treat Verification",
+      "machine_family": "inspection",
+      "cycle_time_sec": 16.5,
+      "hourly_rate_inr": 250.0,
+      "cost_per_piece_inr": 1.15,
+      "cost_per_piece_raw": 1.1458333333333333
+    },
+    {
+      "sequence": 12,
+      "operation_name": "Face Grind – Left Datum Face",
+      "machine_family": "cylindrical_grinder",
+      "cycle_time_sec": 111.8,
+      "hourly_rate_inr": 350.0,
+      "cost_per_piece_inr": 10.87,
+      "cost_per_piece_raw": 10.869444444444444
+    },
+    {
+      "sequence": 13,
+      "operation_name": "Face Grind – Right Face and Width",
+      "machine_family": "cylindrical_grinder",
+      "cycle_time_sec": 111.8,
+      "hourly_rate_inr": 350.0,
+      "cost_per_piece_inr": 10.87,
+      "cost_per_piece_raw": 10.869444444444444
+    },
+    {
+      "sequence": 14,
+      "operation_name": "ID Grind Datum Bore",
+      "machine_family": "id_grinding",
+      "cycle_time_sec": 139.4,
+      "hourly_rate_inr": 450.0,
+      "cost_per_piece_inr": 17.43,
+      "cost_per_piece_raw": 17.425
+    },
+    {
+      "sequence": 15,
+      "operation_name": "Hard Turn – First Face Details",
+      "machine_family": "cnc_lathe",
+      "cycle_time_sec": 44.0,
+      "hourly_rate_inr": 265.0,
+      "cost_per_piece_inr": 3.24,
+      "cost_per_piece_raw": 3.238888888888889
+    },
+    {
+      "sequence": 16,
+      "operation_name": "Hard Turn – Second Face Details",
+      "machine_family": "cnc_lathe",
+      "cycle_time_sec": 44.0,
+      "hourly_rate_inr": 265.0,
+      "cost_per_piece_inr": 3.24,
+      "cost_per_piece_raw": 3.238888888888889
+    },
+    {
+      "sequence": 17,
+      "operation_name": "Final Bore Honing",
+      "machine_family": "bore_honing",
+      "cycle_time_sec": 109.9,
+      "hourly_rate_inr": 350.0,
+      "cost_per_piece_inr": 10.68,
+      "cost_per_piece_raw": 10.684722222222222
+    },
+    {
+      "sequence": 18,
+      "operation_name": "Hard Gear Grinding",
+      "machine_family": "gear_grinding",
+      "cycle_time_sec": 1421.5,
+      "hourly_rate_inr": 600.0,
+      "cost_per_piece_inr": 236.92,
+      "cost_per_piece_raw": 236.91666666666666
+    },
+    {
+      "sequence": 19,
+      "operation_name": "Final Tooth-Edge Deburr and Wash",
+      "machine_family": "finish_bench",
+      "cycle_time_sec": 139.3,
+      "hourly_rate_inr": 200.0,
+      "cost_per_piece_inr": 7.74,
+      "cost_per_piece_raw": 7.73888888888889
+    },
+    {
+      "sequence": 20,
+      "operation_name": "Final Dimensional and Gear Inspection",
+      "machine_family": "inspection",
+      "cycle_time_sec": 2704.4,
+      "hourly_rate_inr": 250.0,
+      "cost_per_piece_inr": 187.81,
+      "cost_per_piece_raw": 187.80555555555554
+    },
+    {
+      "sequence": 21,
+      "operation_name": "Final Technical-Cleanliness Wash and Protection",
+      "machine_family": "finish_bench",
+      "cycle_time_sec": 80.5,
+      "hourly_rate_inr": 200.0,
+      "cost_per_piece_inr": 4.47,
+      "cost_per_piece_raw": 4.472222222222222
+    }
+  ]
+}

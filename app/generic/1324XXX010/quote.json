@@ -1,0 +1,211 @@
+{
+  "drawing_number": "1324XXX010",
+  "part_name": "INPUT SHAFT",
+  "material": "ZF7B",
+  "quantity": 20000,
+  "quote_status": "complete",
+  "weights": {
+    "raw_bar_dia_mm": null,
+    "actual_bar_dia_mm": null,
+    "pcs_per_5m_bar": null,
+    "gross_weight_kg": 7.1,
+    "gross_weight_g": 7100.0,
+    "net_weight_kg": 6.34,
+    "net_weight_g": 6340.0,
+    "scrap_weight_kg": 0.76,
+    "scrap_weight_g": 760.0,
+    "net_weight_source": "derived_from_route"
+  },
+  "pricing_inputs": {
+    "rm_rate_per_kg_inr": 90.0,
+    "overhead_percent": 0.0,
+    "allowance_percent": 10.0,
+    "margin_percent": 0.0
+  },
+  "direct_cost": {
+    "material_cost_inr": 639.0,
+    "machining_cost_inr": 783.82,
+    "heat_treatment_cost_inr": 0.0,
+    "direct_cost_subtotal_inr": 1422.82
+  },
+  "overheads_and_surcharges": {
+    "factory_overhead_margin_inr": 0.0,
+    "tooling_inr": 0.0,
+    "rejection_inr": 142.28,
+    "inspection_inr": 0.0,
+    "cleaning_inr": 0.0,
+    "scrap_recovery_credit_inr": 0.0,
+    "export_packaging_inr": 0.0,
+    "fob_freight_inr": 0.0,
+    "packaging_and_fob_inr": 0.0
+  },
+  "pricing_summary": {
+    "subtotal_before_margin_inr": 1565.10,
+    "overhead_and_margin_inr": 0.0,
+    "final_ex_works_price_inr": 1565.10
+  },
+  "machining_operations": [
+    {
+      "sequence": 2,
+      "operation_name": "Heat Billets for Forging",
+      "machine_family": "hot_forging_press",
+      "cycle_time_sec": 161.6,
+      "hourly_rate_inr": 800.0,
+      "cost_per_piece_inr": 35.91,
+      "cost_per_piece_raw": 35.91111111111111
+    },
+    {
+      "sequence": 3,
+      "operation_name": "Closed-Die Forge Shaft Blank",
+      "machine_family": "hot_forging_press",
+      "cycle_time_sec": 70.0,
+      "hourly_rate_inr": 800.0,
+      "cost_per_piece_inr": 15.56,
+      "cost_per_piece_raw": 15.555555555555555
+    },
+    {
+      "sequence": 4,
+      "operation_name": "Trim Forging Flash",
+      "machine_family": "hot_forging_press",
+      "cycle_time_sec": 53.5,
+      "hourly_rate_inr": 800.0,
+      "cost_per_piece_inr": 11.89,
+      "cost_per_piece_raw": 11.88888888888889
+    },
+    {
+      "sequence": 8,
+      "operation_name": "CNC Turn – Left and Central Shaft",
+      "machine_family": "cnc_lathe",
+      "cycle_time_sec": 853.0,
+      "hourly_rate_inr": 250.0,
+      "cost_per_piece_inr": 59.24,
+      "cost_per_piece_raw": 59.236111111111114
+    },
+    {
+      "sequence": 9,
+      "operation_name": "CNC Turn – Right Head and Internal Profile",
+      "machine_family": "cnc_lathe",
+      "cycle_time_sec": 1255.7,
+      "hourly_rate_inr": 250.0,
+      "cost_per_piece_inr": 87.2,
+      "cost_per_piece_raw": 87.20138888888889
+    },
+    {
+      "sequence": 10,
+      "operation_name": "VMC Drill – Stepped Cross Hole",
+      "machine_family": "vmc_3axis",
+      "cycle_time_sec": 138.3,
+      "hourly_rate_inr": 400.0,
+      "cost_per_piece_inr": 15.37,
+      "cost_per_piece_raw": 15.366666666666669
+    },
+    {
+      "sequence": 11,
+      "operation_name": "Hob Left External Spline",
+      "machine_family": "gear_hobbing",
+      "cycle_time_sec": 101.9,
+      "hourly_rate_inr": 800.0,
+      "cost_per_piece_inr": 22.64,
+      "cost_per_piece_raw": 22.644444444444446
+    },
+    {
+      "sequence": 12,
+      "operation_name": "Hob Right Gear Tooth Zones",
+      "machine_family": "gear_hobbing",
+      "cycle_time_sec": 746.8,
+      "hourly_rate_inr": 800.0,
+      "cost_per_piece_inr": 165.96,
+      "cost_per_piece_raw": 165.95555555555555
+    },
+    {
+      "sequence": 13,
+      "operation_name": "Pre-Heat-Treat Gear Shaving",
+      "machine_family": "gear_shaving",
+      "cycle_time_sec": 247.4,
+      "hourly_rate_inr": 450.0,
+      "cost_per_piece_inr": 30.93,
+      "cost_per_piece_raw": 30.925
+    },
+    {
+      "sequence": 14,
+      "operation_name": "Chamfer Gear and Spline Teeth",
+      "machine_family": "vmc_5axis",
+      "cycle_time_sec": 148.6,
+      "hourly_rate_inr": 400.0,
+      "cost_per_piece_inr": 16.51,
+      "cost_per_piece_raw": 16.511111111111113
+    },
+    {
+      "sequence": 15,
+      "operation_name": "Pre-Heat-Treat Deburr and Clean",
+      "machine_family": "finish_bench",
+      "cycle_time_sec": 576.9,
+      "hourly_rate_inr": 200.0,
+      "cost_per_piece_inr": 32.05,
+      "cost_per_piece_raw": 32.05
+    },
+    {
+      "sequence": 20,
+      "operation_name": "Post-Heat-Treat Clean",
+      "machine_family": "finish_bench",
+      "cycle_time_sec": 200.5,
+      "hourly_rate_inr": 200.0,
+      "cost_per_piece_inr": 11.14,
+      "cost_per_piece_raw": 11.13888888888889
+    },
+    {
+      "sequence": 22,
+      "operation_name": "Lap Grinding Centers",
+      "machine_family": "lapping",
+      "cycle_time_sec": 201.9,
+      "hourly_rate_inr": 300.0,
+      "cost_per_piece_inr": 16.82,
+      "cost_per_piece_raw": 16.825
+    },
+    {
+      "sequence": 23,
+      "operation_name": "Grind Datums and Precision ODs",
+      "machine_family": "od_grinding",
+      "cycle_time_sec": 562.2,
+      "hourly_rate_inr": 600.0,
+      "cost_per_piece_inr": 93.7,
+      "cost_per_piece_raw": 93.7
+    },
+    {
+      "sequence": 24,
+      "operation_name": "Grind Runout-Controlled Right Bores",
+      "machine_family": "id_grinding",
+      "cycle_time_sec": 123.7,
+      "hourly_rate_inr": 450.0,
+      "cost_per_piece_inr": 15.46,
+      "cost_per_piece_raw": 15.4625
+    },
+    {
+      "sequence": 25,
+      "operation_name": "Hard Grind Gear and Spline Teeth",
+      "machine_family": "gear_grinding",
+      "cycle_time_sec": 723.9,
+      "hourly_rate_inr": 600.0,
+      "cost_per_piece_inr": 120.65,
+      "cost_per_piece_raw": 120.65
+    },
+    {
+      "sequence": 26,
+      "operation_name": "Superfinish Bearing Journal",
+      "machine_family": "lapping",
+      "cycle_time_sec": 75.9,
+      "hourly_rate_inr": 300.0,
+      "cost_per_piece_inr": 6.33,
+      "cost_per_piece_raw": 6.325
+    },
+    {
+      "sequence": 27,
+      "operation_name": "Final Deburr, Clean, and Mark",
+      "machine_family": "finish_bench",
+      "cycle_time_sec": 476.5,
+      "hourly_rate_inr": 200.0,
+      "cost_per_piece_inr": 26.47,
+      "cost_per_piece_raw": 26.47222222222222
+    }
+  ]
+}

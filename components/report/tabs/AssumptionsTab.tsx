@@ -27,9 +27,10 @@ export function AssumptionsTab({ data }: { data: ReportData }) {
       <div className="grid grid-cols-1 gap-4">
         {assumptions.map((assumption) => {
           let impactColor = "bg-secondary text-secondary-foreground"
-          if (assumption.impact.toLowerCase() === "high") {
+          const impactLower = assumption.impact?.toLowerCase()
+          if (impactLower === "high") {
             impactColor = "bg-destructive/10 text-destructive border-destructive/20"
-          } else if (assumption.impact.toLowerCase() === "medium") {
+          } else if (impactLower === "medium") {
             impactColor = "bg-amber-500/10 text-amber-600 border-amber-500/20"
           }
 
@@ -41,12 +42,16 @@ export function AssumptionsTab({ data }: { data: ReportData }) {
                   <Badge variant="outline" className="font-mono bg-muted/30 w-full justify-center text-sm py-1">
                     {assumption.assumption_id}
                   </Badge>
-                  <Badge className={`uppercase text-[10px] w-full justify-center tracking-wider border ${impactColor}`}>
-                    {assumption.impact} IMPACT
-                  </Badge>
-                  <div className="text-xs text-muted-foreground text-center w-full font-mono mt-1 hidden md:block">
-                    Confidence: {(assumption.confidence * 100).toFixed(0)}%
-                  </div>
+                  {assumption.impact && (
+                    <Badge className={`uppercase text-[10px] w-full justify-center tracking-wider border ${impactColor}`}>
+                      {assumption.impact} IMPACT
+                    </Badge>
+                  )}
+                  {assumption.confidence != null && (
+                    <div className="text-xs text-muted-foreground text-center w-full font-mono mt-1 hidden md:block">
+                      Confidence: {(assumption.confidence * 100).toFixed(0)}%
+                    </div>
+                  )}
                 </div>
 
                 {/* Right col - Content */}

@@ -1,0 +1,1303 @@
+{
+  "analysis_id": "M01XX953_merge_20260906T110819Z",
+  "quantity": 100000,
+  "t_cycle_per_part_sec": 5960.2,
+  "t_cycle_total_batch_sec": 596020000.0,
+  "t_setup_total_batch_sec": 27600.0,
+  "operations": [
+    {
+      "sequence": 1,
+      "name": "Saw Cut Gear Blanks",
+      "machine_family": "saw",
+      "in_house": true,
+      "setup_time_sec": 900.0,
+      "t_setup_per_piece_sec": 0.0,
+      "t_handling_sec": 24.0,
+      "t_machining_sec": 19.5,
+      "t_op_total_sec": 46.9,
+      "sub_op_results": [
+        {
+          "operation_seq": 1,
+          "sub_op_seq": 1,
+          "operation_type": "saw_cut",
+          "kind": "saw_cut",
+          "rpm": null,
+          "feed_mm_min": null,
+          "t_cut_sec": 19.5,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 19.5,
+          "trace": {
+            "operation_type": "saw_cut",
+            "kind": "saw_cut",
+            "machinability": "medium",
+            "area": 962.113,
+            "cut_rate": 5500,
+            "blade_return": 0.15,
+            "t_cut": 0.32493
+          },
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "sequence": 2,
+      "name": "CNC Turn – First Soft-Machining Setup",
+      "machine_family": "cnc_lathe",
+      "in_house": true,
+      "setup_time_sec": 1500.0,
+      "t_setup_per_piece_sec": 0.0,
+      "t_handling_sec": 24.0,
+      "t_machining_sec": 61.7,
+      "t_op_total_sec": 96.6,
+      "sub_op_results": [
+        {
+          "operation_seq": 2,
+          "sub_op_seq": 1,
+          "operation_type": "face_turn",
+          "kind": "radial_turn",
+          "rpm": null,
+          "feed_mm_min": null,
+          "t_cut_sec": 4.4,
+          "t_tool_sec": 0.2,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 4.6,
+          "trace": {
+            "operation_type": "face_turn",
+            "kind": "radial_turn",
+            "machinability": "medium",
+            "travel": 17.5,
+            "D_avg": 17.5,
+            "Vc": 110,
+            "fn": 0.12,
+            "rpm": 2000.8,
+            "total_stock_mm": 3.6,
+            "max_doc": 5.0,
+            "passes": 1,
+            "groove_count": 1,
+            "t_pure_cut": 0.0728873
+          },
+          "warnings": []
+        },
+        {
+          "operation_seq": 2,
+          "sub_op_seq": 2,
+          "operation_type": "rough_turn_od",
+          "kind": "axial_turn",
+          "rpm": null,
+          "feed_mm_min": null,
+          "t_cut_sec": 3.9,
+          "t_tool_sec": 0.2,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 4.1,
+          "trace": {
+            "operation_type": "rough_turn_od",
+            "kind": "axial_turn",
+            "machinability": "medium",
+            "D_avg": 33.7,
+            "radial_stock": 1.3,
+            "fn": 0.24,
+            "doc": 3.0,
+            "Vc": 135,
+            "rpm": 1275.13,
+            "passes": 1,
+            "t_pure_cut": 0.064536,
+            "indexing_factor": 0.0,
+            "non_cut_factor": 1.0,
+            "aux_time_min": 0.0,
+            "t_cut": 0.064536
+          },
+          "warnings": []
+        },
+        {
+          "operation_seq": 2,
+          "sub_op_seq": 3,
+          "operation_type": "finish_turn_od",
+          "kind": "axial_turn",
+          "rpm": null,
+          "feed_mm_min": null,
+          "t_cut_sec": 3.7,
+          "t_tool_sec": 0.2,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 3.9,
+          "trace": {
+            "operation_type": "finish_turn_od",
+            "kind": "axial_turn",
+            "machinability": "medium",
+            "D_avg": 32.0,
+            "radial_stock": 0.4,
+            "fn": 0.24,
+            "doc": 3.0,
+            "Vc": 135,
+            "rpm": 1342.87,
+            "passes": 1,
+            "t_pure_cut": 0.0612804,
+            "indexing_factor": 0.0,
+            "non_cut_factor": 1.0,
+            "aux_time_min": 0.0,
+            "t_cut": 0.0612804
+          },
+          "warnings": []
+        },
+        {
+          "operation_seq": 2,
+          "sub_op_seq": 4,
+          "operation_type": "center_drill",
+          "kind": "point_drill",
+          "rpm": null,
+          "feed_mm_min": null,
+          "t_cut_sec": 1.1,
+          "t_tool_sec": 0.1,
+          "t_rapid_sec": 0.1,
+          "t_sub_total_sec": 1.2,
+          "trace": {
+            "operation_type": "center_drill",
+            "kind": "point_drill",
+            "machinability": "medium",
+            "Vc": 32,
+            "fn": 0.14,
+            "rpm": 2037.18,
+            "total_depth": 5.0,
+            "peck_retracts": 0,
+            "t_one": 0.0175312,
+            "t_cut": 0.0175312,
+            "feed_mm_min": 285.206
+          },
+          "warnings": []
+        },
+        {
+          "operation_seq": 2,
+          "sub_op_seq": 5,
+          "operation_type": "drill",
+          "kind": "point_drill",
+          "rpm": null,
+          "feed_mm_min": null,
+          "t_cut_sec": 35.6,
+          "t_tool_sec": 2.1,
+          "t_rapid_sec": 1.8,
+          "t_sub_total_sec": 39.6,
+          "trace": {
+            "operation_type": "drill",
+            "kind": "point_drill",
+            "machinability": "medium",
+            "Vc": 32,
+            "fn": 0.14,
+            "rpm": 679.061,
+            "total_depth": 41.25,
+            "peck_retracts": 2,
+            "t_one": 0.593897,
+            "t_cut": 0.593897,
+            "feed_mm_min": 95.0686
+          },
+          "warnings": []
+        },
+        {
+          "operation_seq": 2,
+          "sub_op_seq": 6,
+          "operation_type": "rough_bore_id",
+          "kind": "axial_turn",
+          "rpm": null,
+          "feed_mm_min": null,
+          "t_cut_sec": 3.3,
+          "t_tool_sec": 0.2,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 3.5,
+          "trace": {
+            "operation_type": "rough_bore_id",
+            "kind": "axial_turn",
+            "machinability": "medium",
+            "D_avg": 15.6,
+            "radial_stock": 0.6,
+            "fn": 0.24,
+            "doc": 3.0,
+            "Vc": 135,
+            "rpm": 2754.6,
+            "passes": 1,
+            "t_pure_cut": 0.0552106,
+            "indexing_factor": 0.0,
+            "non_cut_factor": 1.0,
+            "aux_time_min": 0.0,
+            "t_cut": 0.0552106
+          },
+          "warnings": []
+        },
+        {
+          "operation_seq": 2,
+          "sub_op_seq": 7,
+          "operation_type": "semi_finish_bore_id",
+          "kind": "axial_turn",
+          "rpm": null,
+          "feed_mm_min": null,
+          "t_cut_sec": 4.5,
+          "t_tool_sec": 0.2,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 4.8,
+          "trace": {
+            "operation_type": "semi_finish_bore_id",
+            "kind": "axial_turn",
+            "machinability": "medium",
+            "D_avg": 16.4102,
+            "radial_stock": 0.21025,
+            "fn": 0.1,
+            "doc": 0.3,
+            "Vc": 135,
+            "rpm": 2618.6,
+            "passes": 1,
+            "t_pure_cut": 0.0754221,
+            "indexing_factor": 0.0,
+            "non_cut_factor": 1.0,
+            "aux_time_min": 0.0,
+            "t_cut": 0.0754221
+          },
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "sequence": 3,
+      "name": "CNC Turn – Second Soft-Machining Setup",
+      "machine_family": "cnc_lathe",
+      "in_house": true,
+      "setup_time_sec": 1500.0,
+      "t_setup_per_piece_sec": 0.0,
+      "t_handling_sec": 24.0,
+      "t_machining_sec": 16.4,
+      "t_op_total_sec": 43.3,
+      "sub_op_results": [
+        {
+          "operation_seq": 3,
+          "sub_op_seq": 1,
+          "operation_type": "face_turn",
+          "kind": "radial_turn",
+          "rpm": null,
+          "feed_mm_min": null,
+          "t_cut_sec": 3.4,
+          "t_tool_sec": 0.2,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 3.6,
+          "trace": {
+            "operation_type": "face_turn",
+            "kind": "radial_turn",
+            "machinability": "medium",
+            "travel": 9.4,
+            "D_avg": 25.6,
+            "Vc": 110,
+            "fn": 0.12,
+            "rpm": 1367.74,
+            "total_stock_mm": 3.6,
+            "max_doc": 5.0,
+            "passes": 1,
+            "groove_count": 1,
+            "t_pure_cut": 0.0572722
+          },
+          "warnings": []
+        },
+        {
+          "operation_seq": 3,
+          "sub_op_seq": 2,
+          "operation_type": "rough_turn_od",
+          "kind": "axial_turn",
+          "rpm": null,
+          "feed_mm_min": null,
+          "t_cut_sec": 3.9,
+          "t_tool_sec": 0.2,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 4.1,
+          "trace": {
+            "operation_type": "rough_turn_od",
+            "kind": "axial_turn",
+            "machinability": "medium",
+            "D_avg": 33.7,
+            "radial_stock": 1.3,
+            "fn": 0.24,
+            "doc": 3.0,
+            "Vc": 135,
+            "rpm": 1275.13,
+            "passes": 1,
+            "t_pure_cut": 0.064536,
+            "indexing_factor": 0.0,
+            "non_cut_factor": 1.0,
+            "aux_time_min": 0.0,
+            "t_cut": 0.064536
+          },
+          "warnings": []
+        },
+        {
+          "operation_seq": 3,
+          "sub_op_seq": 3,
+          "operation_type": "finish_turn_od",
+          "kind": "axial_turn",
+          "rpm": null,
+          "feed_mm_min": null,
+          "t_cut_sec": 3.7,
+          "t_tool_sec": 0.2,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 3.9,
+          "trace": {
+            "operation_type": "finish_turn_od",
+            "kind": "axial_turn",
+            "machinability": "medium",
+            "D_avg": 32.0,
+            "radial_stock": 0.4,
+            "fn": 0.24,
+            "doc": 3.0,
+            "Vc": 135,
+            "rpm": 1342.87,
+            "passes": 1,
+            "t_pure_cut": 0.0612804,
+            "indexing_factor": 0.0,
+            "non_cut_factor": 1.0,
+            "aux_time_min": 0.0,
+            "t_cut": 0.0612804
+          },
+          "warnings": []
+        },
+        {
+          "operation_seq": 3,
+          "sub_op_seq": 4,
+          "operation_type": "semi_finish_bore_id",
+          "kind": "axial_turn",
+          "rpm": null,
+          "feed_mm_min": null,
+          "t_cut_sec": 4.5,
+          "t_tool_sec": 0.2,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 4.8,
+          "trace": {
+            "operation_type": "semi_finish_bore_id",
+            "kind": "axial_turn",
+            "machinability": "medium",
+            "D_avg": 16.4102,
+            "radial_stock": 0.21025,
+            "fn": 0.1,
+            "doc": 0.3,
+            "Vc": 135,
+            "rpm": 2618.6,
+            "passes": 1,
+            "t_pure_cut": 0.0754221,
+            "indexing_factor": 0.0,
+            "non_cut_factor": 1.0,
+            "aux_time_min": 0.0,
+            "t_cut": 0.0754221
+          },
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "sequence": 4,
+      "name": "Hob Helical Gear Teeth",
+      "machine_family": "gear_hobbing",
+      "in_house": true,
+      "setup_time_sec": 2400.0,
+      "t_setup_per_piece_sec": 0.0,
+      "t_handling_sec": 24.0,
+      "t_machining_sec": 134.7,
+      "t_op_total_sec": 182.5,
+      "sub_op_results": [
+        {
+          "operation_seq": 4,
+          "sub_op_seq": 1,
+          "operation_type": "hob_teeth",
+          "kind": "gear_hob",
+          "rpm": null,
+          "feed_mm_min": null,
+          "t_cut_sec": 125.1,
+          "t_tool_sec": 4.8,
+          "t_rapid_sec": 4.8,
+          "t_sub_total_sec": 134.7,
+          "trace": {
+            "hob_dia_mm": 85.0,
+            "Vc_m_min": 120,
+            "hob_rpm": 449.379,
+            "axial_feed_mm_rev": 1.3,
+            "ext_dia_mm": 29.7328,
+            "whole_depth_mm": 3.7,
+            "approach_mm": 20.9906,
+            "overrun_mm": 3.62559,
+            "travel_mm": 58.1162,
+            "t_hob_cut_min": 1.58568,
+            "aux_time_min": 0.25,
+            "change_time_min": 0.25,
+            "feed_mm_min": 584.192,
+            "t_cut": 2.08568,
+            "t_tool": 0.0792838,
+            "t_rapid": 0.0792838
+          },
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "sequence": 5,
+      "name": "Pre-Heat-Treat Gear Shaving",
+      "machine_family": "gear_shaving",
+      "in_house": true,
+      "setup_time_sec": 2100.0,
+      "t_setup_per_piece_sec": 0.0,
+      "t_handling_sec": 18.0,
+      "t_machining_sec": 82.0,
+      "t_op_total_sec": 114.5,
+      "sub_op_results": [
+        {
+          "operation_seq": 5,
+          "sub_op_seq": 1,
+          "operation_type": "shave_teeth",
+          "kind": "gear_finish",
+          "rpm": null,
+          "feed_mm_min": null,
+          "t_cut_sec": 82.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 82.0,
+          "trace": {
+            "removal_rate": 25.0,
+            "contact_ratio": 1.2,
+            "flank_volume": 34.17,
+            "dressing_interval": 9999,
+            "dressing_sec": 0,
+            "dressing_amortized": 0.0,
+            "t_cut": 1.3668,
+            "t_tool": 0.0,
+            "t_rapid": 0.0
+          },
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "sequence": 6,
+      "name": "Pre-Heat-Treat Tooth Deburr",
+      "machine_family": "finish_bench",
+      "in_house": true,
+      "setup_time_sec": 300.0,
+      "t_setup_per_piece_sec": 0.0,
+      "t_handling_sec": 24.0,
+      "t_machining_sec": 68.0,
+      "t_op_total_sec": 104.0,
+      "sub_op_results": [
+        {
+          "operation_seq": 6,
+          "sub_op_seq": 1,
+          "operation_type": "deburr",
+          "kind": "manual",
+          "rpm": null,
+          "feed_mm_min": null,
+          "t_cut_sec": 68.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 68.0,
+          "trace": {
+            "operation_type": "deburr",
+            "base": 1.13333,
+            "complexity_mult": 1.0,
+            "sec_per_feat": 2.0,
+            "t_cut_sec": 68.0
+          },
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "sequence": 7,
+      "name": "Pre-Heat-Treat Cleaning",
+      "machine_family": "finish_bench",
+      "in_house": true,
+      "setup_time_sec": 300.0,
+      "t_setup_per_piece_sec": 0.0,
+      "t_handling_sec": 24.0,
+      "t_machining_sec": 30.0,
+      "t_op_total_sec": 59.3,
+      "sub_op_results": [
+        {
+          "operation_seq": 7,
+          "sub_op_seq": 1,
+          "operation_type": "clean_degrease",
+          "kind": "manual",
+          "rpm": null,
+          "feed_mm_min": null,
+          "t_cut_sec": 30.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 30.0,
+          "trace": {
+            "operation_type": "clean_degrease",
+            "base": 0.5,
+            "complexity_mult": 1.0,
+            "sec_per_feat": 15.0,
+            "t_cut_sec": 30.0
+          },
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "sequence": 8,
+      "name": "Carburize and Quench",
+      "machine_family": "sealed_quench_furnace",
+      "in_house": true,
+      "setup_time_sec": 900.0,
+      "t_setup_per_piece_sec": 0.0,
+      "t_handling_sec": 24.0,
+      "t_machining_sec": 176.4,
+      "t_op_total_sec": 231.5,
+      "sub_op_results": [
+        {
+          "operation_seq": 8,
+          "sub_op_seq": 1,
+          "operation_type": "load_unload",
+          "kind": "manual",
+          "rpm": null,
+          "feed_mm_min": null,
+          "t_cut_sec": 6.3,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 6.3,
+          "trace": {
+            "operation_type": "load_unload",
+            "base": 0.15,
+            "complexity_mult": 0.7,
+            "sec_per_feat": 12.0,
+            "t_cut_sec": 6.3
+          },
+          "warnings": []
+        },
+        {
+          "operation_seq": 8,
+          "sub_op_seq": 2,
+          "operation_type": "carburize",
+          "kind": "furnace_cycle",
+          "rpm": null,
+          "feed_mm_min": null,
+          "t_cut_sec": 101.3,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 101.3,
+          "trace": {
+            "ramp_min": 45,
+            "soak_min": 3.84615,
+            "cycle_min": 138.846,
+            "eff_batch": 100
+          },
+          "warnings": []
+        },
+        {
+          "operation_seq": 8,
+          "sub_op_seq": 3,
+          "operation_type": "austenitize_quench",
+          "kind": "furnace_cycle",
+          "rpm": null,
+          "feed_mm_min": null,
+          "t_cut_sec": 68.8,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 68.8,
+          "trace": {
+            "ramp_min": 20,
+            "soak_min": 14.66,
+            "cycle_min": 84.66,
+            "eff_batch": 100
+          },
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "sequence": 9,
+      "name": "Temper Hardened Gears",
+      "machine_family": "sealed_quench_furnace",
+      "in_house": true,
+      "setup_time_sec": 900.0,
+      "t_setup_per_piece_sec": 0.0,
+      "t_handling_sec": 24.0,
+      "t_machining_sec": 57.9,
+      "t_op_total_sec": 92.1,
+      "sub_op_results": [
+        {
+          "operation_seq": 9,
+          "sub_op_seq": 1,
+          "operation_type": "load_unload",
+          "kind": "manual",
+          "rpm": null,
+          "feed_mm_min": null,
+          "t_cut_sec": 6.3,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 6.3,
+          "trace": {
+            "operation_type": "load_unload",
+            "base": 0.15,
+            "complexity_mult": 0.7,
+            "sec_per_feat": 12.0,
+            "t_cut_sec": 6.3
+          },
+          "warnings": []
+        },
+        {
+          "operation_seq": 9,
+          "sub_op_seq": 2,
+          "operation_type": "temper",
+          "kind": "furnace_cycle",
+          "rpm": null,
+          "feed_mm_min": null,
+          "t_cut_sec": 51.6,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 51.6,
+          "trace": {
+            "ramp_min": 15,
+            "soak_min": 10.995,
+            "cycle_min": 55.995,
+            "eff_batch": 100
+          },
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "sequence": 10,
+      "name": "Post-Heat-Treat Cleaning",
+      "machine_family": "finish_bench",
+      "in_house": true,
+      "setup_time_sec": 300.0,
+      "t_setup_per_piece_sec": 0.0,
+      "t_handling_sec": 24.0,
+      "t_machining_sec": 36.0,
+      "t_op_total_sec": 66.4,
+      "sub_op_results": [
+        {
+          "operation_seq": 10,
+          "sub_op_seq": 1,
+          "operation_type": "clean_degrease",
+          "kind": "manual",
+          "rpm": null,
+          "feed_mm_min": null,
+          "t_cut_sec": 36.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 36.0,
+          "trace": {
+            "operation_type": "clean_degrease",
+            "base": 0.6,
+            "complexity_mult": 1.0,
+            "sec_per_feat": 15.0,
+            "t_cut_sec": 36.0
+          },
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "sequence": 11,
+      "name": "Heat-Treat Verification",
+      "machine_family": "inspection",
+      "in_house": true,
+      "setup_time_sec": 1200.0,
+      "t_setup_per_piece_sec": 0.0,
+      "t_handling_sec": 15.0,
+      "t_machining_sec": 1.3,
+      "t_op_total_sec": 16.5,
+      "sub_op_results": [
+        {
+          "operation_seq": 11,
+          "sub_op_seq": 1,
+          "operation_type": "hardness_test",
+          "kind": "inspection",
+          "rpm": null,
+          "feed_mm_min": null,
+          "t_cut_sec": 1.2,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 1.2,
+          "trace": {
+            "t_full": 2.0,
+            "t_cut": 0.02
+          },
+          "warnings": []
+        },
+        {
+          "operation_seq": 11,
+          "sub_op_seq": 2,
+          "operation_type": "manual_inspect",
+          "kind": "inspection",
+          "rpm": null,
+          "feed_mm_min": null,
+          "t_cut_sec": 0.1,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 0.1,
+          "trace": {
+            "t_full": 0.25,
+            "t_cut": 0.0025
+          },
+          "warnings": [
+            "inspection: unrecognised operation_type 'manual_inspect' — using manual inspection defaults"
+          ]
+        }
+      ]
+    },
+    {
+      "sequence": 12,
+      "name": "Face Grind – Left Datum Face",
+      "machine_family": "cylindrical_grinder",
+      "in_house": true,
+      "setup_time_sec": 1500.0,
+      "t_setup_per_piece_sec": 0.0,
+      "t_handling_sec": 24.0,
+      "t_machining_sec": 74.6,
+      "t_op_total_sec": 111.8,
+      "sub_op_results": [
+        {
+          "operation_seq": 12,
+          "sub_op_seq": 1,
+          "operation_type": "face_grind",
+          "kind": "surface_grind",
+          "rpm": null,
+          "feed_mm_min": null,
+          "t_cut_sec": 66.0,
+          "t_tool_sec": 5.3,
+          "t_rapid_sec": 3.3,
+          "t_sub_total_sec": 74.6,
+          "trace": {
+            "table_speed": 7000,
+            "down_feed": 0.008,
+            "cross_feed": 5.0,
+            "d_passes": 19,
+            "x_passes": 7,
+            "spark_out": 0.5,
+            "t_cut": 1.1004,
+            "t_tool": 0.088032,
+            "t_rapid": 0.05502
+          },
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "sequence": 13,
+      "name": "Face Grind – Right Face and Width",
+      "machine_family": "cylindrical_grinder",
+      "in_house": true,
+      "setup_time_sec": 1500.0,
+      "t_setup_per_piece_sec": 0.0,
+      "t_handling_sec": 24.0,
+      "t_machining_sec": 74.6,
+      "t_op_total_sec": 111.8,
+      "sub_op_results": [
+        {
+          "operation_seq": 13,
+          "sub_op_seq": 1,
+          "operation_type": "face_grind",
+          "kind": "surface_grind",
+          "rpm": null,
+          "feed_mm_min": null,
+          "t_cut_sec": 66.0,
+          "t_tool_sec": 5.3,
+          "t_rapid_sec": 3.3,
+          "t_sub_total_sec": 74.6,
+          "trace": {
+            "table_speed": 7000,
+            "down_feed": 0.008,
+            "cross_feed": 5.0,
+            "d_passes": 19,
+            "x_passes": 7,
+            "spark_out": 0.5,
+            "t_cut": 1.1004,
+            "t_tool": 0.088032,
+            "t_rapid": 0.05502
+          },
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "sequence": 14,
+      "name": "ID Grind Datum Bore",
+      "machine_family": "id_grinding",
+      "in_house": true,
+      "setup_time_sec": 1800.0,
+      "t_setup_per_piece_sec": 0.0,
+      "t_handling_sec": 27.0,
+      "t_machining_sec": 95.5,
+      "t_op_total_sec": 139.4,
+      "sub_op_results": [
+        {
+          "operation_seq": 14,
+          "sub_op_seq": 1,
+          "operation_type": "id_grind",
+          "kind": "cylindrical_grind",
+          "rpm": null,
+          "feed_mm_min": null,
+          "t_cut_sec": 83.1,
+          "t_tool_sec": 8.3,
+          "t_rapid_sec": 4.2,
+          "t_sub_total_sec": 95.5,
+          "trace": {
+            "work_speed": 20.0,
+            "work_rpm": 376.242,
+            "finish_stock": 0.015,
+            "infeed_rough": 0.35,
+            "infeed_finish": 0.05,
+            "t_rough": 0.385714,
+            "t_finish": 0.3,
+            "t_spark": 0.0132893,
+            "traverses": 2,
+            "t_cut": 1.38472,
+            "t_tool": 0.138472,
+            "t_rapid": 0.0692359
+          },
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "sequence": 15,
+      "name": "Hard Turn – First Face Details",
+      "machine_family": "cnc_lathe",
+      "in_house": true,
+      "setup_time_sec": 1500.0,
+      "t_setup_per_piece_sec": 0.0,
+      "t_handling_sec": 24.0,
+      "t_machining_sec": 17.0,
+      "t_op_total_sec": 44.0,
+      "sub_op_results": [
+        {
+          "operation_seq": 15,
+          "sub_op_seq": 1,
+          "operation_type": "bore_taper",
+          "kind": "axial_turn",
+          "rpm": null,
+          "feed_mm_min": null,
+          "t_cut_sec": 8.7,
+          "t_tool_sec": 0.4,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 9.1,
+          "trace": {
+            "operation_type": "bore_taper",
+            "kind": "axial_turn",
+            "machinability": "hardened",
+            "D_avg": 17.045,
+            "radial_stock": 0.4245,
+            "fn": 0.1,
+            "doc": 0.2,
+            "Vc": 50,
+            "rpm": 933.734,
+            "passes": 3,
+            "t_pure_cut": 0.144581,
+            "indexing_factor": 0.0,
+            "non_cut_factor": 1.0,
+            "aux_time_min": 0.0,
+            "t_cut": 0.144581
+          },
+          "warnings": []
+        },
+        {
+          "operation_seq": 15,
+          "sub_op_seq": 2,
+          "operation_type": "chamfer_turn",
+          "kind": "axial_turn",
+          "rpm": null,
+          "feed_mm_min": null,
+          "t_cut_sec": 2.3,
+          "t_tool_sec": 0.1,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 2.4,
+          "trace": {
+            "operation_type": "chamfer_turn",
+            "kind": "axial_turn",
+            "machinability": "hardened",
+            "D_avg": 17.6515,
+            "radial_stock": 0.182,
+            "fn": 0.1,
+            "doc": 0.2,
+            "Vc": 50,
+            "rpm": 901.651,
+            "passes": 1,
+            "t_pure_cut": 0.0388177,
+            "indexing_factor": 0.0,
+            "non_cut_factor": 1.0,
+            "aux_time_min": 0.0,
+            "t_cut": 0.0388177
+          },
+          "warnings": []
+        },
+        {
+          "operation_seq": 15,
+          "sub_op_seq": 3,
+          "operation_type": "form_turn",
+          "kind": "axial_turn",
+          "rpm": null,
+          "feed_mm_min": null,
+          "t_cut_sec": 5.2,
+          "t_tool_sec": 0.3,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 5.5,
+          "trace": {
+            "operation_type": "form_turn",
+            "kind": "axial_turn",
+            "machinability": "hardened",
+            "D_avg": 29.3,
+            "radial_stock": 0.2,
+            "fn": 0.1,
+            "doc": 0.2,
+            "Vc": 50,
+            "rpm": 543.191,
+            "passes": 1,
+            "t_pure_cut": 0.0874462,
+            "indexing_factor": 0.0,
+            "non_cut_factor": 1.0,
+            "aux_time_min": 0.0,
+            "t_cut": 0.0874462
+          },
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "sequence": 16,
+      "name": "Hard Turn – Second Face Details",
+      "machine_family": "cnc_lathe",
+      "in_house": true,
+      "setup_time_sec": 1500.0,
+      "t_setup_per_piece_sec": 0.0,
+      "t_handling_sec": 24.0,
+      "t_machining_sec": 17.0,
+      "t_op_total_sec": 44.0,
+      "sub_op_results": [
+        {
+          "operation_seq": 16,
+          "sub_op_seq": 1,
+          "operation_type": "bore_taper",
+          "kind": "axial_turn",
+          "rpm": null,
+          "feed_mm_min": null,
+          "t_cut_sec": 8.7,
+          "t_tool_sec": 0.4,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 9.1,
+          "trace": {
+            "operation_type": "bore_taper",
+            "kind": "axial_turn",
+            "machinability": "hardened",
+            "D_avg": 17.045,
+            "radial_stock": 0.4245,
+            "fn": 0.1,
+            "doc": 0.2,
+            "Vc": 50,
+            "rpm": 933.734,
+            "passes": 3,
+            "t_pure_cut": 0.144581,
+            "indexing_factor": 0.0,
+            "non_cut_factor": 1.0,
+            "aux_time_min": 0.0,
+            "t_cut": 0.144581
+          },
+          "warnings": []
+        },
+        {
+          "operation_seq": 16,
+          "sub_op_seq": 2,
+          "operation_type": "chamfer_turn",
+          "kind": "axial_turn",
+          "rpm": null,
+          "feed_mm_min": null,
+          "t_cut_sec": 2.3,
+          "t_tool_sec": 0.1,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 2.4,
+          "trace": {
+            "operation_type": "chamfer_turn",
+            "kind": "axial_turn",
+            "machinability": "hardened",
+            "D_avg": 17.6515,
+            "radial_stock": 0.182,
+            "fn": 0.1,
+            "doc": 0.2,
+            "Vc": 50,
+            "rpm": 901.651,
+            "passes": 1,
+            "t_pure_cut": 0.0388177,
+            "indexing_factor": 0.0,
+            "non_cut_factor": 1.0,
+            "aux_time_min": 0.0,
+            "t_cut": 0.0388177
+          },
+          "warnings": []
+        },
+        {
+          "operation_seq": 16,
+          "sub_op_seq": 3,
+          "operation_type": "form_turn",
+          "kind": "axial_turn",
+          "rpm": null,
+          "feed_mm_min": null,
+          "t_cut_sec": 5.2,
+          "t_tool_sec": 0.3,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 5.5,
+          "trace": {
+            "operation_type": "form_turn",
+            "kind": "axial_turn",
+            "machinability": "hardened",
+            "D_avg": 29.3,
+            "radial_stock": 0.2,
+            "fn": 0.1,
+            "doc": 0.2,
+            "Vc": 50,
+            "rpm": 543.191,
+            "passes": 1,
+            "t_pure_cut": 0.0874462,
+            "indexing_factor": 0.0,
+            "non_cut_factor": 1.0,
+            "aux_time_min": 0.0,
+            "t_cut": 0.0874462
+          },
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "sequence": 17,
+      "name": "Final Bore Honing",
+      "machine_family": "bore_honing",
+      "in_house": true,
+      "setup_time_sec": 1800.0,
+      "t_setup_per_piece_sec": 0.0,
+      "t_handling_sec": 21.0,
+      "t_machining_sec": 75.6,
+      "t_op_total_sec": 109.9,
+      "sub_op_results": [
+        {
+          "operation_seq": 17,
+          "sub_op_seq": 1,
+          "operation_type": "bore_hone",
+          "kind": "hone",
+          "rpm": null,
+          "feed_mm_min": null,
+          "t_cut_sec": 72.0,
+          "t_tool_sec": 3.6,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 75.6,
+          "trace": {
+            "removal_rate": 0.02,
+            "dwell": 0.2,
+            "t_cut": 1.2,
+            "t_tool": 0.06,
+            "t_rapid": 0.0
+          },
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "sequence": 18,
+      "name": "Hard Gear Grinding",
+      "machine_family": "gear_grinding",
+      "in_house": true,
+      "setup_time_sec": 2700.0,
+      "t_setup_per_piece_sec": 0.0,
+      "t_handling_sec": 30.0,
+      "t_machining_sec": 1182.8,
+      "t_op_total_sec": 1421.5,
+      "sub_op_results": [
+        {
+          "operation_seq": 18,
+          "sub_op_seq": 1,
+          "operation_type": "grind_teeth",
+          "kind": "gear_finish",
+          "rpm": null,
+          "feed_mm_min": null,
+          "t_cut_sec": 1182.8,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 1182.8,
+          "trace": {
+            "removal_rate": 3.5,
+            "contact_ratio": 1.2,
+            "flank_volume": 68.34,
+            "dressing_interval": 8,
+            "dressing_sec": 90,
+            "dressing_amortized": 0.1875,
+            "t_cut": 19.7132,
+            "t_tool": 0.0,
+            "t_rapid": 0.0
+          },
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "sequence": 19,
+      "name": "Final Tooth-Edge Deburr and Wash",
+      "machine_family": "finish_bench",
+      "in_house": true,
+      "setup_time_sec": 300.0,
+      "t_setup_per_piece_sec": 0.0,
+      "t_handling_sec": 24.0,
+      "t_machining_sec": 98.0,
+      "t_op_total_sec": 139.3,
+      "sub_op_results": [
+        {
+          "operation_seq": 19,
+          "sub_op_seq": 1,
+          "operation_type": "deburr",
+          "kind": "manual",
+          "rpm": null,
+          "feed_mm_min": null,
+          "t_cut_sec": 68.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 68.0,
+          "trace": {
+            "operation_type": "deburr",
+            "base": 1.13333,
+            "complexity_mult": 1.0,
+            "sec_per_feat": 2.0,
+            "t_cut_sec": 68.0
+          },
+          "warnings": []
+        },
+        {
+          "operation_seq": 19,
+          "sub_op_seq": 2,
+          "operation_type": "clean_degrease",
+          "kind": "manual",
+          "rpm": null,
+          "feed_mm_min": null,
+          "t_cut_sec": 30.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 30.0,
+          "trace": {
+            "operation_type": "clean_degrease",
+            "base": 0.5,
+            "complexity_mult": 1.0,
+            "sec_per_feat": 15.0,
+            "t_cut_sec": 30.0
+          },
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "sequence": 20,
+      "name": "Final Dimensional and Gear Inspection",
+      "machine_family": "inspection",
+      "in_house": true,
+      "setup_time_sec": 2400.0,
+      "t_setup_per_piece_sec": 0.0,
+      "t_handling_sec": 15.0,
+      "t_machining_sec": 2286.0,
+      "t_op_total_sec": 2704.4,
+      "sub_op_results": [
+        {
+          "operation_seq": 20,
+          "sub_op_seq": 1,
+          "operation_type": "cmm_inspect",
+          "kind": "inspection",
+          "rpm": null,
+          "feed_mm_min": null,
+          "t_cut_sec": 993.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 993.0,
+          "trace": {
+            "t_full": 16.55,
+            "t_cut": 16.55
+          },
+          "warnings": []
+        },
+        {
+          "operation_seq": 20,
+          "sub_op_seq": 2,
+          "operation_type": "gear_check",
+          "kind": "inspection",
+          "rpm": null,
+          "feed_mm_min": null,
+          "t_cut_sec": 1261.8,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 1261.8,
+          "trace": {
+            "t_full": 21.03,
+            "t_cut": 21.03
+          },
+          "warnings": []
+        },
+        {
+          "operation_seq": 20,
+          "sub_op_seq": 3,
+          "operation_type": "hardness_test",
+          "kind": "inspection",
+          "rpm": null,
+          "feed_mm_min": null,
+          "t_cut_sec": 1.2,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 1.2,
+          "trace": {
+            "t_full": 2.0,
+            "t_cut": 0.02
+          },
+          "warnings": []
+        },
+        {
+          "operation_seq": 20,
+          "sub_op_seq": 4,
+          "operation_type": "manual_inspect",
+          "kind": "inspection",
+          "rpm": null,
+          "feed_mm_min": null,
+          "t_cut_sec": 30.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 30.0,
+          "trace": {
+            "t_full": 0.5,
+            "t_cut": 0.5
+          },
+          "warnings": [
+            "inspection: unrecognised operation_type 'manual_inspect' — using manual inspection defaults"
+          ]
+        }
+      ]
+    },
+    {
+      "sequence": 21,
+      "name": "Final Technical-Cleanliness Wash and Protection",
+      "machine_family": "finish_bench",
+      "in_house": true,
+      "setup_time_sec": 300.0,
+      "t_setup_per_piece_sec": 0.0,
+      "t_handling_sec": 24.0,
+      "t_machining_sec": 48.0,
+      "t_op_total_sec": 80.5,
+      "sub_op_results": [
+        {
+          "operation_seq": 21,
+          "sub_op_seq": 1,
+          "operation_type": "clean_degrease",
+          "kind": "manual",
+          "rpm": null,
+          "feed_mm_min": null,
+          "t_cut_sec": 48.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 48.0,
+          "trace": {
+            "operation_type": "clean_degrease",
+            "base": 0.8,
+            "complexity_mult": 1.0,
+            "sec_per_feat": 15.0,
+            "t_cut_sec": 48.0
+          },
+          "warnings": []
+        }
+      ]
+    }
+  ],
+  "warnings": [
+    "inspection: unrecognised operation_type 'manual_inspect' — using manual inspection defaults",
+    "inspection: unrecognised operation_type 'manual_inspect' — using manual inspection defaults"
+  ]
+}

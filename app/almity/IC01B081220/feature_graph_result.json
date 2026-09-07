@@ -1,0 +1,334 @@
+{
+  "analysis_id": "IC01B081220_merge_20260903T102248Z",
+  "part": {
+    "name": "INNER COMPONENT",
+    "drawing_number": "IC01B081220",
+    "revision": "E4",
+    "material": "SAE J403 GRADE 1010-1020 CD STEEL",
+    "units": "mm"
+  },
+  "feature_graph": {
+    "part_envelope": {
+      "length_mm": 108.4,
+      "max_diameter_mm": 45.98
+    },
+    "coordinate_system": {
+      "primary_axis": "X",
+      "orientation_notes": "The primary part axis is taken as X based on the section A-A axis_direction values and the concentric cylindrical features in the left view. Radial directions are perpendicular to X. Detail X is treated as a local enlarged axial/radial view despite its coordinate note using Z for the local horizontal axis."
+    },
+    "features": [
+      {
+        "feature_id": "F01",
+        "feature_type": "chamfer",
+        "name": "End taper 40\u00b0",
+        "description": "Angled face forming a taper or chamfer at the end of the component.",
+        "geometry": {
+          "angle_deg": 40.0
+        },
+        "instance_count": 2,
+        "access_directions": [
+          "+Z",
+          "-Z"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "detail_x"
+        ]
+      },
+      {
+        "feature_id": "F02",
+        "feature_type": "radius",
+        "name": "Outer blend radius R6.50",
+        "description": "Convex radius blending the angled end face to the outer diameter surface.",
+        "geometry": {
+          "radius_mm": 6.5
+        },
+        "instance_count": 2,
+        "access_directions": [
+          "+Z",
+          "-Z"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "detail_x"
+        ]
+      },
+      {
+        "feature_id": "F03",
+        "feature_type": "fillet",
+        "name": "Inner blend fillet R2.00",
+        "description": "Concave fillet blending the angled end face to the internal bore surface.",
+        "geometry": {
+          "radius_mm": 2.0
+        },
+        "instance_count": 2,
+        "access_directions": [
+          "+Z",
+          "-Z"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "detail_x"
+        ]
+      },
+      {
+        "feature_id": "F04",
+        "feature_type": "internal_bore",
+        "name": "Central bore",
+        "description": "Inner central bore with a limit tolerance and a minimum length specified.",
+        "geometry": {
+          "diameter_mm": 20.3,
+          "hole_count": 2,
+          "axis_direction": "+X"
+        },
+        "instance_count": 2,
+        "access_directions": [
+          "+X"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 20.3,
+            "upper_limit_mm": 20.45,
+            "lower_limit_mm": 20.15,
+            "qualifier": "2X, FOR A MINIMUM LENGTH OF 14mm"
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "left_view"
+        ]
+      },
+      {
+        "feature_id": "F05",
+        "feature_type": "external_cylinder",
+        "name": "Outer cylinder",
+        "description": "Main outer cylindrical body with a limit tolerance.",
+        "geometry": {
+          "diameter_mm": 34.0,
+          "axis_direction": "+X"
+        },
+        "instance_count": 2,
+        "access_directions": [
+          "radial",
+          "+X"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 34.0,
+            "upper_limit_mm": 34.13,
+            "lower_limit_mm": 33.87,
+            "qualifier": "2X"
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "left_view"
+        ]
+      },
+      {
+        "feature_id": "F06",
+        "feature_type": "part_body",
+        "name": "Overall Part",
+        "description": "The overall body of the tubular part, showing total length.",
+        "geometry": {
+          "length_mm": 108.0,
+          "axis_direction": "+X"
+        },
+        "access_directions": [
+          "+X",
+          "-X"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "length",
+            "nominal_mm": 108.0,
+            "upper_limit_mm": 108.4,
+            "lower_limit_mm": 107.6
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "section_a_a"
+        ]
+      },
+      {
+        "feature_id": "F07",
+        "feature_type": "external_cylinder",
+        "name": "Central Outer Straight Section",
+        "description": "The main outer cylindrical surface with a specified surface finish.",
+        "geometry": {
+          "diameter_mm": 45.925,
+          "length_mm": 73.5,
+          "axis_direction": "+X"
+        },
+        "surface_finish": {
+          "ra_value": 1.2,
+          "finish_symbol": "1.2"
+        },
+        "access_directions": [
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 45.925,
+            "upper_limit_mm": 45.98,
+            "lower_limit_mm": 45.87
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [
+          {
+            "qualifier": "FLAT",
+            "dimension_type": "length",
+            "nominal_mm": 73.5
+          }
+        ],
+        "source_views": [
+          "section_a_a"
+        ]
+      },
+      {
+        "feature_id": "F08",
+        "feature_type": "internal_bore",
+        "name": "Central Internal Cavity",
+        "description": "The maximum diameter straight bore section at the center of the part's internal profile.",
+        "geometry": {
+          "diameter_mm": 28.94,
+          "axis_direction": "+X"
+        },
+        "access_directions": [
+          "+X",
+          "-X"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 28.94,
+            "upper_limit_mm": 28.94,
+            "qualifier": "MAX"
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "section_a_a"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "relationship_id": "R01",
+        "from_feature_id": "F04",
+        "to_feature_id": "F05",
+        "relationship_type": "coaxial",
+        "detail": "The end view shows the central bore and outer cylinder as concentric cylindrical features sharing the same axis direction."
+      },
+      {
+        "relationship_id": "R02",
+        "from_feature_id": "F08",
+        "to_feature_id": "F07",
+        "relationship_type": "coaxial",
+        "detail": "The section view describes both the central internal cavity and central outer straight section on the same part axis."
+      },
+      {
+        "relationship_id": "R03",
+        "from_feature_id": "F04",
+        "to_feature_id": "F08",
+        "relationship_type": "coaxial",
+        "detail": "Both internal cylindrical zones are described as central bores/cavities along the primary part axis, but they are not grouped because their diameters describe different axial zones."
+      },
+      {
+        "relationship_id": "R04",
+        "from_feature_id": "F05",
+        "to_feature_id": "F07",
+        "relationship_type": "coaxial",
+        "detail": "Both external cylindrical zones are along the primary part axis, but they are not grouped because their diameters describe different axial zones."
+      },
+      {
+        "relationship_id": "R05",
+        "from_feature_id": "F02",
+        "to_feature_id": "F01",
+        "relationship_type": "intersecting",
+        "detail": "The outer blend radius is described as blending into the angled 40 degree end taper."
+      },
+      {
+        "relationship_id": "R06",
+        "from_feature_id": "F02",
+        "to_feature_id": "F07",
+        "relationship_type": "intersecting",
+        "detail": "Detail X is called out at the transition from the central straight outer cylinder; the R6.50 outer blend ties the detail profile to that outer diameter surface."
+      },
+      {
+        "relationship_id": "R07",
+        "from_feature_id": "F03",
+        "to_feature_id": "F01",
+        "relationship_type": "intersecting",
+        "detail": "The inner blend fillet is described as blending into the angled 40 degree end taper."
+      },
+      {
+        "relationship_id": "R08",
+        "from_feature_id": "F03",
+        "to_feature_id": "F04",
+        "relationship_type": "intersecting",
+        "detail": "The inner blend fillet is described as blending to the internal bore surface at the end profile."
+      }
+    ],
+    "datum_scheme": {
+      "datums": [],
+      "datum_hierarchy_notes": "No datum definitions or GD&T datum references were extracted. The A labels present in the drawing data are treated as section-cut designators, not datum feature symbols."
+    },
+    "part_notes": "Material: SAE J403 GRADE 1010-1020 CD STEEL. Material standard: SAE J403. Scale: 1:1. General tolerance: ASME Y14.5M-1994. Projection: third angle. Heat treatment: none specified. Coating: CORROSION RESISTANT COAT PER SEE TAB. General notes: FINISH: CORROSION RESISTANT COAT PER SEE TAB. DEBURR: BREAK ALL SHARP EDGES 0.5 MAX.. Testing: CRUSH TEST per PS-122.5 (220kN, 110kN, 0.54mm).",
+    "overall_complexity": "moderate"
+  },
+  "component_specs": [],
+  "component_spec_links": [],
+  "assumptions": [
+    {
+      "assumption_id": "A01",
+      "text": "No identity groups were created between left_view:F1 and section_a_a:F3 because their diameters describe different internal axial zones, even though section cut A-A passes through the central bore."
+    },
+    {
+      "assumption_id": "A02",
+      "text": "No identity group was created between left_view:F2 and section_a_a:F2 because their diameters describe different external axial zones, even though both are coaxial and section cut A-A passes through the part center."
+    },
+    {
+      "assumption_id": "A03",
+      "text": "The X detail callout attached near section_a_a:F2 was interpreted as locating the adjacent end-transition detail, not as making the Detail X radius/chamfer features duplicates of the central straight outer cylinder."
+    },
+    {
+      "assumption_id": "A04",
+      "text": "Unattached callout UC1 was dropped because it is explicitly marked REF and appears to be a reference end-length value rather than a controlling feature dimension."
+    },
+    {
+      "assumption_id": "A05",
+      "text": "The primary coordinate axis was chosen as X from the main section and feature axis_direction data; the Detail X note using Z for its local horizontal axis was treated as a local-view convention only."
+    },
+    {
+      "assumption_id": "A06",
+      "clarification_id": "C01",
+      "text": "The 7.05 mm [.278 in] callout defines the axial length or step depth of the shoulder feature."
+    },
+    {
+      "assumption_id": "A07",
+      "clarification_id": "C02",
+      "text": "The \u00d828.94 MAX central internal cavity extends axially across the central enlarged bore section, bounded on both ends by internal tapered transition steps."
+    },
+    {
+      "assumption_id": "A08",
+      "clarification_id": "C03",
+      "text": "The internal transition profile between the central cavity (\u00d828.94 MAX) and the end bores is defined as a smooth, curved contour extending symmetrically from the inner end of the 14mm minimum straight end bore to the central diameter."
+    }
+  ]
+}

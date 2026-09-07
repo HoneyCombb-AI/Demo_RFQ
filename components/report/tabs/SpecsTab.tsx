@@ -18,14 +18,22 @@ import { ComponentSpecTable } from "./ComponentSpecTable"
 import { Search, List, LayoutGrid, AlertCircle } from "lucide-react"
 
 function ExtractedSpecsView({ specs, searchTerm }: { specs: SpecItem[]; searchTerm: string }) {
-  const filtered = specs.filter((s) => {
+  const specsWithIndex = React.useMemo(() => {
+    return specs.map((s, idx) => ({
+      ...s,
+      displayIndex: idx + 1,
+    }))
+  }, [specs])
+
+  const filtered = specsWithIndex.filter((s) => {
     const term = searchTerm.toLowerCase()
     return (
       s.spec_id.toLowerCase().includes(term) ||
       s.feature_name.toLowerCase().includes(term) ||
       s.description.toLowerCase().includes(term) ||
       s.nominal_value.toLowerCase().includes(term) ||
-      (s.tolerance_or_class?.toLowerCase().includes(term) ?? false)
+      (s.tolerance_or_class?.toLowerCase().includes(term) ?? false) ||
+      s.displayIndex.toString().includes(term)
     )
   })
 
@@ -80,7 +88,7 @@ function ExtractedSpecsView({ specs, searchTerm }: { specs: SpecItem[]; searchTe
                 className="hover:bg-muted/30"
               >
                 <TableCell className="font-mono font-bold text-sm text-red-600">
-                  {spec.spec_id}
+                  {spec.displayIndex}
                 </TableCell>
                 <TableCell className="font-medium text-sm">{characteristic}</TableCell>
                 <TableCell className="font-mono text-sm font-semibold">{nominalDisplay}</TableCell>
@@ -197,7 +205,20 @@ export function SpecsTab({ data }: { data: ReportData }) {
 
         {/* Content */}
         {activeSubTab === "specs" ? (
-          <ExtractedSpecsView specs={data.specList} searchTerm={searchTerm} />
+          <div className="space-y-8">
+            <ExtractedSpecsView specs={data.specList} searchTerm={searchTerm} />
+
+            {/* Component Specification Table (Drawing Table Extracted Parameters from feature_graph_result.json) */}
+            {(data.componentSpecs && data.componentSpecs.length > 0) ? (
+              <div className="pt-2">
+                <ComponentSpecTable spec={data.componentSpecs} />
+              </div>
+            ) : data.componentSpec ? (
+              <div className="pt-2">
+                <ComponentSpecTable spec={data.componentSpec} />
+              </div>
+            ) : null}
+          </div>
         ) : (
           <div className="space-y-6">
             {filteredFeatures.length === 0 ? (
@@ -216,16 +237,6 @@ export function SpecsTab({ data }: { data: ReportData }) {
           </div>
         )}
       </section>
-
-      {/* Component Specification Table (Drawing Table Extracted Parameters) */}
-      {data.componentSpec && (
-        <>
-          <Separator />
-          <section>
-            <ComponentSpecTable spec={data.componentSpec} />
-          </section>
-        </>
-      )}
     </div>
   )
 }

@@ -1,0 +1,329 @@
+{
+  "analysis_id": "C.14.096-00c_Schiebeblock_merge_20260903T082751Z",
+  "part": {
+    "name": "Schiebeblock",
+    "drawing_number": "C.14.096-00",
+    "units": "mm"
+  },
+  "feature_graph": {
+    "part_envelope": {
+      "length_mm": 22.7
+    },
+    "coordinate_system": {
+      "primary_axis": "Z",
+      "orientation_notes": "Z is the component axis: into the page in the front view and horizontal in section A-A. Section A-A is viewed along the X direction, with Y vertical in the section view.",
+      "datum_origin": "Datum A central axis"
+    },
+    "features": [
+      {
+        "feature_id": "F01",
+        "feature_type": "part_body",
+        "name": "Overall width",
+        "description": "The total axial width of the component from the leftmost face to the rightmost face.",
+        "geometry": {
+          "length_mm": 22.7,
+          "axis_direction": "+Z"
+        },
+        "access_directions": [
+          "+Z",
+          "-Z"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "front_view",
+          "section_aa"
+        ]
+      },
+      {
+        "feature_id": "F02",
+        "feature_type": "internal_bore",
+        "name": "Central bore",
+        "description": "Central through bore with a concave curved internal profile. Defines datum axis A.",
+        "geometry": {
+          "depth_condition": "THRU",
+          "axis_direction": "+Z"
+        },
+        "access_directions": [
+          "+Z",
+          "-Z"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "section_aa"
+        ]
+      },
+      {
+        "feature_id": "F03",
+        "feature_type": "groove",
+        "name": "Annular groove",
+        "description": "Radial groove separating the left and right geared sections.",
+        "geometry": {
+          "width_mm": 2.7
+        },
+        "access_directions": [
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "width",
+            "nominal_mm": 2.7,
+            "plus_mm": 0.0,
+            "minus_mm": 0.2
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "section_aa"
+        ]
+      },
+      {
+        "feature_id": "F04",
+        "feature_type": "flat_face",
+        "name": "Groove left side face",
+        "description": "Vertical side face on the left side of the annular groove.",
+        "geometry": {},
+        "access_directions": [
+          "axial"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [
+          {
+            "gdt_type": "perpendicularity",
+            "tolerance_value_mm": 0.05,
+            "datum_references": [
+              "A"
+            ],
+            "applied_to": "Left face of the groove"
+          }
+        ],
+        "callout_qualifiers": [],
+        "source_views": [
+          "section_aa"
+        ]
+      },
+      {
+        "feature_id": "F05",
+        "feature_type": "flat_face",
+        "name": "Groove right side face",
+        "description": "Vertical side face on the right side of the annular groove.",
+        "geometry": {},
+        "access_directions": [
+          "axial"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [
+          {
+            "gdt_type": "perpendicularity",
+            "tolerance_value_mm": 0.08,
+            "datum_references": [
+              "A"
+            ],
+            "applied_to": "Right face of the groove"
+          }
+        ],
+        "callout_qualifiers": [],
+        "source_views": [
+          "section_aa"
+        ]
+      },
+      {
+        "feature_id": "F06",
+        "feature_type": "external_cylinder",
+        "name": "Left gear outer diameter",
+        "description": "Outer cylindrical surface of the left-hand geared section.",
+        "geometry": {},
+        "access_directions": [
+          "radial"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [
+          {
+            "gdt_type": "runout",
+            "tolerance_value_mm": 0.08,
+            "datum_references": [
+              "A"
+            ],
+            "applied_to": "Outer diameter of left gear section"
+          }
+        ],
+        "callout_qualifiers": [],
+        "source_views": [
+          "section_aa"
+        ]
+      },
+      {
+        "feature_id": "F07",
+        "feature_type": "external_cylinder",
+        "name": "Right gear outer diameter",
+        "description": "Outer cylindrical surface of the right-hand geared section. A shared runout tolerance applies to this and the left gear OD.",
+        "geometry": {},
+        "access_directions": [
+          "radial"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [
+          {
+            "gdt_type": "runout",
+            "tolerance_value_mm": 0.08,
+            "datum_references": [
+              "A"
+            ],
+            "applied_to": "Outer diameter of right gear section"
+          }
+        ],
+        "callout_qualifiers": [],
+        "source_views": [
+          "section_aa"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "relationship_id": "R01",
+        "from_feature_id": "F06",
+        "to_feature_id": "F02",
+        "relationship_type": "coaxial",
+        "detail": "Left gear outer cylindrical surface is controlled for runout to datum axis A, defined by the central bore axis."
+      },
+      {
+        "relationship_id": "R02",
+        "from_feature_id": "F07",
+        "to_feature_id": "F02",
+        "relationship_type": "coaxial",
+        "detail": "Right gear outer cylindrical surface is controlled for runout to datum axis A, defined by the central bore axis."
+      },
+      {
+        "relationship_id": "R03",
+        "from_feature_id": "F06",
+        "to_feature_id": "F02",
+        "relationship_type": "datum_referenced",
+        "detail": "Runout control on the left gear outer diameter references datum A."
+      },
+      {
+        "relationship_id": "R04",
+        "from_feature_id": "F07",
+        "to_feature_id": "F02",
+        "relationship_type": "datum_referenced",
+        "detail": "Runout control on the right gear outer diameter references datum A."
+      },
+      {
+        "relationship_id": "R05",
+        "from_feature_id": "F04",
+        "to_feature_id": "F02",
+        "relationship_type": "perpendicular",
+        "detail": "Perpendicularity control on the left groove side face references datum A."
+      },
+      {
+        "relationship_id": "R06",
+        "from_feature_id": "F05",
+        "to_feature_id": "F02",
+        "relationship_type": "perpendicular",
+        "detail": "Perpendicularity control on the right groove side face references datum A."
+      },
+      {
+        "relationship_id": "R07",
+        "from_feature_id": "F04",
+        "to_feature_id": "F02",
+        "relationship_type": "datum_referenced",
+        "detail": "Left groove side face GD&T references datum A."
+      },
+      {
+        "relationship_id": "R08",
+        "from_feature_id": "F05",
+        "to_feature_id": "F02",
+        "relationship_type": "datum_referenced",
+        "detail": "Right groove side face GD&T references datum A."
+      },
+      {
+        "relationship_id": "R09",
+        "from_feature_id": "F04",
+        "to_feature_id": "F05",
+        "relationship_type": "opposite_face",
+        "detail": "Left and right side faces bound opposite sides of the annular groove."
+      },
+      {
+        "relationship_id": "R10",
+        "from_feature_id": "F06",
+        "to_feature_id": "F07",
+        "relationship_type": "coaxial",
+        "detail": "Left and right gear outer cylindrical sections share the same datum axis A and common runout control context."
+      }
+    ],
+    "datum_scheme": {
+      "datums": [
+        {
+          "datum_letter": "A",
+          "feature_id": "F02",
+          "surface_type": "line",
+          "description": "Central axis of the component."
+        }
+      ],
+      "datum_hierarchy_notes": "Datum A is the primary central axis defined by the central bore/axis observation in section A-A. All extracted GD&T controls reference datum A only."
+    },
+    "part_notes": "Scale: 2:1. General tolerance: DIN ISO 2768-m. Projection: first angle. Heat treatment: none specified. Coating: none specified. General notes: TOLERANCE: Nicht tolerierte Ma\u00dfe, Rundungshalbmesser, Fasen und Winkelabma\u00dfe nach / Not specified dimensions, external radii, chamfers and angles according to: DIN ISO 2768-m. Jede Weitergabe sowie Vervielf\u00e4ltigung dieses anvertrauten Dokuments sowie jede Verwertung und Mitteilung seines Inhalts sind nur zu dem vereinbarten Zweck gestattet. Zuwiderhandlungen verpflichtet zu Schadenersatz. Alle Rechte f\u00fcr den Fall der Patent-, Gebrauchsmuster- oder Geschmacksmustereintragungen bleiben vorbehalten./ Any passing-on or duplication of this entrusted documents as well utilisation or disclosure of its contents is permitted only for the agreed purpose. Contravention entitles Collomix to claim demages. All rights reseved in case utility- model patent or design patent registration.. Extraction notes: An assembly table indicates part numbers related to this component (Pos. 1 Art.-Nr. 21.123, Pos. 2 Art.-Nr. 21.122).",
+    "overall_complexity": "moderate"
+  },
+  "component_specs": [],
+  "component_spec_links": [],
+  "assumptions": [
+    {
+      "assumption_id": "A01",
+      "text": "Grouped front_view:F1 with section_aa:F2 as the same overall gear body/part-body observation. The section A-A cut is drawn through the overall body, and section_aa:F2 is the only part_body observation carrying the axial width dimension."
+    },
+    {
+      "assumption_id": "A02",
+      "text": "Selected section_aa:F2 as canonical for the overall body group because it has the explicit axial width callout, while front_view:F1 has no visible dimensions."
+    },
+    {
+      "assumption_id": "A03",
+      "text": "Did not group front_view:F1 with section_aa:F1, section_aa:F6, or section_aa:F7 even though the front-view body description mentions the bore and teeth; front_view:F1 is a broad overall body observation and is not feature-specific enough to merge with those individual features."
+    },
+    {
+      "assumption_id": "A04",
+      "text": "Anchored datum A to section_aa:F1 because that feature carries the Datum A cross-reference and the datum observation defines A as the central axis."
+    },
+    {
+      "assumption_id": "A05",
+      "text": "Interpreted the common runout context noted in section A-A as applying to both section_aa:F6 and section_aa:F7, consistent with the extraction note."
+    },
+    {
+      "assumption_id": "A06",
+      "text": "Proceeding with the merge as a single geometric component while raising a clarification about the possible assembly/Baugruppe indication."
+    },
+    {
+      "assumption_id": "A07",
+      "clarification_id": "C01",
+      "text": "The drawing represents a single, monolithic machined component incorporating all features depicted in section A-A, rather than a multi-part assembly."
+    },
+    {
+      "assumption_id": "A08",
+      "clarification_id": "C02",
+      "text": "The central through bore is centered on Datum A with an overall length of 22.7 mm, incorporating a symmetrical curved internal contour along its axis."
+    },
+    {
+      "assumption_id": "A09",
+      "clarification_id": "C03",
+      "text": "The inner (bottom) diameter of the annular groove is not dimensioned in section view A-A and is assumed to be specified in another view or detail callout."
+    },
+    {
+      "assumption_id": "A10",
+      "clarification_id": "C04",
+      "text": "The outside (tooth-tip) diameter of the left-hand geared section is controlled for circular runout within 0.08 mm relative to Datum Axis A."
+    },
+    {
+      "assumption_id": "A11",
+      "clarification_id": "C05",
+      "text": "The outside (tooth-tip) diameter of the right-hand geared section is controlled for circular runout to within 0.08 mm relative to Datum A."
+    },
+    {
+      "assumption_id": "A12",
+      "clarification_id": "C06",
+      "text": "The external gear tooth profile (item 2) comprises a straight spur gear profile with 43 teeth, an overall width of 22.7 mm containing a 2.7 (-0.2/0) mm relief groove, a radial runout tolerance of 0.08 mm relative to datum A, and a face perpendicularity tolerance of 0.05 mm to datum A."
+    }
+  ]
+}

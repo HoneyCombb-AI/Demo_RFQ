@@ -1,33 +1,11 @@
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
- 
-// Map each org route prefix to the code required to access it.
-const ORG_ROUTE_CODES: Record<string, string> = {
-  '/jtt': '4521',
-  '/alt': '5281',
-  '/sft': '6061',
-  '/ltt': '7041',
-  '/obsc': '8191'
-}
 
 export function proxy(request: NextRequest) {
-  // Get the org code from the cookie
-  const orgCode = request.cookies.get('org_code')?.value
-  const { pathname } = request.nextUrl
-
-  // Find the org route being accessed (if any) and enforce its code
-  for (const [prefix, requiredCode] of Object.entries(ORG_ROUTE_CODES)) {
-    if (pathname === prefix || pathname.startsWith(`${prefix}/`)) {
-      if (!orgCode || orgCode !== requiredCode) {
-        return NextResponse.redirect(new URL('/', request.url))
-      }
-      break
-    }
-  }
-
+  // Pass through all requests without requiring org codes or cookies
   return NextResponse.next()
 }
- 
+
 export const config = {
   matcher: [
     /*
@@ -40,3 +18,4 @@ export const config = {
     '/((?!api|_next/static|_next/image|favicon.ico).*)',
   ],
 }
+

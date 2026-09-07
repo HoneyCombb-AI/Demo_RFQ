@@ -1,0 +1,749 @@
+{
+  "analysis_id": "BP00B358780_merge_20260829T195122Z",
+  "part": {
+    "name": "BAR PIN",
+    "drawing_number": "BP00B358780",
+    "revision": "B3",
+    "material": "6082-T6-FRG-CR-1 PER TM-2005",
+    "units": "mm"
+  },
+  "feature_graph": {
+    "part_envelope": {
+      "width_mm": 170.75,
+      "height_mm": 80.2,
+      "max_diameter_mm": 80.2,
+      "envelope_shape": "cylindrical"
+    },
+    "coordinate_system": {
+      "primary_axis": "X",
+      "orientation_notes": "Adopt X as the shaft (datum C) axis per Section A-A. Y is radial vertical in section, Z is part thickness (into page in the main view). Origin taken on datum C axis; axial zero typically set at datum B face unless otherwise noted.",
+      "datum_origin": "C"
+    },
+    "features": [
+      {
+        "feature_id": "F01",
+        "feature_type": "external_cylinder",
+        "name": "Central Cylinder Body",
+        "description": "Main cylindrical body of the pin, located right of the flange.",
+        "geometry": {
+          "diameter_mm": 40.065,
+          "length_mm": 62.01,
+          "radius_mm": 4.0,
+          "axis_direction": "+X"
+        },
+        "surface_finish": {
+          "ra_value": 3.2,
+          "finish_symbol": "3.2"
+        },
+        "access_directions": [
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "length",
+            "nominal_mm": 62.01,
+            "upper_limit_mm": 62.26,
+            "lower_limit_mm": 61.76
+          },
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 40.065,
+            "upper_limit_mm": 40.13,
+            "lower_limit_mm": 40.0
+          }
+        ],
+        "gdt_controls": [],
+        "source_views": [
+          "section_aa",
+          "isometric_view"
+        ]
+      },
+      {
+        "feature_id": "F02",
+        "feature_type": "flange",
+        "name": "Central Flange",
+        "description": "Central collar/flange separating the left and right halves of the pin.",
+        "geometry": {
+          "length_mm": 7.63,
+          "width_mm": 6.63,
+          "angle_deg": 1.5,
+          "axis_direction": "X"
+        },
+        "instance_count": 1,
+        "access_directions": [
+          "+X",
+          "-X",
+          "+Z",
+          "-Z"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "angle_deg",
+            "nominal_mm": 1.5,
+            "upper_limit_mm": 1.5,
+            "qualifier": "2X MAX"
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "perpendicularity",
+            "tolerance_value_mm": 0.25,
+            "datum_references": [
+              "C"
+            ],
+            "applied_to": "Right vertical face of the central flange"
+          }
+        ],
+        "source_views": [
+          "main_view",
+          "section_aa"
+        ]
+      },
+      {
+        "feature_id": "F03",
+        "feature_type": "slot",
+        "name": "Left End Slotted Hole",
+        "description": "Slotted through hole on the left lug.",
+        "geometry": {
+          "depth_condition": "THRU",
+          "width_mm": 19.45,
+          "height_mm": 16.25,
+          "hole_count": 2,
+          "axis_direction": "Z"
+        },
+        "instance_count": 1,
+        "access_directions": [
+          "+Z",
+          "-Z",
+          "+Y",
+          "-Y"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "height",
+            "nominal_mm": 16.25,
+            "upper_limit_mm": 16.45,
+            "lower_limit_mm": 16.05
+          },
+          {
+            "dimension_type": "width",
+            "nominal_mm": 19.45,
+            "upper_limit_mm": 19.65,
+            "lower_limit_mm": 19.25
+          },
+          {
+            "dimension_type": "position_x",
+            "nominal_mm": 37.4,
+            "upper_limit_mm": 37.53,
+            "lower_limit_mm": 37.27
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "position",
+            "tolerance_value_mm": 0.25,
+            "material_condition": "MMC",
+            "datum_references": [
+              "A",
+              "B"
+            ],
+            "applied_to": "Internal surfaces of the slotted hole"
+          }
+        ],
+        "source_views": [
+          "main_view",
+          "isometric_view",
+          "section_aa"
+        ]
+      },
+      {
+        "feature_id": "F04",
+        "feature_type": "through_hole",
+        "name": "Right End Circular Hole",
+        "description": "Circular through hole on the right lug.",
+        "geometry": {
+          "diameter_mm": 19.45,
+          "depth_condition": "THRU",
+          "hole_count": 1,
+          "axis_direction": "Z"
+        },
+        "instance_count": 1,
+        "access_directions": [
+          "+Z",
+          "-Z",
+          "+Y",
+          "-Y"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 19.45,
+            "upper_limit_mm": 19.65,
+            "lower_limit_mm": 19.25
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "position",
+            "tolerance_value_mm": 0.25,
+            "material_condition": "MMC",
+            "datum_references": [
+              "A"
+            ],
+            "applied_to": "Axis of the right end through hole"
+          }
+        ],
+        "source_views": [
+          "main_view",
+          "isometric_view",
+          "section_aa"
+        ]
+      },
+      {
+        "feature_id": "F05",
+        "feature_type": "lug",
+        "name": "Bottom-right lug",
+        "description": "Flat tang with rounded end transitioning from the main cylinder at the bottom right.",
+        "geometry": {},
+        "access_directions": [],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "source_views": [
+          "isometric_view"
+        ]
+      },
+      {
+        "feature_id": "F06",
+        "feature_type": "lug",
+        "name": "Top-left lug",
+        "description": "Flat tang with rounded end at the top left, sharing a plane with the bottom-right lug.",
+        "geometry": {},
+        "access_directions": [],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "source_views": [
+          "isometric_view"
+        ]
+      },
+      {
+        "feature_id": "F07",
+        "feature_type": "flange",
+        "name": "Transverse flange",
+        "description": "Transverse flanged sections or wings extending perpendicularly from the base of the top-left lug.",
+        "geometry": {},
+        "access_directions": [],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "source_views": [
+          "isometric_view"
+        ]
+      },
+      {
+        "feature_id": "F08",
+        "feature_type": "part_body",
+        "name": "Overall Bar Pin",
+        "description": "Main envelope of the bar pin, including overall length and distance between hole centers.",
+        "geometry": {
+          "length_mm": 170.0
+        },
+        "instance_count": 1,
+        "access_directions": [],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "length",
+            "nominal_mm": 170.0,
+            "upper_limit_mm": 170.75,
+            "lower_limit_mm": 169.25
+          }
+        ],
+        "gdt_controls": [],
+        "source_views": [
+          "main_view"
+        ]
+      },
+      {
+        "feature_id": "F09",
+        "feature_type": "flat_face",
+        "name": "Left End Flat Faces",
+        "description": "Circular machined flat faces on both sides of the left end lug, designated by cross-hatching.",
+        "geometry": {
+          "diameter_mm": 35.0,
+          "axis_direction": "Z"
+        },
+        "instance_count": 2,
+        "access_directions": [
+          "+Z",
+          "-Z"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 35.0,
+            "upper_limit_mm": 35.5,
+            "lower_limit_mm": 34.5,
+            "qualifier": "2X BOTH SIDES"
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "flatness",
+            "tolerance_value_mm": 0.1,
+            "datum_references": [],
+            "applied_to": "Hatched circular areas on left lug"
+          }
+        ],
+        "source_views": [
+          "main_view"
+        ]
+      },
+      {
+        "feature_id": "F10",
+        "feature_type": "flat_face",
+        "name": "Right End Flat Faces",
+        "description": "Circular machined flat faces on both sides of the right end lug, designated by cross-hatching.",
+        "geometry": {
+          "diameter_mm": 35.0,
+          "axis_direction": "Z"
+        },
+        "instance_count": 2,
+        "access_directions": [
+          "+Z",
+          "-Z"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 35.0,
+            "upper_limit_mm": 35.5,
+            "lower_limit_mm": 34.5,
+            "qualifier": "2X BOTH SIDES"
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "flatness",
+            "tolerance_value_mm": 0.1,
+            "datum_references": [],
+            "applied_to": "Hatched circular areas on right lug"
+          }
+        ],
+        "source_views": [
+          "main_view"
+        ]
+      },
+      {
+        "feature_id": "F11",
+        "feature_type": "lug",
+        "name": "Right End Outer Profile",
+        "description": "Outer vertical height of the flattened right end.",
+        "geometry": {
+          "height_mm": 38.0
+        },
+        "instance_count": 2,
+        "access_directions": [
+          "+Y",
+          "-Y"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "height",
+            "nominal_mm": 38.0,
+            "upper_limit_mm": 38.25,
+            "lower_limit_mm": 37.75,
+            "qualifier": "2X O/R"
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "position",
+            "tolerance_value_mm": 0.5,
+            "material_condition": "MMC",
+            "datum_references": [
+              "C"
+            ],
+            "applied_to": "Outer opposed surfaces of the ends"
+          }
+        ],
+        "source_views": [
+          "main_view"
+        ]
+      },
+      {
+        "feature_id": "F12",
+        "feature_type": "radius",
+        "name": "End Lugs Corner Radii",
+        "description": "Radiused outer corners of the end lugs.",
+        "geometry": {
+          "radius_mm": 10.0
+        },
+        "instance_count": 2,
+        "access_directions": [
+          "+Z",
+          "-Z"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "radius",
+            "nominal_mm": 10.0,
+            "upper_limit_mm": 10.5,
+            "lower_limit_mm": 9.5,
+            "qualifier": "2X"
+          }
+        ],
+        "gdt_controls": [],
+        "source_views": [
+          "main_view"
+        ]
+      },
+      {
+        "feature_id": "F13",
+        "feature_type": "fillet",
+        "name": "Central Shaft Fillets",
+        "description": "Fillets bridging the main cylindrical shaft to the flat ends and flange.",
+        "geometry": {
+          "radius_mm": 40.0
+        },
+        "instance_count": 4,
+        "access_directions": [
+          "+Z",
+          "-Z"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "source_views": [
+          "main_view"
+        ]
+      },
+      {
+        "feature_id": "F14",
+        "feature_type": "external_cylinder",
+        "name": "Outer Boundary",
+        "description": "Overall outer cylindrical surface of the part.",
+        "geometry": {
+          "diameter_mm": 80.0,
+          "outer_diameter_mm": 80.0,
+          "axis_direction": "X"
+        },
+        "access_directions": [
+          "+X",
+          "-X"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 80.0,
+            "upper_limit_mm": 80.2,
+            "lower_limit_mm": 79.8
+          }
+        ],
+        "gdt_controls": [],
+        "source_views": [
+          "right_view"
+        ]
+      },
+      {
+        "feature_id": "F15",
+        "feature_type": "slot",
+        "name": "Peripheral Notches",
+        "description": "Four notches or undercuts spaced around the outer periphery.",
+        "geometry": {
+          "diameter_mm": 70.0,
+          "radius_mm": 5.0,
+          "angle_deg": 45.0,
+          "axis_direction": "X"
+        },
+        "instance_count": 4,
+        "access_directions": [],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "angle_deg",
+            "nominal_mm": 45.0,
+            "upper_limit_mm": 45.5,
+            "lower_limit_mm": 44.5,
+            "qualifier": "4X"
+          },
+          {
+            "dimension_type": "angle_deg",
+            "nominal_mm": 10.0,
+            "upper_limit_mm": 10.5,
+            "lower_limit_mm": 9.5,
+            "qualifier": "4X"
+          }
+        ],
+        "gdt_controls": [],
+        "source_views": [
+          "right_view"
+        ]
+      },
+      {
+        "feature_id": "F16",
+        "feature_type": "slot",
+        "name": "Inner Central Slot",
+        "description": "Central internal slot or double flat inside the bore.",
+        "geometry": {
+          "width_mm": 12.0,
+          "axis_direction": "X"
+        },
+        "access_directions": [
+          "+X",
+          "-X"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "width",
+            "nominal_mm": 12.0,
+            "upper_limit_mm": 12.15,
+            "lower_limit_mm": 11.85
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "position",
+            "tolerance_value_mm": 0.5,
+            "material_condition": "MMC",
+            "datum_references": [
+              "C"
+            ],
+            "applied_to": "Inner Central Slot width"
+          }
+        ],
+        "source_views": [
+          "right_view"
+        ]
+      },
+      {
+        "feature_id": "F17",
+        "feature_type": "slot",
+        "name": "Outer Central Cutout",
+        "description": "A wider internal pocket or slot with parallel flat sides.",
+        "geometry": {
+          "width_mm": 46.57,
+          "axis_direction": "X"
+        },
+        "instance_count": 2,
+        "access_directions": [],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "source_views": [
+          "right_view"
+        ]
+      },
+      {
+        "feature_id": "F18",
+        "feature_type": "flat_face",
+        "name": "Left Flat End",
+        "description": "Milled flat section on the left end of the pin, featuring a rounded tip and an angled transition to the central flange.",
+        "geometry": {
+          "length_mm": 57.4,
+          "radius_mm": 40.0,
+          "angle_deg": 114.4,
+          "axis_direction": "+X"
+        },
+        "access_directions": [
+          "+Y",
+          "-Y"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "length",
+            "nominal_mm": 57.4,
+            "upper_limit_mm": 57.65,
+            "lower_limit_mm": 57.15
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "flatness",
+            "tolerance_value_mm": 0.2,
+            "datum_references": [],
+            "applied_to": "Top flat surface of the left and right ends (2 SURFACES)"
+          },
+          {
+            "gdt_type": "parallelism",
+            "tolerance_value_mm": 0.3,
+            "datum_references": [
+              "A"
+            ],
+            "applied_to": "Bottom flat surface of the left and right ends (2 SURFACES)"
+          }
+        ],
+        "source_views": [
+          "section_aa"
+        ]
+      },
+      {
+        "feature_id": "F19",
+        "feature_type": "flat_face",
+        "name": "Right Flat End",
+        "description": "Milled flat section on the right end of the pin, stepping down from the central cylinder with a drafted shoulder.",
+        "geometry": {
+          "radius_mm": 1.0,
+          "angle_deg": 3.0,
+          "axis_direction": "+X"
+        },
+        "access_directions": [
+          "+Y",
+          "-Y"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "angle_deg",
+            "nominal_mm": 3.0,
+            "upper_limit_mm": 3.0,
+            "qualifier": "2X MAX"
+          },
+          {
+            "dimension_type": "radius_edge",
+            "nominal_mm": 1.0,
+            "upper_limit_mm": 1.0,
+            "qualifier": "MAX"
+          },
+          {
+            "dimension_type": "radius_edge",
+            "nominal_mm": 1.0,
+            "upper_limit_mm": 1.0,
+            "qualifier": "MAX TYP."
+          }
+        ],
+        "gdt_controls": [],
+        "source_views": [
+          "section_aa"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "relationship_id": "R01",
+        "from_feature_id": "F02",
+        "to_feature_id": "F01",
+        "relationship_type": "perpendicular",
+        "detail": "Right face of central flange controlled perpendicular to datum C axis per F2_GDT1."
+      },
+      {
+        "relationship_id": "R02",
+        "from_feature_id": "F02",
+        "to_feature_id": "F01",
+        "relationship_type": "datum_referenced",
+        "detail": "Perpendicularity FCF on flange references datum C."
+      },
+      {
+        "relationship_id": "R03",
+        "from_feature_id": "F03",
+        "to_feature_id": "F18",
+        "relationship_type": "datum_referenced",
+        "detail": "Left slotted hole position to datum A per F3_GDT1."
+      },
+      {
+        "relationship_id": "R04",
+        "from_feature_id": "F03",
+        "to_feature_id": "F02",
+        "relationship_type": "datum_referenced",
+        "detail": "Left slotted hole position to datum B per F3_GDT1."
+      },
+      {
+        "relationship_id": "R05",
+        "from_feature_id": "F04",
+        "to_feature_id": "F18",
+        "relationship_type": "datum_referenced",
+        "detail": "Right circular hole position to datum A per F5_GDT1."
+      },
+      {
+        "relationship_id": "R06",
+        "from_feature_id": "F11",
+        "to_feature_id": "F01",
+        "relationship_type": "datum_referenced",
+        "detail": "End outer profiles positioned from datum C per F7_GDT1."
+      },
+      {
+        "relationship_id": "R07",
+        "from_feature_id": "F16",
+        "to_feature_id": "F01",
+        "relationship_type": "datum_referenced",
+        "detail": "Inner central slot positioned from datum C per F3_GDT1."
+      }
+    ],
+    "datum_scheme": {
+      "datums": [
+        {
+          "datum_letter": "A",
+          "feature_id": "F18",
+          "surface_type": "planar",
+          "description": "Top flat surface of the end sections (2 surfaces across both ends)."
+        },
+        {
+          "datum_letter": "B",
+          "feature_id": "F02",
+          "surface_type": "planar",
+          "description": "Right face of the central flange."
+        },
+        {
+          "datum_letter": "C",
+          "feature_id": "F01",
+          "surface_type": "cylindrical",
+          "description": "Central cylinder body (shaft) axis."
+        }
+      ],
+      "datum_hierarchy_notes": "Datum C establishes the primary rotational axis of the part. Datum B is a secondary axial face on the flange. Datum A is defined by the coplanar top flats across both ends and serves as a locating plane for end features."
+    },
+    "part_notes": "Material: 6082-T6-FRG-CR-1 PER TM-2005. Material standard: TM-2005. Scale: 1:1. General tolerance: ASME Y14.5-2009. Projection: third angle. Heat treatment: none specified. Coating: none specified. General notes: INSPECTION: MUST BE FREE FROM DETRIMENTAL SEAMS, COLD SHUTS, LAPS, EXCESSIVE SCALE, SCALE POCKETS, OR DEFECTS WHICH MAY AFFECT FUNCTION OR TEND TO WEAKEN THE PART UNDER STRESS OR FATIGUE.. PROCESS: TRIM OR GRIND FLASH SMOOTH. MAX EXTENSION OR STEP OF 0.89mm PERMISSIBLE. BLEND RADII AND AVOID STRESS RISER CRACKS, NOTCHES, ETC.. DEBURR: BREAK ALL SHARP EDGES 0.5 MAX.. -CAD IS MASTER- FOR ANY DETAIL NOT SHOWN SEE CAD MODEL. MATERIAL VOLUME: 151901 mm³.",
+    "overall_complexity": "moderate"
+  },
+  "component_specs": [],
+  "component_spec_links": [],
+  "clarifications": [
+  ],
+  "assumptions": [
+    {
+      "assumption_id": "A01",
+      "text": "section_aa:F3 (Central Cylinder Body) and isometric_view:F1 (Central cylinder) are the same physical feature; section_aa:F3 chosen canonical because it is fully dimensioned and defines datum C."
+    },
+    {
+      "assumption_id": "A02",
+      "text": "main_view:F2 and section_aa:F2 both describe the central flange; main_view:F2 selected canonical due to attached GD&T and datum-B definition. The 6.63 width in section_aa:F2 is treated as an inspection/reference value (B1) rather than the controlling axial length."
+    },
+    {
+      "assumption_id": "A03",
+      "text": "isometric_view:F5 (Top-left hole) refers to the left slotted hole seen in main_view:F3; grouped despite differing feature_type labels because the isometric is non-dimensional context only."
+    },
+    {
+      "assumption_id": "A04",
+      "text": "isometric_view:F3 (Bottom-right hole) refers to the right circular through hole in main_view:F5; grouped accordingly."
+    },
+    {
+      "assumption_id": "A05",
+      "text": "section_aa:F5 shows both end holes as an aggregate observation; it is linked as an aggregate_ref to the individual left slot and right circular hole groups, not as a standalone feature."
+    },
+    {
+      "assumption_id": "A06",
+      "text": "Primary machining axis is taken as the shaft axis (datum C, X-axis) despite the main view note calling Z the primary bore axis for the end holes."
+    },
+    {
+      "assumption_id": "A07",
+      "text": "right_view features (F1–F4) are treated as real features of this part but have no unambiguous counterparts in other sections; they remain singletons pending depth clarification."
+    },
+    {
+      "assumption_id": "A08",
+      "text": "The circular flat-face features on the lugs in main_view (F4, F6) are not grouped with section_aa:F1/F4 end flats because the section-cut callouts address different surfaces (top/bottom flats vs. circular machined patches)."
+    },
+        {
+      "assumption_id": "A09",
+      "text": "The outer diameter of the central flange is not explicitly dimensioned on the drawing and is defined directly by the 3D CAD master model as specified in the drawing notes."
+    },
+    {
+      "assumption_id": "A10",
+      "text": "The overall lug thickness along the Z-axis is assumed to be 38.25 / 37.75 mm, as indicated by the 2X 38.25 / 37.75 dimension callout."
+    },
+    {
+      "assumption_id": "A11",
+      "text": "The four peripheral notches have a specified root diameter of 70.00 mm TYP., which defines their depth relative to the outer diameter range of 79.8 mm to 80.2 mm."
+    },
+    {
+      "assumption_id": "A12",
+      "text": "The inner central slot passes completely through (THRU) the central bore feature, spanning across the inner diameter."
+    },
+    {
+      "assumption_id": "A13",
+      "text": "The depth of the two outer central cutouts is governed by the 2X 46.57 mm distance between the parallel flats relative to the nominal Ø80.0 mm outer diameter."
+    }
+  ]
+}

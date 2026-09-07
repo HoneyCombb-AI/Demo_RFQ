@@ -1,0 +1,812 @@
+{
+  "analysis_id": "M01XX953_merge_20260906T110819Z",
+  "part": {
+    "name": "GEAR PLANET",
+    "drawing_number": "M01XX953",
+    "material": "TL0321 - 19CrNiMo7-6+FP",
+    "units": "mm"
+  },
+  "feature_graph": {
+    "part_envelope": {
+      "length_mm": 33.5,
+      "width_mm": 33.5,
+      "max_diameter_mm": 31.6
+    },
+    "coordinate_system": {
+      "primary_axis": "Z",
+      "orientation_notes": "Z is the central bore and gear rotation axis. Section A-A notes place the section-view horizontal axis along Z and radial directions in X/Y. Axial end faces are normal to Z; gear teeth and bore are concentric about this axis.",
+      "datum_origin": "A central bore axis; axial zero face is not fully defined by the datum scheme"
+    },
+    "features": [
+      {
+        "feature_id": "F01",
+        "feature_type": "external_cylinder",
+        "name": "Gear outer cylinder",
+        "description": "Outer cylindrical profile of the gear body, likely the root diameter of the teeth.",
+        "geometry": {
+          "diameter_mm": 23.9,
+          "length_mm": 33.5,
+          "width_mm": 33.5,
+          "axis_direction": "Z"
+        },
+        "access_directions": [
+          "+Z",
+          "-Z"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 23.9,
+            "plus_mm": 0.0,
+            "minus_mm": 0.2
+          },
+          {
+            "dimension_type": "width",
+            "nominal_mm": 33.5,
+            "plus_mm": 0.0,
+            "minus_mm": 0.1
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "section_aa",
+          "section_view_bb"
+        ]
+      },
+      {
+        "feature_id": "F02",
+        "feature_type": "spline",
+        "name": "Gear Teeth Profile",
+        "description": "Cross-section of the external gear teeth showing tip, root, form diameter, and flank surface geometry.",
+        "geometry": {
+          "diameter_mm": 31.6,
+          "outer_diameter_mm": 31.6,
+          "length_mm": 1.5,
+          "depth_mm": 0.2,
+          "taper_included_angle_deg": 90.0,
+          "angle_deg": 30.0,
+          "axis_direction": "Z"
+        },
+        "surface_finish": {
+          "rz_value": 6.0,
+          "finish_symbol": "Rz 6"
+        },
+        "access_directions": [
+          "+Z",
+          "-Z",
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 31.6,
+            "minus_mm": 0.1
+          },
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 24.2,
+            "minus_mm": 0.25
+          },
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 25.6,
+            "upper_limit_mm": 25.6,
+            "qualifier": "max"
+          },
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 31.2,
+            "plus_mm": 0.2,
+            "minus_mm": 0.0
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "section_cc",
+          "detail_y"
+        ]
+      },
+      {
+        "feature_id": "F03",
+        "feature_type": "mating_surface",
+        "name": "Gear tooth flank",
+        "description": "Gear tooth flank profile diagram illustrating the involute crowning (Hoehenballigkeit) curve, evaluation zones, and generating path lengths.",
+        "geometry": {
+          "diameter_mm": 31.15,
+          "position_description": "Crowning maximum located within central 0.3x face width zone."
+        },
+        "access_directions": [
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "other",
+            "nominal_mm": 0.001,
+            "plus_mm": 0.008,
+            "minus_mm": 0.0
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [
+          {
+            "qualifier": "FORM",
+            "dimension_type": "diameter",
+            "nominal_mm": 26.027
+          }
+        ],
+        "source_views": [
+          "involute_crowning",
+          "longitudinal_crowning"
+        ]
+      },
+      {
+        "feature_id": "F04",
+        "feature_type": "groove",
+        "name": "Face grooves",
+        "description": "Two shallow concentric grooves machined into the end face, each with an R0.8 profile and a depth of 0.2mm.",
+        "geometry": {
+          "diameter_mm": 29.5,
+          "depth_mm": 0.2,
+          "radius_mm": 0.8
+        },
+        "instance_count": 2,
+        "access_directions": [
+          "+Z",
+          "-Z"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "depth",
+            "nominal_mm": 0.2,
+            "plus_mm": 0.05,
+            "minus_mm": 0.05
+          },
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 29.5,
+            "plus_mm": 0.35,
+            "minus_mm": 0.35
+          },
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 26.0,
+            "plus_mm": 0.35,
+            "minus_mm": 0.35
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "detail_z"
+        ]
+      },
+      {
+        "feature_id": "F05",
+        "feature_type": "part_body",
+        "name": "Helical Gear Body",
+        "description": "Overall 3D shape of the component showing external helical gear teeth and a central internal bore.",
+        "geometry": {},
+        "access_directions": [
+          "+Z",
+          "-Z",
+          "radial"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "isometric_view"
+        ]
+      },
+      {
+        "feature_id": "F06",
+        "feature_type": "flat_face",
+        "name": "Left side face",
+        "description": "Left flat face of the gear body.",
+        "geometry": {
+          "axis_direction": "-Z"
+        },
+        "access_directions": [
+          "-Z"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [
+          {
+            "gdt_type": "runout",
+            "tolerance_value_mm": 0.03,
+            "datum_references": [
+              "A"
+            ],
+            "applied_to": "Left face"
+          }
+        ],
+        "callout_qualifiers": [],
+        "source_views": [
+          "section_aa"
+        ]
+      },
+      {
+        "feature_id": "F07",
+        "feature_type": "flat_face",
+        "name": "Right side face",
+        "description": "Right flat face of the gear body.",
+        "geometry": {
+          "axis_direction": "+Z"
+        },
+        "access_directions": [
+          "+Z"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [
+          {
+            "gdt_type": "runout",
+            "tolerance_value_mm": 0.03,
+            "datum_references": [
+              "A"
+            ],
+            "applied_to": "Right face"
+          }
+        ],
+        "callout_qualifiers": [],
+        "source_views": [
+          "section_aa"
+        ]
+      },
+      {
+        "feature_id": "F08",
+        "feature_type": "internal_bore",
+        "name": "Central bore",
+        "description": "Main central through bore of the gear, defines datum A.",
+        "geometry": {
+          "diameter_mm": 16.9405,
+          "inner_diameter_mm": 16.9405,
+          "length_mm": 33.5,
+          "depth_condition": "THRU",
+          "axis_direction": "Z"
+        },
+        "surface_finish": {
+          "finish_symbol": "<B2> Rmax 4,5 Rz3,2 Rmr0,8=80%min\u03bbc0,8 0,8x16 Rpk 0,3max 0,8x16 Rvk 0,3min"
+        },
+        "access_directions": [
+          "+Z",
+          "-Z"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 16.9405,
+            "upper_limit_mm": 16.946,
+            "lower_limit_mm": 16.935
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "cylindricity",
+            "tolerance_value_mm": 0.005,
+            "datum_references": [],
+            "applied_to": "OVER LENGTH A <B4> (l)"
+          },
+          {
+            "gdt_type": "cylindricity",
+            "tolerance_value_mm": 0.008,
+            "datum_references": [],
+            "applied_to": "OVER LENGTH B <B7> (m)"
+          }
+        ],
+        "callout_qualifiers": [],
+        "source_views": [
+          "section_aa"
+        ]
+      },
+      {
+        "feature_id": "F09",
+        "feature_type": "chamfer",
+        "name": "Bore end chamfers",
+        "description": "20 degree chamfers at both outer edges of the central bore.",
+        "geometry": {
+          "length_mm": 0.5,
+          "angle_deg": 20.0
+        },
+        "instance_count": 2,
+        "access_directions": [
+          "+Z",
+          "-Z"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "angle_deg",
+            "nominal_mm": 20.0,
+            "plus_mm": 3.0,
+            "minus_mm": 3.0
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "section_aa"
+        ]
+      },
+      {
+        "feature_id": "F10",
+        "feature_type": "tapered_bore",
+        "name": "Bore end tapers",
+        "description": "10 degree tapers transitioning from the chamfer inwards to the main bore.",
+        "geometry": {
+          "angle_deg": 10.0,
+          "hole_count": 2,
+          "axis_direction": "Z"
+        },
+        "instance_count": 2,
+        "surface_finish": {
+          "finish_symbol": "Rz6"
+        },
+        "access_directions": [
+          "+Z",
+          "-Z"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "angle_deg",
+            "nominal_mm": 10.0,
+            "plus_mm": 3.0,
+            "minus_mm": 3.0
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "section_aa"
+        ]
+      },
+      {
+        "feature_id": "F11",
+        "feature_type": "edge_break",
+        "name": "Tooth edge modification",
+        "description": "Allowed edge break or burr zone on the gear side face, constrained by a maximum axial length.",
+        "geometry": {
+          "length_mm": 0.4
+        },
+        "access_directions": [
+          "+Z",
+          "-Z"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "length",
+            "nominal_mm": 0.4,
+            "upper_limit_mm": 0.4,
+            "qualifier": "MAX"
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "section_view_bb"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "relationship_id": "R01",
+        "from_feature_id": "F01",
+        "to_feature_id": "F08",
+        "relationship_type": "coaxial",
+        "detail": "External gear/root cylinder and central bore are both defined on the Z axis of rotation."
+      },
+      {
+        "relationship_id": "R02",
+        "from_feature_id": "F02",
+        "to_feature_id": "F08",
+        "relationship_type": "coaxial",
+        "detail": "Gear tooth profile is defined about the same Z rotation axis as the datum bore."
+      },
+      {
+        "relationship_id": "R03",
+        "from_feature_id": "F02",
+        "to_feature_id": "F08",
+        "relationship_type": "datum_referenced",
+        "detail": "Gear data table gives radial runout for the gear teeth/profile referenced to datum A."
+      },
+      {
+        "relationship_id": "R04",
+        "from_feature_id": "F02",
+        "to_feature_id": "F08",
+        "relationship_type": "radial_pattern",
+        "detail": "External helical gear teeth form a 17-tooth radial pattern about the datum A bore axis per the gear data table."
+      },
+      {
+        "relationship_id": "R05",
+        "from_feature_id": "F06",
+        "to_feature_id": "F08",
+        "relationship_type": "datum_referenced",
+        "detail": "Left side face runout control references datum A."
+      },
+      {
+        "relationship_id": "R06",
+        "from_feature_id": "F07",
+        "to_feature_id": "F08",
+        "relationship_type": "datum_referenced",
+        "detail": "Right side face runout control references datum A."
+      },
+      {
+        "relationship_id": "R07",
+        "from_feature_id": "F06",
+        "to_feature_id": "F08",
+        "relationship_type": "perpendicular",
+        "detail": "Left side face is a flat axial end face normal to the Z-axis central bore."
+      },
+      {
+        "relationship_id": "R08",
+        "from_feature_id": "F07",
+        "to_feature_id": "F08",
+        "relationship_type": "perpendicular",
+        "detail": "Right side face is a flat axial end face normal to the Z-axis central bore."
+      },
+      {
+        "relationship_id": "R09",
+        "from_feature_id": "F06",
+        "to_feature_id": "F07",
+        "relationship_type": "opposite_face",
+        "detail": "Left and right side faces are opposing axial faces of the gear body."
+      },
+      {
+        "relationship_id": "R10",
+        "from_feature_id": "F10",
+        "to_feature_id": "F08",
+        "relationship_type": "coaxial",
+        "detail": "Bore end tapers share the Z axis of the central bore."
+      },
+      {
+        "relationship_id": "R11",
+        "from_feature_id": "F09",
+        "to_feature_id": "F08",
+        "relationship_type": "intersecting",
+        "detail": "Bore end chamfers are located at the outer edges of the central bore."
+      },
+      {
+        "relationship_id": "R12",
+        "from_feature_id": "F10",
+        "to_feature_id": "F08",
+        "relationship_type": "intersecting",
+        "detail": "Bore end tapers transition into the main central bore."
+      },
+      {
+        "relationship_id": "R13",
+        "from_feature_id": "F08",
+        "to_feature_id": "F09",
+        "relationship_type": "machining_dependency",
+        "detail": "The central bore must be established before the bore end chamfers can be generated."
+      },
+      {
+        "relationship_id": "R14",
+        "from_feature_id": "F08",
+        "to_feature_id": "F10",
+        "relationship_type": "machining_dependency",
+        "detail": "The central bore must be established before the coaxial end tapers can be generated."
+      },
+      {
+        "relationship_id": "R15",
+        "from_feature_id": "F09",
+        "to_feature_id": "F10",
+        "relationship_type": "intersecting",
+        "detail": "Bore end chamfers transition into the adjacent bore end tapers."
+      },
+      {
+        "relationship_id": "R16",
+        "from_feature_id": "F04",
+        "to_feature_id": "F06",
+        "relationship_type": "on_same_face",
+        "detail": "Detail Z feature is described as shallow concentric grooves machined into an end face; count and access directions indicate the grooves occur on both axial faces."
+      },
+      {
+        "relationship_id": "R17",
+        "from_feature_id": "F04",
+        "to_feature_id": "F07",
+        "relationship_type": "on_same_face",
+        "detail": "Detail Z feature is described as shallow concentric grooves machined into an end face; count and access directions indicate the grooves occur on both axial faces."
+      },
+      {
+        "relationship_id": "R18",
+        "from_feature_id": "F11",
+        "to_feature_id": "F06",
+        "relationship_type": "on_same_face",
+        "detail": "The tooth edge/burr condition is marked BOTH SIDE and applies at the axial side faces."
+      },
+      {
+        "relationship_id": "R19",
+        "from_feature_id": "F11",
+        "to_feature_id": "F07",
+        "relationship_type": "on_same_face",
+        "detail": "The tooth edge/burr condition is marked BOTH SIDE and applies at the axial side faces."
+      },
+      {
+        "relationship_id": "R20",
+        "from_feature_id": "F11",
+        "to_feature_id": "F02",
+        "relationship_type": "intersecting",
+        "detail": "The tooth edge modification lies at the intersection of the gear tooth flank/profile and the axial side faces."
+      },
+      {
+        "relationship_id": "R21",
+        "from_feature_id": "F02",
+        "to_feature_id": "F03",
+        "relationship_type": "on_same_face",
+        "detail": "The involute and longitudinal crowning diagrams apply to the gear tooth flank surface represented in the gear tooth profile section."
+      },
+      {
+        "relationship_id": "R22",
+        "from_feature_id": "F02",
+        "to_feature_id": "F11",
+        "relationship_type": "machining_dependency",
+        "detail": "The tooth flank/profile is generated before the permitted edge break or burr zone at the tooth side edges is finished."
+      }
+    ],
+    "datum_scheme": {
+      "datums": [
+        {
+          "datum_letter": "A",
+          "feature_id": "F08",
+          "surface_type": "cylindrical",
+          "description": "Main central internal bore surface"
+        }
+      ],
+      "datum_hierarchy_notes": "Datum A is defined by the central internal bore cylindrical surface and establishes the gear rotation axis. Side-face runout controls and the gear-data radial runout reference datum A."
+    },
+    "part_notes": "Material: TL0321 - 19CrNiMo7-6+FP. Scale: 1:1. General tolerance: ISO 2768 -mK. Heat treatment: CARBORIZED; HARDENED AND TEMPERED\nSURFACE HARDNESS 680HV +100HV\nEFFECTIVE CASE DEPTH\nCHD 600 HV1=0,5+0,4 (MEASURING POINT 1)\nCORE HARDNESS AT ROOT OF TOOTH 410 TO 545HV30 (MEASURING POINT 2). Coating: none specified. General notes: PROCESS: TECHNISCHE SAUBERKEIT NACH S40 029 TS-B / TECHNICAL CLEANLINESS REF: S40 029 TS-B. PACKAGING: TEILE GEWASCHEN UND TROCKEN KONSERVIERT / PARTS WASHED AND DRY PROTECTED. DEBURR: KANTEN NACH ISO 13715 -0.1 / -0.3 / EDGES TO ISO 13715 -0.1 / -0.3. Testing: LENGTH per MPT ORGANIZATION INSTRUCTION OA 016e <B1> (COORDINATES E7). ROUGHNESS per MPT ORGANIZATION INSTRUCTION OA 016e <B2> (COORDINATES E9). DIAMETER per MPT ORGANIZATION INSTRUCTION OA 016e <B3> (COORDINATES F8). CYLINDRICITY per MPT ORGANIZATION INSTRUCTION OA 016e <B4> (COORDINATES F8). MEASURMENT OVER BALLS per MPT ORGANIZATION INSTRUCTION OA 016e <B5> (COORDINATES F3). RUNOUT per MPT ORGANIZATION INSTRUCTION OA 016e <B6> (COORDINATES H3). CYLINDRICITY per MPT ORGANIZATION INSTRUCTION OA 016e <B7> (COORDINATES F9). Extraction notes: Surface finish parameters (Rmax, Rz, Rmr, Rpk, Rvk) are provided in the dimension legend.",
+    "overall_complexity": "complex"
+  },
+  "component_specs": [
+    {
+      "section_id": "gear_data_table",
+      "component_type": "helical_gear",
+      "spec_title": "SCHRAEGVERZAHNUNG AUSSEN/INNEN HELICAL GEAR EXTERNAL/INTERNAL",
+      "spec_standard": "DIN 3960(3/1987)",
+      "parameters": [
+        {
+          "parameter_name": "ZAEHNEZAHL NUMBER OF TEETH",
+          "symbol": "z",
+          "value_raw": "17",
+          "value_numeric": 17.0
+        },
+        {
+          "parameter_name": "NORMALMODUL NORMAL MODULE",
+          "symbol": "m_n",
+          "unit": "mm",
+          "value_raw": "1.55",
+          "value_numeric": 1.55
+        },
+        {
+          "parameter_name": "NORMALEINGRIFFSWINKEL NORMAL PRESSURE ANGLE",
+          "symbol": "\u03b1_n",
+          "unit": "\u00b0",
+          "value_raw": "17",
+          "value_numeric": 17.0
+        },
+        {
+          "parameter_name": "SCHRAEGUNGSWINKEL HELIX ANGLE",
+          "symbol": "\u03b2",
+          "unit": "\u00b0",
+          "value_raw": "8,357",
+          "value_numeric": 8.357
+        },
+        {
+          "parameter_name": "GANGRICHTUNG HAND OF HELIX",
+          "value_raw": "rechts"
+        },
+        {
+          "parameter_name": "GRUNDKREISDURCHMESSER BASE DIAMETER",
+          "symbol": "d_b",
+          "unit": "mm",
+          "value_raw": "25.4457",
+          "value_numeric": 25.4457
+        },
+        {
+          "parameter_name": "TEILKREISDURCHMESSER REFERENCE DIAMETER (PD)",
+          "symbol": "d",
+          "unit": "mm",
+          "value_raw": "26.6329",
+          "value_numeric": 26.6329
+        },
+        {
+          "parameter_name": "NENN- PROFILVERSCHIEBUNGSFAKTOR (OHNE FLANKENSPIEL) NOMINAL ADDENDUM MODIFICATION COEFF. (W/O) BACKLASH",
+          "symbol": "x_n",
+          "value_raw": "0.632",
+          "value_numeric": 0.632
+        },
+        {
+          "parameter_name": "DIAMETRALES ZWEIKUGELMASS MEASUREMENTS OVER 2 BALLS",
+          "symbol": "M_{e,i}",
+          "unit": "mm",
+          "value_raw": "MAX 33.850 | MIN 33.800",
+          "row_notes": "Value spans two sub-rows for MAX and MIN, combined into value_raw."
+        },
+        {
+          "parameter_name": "MESSKUGELDURCHMESSER MEASURING BALL DIAMETER",
+          "symbol": "D_M",
+          "unit": "mm",
+          "value_raw": "3,5",
+          "value_numeric": 3.5
+        },
+        {
+          "parameter_name": "VERDREHFLANKENSPIEL CIRCUMFERENTIAL BACKLASH",
+          "symbol": "j_t",
+          "unit": "mm",
+          "value_raw": "MAX 0,067/0,212 | MIN 0,066/0,203",
+          "row_notes": "Value spans two sub-rows for MAX and MIN, combined into value_raw."
+        },
+        {
+          "parameter_name": "ACHSABSTAND / CENTER DISTANCE | TOLERANZEN / TOLERANCES",
+          "symbol": "a | A_ae, A_ai",
+          "unit": "mm",
+          "value_raw": "28,185/44,24 | 0.040 / -0.040",
+          "row_notes": "Row contains two distinct parameters (center distance and tolerances) packed into a single numbered block. Separated by | in extracted text."
+        },
+        {
+          "parameter_name": "GEGENRADNUMMER MATING GEAR NUMBER",
+          "value_raw": "M0024420 | M0024816",
+          "row_notes": "Two numbers provided on separate lines."
+        },
+        {
+          "parameter_name": "GEGENRADZAEHNEZAHL TEETH NUMBER OF MATING GEAR",
+          "symbol": "z",
+          "value_raw": "17/72",
+          "row_notes": "Expressed as a ratio or two distinct values."
+        },
+        {
+          "parameter_name": "ZAHNRAD BEZUGSPROFIL GEAR BASIC RACK",
+          "value_raw": "",
+          "row_notes": "Cell is empty."
+        },
+        {
+          "parameter_name": "KOPFHOEHE ADDENDUM",
+          "symbol": "h_aP",
+          "unit": "mm",
+          "value_raw": "1,503",
+          "value_numeric": 1.503
+        },
+        {
+          "parameter_name": "FUSSHOEHE DEDENDUM",
+          "symbol": "h_fP",
+          "unit": "mm",
+          "value_raw": "2,197",
+          "value_numeric": 2.197
+        },
+        {
+          "parameter_name": "FUSSRUNDUNGSRADIUS FILLET RADIUS",
+          "symbol": "\u03c1_fP",
+          "unit": "mm",
+          "value_raw": "0,62",
+          "value_numeric": 0.62
+        },
+        {
+          "parameter_name": "VERZAHNUNGSTOLERANZEN TOOTH TOLERANCES",
+          "value_raw": "ISO 1328(1995) | DIN 3962 (8/1978)",
+          "standard_ref": "ISO 1328(1995) | DIN 3962 (8/1978)"
+        },
+        {
+          "parameter_name": "PROFIL- FORMABWEICHUNG PROFILE FORM DEVIATION",
+          "symbol": "f_f\u03b1",
+          "unit": "mm",
+          "value_raw": "0.010",
+          "value_numeric": 0.01
+        },
+        {
+          "parameter_name": "PROFIL- WINKELABWEICHUNG PROFILE ANGLE DEVIATION",
+          "symbol": "f_H\u03b1",
+          "unit": "mm",
+          "value_raw": "+0.010 | -0.020",
+          "plus_tolerance": 0.01,
+          "minus_tolerance": 0.02,
+          "row_notes": "Table presents deviations in sub-columns with + and - signs."
+        },
+        {
+          "parameter_name": "FLANKENLINIEN- FORMABWEICHUNG HELIX FORM DEVIATION",
+          "symbol": "f_f\u03b2",
+          "unit": "mm",
+          "value_raw": "0.010",
+          "value_numeric": 0.01
+        },
+        {
+          "parameter_name": "FLANKENLINIEN- WINKELABWEICHUNG HELIX ANGLE DEVIATION",
+          "symbol": "f_H\u03b2",
+          "unit": "mm",
+          "value_raw": "0.025",
+          "value_numeric": 0.025,
+          "row_notes": "+ and - signs are printed in the symbol column, but the value is a single centered numeric value."
+        },
+        {
+          "parameter_name": "TEILUNGSSPRUNG DIFFERENCE BETWEEN ADJACENT PITCHES",
+          "symbol": "f_u",
+          "unit": "mm",
+          "value_raw": "0.018",
+          "value_numeric": 0.018
+        },
+        {
+          "parameter_name": "TEILUNGS- EINZELABWEICHUNG SINGLE PITCH DEVIATION",
+          "symbol": "f_p",
+          "unit": "mm",
+          "value_raw": "0.016",
+          "value_numeric": 0.016
+        },
+        {
+          "parameter_name": "TEILUNGS- SPANNENABWEICHUNG CUMULATIVE CIRCULAR PITCH DEVIATION",
+          "symbol": "F_pz/8",
+          "unit": "mm",
+          "value_raw": "0.030",
+          "value_numeric": 0.03
+        },
+        {
+          "parameter_name": "EINFLANKEN- WAELZABWEICHUNG TOTAL TANGENTIAL COMPOSITE DEVIATION",
+          "symbol": "F_i'",
+          "unit": "mm",
+          "value_raw": "\u2212",
+          "row_notes": "Value is given as a dash."
+        },
+        {
+          "parameter_name": "EINFLANKEN- WAELZSPRUNGABWEICHUNG TOOTH - TO - TOOTH TANGENTIAL COMP. DEVIATION",
+          "symbol": "f_i'",
+          "unit": "mm",
+          "value_raw": "\u2212",
+          "row_notes": "Value is given as a dash."
+        },
+        {
+          "parameter_name": "RUNDLAUFABWEICHUNG RADIAL RUNOUT",
+          "symbol": "F_r",
+          "unit": "mm",
+          "value_raw": "0,055 A",
+          "value_numeric": 0.055,
+          "row_notes": "Value is enclosed in a feature control frame with a total runout symbol and datum reference A."
+        }
+      ],
+      "extraction_notes": "The table header includes calculation reference number 'z33_17_17_72_m155_a17_b8' and date '12.07.2012' in the top right block, outside the 29 main parameter rows. Several rows combine multiple lines of text (rows 9, 11, 12) or sub-columns for +/- deviations (row 21)."
+    }
+  ],
+  "component_spec_links": [
+    {
+      "spec_section_id": "gear_data_table",
+      "feature_ids": [
+        "F02",
+        "F01",
+        "F03"
+      ],
+      "link_notes": "The helical gear table describes the external gear tooth zone: tooth count, module, helix angle, gear tolerances, and radial runout. It matches the tooth profile, tooth tip detail, axial gear envelope/face-width section, and tooth-flank crowning diagrams. Bore chamfers, tapers, end-face grooves, and datum bore are not the primary gear-spec zone."
+    }
+  ],
+  "assumptions": [
+    {
+      "assumption_id": "A01",
+      "text": "Grouped section_aa:F1 with section_view_bb:F1 because Section B-B is described as passing radially through the gear body and both observations define the axial external gear envelope/face-width zone. section_aa:F1 was made canonical because it carries the toleranced width and external/root-cylinder diameter."
+    },
+    {
+      "assumption_id": "A02",
+      "text": "Grouped section_cc:F1 with detail_y:F1 because the parent tooth-profile section has a Detail Y callout at the gear tooth tip and Detail Y enlarges that tooth-tip/chamfer region. section_cc:F1 was made canonical because it contains the broader tooth-profile geometry."
+    },
+    {
+      "assumption_id": "A03",
+      "text": "Grouped involute_crowning:F1 with longitudinal_crowning:F1 as two evaluation diagrams for the same physical gear tooth flank/mating surface. involute_crowning:F1 was made canonical because it contains more explicit profile/path diameter callouts."
+    },
+    {
+      "assumption_id": "A04",
+      "text": "Did not group detail_z:F1 with section_aa:F5 despite the nearby Detail Z callout on the bore-end chamfer observation, because Detail Z describes R0.8 shallow concentric end-face grooves with diameters around the gear face, while section_aa:F5 is a 20 degree central-bore chamfer. Treating them as one feature would merge incompatible geometry."
+    },
+    {
+      "assumption_id": "A05",
+      "text": "Left isometric_view:F1 as a singleton visualization feature because it is an overall part-body view with no feature-level dimensions and would otherwise over-group the bore, teeth, and body into one node."
+    },
+    {
+      "assumption_id": "A06",
+      "text": "Linked gear_data_table to the external gear tooth/profile and crowning feature observations because the table title and parameters describe the helical gear teeth, not the central bore or end-face groove features."
+    },
+    {
+      "assumption_id": "A07",
+      "text": "Used the gear-data radial runout entry referenced to datum A as relationship evidence from the gear tooth profile to the datum bore, even though the runout value is stored in the component specification table rather than as a section-level GD&T control."
+    },
+    {
+      "assumption_id": "A08",
+      "clarification_id": "C01",
+      "text": "The cylindricity control over LENGTH B applies exclusively to the straight main central bore surface and excludes the 10-degree bore end taper."
+    }
+  ]
+}

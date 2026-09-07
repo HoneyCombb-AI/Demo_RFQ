@@ -1,0 +1,118 @@
+{
+  "drawing_number": "C.14.092-00",
+  "part_name": "Stirnrad Z43",
+  "material": "16MnCr5 / ESP65 // alternativ: 42CrMoPb4",
+  "quantity": 100,
+  "weights": {
+    "raw_bar_dia_mm": 50.0,
+    "actual_bar_dia_mm": 50.375,
+    "pcs_per_5m_bar": 311,
+    "gross_weight_kg": 0.2517,
+    "net_weight_kg": 0.0876,
+    "scrap_weight_kg": 0.1641
+  },
+  "direct_cost": {
+    "material_cost_inr": 5.1,
+    "machining_cost_inr": 145.0,
+    "heat_treatment_cost_inr": 3.28,
+    "direct_cost_subtotal_inr": 153.39
+  },
+  "overheads_and_surcharges": {
+    "factory_overhead_margin_inr": 153.39,
+    "tooling_inr": 30.68,
+    "rejection_inr": 6.75,
+    "inspection_inr": 6.14,
+    "cleaning_inr": 3.07,
+    "scrap_recovery_credit_inr": -3.49,
+    "export_packaging_inr": 1.75,
+    "fob_freight_inr": 1.31,
+    "packaging_and_fob_inr": 3.07
+  },
+  "pricing_summary": {
+    "subtotal_before_margin_inr": 199.59,
+    "overhead_and_margin_inr": 153.39,
+    "final_ex_works_price_inr": 352.98
+  },
+  "machining_operations": [
+    {
+      "sequence": 2,
+      "operation_name": "CNC Turn – Blank First Side",
+      "machine_family": "cnc_lathe",
+      "cycle_time_sec": 118.2,
+      "hourly_rate_inr": 250.0,
+      "efficiency": 0.85,
+      "cost_per_piece_inr": 9.66,
+      "cost_per_piece_raw": 9.656862745098039
+    },
+    {
+      "sequence": 3,
+      "operation_name": "CNC Turn – Blank Second Side",
+      "machine_family": "cnc_lathe",
+      "cycle_time_sec": 45.6,
+      "hourly_rate_inr": 250.0,
+      "efficiency": 0.85,
+      "cost_per_piece_inr": 3.73,
+      "cost_per_piece_raw": 3.7254901960784315
+    },
+    {
+      "sequence": 5,
+      "operation_name": "Gear Hobbing",
+      "machine_family": "gear_hobbing",
+      "cycle_time_sec": 215.4,
+      "hourly_rate_inr": 800.0,
+      "efficiency": 0.85,
+      "cost_per_piece_inr": 56.31,
+      "cost_per_piece_raw": 56.31372549019608
+    },
+    {
+      "sequence": 6,
+      "operation_name": "Gear Shaving",
+      "machine_family": "gear_shaving",
+      "cycle_time_sec": 82.2,
+      "hourly_rate_inr": 450.0,
+      "efficiency": 0.85,
+      "cost_per_piece_inr": 12.09,
+      "cost_per_piece_raw": 12.088235294117647
+    },
+    {
+      "sequence": 8,
+      "operation_name": "Pre-HT Deburr and Clean",
+      "machine_family": "finish_bench",
+      "cycle_time_sec": 348.6,
+      "hourly_rate_inr": 200.0,
+      "efficiency": 0.85,
+      "cost_per_piece_inr": 22.78,
+      "cost_per_piece_raw": 22.784313725490197
+    },
+    {
+      "sequence": 10,
+      "operation_name": "Post-HT Teeth Chamfering",
+      "machine_family": "gear_shaving",
+      "cycle_time_sec": 100.8,
+      "hourly_rate_inr": 800.0,
+      "efficiency": 0.85,
+      "cost_per_piece_inr": 26.35,
+      "cost_per_piece_raw": 26.352941176470587
+    },
+    {
+      "sequence": 13,
+      "operation_name": "CNC Hard Turn – Bore and Faces",
+      "machine_family": "cnc_lathe",
+      "cycle_time_sec": 120.0,
+      "hourly_rate_inr": 250.0,
+      "efficiency": 0.85,
+      "cost_per_piece_inr": 9.8,
+      "cost_per_piece_raw": 9.803921568627452
+    },
+    {
+      "sequence": 14,
+      "operation_name": "Post-Hard-Turning Wash",
+      "machine_family": "finish_bench",
+      "cycle_time_sec": 65.4,
+      "hourly_rate_inr": 200.0,
+      "efficiency": 0.85,
+      "cost_per_piece_inr": 4.27,
+      "cost_per_piece_raw": 4.274509803921569
+    }
+  ]
+}

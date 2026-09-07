@@ -1,0 +1,2013 @@
+{
+  "analysis_id": "1324_XXX_010_merge_20260906T140310Z",
+  "source_feature_graph_id": "1324_XXX_010_merge_20260906T140310Z",
+  "quantity": 20000,
+  "part_family": "hybrid",
+  "base_geometry": "rotational",
+  "stock": {
+    "form": "forging"
+  },
+  "operations": [
+    {
+      "sequence": 1,
+      "name": "Billet Preparation",
+      "machine_family": "saw",
+      "setup_note": "Cut alloy-steel billet to the controlled weight required by the closed forging die. Billet weight includes flash, scale loss, and machining stock.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "setup_time_min": 10.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "saw_cut",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "saw_cut",
+            "cut_diameter_mm": 80.0,
+            "cut_count": 1
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 2,
+      "name": "Heat Billet for Forging",
+      "machine_family": "sealed_quench_furnace",
+      "setup_note": "Heat billets as a production batch to the qualified forging temperature and transfer promptly to the press. Batch quantity is limited by uniform heating and press takt requirements.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "setup_time_min": 15.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "heat_billet",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "furnace_cycle",
+            "batch_size_parts": 100,
+            "part_mass_kg": 7.1,
+            "max_section_thickness_mm": 71.5,
+            "target_temp_c": 1150.0
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 3,
+      "name": "Closed-Die Forge Shaft Blank",
+      "machine_family": "hot_forging_press",
+      "setup_note": "Locate the heated billet in blocker and finisher dies with grain flow aligned along the shaft axis. Form the large gear head and stepped shaft as a near-net blank.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "setup_time_min": 30.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "forge_closed_die",
+          "target_feature_ids": [
+            "F26"
+          ],
+          "inputs": {
+            "kind": "forge",
+            "billet_weight_kg": 7.1,
+            "forged_weight_kg": 6.8,
+            "number_of_blows": 3,
+            "die_stations": 2,
+            "forging_temp_c": 1150.0,
+            "max_section_thickness_mm": 71.5
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 4,
+      "name": "Hot Trim Forging Flash",
+      "machine_family": "hot_forging_press",
+      "setup_note": "Transfer the hot forging to the dedicated trim tooling and locate from the die-formed profile. Remove flash before the forging cools below the qualified trimming range.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "setup_time_min": 20.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "trim_flash",
+          "target_feature_ids": [
+            "F26"
+          ],
+          "inputs": {
+            "kind": "forge",
+            "billet_weight_kg": 6.8,
+            "forged_weight_kg": 6.34,
+            "number_of_blows": 1,
+            "die_stations": 1,
+            "forging_temp_c": 900.0,
+            "max_section_thickness_mm": 71.5
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 5,
+      "name": "Post-Forge Normalize",
+      "machine_family": "normalizing_furnace",
+      "setup_note": "Normalize forgings as a controlled batch to refine the forged microstructure and produce a uniform machinable condition. Load parts with spacing sufficient for uniform heating and air cooling.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "setup_time_min": 15.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "normalize",
+          "target_feature_ids": [
+            "F26"
+          ],
+          "inputs": {
+            "kind": "furnace_cycle",
+            "batch_size_parts": 100,
+            "part_mass_kg": 6.34,
+            "max_section_thickness_mm": 71.5,
+            "target_temp_c": 900.0
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 6,
+      "name": "Descale Forging",
+      "machine_family": "shot_peening",
+      "setup_note": "Support normalized forgings in the blast machine and remove forge scale from all surfaces before inspection or machining. Protect against excessive peening of slender sections.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "setup_time_min": 10.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "shot_blast",
+          "target_feature_ids": [
+            "F26"
+          ],
+          "inputs": {
+            "kind": "surface_treat",
+            "treated_area_mm2": 45000.0,
+            "batch_size_parts": 100,
+            "requires_bake": false
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 7,
+      "name": "Pre-Machining Forging NDT",
+      "machine_family": "inspection",
+      "setup_note": "Inspect the descaled forging before machining investment. Use the qualified forging acceptance criteria and record traceability by heat and die lot.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "setup_time_min": 15.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "mpi_ndt",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "inspection",
+            "dimension_count": 0,
+            "gdt_count": 0,
+            "sampling_rate_pct": 100.0,
+            "inspected_area_mm2": 45000.0,
+            "requires_fixture": false
+          }
+        },
+        {
+          "sequence": 2,
+          "operation_type": "ut_ndt",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "inspection",
+            "dimension_count": 0,
+            "gdt_count": 0,
+            "sampling_rate_pct": 100.0,
+            "inspected_area_mm2": 45000.0,
+            "requires_fixture": false
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 8,
+      "name": "CNC Turn \u2013 Left End Datum",
+      "machine_family": "cnc_lathe",
+      "setup_note": "Grip the large forged head in profiled jaws, face the left end, and produce the Z1 center hole. Take the first cuts below the remaining forge skin.",
+      "datum_references": [
+        "Z1"
+      ],
+      "material_machinability": "medium",
+      "setup_time_min": 20.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "face_turn",
+          "target_feature_ids": [
+            "F26"
+          ],
+          "inputs": {
+            "kind": "radial_turn",
+            "start_diameter_mm": 52.0,
+            "finish_diameter_mm": 0.0,
+            "groove_count": 1,
+            "total_stock_mm": 3.0
+          }
+        },
+        {
+          "sequence": 2,
+          "operation_type": "center_drill",
+          "target_feature_ids": [
+            "F27"
+          ],
+          "inputs": {
+            "kind": "point_drill",
+            "hole_diameter_mm": 4.0,
+            "hole_depth_mm": 2.5,
+            "hole_count": 1,
+            "through_hole": false
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 9,
+      "name": "CNC Turn \u2013 Right End Preparation",
+      "machine_family": "cnc_lathe",
+      "setup_note": "Reverse the forging and locate from the left-end face and a rough concentric OD. Face the right end to establish axial length and produce the stepped right center feature for supported turning.",
+      "datum_references": [
+        "Z1"
+      ],
+      "material_machinability": "medium",
+      "setup_time_min": 20.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "face_turn",
+          "target_feature_ids": [
+            "F24",
+            "F26"
+          ],
+          "inputs": {
+            "kind": "radial_turn",
+            "start_diameter_mm": 119.1,
+            "finish_diameter_mm": 0.0,
+            "groove_count": 1,
+            "total_stock_mm": 2.0
+          }
+        },
+        {
+          "sequence": 2,
+          "operation_type": "center_drill",
+          "target_feature_ids": [
+            "F22"
+          ],
+          "inputs": {
+            "kind": "point_drill",
+            "hole_diameter_mm": 4.0,
+            "hole_depth_mm": 2.0,
+            "hole_count": 1,
+            "through_hole": false
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 10,
+      "name": "CNC Turn \u2013 Soft OD Profile",
+      "machine_family": "cnc_lathe",
+      "setup_note": "Support the normalized forging between the center features and drive from the large head, using a steady rest where required. Rough all diameters before semi-finishing, leave post-carburizing grinding stock on controlled journals and datums, then cut grooves last.",
+      "datum_references": [
+        "Z1",
+        "Z8",
+        "P1"
+      ],
+      "material_machinability": "medium",
+      "setup_time_min": 35.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "rough_turn_od",
+          "target_feature_ids": [
+            "F03"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 121.5,
+            "finish_diameter_mm": 119.8,
+            "cut_length_mm": 31.0
+          }
+        },
+        {
+          "sequence": 2,
+          "operation_type": "rough_turn_od",
+          "target_feature_ids": [
+            "F21"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 102.6,
+            "finish_diameter_mm": 100.4,
+            "cut_length_mm": 3.5
+          }
+        },
+        {
+          "sequence": 3,
+          "operation_type": "rough_turn_od",
+          "target_feature_ids": [
+            "F19"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 98.6,
+            "finish_diameter_mm": 96.4,
+            "cut_length_mm": 0.4
+          }
+        },
+        {
+          "sequence": 4,
+          "operation_type": "rough_turn_od",
+          "target_feature_ids": [
+            "F17"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 97.0,
+            "finish_diameter_mm": 94.8,
+            "cut_length_mm": 5.5
+          }
+        },
+        {
+          "sequence": 5,
+          "operation_type": "rough_turn_od",
+          "target_feature_ids": [
+            "F30"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 74.5,
+            "finish_diameter_mm": 72.176,
+            "cut_length_mm": 15.5
+          }
+        },
+        {
+          "sequence": 6,
+          "operation_type": "rough_turn_od",
+          "target_feature_ids": [
+            "F28"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 47.0,
+            "finish_diameter_mm": 44.8,
+            "cut_length_mm": 11.5
+          }
+        },
+        {
+          "sequence": 7,
+          "operation_type": "rough_turn_od",
+          "target_feature_ids": [
+            "F28"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 61.0,
+            "finish_diameter_mm": 58.8,
+            "cut_length_mm": 15.5
+          }
+        },
+        {
+          "sequence": 8,
+          "operation_type": "rough_turn_od",
+          "target_feature_ids": [
+            "F28"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 72.0,
+            "finish_diameter_mm": 69.8,
+            "cut_length_mm": 17.5
+          }
+        },
+        {
+          "sequence": 9,
+          "operation_type": "rough_turn_od",
+          "target_feature_ids": [
+            "F02"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 55.0,
+            "finish_diameter_mm": 52.8,
+            "cut_length_mm": 31.0
+          }
+        },
+        {
+          "sequence": 10,
+          "operation_type": "rough_turn_od",
+          "target_feature_ids": [
+            "F01"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 45.0,
+            "finish_diameter_mm": 42.6,
+            "cut_length_mm": 4.0
+          }
+        },
+        {
+          "sequence": 11,
+          "operation_type": "rough_turn_od",
+          "target_feature_ids": [
+            "F15"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 102.6,
+            "finish_diameter_mm": 100.4,
+            "cut_length_mm": 5.5
+          }
+        },
+        {
+          "sequence": 12,
+          "operation_type": "rough_turn_od",
+          "target_feature_ids": [
+            "F12"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 61.0,
+            "finish_diameter_mm": 58.8,
+            "cut_length_mm": 2.0
+          }
+        },
+        {
+          "sequence": 13,
+          "operation_type": "finish_turn_od",
+          "target_feature_ids": [
+            "F03"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 119.8,
+            "finish_diameter_mm": 119.4,
+            "cut_length_mm": 31.0
+          }
+        },
+        {
+          "sequence": 14,
+          "operation_type": "finish_turn_od",
+          "target_feature_ids": [
+            "F21"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 100.4,
+            "finish_diameter_mm": 99.6,
+            "cut_length_mm": 3.5
+          }
+        },
+        {
+          "sequence": 15,
+          "operation_type": "finish_turn_od",
+          "target_feature_ids": [
+            "F19"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 96.4,
+            "finish_diameter_mm": 95.6,
+            "cut_length_mm": 0.4
+          }
+        },
+        {
+          "sequence": 16,
+          "operation_type": "finish_turn_od",
+          "target_feature_ids": [
+            "F17"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 94.8,
+            "finish_diameter_mm": 94.0,
+            "cut_length_mm": 5.5
+          }
+        },
+        {
+          "sequence": 17,
+          "operation_type": "finish_turn_od",
+          "target_feature_ids": [
+            "F30"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 72.176,
+            "finish_diameter_mm": 71.776,
+            "cut_length_mm": 15.5
+          }
+        },
+        {
+          "sequence": 18,
+          "operation_type": "finish_turn_od",
+          "target_feature_ids": [
+            "F28"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 44.8,
+            "finish_diameter_mm": 44.0,
+            "cut_length_mm": 11.5
+          }
+        },
+        {
+          "sequence": 19,
+          "operation_type": "finish_turn_od",
+          "target_feature_ids": [
+            "F28"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 58.8,
+            "finish_diameter_mm": 58.0,
+            "cut_length_mm": 15.5
+          }
+        },
+        {
+          "sequence": 20,
+          "operation_type": "finish_turn_od",
+          "target_feature_ids": [
+            "F28"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 69.8,
+            "finish_diameter_mm": 69.3,
+            "cut_length_mm": 17.5
+          }
+        },
+        {
+          "sequence": 21,
+          "operation_type": "finish_turn_od",
+          "target_feature_ids": [
+            "F02"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 52.8,
+            "finish_diameter_mm": 52.3,
+            "cut_length_mm": 31.0
+          }
+        },
+        {
+          "sequence": 22,
+          "operation_type": "finish_turn_od",
+          "target_feature_ids": [
+            "F01"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 42.6,
+            "finish_diameter_mm": 41.8,
+            "cut_length_mm": 4.0
+          }
+        },
+        {
+          "sequence": 23,
+          "operation_type": "finish_turn_od",
+          "target_feature_ids": [
+            "F15"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 100.4,
+            "finish_diameter_mm": 99.6,
+            "cut_length_mm": 5.5
+          }
+        },
+        {
+          "sequence": 24,
+          "operation_type": "finish_turn_od",
+          "target_feature_ids": [
+            "F12"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 58.8,
+            "finish_diameter_mm": 58.0,
+            "cut_length_mm": 2.0
+          }
+        },
+        {
+          "sequence": 25,
+          "operation_type": "turn_taper",
+          "target_feature_ids": [
+            "F11"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 52.0,
+            "finish_diameter_mm": 58.0,
+            "cut_length_mm": 8.5,
+            "taper_included_angle_deg": 40.0
+          }
+        },
+        {
+          "sequence": 26,
+          "operation_type": "turn_taper",
+          "target_feature_ids": [
+            "F18"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 94.0,
+            "finish_diameter_mm": 95.6,
+            "cut_length_mm": 3.0,
+            "taper_included_angle_deg": 30.0
+          }
+        },
+        {
+          "sequence": 27,
+          "operation_type": "form_turn",
+          "target_feature_ids": [
+            "F10"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 52.6,
+            "finish_diameter_mm": 52.0,
+            "cut_length_mm": 15.7
+          }
+        },
+        {
+          "sequence": 28,
+          "operation_type": "form_turn",
+          "target_feature_ids": [
+            "F13"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 96.4,
+            "finish_diameter_mm": 95.6,
+            "cut_length_mm": 2.8
+          }
+        },
+        {
+          "sequence": 29,
+          "operation_type": "form_turn",
+          "target_feature_ids": [
+            "F20"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 100.4,
+            "finish_diameter_mm": 99.6,
+            "cut_length_mm": 2.8
+          }
+        },
+        {
+          "sequence": 30,
+          "operation_type": "chamfer_turn",
+          "target_feature_ids": [
+            "F14"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 58.8,
+            "finish_diameter_mm": 58.0,
+            "cut_length_mm": 0.6
+          }
+        },
+        {
+          "sequence": 31,
+          "operation_type": "undercut_groove",
+          "target_feature_ids": [
+            "F04"
+          ],
+          "inputs": {
+            "kind": "radial_turn",
+            "start_diameter_mm": 52.0,
+            "finish_diameter_mm": 50.9,
+            "groove_width_mm": 2.6,
+            "groove_count": 1
+          }
+        },
+        {
+          "sequence": 32,
+          "operation_type": "undercut_groove",
+          "target_feature_ids": [
+            "F05"
+          ],
+          "inputs": {
+            "kind": "radial_turn",
+            "start_diameter_mm": 44.0,
+            "finish_diameter_mm": 43.2,
+            "groove_width_mm": 2.75,
+            "groove_count": 1
+          }
+        },
+        {
+          "sequence": 33,
+          "operation_type": "undercut_groove",
+          "target_feature_ids": [
+            "F06"
+          ],
+          "inputs": {
+            "kind": "radial_turn",
+            "start_diameter_mm": 69.0,
+            "finish_diameter_mm": 68.2,
+            "groove_width_mm": 2.75,
+            "groove_count": 1
+          }
+        },
+        {
+          "sequence": 34,
+          "operation_type": "groove_od",
+          "target_feature_ids": [
+            "F07"
+          ],
+          "inputs": {
+            "kind": "radial_turn",
+            "start_diameter_mm": 52.0,
+            "finish_diameter_mm": 51.0,
+            "groove_width_mm": 2.15,
+            "groove_count": 1
+          }
+        },
+        {
+          "sequence": 35,
+          "operation_type": "groove_od",
+          "target_feature_ids": [
+            "F16"
+          ],
+          "inputs": {
+            "kind": "radial_turn",
+            "start_diameter_mm": 99.6,
+            "finish_diameter_mm": 94.5,
+            "groove_width_mm": 3.5,
+            "groove_count": 1
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 11,
+      "name": "CNC Turn \u2013 Right Bore and End Profile",
+      "machine_family": "cnc_lathe",
+      "setup_note": "Clamp the soft-machined shaft in full-contact soft jaws on concentric shaft diameters and support as necessary. Pick up the Z1-Z8 axis, machine the right bore from largest accessible step to smallest, and leave grinding stock on runout-controlled bore surfaces.",
+      "datum_references": [
+        "Z1",
+        "Z8",
+        "K6"
+      ],
+      "material_machinability": "medium",
+      "setup_time_min": 30.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "drill",
+          "target_feature_ids": [
+            "F32"
+          ],
+          "inputs": {
+            "kind": "point_drill",
+            "hole_diameter_mm": 45.0,
+            "hole_depth_mm": 15.0,
+            "hole_count": 1,
+            "through_hole": false
+          }
+        },
+        {
+          "sequence": 2,
+          "operation_type": "rough_bore_id",
+          "target_feature_ids": [
+            "F25"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 70.0,
+            "finish_diameter_mm": 95.2,
+            "cut_length_mm": 6.0
+          }
+        },
+        {
+          "sequence": 3,
+          "operation_type": "rough_bore_id",
+          "target_feature_ids": [
+            "F32"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 45.0,
+            "finish_diameter_mm": 50.2,
+            "cut_length_mm": 15.0
+          }
+        },
+        {
+          "sequence": 4,
+          "operation_type": "rough_bore_id",
+          "target_feature_ids": [
+            "F32"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 50.2,
+            "finish_diameter_mm": 57.2,
+            "cut_length_mm": 12.0
+          }
+        },
+        {
+          "sequence": 5,
+          "operation_type": "rough_bore_id",
+          "target_feature_ids": [
+            "F32"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 57.2,
+            "finish_diameter_mm": 60.2,
+            "cut_length_mm": 9.0
+          }
+        },
+        {
+          "sequence": 6,
+          "operation_type": "rough_bore_id",
+          "target_feature_ids": [
+            "F32"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 60.2,
+            "finish_diameter_mm": 69.2,
+            "cut_length_mm": 6.0
+          }
+        },
+        {
+          "sequence": 7,
+          "operation_type": "finish_bore_id",
+          "target_feature_ids": [
+            "F25"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 95.2,
+            "finish_diameter_mm": 96.0,
+            "cut_length_mm": 6.0
+          }
+        },
+        {
+          "sequence": 8,
+          "operation_type": "semi_finish_bore_id",
+          "target_feature_ids": [
+            "F32"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 50.2,
+            "finish_diameter_mm": 50.7,
+            "cut_length_mm": 15.0
+          }
+        },
+        {
+          "sequence": 9,
+          "operation_type": "semi_finish_bore_id",
+          "target_feature_ids": [
+            "F32"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 57.2,
+            "finish_diameter_mm": 57.7,
+            "cut_length_mm": 12.0
+          }
+        },
+        {
+          "sequence": 10,
+          "operation_type": "semi_finish_bore_id",
+          "target_feature_ids": [
+            "F32"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 60.2,
+            "finish_diameter_mm": 60.7,
+            "cut_length_mm": 9.0
+          }
+        },
+        {
+          "sequence": 11,
+          "operation_type": "semi_finish_bore_id",
+          "target_feature_ids": [
+            "F32"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 69.2,
+            "finish_diameter_mm": 69.7,
+            "cut_length_mm": 6.0
+          }
+        },
+        {
+          "sequence": 12,
+          "operation_type": "bore_taper",
+          "target_feature_ids": [
+            "F09"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 61.0,
+            "finish_diameter_mm": 70.0,
+            "cut_length_mm": 7.8,
+            "taper_included_angle_deg": 60.0
+          }
+        },
+        {
+          "sequence": 13,
+          "operation_type": "groove_id",
+          "target_feature_ids": [
+            "F08"
+          ],
+          "inputs": {
+            "kind": "radial_turn",
+            "start_diameter_mm": 61.0,
+            "finish_diameter_mm": 63.0,
+            "groove_width_mm": 2.0,
+            "groove_count": 1
+          }
+        },
+        {
+          "sequence": 14,
+          "operation_type": "face_turn",
+          "target_feature_ids": [
+            "F24"
+          ],
+          "inputs": {
+            "kind": "radial_turn",
+            "start_diameter_mm": 119.1,
+            "finish_diameter_mm": 96.0,
+            "groove_count": 1,
+            "total_stock_mm": 0.5
+          }
+        },
+        {
+          "sequence": 15,
+          "operation_type": "turn_taper",
+          "target_feature_ids": [
+            "F31"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 119.4,
+            "finish_diameter_mm": 98.0,
+            "cut_length_mm": 26.9,
+            "taper_included_angle_deg": 42.9334
+          }
+        },
+        {
+          "sequence": 16,
+          "operation_type": "chamfer_turn",
+          "target_feature_ids": [
+            "F23"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 119.1,
+            "finish_diameter_mm": 117.9,
+            "cut_length_mm": 0.6
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 12,
+      "name": "VMC Drill \u2013 Stepped Cross Hole",
+      "machine_family": "vmc_5axis",
+      "setup_note": "Locate the shaft from the Z1-Z8 axis in a rotary shaft fixture and clock the radial direction. Drill the larger radial portion before the smaller intersecting portion and retain the part for both drilling steps.",
+      "datum_references": [
+        "Z1",
+        "Z8"
+      ],
+      "material_machinability": "medium",
+      "setup_time_min": 25.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "spot_drill",
+          "target_feature_ids": [
+            "F29"
+          ],
+          "inputs": {
+            "kind": "point_drill",
+            "hole_diameter_mm": 8.0,
+            "hole_depth_mm": 1.0,
+            "hole_count": 1,
+            "through_hole": false
+          }
+        },
+        {
+          "sequence": 2,
+          "operation_type": "drill",
+          "target_feature_ids": [
+            "F29"
+          ],
+          "inputs": {
+            "kind": "point_drill",
+            "hole_diameter_mm": 6.0,
+            "hole_depth_mm": 71.476,
+            "hole_count": 1,
+            "through_hole": true
+          }
+        },
+        {
+          "sequence": 3,
+          "operation_type": "drill",
+          "target_feature_ids": [
+            "F29"
+          ],
+          "inputs": {
+            "kind": "point_drill",
+            "hole_diameter_mm": 8.0,
+            "hole_depth_mm": 35.738,
+            "hole_count": 1,
+            "pilot_diameter_mm": 6.0,
+            "through_hole": false
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 13,
+      "name": "Roll Left External Spline",
+      "machine_family": "spline_thread_rolling",
+      "setup_note": "Locate from the turned spline blank and axial shoulder, verify the controlled rolling diameter, and cold-roll the SAE external spline before hardening. Use a lead-in and runout arrangement approved by the rolling-die supplier.",
+      "datum_references": [
+        "P1",
+        "Z1"
+      ],
+      "material_machinability": "medium",
+      "setup_time_min": 30.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "spline_roll",
+          "target_feature_ids": [
+            "F01"
+          ],
+          "inputs": {
+            "kind": "roll_form",
+            "blank_diameter_mm": 41.8,
+            "form_length_mm": 4.0,
+            "form_depth_mm": 4.1,
+            "pitch_mm": 13.82,
+            "tooth_count": 10
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 14,
+      "name": "Inspect Rolled Spline",
+      "machine_family": "inspection",
+      "setup_note": "Gauge the soft rolled spline from datum P1 using the specified composite and sector gauges. Verify tooth width, major diameter, and clean die fill before releasing the lot to gear cutting.",
+      "datum_references": [
+        "P1",
+        "Z1"
+      ],
+      "material_machinability": "medium",
+      "setup_time_min": 10.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "manual_inspect",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "inspection",
+            "dimension_count": 4,
+            "gdt_count": 0,
+            "sampling_rate_pct": 100.0,
+            "requires_fixture": true
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 15,
+      "name": "Hob Right Gear Teeth",
+      "machine_family": "gear_hobbing",
+      "setup_note": "Locate the soft gear blank from the Z1-Z8 axis and the established axial face, then generate the right-hand external tooth system. Leave qualified flank stock for shaving and post-hardening gear grinding.",
+      "datum_references": [
+        "Z1",
+        "Z8",
+        "K6"
+      ],
+      "material_machinability": "medium",
+      "setup_time_min": 45.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "hob_teeth",
+          "target_feature_ids": [
+            "F03"
+          ],
+          "inputs": {
+            "kind": "gear_hob",
+            "number_of_teeth": 48,
+            "normal_module_mm": 2.0,
+            "face_width_mm": 31.0,
+            "whole_depth_mm": 4.5,
+            "helix_angle_deg": 0.0,
+            "hob_diameter_mm": 80.0,
+            "hob_starts": 1,
+            "number_of_cuts": 2
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 16,
+      "name": "Pre-Shave Gear Check",
+      "machine_family": "inspection",
+      "setup_note": "Inspect the hobbed gear relative to Z1-Z8 and K6 before further processing. Verify tooth thickness, pitch, lead, profile, and radial runout to confirm adequate and uniform finishing stock.",
+      "datum_references": [
+        "Z1",
+        "Z8",
+        "K6"
+      ],
+      "material_machinability": "medium",
+      "setup_time_min": 15.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "gear_check",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "inspection",
+            "dimension_count": 22,
+            "gdt_count": 3,
+            "sampling_rate_pct": 100.0,
+            "requires_fixture": true
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 17,
+      "name": "Shave Gear Teeth",
+      "machine_family": "gear_shaving",
+      "setup_note": "Locate from the same soft gear datums used for hobbing and shave the tooth flanks to the qualified pre-heat-treatment geometry. Apply the specified lead or profile modification before case hardening.",
+      "datum_references": [
+        "Z1",
+        "Z8",
+        "K6"
+      ],
+      "material_machinability": "medium",
+      "setup_time_min": 35.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "shave_teeth",
+          "target_feature_ids": [
+            "F03"
+          ],
+          "inputs": {
+            "kind": "gear_finish",
+            "number_of_teeth": 48,
+            "normal_module_mm": 2.0,
+            "face_width_mm": 31.0,
+            "stock_per_flank_mm": 0.05,
+            "helix_angle_deg": 0.0,
+            "gear_quality_class": 6
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 18,
+      "name": "Pre-Heat-Treat Tooth Chamfer and Deburr",
+      "machine_family": "finish_bench",
+      "setup_note": "Chamfer and brush the gear and spline tooth ends, then remove machining burrs including the cross-hole intersection. Complete all edge work before carburizing so no burr is case hardened.",
+      "datum_references": [
+        "Z1",
+        "Z8",
+        "K6",
+        "P1"
+      ],
+      "material_machinability": "medium",
+      "setup_time_min": 8.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "teeth_chamfer",
+          "target_feature_ids": [
+            "F03"
+          ],
+          "inputs": {
+            "kind": "gear_finish",
+            "number_of_teeth": 48,
+            "normal_module_mm": 2.0,
+            "face_width_mm": 31.0,
+            "stock_per_flank_mm": 0.3,
+            "helix_angle_deg": 0.0
+          }
+        },
+        {
+          "sequence": 2,
+          "operation_type": "deburr",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "manual",
+            "complexity": "high",
+            "feature_count": 48
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 19,
+      "name": "Pre-Heat-Treat Cleaning",
+      "machine_family": "finish_bench",
+      "setup_note": "Degrease the completed soft-machined parts and remove coolant, chips, marking compounds, and moisture. Handle cleaned parts with gloves before furnace loading.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "setup_time_min": 5.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "clean_degrease",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "manual",
+            "complexity": "medium",
+            "estimated_time_min": 1.5
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 20,
+      "name": "Carburize and Quench",
+      "machine_family": "sealed_quench_furnace",
+      "setup_note": "Fixture shafts horizontally with support against sag and carburize according to N 417 for a 0.5\u20131.0 mm effective case. Quench immediately after the qualified diffusion and austenitizing cycle; the order may be processed in furnace-sized batches.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "setup_time_min": 15.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "carburize",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "furnace_cycle",
+            "batch_size_parts": 100,
+            "part_mass_kg": 6.34,
+            "max_section_thickness_mm": 71.5,
+            "case_depth_mm": 0.75,
+            "target_hardness_hrc": 61.0,
+            "target_temp_c": 930.0
+          }
+        },
+        {
+          "sequence": 2,
+          "operation_type": "austenitize_quench",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "furnace_cycle",
+            "batch_size_parts": 100,
+            "part_mass_kg": 6.34,
+            "max_section_thickness_mm": 71.5,
+            "target_hardness_hrc": 61.0,
+            "target_temp_c": 850.0
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 21,
+      "name": "As-Quenched Straightening",
+      "machine_family": "auto_straightening",
+      "setup_note": "Measure each shaft between centers immediately after quenching and straighten while in the as-quenched condition. Correct bow to remain within the available grinding stock before tempering stabilizes the structure.",
+      "datum_references": [
+        "Z1",
+        "Z8"
+      ],
+      "material_machinability": "hardened",
+      "material_hardness_hrc": 61.0,
+      "setup_time_min": 15.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "straighten",
+          "target_feature_ids": [
+            "F26"
+          ],
+          "inputs": {
+            "kind": "manual",
+            "complexity": "high",
+            "feature_count": 1,
+            "estimated_time_min": 2.0
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 22,
+      "name": "Temper and Stabilize",
+      "machine_family": "sealed_quench_furnace",
+      "setup_note": "Reload straightened shafts promptly and temper to achieve 59\u201363 HRC surface hardness while preserving the specified case. Follow with a sub-tempering-temperature stabilization cycle for grinding stability; batch by furnace capacity.",
+      "datum_references": [],
+      "material_machinability": "hardened",
+      "material_hardness_hrc": 61.0,
+      "setup_time_min": 15.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "temper",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "furnace_cycle",
+            "batch_size_parts": 100,
+            "part_mass_kg": 6.34,
+            "max_section_thickness_mm": 71.5,
+            "target_hardness_hrc": 61.0,
+            "target_temp_c": 180.0
+          }
+        },
+        {
+          "sequence": 2,
+          "operation_type": "stress_relieve",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "furnace_cycle",
+            "batch_size_parts": 100,
+            "part_mass_kg": 6.34,
+            "max_section_thickness_mm": 71.5,
+            "target_hardness_hrc": 61.0,
+            "target_temp_c": 160.0
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 23,
+      "name": "Post-Heat-Treat Descale and Clean",
+      "machine_family": "shot_peening",
+      "setup_note": "Remove quench residue and heat-treatment scale without damaging the retained grinding allowance or tooth profiles. Clean the hardened parts before dimensional and hardness verification.",
+      "datum_references": [],
+      "material_machinability": "hardened",
+      "material_hardness_hrc": 61.0,
+      "setup_time_min": 10.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "descale",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "manual",
+            "complexity": "medium",
+            "estimated_time_min": 1.5
+          }
+        },
+        {
+          "sequence": 2,
+          "operation_type": "clean_degrease",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "manual",
+            "complexity": "medium",
+            "estimated_time_min": 1.5
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 24,
+      "name": "Post-Heat-Treat Verification",
+      "machine_family": "inspection",
+      "setup_note": "Verify surface hardness, case depth on representative coupons, core hardness, and heat-treatment distortion before grinding. Quarantine lots outside 59\u201363 HRC or the specified 0.5\u20131.0 mm case depth.",
+      "datum_references": [
+        "Z1",
+        "Z8"
+      ],
+      "material_machinability": "hardened",
+      "material_hardness_hrc": 61.0,
+      "setup_time_min": 15.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "hardness_test",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "inspection",
+            "dimension_count": 3,
+            "gdt_count": 0,
+            "sampling_rate_pct": 100.0,
+            "requires_fixture": false
+          }
+        },
+        {
+          "sequence": 2,
+          "operation_type": "manual_inspect",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "inspection",
+            "dimension_count": 5,
+            "gdt_count": 0,
+            "sampling_rate_pct": 100.0,
+            "requires_fixture": true
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 25,
+      "name": "Regrind Left Center Datum",
+      "machine_family": "cylindrical_grinder",
+      "setup_note": "Locate the hardened shaft from the ground-capable journal support and right-end center system. Regrind the left conical center to restore datum Z1 after heat-treatment distortion.",
+      "datum_references": [
+        "Z1",
+        "Z8"
+      ],
+      "material_machinability": "hardened",
+      "material_hardness_hrc": 61.0,
+      "setup_time_min": 20.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "profile_grind",
+          "target_feature_ids": [
+            "F27"
+          ],
+          "inputs": {
+            "kind": "surface_grind",
+            "grind_length_mm": 9.1,
+            "grind_width_mm": 2.9,
+            "stock_mm": 0.1,
+            "surface_count": 1
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 26,
+      "name": "Regrind Right Center and Face Datums",
+      "machine_family": "cylindrical_grinder",
+      "setup_note": "Reverse and locate from restored Z1 and the hardened shaft support. Restore the right center, axial face, and angled K6 face before cylindrical and tooth grinding.",
+      "datum_references": [
+        "Z1",
+        "Z8",
+        "K6"
+      ],
+      "material_machinability": "hardened",
+      "material_hardness_hrc": 61.0,
+      "setup_time_min": 25.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "profile_grind",
+          "target_feature_ids": [
+            "F22"
+          ],
+          "inputs": {
+            "kind": "surface_grind",
+            "grind_length_mm": 7.3,
+            "grind_width_mm": 2.3,
+            "stock_mm": 0.1,
+            "surface_count": 1
+          }
+        },
+        {
+          "sequence": 2,
+          "operation_type": "face_grind",
+          "target_feature_ids": [
+            "F24"
+          ],
+          "inputs": {
+            "kind": "surface_grind",
+            "grind_length_mm": 337.9,
+            "grind_width_mm": 11.55,
+            "stock_mm": 0.1,
+            "surface_count": 1
+          }
+        },
+        {
+          "sequence": 3,
+          "operation_type": "profile_grind",
+          "target_feature_ids": [
+            "F31"
+          ],
+          "inputs": {
+            "kind": "surface_grind",
+            "grind_length_mm": 374.2,
+            "grind_width_mm": 10.55,
+            "stock_mm": 0.1,
+            "surface_count": 1
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 27,
+      "name": "OD Grind Critical Diameters",
+      "machine_family": "cylindrical_grinder",
+      "setup_note": "Mount between restored centers Z1 and the right center, drive without distorting the gear head, and grind each controlled diameter independently. Establish Z8 first, then grind the remaining runout-controlled surfaces from the common axis.",
+      "datum_references": [
+        "Z1",
+        "Z8"
+      ],
+      "material_machinability": "hardened",
+      "material_hardness_hrc": 61.0,
+      "setup_time_min": 35.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "od_grind",
+          "target_feature_ids": [
+            "F30"
+          ],
+          "inputs": {
+            "kind": "cylindrical_grind",
+            "grind_diameter_mm": 71.476,
+            "grind_length_mm": 15.5,
+            "radial_stock_mm": 0.15,
+            "land_count": 1
+          }
+        },
+        {
+          "sequence": 2,
+          "operation_type": "od_grind",
+          "target_feature_ids": [
+            "F02"
+          ],
+          "inputs": {
+            "kind": "cylindrical_grind",
+            "grind_diameter_mm": 52.0,
+            "grind_length_mm": 31.0,
+            "radial_stock_mm": 0.15,
+            "land_count": 1
+          }
+        },
+        {
+          "sequence": 3,
+          "operation_type": "od_grind",
+          "target_feature_ids": [
+            "F28"
+          ],
+          "inputs": {
+            "kind": "cylindrical_grind",
+            "grind_diameter_mm": 69.0,
+            "grind_length_mm": 17.5,
+            "radial_stock_mm": 0.15,
+            "land_count": 1
+          }
+        },
+        {
+          "sequence": 4,
+          "operation_type": "od_grind",
+          "target_feature_ids": [
+            "F03"
+          ],
+          "inputs": {
+            "kind": "cylindrical_grind",
+            "grind_diameter_mm": 119.1,
+            "grind_length_mm": 31.0,
+            "radial_stock_mm": 0.15,
+            "land_count": 1
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 28,
+      "name": "ID Grind Right Stepped Bore",
+      "machine_family": "id_grinding",
+      "setup_note": "Locate from the finished Z8 journal and K6 face in a precision chucking fixture. Grind each right-bore diameter as a separate cut to restore size and runout after carburizing.",
+      "datum_references": [
+        "Z1",
+        "Z8",
+        "K6"
+      ],
+      "material_machinability": "hardened",
+      "material_hardness_hrc": 61.0,
+      "setup_time_min": 30.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "id_grind",
+          "target_feature_ids": [
+            "F32"
+          ],
+          "inputs": {
+            "kind": "cylindrical_grind",
+            "grind_diameter_mm": 51.0,
+            "grind_length_mm": 15.0,
+            "radial_stock_mm": 0.15,
+            "land_count": 1
+          }
+        },
+        {
+          "sequence": 2,
+          "operation_type": "id_grind",
+          "target_feature_ids": [
+            "F32"
+          ],
+          "inputs": {
+            "kind": "cylindrical_grind",
+            "grind_diameter_mm": 58.0,
+            "grind_length_mm": 12.0,
+            "radial_stock_mm": 0.15,
+            "land_count": 1
+          }
+        },
+        {
+          "sequence": 3,
+          "operation_type": "id_grind",
+          "target_feature_ids": [
+            "F32"
+          ],
+          "inputs": {
+            "kind": "cylindrical_grind",
+            "grind_diameter_mm": 61.0,
+            "grind_length_mm": 9.0,
+            "radial_stock_mm": 0.15,
+            "land_count": 1
+          }
+        },
+        {
+          "sequence": 4,
+          "operation_type": "id_grind",
+          "target_feature_ids": [
+            "F32"
+          ],
+          "inputs": {
+            "kind": "cylindrical_grind",
+            "grind_diameter_mm": 70.0,
+            "grind_length_mm": 6.0,
+            "radial_stock_mm": 0.15,
+            "land_count": 1
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 29,
+      "name": "Hard Grind Gear Teeth",
+      "machine_family": "gear_grinding",
+      "setup_note": "Fixture from the finished Z1-Z8 axis and ground K6 face, then generating-grind the hardened tooth flanks. Correct carburizing distortion and apply the released lead and profile modifications without exceeding allowable case removal.",
+      "datum_references": [
+        "Z1",
+        "Z8",
+        "K6"
+      ],
+      "material_machinability": "hardened",
+      "material_hardness_hrc": 61.0,
+      "setup_time_min": 45.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "grind_teeth",
+          "target_feature_ids": [
+            "F03"
+          ],
+          "inputs": {
+            "kind": "gear_finish",
+            "number_of_teeth": 48,
+            "normal_module_mm": 2.0,
+            "face_width_mm": 31.0,
+            "stock_per_flank_mm": 0.1,
+            "helix_angle_deg": 0.0,
+            "gear_quality_class": 5,
+            "dressing_interval_parts": 50
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 30,
+      "name": "Superfinish Bearing Journal",
+      "machine_family": "lapping",
+      "setup_note": "Locate from the restored shaft axis and superfinish the \u00d871.476 bearing journal after all datum-dependent gear grinding is complete. Protect the gear and spline teeth from abrasive contamination.",
+      "datum_references": [
+        "Z1",
+        "Z8"
+      ],
+      "material_machinability": "hardened",
+      "material_hardness_hrc": 61.0,
+      "setup_time_min": 15.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "superfinish",
+          "target_feature_ids": [
+            "F30"
+          ],
+          "inputs": {
+            "kind": "hone",
+            "hone_diameter_mm": 71.476,
+            "hone_length_mm": 15.5,
+            "stock_on_diameter_mm": 0.01,
+            "target_ra_um": 0.2,
+            "bore_count": 1
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 31,
+      "name": "Final Deburr, Clean, and Mark",
+      "machine_family": "finish_bench",
+      "setup_note": "Remove grinding micro-burrs without touching functional flanks, clean all bores and the intersecting cross-hole, and apply the required N 2011 X marking at an allowed location. Protect finished journals after cleaning.",
+      "datum_references": [
+        "Z1",
+        "Z8",
+        "K6",
+        "P1"
+      ],
+      "material_machinability": "hardened",
+      "material_hardness_hrc": 61.0,
+      "setup_time_min": 8.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "deburr",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "manual",
+            "complexity": "high",
+            "edge_length_mm": 800.0
+          }
+        },
+        {
+          "sequence": 2,
+          "operation_type": "clean_degrease",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "manual",
+            "complexity": "medium",
+            "estimated_time_min": 1.5
+          }
+        },
+        {
+          "sequence": 3,
+          "operation_type": "mark_stamp",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "manual",
+            "complexity": "low",
+            "feature_count": 1,
+            "estimated_time_min": 0.5
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 32,
+      "name": "Final Dimensional and Gear Inspection",
+      "machine_family": "inspection",
+      "setup_note": "Inspect the finished shaft at controlled temperature from the Z1-Z8 datum system and K6/P1 local datums. Verify all dimensions, runout, cylindricity, surface finish, spline gauging, gear geometry, hardness, grinding burn, and crack acceptance requirements.",
+      "datum_references": [
+        "Z1",
+        "Z8",
+        "K6",
+        "P1"
+      ],
+      "material_machinability": "hardened",
+      "material_hardness_hrc": 61.0,
+      "setup_time_min": 25.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "cmm_inspect",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "inspection",
+            "dimension_count": 103,
+            "gdt_count": 9,
+            "sampling_rate_pct": 1.0,
+            "requires_fixture": true
+          }
+        },
+        {
+          "sequence": 2,
+          "operation_type": "gear_check",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "inspection",
+            "dimension_count": 22,
+            "gdt_count": 3,
+            "sampling_rate_pct": 1.0,
+            "requires_fixture": true
+          }
+        },
+        {
+          "sequence": 3,
+          "operation_type": "manual_inspect",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "inspection",
+            "dimension_count": 20,
+            "gdt_count": 0,
+            "sampling_rate_pct": 100.0,
+            "requires_fixture": true
+          }
+        },
+        {
+          "sequence": 4,
+          "operation_type": "hardness_test",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "inspection",
+            "dimension_count": 3,
+            "gdt_count": 0,
+            "sampling_rate_pct": 1.0,
+            "requires_fixture": false
+          }
+        },
+        {
+          "sequence": 5,
+          "operation_type": "mpi_ndt",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "inspection",
+            "dimension_count": 0,
+            "gdt_count": 0,
+            "sampling_rate_pct": 1.0,
+            "inspected_area_mm2": 45000.0,
+            "requires_fixture": false
+          }
+        }
+      ]
+    }
+  ],
+  "clarifications": [
+    {
+      "clarification_id": "C01",
+      "question": "Which of the two tooth-data sets in the gear table applies to feature F03?",
+      "blocks": [
+        15,
+        16,
+        17,
+        18,
+        29,
+        32
+      ],
+      "suggested_default": "Use the V1 set: z=26, mn=3.54, pressure angle 17\u00b030\u2032, helix angle 28\u00b030\u2032, left hand, because it calculates a pitch diameter near the stated 104.732 mm.",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C02",
+      "question": "Should production use ZF7B or the optional 20MnCr5 material specification?",
+      "blocks": [
+        1,
+        2,
+        3,
+        5,
+        10,
+        11,
+        12,
+        13,
+        15,
+        17,
+        20,
+        22,
+        24
+      ],
+      "suggested_default": "Use 20MnCr5 to DIN EN 10084 for quotation and qualify its equivalence to ZF7B before production.",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C03",
+      "question": "Which surfaces require carburizing stop-off or masking under N 417 and treatment status Y+Z?",
+      "blocks": [
+        19,
+        20
+      ],
+      "suggested_default": "Apply full case hardening without selective masking because no protected areas are explicitly mapped in the feature graph.",
+      "priority": "medium"
+    },
+    {
+      "clarification_id": "C04",
+      "question": "What is the finished diameter of feature F12?",
+      "blocks": [
+        10
+      ],
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C05",
+      "question": "What is the finished diameter of feature F15?",
+      "blocks": [
+        10
+      ],
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C06",
+      "question": "What is the axial depth of each \u00d870, \u00d861, \u00d858, and \u00d851 step within feature F32?",
+      "blocks": [
+        11,
+        28
+      ],
+      "suggested_default": "Use the released section view and treat 15 mm as the overall stepped-bore depth only.",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C07",
+      "question": "What DIN or ISO gear quality grade is required for feature F03 after heat treatment?",
+      "blocks": [
+        17,
+        29,
+        32
+      ],
+      "suggested_default": "Use hard gear grinding to satisfy the stated 0.003 mm flank-profile control; do not add teeth honing unless the released quality grade or noise requirement demands it.",
+      "priority": "medium"
+    }
+  ],
+  "assumptions": [
+    {
+      "assumption_id": "A01",
+      "text": "A closed-die forging was selected because the drawing specifies forging tolerances, the geometry has a large head-to-shaft diameter ratio, and the quantity of 20,000 parts supports dedicated dies; stock dimensions are therefore controlled by the forging drawing and left null."
+    },
+    {
+      "assumption_id": "A02",
+      "text": "The hot-forging press is assumed to accept dedicated trimming tooling for the hot trim operation because no separate trim-press machine family is listed."
+    },
+    {
+      "assumption_id": "A03",
+      "text": "Feature F01 is routed as a rolled external spline because it is accessible, is produced before heat treatment, and the production quantity supports rolling dies; die-manufacturer approval of the SAE profile and blank diameter is required."
+    },
+    {
+      "assumption_id": "A04",
+      "text": "The turning-template bar-stock saw and part-off steps are omitted because the machining blank is a discrete forging; threading is omitted because the feature graph contains no thread."
+    },
+    {
+      "assumption_id": "A05",
+      "text": "The cross-hole route uses spot drilling followed by separate larger and smaller drilling steps. Pilot drilling, peck drilling, reaming, tapping, and fastener-seat operations are omitted because the hole is shallow, has no precision fit or thread, and carries no countersink or counterbore requirement."
+    },
+    {
+      "assumption_id": "A06",
+      "text": "The four diameters embedded in F32 are represented by separate boring and ID-grinding sub-operations, all referencing F32, to preserve the one-diameter-per-sub-operation rule."
+    },
+    {
+      "assumption_id": "A07",
+      "text": "The \u00d844, \u00d858, and \u00d869 diameter steps embedded in F28 are represented by separate turning sub-operations, all referencing F28; post-heat-treatment OD grinding applies specifically to the runout-controlled \u00d869 surface."
+    },
+    {
+      "assumption_id": "A08",
+      "text": "Bore honing is omitted because F32 is specified at H12 or unilateral loose tolerances with Rz16, while ID grinding is retained to recover the specified runout after carburizing."
+    },
+    {
+      "assumption_id": "A09",
+      "text": "Gear teeth honing is omitted because the stated Rz40 finish does not require it and the 0.003 mm flank-profile control can be achieved by hard gear grinding; honing must be added if the released gear quality or noise specification requires it."
+    },
+    {
+      "assumption_id": "A10",
+      "text": "Standalone surface grinding and lapping are omitted because no corresponding flat sealing or gauge surface requirement exists; face/profile grinding restores F24, F31, and both center datums, while journal superfinishing is retained for the Rz1 bearing requirement."
+    },
+    {
+      "assumption_id": "A11",
+      "text": "No carburizing mask operation is included pending clarification because the extracted notes do not map treatment status Y+Z to specific protected surfaces."
+    },
+    {
+      "assumption_id": "A12",
+      "text": "Soft turning and boring leave qualified post-heat-treatment stock on F02, the \u00d869 portion of F28, F30, F03, and F32; loose non-ground profiles are machined to heat-treatment-compensated dimensions before carburizing."
+    },
+    {
+      "assumption_id": "A13",
+      "text": "MPI and UT are included before machining as the standard forging defect gate, and final MPI plus grinding-burn inspection are included after hard finishing; acceptance levels must come from the released forging and heat-treatment specifications."
+    }
+  ]
+}

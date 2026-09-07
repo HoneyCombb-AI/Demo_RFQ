@@ -1,0 +1,658 @@
+{
+  "analysis_id": "46505025_merge_20260903T041600Z",
+  "part": {
+    "name": "ALBERO SUPPORTO CVP30-3N-16/DN (Y) / SUPPORTO SHAFT CVP30-3N-16/DN (Y)",
+    "drawing_number": "46505025",
+    "revision": "3",
+    "material": "20MnCr5",
+    "units": "mm"
+  },
+  "feature_graph": {
+    "part_envelope": {
+      "length_mm": 42.1,
+      "width_mm": 6.0,
+      "max_diameter_mm": 49.0
+    },
+    "coordinate_system": {
+      "primary_axis": "X",
+      "orientation_notes": "Main SECTION A-A coordinate note is treated as controlling: X is the horizontal shaft axis and Y/Z are radial directions. Detail views use local axial/radial orientation, and Section B-B is a transverse cut through the left spline/cross-hole region. Datum A establishes the principal shaft axis.",
+      "datum_origin": "A"
+    },
+    "features": [
+      {
+        "feature_id": "F01",
+        "feature_type": "spline",
+        "name": "Left External Spline",
+        "description": "External involute spline on the left side of the shaft.",
+        "geometry": {
+          "diameter_mm": 35.61,
+          "inner_diameter_mm": 31.8,
+          "outer_diameter_mm": 35.61,
+          "length_mm": 42.0,
+          "width_mm": 6.0,
+          "angle_deg": 45.0,
+          "axis_direction": "+X"
+        },
+        "access_directions": [
+          "radial",
+          "+X",
+          "-X",
+          "+Z",
+          "-Z"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 35.61,
+            "upper_limit_mm": 35.69,
+            "lower_limit_mm": 35.53
+          },
+          {
+            "dimension_type": "length",
+            "nominal_mm": 42.0,
+            "plus_mm": 0.1,
+            "minus_mm": 0.1
+          },
+          {
+            "dimension_type": "chamfer",
+            "nominal_mm": 2.0
+          },
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 31.8,
+            "plus_mm": 0.175,
+            "minus_mm": 0.05
+          },
+          {
+            "dimension_type": "width",
+            "nominal_mm": 5.935,
+            "upper_limit_mm": 5.97,
+            "lower_limit_mm": 5.9
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "symmetry",
+            "tolerance_value_mm": 0.012,
+            "datum_references": [
+              "B"
+            ],
+            "applied_to": "tooth width (6mm dimension)"
+          }
+        ],
+        "callout_qualifiers": [
+          {
+            "qualifier": "REF",
+            "dimension_type": "angle_deg",
+            "nominal_mm": 90.0
+          }
+        ],
+        "source_views": [
+          "main_shaft_view",
+          "section_b_b"
+        ]
+      },
+      {
+        "feature_id": "F02",
+        "feature_type": "through_hole",
+        "name": "Cross Hole",
+        "description": "Horizontal cross hole passing entirely through the central axis of the shaft section.",
+        "geometry": {
+          "diameter_mm": 8.1,
+          "depth_condition": "THRU",
+          "position_description": "30mm from the left face",
+          "axis_direction": "+X"
+        },
+        "access_directions": [
+          "radial",
+          "+X",
+          "-X"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 8.1,
+            "plus_mm": 0.1,
+            "minus_mm": 0.0
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "angularity",
+            "tolerance_value_mm": 0.1,
+            "datum_references": [
+              "A"
+            ],
+            "applied_to": "axis of the horizontal cross hole"
+          }
+        ],
+        "callout_qualifiers": [],
+        "source_views": [
+          "main_shaft_view",
+          "section_b_b"
+        ]
+      },
+      {
+        "feature_id": "F03",
+        "feature_type": "internal_thread",
+        "name": "Left Internal Thread and Center Bore",
+        "description": "M10 threaded hole with center drill profile on the left axis.",
+        "geometry": {
+          "depth_mm": 25.0,
+          "angle_deg": 60.0,
+          "thread_spec": "M10",
+          "axis_direction": "+X"
+        },
+        "access_directions": [
+          "+X",
+          "+Z",
+          "-Z"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "depth",
+            "nominal_mm": 18.2,
+            "plus_mm": 0.1,
+            "minus_mm": 0.1
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "main_shaft_view",
+          "section_b_b"
+        ]
+      },
+      {
+        "feature_id": "F04",
+        "feature_type": "groove",
+        "name": "External relief groove",
+        "description": "External groove with a flat bottom and a minimum radius on the left flank.",
+        "geometry": {
+          "diameter_mm": 30.0,
+          "length_mm": 46.0,
+          "width_mm": 2.5,
+          "radius_mm": 1.0,
+          "axis_direction": "radial"
+        },
+        "access_directions": [
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "radius",
+            "nominal_mm": 1.0,
+            "lower_limit_mm": 1.0,
+            "qualifier": "MIN"
+          },
+          {
+            "dimension_type": "radius",
+            "nominal_mm": 1.0,
+            "lower_limit_mm": 1.0,
+            "qualifier": "MIN"
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "main_shaft_view",
+          "detail_b"
+        ]
+      },
+      {
+        "feature_id": "F05",
+        "feature_type": "flange",
+        "name": "Right Flange",
+        "description": "Flange at the right end of the part.",
+        "geometry": {
+          "diameter_mm": 49.0,
+          "outer_diameter_mm": 49.0,
+          "length_mm": 0.2,
+          "depth_mm": 0.2,
+          "width_mm": 6.0,
+          "radius_mm": 1.0,
+          "axis_direction": "+X"
+        },
+        "surface_finish": {
+          "finish_symbol": "0.3"
+        },
+        "access_directions": [
+          "radial",
+          "+X",
+          "-X"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "width",
+            "nominal_mm": 6.0,
+            "plus_mm": 0.0,
+            "minus_mm": 0.05
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "parallelism",
+            "tolerance_value_mm": 0.02,
+            "datum_references": [
+              "C"
+            ],
+            "applied_to": "Left face of the flange"
+          }
+        ],
+        "callout_qualifiers": [],
+        "source_views": [
+          "main_shaft_view",
+          "detail_a"
+        ]
+      },
+      {
+        "feature_id": "F06",
+        "feature_type": "fillet",
+        "name": "Alternative execution corner fillet",
+        "description": "Inner corner fillet at a step/shoulder, provided as an alternative execution method.",
+        "geometry": {
+          "radius_mm": 0.5
+        },
+        "access_directions": [
+          "radial"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "alternative_execution"
+        ]
+      },
+      {
+        "feature_id": "F07",
+        "feature_type": "internal_bore",
+        "name": "Internal bore step",
+        "description": "Internal stepped bore or recess with a defined length and corner radius.",
+        "geometry": {
+          "length_mm": 13.0,
+          "radius_mm": 1.0,
+          "axis_direction": "Z"
+        },
+        "access_directions": [
+          "+Z",
+          "-Z"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "detail_a"
+        ]
+      },
+      {
+        "feature_id": "F08",
+        "feature_type": "chamfer",
+        "name": "Internal chamfer",
+        "description": "Chamfer at the right-side opening of the internal bore.",
+        "geometry": {
+          "length_mm": 1.0,
+          "angle_deg": 30.0,
+          "axis_direction": "Z"
+        },
+        "access_directions": [
+          "+Z",
+          "-Z"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "detail_a"
+        ]
+      },
+      {
+        "feature_id": "F09",
+        "feature_type": "external_cylinder",
+        "name": "Chamfered collar",
+        "description": "Raised external cylindrical section adjacent to the groove, featuring chamfers on both the left and right edges.",
+        "geometry": {
+          "diameter_mm": 36.2,
+          "axis_direction": "radial"
+        },
+        "access_directions": [
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 36.2,
+            "plus_mm": 0.05,
+            "minus_mm": 0.05
+          },
+          {
+            "dimension_type": "chamfer",
+            "nominal_mm": 0.5,
+            "angle_deg": 45.0
+          },
+          {
+            "dimension_type": "chamfer",
+            "nominal_mm": 0.5,
+            "angle_deg": 30.0
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "detail_b"
+        ]
+      },
+      {
+        "feature_id": "F10",
+        "feature_type": "part_body",
+        "name": "Main Shaft Body",
+        "description": "Stepped cylindrical shaft. Left side features an external spline and internal threaded bore. Right side features a flange and internal spline.",
+        "geometry": {
+          "axis_direction": "+X"
+        },
+        "access_directions": [
+          "radial",
+          "+X",
+          "-X"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "main_shaft_view"
+        ]
+      },
+      {
+        "feature_id": "F11",
+        "feature_type": "datum_face",
+        "name": "Right End Face (Datum C)",
+        "description": "Flat face at the right end of the flange, designated as Datum C.",
+        "geometry": {},
+        "surface_finish": {
+          "finish_symbol": "0.3"
+        },
+        "access_directions": [
+          "-X"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [
+          {
+            "gdt_type": "perpendicularity",
+            "tolerance_value_mm": 0.02,
+            "datum_references": [
+              "A"
+            ],
+            "applied_to": "Right face of the flange"
+          }
+        ],
+        "callout_qualifiers": [],
+        "source_views": [
+          "main_shaft_view"
+        ]
+      },
+      {
+        "feature_id": "F12",
+        "feature_type": "flat_face",
+        "name": "Left End Face",
+        "description": "Flat face at the left end of the shaft.",
+        "geometry": {},
+        "access_directions": [
+          "+X"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "main_shaft_view"
+        ]
+      },
+      {
+        "feature_id": "F13",
+        "feature_type": "external_cylinder",
+        "name": "Main Central Cylinder",
+        "description": "Central cylindrical section serving as Datum A.",
+        "geometry": {
+          "diameter_mm": 37.985,
+          "outer_diameter_mm": 37.985,
+          "length_mm": 40.5,
+          "axis_direction": "+X"
+        },
+        "surface_finish": {
+          "finish_symbol": "0.2 / 0.4"
+        },
+        "access_directions": [
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 37.985,
+            "upper_limit_mm": 37.99,
+            "lower_limit_mm": 37.98
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "main_shaft_view"
+        ]
+      },
+      {
+        "feature_id": "F14",
+        "feature_type": "spline",
+        "name": "Right Internal Spline",
+        "description": "Internal involute spline bore on the right side.",
+        "geometry": {
+          "diameter_mm": 30.04,
+          "inner_diameter_mm": 30.04,
+          "depth_mm": 36.0,
+          "axis_direction": "-X"
+        },
+        "access_directions": [
+          "-X"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 30.04,
+            "upper_limit_mm": 30.05,
+            "lower_limit_mm": 30.03
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "concentricity",
+            "tolerance_value_mm": 0.02,
+            "datum_references": [
+              "A"
+            ],
+            "applied_to": "Internal spline bore"
+          }
+        ],
+        "callout_qualifiers": [],
+        "source_views": [
+          "main_shaft_view"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "relationship_id": "R01",
+        "from_feature_id": "F03",
+        "to_feature_id": "F13",
+        "relationship_type": "coaxial",
+        "detail": "Left internal thread/center bore is drawn on the shaft centerline shared with datum A central cylinder."
+      },
+      {
+        "relationship_id": "R02",
+        "from_feature_id": "F01",
+        "to_feature_id": "F13",
+        "relationship_type": "coaxial",
+        "detail": "Left external spline and datum A central cylinder are coaxial stepped shaft sections."
+      },
+      {
+        "relationship_id": "R03",
+        "from_feature_id": "F05",
+        "to_feature_id": "F13",
+        "relationship_type": "coaxial",
+        "detail": "Right flange outside diameter shares the main shaft axis with datum A central cylinder."
+      },
+      {
+        "relationship_id": "R04",
+        "from_feature_id": "F14",
+        "to_feature_id": "F13",
+        "relationship_type": "concentric",
+        "detail": "Internal spline bore has concentricity control relative to datum A."
+      },
+      {
+        "relationship_id": "R05",
+        "from_feature_id": "F14",
+        "to_feature_id": "F13",
+        "relationship_type": "datum_referenced",
+        "detail": "F9_GDT1 references datum A for the internal spline bore."
+      },
+      {
+        "relationship_id": "R06",
+        "from_feature_id": "F11",
+        "to_feature_id": "F13",
+        "relationship_type": "perpendicular",
+        "detail": "Right flange end face has perpendicularity control relative to datum A."
+      },
+      {
+        "relationship_id": "R07",
+        "from_feature_id": "F11",
+        "to_feature_id": "F13",
+        "relationship_type": "datum_referenced",
+        "detail": "F10_GDT1 references datum A for the right face of the flange."
+      },
+      {
+        "relationship_id": "R08",
+        "from_feature_id": "F05",
+        "to_feature_id": "F11",
+        "relationship_type": "parallel",
+        "detail": "Left face of the flange has parallelism control relative to datum C on the right end face."
+      },
+      {
+        "relationship_id": "R09",
+        "from_feature_id": "F05",
+        "to_feature_id": "F11",
+        "relationship_type": "datum_referenced",
+        "detail": "F8_GDT1 references datum C for the flange face parallelism control."
+      },
+      {
+        "relationship_id": "R10",
+        "from_feature_id": "F02",
+        "to_feature_id": "F13",
+        "relationship_type": "datum_referenced",
+        "detail": "Cross-hole angularity control references datum A."
+      },
+      {
+        "relationship_id": "R11",
+        "from_feature_id": "F01",
+        "to_feature_id": "F01",
+        "relationship_type": "datum_referenced",
+        "detail": "Spline tooth-width symmetry control references datum B, which is defined on the root-diameter surface of the same grouped external spline feature."
+      },
+      {
+        "relationship_id": "R12",
+        "from_feature_id": "F02",
+        "to_feature_id": "F01",
+        "relationship_type": "intersecting",
+        "detail": "Section B-B and the main view identify the cross hole as passing through the left external spline section."
+      },
+      {
+        "relationship_id": "R13",
+        "from_feature_id": "F02",
+        "to_feature_id": "F03",
+        "relationship_type": "intersecting",
+        "detail": "Section B-B shows the transverse cross hole passing through the shaft central axis where the central axial bore is observed."
+      },
+      {
+        "relationship_id": "R14",
+        "from_feature_id": "F04",
+        "to_feature_id": "F09",
+        "relationship_type": "intersecting",
+        "detail": "Detail B shows the external relief groove adjacent to and cut into the chamfered collar region."
+      },
+      {
+        "relationship_id": "R15",
+        "from_feature_id": "F08",
+        "to_feature_id": "F07",
+        "relationship_type": "intersecting",
+        "detail": "Detail A describes the internal chamfer at the opening of the internal bore step."
+      },
+      {
+        "relationship_id": "R16",
+        "from_feature_id": "F12",
+        "to_feature_id": "F11",
+        "relationship_type": "opposite_face",
+        "detail": "Left end face and right flange end face are opposing axial end faces of the shaft body."
+      }
+    ],
+    "datum_scheme": {
+      "datums": [
+        {
+          "datum_letter": "A",
+          "feature_id": "F13",
+          "surface_type": "cylindrical",
+          "description": "Main external cylindrical surface"
+        },
+        {
+          "datum_letter": "C",
+          "feature_id": "F11",
+          "surface_type": "planar",
+          "description": "Right face of the flange"
+        },
+        {
+          "datum_letter": "B",
+          "feature_id": "F01",
+          "surface_type": "cylindrical",
+          "description": "Root diameter of the external spline"
+        }
+      ],
+      "datum_hierarchy_notes": "Datum A is the principal cylindrical shaft datum used by the internal spline, cross-hole, and right flange face controls. Datum C is the planar right flange end face used for flange-face parallelism. Datum B is the external spline root diameter used by the spline tooth-width symmetry control."
+    },
+    "part_notes": "Material: 20MnCr5. Scale: 1:1. General tolerance: ISO 2768-mK. Projection: first angle. Heat treatment: Cementazione UNI 5381 - cmt 7 Carburizing case hardening ISO 2639 (cutoff 550 HV1). Coating: CEMENTAZIONE - TEMPRA - RINVENIMENTO CARBURIZING + QUENCHING + TEMPERING. General notes: Key Characteristics: Characteristic of a part which may have an adverse or degrading effect of the function, quality or reliability of that part if an out of tolerance condition occurs. Caratteristica Chiave: Se non rispettata si pregiudica la funzionalità del prodotto.. PROCESS: Ext. Spline W 8x32x36 DIN-ISO 14 WITH ROOT DIAMETER MODIFIED / Scanalatua esterna W 8x32x36 DIN-ISO 14 CON DIAMETRO FONDO DENTE MODIFICATO. PROCESS: NOT DIMENSIONED CHAMFERS 1 X 45° SMUSSI NON QUOTATI 1 X45°. DEBURR: VERIFICARE ASSENZA DI BAVE / REMOVE ALL BURRS. Testing: Gas Carbonitriding case Hardening per ISO 2639, ISO 6507-1 58 - 61 HRC (HT DEPTH (mm): 0.6 - 0.9, cutoff 550 HV1/15, Alternative Material: 20CrMnTiH). Extraction notes: Title block indicates depth 0.55 - 0.85 mm and hardness 58 - 61 HRC which are associated with the heat/surface treatments.",
+    "overall_complexity": "complex"
+  },
+  "component_specs": [],
+  "component_spec_links": [],
+  "clarifications": [],
+  "assumptions": [
+    {
+      "assumption_id": "A01",
+      "text": "Grouped main_shaft_view:F4 with section_b_b:F1 using the SECTION B-B cross-reference through the left external spline; main_shaft_view:F4 was chosen as canonical because it carries the longitudinal spline length, outer diameter, and spline specification."
+    },
+    {
+      "assumption_id": "A02",
+      "text": "Grouped main_shaft_view:F5 with section_b_b:F2 as the same transverse cross hole; section_b_b:F2 was chosen as canonical because it carries the hole diameter and GD&T, while the main view contributes axial position context."
+    },
+    {
+      "assumption_id": "A03",
+      "text": "Grouped main_shaft_view:F3 with section_b_b:F3 as the same central axial bore/thread region visible in the transverse section; main_shaft_view:F3 was chosen as canonical because it is dimensioned and includes the thread specification."
+    },
+    {
+      "assumption_id": "A04",
+      "text": "Grouped main_shaft_view:F6 with detail_b:F1 from the SEE DETAIL B callout; detail_b:F1 was chosen as canonical because the detail view provides the groove diameter and width."
+    },
+    {
+      "assumption_id": "A05",
+      "text": "Grouped main_shaft_view:F8 with detail_a:F1 from the SEE DETAIL A callout, interpreting the external shoulder undercut as the primary detailed feature of the flange shoulder zone; main_shaft_view:F8 was chosen as canonical because it carries the flange OD, width, and GD&T."
+    },
+    {
+      "assumption_id": "A06",
+      "text": "Kept detail_a:F2 and detail_a:F3 as separate singleton internal bore/chamfer features rather than merging them into main_shaft_view:F9 because no direct feature-level cross-reference uniquely identifies them as the right internal spline feature."
+    },
+    {
+      "assumption_id": "A07",
+      "text": "Kept detail_b:F2 as a singleton chamfered collar adjacent to the Detail B groove because no main-view feature uniquely represents the Ø36.2 collar."
+    },
+    {
+      "assumption_id": "A08",
+      "text": "Kept alternative_execution:F1 as a singleton optional/alternative fillet detail because it is not directly tied to a specific main-view feature beyond the general alternative-execution note."
+    },
+    {
+      "assumption_id": "A09",
+      "text": "Used the main view X-axis as the global shaft axis despite Section B-B using a local note that names Z as the shaft axis; section and detail axes were treated as local view orientations."
+    }
+  ]
+}

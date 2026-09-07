@@ -1,0 +1,332 @@
+{
+  "analysis_id": "IC01B030240_merge_20260901T215030Z",
+  "part": {
+    "name": "INNER COMPONENT",
+    "drawing_number": "IC01B030240",
+    "revision": "F1",
+    "material": "SAE J403 GRADE 1008-1020",
+    "units": "mm"
+  },
+  "feature_graph": {
+    "part_envelope": {
+      "width_mm": 75.88,
+      "height_mm": 27.53,
+      "max_diameter_mm": 27.53,
+      "envelope_shape": "cylindrical"
+    },
+    "coordinate_system": {
+      "primary_axis": "Z axis of revolution / central through-bore axis",
+      "orientation_notes": "Front view looks along -Z. Section A-A states its horizontal axis is the primary axis of revolution, so Z is the dominant turning/boring axis; radial dimensions lie in X/Y."
+    },
+    "features": [
+      {
+        "feature_id": "F01",
+        "feature_type": "through_hole",
+        "name": "Central Bore",
+        "description": "Central through bore running the entire length of the component.",
+        "geometry": {
+          "diameter_mm": 14.25,
+          "depth_condition": "THRU",
+          "axis_direction": "+Z"
+        },
+        "access_directions": [
+          "+Z",
+          "-Z"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 14.25,
+            "upper_limit_mm": 14.4,
+            "lower_limit_mm": 14.1
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "front_view",
+          "section_a_a"
+        ]
+      },
+      {
+        "feature_id": "F02",
+        "feature_type": "groove",
+        "name": "Knurl Detail",
+        "description": "V-shaped groove pattern forming a knurl. The note specifies 28 to 32 places equally spaced at both ends of the part.",
+        "geometry": {
+          "diameter_mm": 18.25,
+          "inner_diameter_mm": 18.25,
+          "outer_diameter_mm": 23.0,
+          "depth_mm": 0.255,
+          "width_mm": 0.76,
+          "angle_deg": 50.0,
+          "axis_direction": "+Z"
+        },
+        "access_directions": [
+          "+Z",
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 18.25,
+            "upper_limit_mm": 18.75,
+            "lower_limit_mm": 17.75,
+            "qualifier": "TYP"
+          },
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 23.0,
+            "upper_limit_mm": 23.5,
+            "lower_limit_mm": 22.5,
+            "qualifier": "TYP"
+          },
+          {
+            "dimension_type": "depth",
+            "nominal_mm": 0.255,
+            "upper_limit_mm": 0.32,
+            "lower_limit_mm": 0.19
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "front_view",
+          "section_b_b"
+        ]
+      },
+      {
+        "feature_id": "F03",
+        "feature_type": "part_body",
+        "name": "Overall Tubular Body",
+        "description": "Overall length of the tubular component, measured across the extreme ends.",
+        "geometry": {
+          "length_mm": 75.73
+        },
+        "access_directions": [
+          "+Z",
+          "-Z"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "length",
+            "nominal_mm": 75.73,
+            "upper_limit_mm": 75.88,
+            "lower_limit_mm": 75.58
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "section_a_a"
+        ]
+      },
+      {
+        "feature_id": "F04",
+        "feature_type": "flange",
+        "name": "End Flanges",
+        "description": "Flanged sections at both ends of the part, bearing knurling on their outer diameter.",
+        "geometry": {
+          "diameter_mm": 27.4,
+          "outer_diameter_mm": 27.4,
+          "width_mm": 3.0
+        },
+        "instance_count": 2,
+        "access_directions": [
+          "radial",
+          "+Z",
+          "-Z"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "width",
+            "nominal_mm": 3.0,
+            "upper_limit_mm": 3.5,
+            "lower_limit_mm": 2.5,
+            "qualifier": "2X"
+          },
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 27.4,
+            "upper_limit_mm": 27.53,
+            "lower_limit_mm": 27.27,
+            "qualifier": "2X"
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "section_a_a"
+        ]
+      },
+      {
+        "feature_id": "F05",
+        "feature_type": "external_cylinder",
+        "name": "Main Body OD",
+        "description": "The central cylindrical outer surface between the two end flanges.",
+        "geometry": {
+          "diameter_mm": 23.0
+        },
+        "access_directions": [
+          "radial"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "section_a_a"
+        ]
+      },
+      {
+        "feature_id": "F06",
+        "feature_type": "radius",
+        "name": "Flange Transition Fillets",
+        "description": "Fillet radii at the junction between the central body OD and the inner faces of the flanges.",
+        "geometry": {
+          "radius_mm": 2.0
+        },
+        "instance_count": 2,
+        "access_directions": [
+          "radial"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "callout_qualifiers": [
+          {
+            "qualifier": "2X",
+            "dimension_type": "radius",
+            "nominal_mm": 2.0
+          }
+        ],
+        "source_views": [
+          "section_a_a"
+        ]
+      },
+      {
+        "feature_id": "F07",
+        "feature_type": "edge_break",
+        "name": "Internal Bore Corner Breaks",
+        "description": "Corner breaks or chamfers at both entry points of the central through bore.",
+        "geometry": {},
+        "instance_count": 2,
+        "access_directions": [
+          "+Z",
+          "-Z"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "chamfer",
+            "nominal_mm": 2.0,
+            "upper_limit_mm": 2.5,
+            "lower_limit_mm": 1.5,
+            "qualifier": "2X"
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "section_a_a"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "relationship_id": "R01",
+        "from_feature_id": "F01",
+        "to_feature_id": "F05",
+        "relationship_type": "coaxial",
+        "detail": "Central through bore and main body OD share the axis of revolution shown in Section A-A."
+      },
+      {
+        "relationship_id": "R02",
+        "from_feature_id": "F01",
+        "to_feature_id": "F04",
+        "relationship_type": "coaxial",
+        "detail": "Central through bore and the two end flanges are concentric rotational features about the part axis."
+      },
+      {
+        "relationship_id": "R03",
+        "from_feature_id": "F02",
+        "to_feature_id": "F01",
+        "relationship_type": "radial_pattern",
+        "detail": "Knurl/groove places are equally spaced around the central part axis established by the central through bore."
+      },
+      {
+        "relationship_id": "R04",
+        "from_feature_id": "F02",
+        "to_feature_id": "F04",
+        "relationship_type": "on_same_face",
+        "detail": "The knurl detail is specified at both ends and Section A-A identifies the end flange regions as the knurled end surfaces."
+      },
+      {
+        "relationship_id": "R05",
+        "from_feature_id": "F06",
+        "to_feature_id": "F04",
+        "relationship_type": "intersecting",
+        "detail": "Flange transition fillets occur at the junction of the end flanges."
+      },
+      {
+        "relationship_id": "R06",
+        "from_feature_id": "F06",
+        "to_feature_id": "F05",
+        "relationship_type": "intersecting",
+        "detail": "Flange transition fillets occur at the junction between the main body OD and flange inner faces."
+      },
+      {
+        "relationship_id": "R07",
+        "from_feature_id": "F07",
+        "to_feature_id": "F01",
+        "relationship_type": "intersecting",
+        "detail": "Internal bore corner breaks are located at the entry edges of the central through bore."
+      },
+      {
+        "relationship_id": "R08",
+        "from_feature_id": "F07",
+        "to_feature_id": "F01",
+        "relationship_type": "machining_dependency",
+        "detail": "Corner breaks are secondary edge features dependent on the central through bore entries."
+      },
+      {
+        "relationship_id": "R09",
+        "from_feature_id": "F04",
+        "to_feature_id": "F03",
+        "relationship_type": "linear_pattern",
+        "detail": "The end flanges are specified as 2X, one at each end along the part axis."
+      },
+      {
+        "relationship_id": "R10",
+        "from_feature_id": "F06",
+        "to_feature_id": "F03",
+        "relationship_type": "linear_pattern",
+        "detail": "The flange transition fillets are specified as 2X at the two flange transitions along the part axis."
+      }
+    ],
+    "datum_scheme": {
+      "datums": [],
+      "datum_hierarchy_notes": "No datum definitions or GD&T datum reference frame were extracted from the supplied section graphs."
+    },
+    "part_notes": "Material: SAE J403 GRADE 1008-1020. Material standard: SAE J403. Scale: 1:1. General tolerance: ASME Y14.5M-1994. Projection: third angle. Heat treatment: none specified. Coating: PHOSPHATE COAT PER PS-119.0. General notes: DEBURR: BREAK ALL SHARP EDGES 0.5 MAX.. FINISH: PHOSPHATE COAT PER PS-119.0. TOLERANCE: METRIC DIMENSIONS & TOLERANCES GOVERN THE DESIGN. ENGLISH DIMENSIONS IF INCLUDED ARE FOR INFORMATION PURPOSES ONLY.. Testing: CRUSH TEST per PS-122.10 (121kN, 60.5kN, 0.38mm). Extraction notes: Revision table column headers are partially cut off but inferred as Revision, Description, Change #, By, Date.",
+    "overall_complexity": "moderate"
+  },
+  "component_specs": [],
+  "component_spec_links": [],
+  "clarifications": [],
+  "assumptions": [
+    {
+      "assumption_id": "A01",
+      "text": "Grouped front_view:F2 with section_a_a:F4 as the same central bore using the section cut evidence through the center and matching coaxial bore descriptions. section_a_a:F4 was chosen canonical because it explicitly dimensions the bore and proves the THRU condition."
+    },
+    {
+      "assumption_id": "A02",
+      "text": "Grouped front_view:F1 with section_b_b:F1 as the same knurled/toothed profile. The B-B section/detail is the only supplied feature in section_b_b and defines the groove geometry and equally spaced places; front_view:F1 contributes the annular diameter limits. section_b_b:F1 was chosen canonical because it is the detail view for the groove/knurl geometry."
+    },
+    {
+      "assumption_id": "A03",
+      "text": "Did not group section_a_a:F2 or section_a_a:F3 with the knurl/tooth group because they describe substrate rotational surfaces, not the detailed groove/tooth profile, and grouping them would merge incompatible diameter fields."
+    },
+    {
+      "assumption_id": "A04",
+      "text": "Used Z as the part primary axis based on the front-view viewing direction and Section A-A coordinate note. No datum origin was assigned because no datum definitions were extracted."
+    }
+  ]
+}

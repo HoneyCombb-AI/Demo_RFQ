@@ -13,9 +13,10 @@ interface SetupCardProps {
 
 export function SetupCard({ computedSetup, deconstructedSetup }: SetupCardProps) {
   // Determine color for the sequence circle based on machine family
-  const isInspection = computedSetup.machine_family.toLowerCase().includes("inspection")
-  const isHeatTreat = computedSetup.machine_family.toLowerCase().includes("heat")
-  const isBench = computedSetup.machine_family.toLowerCase().includes("bench")
+  const familyLower = computedSetup.machine_family?.toLowerCase() ?? ""
+  const isInspection = familyLower.includes("inspection")
+  const isHeatTreat = familyLower.includes("heat")
+  const isBench = familyLower.includes("bench")
   
   let circleColor = "border-primary text-primary" // default green/primary
   if (isInspection) circleColor = "border-blue-500 text-blue-500"
@@ -37,9 +38,11 @@ export function SetupCard({ computedSetup, deconstructedSetup }: SetupCardProps)
             <div>
               <div className="flex items-center gap-2">
                 <h3 className="text-lg font-semibold">{computedSetup.setup_name}</h3>
-                <Badge variant="outline" className="uppercase text-[10px] tracking-wider">
-                  {computedSetup.machine_family.replace(/_/g, " ")}
-                </Badge>
+                {computedSetup.machine_family && (
+                  <Badge variant="outline" className="uppercase text-[10px] tracking-wider">
+                    {computedSetup.machine_family.replace(/_/g, " ")}
+                  </Badge>
+                )}
               </div>
             </div>
           </div>
@@ -47,10 +50,16 @@ export function SetupCard({ computedSetup, deconstructedSetup }: SetupCardProps)
           {/* Right side times */}
           <div className="text-right">
             <div className="text-sm font-mono text-foreground font-semibold">
-              {(computedSetup.time_summary?.total_machining_time_min ?? (computedSetup as any).total_machining_time_min ?? 0).toFixed(2)} min <span className="text-muted-foreground font-normal font-sans">cycle</span>
+              {computedSetup.time_summary?.total_machining_time_min != null
+                ? `${computedSetup.time_summary.total_machining_time_min.toFixed(2)} min`
+                : "—"}{" "}
+              <span className="text-muted-foreground font-normal font-sans">cycle</span>
             </div>
             <div className="text-xs font-mono text-muted-foreground mt-0.5">
-              {(computedSetup.time_summary?.setup_time_min ?? (computedSetup as any).setup_time_min ?? 0).toFixed(2)} min <span className="font-sans">setup</span>
+              {computedSetup.time_summary?.setup_time_min != null
+                ? `${computedSetup.time_summary.setup_time_min.toFixed(2)} min`
+                : "—"}{" "}
+              <span className="font-sans">setup</span>
             </div>
           </div>
         </div>
@@ -82,13 +91,13 @@ export function SetupCard({ computedSetup, deconstructedSetup }: SetupCardProps)
         {/* Sub-operations — shown directly, each individually expandable */}
         {hasSubOps && (
           <div className="bg-muted/5">
-            {computedSetup.sub_operations.map((subOp) => {
+            {computedSetup.sub_operations.map((subOp, idx) => {
               const deconstructedSubOp = deconstructedSetup?.sub_operations?.find(
                 (d) => d.sub_op_id === subOp.sub_op_id
               )
               return (
                 <SubOperationCard 
-                  key={subOp.sub_op_id} 
+                  key={subOp.sub_op_id || `sub-${subOp.sequence || idx}-${idx}`} 
                   subOp={subOp} 
                   deconstructedSubOp={deconstructedSubOp} 
                 />

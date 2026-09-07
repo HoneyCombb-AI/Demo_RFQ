@@ -1,0 +1,533 @@
+{
+  "analysis_id": "IC01B081220_merge_20260903T102248Z",
+  "source_feature_graph_id": "IC01B081220_merge_20260903T102248Z",
+  "quantity": 100,
+  "part_family": "turned",
+  "base_geometry": "rotational",
+  "stock": {
+    "form": "tube",
+    "diameter_mm": 46.2,
+    "bore_diameter_mm": 19.3,
+    "length_mm": 112.0,
+    "weight_kg": 1.22,
+    "machining_allowance_mm": 0.5
+  },
+  "operations": [
+    {
+      "sequence": 1,
+      "name": "Saw Cut Tube Blank",
+      "machine_family": "saw",
+      "setup_note": "Cut near-net seamless mechanical tubing into individual blanks with facing allowance on both ends. The full order may be cut from standard mill lengths in one batch setup.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "setup_time_min": 5.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "saw_cut",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "saw_cut",
+            "cut_diameter_mm": 46.2,
+            "bore_diameter_mm": 19.2,
+            "cut_count": 1
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 2,
+      "name": "CNC Turn \u2013 First End",
+      "machine_family": "cnc_lathe",
+      "setup_note": "Grip the near-net tube OD in bored soft jaws and establish manufacturing face datum A and spindle-axis datum B. Face the first end, canned-profile the reduced OD and end contour, then size the coaxial bore zones from this end.",
+      "datum_references": [
+        "A",
+        "B"
+      ],
+      "material_machinability": "medium",
+      "setup_time_min": 15.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "face_turn",
+          "target_feature_ids": [
+            "F06"
+          ],
+          "inputs": {
+            "kind": "radial_turn",
+            "start_diameter_mm": 46.2,
+            "finish_diameter_mm": 19.2,
+            "groove_count": 1,
+            "total_stock_mm": 2.0
+          }
+        },
+        {
+          "sequence": 2,
+          "operation_type": "rough_turn_od",
+          "target_feature_ids": [
+            "F05",
+            "F01",
+            "F02"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 46.2,
+            "finish_diameter_mm": 34.8,
+            "cut_length_mm": 17.25
+          }
+        },
+        {
+          "sequence": 3,
+          "operation_type": "finish_turn_od",
+          "target_feature_ids": [
+            "F05",
+            "F01",
+            "F02"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 34.8,
+            "finish_diameter_mm": 34.0,
+            "cut_length_mm": 17.25
+          }
+        },
+        {
+          "sequence": 4,
+          "operation_type": "rough_bore_id",
+          "target_feature_ids": [
+            "F04"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 19.2,
+            "finish_diameter_mm": 19.5,
+            "cut_length_mm": 14.0
+          }
+        },
+        {
+          "sequence": 5,
+          "operation_type": "rough_bore_id",
+          "target_feature_ids": [
+            "F08"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 19.2,
+            "finish_diameter_mm": 28.14,
+            "cut_length_mm": 36.75
+          }
+        },
+        {
+          "sequence": 6,
+          "operation_type": "finish_bore_id",
+          "target_feature_ids": [
+            "F08"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 28.14,
+            "finish_diameter_mm": 28.94,
+            "cut_length_mm": 36.75
+          }
+        },
+        {
+          "sequence": 7,
+          "operation_type": "finish_bore_id",
+          "target_feature_ids": [
+            "F04",
+            "F03"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 19.5,
+            "finish_diameter_mm": 20.3,
+            "cut_length_mm": 17.14
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 3,
+      "name": "CNC Turn \u2013 Second End",
+      "machine_family": "cnc_lathe",
+      "setup_note": "Reverse the part into profile-matched soft jaws, seat manufacturing datum A against the axial stop, and indicate spindle-axis datum B. Face to final overall length and repeat the consolidated OD and ID profiles on the opposite end.",
+      "datum_references": [
+        "A",
+        "B"
+      ],
+      "material_machinability": "medium",
+      "setup_time_min": 15.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "face_turn",
+          "target_feature_ids": [
+            "F06"
+          ],
+          "inputs": {
+            "kind": "radial_turn",
+            "start_diameter_mm": 46.2,
+            "finish_diameter_mm": 19.2,
+            "groove_count": 1,
+            "total_stock_mm": 2.0
+          }
+        },
+        {
+          "sequence": 2,
+          "operation_type": "rough_turn_od",
+          "target_feature_ids": [
+            "F05",
+            "F01",
+            "F02"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 46.2,
+            "finish_diameter_mm": 34.8,
+            "cut_length_mm": 17.25
+          }
+        },
+        {
+          "sequence": 3,
+          "operation_type": "finish_turn_od",
+          "target_feature_ids": [
+            "F05",
+            "F01",
+            "F02"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 34.8,
+            "finish_diameter_mm": 34.0,
+            "cut_length_mm": 17.25
+          }
+        },
+        {
+          "sequence": 4,
+          "operation_type": "rough_bore_id",
+          "target_feature_ids": [
+            "F04"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 19.2,
+            "finish_diameter_mm": 19.5,
+            "cut_length_mm": 14.0
+          }
+        },
+        {
+          "sequence": 5,
+          "operation_type": "rough_bore_id",
+          "target_feature_ids": [
+            "F08"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 19.2,
+            "finish_diameter_mm": 28.14,
+            "cut_length_mm": 36.75
+          }
+        },
+        {
+          "sequence": 6,
+          "operation_type": "finish_bore_id",
+          "target_feature_ids": [
+            "F08"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 28.14,
+            "finish_diameter_mm": 28.94,
+            "cut_length_mm": 36.75
+          }
+        },
+        {
+          "sequence": 7,
+          "operation_type": "finish_bore_id",
+          "target_feature_ids": [
+            "F04",
+            "F03"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 19.5,
+            "finish_diameter_mm": 20.3,
+            "cut_length_mm": 17.14
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 4,
+      "name": "OD Grind \u2013 Central Straight Section",
+      "machine_family": "outside_vendor",
+      "setup_note": "Locate the unhardened part on a precision expanding mandrel from the finished coaxial bore system and axially reference manufacturing datum A. Traverse-grind the near-net tube OD only over the central straight section to its final diameter and Ra 1.2 finish.",
+      "datum_references": [
+        "A",
+        "B"
+      ],
+      "material_machinability": "medium",
+      "setup_time_min": 0.0,
+      "in_house": false,
+      "outside_process": "grinding",
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "od_grind",
+          "target_feature_ids": [
+            "F07"
+          ],
+          "inputs": {
+            "kind": "cylindrical_grind",
+            "grind_diameter_mm": 45.925,
+            "grind_length_mm": 73.5,
+            "radial_stock_mm": 0.1375,
+            "land_count": 1
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 5,
+      "name": "Deburr and Clean",
+      "machine_family": "finish_bench",
+      "setup_note": "Support the completed part on a protected bench fixture and remove turning and grinding burrs without rolling material onto the controlled diameters. Break all remaining sharp edges to 0.5 mm maximum and remove chips and abrasive residue.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "setup_time_min": 3.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "deburr",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "manual",
+            "complexity": "medium",
+            "edge_length_mm": 341.2
+          }
+        },
+        {
+          "sequence": 2,
+          "operation_type": "clean_degrease",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "manual",
+            "complexity": "medium",
+            "estimated_time_min": 1.5
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 6,
+      "name": "Corrosion-Resistant Coating",
+      "machine_family": "plating_line",
+      "setup_note": "Bulk-process the order through the in-house cleaning and corrosion-resistant coating line after all machining and edge breaking are complete. The default route assumes an all-over barrel-applied coating, with the lot batched to plating-line capacity.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "setup_time_min": 10.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "clean_degrease",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "manual",
+            "complexity": "medium",
+            "estimated_time_min": 1.0
+          }
+        },
+        {
+          "sequence": 2,
+          "operation_type": "plate",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "surface_treat",
+            "treated_area_mm2": 18979.0,
+            "batch_size_parts": 100,
+            "requires_bake": false
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 7,
+      "name": "Periodic Crush Test",
+      "machine_family": "test_bench",
+      "setup_note": "Fixture control-plan sample parts on the dedicated test bench and perform the specified PS-122.5 axial crush test. Tested samples are segregated because the test may be destructive.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "setup_time_min": 15.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "pressure_test",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "inspection",
+            "dimension_count": 3,
+            "gdt_count": 0,
+            "sampling_rate_pct": 1.0,
+            "requires_fixture": true
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 8,
+      "name": "Final Shop-Floor Inspection",
+      "machine_family": "inspection",
+      "setup_note": "Inspect sampled production parts using plug gauges, snap gauges, micrometers, calipers, and a surface-finish comparator or profilometer. Verify coating coverage, both end profiles, bore sizes, OD sizes, overall length, and the Ra 1.2 central OD without a dedicated CMM layout.",
+      "datum_references": [
+        "A",
+        "B"
+      ],
+      "material_machinability": "medium",
+      "setup_time_min": 10.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "manual_inspect",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "inspection",
+            "dimension_count": 5,
+            "gdt_count": 0,
+            "sampling_rate_pct": 100.0,
+            "requires_fixture": false
+          }
+        }
+      ]
+    }
+  ],
+  "clarifications": [
+    {
+      "clarification_id": "C01",
+      "question": "What corrosion-resistant coating specification, type, thickness, and excluded areas are defined by the missing \u201cSEE TAB\u201d information?",
+      "blocks": [
+        6
+      ],
+      "suggested_default": "Use an all-over in-house alkaline zinc barrel coating and compensate controlled diameters for the approved coating thickness.",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C02",
+      "question": "Is precision seamless tubing approximately 46.2 mm OD by 19.3 mm ID commercially approved for this part?",
+      "blocks": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "suggested_default": "Procure 46.2 mm OD by 19.3 mm ID precision seamless mechanical tubing cut to approximately 112 mm.",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C03",
+      "question": "What controlled axial length or step depth is defined by the unresolved 7.05 mm callout?",
+      "blocks": [
+        2,
+        3
+      ],
+      "suggested_default": "Treat 7.05 mm as the axial depth of the symmetric end shoulder profile.",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C04",
+      "question": "What is the required axial extent of the \u00d828.94 maximum central internal cavity?",
+      "blocks": [
+        2,
+        3
+      ],
+      "suggested_default": "Extend F08 symmetrically between the two internal end-transition profiles.",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C05",
+      "question": "What exact contour defines the internal transition between each \u00d820.3 end bore and the central cavity?",
+      "blocks": [
+        2,
+        3
+      ],
+      "suggested_default": "Use the smooth symmetric transition represented by the extracted R2.00 inner blend and drawing profile.",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C06",
+      "question": "What target or lower dimensional limit applies to the \u00d828.94 MAX central cavity?",
+      "blocks": [
+        2,
+        3,
+        8
+      ],
+      "suggested_default": "Treat 28.94 mm as a strict maximum and establish the production target from approved tooling and coating allowance.",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C07",
+      "question": "What sampling frequency is required for the PS-122.5 crush test?",
+      "blocks": [
+        7
+      ],
+      "suggested_default": "Test one first-off sample and one sample per production lot unless the customer control plan specifies otherwise.",
+      "priority": "medium"
+    }
+  ],
+  "assumptions": [
+    {
+      "assumption_id": "A01",
+      "text": "The two end tapers, outer R6.50 blends, inner R2.00 blends, reduced ODs, and end bores are symmetric because their extracted instance counts are two."
+    },
+    {
+      "assumption_id": "A02",
+      "text": "Datum A is a manufacturing-only first finished end face and datum B is the common spindle axis established from the coaxial OD and bore system; these are not drawing GD&T datums."
+    },
+    {
+      "assumption_id": "A03",
+      "text": "Stock dimensions and approximate mass are based on near-net precision seamless tubing with representative cold-drawn cleanup allowances; supplier availability must be confirmed."
+    },
+    {
+      "assumption_id": "A04",
+      "text": "The central major OD is finish ground while unhardened as an authoritative exception required by correction ALM-STOCK-001, despite the standard grinding template normally reserving grinding for hardened material."
+    },
+    {
+      "assumption_id": "A05",
+      "text": "The central stock OD is not rough- or finish-turned; only the two reduced end profiles are turned, and F07 is produced by the subsequent OD grinding operation."
+    },
+    {
+      "assumption_id": "A06",
+      "text": "The R6.50 outer blends, R2.00 inner blends, and 40-degree end profiles are generated incidentally by the consolidated canned finish profiles rather than separate form-turning operations."
+    },
+    {
+      "assumption_id": "A07",
+      "text": "Center drilling is omitted because the blank is hollow tubing and its length-to-diameter ratio is below 4:1; parting is omitted because individual blanks are saw cut and finish-faced in two spindle operations."
+    },
+    {
+      "assumption_id": "A08",
+      "text": "Turning-template grooving and threading steps are omitted because the feature graph contains no grooves or threads."
+    },
+    {
+      "assumption_id": "A09",
+      "text": "Pilot drilling, full-size drilling, reaming, tapping, and countersinking from the hole-making template are omitted because the stock already has an open bore and the specified bores are produced by lathe boring."
+    },
+    {
+      "assumption_id": "A10",
+      "text": "Face grinding, ID grinding, profile grinding, honing, lapping, and superfinishing are omitted because no heat treatment, corresponding precision requirement, or applicable feature is specified."
+    },
+    {
+      "assumption_id": "A11",
+      "text": "The coating route defaults to all-over treatment without masking; masking and unmasking must be added if the missing coating specification excludes the bores, ground OD, or other mating surfaces."
+    },
+    {
+      "assumption_id": "A12",
+      "text": "A coating cure or hydrogen-embrittlement-relief bake is omitted because the specified low-carbon cold-drawn steel is not identified as high-strength and the coating system is not identified as paint or powder coat."
+    }
+  ]
+}

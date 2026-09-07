@@ -13,14 +13,21 @@ interface SubOperationCardProps {
 
 /**
  * Checks whether a parameter value is meaningful enough to display.
- * Filters out: null, undefined, empty strings, 0 (numeric), false (boolean).
- * Keeps: non-zero numbers, non-empty strings, true booleans.
+ * Used for formula inputs: filters null, undefined, empty strings, 0, and false.
  */
-function isMeaningfulValue(value: unknown): boolean {
+function isNonEmptyValue(value: unknown): boolean {
   if (value === null || value === undefined || value === "") return false
   if (typeof value === "number" && value === 0) return false
   if (typeof value === "boolean" && value === false) return false
   return true
+}
+
+/**
+ * Checks whether a cutting parameter value should be shown.
+ * Only filters null/undefined/empty — keeps 0 since it is a valid engineering value.
+ */
+function isMeaningfulCuttingParam(value: unknown): boolean {
+  return value !== null && value !== undefined && value !== ""
 }
 
 /**
@@ -53,17 +60,17 @@ function formatCuttingParamLabel(key: string): string {
 
 export function SubOperationCard({ subOp, deconstructedSubOp }: SubOperationCardProps) {
   const [expanded, setExpanded] = React.useState(false)
-  const seqNumber = subOp.sequence.toString().padStart(2, "0")
+  const seqNumber = subOp?.sequence?.toString().padStart(2, "0") ?? "--"
 
-  // Build filtered formula-input entries (only meaningful values)
+  // Build filtered formula-input entries (only meaningful non-zero values)
   const formulaEntries = subOp.formula_inputs_used
-    ? Object.entries(subOp.formula_inputs_used).filter(([, value]) => isMeaningfulValue(value))
+    ? Object.entries(subOp.formula_inputs_used).filter(([, value]) => isNonEmptyValue(value))
     : []
 
-  // Build filtered cutting-parameter entries (only meaningful, non-skipped values)
+  // Build filtered cutting-parameter entries (only non-null values from trace; 0 is valid)
   const cuttingEntries = subOp.cycle_time?.cutting_parameters
     ? Object.entries(subOp.cycle_time.cutting_parameters).filter(
-        ([key, value]) => !CUTTING_PARAM_SKIP_KEYS.has(key) && isMeaningfulValue(value)
+        ([key, value]) => !CUTTING_PARAM_SKIP_KEYS.has(key) && isMeaningfulCuttingParam(value)
       )
     : []
 
@@ -99,8 +106,8 @@ export function SubOperationCard({ subOp, deconstructedSubOp }: SubOperationCard
         <div className="flex-1 flex items-center gap-2 flex-wrap min-w-0">
           <span className="font-semibold text-sm text-foreground">{subOp.operation_name}</span>
           <div className="flex gap-1 flex-wrap">
-            {subOp.target_feature_ids.map((id) => (
-              <Badge key={id} variant="secondary" className="font-mono text-[10px] px-1.5 py-0 bg-muted/60">
+            {subOp.target_feature_ids?.map((id, idx) => (
+              <Badge key={`target-${id || "feat"}-${idx}`} variant="secondary" className="font-mono text-[10px] px-1.5 py-0 bg-muted/60">
                 {id}
               </Badge>
             ))}
@@ -134,9 +141,9 @@ export function SubOperationCard({ subOp, deconstructedSubOp }: SubOperationCard
             <div>
               <h5 className="text-[10px] uppercase tracking-widest font-semibold text-muted-foreground mb-2">Formula Inputs</h5>
               <div className="flex flex-wrap gap-2">
-                {formulaEntries.map(([key, value]) => {
+                {formulaEntries.map(([key, value], idx) => {
                   const label = key.replace(/_/g, " ").toUpperCase()
-                  return <ParamBadge key={key} label={label} value={value as string | number} />
+                  return <ParamBadge key={`formula-${key}-${idx}`} label={label} value={value as string | number} />
                 })}
               </div>
             </div>
@@ -147,9 +154,9 @@ export function SubOperationCard({ subOp, deconstructedSubOp }: SubOperationCard
             <div>
               <h5 className="text-[10px] uppercase tracking-widest font-semibold text-muted-foreground mb-2">Cutting Parameters</h5>
               <div className="flex flex-wrap gap-2">
-                {cuttingEntries.map(([key, value]) => {
+                {cuttingEntries.map(([key, value], idx) => {
                   const label = formatCuttingParamLabel(key)
-                  return <ParamBadge key={key} label={label} value={value as string | number} />
+                  return <ParamBadge key={`cutting-${key}-${idx}`} label={label} value={value as string | number} />
                 })}
               </div>
             </div>
@@ -159,7 +166,7 @@ export function SubOperationCard({ subOp, deconstructedSubOp }: SubOperationCard
           {subOp.cycle_time?.calculation_notes && subOp.cycle_time.calculation_notes.length > 0 && (
             <div className="text-xs italic text-muted-foreground">
               {subOp.cycle_time.calculation_notes.map((note, idx) => (
-                <p key={idx}>{note}</p>
+                <p key={`note-${idx}`}>{note}</p>
               ))}
             </div>
           )}
