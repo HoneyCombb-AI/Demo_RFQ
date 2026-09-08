@@ -1,0 +1,503 @@
+{
+  "analysis_id": "C.14.386-00_Stirnrad_merge_20260908T033335Z",
+  "part": {
+    "name": "Stirnrad z61 D63,6 links B20",
+    "drawing_number": "C.14.386-00",
+    "material": "1.7139 (16MnCrS5) (Pb<0,1%)",
+    "units": "mm"
+  },
+  "feature_graph": {
+    "part_envelope": {
+      "width_mm": 20.1,
+      "max_diameter_mm": 63.64
+    },
+    "coordinate_system": {
+      "primary_axis": "Z",
+      "orientation_notes": "Z is the gear rotation axis and central bore axis. In the main cross-section the section plane is YZ with cut normal X; the isometric note indicates the front face corresponds to the XY plane when viewed along -Z.",
+      "datum_origin": "A"
+    },
+    "features": [
+      {
+        "feature_id": "F01",
+        "feature_type": "part_body",
+        "name": "Helical Gear Part Body",
+        "description": "Overall solid body of the helical gear, showing the external helical teeth, a large front recess, and a central bore.",
+        "geometry": {},
+        "access_directions": [
+          "+Z",
+          "radial"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "isometric_view"
+        ]
+      },
+      {
+        "feature_id": "F02",
+        "feature_type": "internal_bore",
+        "name": "Central bore",
+        "description": "Main central through bore for shaft mounting, defines Datum A.",
+        "geometry": {
+          "diameter_mm": 15.0,
+          "depth_condition": "THRU",
+          "hole_count": 1,
+          "axis_direction": "Z"
+        },
+        "instance_count": 1,
+        "surface_finish": {
+          "rz_value": 2.5,
+          "finish_symbol": "Rz2,5"
+        },
+        "access_directions": [
+          "+Z",
+          "-Z"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 15.0,
+            "tolerance_class": "H7"
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "main_cross_section"
+        ]
+      },
+      {
+        "feature_id": "F03",
+        "feature_type": "external_cylinder",
+        "name": "Outer gear body / Addendum cylinder",
+        "description": "Outer diameter of the gear, machined over during toothing.",
+        "geometry": {
+          "diameter_mm": 63.64,
+          "outer_diameter_mm": 63.64,
+          "width_mm": 20.0,
+          "axis_direction": "Z"
+        },
+        "instance_count": 1,
+        "surface_finish": {
+          "rz_value": 6.0,
+          "finish_symbol": "Rz 6"
+        },
+        "access_directions": [
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 63.64,
+            "plus_mm": 0.0,
+            "minus_mm": 0.1
+          },
+          {
+            "dimension_type": "width",
+            "nominal_mm": 20.0,
+            "plus_mm": 0.1,
+            "minus_mm": 0.1
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "runout",
+            "tolerance_value_mm": 0.035,
+            "datum_references": [
+              "A"
+            ],
+            "applied_to": "Outer diameter of the gear"
+          }
+        ],
+        "callout_qualifiers": [],
+        "source_views": [
+          "main_cross_section"
+        ]
+      },
+      {
+        "feature_id": "F04",
+        "feature_type": "counterbore",
+        "name": "Left face recess",
+        "description": "Large annular recess or counterbore on the left face of the gear.",
+        "geometry": {
+          "diameter_mm": 36.0,
+          "depth_mm": 9.0,
+          "hole_count": 1,
+          "axis_direction": "Z"
+        },
+        "instance_count": 1,
+        "access_directions": [
+          "+Z"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "main_cross_section"
+        ]
+      },
+      {
+        "feature_id": "F05",
+        "feature_type": "chamfer",
+        "name": "Left OD chamfer",
+        "description": "Chamfer on the left outer edge of the gear.",
+        "geometry": {
+          "angle_deg": 45.0
+        },
+        "instance_count": 1,
+        "access_directions": [
+          "+Z",
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "chamfer",
+            "nominal_mm": 0.3,
+            "angle_deg": 45.0
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "main_cross_section"
+        ]
+      },
+      {
+        "feature_id": "F06",
+        "feature_type": "chamfer",
+        "name": "Right OD chamfer",
+        "description": "Chamfer on the right outer edge of the gear.",
+        "geometry": {
+          "angle_deg": 45.0
+        },
+        "instance_count": 1,
+        "access_directions": [
+          "-Z",
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "chamfer",
+            "nominal_mm": 0.3,
+            "angle_deg": 45.0
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "main_cross_section"
+        ]
+      },
+      {
+        "feature_id": "F07",
+        "feature_type": "chamfer",
+        "name": "Left recess outer chamfer",
+        "description": "Chamfer on the outer edge of the left face recess.",
+        "geometry": {
+          "angle_deg": 45.0
+        },
+        "instance_count": 1,
+        "access_directions": [
+          "+Z"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "chamfer",
+            "nominal_mm": 0.5,
+            "angle_deg": 45.0
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "main_cross_section"
+        ]
+      },
+      {
+        "feature_id": "F08",
+        "feature_type": "chamfer",
+        "name": "Left recess inner chamfer",
+        "description": "Chamfer at the entry of the central bore from the left face recess.",
+        "geometry": {
+          "angle_deg": 45.0
+        },
+        "instance_count": 1,
+        "access_directions": [
+          "+Z"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "chamfer",
+            "nominal_mm": 0.5,
+            "angle_deg": 45.0
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "main_cross_section"
+        ]
+      },
+      {
+        "feature_id": "F09",
+        "feature_type": "chamfer",
+        "name": "Right bore entry chamfer",
+        "description": "Chamfer at the entry of the central bore on the right face.",
+        "geometry": {
+          "depth_mm": 0.7,
+          "angle_deg": 30.0
+        },
+        "instance_count": 1,
+        "access_directions": [
+          "-Z"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "main_cross_section"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "relationship_id": "R01",
+        "from_feature_id": "F03",
+        "to_feature_id": "F02",
+        "relationship_type": "coaxial",
+        "detail": "Outer gear body/addendum cylinder and central bore share the gear rotation axis Z."
+      },
+      {
+        "relationship_id": "R02",
+        "from_feature_id": "F03",
+        "to_feature_id": "F02",
+        "relationship_type": "datum_referenced",
+        "detail": "Outer gear diameter has runout control referenced to datum A, defined by the Ø15H7 central bore axis."
+      },
+      {
+        "relationship_id": "R03",
+        "from_feature_id": "F04",
+        "to_feature_id": "F02",
+        "relationship_type": "coaxial",
+        "detail": "Left face annular recess/counterbore is centered on the same Z axis as the central bore."
+      },
+      {
+        "relationship_id": "R04",
+        "from_feature_id": "F05",
+        "to_feature_id": "F03",
+        "relationship_type": "intersecting",
+        "detail": "Left OD chamfer is on the left outer edge of the gear outside diameter."
+      },
+      {
+        "relationship_id": "R05",
+        "from_feature_id": "F06",
+        "to_feature_id": "F03",
+        "relationship_type": "intersecting",
+        "detail": "Right OD chamfer is on the right outer edge of the gear outside diameter."
+      },
+      {
+        "relationship_id": "R06",
+        "from_feature_id": "F07",
+        "to_feature_id": "F04",
+        "relationship_type": "intersecting",
+        "detail": "Left recess outer chamfer is on the outer edge of the left face recess."
+      },
+      {
+        "relationship_id": "R07",
+        "from_feature_id": "F08",
+        "to_feature_id": "F02",
+        "relationship_type": "intersecting",
+        "detail": "Left recess inner chamfer is at the entry edge of the central bore."
+      },
+      {
+        "relationship_id": "R08",
+        "from_feature_id": "F08",
+        "to_feature_id": "F04",
+        "relationship_type": "intersecting",
+        "detail": "Left recess inner chamfer lies at the inner boundary of the left face recess."
+      },
+      {
+        "relationship_id": "R09",
+        "from_feature_id": "F09",
+        "to_feature_id": "F02",
+        "relationship_type": "intersecting",
+        "detail": "Right bore entry chamfer is on the right entry edge of the central bore."
+      }
+    ],
+    "datum_scheme": {
+      "datums": [
+        {
+          "datum_letter": "A",
+          "feature_id": "F02",
+          "surface_type": "cylindrical",
+          "description": "Axis of the Ø15H7 central bore."
+        }
+      ],
+      "datum_hierarchy_notes": "Datum A is defined by the cylindrical axis of the Ø15H7 central through bore. The outer gear diameter runout control references datum A."
+    },
+    "part_notes": "Material: 1.7139 (16MnCrS5) (Pb<0,1%). Scale: 2:1. General tolerance: DIN ISO 2768-mK. Projection: first angle. Heat treatment: Einsatzgehärtet und angelassen 630+100HV10; Eht=0,3+0,2mm/ case-hardened and tempered 630+100HV10; hardening depth=Eht=0,3+0,2mm. Coating: none specified. General notes: DEBURR: Kanten müssen vollständig entgratet sein/ sharp edges must be removed. DEBURR: entgratgestrahlt / burrs removed. TOLERANCE: Nicht tolerierte Maße, Rundungshalbmesser, Fasen und Winkelabmaße nach / Not specifieced dimensions, external radii, camfers and angles according to: DIN ISO 2768-mK. RoHS- und REACH-konform nach zum Lieferzeitpunkt gültiger EU Richtlinie/ RoHS and REACH compliant according to at time of delivery valid EC Directive.",
+    "overall_complexity": "moderate"
+  },
+  "component_specs": [
+    {
+      "section_id": "gear_data_table",
+      "component_type": "helical_gear",
+      "spec_title": "Schrägstirnrad außenverzahnt / helical gear external geared",
+      "parameters": [
+        {
+          "parameter_name": "Zähnezahl / number of teeth",
+          "symbol": "z",
+          "value_raw": "61",
+          "value_numeric": 61.0
+        },
+        {
+          "parameter_name": "Normalmodul / normal module",
+          "symbol": "m",
+          "unit": "mm",
+          "value_raw": "1",
+          "value_numeric": 1.0
+        },
+        {
+          "parameter_name": "Teilkreisdurchmesser / pitch diameter",
+          "symbol": "d",
+          "unit": "mm",
+          "value_raw": "63,152",
+          "value_numeric": 63.152
+        },
+        {
+          "parameter_name": "Grundkreisdurchmesser / base diameter",
+          "symbol": "db",
+          "unit": "mm",
+          "value_raw": "59,096",
+          "value_numeric": 59.096
+        },
+        {
+          "parameter_name": "Erzeugter Fußkreisdurchmesser / generated root circle diameter",
+          "symbol": "df",
+          "unit": "mm",
+          "value_raw": "58,928 -0,088",
+          "value_numeric": 58.928,
+          "plus_tolerance": 0.0,
+          "minus_tolerance": 0.088
+        },
+        {
+          "parameter_name": "Fußnutzkreis / effective root diameter",
+          "symbol": "dNf",
+          "unit": "mm",
+          "value_raw": "61,102 -0,118",
+          "value_numeric": 61.102,
+          "plus_tolerance": 0.0,
+          "minus_tolerance": 0.118
+        },
+        {
+          "parameter_name": "Bezugsprofil / basic rack tooth profile",
+          "value_raw": "DIN 3972 / II",
+          "standard_ref": "DIN 3972 / II"
+        },
+        {
+          "parameter_name": "Eingriffswinkel / pressure angle",
+          "symbol": "α",
+          "value_raw": "20°",
+          "value_numeric": 20.0
+        },
+        {
+          "parameter_name": "Kopfhöhenänderung / change in head height",
+          "symbol": "k",
+          "unit": "mm",
+          "value_raw": "0,0",
+          "value_numeric": 0.0
+        },
+        {
+          "parameter_name": "Schrägungswinkel / helix angle",
+          "symbol": "β",
+          "value_raw": "15°",
+          "value_numeric": 15.0
+        },
+        {
+          "parameter_name": "Flankenrichtung / flank direction",
+          "value_raw": "links-steigend left-rising"
+        },
+        {
+          "parameter_name": "Kopfrundung / tooth tip rounding",
+          "symbol": "rk",
+          "unit": "mm",
+          "value_raw": "0,0",
+          "value_numeric": 0.0
+        },
+        {
+          "parameter_name": "Profilverschiebungsfaktor / addendum modification coefficient",
+          "symbol": "x*",
+          "value_raw": "-0,774",
+          "value_numeric": -0.774
+        },
+        {
+          "parameter_name": "Achsabstand im Gehäuse mit Abmaßen / distance between axles in box with tolerance",
+          "symbol": "a",
+          "unit": "mm",
+          "value_raw": "37 ±0.032",
+          "value_numeric": 37.0,
+          "plus_tolerance": 0.032,
+          "minus_tolerance": 0.032,
+          "row_notes": "Tolerance uses decimal point instead of comma"
+        },
+        {
+          "parameter_name": "Qualität / quality",
+          "value_raw": "DIN 58405 / 8 d",
+          "standard_ref": "DIN 58405 / 8 d"
+        },
+        {
+          "parameter_name": "Maß über Zähne gemessen/ n=6 gauge above teeth n=6",
+          "symbol": "Am",
+          "unit": "mm",
+          "value_raw": "16,590 -0,030",
+          "value_numeric": 16.59,
+          "plus_tolerance": 0.0,
+          "minus_tolerance": 0.03
+        },
+        {
+          "parameter_name": "Zweiflanken-Wälzsprung / two flank working error",
+          "symbol": "fi ″",
+          "unit": "µm",
+          "value_raw": "16",
+          "value_numeric": 16.0
+        },
+        {
+          "parameter_name": "Zweiflanken-Wälzabweichung / radial compositeerror",
+          "symbol": "Fi ″",
+          "unit": "µm",
+          "value_raw": "45",
+          "value_numeric": 45.0
+        },
+        {
+          "parameter_name": "Gegenradsachnummer / counter wheel articlecode",
+          "symbol": "z=11",
+          "unit": "rechts",
+          "value_raw": "C.14.387-00",
+          "row_notes": "Unit cell contains the string 'rechts'; Symbol cell contains 'z=11'."
+        }
+      ]
+    }
+  ],
+  "component_spec_links": [
+    {
+      "spec_section_id": "gear_data_table",
+      "feature_ids": [
+        "F03",
+        "F01"
+      ],
+      "link_notes": "The gear data table describes the external helical gear tooth zone. main_cross_section:F2 is the dimensioned outer/addendum cylinder associated with toothing, while isometric_view:F1 visually shows the external helical teeth as part of the overall gear body."
+    }
+  ],
+  "clarifications": [],
+  "assumptions": [
+    {
+      "assumption_id": "A1",
+      "text": "No identity groups were formed between isometric_view:F1 and the individual main_cross_section features because the isometric observation is an overall part-body/context feature encompassing multiple physical zones rather than a one-to-one observation of a single feature."
+    },
+    {
+      "assumption_id": "A2",
+      "text": "Chamfer-to-parent relationships were represented as intersecting relationships because the feature descriptions explicitly locate each chamfer on the edge of the corresponding bore, recess, or outer diameter."
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "drawing_number": "C.14.117-00",
+  "part_name": "Zahnwelle Z10",
+  "material": "16MnCrS5 1.7139 (Pb<0,1%)",
+  "quantity": 100,
+  "quote_status": "complete",
+  "weights": {
+    "raw_bar_dia_mm": 16.0,
+    "actual_bar_dia_mm": 16.12,
+    "pcs_per_5m_bar": 55,
+    "gross_weight_kg": 0.1456,
+    "gross_weight_g": 145.6,
+    "net_weight_kg": 0.0291,
+    "net_weight_g": 29.1,
+    "scrap_weight_kg": 0.1164,
+    "scrap_weight_g": 116.4,
+    "net_weight_source": "routing"
+  },
+  "direct_cost": {
+    "material_cost_inr": 1.48,
+    "machining_cost_inr": 109.49,
+    "heat_treatment_cost_inr": 1.09,
+    "direct_cost_subtotal_inr": 112.06
+  },
+  "overheads_and_surcharges": {
+    "factory_overhead_margin_inr": 112.06,
+    "tooling_inr": 22.41,
+    "rejection_inr": 4.93,
+    "inspection_inr": 4.48,
+    "cleaning_inr": 2.24,
+    "scrap_recovery_credit_inr": -2.47,
+    "export_packaging_inr": 0.58,
+    "fob_freight_inr": 0.44,
+    "packaging_and_fob_inr": 1.02
+  },
+  "pricing_summary": {
+    "subtotal_before_margin_inr": 144.67,
+    "overhead_and_margin_inr": 112.06,
+    "final_ex_works_price_inr": 256.73
+  },
+  "machining_operations": [
+    {
+      "sequence": 2,
+      "operation_name": "CNC Turn – First End Preparation",
+      "machine_family": "cnc_lathe",
+      "cycle_time_sec": 74.7,
+      "hourly_rate_inr": 250.0,
+      "cost_per_piece_inr": 5.19,
+      "cost_per_piece_raw": 5.1875
+    },
+    {
+      "sequence": 3,
+      "operation_name": "CNC Turn – Second End Preparation",
+      "machine_family": "cnc_lathe",
+      "cycle_time_sec": 74.7,
+      "hourly_rate_inr": 250.0,
+      "cost_per_piece_inr": 5.19,
+      "cost_per_piece_raw": 5.1875
+    },
+    {
+      "sequence": 4,
+      "operation_name": "CNC Turn-Mill – Soft Shaft and Gear Blank",
+      "machine_family": "cnc_lathe",
+      "cycle_time_sec": 530.8,
+      "hourly_rate_inr": 250.0,
+      "cost_per_piece_inr": 36.86,
+      "cost_per_piece_raw": 36.861111111111114
+    },
+    {
+      "sequence": 6,
+      "operation_name": "Gear Hobbing",
+      "machine_family": "gear_hobbing",
+      "cycle_time_sec": 112.3,
+      "hourly_rate_inr": 800.0,
+      "cost_per_piece_inr": 24.96,
+      "cost_per_piece_raw": 24.955555555555556
+    },
+    {
+      "sequence": 7,
+      "operation_name": "Gear Shaving – Soft Finish",
+      "machine_family": "gear_shaving",
+      "cycle_time_sec": 46.4,
+      "hourly_rate_inr": 450.0,
+      "cost_per_piece_inr": 5.8,
+      "cost_per_piece_raw": 5.8
+    },
+    {
+      "sequence": 8,
+      "operation_name": "Pre-Heat-Treat Deburr",
+      "machine_family": "finish_bench",
+      "cycle_time_sec": 85.8,
+      "hourly_rate_inr": 200.0,
+      "cost_per_piece_inr": 4.77,
+      "cost_per_piece_raw": 4.766666666666667
+    },
+    {
+      "sequence": 17,
+      "operation_name": "CNC Hard Turning – Final Datums and ODs",
+      "machine_family": "cnc_lathe",
+      "cycle_time_sec": 384.9,
+      "hourly_rate_inr": 250.0,
+      "cost_per_piece_inr": 26.73,
+      "cost_per_piece_raw": 26.729166666666668
+    }
+  ]
+}

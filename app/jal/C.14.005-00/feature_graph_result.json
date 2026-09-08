@@ -1,0 +1,255 @@
+{
+  "analysis_id": "820105_COUSTOMER_DRG_merge_20260826T213757Z",
+  "part": {
+    "name": "Stirnrad z37",
+    "drawing_number": "C.14.005-00",
+    "revision": "e",
+    "material": "16MnCr5/ESP 65 alternativ: 42CrMo4",
+    "units": "mm"
+  },
+  "feature_graph": {
+    "part_envelope": {
+      "length_mm": 39.33,
+      "width_mm": 14.0,
+      "height_mm": 39.33,
+      "max_diameter_mm": 39.33,
+      "envelope_shape": "cylindrical"
+    },
+    "coordinate_system": {
+      "primary_axis": "X",
+      "orientation_notes": "X is the central bore axis per coordinate note; Y is radial. Origin/reference at datum A axis.",
+      "datum_origin": "A"
+    },
+    "features": [
+      {
+        "feature_id": "F01",
+        "feature_type": "internal_bore",
+        "name": "Central Bore",
+        "description": "Central through bore with entry and exit chamfers.",
+        "geometry": {
+          "diameter_mm": 9.0,
+          "length_mm": 14.0,
+          "angle_deg": 30.0,
+          "axis_direction": "+X"
+        },
+        "access_directions": [
+          "+X",
+          "-X"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 9.0,
+            "tolerance_class": "H7"
+          }
+        ],
+        "gdt_controls": [],
+        "source_views": [
+          "main_view"
+        ]
+      },
+      {
+        "feature_id": "F02",
+        "feature_type": "external_cylinder",
+        "name": "Gear Outer Diameter",
+        "description": "Outer cylindrical surface of the gear blank with edge chamfers.",
+        "geometry": {
+          "diameter_mm": 39.33,
+          "length_mm": 14.0,
+          "axis_direction": "+X"
+        },
+        "access_directions": [
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 39.33,
+            "plus_mm": 0.0,
+            "minus_mm": 0.08
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "runout",
+            "tolerance_value_mm": 0.035,
+            "datum_references": [
+              "A"
+            ],
+            "applied_to": "Outer diameter surface"
+          }
+        ],
+        "source_views": [
+          "main_view"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "relationship_id": "R01",
+        "from_feature_id": "F01",
+        "to_feature_id": "F02",
+        "relationship_type": "coaxial",
+        "detail": "Common central axis along X as depicted; OD is controlled for runout to datum A axis."
+      },
+      {
+        "relationship_id": "R02",
+        "from_feature_id": "F02",
+        "to_feature_id": "F01",
+        "relationship_type": "datum_referenced",
+        "detail": "Runout 0.035 to datum A per GD&T F2_GDT1."
+      }
+    ],
+    "datum_scheme": {
+      "datums": [
+        {
+          "datum_letter": "A",
+          "feature_id": "F01",
+          "surface_type": "cylindrical",
+          "description": "Central bore axis"
+        }
+      ],
+      "datum_hierarchy_notes": "Datum A is the primary datum axis; used as reference for the OD runout control."
+    },
+    "part_notes": "Material: 16MnCr5/ESP 65 alternativ: 42CrMo4. Scale: 2:1. General tolerance: DIN ISO 2768-m. Projection: first angle. Heat treatment: Für Material 16MnCr5 / ESP 65 // For material 16MnCr5 / ESP 65: Einsatzgehärtet und angelassen 630+100HV10; Eht=0,3+0,2mm/ case-hardened and tempered 630+100HV10; hardening depth=Eht=0,3+0,2mm alternativ / alternative Für Material 42CrMo4 / For material 42CrMo4: Verzahnung induktionsgehärtet auf 580+100HV10; Rth475=0,2+0,3mm gemessen unter Fußkreisdurchmesser/ gearing induction-hardened to 580+100HV10; Rth475=0,2+0,3mm measured under root diameter. Coating: none specified. General notes: DEBURR: entgratgestrahlt / burrs removed. DEBURR: Kanten müssen vollständig entgratet sein/ sharp edges must be removed. FINISH: Rz 16 ( Rz 2.5 ). Extraction notes: Names in revision table are blank or illegible.",
+    "overall_complexity": "simple"
+  },
+  "component_specs": [
+    {
+      "section_id": "gear_data_table",
+      "component_type": "helical_gear",
+      "spec_title": "Schrägstirnrad außenverzahnt / helical gear external geared",
+      "parameters": [
+        {
+          "parameter_name": "Zähnezahl / number of teeth",
+          "symbol": "z",
+          "value_raw": "37",
+          "value_numeric": 37.0
+        },
+        {
+          "parameter_name": "Normalmodul / normal module",
+          "symbol": "m",
+          "unit": "mm",
+          "value_raw": "1",
+          "value_numeric": 1.0
+        },
+        {
+          "parameter_name": "Teilkreisdurchmesser / pitch diameter",
+          "symbol": "d",
+          "unit": "mm",
+          "value_raw": "38.305",
+          "value_numeric": 38.305
+        },
+        {
+          "parameter_name": "Grundkreisdurchmesser / base diameter",
+          "symbol": "d_b",
+          "unit": "mm",
+          "value_raw": "35.845",
+          "value_numeric": 35.845
+        },
+        {
+          "parameter_name": "Fußkreisdurchmesser / root diameter",
+          "symbol": "d_f",
+          "unit": "mm",
+          "value_raw": "34.93 -0.08",
+          "value_numeric": 34.93,
+          "plus_tolerance": 0.0,
+          "minus_tolerance": 0.08
+        },
+        {
+          "parameter_name": "Fußnutzkreis / effective root diameter",
+          "symbol": "d_Nf",
+          "unit": "mm",
+          "value_raw": "37",
+          "value_numeric": 37.0
+        },
+        {
+          "parameter_name": "Bezugsprofil / basic rack tooth profile",
+          "value_raw": "DIN3972 / 2",
+          "standard_ref": "DIN3972 / 2"
+        },
+        {
+          "parameter_name": "Eingriffswinkel / pressure angle",
+          "symbol": "α",
+          "value_raw": "20°",
+          "value_numeric": 20.0
+        },
+        {
+          "parameter_name": "Schrägungswinkel / helix angle",
+          "symbol": "β",
+          "value_raw": "15°",
+          "value_numeric": 15.0
+        },
+        {
+          "parameter_name": "Flankenrichtung / flank direction",
+          "value_raw": "links-steigend\nleft-rising"
+        },
+        {
+          "parameter_name": "Profilverschiebungsfaktor / addendum modification coefficient",
+          "symbol": "x",
+          "value_raw": "-0.3582",
+          "value_numeric": -0.3582
+        },
+        {
+          "parameter_name": "Achsabstand im Gehäuse mit Abmaßen / distance between axles in box with tolerance",
+          "symbol": "a",
+          "unit": "mm",
+          "value_raw": "22.3 ±0.025",
+          "value_numeric": 22.3,
+          "plus_tolerance": 0.025,
+          "minus_tolerance": 0.025
+        },
+        {
+          "parameter_name": "Qualität / quality",
+          "value_raw": "DIN58405 / 8d",
+          "standard_ref": "DIN58405 / 8d"
+        },
+        {
+          "parameter_name": "Maß über Zähne gemessen n=4 / gauge above teeth n=4",
+          "symbol": "Am",
+          "unit": "mm",
+          "value_raw": "10.607 -0.026",
+          "value_numeric": 10.607,
+          "plus_tolerance": 0.0,
+          "minus_tolerance": 0.026
+        },
+        {
+          "parameter_name": "Zweiflanken-Wälzsprung / two flank working error",
+          "symbol": "fi \"",
+          "unit": "µm",
+          "value_raw": "14",
+          "value_numeric": 14.0
+        },
+        {
+          "parameter_name": "Zweiflanken-Wälzabweichung / radial composite error",
+          "symbol": "Fi \"",
+          "unit": "µm",
+          "value_raw": "40",
+          "value_numeric": 40.0
+        },
+        {
+          "parameter_name": "Gegenradsachnummer / counter wheel article code",
+          "value_raw": "C.14.002-00"
+        }
+      ]
+    }
+  ],
+  "component_spec_links": [
+    {
+      "spec_section_id": "gear_data_table",
+      "feature_ids": [],
+      "link_notes": "Spec describes the helical gear tooth zone (module, pitch/base/root diameters). No explicit gear-tooth feature is present in the provided section graphs; only a turned OD and the central bore are modeled."
+    }
+  ],
+  "clarifications": [],
+  "assumptions": [
+    {
+      "assumption_id": "A01",
+      "text": "Declared a coaxial relationship between the central bore (main_view:F1) and the outer cylinder (main_view:F2) based on shared axis depiction and the runout control to datum A."
+    },
+    {
+      "assumption_id": "A02",
+      "text": "Left the gear spec table unlinked because the tooth geometry is not represented among extracted features. Will link if a gear-tooth feature appears in another section."
+    }
+  ]
+}

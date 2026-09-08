@@ -1,0 +1,373 @@
+{
+  "analysis_id": "C.14.016-00g_Stirnrad_z40_merge_20260829T141428Z",
+  "part": {
+    "name": "Stirnrad z40",
+    "drawing_number": "C.14.016-00",
+    "revision": "g",
+    "material": "16MnCrS5 1.7139 (Pb<0,1%)",
+    "units": "mm"
+  },
+  "feature_graph": {
+    "part_envelope": {
+      "length_mm": 10.3,
+      "height_mm": 40.81,
+      "max_diameter_mm": 40.81,
+      "envelope_shape": "cylindrical"
+    },
+    "coordinate_system": {
+      "primary_axis": "Z",
+      "orientation_notes": "Z is the gear/bore axis (datum A). In FRONT VIEW, Z is into the page; in SECTION A-A, Z is horizontal (axial) and Y is vertical (radial).",
+      "datum_origin": "A"
+    },
+    "features": [
+      {
+        "feature_id": "F01",
+        "feature_type": "internal_bore",
+        "name": "Central Bore",
+        "description": "Central through bore with chamfers on both ends.",
+        "geometry": {
+          "diameter_mm": 15.0,
+          "length_mm": 17.2,
+          "depth_condition": "THRU",
+          "width_mm": 5.0,
+          "height_mm": 17.2,
+          "angle_deg": 15.0,
+          "axis_direction": "Z"
+        },
+        "surface_finish": {
+          "ra_value": 1.6,
+          "finish_symbol": "Ra 1,6"
+        },
+        "access_directions": [
+          "+Z",
+          "-Z"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "width",
+            "nominal_mm": 5.0,
+            "tolerance_class": "H9"
+          },
+          {
+            "dimension_type": "length",
+            "nominal_mm": 17.2,
+            "plus_mm": 0.15,
+            "minus_mm": 0.1
+          }
+        ],
+        "gdt_controls": [],
+        "source_views": [
+          "front_view",
+          "section_aa"
+        ]
+      },
+      {
+        "feature_id": "F02",
+        "feature_type": "part_body",
+        "name": "Gear body",
+        "description": "Outer circular body of the part with external gear teeth.",
+        "geometry": {
+          "axis_direction": "+Z"
+        },
+        "access_directions": [
+          "radial",
+          "+Z",
+          "-Z"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "source_views": [
+          "front_view"
+        ]
+      },
+      {
+        "feature_id": "F03",
+        "feature_type": "flat_face",
+        "name": "Left Face",
+        "description": "Flat side face of the gear, flush across the hub and rim.",
+        "geometry": {
+          "axis_direction": "+Z"
+        },
+        "access_directions": [
+          "+Z"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [
+          {
+            "gdt_type": "runout",
+            "tolerance_value_mm": 0.035,
+            "datum_references": [
+              "A"
+            ],
+            "applied_to": "Left flat face"
+          }
+        ],
+        "source_views": [
+          "section_aa"
+        ]
+      },
+      {
+        "feature_id": "F04",
+        "feature_type": "external_cylinder",
+        "name": "Outer Gear Cylinder",
+        "description": "Outer diameter/rim of the gear including edge chamfers.",
+        "geometry": {
+          "diameter_mm": 40.81,
+          "outer_diameter_mm": 40.81,
+          "width_mm": 9.8,
+          "angle_deg": 15.0,
+          "axis_direction": "Z"
+        },
+        "access_directions": [
+          "radial",
+          "+Z",
+          "-Z"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 40.81,
+            "plus_mm": 0.0,
+            "minus_mm": 0.15
+          },
+          {
+            "dimension_type": "width",
+            "nominal_mm": 9.8,
+            "plus_mm": 0.2,
+            "minus_mm": 0.2
+          }
+        ],
+        "gdt_controls": [],
+        "source_views": [
+          "section_aa"
+        ]
+      },
+      {
+        "feature_id": "F05",
+        "feature_type": "boss",
+        "name": "Right Hub Protrusion",
+        "description": "Protruding central hub on the right side of the gear.",
+        "geometry": {
+          "diameter_mm": 26.0,
+          "outer_diameter_mm": 26.0,
+          "length_mm": 0.5,
+          "width_mm": 10.3,
+          "axis_direction": "Z"
+        },
+        "access_directions": [
+          "-Z"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 26.0,
+            "plus_mm": 0.5,
+            "minus_mm": 0.5
+          },
+          {
+            "dimension_type": "length",
+            "nominal_mm": 0.5,
+            "plus_mm": 0.2,
+            "minus_mm": 0.2
+          }
+        ],
+        "gdt_controls": [],
+        "source_views": [
+          "section_aa"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "relationship_id": "R01",
+        "from_feature_id": "F01",
+        "to_feature_id": "F04",
+        "relationship_type": "coaxial",
+        "detail": "Central bore axis is shared with the outer gear rim cylinder in section A-A."
+      },
+      {
+        "relationship_id": "R02",
+        "from_feature_id": "F01",
+        "to_feature_id": "F05",
+        "relationship_type": "coaxial",
+        "detail": "Central bore axis is shared with the right hub protrusion in section A-A."
+      },
+      {
+        "relationship_id": "R03",
+        "from_feature_id": "F03",
+        "to_feature_id": "F01",
+        "relationship_type": "datum_referenced",
+        "detail": "Left face runout controlled to datum A (central bore axis)."
+      }
+    ],
+    "datum_scheme": {
+      "datums": [
+        {
+          "datum_letter": "A",
+          "feature_id": "F01",
+          "surface_type": "cylindrical",
+          "description": "Central through bore"
+        }
+      ],
+      "datum_hierarchy_notes": "Datum A is the primary cylindrical datum feature defined by the central through bore axis. Runout of the left face is referenced to A."
+    },
+    "part_notes": "Material: 16MnCrS5 1.7139 (Pb<0,1%). Scale: 2:1. General tolerance: DIN ISO 2768-m. Projection: first angle. Heat treatment: Einsatzgehärtet und angelassen 600+80HV10; Eht=0,3+0,2mm/ case-hardened and tempered 600+80HV10; hardening depth=Eht=0,3+0,2mm. Coating: none specified. General notes: DEBURR: Kanten müssen vollständig entgratet sein/ sharp edges must be removed. Jede Weitergabe sowie Vervielfältigung dieses anvertrauten Dokuments sowie jede Verwertung und Mitteilung seines Inhalts sind nur zu dem vereinbarten Zweck gestattet. Zuwiderhandlungen verpflichtet zu Schadenersatz. Alle Rechte für den Fall der Patent-, Gebrauchsmuster- oder Geschmacksmustereintragungen bleiben vorbehalten. / Any passing-on or duplication of this entrusted documents as well utillisation or disclosure of its contents is permitted only for the agreed purpose. Contravention entitles Collomix to claim demages. All rights reseved in case utility- model patent or design patent registration.. Extraction notes: Disclaimer note spelling errors replicated exactly as written ('utillisation', 'demages', 'reseved'). Surface finish symbol Ra 6,3 (Ra 1,6) visible.",
+    "overall_complexity": "simple"
+  },
+  "component_specs": [
+    {
+      "section_id": "gear_data_table",
+      "component_type": "spur_gear",
+      "spec_title": "Stirnrad außenverzahnt / spur-gear external geared",
+      "parameters": [
+        {
+          "parameter_name": "Zähnezahl / number of teeth",
+          "symbol": "z",
+          "value_raw": "40",
+          "value_numeric": 40.0
+        },
+        {
+          "parameter_name": "Normalmodul / normal module",
+          "symbol": "m",
+          "unit": "mm",
+          "value_raw": "1",
+          "value_numeric": 1.0
+        },
+        {
+          "parameter_name": "Teilkreisdurchmesser / pitch diameter",
+          "symbol": "d",
+          "unit": "mm",
+          "value_raw": "40",
+          "value_numeric": 40.0
+        },
+        {
+          "parameter_name": "Grundkreisdurchmesser / base diameter",
+          "symbol": "d_b",
+          "unit": "mm",
+          "value_raw": "37.588",
+          "value_numeric": 37.588
+        },
+        {
+          "parameter_name": "Fußkreisdurchmesser / root diameter",
+          "symbol": "d_f",
+          "unit": "mm",
+          "value_raw": "36.31 -0.08",
+          "value_numeric": 36.31,
+          "plus_tolerance": 0.0,
+          "minus_tolerance": 0.08
+        },
+        {
+          "parameter_name": "Fußnutzkreis / effective root diameter",
+          "symbol": "d_Nf",
+          "unit": "mm",
+          "value_raw": "38.37",
+          "value_numeric": 38.37
+        },
+        {
+          "parameter_name": "Bezugsprofil / basic rack tooth profile",
+          "value_raw": "DIN3972 / 1",
+          "standard_ref": "DIN3972 / 1"
+        },
+        {
+          "parameter_name": "Eingriffswinkel / pressure angle",
+          "symbol": "α",
+          "value_raw": "20°",
+          "value_numeric": 20.0
+        },
+        {
+          "parameter_name": "Profilverschiebungsfaktor / addendum modification coefficient",
+          "symbol": "x",
+          "value_raw": "-0.5178",
+          "value_numeric": -0.5178
+        },
+        {
+          "parameter_name": "Achsabstand im Gehäuse mit Abmaßen / distance between axles in box with tolerance",
+          "symbol": "a",
+          "unit": "mm",
+          "value_raw": "24.88 ±0.035",
+          "value_numeric": 24.88,
+          "plus_tolerance": 0.035,
+          "minus_tolerance": 0.035
+        },
+        {
+          "parameter_name": "Qualität / quality",
+          "value_raw": "DIN58405 / 8d",
+          "standard_ref": "DIN58405 / 8d"
+        },
+        {
+          "parameter_name": "Maß über Zähne gemessen n=4 / gauge above teeth n=4",
+          "symbol": "Am",
+          "unit": "mm",
+          "value_raw": "10.485 -0.026",
+          "value_numeric": 10.485,
+          "plus_tolerance": 0.0,
+          "minus_tolerance": 0.026
+        },
+        {
+          "parameter_name": "Zweiflanken-Wälzsprung / two flank working error",
+          "symbol": "fi ″",
+          "unit": "µm",
+          "value_raw": "18",
+          "value_numeric": 18.0
+        },
+        {
+          "parameter_name": "Zweiflanken-Wälzabweichung / radial composite error",
+          "symbol": "Fi ″",
+          "unit": "µm",
+          "value_raw": "40",
+          "value_numeric": 40.0
+        },
+        {
+          "parameter_name": "Gegenradsachnummer / counter wheel article code",
+          "value_raw": "C.14.015-00"
+        }
+      ]
+    }
+  ],
+  "component_spec_links": [
+    {
+      "spec_section_id": "gear_data_table",
+      "feature_ids": [
+        "F04"
+      ],
+      "link_notes": "Gear data applies to the external geared rim; matches the outer gear cylinder observed in section A-A."
+    }
+  ],
+  "clarifications": [
+
+  ],
+  "assumptions": [
+    {
+      "assumption_id": "A01",
+      "text": "Grouped front_view:F1 (central bore shown with a keyway) with section_aa:F1 (central through bore) as the same physical bore based on Section A-A passing through the center and matching feature_type; the keyway is considered part of this bore zone in the front view."
+    },
+    {
+      "assumption_id": "A02",
+      "text": "Selected section_aa:F1 as canonical for the central bore because it provides the Ø15 H7, THRU depth condition, chamfers, surface finish, and defines datum A; front_view:F1 lacks bore diameter and depth."
+    },
+    {
+      "assumption_id": "A03",
+      "text": "Did not group front_view:F2 (part_body) with section_aa:F3 (outer gear cylinder). The part_body entry represents the overall outline and is not a single physical feature; treating it as a singleton avoids conflating multiple surfaces."
+    },
+    {
+      "assumption_id": "A04",
+      "text": "Declared coaxial relationships among the bore (section_aa:F1), gear rim cylinder (section_aa:F3), and hub (section_aa:F4) based on the shared centerline evident in section A-A."
+    },
+    {
+      "assumption_id": "A05",
+      "text": "Ignored the truncated, non-assignable GD&T frame noted in front_view extraction_notes ('5 | A') since it cannot be reliably tied to a feature and is not necessary for quoting."
+    },
+    {
+      "assumption_id": "A06",
+      "text": "Set the part coordinate system primary axis to Z and datum origin to A (bore axis) based on both sections’ orientation notes and the datum definition."
+    },
+    {
+      "assumption_id": "A07",
+      "text": "Set the 5 H9 keyway to run THRU the full axial thickness of the central bore."
+    },
+    {
+      "assumption_id": "A08",
+      "text":"Set the 5 H9 keyway depth per DIN 6885 Form A for a 5 mm keyway width."
+    }
+  ]
+}

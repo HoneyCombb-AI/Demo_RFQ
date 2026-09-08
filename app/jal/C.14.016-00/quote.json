@@ -1,0 +1,124 @@
+{
+  "drawing_number": "C.14.016-00",
+  "part_name": "Stirnrad z40",
+  "material": "16MnCrS5 1.7139 (Pb<0,1%)",
+  "quantity": 100,
+  "quote_status": "complete",
+  "weights": {
+    "raw_bar_dia_mm": 45.0,
+    "actual_bar_dia_mm": 45.338,
+    "pcs_per_5m_bar": 307,
+    "gross_weight_kg": 0.2063,
+    "gross_weight_g": 206.3,
+    "net_weight_kg": 0.0445,
+    "net_weight_g": 44.5,
+    "scrap_weight_kg": 0.1618,
+    "scrap_weight_g": 161.8,
+    "net_weight_source": "routing"
+  },
+  "direct_cost": {
+    "material_cost_inr": 4.15,
+    "machining_cost_inr": 122.38,
+    "heat_treatment_cost_inr": 1.67,
+    "direct_cost_subtotal_inr": 128.2
+  },
+  "overheads_and_surcharges": {
+    "factory_overhead_margin_inr": 128.2,
+    "tooling_inr": 25.64,
+    "rejection_inr": 5.64,
+    "inspection_inr": 5.13,
+    "cleaning_inr": 2.56,
+    "scrap_recovery_credit_inr": -3.44,
+    "export_packaging_inr": 0.89,
+    "fob_freight_inr": 0.67,
+    "packaging_and_fob_inr": 1.56
+  },
+  "pricing_summary": {
+    "subtotal_before_margin_inr": 165.29,
+    "overhead_and_margin_inr": 128.2,
+    "final_ex_works_price_inr": 293.48
+  },
+  "machining_operations": [
+    {
+      "sequence": 2,
+      "operation_name": "CNC Turn – First Blank Setup",
+      "machine_family": "cnc_lathe",
+      "cycle_time_sec": 161.9,
+      "hourly_rate_inr": 250.0,
+      "cost_per_piece_inr": 11.24,
+      "cost_per_piece_raw": 11.243055555555555
+    },
+    {
+      "sequence": 3,
+      "operation_name": "CNC Turn – Second Blank Setup",
+      "machine_family": "cnc_lathe",
+      "cycle_time_sec": 150.2,
+      "hourly_rate_inr": 250.0,
+      "cost_per_piece_inr": 10.43,
+      "cost_per_piece_raw": 10.430555555555555
+    },
+    {
+      "sequence": 4,
+      "operation_name": "Broach Internal Keyway",
+      "machine_family": "broaching",
+      "cycle_time_sec": 74.6,
+      "hourly_rate_inr": 250.0,
+      "cost_per_piece_inr": 5.18,
+      "cost_per_piece_raw": 5.180555555555555
+    },
+    {
+      "sequence": 5,
+      "operation_name": "Deburr Broached Blank",
+      "machine_family": "finish_bench",
+      "cycle_time_sec": 38.2,
+      "hourly_rate_inr": 200.0,
+      "cost_per_piece_inr": 2.12,
+      "cost_per_piece_raw": 2.1222222222222227
+    },
+    {
+      "sequence": 7,
+      "operation_name": "Gear Hobbing",
+      "machine_family": "gear_hobbing",
+      "cycle_time_sec": 216.4,
+      "hourly_rate_inr": 800.0,
+      "cost_per_piece_inr": 48.09,
+      "cost_per_piece_raw": 48.08888888888889
+    },
+    {
+      "sequence": 8,
+      "operation_name": "Gear Shaving",
+      "machine_family": "gear_shaving",
+      "cycle_time_sec": 85.3,
+      "hourly_rate_inr": 450.0,
+      "cost_per_piece_inr": 10.66,
+      "cost_per_piece_raw": 10.6625
+    },
+    {
+      "sequence": 10,
+      "operation_name": "Pre-Heat-Treatment Deburr",
+      "machine_family": "finish_bench",
+      "cycle_time_sec": 130.8,
+      "hourly_rate_inr": 200.0,
+      "cost_per_piece_inr": 7.27,
+      "cost_per_piece_raw": 7.2666666666666675
+    },
+    {
+      "sequence": 11,
+      "operation_name": "Pre-Heat-Treatment Wash",
+      "machine_family": "finish_bench",
+      "cycle_time_sec": 64.1,
+      "hourly_rate_inr": 200.0,
+      "cost_per_piece_inr": 3.56,
+      "cost_per_piece_raw": 3.5611111111111104
+    },
+    {
+      "sequence": 17,
+      "operation_name": "CNC Hard Turn – Bore and Faces",
+      "machine_family": "cnc_lathe",
+      "cycle_time_sec": 343.0,
+      "hourly_rate_inr": 250.0,
+      "cost_per_piece_inr": 23.82,
+      "cost_per_piece_raw": 23.819444444444443
+    }
+  ]
+}

@@ -3,76 +3,77 @@
   "part_name": "Schiebeblock",
   "material": "16MnCr5 / 16MnCrS5",
   "quantity": 100,
+  "quote_status": "complete",
   "weights": {
-    "raw_bar_dia_mm": 14.0,
-    "actual_bar_dia_mm": 14.105,
+    "raw_bar_dia_mm": 0.0,
+    "actual_bar_dia_mm": 0.0,
     "pcs_per_5m_bar": 174,
-    "gross_weight_kg": 0.0353,
+    "gross_weight_kg": 0.0,
+    "gross_weight_g": 0.0,
     "net_weight_kg": 0.001,
-    "scrap_weight_kg": 0.0343
+    "net_weight_g": 1.0,
+    "scrap_weight_kg": 0.0,
+    "scrap_weight_g": 0.0,
+    "net_weight_source": "feature_graph"
   },
   "direct_cost": {
-    "material_cost_inr": 0.52,
-    "machining_cost_inr": 97.99,
+    "material_cost_inr": 0.0,
+    "machining_cost_inr": 108.17,
     "heat_treatment_cost_inr": 0.04,
-    "direct_cost_subtotal_inr": 98.55
+    "direct_cost_subtotal_inr": 108.21
   },
   "overheads_and_surcharges": {
-    "factory_overhead_margin_inr": 98.55,
-    "tooling_inr": 19.71,
-    "rejection_inr": 4.34,
-    "inspection_inr": 3.94,
-    "cleaning_inr": 1.97,
-    "scrap_recovery_credit_inr": -0.73,
+    "factory_overhead_margin_inr": 108.21,
+    "tooling_inr": 21.64,
+    "rejection_inr": 4.76,
+    "inspection_inr": 4.33,
+    "cleaning_inr": 2.16,
+    "scrap_recovery_credit_inr": -0.0,
     "export_packaging_inr": 0.02,
     "fob_freight_inr": 0.01,
     "packaging_and_fob_inr": 0.04
   },
   "pricing_summary": {
-    "subtotal_before_margin_inr": 127.82,
-    "overhead_and_margin_inr": 98.55,
-    "final_ex_works_price_inr": 226.37
+    "subtotal_before_margin_inr": 141.14,
+    "overhead_and_margin_inr": 108.21,
+    "final_ex_works_price_inr": 249.36
   },
   "machining_operations": [
     {
       "sequence": 2,
-      "operation_name": "CNC Turn – Gear Blank First Op",
+      "operation_name": "CNC Turn – Main Bar Setup",
       "machine_family": "cnc_lathe",
-      "cycle_time_sec": 115.8,
+      "cycle_time_sec": 300.6,
       "hourly_rate_inr": 250.0,
-      "efficiency": 0.85,
-      "cost_per_piece_inr": 9.46,
-      "cost_per_piece_raw": 9.46078431372549
+      "cost_per_piece_inr": 20.88,
+      "cost_per_piece_raw": 20.875
     },
     {
       "sequence": 3,
       "operation_name": "CNC Turn – Second Face",
       "machine_family": "cnc_lathe",
-      "cycle_time_sec": 34.8,
+      "cycle_time_sec": 89.6,
       "hourly_rate_inr": 250.0,
-      "efficiency": 0.85,
-      "cost_per_piece_inr": 2.84,
-      "cost_per_piece_raw": 2.843137254901961
+      "cost_per_piece_inr": 6.22,
+      "cost_per_piece_raw": 6.222222222222222
     },
     {
       "sequence": 4,
       "operation_name": "Hob External Gear Teeth",
       "machine_family": "gear_hobbing",
-      "cycle_time_sec": 276.0,
+      "cycle_time_sec": 305.3,
       "hourly_rate_inr": 800.0,
-      "efficiency": 0.85,
-      "cost_per_piece_inr": 72.16,
-      "cost_per_piece_raw": 72.15686274509804
+      "cost_per_piece_inr": 67.84,
+      "cost_per_piece_raw": 67.84444444444445
     },
     {
       "sequence": 5,
       "operation_name": "Deburr and Clean",
       "machine_family": "finish_bench",
-      "cycle_time_sec": 207.0,
+      "cycle_time_sec": 238.2,
       "hourly_rate_inr": 200.0,
-      "efficiency": 0.85,
-      "cost_per_piece_inr": 13.53,
-      "cost_per_piece_raw": 13.529411764705882
+      "cost_per_piece_inr": 13.23,
+      "cost_per_piece_raw": 13.233333333333333
     }
   ]
 }

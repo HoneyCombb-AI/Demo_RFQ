@@ -1,25 +1,24 @@
 {
   "analysis_id": "46505025_merge_20260903T041600Z",
   "source_feature_graph_id": "46505025_merge_20260903T041600Z",
-  "quantity": 12000,
+  "quantity": 100,
   "part_family": "hybrid",
   "base_geometry": "rotational",
   "stock": {
     "form": "round_bar",
-    "diameter_mm": 52.0,
-    "length_mm": 50.1,
-    "weight_kg": 0.835,
-    "machining_allowance_mm": 1.5
+    "diameter_mm": 54.0,
+    "length_mm": 50.0,
+    "machining_allowance_mm": 0.3
   },
   "operations": [
     {
       "sequence": 1,
-      "name": "Saw Cut Bar Blanks",
+      "name": "Saw Cut Round Bar Blank",
       "machine_family": "saw",
-      "setup_note": "Cut individual blanks from round bar with axial facing allowance on both ends. Batch the full order using a length stop and control blank length for the two subsequent turning setups.",
+      "setup_note": "Saw \u00d854 round bar into 50 mm blanks, retaining facing allowance on both ends for the 42.1 mm finished length.",
       "datum_references": [],
       "material_machinability": "medium",
-      "setup_time_min": 8.0,
+      "setup_time_min": 5.0,
       "in_house": true,
       "sub_operations": [
         {
@@ -28,7 +27,7 @@
           "target_feature_ids": [],
           "inputs": {
             "kind": "saw_cut",
-            "cut_diameter_mm": 52.0,
+            "cut_diameter_mm": 54.0,
             "cut_count": 1
           }
         }
@@ -36,9 +35,185 @@
     },
     {
       "sequence": 2,
-      "name": "CNC Turn \u2013 Right End and Primary Datum Pre-Machining",
+      "name": "CNC Turn \u2013 Left End and External Preforms",
       "machine_family": "cnc_lathe",
-      "setup_note": "Grip the left-side stock allowance in hard jaws and machine the right end, flange, preliminary datum-A diameters, and internal-spline pilot bore concentrically. Leave grinding allowance on datum A, datum C, the flange faces, and other tolerance surfaces for post-heat-treatment finishing.",
+      "setup_note": "Grip the right-hand stock allowance in a chuck and machine from the left end. Establish the left face and provisional shaft axis while retaining hard-finishing stock on Datum A surfaces.",
+      "datum_references": [
+        "A",
+        "B"
+      ],
+      "material_machinability": "medium",
+      "setup_time_min": 20.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "face_turn",
+          "target_feature_ids": [
+            "F12"
+          ],
+          "inputs": {
+            "kind": "radial_turn",
+            "start_diameter_mm": 54.0,
+            "finish_diameter_mm": 0.0,
+            "groove_count": 1,
+            "total_stock_mm": 3.95
+          }
+        },
+        {
+          "sequence": 2,
+          "operation_type": "rough_turn_od",
+          "target_feature_ids": [
+            "F01"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 54.0,
+            "finish_diameter_mm": 36.41,
+            "cut_length_mm": 42.0
+          }
+        },
+        {
+          "sequence": 3,
+          "operation_type": "finish_turn_od",
+          "target_feature_ids": [
+            "F01"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 36.41,
+            "finish_diameter_mm": 35.61,
+            "cut_length_mm": 42.0
+          }
+        },
+        {
+          "sequence": 4,
+          "operation_type": "rough_turn_od",
+          "target_feature_ids": [
+            "F09"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 54.0,
+            "finish_diameter_mm": 37.0,
+            "cut_length_mm": 2.5
+          }
+        },
+        {
+          "sequence": 5,
+          "operation_type": "finish_turn_od",
+          "target_feature_ids": [
+            "F09"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 37.0,
+            "finish_diameter_mm": 36.2,
+            "cut_length_mm": 2.5
+          }
+        },
+        {
+          "sequence": 6,
+          "operation_type": "chamfer_turn",
+          "target_feature_ids": [
+            "F09"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 36.2,
+            "finish_diameter_mm": 35.2,
+            "cut_length_mm": 1.0
+          }
+        },
+        {
+          "sequence": 7,
+          "operation_type": "rough_turn_od",
+          "target_feature_ids": [
+            "F13"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 54.0,
+            "finish_diameter_mm": 39.085,
+            "cut_length_mm": 40.5
+          }
+        },
+        {
+          "sequence": 8,
+          "operation_type": "groove_od",
+          "target_feature_ids": [
+            "F04"
+          ],
+          "inputs": {
+            "kind": "radial_turn",
+            "start_diameter_mm": 36.2,
+            "finish_diameter_mm": 30.0,
+            "groove_width_mm": 2.5,
+            "groove_count": 1
+          }
+        },
+        {
+          "sequence": 9,
+          "operation_type": "center_drill",
+          "target_feature_ids": [
+            "F03"
+          ],
+          "inputs": {
+            "kind": "point_drill",
+            "hole_diameter_mm": 5.0,
+            "hole_depth_mm": 2.5,
+            "hole_count": 1,
+            "through_hole": false
+          }
+        },
+        {
+          "sequence": 10,
+          "operation_type": "drill",
+          "target_feature_ids": [
+            "F03"
+          ],
+          "inputs": {
+            "kind": "point_drill",
+            "hole_diameter_mm": 8.5,
+            "hole_depth_mm": 25.0,
+            "hole_count": 1,
+            "through_hole": false
+          }
+        },
+        {
+          "sequence": 11,
+          "operation_type": "chamfer_turn",
+          "target_feature_ids": [
+            "F03"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 8.5,
+            "finish_diameter_mm": 10.5,
+            "cut_length_mm": 1.0
+          }
+        },
+        {
+          "sequence": 12,
+          "operation_type": "tap",
+          "target_feature_ids": [
+            "F03"
+          ],
+          "inputs": {
+            "kind": "tap",
+            "major_diameter_mm": 10.0,
+            "thread_depth_mm": 18.2,
+            "pitch_mm": 1.5,
+            "hole_count": 1
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 3,
+      "name": "CNC Turn \u2013 Right Flange and Spline Bore",
+      "machine_family": "cnc_lathe",
+      "setup_note": "Reverse into bored soft jaws on the left external-spline preform and indicate the provisional shaft axis. Face Datum C, finish the coaxial blank surfaces, and prepare the right internal spline bore with post-heat-treatment allowance.",
       "datum_references": [
         "A",
         "C"
@@ -55,50 +230,50 @@
           ],
           "inputs": {
             "kind": "radial_turn",
-            "start_diameter_mm": 52.0,
+            "start_diameter_mm": 54.0,
             "finish_diameter_mm": 0.0,
             "groove_count": 1,
-            "total_stock_mm": 4.0
+            "total_stock_mm": 3.95
           }
         },
         {
           "sequence": 2,
+          "operation_type": "face_turn",
+          "target_feature_ids": [
+            "F05"
+          ],
+          "inputs": {
+            "kind": "radial_turn",
+            "start_diameter_mm": 49.0,
+            "finish_diameter_mm": 38.285,
+            "groove_count": 1,
+            "total_stock_mm": 0.5
+          }
+        },
+        {
+          "sequence": 3,
           "operation_type": "rough_turn_od",
           "target_feature_ids": [
             "F05"
           ],
           "inputs": {
             "kind": "axial_turn",
-            "start_diameter_mm": 52.0,
-            "finish_diameter_mm": 49.8,
-            "cut_length_mm": 6.0
-          }
-        },
-        {
-          "sequence": 3,
-          "operation_type": "finish_turn_od",
-          "target_feature_ids": [
-            "F05",
-            "F06"
-          ],
-          "inputs": {
-            "kind": "axial_turn",
-            "start_diameter_mm": 49.8,
-            "finish_diameter_mm": 49.0,
+            "start_diameter_mm": 54.0,
+            "finish_diameter_mm": 50.1,
             "cut_length_mm": 6.0
           }
         },
         {
           "sequence": 4,
-          "operation_type": "rough_turn_od",
+          "operation_type": "finish_turn_od",
           "target_feature_ids": [
-            "F13"
+            "F05"
           ],
           "inputs": {
             "kind": "axial_turn",
-            "start_diameter_mm": 52.0,
-            "finish_diameter_mm": 39.085,
-            "cut_length_mm": 40.5
+            "start_diameter_mm": 50.1,
+            "finish_diameter_mm": 49.3,
+            "cut_length_mm": 6.0
           }
         },
         {
@@ -116,255 +291,150 @@
         },
         {
           "sequence": 6,
-          "operation_type": "rough_turn_od",
+          "operation_type": "form_turn",
           "target_feature_ids": [
-            "F09"
+            "F06"
           ],
           "inputs": {
             "kind": "axial_turn",
-            "start_diameter_mm": 52.0,
-            "finish_diameter_mm": 37.3,
-            "cut_length_mm": 2.5
+            "start_diameter_mm": 39.285,
+            "finish_diameter_mm": 38.285,
+            "cut_length_mm": 0.785
           }
         },
         {
           "sequence": 7,
-          "operation_type": "finish_turn_od",
-          "target_feature_ids": [
-            "F09"
-          ],
-          "inputs": {
-            "kind": "axial_turn",
-            "start_diameter_mm": 37.3,
-            "finish_diameter_mm": 36.5,
-            "cut_length_mm": 2.5
-          }
-        },
-        {
-          "sequence": 8,
-          "operation_type": "face_turn",
-          "target_feature_ids": [
-            "F05"
-          ],
-          "inputs": {
-            "kind": "radial_turn",
-            "start_diameter_mm": 49.0,
-            "finish_diameter_mm": 38.285,
-            "groove_count": 1,
-            "total_stock_mm": 0.5
-          }
-        },
-        {
-          "sequence": 9,
-          "operation_type": "chamfer_turn",
-          "target_feature_ids": [
-            "F09"
-          ],
-          "inputs": {
-            "kind": "axial_turn",
-            "start_diameter_mm": 36.5,
-            "finish_diameter_mm": 35.5,
-            "cut_length_mm": 1.0
-          }
-        },
-        {
-          "sequence": 10,
           "operation_type": "center_drill",
           "target_feature_ids": [
             "F14"
           ],
           "inputs": {
             "kind": "point_drill",
-            "hole_diameter_mm": 6.0,
-            "hole_depth_mm": 3.0,
+            "hole_diameter_mm": 8.0,
+            "hole_depth_mm": 4.0,
             "hole_count": 1,
             "through_hole": false
           }
         },
         {
-          "sequence": 11,
+          "sequence": 8,
           "operation_type": "drill",
           "target_feature_ids": [
             "F14"
           ],
           "inputs": {
             "kind": "point_drill",
-            "hole_diameter_mm": 26.0,
+            "hole_diameter_mm": 24.0,
             "hole_depth_mm": 36.0,
             "hole_count": 1,
             "through_hole": false
           }
         },
         {
-          "sequence": 12,
+          "sequence": 9,
           "operation_type": "rough_bore_id",
           "target_feature_ids": [
             "F14"
           ],
           "inputs": {
             "kind": "axial_turn",
-            "start_diameter_mm": 26.0,
-            "finish_diameter_mm": 28.94,
+            "start_diameter_mm": 24.0,
+            "finish_diameter_mm": 29.2,
             "cut_length_mm": 36.0
           }
         },
         {
-          "sequence": 13,
-          "operation_type": "finish_bore_id",
+          "sequence": 10,
+          "operation_type": "semi_finish_bore_id",
           "target_feature_ids": [
             "F14"
           ],
           "inputs": {
             "kind": "axial_turn",
-            "start_diameter_mm": 28.94,
-            "finish_diameter_mm": 29.74,
+            "start_diameter_mm": 29.2,
+            "finish_diameter_mm": 29.64,
             "cut_length_mm": 36.0
           }
-        }
-      ]
-    },
-    {
-      "sequence": 3,
-      "name": "CNC Turn \u2013 Left End and Rolling Blank",
-      "machine_family": "cnc_lathe",
-      "setup_note": "Locate in soft jaws on the preliminary datum-A diameter and seat against datum C. Face the left end, prepare the external-spline rolling diameter and lead-in, cut the relief groove, and complete the coaxial M10 hole sequence.",
-      "datum_references": [
-        "A",
-        "C"
-      ],
-      "material_machinability": "medium",
-      "setup_time_min": 20.0,
-      "in_house": true,
-      "sub_operations": [
-        {
-          "sequence": 1,
-          "operation_type": "face_turn",
-          "target_feature_ids": [
-            "F12"
-          ],
-          "inputs": {
-            "kind": "radial_turn",
-            "start_diameter_mm": 52.0,
-            "finish_diameter_mm": 0.0,
-            "groove_count": 1,
-            "total_stock_mm": 4.0
-          }
         },
         {
-          "sequence": 2,
-          "operation_type": "rough_turn_od",
+          "sequence": 11,
+          "operation_type": "rough_bore_id",
           "target_feature_ids": [
-            "F01"
+            "F07"
           ],
           "inputs": {
             "kind": "axial_turn",
-            "start_diameter_mm": 52.0,
-            "finish_diameter_mm": 34.6,
-            "cut_length_mm": 42.0
+            "start_diameter_mm": 29.64,
+            "finish_diameter_mm": 35.2,
+            "cut_length_mm": 13.0
           }
         },
         {
-          "sequence": 3,
-          "operation_type": "finish_turn_od",
+          "sequence": 12,
+          "operation_type": "finish_bore_id",
           "target_feature_ids": [
-            "F01"
+            "F07"
           ],
           "inputs": {
             "kind": "axial_turn",
-            "start_diameter_mm": 34.6,
-            "finish_diameter_mm": 33.8,
-            "cut_length_mm": 42.0
+            "start_diameter_mm": 35.2,
+            "finish_diameter_mm": 36.0,
+            "cut_length_mm": 13.0
           }
         },
         {
-          "sequence": 4,
-          "operation_type": "groove_od",
-          "target_feature_ids": [
-            "F04"
-          ],
-          "inputs": {
-            "kind": "radial_turn",
-            "start_diameter_mm": 36.5,
-            "finish_diameter_mm": 30.0,
-            "groove_width_mm": 2.5,
-            "groove_count": 1
-          }
-        },
-        {
-          "sequence": 5,
+          "sequence": 13,
           "operation_type": "chamfer_turn",
           "target_feature_ids": [
-            "F01"
+            "F08"
           ],
           "inputs": {
             "kind": "axial_turn",
-            "start_diameter_mm": 33.8,
-            "finish_diameter_mm": 29.8,
-            "cut_length_mm": 2.0
-          }
-        },
-        {
-          "sequence": 6,
-          "operation_type": "center_drill",
-          "target_feature_ids": [
-            "F03"
-          ],
-          "inputs": {
-            "kind": "point_drill",
-            "hole_diameter_mm": 4.0,
-            "hole_depth_mm": 2.0,
-            "hole_count": 1,
-            "through_hole": false
-          }
-        },
-        {
-          "sequence": 7,
-          "operation_type": "drill",
-          "target_feature_ids": [
-            "F03"
-          ],
-          "inputs": {
-            "kind": "point_drill",
-            "hole_diameter_mm": 8.5,
-            "hole_depth_mm": 25.0,
-            "hole_count": 1,
-            "through_hole": false
-          }
-        },
-        {
-          "sequence": 8,
-          "operation_type": "chamfer_turn",
-          "target_feature_ids": [
-            "F03"
-          ],
-          "inputs": {
-            "kind": "axial_turn",
-            "start_diameter_mm": 8.5,
-            "finish_diameter_mm": 10.5,
+            "start_diameter_mm": 36.0,
+            "finish_diameter_mm": 37.155,
             "cut_length_mm": 1.0
-          }
-        },
-        {
-          "sequence": 9,
-          "operation_type": "tap",
-          "target_feature_ids": [
-            "F03"
-          ],
-          "inputs": {
-            "kind": "tap",
-            "major_diameter_mm": 10.0,
-            "thread_depth_mm": 18.2,
-            "pitch_mm": 1.5,
-            "hole_count": 1
           }
         }
       ]
     },
     {
       "sequence": 4,
-      "name": "Shape Internal Spline",
+      "name": "Generate Left External Spline",
+      "machine_family": "gear_hobbing",
+      "setup_note": "Locate from the turned Datum A preform and Datum C, with axial support appropriate to the short shaft. Hob the external involute spline and modified root diameter, retaining the allowance required for hard tooth finishing.",
+      "datum_references": [
+        "A",
+        "B",
+        "C"
+      ],
+      "material_machinability": "medium",
+      "setup_time_min": 25.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "hob_teeth",
+          "target_feature_ids": [
+            "F01"
+          ],
+          "inputs": {
+            "kind": "gear_hob",
+            "number_of_teeth": 8,
+            "normal_module_mm": 4.21,
+            "face_width_mm": 42.0,
+            "whole_depth_mm": 1.905,
+            "helix_angle_deg": 0.0,
+            "hob_starts": 1,
+            "number_of_cuts": 2
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 5,
+      "name": "Generate Right Internal Spline",
       "machine_family": "gear_shaping",
-      "setup_note": "Locate on preliminary datum A and seat datum C square to the shaping spindle. Generate the right internal spline in the prepared bore while the material is soft, using the available blind-spline runout clearance.",
+      "setup_note": "Locate concentrically from the turned Datum A preform and against Datum C. Gear-shape the right internal spline from the open right end using a blind-spline-capable cutter arrangement.",
       "datum_references": [
         "A",
         "C"
@@ -393,51 +463,117 @@
       ]
     },
     {
-      "sequence": 5,
-      "name": "Cold Roll External Spline",
-      "machine_family": "spline_thread_rolling",
-      "setup_note": "Locate the soft-machined shaft from datum A and feed the prepared left-side rolling blank between custom spline dies. Roll the modified-root external spline before cross drilling and before case hardening.",
+      "sequence": 6,
+      "name": "VMC Drill Cross Hole",
+      "machine_family": "vmc_3axis",
+      "setup_note": "Support Datum A in a precision V-block or collet fixture and locate axially from Datum C. Spot and drill the radial cross hole after the larger intersecting axial bore has been produced.",
       "datum_references": [
         "A",
-        "B"
+        "C"
       ],
       "material_machinability": "medium",
-      "setup_time_min": 30.0,
+      "setup_time_min": 20.0,
       "in_house": true,
       "sub_operations": [
         {
           "sequence": 1,
-          "operation_type": "spline_roll",
+          "operation_type": "spot_drill",
           "target_feature_ids": [
-            "F01"
+            "F02"
           ],
           "inputs": {
-            "kind": "roll_form",
-            "blank_diameter_mm": 33.8,
-            "form_length_mm": 42.0,
-            "form_depth_mm": 1.905,
-            "pitch_mm": 13.35,
-            "tooth_count": 8
+            "kind": "point_drill",
+            "hole_diameter_mm": 5.0,
+            "hole_depth_mm": 2.0,
+            "hole_count": 1,
+            "through_hole": false
+          }
+        },
+        {
+          "sequence": 2,
+          "operation_type": "drill",
+          "target_feature_ids": [
+            "F02"
+          ],
+          "inputs": {
+            "kind": "point_drill",
+            "hole_diameter_mm": 8.1,
+            "hole_depth_mm": 35.61,
+            "hole_count": 1,
+            "through_hole": true
           }
         }
       ]
     },
     {
-      "sequence": 6,
-      "name": "Soft Spline Inspection Gate",
-      "machine_family": "inspection",
-      "setup_note": "Gauge both soft splines before drilling and heat treatment so rolling or shaping errors are detected before further processing. Reference the checks to preliminary datum A and datum C.",
+      "sequence": 7,
+      "name": "Pre-Heat-Treat Tooth Chamfer and Deburr",
+      "machine_family": "finish_bench",
+      "setup_note": "Support the soft-machined part without damaging the spline flanks. Chamfer the external spline end and remove burrs from the spline roots, cross-hole intersections, thread, bore, and groove before hardening.",
       "datum_references": [
         "A",
         "B",
         "C"
       ],
       "material_machinability": "medium",
-      "setup_time_min": 10.0,
+      "setup_time_min": 8.0,
       "in_house": true,
       "sub_operations": [
         {
           "sequence": 1,
+          "operation_type": "teeth_chamfer",
+          "target_feature_ids": [
+            "F01"
+          ],
+          "inputs": {
+            "kind": "gear_finish",
+            "number_of_teeth": 8,
+            "normal_module_mm": 4.21,
+            "face_width_mm": 42.0,
+            "stock_per_flank_mm": 0.5,
+            "helix_angle_deg": 0.0
+          }
+        },
+        {
+          "sequence": 2,
+          "operation_type": "deburr",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "manual",
+            "complexity": "high",
+            "edge_length_mm": 350.0
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 8,
+      "name": "Pre-Heat-Treat Dimensional Inspection",
+      "machine_family": "inspection",
+      "setup_note": "Inspect the soft-machined blank from Datums A and C before committing the batch to carburizing. Verify grinding allowance, spline stock, cross-hole location, thread, and all inaccessible-after-hardening features.",
+      "datum_references": [
+        "A",
+        "B",
+        "C"
+      ],
+      "material_machinability": "medium",
+      "setup_time_min": 15.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "cmm_inspect",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "inspection",
+            "dimension_count": 15,
+            "gdt_count": 5,
+            "sampling_rate_pct": 100.0,
+            "requires_fixture": true
+          }
+        },
+        {
+          "sequence": 2,
           "operation_type": "gear_check",
           "target_feature_ids": [],
           "inputs": {
@@ -447,165 +583,29 @@
             "sampling_rate_pct": 100.0,
             "requires_fixture": true
           }
-        }
-      ]
-    },
-    {
-      "sequence": 7,
-      "name": "VMC \u2013 Radial Bores, Cross Hole and Chamfer",
-      "machine_family": "vmc_5axis",
-      "setup_note": "Locate the shaft on datum A in a collet or V-block fixture and stop axially from datum C. Index the radial access directions to machine the bore-step detail and the transverse cross hole without disturbing the datum relationship.",
-      "datum_references": [
-        "A",
-        "C"
-      ],
-      "material_machinability": "medium",
-      "setup_time_min": 30.0,
-      "in_house": true,
-      "sub_operations": [
-        {
-          "sequence": 1,
-          "operation_type": "spot_drill",
-          "target_feature_ids": [
-            "F07"
-          ],
-          "inputs": {
-            "kind": "point_drill",
-            "hole_diameter_mm": 6.0,
-            "hole_depth_mm": 3.0,
-            "hole_count": 1,
-            "through_hole": false
-          }
-        },
-        {
-          "sequence": 2,
-          "operation_type": "drill",
-          "target_feature_ids": [
-            "F07"
-          ],
-          "inputs": {
-            "kind": "point_drill",
-            "hole_diameter_mm": 14.0,
-            "hole_depth_mm": 13.0,
-            "hole_count": 1,
-            "through_hole": false
-          }
         },
         {
           "sequence": 3,
-          "operation_type": "rough_bore_id",
-          "target_feature_ids": [
-            "F07"
-          ],
-          "inputs": {
-            "kind": "axial_turn",
-            "start_diameter_mm": 14.0,
-            "finish_diameter_mm": 15.6,
-            "cut_length_mm": 13.0
-          }
-        },
-        {
-          "sequence": 4,
-          "operation_type": "finish_bore_id",
-          "target_feature_ids": [
-            "F07"
-          ],
-          "inputs": {
-            "kind": "axial_turn",
-            "start_diameter_mm": 15.6,
-            "finish_diameter_mm": 16.0,
-            "cut_length_mm": 13.0
-          }
-        },
-        {
-          "sequence": 5,
-          "operation_type": "chamfer_mill",
-          "target_feature_ids": [
-            "F08"
-          ],
-          "inputs": {
-            "kind": "contour_mill",
-            "path_length_mm": 50.27,
-            "radial_width_mm": 1.0,
-            "total_depth_mm": 0.6,
-            "path_count": 1
-          }
-        },
-        {
-          "sequence": 6,
-          "operation_type": "spot_drill",
-          "target_feature_ids": [
-            "F02"
-          ],
-          "inputs": {
-            "kind": "point_drill",
-            "hole_diameter_mm": 4.0,
-            "hole_depth_mm": 2.0,
-            "hole_count": 1,
-            "through_hole": false
-          }
-        },
-        {
-          "sequence": 7,
-          "operation_type": "peck_drill",
-          "target_feature_ids": [
-            "F02"
-          ],
-          "inputs": {
-            "kind": "point_drill",
-            "hole_diameter_mm": 8.0,
-            "hole_depth_mm": 35.61,
-            "hole_count": 1,
-            "through_hole": true
-          }
-        },
-        {
-          "sequence": 8,
-          "operation_type": "ream",
-          "target_feature_ids": [
-            "F02"
-          ],
-          "inputs": {
-            "kind": "point_drill",
-            "hole_diameter_mm": 8.1,
-            "hole_depth_mm": 35.61,
-            "hole_count": 1,
-            "pilot_diameter_mm": 8.0,
-            "through_hole": true
-          }
-        }
-      ]
-    },
-    {
-      "sequence": 8,
-      "name": "Pre-Heat-Treat Deburr",
-      "machine_family": "finish_bench",
-      "setup_note": "Remove burrs from the rolled and shaped splines, groove, threads, radial holes, and all intersecting-hole exits. Verify the internal intersection between the cross hole and axial bore is free of loose or raised material before hardening.",
-      "datum_references": [],
-      "material_machinability": "medium",
-      "setup_time_min": 5.0,
-      "in_house": true,
-      "sub_operations": [
-        {
-          "sequence": 1,
-          "operation_type": "deburr",
+          "operation_type": "manual_inspect",
           "target_feature_ids": [],
           "inputs": {
-            "kind": "manual",
-            "complexity": "high",
-            "edge_length_mm": 600.0
+            "kind": "inspection",
+            "dimension_count": 15,
+            "gdt_count": 5,
+            "sampling_rate_pct": 100.0,
+            "requires_fixture": false
           }
         }
       ]
     },
     {
       "sequence": 9,
-      "name": "Pre-Heat-Treat Cleaning",
+      "name": "Pre-Heat-Treat Clean and Mask",
       "machine_family": "finish_bench",
-      "setup_note": "Degrease and dry the complete batch before furnace loading, removing cutting oil, rolling lubricant, chips, and marking residue. Handle cleaned parts with gloves to avoid carburizing defects.",
+      "setup_note": "Degrease and dry all parts before furnace loading, then apply carburizing stop-off to the M10 internal thread unless the approved heat-treatment specification states otherwise. Handle cleaned parts with gloves.",
       "datum_references": [],
       "material_machinability": "medium",
-      "setup_time_min": 5.0,
+      "setup_time_min": 10.0,
       "in_house": true,
       "sub_operations": [
         {
@@ -615,7 +615,18 @@
           "inputs": {
             "kind": "manual",
             "complexity": "medium",
-            "estimated_time_min": 1.0
+            "estimated_time_min": 2.0
+          }
+        },
+        {
+          "sequence": 2,
+          "operation_type": "mask",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "manual",
+            "complexity": "high",
+            "feature_count": 5,
+            "estimated_time_min": 3.0
           }
         }
       ]
@@ -624,176 +635,110 @@
       "sequence": 10,
       "name": "Carburize and Quench",
       "machine_family": "sealed_quench_furnace",
-      "setup_note": "Rack parts with support through the shaft axis and spacing for uniform atmosphere circulation; process the order in furnace-sized batches. Carburize to the controlling effective case-depth requirement and quench immediately after the hardening cycle.",
+      "setup_note": "Rack the parts with uniform spacing and support against distortion; process all 100 pieces in one controlled load if furnace capacity permits, otherwise use matched loads with witness coupons. Carburize or carbonitride to the approved effective case depth and quench immediately.",
       "datum_references": [],
       "material_machinability": "medium",
-      "setup_time_min": 15.0,
+      "setup_time_min": 10.0,
       "in_house": true,
       "sub_operations": [
         {
           "sequence": 1,
-          "operation_type": "load_unload",
+          "operation_type": "carburize",
           "target_feature_ids": [],
           "inputs": {
-            "kind": "manual",
-            "complexity": "medium",
-            "feature_count": 1,
-            "estimated_time_min": 0.25
+            "kind": "furnace_cycle",
+            "batch_size_parts": 100,
+            "part_mass_kg": 0.25,
+            "max_section_thickness_mm": 14.0,
+            "case_depth_mm": 0.75,
+            "target_hardness_hrc": 59.5
           }
         },
         {
           "sequence": 2,
-          "operation_type": "carburize",
-          "target_feature_ids": [
-            "F01",
-            "F02",
-            "F03",
-            "F04",
-            "F05",
-            "F06",
-            "F07",
-            "F08",
-            "F09",
-            "F11",
-            "F12",
-            "F13",
-            "F14"
-          ],
-          "inputs": {
-            "kind": "furnace_cycle",
-            "batch_size_parts": 600,
-            "part_mass_kg": 0.835,
-            "max_section_thickness_mm": 14.0,
-            "case_depth_mm": 0.75,
-            "target_hardness_hrc": 60.0
-          }
-        },
-        {
-          "sequence": 3,
           "operation_type": "austenitize_quench",
-          "target_feature_ids": [
-            "F01",
-            "F02",
-            "F03",
-            "F04",
-            "F05",
-            "F06",
-            "F07",
-            "F08",
-            "F09",
-            "F11",
-            "F12",
-            "F13",
-            "F14"
-          ],
+          "target_feature_ids": [],
           "inputs": {
             "kind": "furnace_cycle",
-            "batch_size_parts": 600,
-            "part_mass_kg": 0.835,
+            "batch_size_parts": 100,
+            "part_mass_kg": 0.25,
             "max_section_thickness_mm": 14.0,
-            "target_hardness_hrc": 60.0
+            "target_hardness_hrc": 59.5
           }
         }
       ]
     },
     {
       "sequence": 11,
-      "name": "As-Quenched Straightening",
-      "machine_family": "auto_straightening",
-      "setup_note": "Measure the shaft between centers immediately after quenching and correct bow while the case is as-quenched. Limit residual runout so all datum-A surfaces clean up within the reserved grinding stock.",
-      "datum_references": [
-        "A"
-      ],
-      "material_machinability": "hardened",
-      "setup_time_min": 10.0,
-      "in_house": true,
-      "sub_operations": [
-        {
-          "sequence": 1,
-          "operation_type": "straighten",
-          "target_feature_ids": [
-            "F13"
-          ],
-          "inputs": {
-            "kind": "manual",
-            "complexity": "medium",
-            "feature_count": 1,
-            "estimated_time_min": 1.0
-          }
-        }
-      ]
-    },
-    {
-      "sequence": 12,
-      "name": "Temper",
+      "name": "Temper Hardened Batch",
       "machine_family": "sealed_quench_furnace",
-      "setup_note": "Reload straightened parts promptly and temper in furnace-sized batches to the specified 58\u201361 HRC surface-hardness range. Maintain part support and rack orientation consistent with the carburizing cycle.",
+      "setup_note": "Temper the quenched load promptly to the specified 58\u201361 HRC range, maintaining batch and witness-coupon traceability. Do not exceed the approved tempering temperature during any later process.",
       "datum_references": [],
       "material_machinability": "hardened",
+      "material_hardness_hrc": 60.0,
       "setup_time_min": 10.0,
       "in_house": true,
       "sub_operations": [
         {
           "sequence": 1,
           "operation_type": "temper",
-          "target_feature_ids": [
-            "F01",
-            "F02",
-            "F03",
-            "F04",
-            "F05",
-            "F06",
-            "F07",
-            "F08",
-            "F09",
-            "F11",
-            "F12",
-            "F13",
-            "F14"
-          ],
+          "target_feature_ids": [],
           "inputs": {
             "kind": "furnace_cycle",
-            "batch_size_parts": 600,
-            "part_mass_kg": 0.835,
+            "batch_size_parts": 100,
+            "part_mass_kg": 0.25,
             "max_section_thickness_mm": 14.0,
-            "target_hardness_hrc": 60.0
+            "target_hardness_hrc": 59.5
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 12,
+      "name": "Post-Heat-Treat Clean",
+      "machine_family": "finish_bench",
+      "setup_note": "Remove quench residue and masking compound without damaging the hardened spline edges or remaining grinding allowance. Keep abrasive contamination away from the bores and thread.",
+      "datum_references": [],
+      "material_machinability": "hardened",
+      "material_hardness_hrc": 60.0,
+      "setup_time_min": 5.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "unmask",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "manual",
+            "complexity": "medium",
+            "feature_count": 5,
+            "estimated_time_min": 2.0
+          }
+        },
+        {
+          "sequence": 2,
+          "operation_type": "clean_degrease",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "manual",
+            "complexity": "medium",
+            "estimated_time_min": 2.0
           }
         }
       ]
     },
     {
       "sequence": 13,
-      "name": "Post-Heat-Treat Cleaning",
-      "machine_family": "finish_bench",
-      "setup_note": "Wash off quench oil and loose heat-treatment residue before inspection and grinding. Protect the hardened surfaces from impact during bulk handling.",
-      "datum_references": [],
-      "material_machinability": "hardened",
-      "material_hardness_hrc": 59.5,
-      "setup_time_min": 5.0,
-      "in_house": true,
-      "sub_operations": [
-        {
-          "sequence": 1,
-          "operation_type": "clean_degrease",
-          "target_feature_ids": [],
-          "inputs": {
-            "kind": "manual",
-            "complexity": "medium",
-            "estimated_time_min": 1.0
-          }
-        }
-      ]
-    },
-    {
-      "sequence": 14,
       "name": "Heat-Treatment Verification",
       "machine_family": "inspection",
-      "setup_note": "Verify surface hardness on production parts and effective case depth on representative witness coupons before releasing the lot to hard finishing. Record distortion and segregate parts outside the available grinding allowance.",
+      "setup_note": "Verify surface hardness, effective case depth on witness coupons, and post-quench dimensional distortion before grinding. Segregate any parts that will not clean up within the retained grinding allowance.",
       "datum_references": [
-        "A"
+        "A",
+        "B",
+        "C"
       ],
       "material_machinability": "hardened",
-      "material_hardness_hrc": 59.5,
+      "material_hardness_hrc": 60.0,
       "setup_time_min": 10.0,
       "in_house": true,
       "sub_operations": [
@@ -803,8 +748,8 @@
           "target_feature_ids": [],
           "inputs": {
             "kind": "inspection",
-            "dimension_count": 1,
-            "gdt_count": 0,
+            "dimension_count": 15,
+            "gdt_count": 5,
             "sampling_rate_pct": 100.0,
             "requires_fixture": false
           }
@@ -824,17 +769,17 @@
       ]
     },
     {
-      "sequence": 15,
-      "name": "Hard Grind Datum Faces and External Diameters",
+      "sequence": 14,
+      "name": "Face Grind Datum C and Flange Face",
       "machine_family": "od_grinding",
-      "setup_note": "Support the hardened part between precision center plugs engaging the coaxial end features. Re-establish datum C first, then grind datum A, the opposite flange face, and the tolerance collar without changing the rotational setup.",
+      "setup_note": "Locate on the hardened shaft axis and grind Datum C first, then grind the opposing flange face in the same controlled cylindrical-grinder setup. Restore perpendicularity, parallelism, flange width, and the specified face finish before other hard finishing.",
       "datum_references": [
         "A",
         "C"
       ],
       "material_machinability": "hardened",
-      "material_hardness_hrc": 59.5,
-      "setup_time_min": 30.0,
+      "material_hardness_hrc": 60.0,
+      "setup_time_min": 20.0,
       "in_house": true,
       "sub_operations": [
         {
@@ -845,14 +790,44 @@
           ],
           "inputs": {
             "kind": "surface_grind",
-            "grind_length_mm": 124.16,
-            "grind_width_mm": 9.48,
-            "stock_mm": 0.2,
+            "grind_length_mm": 49.0,
+            "grind_width_mm": 49.0,
+            "stock_mm": 0.15,
             "surface_count": 1
           }
         },
         {
           "sequence": 2,
+          "operation_type": "face_grind",
+          "target_feature_ids": [
+            "F05"
+          ],
+          "inputs": {
+            "kind": "surface_grind",
+            "grind_length_mm": 49.0,
+            "grind_width_mm": 49.0,
+            "stock_mm": 0.15,
+            "surface_count": 1
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 15,
+      "name": "OD Grind Datum A and Flange OD",
+      "machine_family": "od_grinding",
+      "setup_note": "Reference the restored Datum C and grind each external diameter separately. Finish Datum A to \u00d837.985 and its specified finish, then finish the flange OD without mixing diameters in one grinding sub-operation.",
+      "datum_references": [
+        "A",
+        "C"
+      ],
+      "material_machinability": "hardened",
+      "material_hardness_hrc": 60.0,
+      "setup_time_min": 25.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
           "operation_type": "od_grind",
           "target_feature_ids": [
             "F13"
@@ -866,29 +841,15 @@
           }
         },
         {
-          "sequence": 3,
-          "operation_type": "face_grind",
+          "sequence": 2,
+          "operation_type": "od_grind",
           "target_feature_ids": [
             "F05"
           ],
           "inputs": {
-            "kind": "surface_grind",
-            "grind_length_mm": 136.64,
-            "grind_width_mm": 5.5075,
-            "stock_mm": 0.2,
-            "surface_count": 1
-          }
-        },
-        {
-          "sequence": 4,
-          "operation_type": "od_grind",
-          "target_feature_ids": [
-            "F09"
-          ],
-          "inputs": {
             "kind": "cylindrical_grind",
-            "grind_diameter_mm": 36.2,
-            "grind_length_mm": 2.5,
+            "grind_diameter_mm": 49.0,
+            "grind_length_mm": 6.0,
             "radial_stock_mm": 0.15,
             "land_count": 1
           }
@@ -897,15 +858,15 @@
     },
     {
       "sequence": 16,
-      "name": "Hard Grind Internal Spline Root Bore",
+      "name": "ID Grind Internal Spline Bore Diameter",
       "machine_family": "id_grinding",
-      "setup_note": "Locate from finished datum A and datum C and grind the interrupted internal-spline root diameter to size and concentricity. Leave only the flank stock intended for the following spline honing operation.",
+      "setup_note": "Locate from finished Datum A and Datum C and grind the accessible internal spline bore diameter after heat-treatment distortion. Protect the shaped spline flanks and achieve the specified concentricity to Datum A.",
       "datum_references": [
         "A",
         "C"
       ],
       "material_machinability": "hardened",
-      "material_hardness_hrc": 59.5,
+      "material_hardness_hrc": 60.0,
       "setup_time_min": 25.0,
       "in_house": true,
       "sub_operations": [
@@ -919,7 +880,7 @@
             "kind": "cylindrical_grind",
             "grind_diameter_mm": 30.04,
             "grind_length_mm": 36.0,
-            "radial_stock_mm": 0.15,
+            "radial_stock_mm": 0.2,
             "land_count": 1
           }
         }
@@ -927,17 +888,17 @@
     },
     {
       "sequence": 17,
-      "name": "Hard Grind External Spline",
+      "name": "Hard Grind External Spline Teeth",
       "machine_family": "gear_grinding",
-      "setup_note": "Locate the hardened shaft from finished datum A and datum C, with angular orientation referenced to datum B. Grind the external spline flanks and modified root relationship to final tooth width and symmetry.",
+      "setup_note": "Locate from finished Datum A and Datum C and grind the external spline flanks and modified root relationship. Control tooth-width symmetry to Datum B and avoid removing excessive carburized case depth.",
       "datum_references": [
         "A",
         "B",
         "C"
       ],
       "material_machinability": "hardened",
-      "material_hardness_hrc": 59.5,
-      "setup_time_min": 35.0,
+      "material_hardness_hrc": 60.0,
+      "setup_time_min": 30.0,
       "in_house": true,
       "sub_operations": [
         {
@@ -949,56 +910,28 @@
           "inputs": {
             "kind": "gear_finish",
             "number_of_teeth": 8,
-            "normal_module_mm": 4.25,
+            "normal_module_mm": 4.21,
             "face_width_mm": 42.0,
             "stock_per_flank_mm": 0.1,
             "helix_angle_deg": 0.0,
             "gear_quality_class": 6,
-            "dressing_interval_parts": 100
+            "dressing_interval_parts": 25
           }
         }
       ]
     },
     {
       "sequence": 18,
-      "name": "Hone Internal Spline",
-      "machine_family": "teeth_honing",
-      "setup_note": "Locate from finished datum A and datum C and hone the internal spline flanks after root-bore grinding. This is the final material-removal operation on the internal spline.",
+      "name": "Final Deburr and Clean",
+      "machine_family": "finish_bench",
+      "setup_note": "Remove only micro-burrs generated by grinding and thoroughly clean all bores, spline spaces, the cross-hole intersection, and the M10 thread. Do not alter finished ground edges or tooth geometry.",
       "datum_references": [
         "A",
+        "B",
         "C"
       ],
       "material_machinability": "hardened",
-      "material_hardness_hrc": 59.5,
-      "setup_time_min": 30.0,
-      "in_house": true,
-      "sub_operations": [
-        {
-          "sequence": 1,
-          "operation_type": "hone_teeth",
-          "target_feature_ids": [
-            "F14"
-          ],
-          "inputs": {
-            "kind": "gear_finish",
-            "number_of_teeth": 16,
-            "normal_module_mm": 2.0,
-            "face_width_mm": 36.0,
-            "stock_per_flank_mm": 0.02,
-            "helix_angle_deg": 0.0,
-            "gear_quality_class": 6
-          }
-        }
-      ]
-    },
-    {
-      "sequence": 19,
-      "name": "Final Deburr and Clean",
-      "machine_family": "finish_bench",
-      "setup_note": "Remove only grinding micro-burrs without altering case-hardened edges or spline geometry, then wash out all abrasive residue. Apply temporary corrosion protection to the finished ground surfaces.",
-      "datum_references": [],
-      "material_machinability": "hardened",
-      "material_hardness_hrc": 59.5,
+      "material_hardness_hrc": 60.0,
       "setup_time_min": 5.0,
       "in_house": true,
       "sub_operations": [
@@ -1009,7 +942,7 @@
           "inputs": {
             "kind": "manual",
             "complexity": "high",
-            "edge_length_mm": 400.0
+            "edge_length_mm": 300.0
           }
         },
         {
@@ -1019,23 +952,23 @@
           "inputs": {
             "kind": "manual",
             "complexity": "medium",
-            "estimated_time_min": 1.0
+            "estimated_time_min": 1.5
           }
         }
       ]
     },
     {
-      "sequence": 20,
-      "name": "Final Dimensional and Spline Inspection",
+      "sequence": 19,
+      "name": "Final Dimensional and Gear Inspection",
       "machine_family": "inspection",
-      "setup_note": "Thermally stabilize finished parts and inspect from datum A and datum C. Verify spline fit and tooth geometry, critical diameters, face controls, cross-hole angularity, threads, surface finishes, hardness records, and absence of grinding damage.",
+      "setup_note": "Thermally stabilize and inspect all key dimensions and GD&T from Datums A, B, and C. Verify both splines, ground diameters and faces, cross-hole angularity, thread acceptance, surface finish, hardness, and absence of grinding damage.",
       "datum_references": [
         "A",
         "B",
         "C"
       ],
       "material_machinability": "hardened",
-      "material_hardness_hrc": 59.5,
+      "material_hardness_hrc": 60.0,
       "setup_time_min": 30.0,
       "in_house": true,
       "sub_operations": [
@@ -1057,15 +990,15 @@
           "target_feature_ids": [],
           "inputs": {
             "kind": "inspection",
-            "dimension_count": 6,
-            "gdt_count": 2,
+            "dimension_count": 15,
+            "gdt_count": 5,
             "sampling_rate_pct": 100.0,
             "requires_fixture": true
           }
         },
         {
           "sequence": 3,
-          "operation_type": "manual_inspect",
+          "operation_type": "hardness_test",
           "target_feature_ids": [],
           "inputs": {
             "kind": "inspection",
@@ -1077,12 +1010,12 @@
         },
         {
           "sequence": 4,
-          "operation_type": "hardness_test",
+          "operation_type": "manual_inspect",
           "target_feature_ids": [],
           "inputs": {
             "kind": "inspection",
-            "dimension_count": 1,
-            "gdt_count": 0,
+            "dimension_count": 15,
+            "gdt_count": 5,
             "sampling_rate_pct": 100.0,
             "requires_fixture": false
           }
@@ -1093,166 +1026,144 @@
   "clarifications": [
     {
       "clarification_id": "C01",
-      "question": "Is the required case-hardening process carburizing or gas carbonitriding?",
+      "question": "What is the finished diameter of internal bore step F07?",
       "blocks": [
-        10,
-        11,
-        12,
-        14,
-        15,
-        16,
-        17,
-        18
+        3
       ],
-      "suggested_default": "Use controlled-atmosphere gas carburizing followed by quench and temper, consistent with the cementazione callout.",
+      "suggested_default": "Machine F07 to the controlling Detail A dimension from the source drawing and treat it as a soft-finished clearance recess because no tolerance was extracted.",
       "priority": "high"
     },
     {
       "clarification_id": "C02",
-      "question": "Which effective case-depth range controls: 0.55\u20130.85 mm or 0.6\u20130.9 mm?",
+      "question": "Is F14 the mating internal form of the W 8x32x36 DIN-ISO 14 spline specified for F01?",
       "blocks": [
-        10,
-        14
+        3,
+        5,
+        16,
+        19
       ],
-      "suggested_default": "Use 0.6\u20130.9 mm effective case depth at the 550 HV1 cutoff.",
+      "suggested_default": "Assume F14 uses the mating W 8x32x36 DIN-ISO 14 form and fit.",
       "priority": "high"
     },
     {
       "clarification_id": "C03",
-      "question": "Does case hardening apply to all surfaces without masking?",
+      "question": "Is internal spline F14 blind at 36 mm depth or open through the part?",
       "blocks": [
-        10
+        3,
+        5
       ],
-      "suggested_default": "Apply all-over case hardening because no selective masking areas are identified in the extracted drawing notes.",
+      "suggested_default": "Treat F14 as a blind spline and use gear shaping rather than broaching.",
       "priority": "high"
     },
     {
       "clarification_id": "C04",
-      "question": "Is F02 a transverse radial cross hole perpendicular to datum axis A despite its extracted +X axis direction?",
+      "question": "Does the required case-hardening process use gas carburizing or gas carbonitriding?",
       "blocks": [
-        7
+        10,
+        11,
+        13
       ],
-      "suggested_default": "Treat F02 as a radial through hole because its description, Section B-B relationship, and 30 mm axial location identify it as a cross hole.",
+      "suggested_default": "Use gas carburizing in the sealed-quench furnace to match the primary drawing callout.",
       "priority": "high"
     },
     {
       "clarification_id": "C05",
-      "question": "Is the axis of internal bore step F07 radial in the Z direction?",
+      "question": "Which effective case-depth range controls: 0.60\u20130.90 mm or 0.55\u20130.85 mm?",
       "blocks": [
-        7
+        10,
+        13
       ],
-      "suggested_default": "Treat F07 as a radial bore accessed from +Z, as stated by its geometry and access directions.",
+      "suggested_default": "Use the common overlap of 0.60\u20130.85 mm pending approval.",
       "priority": "high"
     },
     {
       "clarification_id": "C06",
-      "question": "What is the finished diameter of internal bore step F07?",
+      "question": "Does the 0.3 finish symbol on F05 and F11 mean Ra 0.3 \u00b5m?",
       "blocks": [
-        7
+        14,
+        15
       ],
-      "priority": "high"
+      "suggested_default": "Interpret the symbol as Ra 0.3 \u00b5m and finish the affected surfaces by grinding.",
+      "priority": "medium"
     },
     {
       "clarification_id": "C07",
-      "question": "Does the blind end of internal spline F14 provide sufficient cutter runout clearance for gear shaping?",
+      "question": "Is post-heat-treatment flank grinding mandatory for external spline F01?",
       "blocks": [
-        4
+        4,
+        17,
+        19
       ],
-      "suggested_default": "Assume a concealed runout recess is present at the specified 36 mm spline depth.",
-      "priority": "high"
+      "suggested_default": "Hard-grind F01 because of the 0.012 mm tooth-width symmetry control.",
+      "priority": "medium"
     },
     {
       "clarification_id": "C08",
-      "question": "Is cold rolling acceptable for manufacturing external spline F01?",
+      "question": "Which surfaces must be protected from carburizing?",
       "blocks": [
-        3,
-        5,
-        17
+        9,
+        10
       ],
-      "suggested_default": "Use custom spline rolling dies because the quantity is 12000 pieces and the material is rolled before case hardening.",
-      "priority": "high"
-    },
-    {
-      "clarification_id": "C09",
-      "question": "Is the alternative 0.5 mm corner fillet F06 required on this revision?",
-      "blocks": [
-        2
-      ],
-      "suggested_default": "Include the 0.5 mm fillet as an incidental turned corner form.",
-      "priority": "low"
-    },
-    {
-      "clarification_id": "C10",
-      "question": "What is the controlling finished overall axial length of the part?",
-      "blocks": [
-        1,
-        2,
-        3
-      ],
-      "suggested_default": "Use the 42.1 mm part-envelope length for stock planning and final facing.",
+      "suggested_default": "Mask the M10 internal thread F03 and carburize the remaining functional surfaces.",
       "priority": "medium"
     }
   ],
   "assumptions": [
     {
       "assumption_id": "A01",
-      "text": "F02 is routed as a transverse radial cross hole; the extracted +X axis direction conflicts with its description and section relationships."
+      "text": "Standard round bar is used because the part is predominantly rotational and the drawing does not require a forging or directional grain flow; quantity 100 alone does not justify forging."
     },
     {
       "assumption_id": "A02",
-      "text": "F07 and F08 are treated as a radial bore step and its opening chamfer, machined from the +Z direction in the indexed VMC setup."
+      "text": "The local Z directions assigned to F07 and F08 are interpreted as detail-view coordinates for a coaxial right-side bore opening."
     },
     {
       "assumption_id": "A03",
-      "text": "The optional F06 corner is produced incidentally with the adjacent flange turning profile because its radius is 0.5 mm."
+      "text": "F14 is treated as a blind internal spline and therefore gear-shaped; broaching is omitted because a broach requires an open tool exit."
     },
     {
       "assumption_id": "A04",
-      "text": "Round bar is selected instead of forging because the part is a compact, predominantly cylindrical shape, the drawing does not require a forging, and the 49 mm flange causes substantially less than 60 percent material loss from bar."
+      "text": "All tight-tolerance faces, Datum A, the F14 bore diameter, and external spline flanks retain suitable stock for post-carburizing hard finishing."
     },
     {
       "assumption_id": "A05",
-      "text": "All forging-template steps are therefore omitted; production quantity alone does not justify forging under the retrieved forging rules."
+      "text": "F02 is drilled without reaming because its +0.10/0 mm tolerance does not require an H7-class reamed hole."
     },
     {
       "assumption_id": "A06",
-      "text": "External spline F01 is cold rolled with custom dies because the material is ductile before heat treatment and the quantity justifies dedicated rolling tooling."
+      "text": "The turning-template part-off step is omitted because individual blanks are saw cut and both end faces are subsequently finish machined."
     },
     {
       "assumption_id": "A07",
-      "text": "Internal spline F14 is gear-shaped rather than broached because the specified 36 mm depth indicates a blind or shouldered feature without confirmed broach pass-through clearance; the retrieved broaching sequence is omitted on that basis."
+      "text": "Face milling, profile milling, pocket milling, slot milling, reaming, and VMC tapping are omitted because no corresponding prismatic features exist; the milling route contributes only the radial cross-hole sequence."
     },
     {
       "assumption_id": "A08",
-      "text": "Generic face milling, profile milling, pocket milling, and slot milling are omitted because no corresponding prismatic features exist; the milling route contributes only indexed hole and chamfer machining plus inspection."
+      "text": "Gear shaving is omitted because hard grinding is provided for the tightly controlled external spline, and no separate pre-heat-treatment shaved finish or gear quality class is specified."
     },
     {
       "assumption_id": "A09",
-      "text": "The cross hole is reamed after undersize peck drilling because its unilateral 0.1 mm diameter tolerance and datum-A angularity make production reaming more reliable than drilling directly to size."
+      "text": "Teeth honing is omitted because no final tooth-flank roughness or quality class requiring honing is specified."
     },
     {
       "assumption_id": "A10",
-      "text": "Individual sawn blanks are used, so the turning-template part-off step is omitted and both end faces are produced in dedicated turning setups."
+      "text": "ID grinding replaces bore honing on F14 because the interrupted internal spline form is unsuitable for conventional bore honing and the extracted control applies to its bore diameter and concentricity."
     },
     {
       "assumption_id": "A11",
-      "text": "Gear shaving is omitted because F01 is rolled and F14 is shaped, with both critical spline geometries receiving post-heat-treatment hard finishing."
+      "text": "Automatic straightening and stress relieving are conditional and omitted from the base route because the part is short and stiff; parts exceeding retained grinding allowance are segregated after heat treatment."
     },
     {
       "assumption_id": "A12",
-      "text": "The gear-template plain-bore honing step is replaced by interrupted ID grinding of the F14 root diameter followed by internal spline-flank honing; no separate plain precision bore is identified."
+      "text": "A sealed controlled-atmosphere cycle is assumed, so aggressive shot blasting is omitted; post-quench washing is retained to remove oil and masking residue."
     },
     {
       "assumption_id": "A13",
-      "text": "Lapping and OD superfinishing are omitted because the specified datum-A and flange-face finishes are achievable by controlled CBN grinding."
+      "text": "The alternative R0.5 corner execution F06 is selected and produced by a dedicated lathe form pass."
     },
     {
       "assumption_id": "A14",
-      "text": "Selective masking and an additional stress-relief cycle are omitted pending clarification because neither is explicitly required by the extracted drawing notes."
-    },
-    {
-      "assumption_id": "A15",
-      "text": "Heavy post-heat-treatment shot blasting is omitted because the sealed controlled-atmosphere process is assumed to produce minimal scale; quench-oil washing is retained before grinding."
+      "text": "Lapping and superfinishing are omitted because the specified Ra 0.2\u20130.4 class surfaces can be achieved by controlled CBN grinding."
     }
   ]
 }

@@ -1,0 +1,133 @@
+{
+  "drawing_number": "C.14.031-00",
+  "part_name": "Rührwelle HF 1G",
+  "material": "C45+C 1.0503 / C45E+C 1.1191 (Pb<0,1%)",
+  "quantity": 100,
+  "quote_status": "complete",
+  "weights": {
+    "raw_bar_dia_mm": 28.0,
+    "actual_bar_dia_mm": 28.21,
+    "pcs_per_5m_bar": 31,
+    "gross_weight_kg": 0.791,
+    "gross_weight_g": 791.0,
+    "net_weight_kg": 0.2707,
+    "net_weight_g": 270.7,
+    "scrap_weight_kg": 0.5202,
+    "scrap_weight_g": 520.2,
+    "net_weight_source": "routing"
+  },
+  "direct_cost": {
+    "material_cost_inr": 7.3,
+    "machining_cost_inr": 176.35,
+    "heat_treatment_cost_inr": 10.15,
+    "direct_cost_subtotal_inr": 193.8
+  },
+  "overheads_and_surcharges": {
+    "factory_overhead_margin_inr": 193.8,
+    "tooling_inr": 38.76,
+    "rejection_inr": 8.53,
+    "inspection_inr": 7.75,
+    "cleaning_inr": 3.88,
+    "scrap_recovery_credit_inr": -11.05,
+    "export_packaging_inr": 5.41,
+    "fob_freight_inr": 4.06,
+    "packaging_and_fob_inr": 9.47
+  },
+  "pricing_summary": {
+    "subtotal_before_margin_inr": 251.13,
+    "overhead_and_margin_inr": 193.8,
+    "final_ex_works_price_inr": 444.93
+  },
+  "machining_operations": [
+    {
+      "sequence": 2,
+      "operation_name": "CNC Turn – Face and Center First End",
+      "machine_family": "cnc_lathe",
+      "cycle_time_sec": 77.6,
+      "hourly_rate_inr": 250.0,
+      "cost_per_piece_inr": 5.39,
+      "cost_per_piece_raw": 5.388888888888889
+    },
+    {
+      "sequence": 3,
+      "operation_name": "CNC Turn – Face and Center Second End",
+      "machine_family": "cnc_lathe",
+      "cycle_time_sec": 78.8,
+      "hourly_rate_inr": 250.0,
+      "cost_per_piece_inr": 5.47,
+      "cost_per_piece_raw": 5.472222222222222
+    },
+    {
+      "sequence": 4,
+      "operation_name": "CNC Turn – Complete Soft OD Profile",
+      "machine_family": "cnc_lathe",
+      "cycle_time_sec": 712.2,
+      "hourly_rate_inr": 250.0,
+      "cost_per_piece_inr": 49.46,
+      "cost_per_piece_raw": 49.458333333333336
+    },
+    {
+      "sequence": 5,
+      "operation_name": "5-Axis Mill – Wrench Flats",
+      "machine_family": "vmc_5axis",
+      "cycle_time_sec": 41.9,
+      "hourly_rate_inr": 600.0,
+      "cost_per_piece_inr": 6.98,
+      "cost_per_piece_raw": 6.983333333333333
+    },
+    {
+      "sequence": 6,
+      "operation_name": "Pre-Heat-Treatment Deburr and Clean",
+      "machine_family": "finish_bench",
+      "cycle_time_sec": 197.6,
+      "hourly_rate_inr": 200.0,
+      "cost_per_piece_inr": 10.98,
+      "cost_per_piece_raw": 10.977777777777778
+    },
+    {
+      "sequence": 10,
+      "operation_name": "Post-Heat-Treatment Descale and Clean",
+      "machine_family": "surface_finishing",
+      "cycle_time_sec": 280.1,
+      "hourly_rate_inr": 200.0,
+      "cost_per_piece_inr": 15.56,
+      "cost_per_piece_raw": 15.561111111111114
+    },
+    {
+      "sequence": 12,
+      "operation_name": "Recondition Center Holes",
+      "machine_family": "lapping",
+      "cycle_time_sec": 207.9,
+      "hourly_rate_inr": 300.0,
+      "cost_per_piece_inr": 17.32,
+      "cost_per_piece_raw": 17.325
+    },
+    {
+      "sequence": 13,
+      "operation_name": "OD Grind – Datum and Precision Journals",
+      "machine_family": "od_grinding",
+      "cycle_time_sec": 264.8,
+      "hourly_rate_inr": 600.0,
+      "cost_per_piece_inr": 44.13,
+      "cost_per_piece_raw": 44.13333333333333
+    },
+    {
+      "sequence": 14,
+      "operation_name": "Post-Grinding Deburr and Clean",
+      "machine_family": "finish_bench",
+      "cycle_time_sec": 170.5,
+      "hourly_rate_inr": 200.0,
+      "cost_per_piece_inr": 9.47,
+      "cost_per_piece_raw": 9.472222222222221
+    },
+    {
+      "sequence": 15,
+      "operation_name": "Black Oxide Finish",
+      "machine_family": "surface_finishing",
+      "cycle_time_sec": 208.4,
+      "hourly_rate_inr": 200.0,
+      "cost_per_piece_inr": 11.58,
+      "cost_per_piece_raw": 11.577777777777778
+    }
+  ]
+}

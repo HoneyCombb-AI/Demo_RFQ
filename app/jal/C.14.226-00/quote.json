@@ -1,0 +1,115 @@
+{
+  "drawing_number": "C.14.226-00",
+  "part_name": "Stirnrad z61 D63,6 links",
+  "material": "16MnCr5Pb / ESP 65",
+  "quantity": 100,
+  "quote_status": "complete",
+  "weights": {
+    "raw_bar_dia_mm": 68.0,
+    "actual_bar_dia_mm": 68.51,
+    "pcs_per_5m_bar": 312,
+    "gross_weight_kg": 0.4635,
+    "gross_weight_g": 463.5,
+    "net_weight_kg": 0.2217,
+    "net_weight_g": 221.7,
+    "scrap_weight_kg": 0.2418,
+    "scrap_weight_g": 241.8,
+    "net_weight_source": "routing"
+  },
+  "direct_cost": {
+    "material_cost_inr": 9.42,
+    "machining_cost_inr": 183.31,
+    "heat_treatment_cost_inr": 8.31,
+    "direct_cost_subtotal_inr": 201.04
+  },
+  "overheads_and_surcharges": {
+    "factory_overhead_margin_inr": 201.04,
+    "tooling_inr": 40.21,
+    "rejection_inr": 8.85,
+    "inspection_inr": 8.04,
+    "cleaning_inr": 4.02,
+    "scrap_recovery_credit_inr": -5.14,
+    "export_packaging_inr": 4.43,
+    "fob_freight_inr": 3.33,
+    "packaging_and_fob_inr": 7.76
+  },
+  "pricing_summary": {
+    "subtotal_before_margin_inr": 264.78,
+    "overhead_and_margin_inr": 201.04,
+    "final_ex_works_price_inr": 465.82
+  },
+  "machining_operations": [
+    {
+      "sequence": 2,
+      "operation_name": "CNC Turn – First Blank Setup",
+      "machine_family": "cnc_lathe",
+      "cycle_time_sec": 192.2,
+      "hourly_rate_inr": 250.0,
+      "cost_per_piece_inr": 13.35,
+      "cost_per_piece_raw": 13.347222222222221
+    },
+    {
+      "sequence": 3,
+      "operation_name": "CNC Turn – Second Blank Setup",
+      "machine_family": "cnc_lathe",
+      "cycle_time_sec": 104.1,
+      "hourly_rate_inr": 250.0,
+      "cost_per_piece_inr": 7.23,
+      "cost_per_piece_raw": 7.229166666666667
+    },
+    {
+      "sequence": 5,
+      "operation_name": "Helical Gear Hobbing",
+      "machine_family": "gear_hobbing",
+      "cycle_time_sec": 388.1,
+      "hourly_rate_inr": 800.0,
+      "cost_per_piece_inr": 86.24,
+      "cost_per_piece_raw": 86.24444444444444
+    },
+    {
+      "sequence": 6,
+      "operation_name": "Soft Gear Shaving",
+      "machine_family": "gear_shaving",
+      "cycle_time_sec": 119.1,
+      "hourly_rate_inr": 450.0,
+      "cost_per_piece_inr": 14.89,
+      "cost_per_piece_raw": 14.8875
+    },
+    {
+      "sequence": 7,
+      "operation_name": "Pre-Heat-Treatment Deburr",
+      "machine_family": "finish_bench",
+      "cycle_time_sec": 120.3,
+      "hourly_rate_inr": 200.0,
+      "cost_per_piece_inr": 6.68,
+      "cost_per_piece_raw": 6.683333333333334
+    },
+    {
+      "sequence": 11,
+      "operation_name": "Post-Heat-Treatment Teeth Chamfering",
+      "machine_family": "vmc_5axis",
+      "cycle_time_sec": 152.1,
+      "hourly_rate_inr": 400.0,
+      "cost_per_piece_inr": 16.9,
+      "cost_per_piece_raw": 16.9
+    },
+    {
+      "sequence": 14,
+      "operation_name": "CNC Hard Turn – Bore and Faces",
+      "machine_family": "cnc_lathe",
+      "cycle_time_sec": 497.6,
+      "hourly_rate_inr": 250.0,
+      "cost_per_piece_inr": 34.56,
+      "cost_per_piece_raw": 34.55555555555556
+    },
+    {
+      "sequence": 17,
+      "operation_name": "Final Edge and Burr Verification",
+      "machine_family": "finish_bench",
+      "cycle_time_sec": 62.3,
+      "hourly_rate_inr": 200.0,
+      "cost_per_piece_inr": 3.46,
+      "cost_per_piece_raw": 3.4611111111111112
+    }
+  ]
+}

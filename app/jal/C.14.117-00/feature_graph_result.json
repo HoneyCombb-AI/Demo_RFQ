@@ -1,0 +1,958 @@
+{
+  "analysis_id": "C.14.117-00b_Zahnwelle_Z10_merge_20260829T143953Z",
+  "part": {
+    "name": "Zahnwelle Z10",
+    "drawing_number": "C.14.117-00",
+    "revision": "b",
+    "material": "16MnCrS5 1.7139 (Pb<0,1%)",
+    "units": "mm"
+  },
+  "feature_graph": {
+    "part_envelope": {
+      "length_mm": 12.68,
+      "width_mm": 85.0,
+      "height_mm": 12.68,
+      "max_diameter_mm": 12.68,
+      "envelope_shape": "cylindrical"
+    },
+    "coordinate_system": {
+      "primary_axis": "X",
+      "orientation_notes": "X is the shaft axis per FRONT VIEW; Y is radial (vertical in main view), Z is depth into page. The datum axis is established by journals A and B.",
+      "datum_origin": "A"
+    },
+    "features": [
+      {
+        "feature_id": "F01",
+        "feature_type": "spline",
+        "name": "Splined section",
+        "description": "Externally splined/geared portion of the shaft.",
+        "geometry": {
+          "diameter_mm": 12.68,
+          "outer_diameter_mm": 12.65,
+          "length_mm": 11.6,
+          "axis_direction": "X"
+        },
+        "instance_count": 1,
+        "access_directions": [
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 12.68,
+            "plus_mm": 0.0,
+            "minus_mm": 0.06
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "runout",
+            "tolerance_value_mm": 0.03,
+            "datum_references": [
+              "A",
+              "B"
+            ],
+            "applied_to": "outer diameter of the splined section"
+          }
+        ],
+        "source_views": [
+          "main_view",
+          "left_end_view",
+          "isometric_views"
+        ]
+      },
+      {
+        "feature_id": "F02",
+        "feature_type": "flat_face",
+        "name": "Opposite parallel flats",
+        "description": "Two opposite flat faces milled onto the shaft, defining a reduced width.",
+        "geometry": {
+          "width_mm": 8.93
+        },
+        "instance_count": 2,
+        "access_directions": [
+          "+X",
+          "-X",
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "width",
+            "nominal_mm": 8.93,
+            "plus_mm": 0.05,
+            "minus_mm": 0.05
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "parallelism",
+            "tolerance_value_mm": 0.02,
+            "datum_references": [
+              "A",
+              "B"
+            ],
+            "applied_to": "Left flat face (leader attaches to its extension line)"
+          }
+        ],
+        "source_views": [
+          "left_end_view",
+          "isometric_views"
+        ]
+      },
+      {
+        "feature_id": "F03",
+        "feature_type": "part_body",
+        "name": "Overall part",
+        "description": "Overall boundary and total length of the part.",
+        "geometry": {
+          "length_mm": 85.0,
+          "axis_direction": "X"
+        },
+        "instance_count": 1,
+        "access_directions": [
+          "radial",
+          "+Z",
+          "-Z"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "source_views": [
+          "main_view",
+          "isometric_views"
+        ]
+      },
+      {
+        "feature_id": "F04",
+        "feature_type": "undercut",
+        "name": "Shaft undercut",
+        "description": "Relief groove or undercut on a cylindrical shaft shoulder with a 20-degree exit angle.",
+        "geometry": {
+          "depth_mm": 0.2,
+          "width_mm": 1.5,
+          "height_mm": 0.2,
+          "angle_deg": 20.0,
+          "axis_direction": "radial"
+        },
+        "access_directions": [
+          "radial"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "source_views": [
+          "detail_x"
+        ]
+      },
+      {
+        "feature_id": "F05",
+        "feature_type": "radius",
+        "name": "Undercut transition radius",
+        "description": "Internal fillet radius transitioning from the undercut floor to the adjacent face.",
+        "geometry": {
+          "radius_mm": 0.4
+        },
+        "access_directions": [
+          "radial"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "source_views": [
+          "detail_x"
+        ]
+      },
+      {
+        "feature_id": "F06",
+        "feature_type": "chamfer",
+        "name": "Edge chamfer",
+        "description": "Chamfer on the outer edge of the adjacent cylindrical section.",
+        "geometry": {
+          "length_mm": 0.2,
+          "angle_deg": 45.0
+        },
+        "access_directions": [
+          "radial"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "source_views": [
+          "detail_x"
+        ]
+      },
+      {
+        "feature_id": "F07",
+        "feature_type": "undercut",
+        "name": "Undercut transition profile",
+        "description": "A transition profile or undercut on the shaft featuring a straight segment, a slight radial step with an angled taper, and a corner fillet.",
+        "geometry": {
+          "length_mm": 2.5,
+          "depth_mm": 0.2,
+          "radius_mm": 0.4,
+          "angle_deg": 15.0
+        },
+        "access_directions": [
+          "radial"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "source_views": [
+          "detail_y"
+        ]
+      },
+      {
+        "feature_id": "F08",
+        "feature_type": "undercut",
+        "name": "Relief groove",
+        "description": "Undercut or relief groove featuring a 1.5mm width, 0.2mm depth, a 20-degree angled wall, and an R0.4 fillet radius at the root.",
+        "geometry": {
+          "depth_mm": 0.2,
+          "width_mm": 1.5,
+          "radius_mm": 0.4,
+          "angle_deg": 20.0
+        },
+        "access_directions": [
+          "radial"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "source_views": [
+          "detail_z"
+        ]
+      },
+      {
+        "feature_id": "F09",
+        "feature_type": "journal",
+        "name": "End Journals",
+        "description": "Smaller diameter cylindrical steps at both ends of the shaft, featuring chamfered tips and relief grooves at the transition.",
+        "geometry": {},
+        "instance_count": 2,
+        "access_directions": [
+          "radial",
+          "+Z",
+          "-Z"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "source_views": [
+          "isometric_views"
+        ]
+      },
+      {
+        "feature_id": "F10",
+        "feature_type": "internal_bore",
+        "name": "Left center hole",
+        "description": "Standard center hole on the left end face of the shaft.",
+        "geometry": {
+          "depth_condition": "BLIND",
+          "axis_direction": "-X"
+        },
+        "access_directions": [
+          "-X"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "source_views": [
+          "main_view"
+        ]
+      },
+      {
+        "feature_id": "F11",
+        "feature_type": "shaft_step",
+        "name": "Right intermediate step",
+        "description": "Short cylindrical step between the central shaft and the right journal.",
+        "geometry": {
+          "diameter_mm": 11.0,
+          "length_mm": 3.0,
+          "axis_direction": "X"
+        },
+        "access_directions": [
+          "radial"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "source_views": [
+          "main_view"
+        ]
+      },
+      {
+        "feature_id": "F12",
+        "feature_type": "chamfer",
+        "name": "Right step chamfer",
+        "description": "Small chamfer on the right edge of the right intermediate step.",
+        "geometry": {
+          "length_mm": 0.2,
+          "angle_deg": 45.0
+        },
+        "access_directions": [
+          "radial",
+          "+X"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "source_views": [
+          "main_view"
+        ]
+      },
+      {
+        "feature_id": "F13",
+        "feature_type": "journal",
+        "name": "Right journal",
+        "description": "Bearing journal on the right side of the shaft. Defines Datum B.",
+        "geometry": {
+          "diameter_mm": 7.0,
+          "length_mm": 9.5,
+          "axis_direction": "X"
+        },
+        "surface_finish": {
+          "ra_value": 0.8,
+          "finish_symbol": "Ra 0.8"
+        },
+        "access_directions": [
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 7.0,
+            "tolerance_class": "h6"
+          },
+          {
+            "dimension_type": "length",
+            "nominal_mm": 9.5,
+            "plus_mm": 0.15,
+            "minus_mm": 0.15
+          }
+        ],
+        "gdt_controls": [],
+        "source_views": [
+          "main_view"
+        ]
+      },
+      {
+        "feature_id": "F14",
+        "feature_type": "chamfer",
+        "name": "Right end chamfer",
+        "description": "Chamfer on the extreme right edge of the part.",
+        "geometry": {
+          "length_mm": 1.0,
+          "angle_deg": 45.0
+        },
+        "access_directions": [
+          "radial",
+          "+X"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "source_views": [
+          "main_view"
+        ]
+      },
+      {
+        "feature_id": "F15",
+        "feature_type": "internal_bore",
+        "name": "Right center hole",
+        "description": "Standard center hole on the right end face of the shaft.",
+        "geometry": {
+          "depth_condition": "BLIND",
+          "axis_direction": "+X"
+        },
+        "access_directions": [
+          "+X"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "source_views": [
+          "main_view"
+        ]
+      },
+      {
+        "feature_id": "F16",
+        "feature_type": "chamfer",
+        "name": "Left end chamfer",
+        "description": "Chamfer on the left edge of the left journal.",
+        "geometry": {
+          "length_mm": 1.0,
+          "angle_deg": 45.0
+        },
+        "access_directions": [
+          "radial",
+          "-X"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "source_views": [
+          "main_view"
+        ]
+      },
+      {
+        "feature_id": "F17",
+        "feature_type": "journal",
+        "name": "Left journal",
+        "description": "Bearing journal on the left side of the shaft. Defines Datum A.",
+        "geometry": {
+          "diameter_mm": 7.0,
+          "length_mm": 9.5,
+          "axis_direction": "X"
+        },
+        "surface_finish": {
+          "ra_value": 0.8,
+          "finish_symbol": "Ra 0.8"
+        },
+        "access_directions": [
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 7.0,
+            "tolerance_class": "h6"
+          },
+          {
+            "dimension_type": "length",
+            "nominal_mm": 9.5,
+            "plus_mm": 0.15,
+            "minus_mm": 0.15
+          }
+        ],
+        "gdt_controls": [],
+        "source_views": [
+          "main_view"
+        ]
+      },
+      {
+        "feature_id": "F18",
+        "feature_type": "shaft_step",
+        "name": "Left intermediate step",
+        "description": "Short cylindrical step between the left journal and the splined section.",
+        "geometry": {
+          "diameter_mm": 11.0,
+          "length_mm": 17.0,
+          "axis_direction": "X"
+        },
+        "access_directions": [
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "length",
+            "nominal_mm": 17.0,
+            "plus_mm": 0.1,
+            "minus_mm": 0.1
+          }
+        ],
+        "gdt_controls": [],
+        "source_views": [
+          "main_view"
+        ]
+      },
+      {
+        "feature_id": "F19",
+        "feature_type": "chamfer",
+        "name": "Left spline chamfer",
+        "description": "Chamfer on the left entry of the splined section.",
+        "geometry": {
+          "length_mm": 1.0,
+          "angle_deg": 45.0
+        },
+        "access_directions": [
+          "radial",
+          "-X"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "source_views": [
+          "main_view"
+        ]
+      },
+      {
+        "feature_id": "F20",
+        "feature_type": "chamfer",
+        "name": "Right spline chamfer",
+        "description": "Chamfer on the right exit of the splined section.",
+        "geometry": {
+          "length_mm": 0.5,
+          "angle_deg": 45.0
+        },
+        "access_directions": [
+          "radial",
+          "+X"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "source_views": [
+          "main_view"
+        ]
+      },
+      {
+        "feature_id": "F21",
+        "feature_type": "external_cylinder",
+        "name": "Central shaft",
+        "description": "Main cylindrical body in the middle of the part.",
+        "geometry": {
+          "diameter_mm": 11.93,
+          "length_mm": 66.0,
+          "axis_direction": "X"
+        },
+        "surface_finish": {
+          "ra_value": 0.8,
+          "finish_symbol": "Ra 0.8"
+        },
+        "access_directions": [
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 11.93,
+            "tolerance_class": "h7"
+          },
+          {
+            "dimension_type": "length",
+            "nominal_mm": 66.0,
+            "plus_mm": 0.1,
+            "minus_mm": 0.1
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "runout",
+            "tolerance_value_mm": 0.02,
+            "datum_references": [
+              "A",
+              "B"
+            ],
+            "applied_to": "outer surface of central shaft"
+          }
+        ],
+        "source_views": [
+          "main_view"
+        ]
+      },
+      {
+        "feature_id": "F22",
+        "feature_type": "chamfer",
+        "name": "Transition chamfer",
+        "description": "Conical transition from the central shaft down to the right intermediate step.",
+        "geometry": {
+          "angle_deg": 45.0
+        },
+        "access_directions": [
+          "radial",
+          "+X"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "source_views": [
+          "main_view"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "relationship_id": "R01",
+        "from_feature_id": "F17",
+        "to_feature_id": "F21",
+        "relationship_type": "coaxial",
+        "detail": "Left journal shares the shaft axis with the central cylinder."
+      },
+      {
+        "relationship_id": "R02",
+        "from_feature_id": "F18",
+        "to_feature_id": "F21",
+        "relationship_type": "coaxial",
+        "detail": "Left intermediate step is on the same axis as the central shaft."
+      },
+      {
+        "relationship_id": "R03",
+        "from_feature_id": "F01",
+        "to_feature_id": "F21",
+        "relationship_type": "coaxial",
+        "detail": "Splined section concentric with central shaft."
+      },
+      {
+        "relationship_id": "R04",
+        "from_feature_id": "F11",
+        "to_feature_id": "F21",
+        "relationship_type": "coaxial",
+        "detail": "Right intermediate step is on the same axis as the central shaft."
+      },
+      {
+        "relationship_id": "R05",
+        "from_feature_id": "F13",
+        "to_feature_id": "F21",
+        "relationship_type": "coaxial",
+        "detail": "Right journal shares the shaft axis with the central cylinder."
+      },
+      {
+        "relationship_id": "R06",
+        "from_feature_id": "F10",
+        "to_feature_id": "F17",
+        "relationship_type": "coaxial",
+        "detail": "Left center hole coaxial with the left journal."
+      },
+      {
+        "relationship_id": "R07",
+        "from_feature_id": "F15",
+        "to_feature_id": "F13",
+        "relationship_type": "coaxial",
+        "detail": "Right center hole coaxial with the right journal."
+      },
+      {
+        "relationship_id": "R08",
+        "from_feature_id": "F19",
+        "to_feature_id": "F01",
+        "relationship_type": "intersecting",
+        "detail": "Left spline-entry chamfer blends into the splined section."
+      },
+      {
+        "relationship_id": "R09",
+        "from_feature_id": "F19",
+        "to_feature_id": "F18",
+        "relationship_type": "intersecting",
+        "detail": "Left spline-entry chamfer also touches the left intermediate step."
+      },
+      {
+        "relationship_id": "R10",
+        "from_feature_id": "F20",
+        "to_feature_id": "F01",
+        "relationship_type": "intersecting",
+        "detail": "Right spline-exit chamfer blends off the splined section."
+      },
+      {
+        "relationship_id": "R11",
+        "from_feature_id": "F20",
+        "to_feature_id": "F21",
+        "relationship_type": "intersecting",
+        "detail": "Right spline-exit chamfer meets the central shaft OD."
+      },
+      {
+        "relationship_id": "R12",
+        "from_feature_id": "F22",
+        "to_feature_id": "F21",
+        "relationship_type": "intersecting",
+        "detail": "Transition chamfer meets the central shaft."
+      },
+      {
+        "relationship_id": "R13",
+        "from_feature_id": "F22",
+        "to_feature_id": "F11",
+        "relationship_type": "intersecting",
+        "detail": "Transition chamfer meets the right intermediate step."
+      },
+      {
+        "relationship_id": "R14",
+        "from_feature_id": "F12",
+        "to_feature_id": "F11",
+        "relationship_type": "intersecting",
+        "detail": "Right step chamfer meets the right intermediate step."
+      },
+      {
+        "relationship_id": "R15",
+        "from_feature_id": "F12",
+        "to_feature_id": "F13",
+        "relationship_type": "intersecting",
+        "detail": "Right step chamfer meets the right journal."
+      },
+      {
+        "relationship_id": "R16",
+        "from_feature_id": "F16",
+        "to_feature_id": "F17",
+        "relationship_type": "intersecting",
+        "detail": "Left end chamfer meets the left journal."
+      },
+      {
+        "relationship_id": "R17",
+        "from_feature_id": "F14",
+        "to_feature_id": "F13",
+        "relationship_type": "intersecting",
+        "detail": "Right end chamfer meets the right journal."
+      },
+      {
+        "relationship_id": "R18",
+        "from_feature_id": "F04",
+        "to_feature_id": "F17",
+        "relationship_type": "intersecting",
+        "detail": "Detail X undercut lies at the shoulder next to the left journal."
+      },
+      {
+        "relationship_id": "R19",
+        "from_feature_id": "F04",
+        "to_feature_id": "F18",
+        "relationship_type": "intersecting",
+        "detail": "Detail X undercut lies at the shoulder of the left intermediate step."
+      },
+      {
+        "relationship_id": "R20",
+        "from_feature_id": "F05",
+        "to_feature_id": "F04",
+        "relationship_type": "intersecting",
+        "detail": "Fillet radius transitions from the undercut floor."
+      },
+      {
+        "relationship_id": "R21",
+        "from_feature_id": "F06",
+        "to_feature_id": "F18",
+        "relationship_type": "intersecting",
+        "detail": "Small edge chamfer adjacent to the left intermediate step."
+      },
+      {
+        "relationship_id": "R22",
+        "from_feature_id": "F08",
+        "to_feature_id": "F11",
+        "relationship_type": "intersecting",
+        "detail": "Detail Z undercut at shoulder of the right intermediate step."
+      },
+      {
+        "relationship_id": "R23",
+        "from_feature_id": "F08",
+        "to_feature_id": "F13",
+        "relationship_type": "intersecting",
+        "detail": "Detail Z undercut adjacent to the right journal."
+      },
+      {
+        "relationship_id": "R24",
+        "from_feature_id": "F07",
+        "to_feature_id": "F01",
+        "relationship_type": "intersecting",
+        "detail": "Detail Y transition/runout at the right end of the spline."
+      },
+      {
+        "relationship_id": "R25",
+        "from_feature_id": "F07",
+        "to_feature_id": "F21",
+        "relationship_type": "intersecting",
+        "detail": "Detail Y feature blends toward the central shaft OD."
+      },
+      {
+        "relationship_id": "R26",
+        "from_feature_id": "F01",
+        "to_feature_id": "F17",
+        "relationship_type": "datum_referenced",
+        "detail": "Runout 0.03 referenced to datum A."
+      },
+      {
+        "relationship_id": "R27",
+        "from_feature_id": "F01",
+        "to_feature_id": "F13",
+        "relationship_type": "datum_referenced",
+        "detail": "Runout 0.03 referenced to datum B."
+      },
+      {
+        "relationship_id": "R28",
+        "from_feature_id": "F21",
+        "to_feature_id": "F17",
+        "relationship_type": "datum_referenced",
+        "detail": "Runout 0.02 referenced to datum A."
+      },
+      {
+        "relationship_id": "R29",
+        "from_feature_id": "F21",
+        "to_feature_id": "F13",
+        "relationship_type": "datum_referenced",
+        "detail": "Runout 0.02 referenced to datum B."
+      },
+      {
+        "relationship_id": "R30",
+        "from_feature_id": "F02",
+        "to_feature_id": "F17",
+        "relationship_type": "datum_referenced",
+        "detail": "Parallelism control references datum A."
+      },
+      {
+        "relationship_id": "R31",
+        "from_feature_id": "F02",
+        "to_feature_id": "F13",
+        "relationship_type": "datum_referenced",
+        "detail": "Parallelism control references datum B."
+      }
+    ],
+    "datum_scheme": {
+      "datums": [
+        {
+          "datum_letter": "A",
+          "feature_id": "F17",
+          "surface_type": "cylindrical",
+          "description": "Left bearing journal outer surface"
+        },
+        {
+          "datum_letter": "B",
+          "feature_id": "F13",
+          "surface_type": "cylindrical",
+          "description": "Right bearing journal outer surface"
+        }
+      ],
+      "datum_hierarchy_notes": "A and B are opposing journals that together define the common datum axis (AB) used for runout and parallelism controls."
+    },
+    "part_notes": "Material: 16MnCrS5 1.7139 (Pb<0,1%). Scale: 2:1. General tolerance: DIN ISO 2768-m. Projection: first angle. Heat treatment: Einsatzgehärtet und angelassen auf 630+100HV10; Eht=0,3+0,2mm / case-hardened and tempered to 630+100HV10; Eht=0,3+0,2mm. Coating: none specified. General notes: DEBURR: Kanten müssen vollständig entgratet sein / sharp edges must be removed. FINISH: Ra 6.3 (Ra 0.8). Extraction notes: Revision table cuts off 'Be' and 'ge' text. Tolerances and chamfers explicitly specified in drawing detail note next to note_block section.",
+    "overall_complexity": "moderate"
+  },
+  "component_specs": [
+    {
+      "section_id": "gear_data_table",
+      "component_type": "spur_gear",
+      "spec_title": "Stirnrad außenverzahnt / spur-gear external geared",
+      "parameters": [
+        {
+          "parameter_name": "Zähnezahl / number of teeth",
+          "symbol": "z",
+          "value_raw": "10",
+          "value_numeric": 10.0
+        },
+        {
+          "parameter_name": "Normalmodul / normal module",
+          "symbol": "m",
+          "unit": "mm",
+          "value_raw": "1",
+          "value_numeric": 1.0
+        },
+        {
+          "parameter_name": "Teilkreisdurchmesser / pitch diameter",
+          "symbol": "d",
+          "unit": "mm",
+          "value_raw": "10",
+          "value_numeric": 10.0
+        },
+        {
+          "parameter_name": "Grundkreisdurchmesser / base diameter",
+          "symbol": "d_b",
+          "unit": "mm",
+          "value_raw": "9.397",
+          "value_numeric": 9.397
+        },
+        {
+          "parameter_name": "Fußkreisdurchmesser / root diameter",
+          "symbol": "d_f",
+          "unit": "mm",
+          "value_raw": "8.18 -0.06",
+          "value_numeric": 8.18,
+          "plus_tolerance": 0.0,
+          "minus_tolerance": 0.06
+        },
+        {
+          "parameter_name": "Fußnutzkreis / effective root diameter",
+          "symbol": "d_Nf",
+          "unit": "mm",
+          "value_raw": "9.42",
+          "value_numeric": 9.42
+        },
+        {
+          "parameter_name": "Bezugsprofil / basic rack tooth profile",
+          "value_raw": "DIN3972 / 1",
+          "standard_ref": "DIN3972 / 1"
+        },
+        {
+          "parameter_name": "Eingriffswinkel / pressure angle",
+          "symbol": "α",
+          "value_raw": "20°",
+          "value_numeric": 20.0
+        },
+        {
+          "parameter_name": "Profilverschiebungsfaktor / addendum modification coefficient",
+          "symbol": "x",
+          "value_raw": "0.4",
+          "value_numeric": 0.4
+        },
+        {
+          "parameter_name": "Achsabstand im Gehäuse mit Abmaßen / distance between axles in box with tolerance",
+          "symbol": "a",
+          "unit": "mm",
+          "value_raw": "24.88 ±0.035",
+          "value_numeric": 24.88,
+          "plus_tolerance": 0.035,
+          "minus_tolerance": 0.035
+        },
+        {
+          "parameter_name": "Qualität / quality",
+          "value_raw": "DIN58405 / 8d",
+          "standard_ref": "DIN58405 / 8d"
+        },
+        {
+          "parameter_name": "Maß über Zähne gemessen n=2 / gauge above teeth n=2",
+          "symbol": "Am",
+          "unit": "mm",
+          "value_raw": "4.8 -0.02",
+          "value_numeric": 4.8,
+          "plus_tolerance": 0.0,
+          "minus_tolerance": 0.02
+        },
+        {
+          "parameter_name": "Zweiflanken-Wälzsprung / two flank working error",
+          "symbol": "fi″",
+          "unit": "µm",
+          "value_raw": "18",
+          "value_numeric": 18.0
+        },
+        {
+          "parameter_name": "Zweiflanken-Wälzabweichung / radial composite error",
+          "symbol": "Fi″",
+          "unit": "µm",
+          "value_raw": "40",
+          "value_numeric": 40.0
+        },
+        {
+          "parameter_name": "Gegenradsachnummer / counter wheel article code",
+          "value_raw": "C.14.016-00"
+        }
+      ]
+    }
+  ],
+  "component_spec_links": [
+    {
+      "spec_section_id": "gear_data_table",
+      "feature_ids": [
+        "F01"
+      ],
+      "link_notes": "Spec table describes the external gear/spline zone. Matches the splined section; main_view:F6 carries functional OD/length and GD&T. End view F2 and isometric F2 depict the same zone."
+    }
+  ],
+  "clarifications": [
+  ],
+  "assumptions": [
+    {
+      "assumption_id": "A01",
+      "text": "Detail views X, Y, and Z depict local undercuts/transition features not explicitly modelled as separate features in the main view; to avoid merging dissimilar geometry, these were kept as standalone features rather than grouped to main-view steps or chamfers despite nearby “Detail X/Y/Z” callouts."
+    },
+    {
+      "assumption_id": "A02",
+      "text": "External spline across sections grouped using Signals 4 and detail-view linkage: main_view:F6 chosen canonical due to explicit dimensions and runout GD&T; left_end_view:F2’s Ø11.93 is marked REF and treated as non-controlling."
+    },
+    {
+      "assumption_id": "A03",
+      "text": "Opposite flats are interchangeable instances (no per-instance identifiers). One feature group created with count=2 from left_end_view:F1; isometric_views:F3 included as a supporting member."
+    },
+    {
+      "assumption_id": "A04",
+      "text": "Isometric \"End Journals\" (isometric_views:F4, count=2) is an aggregate observation spanning both end journals; it is referenced as an aggregate_ref conceptually for both journals but no explicit multi-section group was created for each journal since no second dimensional member exists."
+    },
+    {
+      "assumption_id": "A05",
+      "text": "Coaxial relationships among the cylindrical features (journals, steps, spline, central shaft) are established from consistent axis_direction = X and the overall shaft depiction; no conflicting evidence was present."
+    },
+    {
+      "assumption_id": "A06",
+      "text": "Coordinate system set with X as primary machining axis per main view notes; datum origin taken as A (left journal) though runout references use AB as the common axis."
+    },
+    {
+      "assumption_id": "A07",
+      "text": "Chamfer–adjacent-feature intersecting relationships were added where the drawing clearly shows chamfers at step/spline transitions; no attempt was made to encode exact offsets."
+    },
+    {
+      "assumption_id": "A08",
+      "text": "GD&T boxes reading “A B” are interpreted as references to both datums A and B; separate datum_referenced edges were created to A and to B."
+    },
+    {
+      "assumption_id": "A09",
+      "text": "Detail X and Z undercuts are assumed to be applied to the larger adjacent diameters (Ø11 steps) at those shoulders; base diameters are not duplicated into the undercut features to avoid cross-feature field sourcing."
+    },
+    {
+      "assumption_id": "A10",
+      "text": "Gear data table linked to the splined section as the functional external gearing; pitch diameter 10 mm (m=1, z=10) is consistent with the drawn OD ≈12.68 mm given addendum modification, so no separate gear feature was created."
+    },
+    {
+      "assumption_id": "A11",
+      "text": "Set the pair of parallel flats (across-flats 8.93) to extend along the full 66 mm central Ø11.93 shaft section."
+    },
+    {
+      "assumption_id": "A12",
+      "text": "Set the 0.2 mm radial depth in Detail Y relative to the central shaft OD Ø11.93 as the base diameter."
+    }
+  ]
+}
