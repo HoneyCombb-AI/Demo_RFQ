@@ -4,6 +4,11 @@ import * as React from "react"
 import { ReportData, formatCurrency } from "@/lib/data"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Badge } from "@/components/ui/badge"
+import {
+  initInteractiveSetups,
+  InteractiveSetup,
+  QuoteCustomization,
+} from "@/lib/engineer-workflow"
 
 // Tab panel components
 import { SpecsTab } from "./tabs/SpecsTab"
@@ -23,21 +28,94 @@ export function ReportTabs({
   onTabChange?: (val: string) => void
 }) {
   const specCount = data.specList?.length || 0
-  const riskLevel = data.feasibility.feasibility.risk_level
-  const setupCount = data.computedRoute.total_summary.total_setups
   const quoteData = data.quote
-  const finalPrice =
-    quoteData?.pricing_summary?.final_ex_works_price_inr ??
-    quoteData?.pricing_and_duties?.final_landed_price_inr ??
-    null
-  const price = finalPrice != null ? formatCurrency(finalPrice, "INR") : "-"
   const clarificationsCount = data.feasibility.clarifications?.length || 0
+
+  // 1. Interactive Routing State (shared across Routing & Quote tabs)
+  const [setups, setSetups] = React.useState<InteractiveSetup[]>(() =>
+    initInteractiveSetups(data)
+  )
+
+  // 2. Interactive Quote Customization State
+  const [customization, setCustomization] = React.useState<QuoteCustomization>({
+    rawMaterialRatePerKg: 320,
+    grossWeightKg: quoteData?.weights?.gross_weight_kg && quoteData.weights.gross_weight_kg > 0
+      ? quoteData.weights.gross_weight_kg
+      : 0.045,
+    netWeightKg: quoteData?.weights?.net_weight_kg && quoteData.weights.net_weight_kg > 0
+      ? quoteData.weights.net_weight_kg
+      : 0.001,
+    customMaterialCostPerPiece: undefined,
+    useManualMaterialCost: false,
+    scrapCreditPct: 10,
+    marginPct: 20,
+    factoryOverheadPct: 25,
+  })
+
+  // Detect whether the engineer has made modifications
+  const isCustomized = React.useMemo(() => {
+    const initial = initInteractiveSetups(data)
+    if (setups.length !== initial.length) return true
+    return setups.some((s, i) => {
+      const init = initial[i]
+      if (!init) return true
+      return (
+        s.machine_family !== init.machine_family ||
+        s.setup_name !== init.setup_name ||
+        s.cycle_time_sec !== init.cycle_time_sec ||
+        s.is_custom ||
+        s.is_edited
+      )
+    })
+  }, [setups, data])
+
+  // Real-time calculation of dynamic price for the header badge
+  const dynamicPriceFormatted = React.useMemo(() => {
+    const rawMaterialCost = customization.useManualMaterialCost && customization.customMaterialCostPerPiece != null
+      ? customization.customMaterialCostPerPiece
+      : +(customization.grossWeightKg * customization.rawMaterialRatePerKg).toFixed(2)
+
+    const scrapWeight = Math.max(0, customization.grossWeightKg - customization.netWeightKg)
+    const scrapCredit = +(scrapWeight * customization.rawMaterialRatePerKg * (customization.scrapCreditPct / 100)).toFixed(2)
+    const netMaterialCost = Math.max(0, +(rawMaterialCost - scrapCredit).toFixed(2))
+
+    const machiningCost = setups.reduce((acc, s) => acc + (s.cycle_time_sec / 3600) * s.hourly_rate_inr, 0)
+    const heatTreat = quoteData?.direct_cost?.heat_treatment_cost_inr ?? 0.04
+    const directBase = netMaterialCost + machiningCost + heatTreat
+
+    const tooling = directBase * 0.15
+    const rejection = directBase * 0.04
+    const inspection = directBase * 0.035
+    const packaging = 0.50
+    const overheadMargin = directBase * (customization.marginPct / 100 + customization.factoryOverheadPct / 100)
+
+    const final = +(directBase + tooling + rejection + inspection + packaging + overheadMargin).toFixed(2)
+    return formatCurrency(final, "INR")
+  }, [setups, customization, quoteData])
 
   const [internalTab, setInternalTab] = React.useState("specs")
   const currentTab = activeTab !== undefined ? activeTab : internalTab
   const handleValueChange = (val: string) => {
     setInternalTab(val)
     if (onTabChange) onTabChange(val)
+  }
+
+  const handleResetSetups = () => {
+    setSetups(initInteractiveSetups(data))
+    setCustomization({
+      rawMaterialRatePerKg: 320,
+      grossWeightKg: quoteData?.weights?.gross_weight_kg && quoteData.weights.gross_weight_kg > 0
+        ? quoteData.weights.gross_weight_kg
+        : 0.045,
+      netWeightKg: quoteData?.weights?.net_weight_kg && quoteData.weights.net_weight_kg > 0
+        ? quoteData.weights.net_weight_kg
+        : 0.001,
+      customMaterialCostPerPiece: undefined,
+      useManualMaterialCost: false,
+      scrapCreditPct: 10,
+      marginPct: 20,
+      factoryOverheadPct: 25,
+    })
   }
 
   return (
@@ -70,7 +148,9 @@ export function ReportTabs({
               className="rounded-none border-b-2 border-transparent data-[state=active]:border-transparent data-[state=active]:border-b-primary data-[state=active]:bg-transparent data-[state=active]:text-foreground data-[state=active]:shadow-none data-active:border-transparent data-active:border-b-primary data-active:bg-transparent data-active:text-foreground data-active:shadow-none px-4 py-3 text-xs tracking-widest uppercase font-mono font-semibold"
             >
               Routing
-              <Badge variant="secondary" className="ml-2 font-mono text-[10px]">{setupCount}</Badge>
+              <Badge variant={isCustomized ? "default" : "secondary"} className={`ml-2 font-mono text-[10px] ${isCustomized ? "bg-primary text-primary-foreground" : ""}`}>
+                {setups.length}
+              </Badge>
             </TabsTrigger>
             
             <TabsTrigger 
@@ -79,7 +159,7 @@ export function ReportTabs({
               className="rounded-none border-b-2 border-transparent data-[state=active]:border-transparent data-[state=active]:border-b-primary data-[state=active]:bg-transparent data-[state=active]:text-foreground data-[state=active]:shadow-none data-active:border-transparent data-active:border-b-primary data-active:bg-transparent data-active:text-foreground data-active:shadow-none px-4 py-3 text-xs tracking-widest uppercase font-mono font-semibold"
             >
               Quote
-              <Badge variant="secondary" className="ml-2 font-mono text-[10px]">{price}</Badge>
+              <Badge variant="secondary" className="ml-2 font-mono text-[10px]">{dynamicPriceFormatted}</Badge>
             </TabsTrigger>
             
             <TabsTrigger 
@@ -114,10 +194,23 @@ export function ReportTabs({
             <FeasibilityTab data={data} />
           </TabsContent>
           <TabsContent value="routing" data-tour="routing-content" className="m-0 border-none outline-none">
-            <RoutingTab data={data} />
+            <RoutingTab
+              data={data}
+              interactiveSetups={setups}
+              onUpdateSetups={setSetups}
+              onResetSetups={handleResetSetups}
+              isCustomized={isCustomized}
+            />
           </TabsContent>
           <TabsContent value="quote" data-tour="quote-content" className="m-0 border-none outline-none">
-            <QuoteTab quote={quoteData} />
+            <QuoteTab
+              quote={quoteData}
+              interactiveSetups={setups}
+              onUpdateSetups={setSetups}
+              customization={customization}
+              onUpdateCustomization={setCustomization}
+              partMaterial={data.featureGraph.part.material || "AL 6061-T6510/T6511"}
+            />
           </TabsContent>
           <TabsContent value="clarifications" className="m-0 border-none outline-none">
             <ClarificationsTab data={data} />
