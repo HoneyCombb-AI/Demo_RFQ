@@ -1,0 +1,644 @@
+{
+  "analysis_id": "359110-VT_merge_20260917T105508Z",
+  "part": {
+    "name": "PLUNGER, LEAKDOWN (COLD FORMED)",
+    "drawing_number": "359110",
+    "revision": "A",
+    "material": "C10C",
+    "units": "mm"
+  },
+  "feature_graph": {
+    "part_envelope": {
+      "length_mm": 9.780000000000001,
+      "max_diameter_mm": 9.145
+    },
+    "coordinate_system": {
+      "primary_axis": "Datum A rotational axis; view-local X in main_view_bottom and view-local Z in section_a_a are treated as the same physical machining axis.",
+      "orientation_notes": "The part is treated as an axisymmetric turned component. Section A-A is a longitudinal cut through the rotational axis; the end view shows concentric outer and internal features. Axial access is from the B and C end faces, with radial access for exterior turning operations.",
+      "datum_origin": "Datum A axis, with axial location controlled by the B/C end-face datum planes."
+    },
+    "features": [
+      {
+        "feature_id": "F01",
+        "feature_type": "datum_face",
+        "name": "Left Face (Datum C)",
+        "description": "Flat left-end face of the plunger.",
+        "geometry": {
+          "axis_direction": "-Z"
+        },
+        "access_directions": [
+          "-Z",
+          "-X"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "section_a_a",
+          "main_view_bottom"
+        ]
+      },
+      {
+        "feature_id": "F02",
+        "feature_type": "datum_face",
+        "name": "Right Face (Datum B)",
+        "description": "Flat right-end face of the plunger.",
+        "geometry": {
+          "axis_direction": "+Z"
+        },
+        "access_directions": [
+          "+Z",
+          "+X"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [
+          {
+            "gdt_type": "runout",
+            "tolerance_value_mm": 0.04,
+            "datum_references": [
+              "A"
+            ],
+            "applied_to": "Right Face"
+          }
+        ],
+        "callout_qualifiers": [],
+        "source_views": [
+          "section_a_a",
+          "main_view_bottom"
+        ]
+      },
+      {
+        "feature_id": "F03",
+        "feature_type": "external_cylinder",
+        "name": "Main Outer Body",
+        "description": "Exterior cylindrical surface of the plunger.",
+        "geometry": {
+          "diameter_mm": 7.18,
+          "length_mm": 9.65,
+          "axis_direction": "Z"
+        },
+        "access_directions": [
+          "radial",
+          "-Z",
+          "axial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 7.18,
+            "plus_mm": 0.1,
+            "minus_mm": 0.1
+          },
+          {
+            "dimension_type": "length",
+            "nominal_mm": 9.65,
+            "plus_mm": 0.13,
+            "minus_mm": 0.13
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "runout",
+            "tolerance_value_mm": 0.25,
+            "datum_references": [
+              "A"
+            ],
+            "applied_to": "Outer Cylinder"
+          }
+        ],
+        "callout_qualifiers": [],
+        "source_views": [
+          "section_a_a",
+          "main_view_left",
+          "isometric_view"
+        ]
+      },
+      {
+        "feature_id": "F04",
+        "feature_type": "internal_bore",
+        "name": "Left Internal Cavity",
+        "description": "Complex stepped internal cavity entering from the left face, including a spherical bottom section.",
+        "geometry": {
+          "diameter_mm": 4.763,
+          "length_mm": 0.76,
+          "depth_mm": 2.33,
+          "depth_condition": "BLIND",
+          "radius_mm": 1.0,
+          "angle_deg": 15.0,
+          "axis_direction": "Z"
+        },
+        "access_directions": [
+          "-Z",
+          "axial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "depth",
+            "nominal_mm": 1.26,
+            "plus_mm": 0.13,
+            "minus_mm": 0.13
+          },
+          {
+            "dimension_type": "depth",
+            "nominal_mm": 1.52,
+            "plus_mm": 0.05,
+            "minus_mm": 0.05
+          },
+          {
+            "dimension_type": "depth",
+            "nominal_mm": 2.33,
+            "plus_mm": 0.05,
+            "minus_mm": 0.05
+          },
+          {
+            "dimension_type": "length",
+            "nominal_mm": 0.76,
+            "plus_mm": 0.1,
+            "minus_mm": 0.1
+          },
+          {
+            "dimension_type": "angle_deg",
+            "nominal_mm": 15.0,
+            "plus_mm": 2.0,
+            "minus_mm": 2.0
+          },
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 6.88,
+            "plus_mm": 0.05,
+            "minus_mm": 0.05
+          },
+          {
+            "dimension_type": "radius",
+            "nominal_mm": 1.0,
+            "plus_mm": 0.1,
+            "minus_mm": 0.1
+          },
+          {
+            "dimension_type": "radius",
+            "nominal_mm": 0.2,
+            "plus_mm": 0.1,
+            "minus_mm": 0.1
+          },
+          {
+            "dimension_type": "radius",
+            "nominal_mm": 0.25,
+            "upper_limit_mm": 0.25,
+            "qualifier": "MAX"
+          },
+          {
+            "dimension_type": "radius",
+            "nominal_mm": 0.76,
+            "upper_limit_mm": 0.76,
+            "qualifier": "MAX"
+          },
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 7.0,
+            "plus_mm": 0.1,
+            "minus_mm": 0.1
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "runout",
+            "tolerance_value_mm": 0.2,
+            "datum_references": [
+              "A"
+            ],
+            "applied_to": "\u00d87\u00b10.1 diameter section"
+          }
+        ],
+        "callout_qualifiers": [
+          {
+            "qualifier": "REF",
+            "dimension_type": "radius",
+            "nominal_mm": 0.45
+          }
+        ],
+        "source_views": [
+          "section_a_a",
+          "detail_b",
+          "isometric_view",
+          "main_view_left"
+        ]
+      },
+      {
+        "feature_id": "F05",
+        "feature_type": "internal_bore",
+        "name": "Central Connecting Bore",
+        "description": "Small internal bore connecting the left and right cavities.",
+        "geometry": {
+          "diameter_mm": 2.4,
+          "axis_direction": "Z"
+        },
+        "access_directions": [
+          "+Z",
+          "-Z"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 2.4,
+            "plus_mm": 0.15,
+            "minus_mm": 0.15
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "runout",
+            "tolerance_value_mm": 0.25,
+            "datum_references": [
+              "A"
+            ],
+            "applied_to": "Central Bore"
+          }
+        ],
+        "callout_qualifiers": [],
+        "source_views": [
+          "section_a_a",
+          "main_view_left"
+        ]
+      },
+      {
+        "feature_id": "F06",
+        "feature_type": "internal_bore",
+        "name": "Right Internal Bore",
+        "description": "Bore opening from the right face, featuring an edge radius.",
+        "geometry": {
+          "diameter_mm": 4.0,
+          "radius_mm": 0.25,
+          "axis_direction": "Z"
+        },
+        "access_directions": [
+          "+Z",
+          "-Z"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "radius_edge",
+            "nominal_mm": 0.25,
+            "plus_mm": 0.13,
+            "minus_mm": 0.13
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "section_a_a",
+          "main_view_left"
+        ]
+      },
+      {
+        "feature_id": "F07",
+        "feature_type": "external_cylinder",
+        "name": "Main Plunger Body",
+        "description": "Outer cylindrical surface of the plunger.",
+        "geometry": {
+          "diameter_mm": 9.12,
+          "length_mm": 8.21,
+          "axis_direction": "X"
+        },
+        "access_directions": [
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 9.12,
+            "plus_mm": 0.025,
+            "minus_mm": 0.025
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "circularity",
+            "tolerance_value_mm": 0.06,
+            "datum_references": [],
+            "applied_to": "External cylindrical surface (specifically the 6.48mm length segment)"
+          },
+          {
+            "gdt_type": "straightness",
+            "tolerance_value_mm": 0.06,
+            "datum_references": [],
+            "applied_to": "External cylindrical surface (specifically the 6.48mm length segment)"
+          },
+          {
+            "gdt_type": "perpendicularity",
+            "tolerance_value_mm": 0.127,
+            "datum_references": [
+              "C"
+            ],
+            "applied_to": "Axis of the external cylinder"
+          }
+        ],
+        "callout_qualifiers": [
+          {
+            "qualifier": "basic",
+            "dimension_type": "length",
+            "nominal_mm": 1.73
+          },
+          {
+            "qualifier": "basic",
+            "dimension_type": "length",
+            "nominal_mm": 6.48
+          }
+        ],
+        "source_views": [
+          "main_view_bottom"
+        ]
+      },
+      {
+        "feature_id": "F08",
+        "feature_type": "chamfer",
+        "name": "Left Edge Chamfer",
+        "description": "Chamfer on the left edge of the main cylinder.",
+        "geometry": {
+          "angle_deg": 45.0
+        },
+        "access_directions": [
+          "-X",
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "chamfer",
+            "nominal_mm": 0.375,
+            "upper_limit_mm": 0.47,
+            "lower_limit_mm": 0.28,
+            "angle_deg": 45.0
+          },
+          {
+            "dimension_type": "chamfer",
+            "nominal_mm": 0.375,
+            "upper_limit_mm": 0.47,
+            "lower_limit_mm": 0.28,
+            "qualifier": "opt.",
+            "angle_deg": 22.0
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "main_view_bottom"
+        ]
+      },
+      {
+        "feature_id": "F09",
+        "feature_type": "radius",
+        "name": "Right Edge Radius",
+        "description": "Corner radius on the right edge of the cylinder.",
+        "geometry": {
+          "radius_mm": 0.25
+        },
+        "access_directions": [
+          "+X",
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "radius",
+            "nominal_mm": 0.25,
+            "plus_mm": 0.13,
+            "minus_mm": 0.13
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "main_view_bottom"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "relationship_id": "R01",
+        "from_feature_id": "F07",
+        "to_feature_id": "F01",
+        "relationship_type": "datum_referenced",
+        "detail": "Perpendicularity control on the external cylinder axis references Datum C, defined by the left end face."
+      },
+      {
+        "relationship_id": "R02",
+        "from_feature_id": "F07",
+        "to_feature_id": "F01",
+        "relationship_type": "perpendicular",
+        "detail": "GD&T perpendicularity control specifies the main cylinder axis perpendicular to Datum C."
+      },
+      {
+        "relationship_id": "R03",
+        "from_feature_id": "F02",
+        "to_feature_id": "F07",
+        "relationship_type": "datum_referenced",
+        "detail": "Runout control on the right end face references Datum A."
+      },
+      {
+        "relationship_id": "R04",
+        "from_feature_id": "F03",
+        "to_feature_id": "F07",
+        "relationship_type": "datum_referenced",
+        "detail": "Runout control on the outer cylinder references Datum A."
+      },
+      {
+        "relationship_id": "R05",
+        "from_feature_id": "F05",
+        "to_feature_id": "F07",
+        "relationship_type": "datum_referenced",
+        "detail": "Runout control on the central bore references Datum A."
+      },
+      {
+        "relationship_id": "R06",
+        "from_feature_id": "F04",
+        "to_feature_id": "F07",
+        "relationship_type": "datum_referenced",
+        "detail": "Runout control in Detail B references Datum A; relationship is attached to the canonical parent feature for the detail group."
+      },
+      {
+        "relationship_id": "R07",
+        "from_feature_id": "F03",
+        "to_feature_id": "F07",
+        "relationship_type": "concentric",
+        "detail": "Runout control to Datum A establishes the outer cylindrical feature as controlled to the datum axis."
+      },
+      {
+        "relationship_id": "R08",
+        "from_feature_id": "F05",
+        "to_feature_id": "F07",
+        "relationship_type": "concentric",
+        "detail": "Runout control to Datum A establishes the central bore as controlled to the datum axis."
+      },
+      {
+        "relationship_id": "R09",
+        "from_feature_id": "F04",
+        "to_feature_id": "F07",
+        "relationship_type": "concentric",
+        "detail": "Detail B runout control on the detailed cylindrical profile references Datum A."
+      },
+      {
+        "relationship_id": "R10",
+        "from_feature_id": "F03",
+        "to_feature_id": "F05",
+        "relationship_type": "coaxial",
+        "detail": "Section A-A and the end view show the outer body and central bore sharing the same axis of revolution."
+      },
+      {
+        "relationship_id": "R11",
+        "from_feature_id": "F04",
+        "to_feature_id": "F05",
+        "relationship_type": "coaxial",
+        "detail": "The left internal cavity and central connecting bore are shown on the same section axis."
+      },
+      {
+        "relationship_id": "R12",
+        "from_feature_id": "F06",
+        "to_feature_id": "F05",
+        "relationship_type": "coaxial",
+        "detail": "The right internal bore and central connecting bore are shown on the same section axis."
+      },
+      {
+        "relationship_id": "R13",
+        "from_feature_id": "F04",
+        "to_feature_id": "F05",
+        "relationship_type": "intersecting",
+        "detail": "The left internal cavity connects into the central connecting bore."
+      },
+      {
+        "relationship_id": "R14",
+        "from_feature_id": "F06",
+        "to_feature_id": "F05",
+        "relationship_type": "intersecting",
+        "detail": "The right internal bore connects into the central connecting bore."
+      },
+      {
+        "relationship_id": "R15",
+        "from_feature_id": "F04",
+        "to_feature_id": "F01",
+        "relationship_type": "intersecting",
+        "detail": "The left internal cavity enters from the left end face."
+      },
+      {
+        "relationship_id": "R16",
+        "from_feature_id": "F06",
+        "to_feature_id": "F02",
+        "relationship_type": "intersecting",
+        "detail": "The right internal bore opens from the right end face."
+      },
+      {
+        "relationship_id": "R17",
+        "from_feature_id": "F01",
+        "to_feature_id": "F02",
+        "relationship_type": "opposite_face",
+        "detail": "Datum C and Datum B are opposing planar end faces of the cylindrical body."
+      },
+      {
+        "relationship_id": "R18",
+        "from_feature_id": "F08",
+        "to_feature_id": "F07",
+        "relationship_type": "intersecting",
+        "detail": "The left edge chamfer lies on the edge of the main external cylinder."
+      },
+      {
+        "relationship_id": "R19",
+        "from_feature_id": "F08",
+        "to_feature_id": "F01",
+        "relationship_type": "intersecting",
+        "detail": "The left edge chamfer meets the left end face group."
+      },
+      {
+        "relationship_id": "R20",
+        "from_feature_id": "F09",
+        "to_feature_id": "F07",
+        "relationship_type": "intersecting",
+        "detail": "The right edge radius lies on the edge of the main external cylinder."
+      },
+      {
+        "relationship_id": "R21",
+        "from_feature_id": "F09",
+        "to_feature_id": "F02",
+        "relationship_type": "intersecting",
+        "detail": "The right edge radius meets the right end face group."
+      },
+      {
+        "relationship_id": "R22",
+        "from_feature_id": "F03",
+        "to_feature_id": "F01",
+        "relationship_type": "intersecting",
+        "detail": "The sectioned outer cylindrical body terminates at the left end face."
+      },
+      {
+        "relationship_id": "R23",
+        "from_feature_id": "F03",
+        "to_feature_id": "F02",
+        "relationship_type": "intersecting",
+        "detail": "The sectioned outer cylindrical body terminates at the right end face."
+      }
+    ],
+    "datum_scheme": {
+      "datums": [
+        {
+          "datum_letter": "A",
+          "feature_id": "F07",
+          "surface_type": "cylindrical",
+          "description": "Axis of the main external cylinder."
+        },
+        {
+          "datum_letter": "B",
+          "feature_id": "F02",
+          "surface_type": "planar",
+          "description": "Right end face of the plunger."
+        },
+        {
+          "datum_letter": "C",
+          "feature_id": "F01",
+          "surface_type": "planar",
+          "description": "Left end face of the plunger."
+        }
+      ],
+      "datum_hierarchy_notes": "Datum A is the primary rotational datum axis defined from the main external cylinder. Datums B and C are opposing planar end-face datums defined in Section A-A. The GD&T controls reference A for runout-controlled rotational features and C for perpendicularity of the main cylinder axis; no broader datum-reference-frame order beyond the individual controls is explicitly shown."
+    },
+    "part_notes": "Material: C10C. Scale: 5:1. General tolerance: ISO 129:1985. Projection: third angle. Heat treatment: NONE. Coating: none specified. General notes: INSPECTION: CHECK VALVE LEAKAGE - 10 SCCM MAX CHECK VALVE SEAT CLEAN AND DRY. DEBURR: BREAK ALL SHARP CORNERS 0.25 MAX. DRAWING ONLY FOR OUTSOURCING. DIAMOND DESIGNATES AN EATON SIGNIFICANT CHARACTERISTIC. Extraction notes: Unit not explicitly stated, assumed mm due to typical standard usage.",
+    "overall_complexity": "moderate"
+  },
+  "component_specs": [],
+  "component_spec_links": [],
+  "assumptions": [
+    {
+      "assumption_id": "A01",
+      "text": "View coordinate axes were treated as local to each view; the main_view_bottom longitudinal X-axis and the section_a_a longitudinal Z-axis were interpreted as the same physical rotational axis for datum and face matching."
+    },
+    {
+      "assumption_id": "A02",
+      "text": "section_a_a:F1 was grouped with main_view_bottom:F4, and section_a_a:F2 was grouped with main_view_bottom:F5, based on matching left/right end-face descriptions and the Datum C/B definitions. The section_a_a observations were made canonical because they carry the datum evidence."
+    },
+    {
+      "assumption_id": "A03",
+      "text": "main_view_bottom:F1 and section_a_a:F3 were not grouped even though both are external cylinders, because their extracted diameter and length values conflict and no direct cross-reference identifies them as the same physical cylindrical surface. They were treated as separate coaxial/datum-related exterior cylindrical features."
+    },
+    {
+      "assumption_id": "A04",
+      "text": "main_view_left:F1 was treated as an aggregate end-view observation for the concentric outer and internal features in section_a_a, because it shows the A-A cut passing through the concentric circles but provides no individual dimensions."
+    },
+    {
+      "assumption_id": "A05",
+      "text": "isometric_view:F1 was treated as a visual aggregate for the section_a_a outer/body context only; it was not used as canonical because it contains no dimensions."
+    },
+    {
+      "assumption_id": "A06",
+      "text": "isometric_view:F2 was assigned only to the section_a_a:F4 left/stepped internal cavity group as the closest matching complex internal cavity observation; it was not propagated to the individually defined central and right bore groups to avoid applying the isometric BLIND condition to features where that condition is not explicitly established."
+    },
+    {
+      "assumption_id": "A07",
+      "text": "detail_b:F1 was grouped to section_a_a:F4 based on the explicit SEE DETAIL B cross-reference. section_a_a:F4 was chosen as canonical because Detail B lacks parent axial position; customer confirmation is requested due the apparent feature-description and diameter mismatch."
+    },
+    {
+      "assumption_id": "A08",
+      "clarification_id": "C01",
+      "text": "DETAIL B applies exclusively to parent feature section_a_a:F4 as designated by the SEE DETAIL B cross-reference callout."
+    },
+    {
+      "assumption_id": "A09",
+      "clarification_id": "C02",
+      "text": "The feature profile in DETAIL B is governed by the complete \u00d87\u00b10.1 dimension callout. The partially visible callout near the Section A-A outer profile is excluded from drawing requirements."
+    }
+  ]
+}

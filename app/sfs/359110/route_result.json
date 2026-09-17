@@ -1,0 +1,576 @@
+{
+  "analysis_id": "359110-VT_merge_20260917T105508Z",
+  "source_feature_graph_id": "359110-VT_merge_20260917T105508Z",
+  "quantity": 100,
+  "part_family": "turned",
+  "base_geometry": "rotational",
+  "stock": {
+    "form": "forging"
+  },
+  "operations": [
+    {
+      "sequence": 1,
+      "name": "CNC Turn \u2013 First End",
+      "machine_family": "cnc_lathe",
+      "setup_note": "Grip the near-net cold-formed OD in a soft collet, face the left end to establish C, then turn F07 to establish datum axis A in the same chucking. Machine each extracted cylindrical section of F04 separately from the C end after completing the OD profile.",
+      "datum_references": [
+        "C",
+        "A"
+      ],
+      "material_machinability": "medium",
+      "setup_time_min": 20.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "face_turn",
+          "target_feature_ids": [
+            "F01"
+          ],
+          "inputs": {
+            "kind": "radial_turn",
+            "start_diameter_mm": 9.145,
+            "finish_diameter_mm": 0.0,
+            "groove_count": 1
+          }
+        },
+        {
+          "sequence": 2,
+          "operation_type": "rough_turn_od",
+          "target_feature_ids": [
+            "F07"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 9.145,
+            "finish_diameter_mm": 9.13,
+            "cut_length_mm": 8.21
+          }
+        },
+        {
+          "sequence": 3,
+          "operation_type": "finish_turn_od",
+          "target_feature_ids": [
+            "F07"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 9.13,
+            "finish_diameter_mm": 9.12,
+            "cut_length_mm": 8.21
+          }
+        },
+        {
+          "sequence": 4,
+          "operation_type": "chamfer_turn",
+          "target_feature_ids": [
+            "F08"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 9.12,
+            "finish_diameter_mm": 8.37,
+            "cut_length_mm": 0.375
+          }
+        },
+        {
+          "sequence": 5,
+          "operation_type": "center_drill",
+          "target_feature_ids": [
+            "F04"
+          ],
+          "inputs": {
+            "kind": "point_drill",
+            "hole_diameter_mm": 2.0,
+            "hole_depth_mm": 1.0,
+            "hole_count": 1,
+            "through_hole": false
+          }
+        },
+        {
+          "sequence": 6,
+          "operation_type": "drill",
+          "target_feature_ids": [
+            "F04"
+          ],
+          "inputs": {
+            "kind": "point_drill",
+            "hole_diameter_mm": 4.0,
+            "hole_depth_mm": 2.33,
+            "hole_count": 1,
+            "through_hole": false
+          }
+        },
+        {
+          "sequence": 7,
+          "operation_type": "rough_bore_id",
+          "target_feature_ids": [
+            "F04"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 4.0,
+            "finish_diameter_mm": 4.563,
+            "cut_length_mm": 2.33
+          }
+        },
+        {
+          "sequence": 8,
+          "operation_type": "finish_bore_id",
+          "target_feature_ids": [
+            "F04"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 4.563,
+            "finish_diameter_mm": 4.763,
+            "cut_length_mm": 2.33
+          }
+        },
+        {
+          "sequence": 9,
+          "operation_type": "rough_bore_id",
+          "target_feature_ids": [
+            "F04"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 4.763,
+            "finish_diameter_mm": 6.68,
+            "cut_length_mm": 1.52
+          }
+        },
+        {
+          "sequence": 10,
+          "operation_type": "finish_bore_id",
+          "target_feature_ids": [
+            "F04"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 6.68,
+            "finish_diameter_mm": 6.88,
+            "cut_length_mm": 1.52
+          }
+        },
+        {
+          "sequence": 11,
+          "operation_type": "rough_bore_id",
+          "target_feature_ids": [
+            "F04"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 6.88,
+            "finish_diameter_mm": 6.96,
+            "cut_length_mm": 1.26
+          }
+        },
+        {
+          "sequence": 12,
+          "operation_type": "finish_bore_id",
+          "target_feature_ids": [
+            "F04"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 6.96,
+            "finish_diameter_mm": 7.0,
+            "cut_length_mm": 1.26
+          }
+        },
+        {
+          "sequence": 13,
+          "operation_type": "bore_taper",
+          "target_feature_ids": [
+            "F04"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 4.763,
+            "finish_diameter_mm": 6.88,
+            "cut_length_mm": 0.76,
+            "taper_included_angle_deg": 15.0
+          }
+        },
+        {
+          "sequence": 14,
+          "operation_type": "form_turn",
+          "target_feature_ids": [
+            "F04"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 2.4,
+            "finish_diameter_mm": 4.763,
+            "cut_length_mm": 1.0
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 2,
+      "name": "CNC Turn \u2013 Second End",
+      "machine_family": "cnc_lathe",
+      "setup_note": "Grip finished F07 in a soft collet on datum axis A and locate axially from C; face the right end to establish B and machine all right-end features in one chucking. Produce the larger F06 bore before drilling intersecting connecting bore F05.",
+      "datum_references": [
+        "A",
+        "C",
+        "B"
+      ],
+      "material_machinability": "medium",
+      "setup_time_min": 18.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "face_turn",
+          "target_feature_ids": [
+            "F02"
+          ],
+          "inputs": {
+            "kind": "radial_turn",
+            "start_diameter_mm": 9.12,
+            "finish_diameter_mm": 0.0,
+            "groove_count": 1
+          }
+        },
+        {
+          "sequence": 2,
+          "operation_type": "rough_turn_od",
+          "target_feature_ids": [
+            "F03"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 9.12,
+            "finish_diameter_mm": 7.78,
+            "cut_length_mm": 9.65
+          }
+        },
+        {
+          "sequence": 3,
+          "operation_type": "finish_turn_od",
+          "target_feature_ids": [
+            "F03"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 7.78,
+            "finish_diameter_mm": 7.18,
+            "cut_length_mm": 9.65
+          }
+        },
+        {
+          "sequence": 4,
+          "operation_type": "form_turn",
+          "target_feature_ids": [
+            "F09"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 7.18,
+            "finish_diameter_mm": 6.68,
+            "cut_length_mm": 0.25
+          }
+        },
+        {
+          "sequence": 5,
+          "operation_type": "center_drill",
+          "target_feature_ids": [
+            "F06"
+          ],
+          "inputs": {
+            "kind": "point_drill",
+            "hole_diameter_mm": 2.0,
+            "hole_depth_mm": 1.0,
+            "hole_count": 1,
+            "through_hole": false
+          }
+        },
+        {
+          "sequence": 6,
+          "operation_type": "drill",
+          "target_feature_ids": [
+            "F06"
+          ],
+          "inputs": {
+            "kind": "point_drill",
+            "hole_diameter_mm": 4.0,
+            "hole_depth_mm": 1.5,
+            "hole_count": 1,
+            "through_hole": false
+          }
+        },
+        {
+          "sequence": 7,
+          "operation_type": "form_turn",
+          "target_feature_ids": [
+            "F06"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 4.0,
+            "finish_diameter_mm": 4.5,
+            "cut_length_mm": 0.25
+          }
+        },
+        {
+          "sequence": 8,
+          "operation_type": "center_drill",
+          "target_feature_ids": [
+            "F05"
+          ],
+          "inputs": {
+            "kind": "point_drill",
+            "hole_diameter_mm": 1.2,
+            "hole_depth_mm": 0.6,
+            "hole_count": 1,
+            "through_hole": false
+          }
+        },
+        {
+          "sequence": 9,
+          "operation_type": "peck_drill",
+          "target_feature_ids": [
+            "F05"
+          ],
+          "inputs": {
+            "kind": "point_drill",
+            "hole_diameter_mm": 2.4,
+            "hole_depth_mm": 7.45,
+            "hole_count": 1,
+            "through_hole": true
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 3,
+      "name": "Production Deburr",
+      "machine_family": "finish_bench",
+      "setup_note": "Support the part in a non-marring tray and remove external and accessible internal burrs without altering the leak-control surfaces. Break remaining sharp corners to 0.25 mm maximum.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "setup_time_min": 3.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "deburr",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "manual",
+            "complexity": "medium",
+            "edge_length_mm": 92.0
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 4,
+      "name": "Clean and Degrease",
+      "machine_family": "finish_bench",
+      "setup_note": "Batch clean the order after deburring, flush the intersecting cavities, and dry the leak-control surfaces before inspection and testing.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "setup_time_min": 3.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "clean_degrease",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "manual",
+            "complexity": "low",
+            "feature_count": 1,
+            "estimated_time_min": 0.5
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 5,
+      "name": "Final Shop-Floor Inspection",
+      "machine_family": "inspection",
+      "setup_note": "Locate from A, B, and C as applicable and verify the significant ODs, bore sizes, overall length, runout, straightness, circularity, and edge forms using production gauges and sampling controls. Use plug gauges, snap gauges, micrometers, indicators, and calibrated comparators rather than a dedicated CMM layout.",
+      "datum_references": [
+        "A",
+        "B",
+        "C"
+      ],
+      "material_machinability": "medium",
+      "setup_time_min": 10.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "manual_inspect",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "inspection",
+            "dimension_count": 19,
+            "gdt_count": 7,
+            "sampling_rate_pct": 100.0,
+            "requires_fixture": false
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 6,
+      "name": "Check-Valve Leakage Test",
+      "machine_family": "test_bench",
+      "setup_note": "Load each cleaned, dry part into the dedicated check-valve leak fixture and verify leakage does not exceed 10 SCCM. Apply the approved test pressure and flow direction identified by the controlling test instruction.",
+      "datum_references": [
+        "A",
+        "B",
+        "C"
+      ],
+      "material_machinability": "medium",
+      "setup_time_min": 10.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "pressure_test",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "inspection",
+            "dimension_count": 1,
+            "gdt_count": 0,
+            "sampling_rate_pct": 100.0,
+            "requires_fixture": true
+          }
+        }
+      ]
+    }
+  ],
+  "clarifications": [
+    {
+      "clarification_id": "C01",
+      "question": "Are F03 and F07 separate physical OD surfaces rather than conflicting observations of the same surface?",
+      "blocks": [
+        1,
+        2
+      ],
+      "suggested_default": "Treat F07 as the \u00d89.12 datum OD and F03 as a separate reduced OD machined from the second end.",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C02",
+      "question": "What is the finished axial length of the F03 \u00d87.18 OD segment?",
+      "blocks": [
+        2
+      ],
+      "suggested_default": "Use 1.57 mm, the remaining axial length after subtracting the stated 8.21 mm F07 length from the 9.78 mm envelope.",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C03",
+      "question": "What is the axial order of the \u00d84.763, \u00d86.88, and \u00d87.00 cylindrical sections within F04?",
+      "blocks": [
+        1
+      ],
+      "suggested_default": "From Datum C inward, interpret the sections as \u00d87.00, then \u00d86.88, then \u00d84.763.",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C04",
+      "question": "Do the 15-degree transition and R1 spherical bottom both belong to F04?",
+      "blocks": [
+        1
+      ],
+      "suggested_default": "Yes; machine both as portions of the left internal cavity profile.",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C05",
+      "question": "What is the required axial depth of the F06 \u00d84 right internal bore?",
+      "blocks": [
+        2
+      ],
+      "suggested_default": "Machine F06 from Datum B until it intersects F05, subject to confirmation from the source drawing.",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C06",
+      "question": "Will near-net cold-formed blanks be supplied to Almity?",
+      "blocks": [
+        1,
+        2
+      ],
+      "suggested_default": "Yes; use a discrete supplier-produced cold-formed blank with existing qualified tooling.",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C07",
+      "question": "What differential pressure is required for the 10 SCCM maximum leakage test?",
+      "blocks": [
+        6
+      ],
+      "suggested_default": "Use the differential pressure specified by the existing approved Eaton leakage-test work instruction for drawing 359110.",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C08",
+      "question": "Which flow direction is required for the leakage test?",
+      "blocks": [
+        6
+      ],
+      "suggested_default": "Test from the F06/Datum B end toward the F04/Datum C end.",
+      "priority": "high"
+    }
+  ],
+  "assumptions": [
+    {
+      "assumption_id": "A01",
+      "text": "The COLD FORMED title callout is interpreted as a mandatory supplied near-net cold forging despite the 100-piece order quantity."
+    },
+    {
+      "assumption_id": "A02",
+      "text": "Wire drawing, blank shearing, and progressive cold heading are upstream supplier stock-creation activities and are not repeated after receipt of the cold-formed blank."
+    },
+    {
+      "assumption_id": "A03",
+      "text": "Thread rolling from the cold-heading template is omitted because the feature graph contains no threads."
+    },
+    {
+      "assumption_id": "A04",
+      "text": "Heat treatment and plating from the cold-heading template are omitted because the drawing explicitly specifies no heat treatment and no coating."
+    },
+    {
+      "assumption_id": "A05",
+      "text": "Cold-heading secondary finishing is represented by the two CNC turning setups, while automated optical sorting is replaced by the applicable shop-floor manual inspection correction for this 100-piece lot."
+    },
+    {
+      "assumption_id": "A06",
+      "text": "Saw cutting and parting-off are omitted because the route starts with discrete near-net cold-formed blanks rather than continuous machining bar."
+    },
+    {
+      "assumption_id": "A07",
+      "text": "Turning-template grooving and threading steps are omitted because no groove or thread features exist in the feature graph."
+    },
+    {
+      "assumption_id": "A08",
+      "text": "Grinding is omitted because there is no heat treatment and the \u00d89.12 \u00b10.025 mm OD and stated geometric controls are assumed achievable by stable CNC finish turning."
+    },
+    {
+      "assumption_id": "A09",
+      "text": "F03 is provisionally treated as a reduced right-end OD occupying the non-overlapping remainder of the part length pending resolution of the conflicting extracted length."
+    },
+    {
+      "assumption_id": "A10",
+      "text": "F04 is provisionally treated as a three-diameter stepped cavity with a 15-degree transition and spherical formed bottom; each diameter receives a separate boring pass pair."
+    },
+    {
+      "assumption_id": "A11",
+      "text": "The VMC slotting and cross-drilling correction is not applicable because the feature graph contains no flats, slots, off-axis holes, or cross-holes."
+    },
+    {
+      "assumption_id": "A12",
+      "text": "No tailstock center is required because the part length-to-diameter ratio is approximately 1.1; center drilling is retained only to control the starts of the axial holes."
+    }
+  ]
+}
