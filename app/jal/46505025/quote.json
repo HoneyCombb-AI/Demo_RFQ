@@ -17,49 +17,76 @@
     "net_weight_source": "feature_graph"
   },
   "direct_cost": {
-    "material_cost_inr": 10.62,
-    "machining_cost_inr": 750.84,
-    "heat_treatment_cost_inr": 13.41,
-    "direct_cost_subtotal_inr": 774.87
+    "material_cost_inr": 81.21,
+    "machining_cost_inr": 231.24,
+    "heat_treatment_cost_inr": 16.1,
+    "direct_cost_subtotal_inr": 328.55
   },
   "overheads_and_surcharges": {
-    "factory_overhead_margin_inr": 774.87,
-    "tooling_inr": 154.97,
-    "rejection_inr": 34.09,
-    "inspection_inr": 30.99,
-    "cleaning_inr": 15.5,
+    "factory_overhead_margin_inr": 82.14,
+    "tooling_inr": 20.53,
+    "rejection_inr": 8.62,
+    "inspection_inr": 8.21,
+    "cleaning_inr": 8.21,
     "scrap_recovery_credit_inr": -11.03,
     "export_packaging_inr": 7.15,
     "fob_freight_inr": 5.37,
     "packaging_and_fob_inr": 12.52
   },
   "pricing_summary": {
-    "subtotal_before_margin_inr": 1011.91,
-    "overhead_and_margin_inr": 774.87,
-    "final_ex_works_price_inr": 1786.78
+    "subtotal_before_margin_inr": 375.61,
+    "overhead_and_margin_inr": 82.14,
+    "final_ex_works_price_inr": 457.75
   },
   "machining_operations": [
     {
-      "sequence": 2,
-      "operation_name": "CNC Turn – Left End and External Preforms",
-      "machine_family": "cnc_lathe",
-      "cycle_time_sec": 530.6,
-      "hourly_rate_inr": 250.0,
-      "cost_per_piece_inr": 36.85,
-      "cost_per_piece_raw": 36.84722222222222
-    },
-    {
       "sequence": 3,
-      "operation_name": "CNC Turn – Right Flange and Spline Bore",
+      "operation_name": "Facing and Centering",
       "machine_family": "cnc_lathe",
-      "cycle_time_sec": 440.5,
+      "cycle_time_sec": 158.7,
       "hourly_rate_inr": 250.0,
-      "cost_per_piece_inr": 30.59,
-      "cost_per_piece_raw": 30.59027777777778
+      "cost_per_piece_inr": 11.02,
+      "cost_per_piece_raw": 11.020833333333334
     },
     {
       "sequence": 4,
-      "operation_name": "Generate Left External Spline",
+      "operation_name": "CNC Turn External Profile",
+      "machine_family": "cnc_lathe",
+      "cycle_time_sec": 575.3,
+      "hourly_rate_inr": 250.0,
+      "cost_per_piece_inr": 39.95,
+      "cost_per_piece_raw": 39.951388888888886
+    },
+    {
+      "sequence": 5,
+      "operation_name": "CNC Turn Right-Side Bore and Spline Blank",
+      "machine_family": "cnc_lathe",
+      "cycle_time_sec": 182.3,
+      "hourly_rate_inr": 250.0,
+      "cost_per_piece_inr": 12.66,
+      "cost_per_piece_raw": 12.659722222222221
+    },
+    {
+      "sequence": 6,
+      "operation_name": "CNC Turn Left Axial Thread",
+      "machine_family": "cnc_lathe",
+      "cycle_time_sec": 62.5,
+      "hourly_rate_inr": 250.0,
+      "cost_per_piece_inr": 4.34,
+      "cost_per_piece_raw": 4.340277777777778
+    },
+    {
+      "sequence": 7,
+      "operation_name": "Machine Cross Hole",
+      "machine_family": "vmc_3axis",
+      "cycle_time_sec": 73.7,
+      "hourly_rate_inr": 400.0,
+      "cost_per_piece_inr": 8.19,
+      "cost_per_piece_raw": 8.188888888888888
+    },
+    {
+      "sequence": 9,
+      "operation_name": "Hob External Spline",
       "machine_family": "gear_hobbing",
       "cycle_time_sec": 168.9,
       "hourly_rate_inr": 800.0,
@@ -67,94 +94,58 @@
       "cost_per_piece_raw": 37.53333333333333
     },
     {
-      "sequence": 5,
-      "operation_name": "Generate Right Internal Spline",
+      "sequence": 10,
+      "operation_name": "Shape Internal Spline",
       "machine_family": "gear_shaping",
-      "cycle_time_sec": 4162.9,
+      "cycle_time_sec": 188.4,
       "hourly_rate_inr": 350.0,
-      "cost_per_piece_inr": 404.73,
-      "cost_per_piece_raw": 404.72638888888883
+      "cost_per_piece_inr": 18.32,
+      "cost_per_piece_raw": 18.316666666666666
     },
     {
-      "sequence": 6,
-      "operation_name": "VMC Drill Cross Hole",
-      "machine_family": "vmc_3axis",
-      "cycle_time_sec": 74.0,
-      "hourly_rate_inr": 400.0,
-      "cost_per_piece_inr": 8.22,
-      "cost_per_piece_raw": 8.222222222222221
-    },
-    {
-      "sequence": 7,
-      "operation_name": "Pre-Heat-Treat Tooth Chamfer and Deburr",
+      "sequence": 11,
+      "operation_name": "Spline Chamfer and Soft Deburr",
       "machine_family": "finish_bench",
-      "cycle_time_sec": 98.3,
-      "hourly_rate_inr": 800.0,
-      "cost_per_piece_inr": 21.84,
-      "cost_per_piece_raw": 21.844444444444445
-    },
-    {
-      "sequence": 9,
-      "operation_name": "Pre-Heat-Treat Clean and Mask",
-      "machine_family": "finish_bench",
-      "cycle_time_sec": 467.6,
+      "cycle_time_sec": 309.1,
       "hourly_rate_inr": 200.0,
-      "cost_per_piece_inr": 25.98,
-      "cost_per_piece_raw": 25.977777777777778
+      "cost_per_piece_inr": 17.17,
+      "cost_per_piece_raw": 17.172222222222224
     },
     {
       "sequence": 12,
-      "operation_name": "Post-Heat-Treat Clean",
+      "operation_name": "Part Marking",
       "machine_family": "finish_bench",
-      "cycle_time_sec": 309.4,
+      "cycle_time_sec": 50.5,
       "hourly_rate_inr": 200.0,
-      "cost_per_piece_inr": 17.19,
-      "cost_per_piece_raw": 17.188888888888886
+      "cost_per_piece_inr": 2.81,
+      "cost_per_piece_raw": 2.8055555555555554
     },
     {
       "sequence": 14,
-      "operation_name": "Face Grind Datum C and Flange Face",
-      "machine_family": "od_grinding",
-      "cycle_time_sec": 328.0,
-      "hourly_rate_inr": 600.0,
-      "cost_per_piece_inr": 54.67,
-      "cost_per_piece_raw": 54.666666666666664
-    },
-    {
-      "sequence": 15,
-      "operation_name": "OD Grind Datum A and Flange OD",
-      "machine_family": "od_grinding",
-      "cycle_time_sec": 267.2,
-      "hourly_rate_inr": 600.0,
-      "cost_per_piece_inr": 44.53,
-      "cost_per_piece_raw": 44.53333333333333
-    },
-    {
-      "sequence": 16,
-      "operation_name": "ID Grind Internal Spline Bore Diameter",
-      "machine_family": "id_grinding",
-      "cycle_time_sec": 178.5,
-      "hourly_rate_inr": 450.0,
-      "cost_per_piece_inr": 22.31,
-      "cost_per_piece_raw": 22.3125
-    },
-    {
-      "sequence": 17,
-      "operation_name": "Hard Grind External Spline Teeth",
-      "machine_family": "gear_grinding",
-      "cycle_time_sec": 217.6,
-      "hourly_rate_inr": 600.0,
-      "cost_per_piece_inr": 36.27,
-      "cost_per_piece_raw": 36.266666666666666
-    },
-    {
-      "sequence": 18,
-      "operation_name": "Final Deburr and Clean",
+      "operation_name": "Pre-HT Clean and Mask",
       "machine_family": "finish_bench",
-      "cycle_time_sec": 182.3,
+      "cycle_time_sec": 466.4,
       "hourly_rate_inr": 200.0,
-      "cost_per_piece_inr": 10.13,
-      "cost_per_piece_raw": 10.127777777777778
+      "cost_per_piece_inr": 25.91,
+      "cost_per_piece_raw": 25.91111111111111
+    },
+    {
+      "sequence": 19,
+      "operation_name": "OD Grind Critical Diameters",
+      "machine_family": "od_grinding",
+      "cycle_time_sec": 264.2,
+      "hourly_rate_inr": 600.0,
+      "cost_per_piece_inr": 44.03,
+      "cost_per_piece_raw": 44.03333333333333
+    },
+    {
+      "sequence": 20,
+      "operation_name": "Final Clean",
+      "machine_family": "finish_bench",
+      "cycle_time_sec": 167.6,
+      "hourly_rate_inr": 200.0,
+      "cost_per_piece_inr": 9.31,
+      "cost_per_piece_raw": 9.311111111111112
     }
   ]
 }
