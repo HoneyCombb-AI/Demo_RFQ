@@ -1,0 +1,411 @@
+{
+  "analysis_id": "IC01B347670_merge_20261005T122454Z",
+  "part": {
+    "name": "INNER COMPONENT",
+    "drawing_number": "IC01B347670",
+    "revision": "A5",
+    "material": "ASTM A311 GRADE 1141-1144 STEEL STRESS PROOF",
+    "units": "mm"
+  },
+  "feature_graph": {
+    "part_envelope": {
+      "length_mm": 14.13,
+      "max_diameter_mm": 44.0
+    },
+    "coordinate_system": {
+      "primary_axis": "Z",
+      "orientation_notes": "Z follows the rotational and bore axis, with +Z directed from the datum B left end toward the right end. The front view lies in XY and is viewed along -Z. Section A-A displays Z horizontally and Y vertically. For coordinate bookkeeping, the origin is the intersection of the datum A axis with the datum B plane; no angular clocking datum is specified.",
+      "datum_origin": "B"
+    },
+    "features": [
+      {
+        "feature_id": "F01",
+        "feature_type": "external_cylinder",
+        "name": "\u00d844.00 cylindrical feature",
+        "description": "Cylindrical diameter of 44.00 mm, concentric with the component center. Controlled by position tolerance to Datum A at MMC.",
+        "geometry": {
+          "diameter_mm": 44.0,
+          "position_description": "Centred on component primary axis, controlled relative to Datum A",
+          "axis_direction": "+Z"
+        },
+        "access_directions": [
+          "+Z",
+          "-Z"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [
+          {
+            "gdt_type": "position",
+            "tolerance_value_mm": 0.25,
+            "material_condition": "MMC",
+            "datum_references": [
+              "A"
+            ],
+            "applied_to": "\u00d844.00 cylindrical feature"
+          }
+        ],
+        "callout_qualifiers": [],
+        "source_views": [
+          "front_view"
+        ]
+      },
+      {
+        "feature_id": "F02",
+        "feature_type": "internal_bore",
+        "name": "Central through bore",
+        "description": "Central cylindrical through bore extending along the primary axis, designated as Datum A.",
+        "geometry": {
+          "diameter_mm": 14.2,
+          "depth_condition": "THRU",
+          "hole_count": 1,
+          "axis_direction": "+Z"
+        },
+        "instance_count": 1,
+        "access_directions": [
+          "+Z",
+          "-Z"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 14.2,
+            "upper_limit_mm": 14.3,
+            "lower_limit_mm": 14.1
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "section_aa"
+        ]
+      },
+      {
+        "feature_id": "F03",
+        "feature_type": "datum_face",
+        "name": "Left end face (Datum B)",
+        "description": "Leftmost annular planar face of the hub, serving as Datum B.",
+        "geometry": {
+          "inner_diameter_mm": 14.2,
+          "outer_diameter_mm": 21.0
+        },
+        "instance_count": 1,
+        "access_directions": [
+          "-Z"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [
+          {
+            "gdt_type": "perpendicularity",
+            "tolerance_value_mm": 0.15,
+            "datum_references": [
+              "A"
+            ],
+            "applied_to": "Left end face"
+          }
+        ],
+        "callout_qualifiers": [],
+        "source_views": [
+          "section_aa"
+        ]
+      },
+      {
+        "feature_id": "F04",
+        "feature_type": "external_cylinder",
+        "name": "Hub outer diameter",
+        "description": "Two cylindrical hub sections flanking the central flange, each \u00d821.00 mm.",
+        "geometry": {
+          "diameter_mm": 21.0,
+          "outer_diameter_mm": 21.0,
+          "length_mm": 5.0,
+          "axis_direction": "+Z"
+        },
+        "instance_count": 2,
+        "access_directions": [
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "length",
+            "nominal_mm": 5.0,
+            "upper_limit_mm": 5.13,
+            "lower_limit_mm": 4.87
+          },
+          {
+            "dimension_type": "length",
+            "nominal_mm": 4.0,
+            "upper_limit_mm": 4.13,
+            "lower_limit_mm": 3.87
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "position",
+            "tolerance_value_mm": 0.25,
+            "material_condition": "MMC",
+            "datum_references": [
+              "A"
+            ],
+            "applied_to": "2X \u00d8 21.00 hub cylinders"
+          }
+        ],
+        "callout_qualifiers": [
+          {
+            "qualifier": "2X",
+            "dimension_type": "diameter",
+            "nominal_mm": 21.0
+          }
+        ],
+        "source_views": [
+          "section_aa"
+        ]
+      },
+      {
+        "feature_id": "F05",
+        "feature_type": "flat_face",
+        "name": "Right end face",
+        "description": "Rightmost annular planar face, parallel to Datum B.",
+        "geometry": {
+          "outer_diameter_mm": 21.0,
+          "length_mm": 14.0
+        },
+        "instance_count": 1,
+        "access_directions": [
+          "+Z"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "length",
+            "nominal_mm": 14.0,
+            "upper_limit_mm": 14.13,
+            "lower_limit_mm": 13.87
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "parallelism",
+            "tolerance_value_mm": 0.15,
+            "datum_references": [
+              "B"
+            ],
+            "applied_to": "Right end face"
+          }
+        ],
+        "callout_qualifiers": [],
+        "source_views": [
+          "section_aa"
+        ]
+      },
+      {
+        "feature_id": "F06",
+        "feature_type": "tapered_bore",
+        "name": "Internal coned surface",
+        "description": "Internal conical flared surface extending from the central bore out to the right end face.",
+        "geometry": {
+          "length_mm": 4.0,
+          "radius_mm": 1.9,
+          "hole_count": 1,
+          "axis_direction": "+Z"
+        },
+        "instance_count": 1,
+        "surface_finish": {
+          "ra_value": 0.8,
+          "rz_value": 25.0,
+          "finish_symbol": "Ra 0.8 MAX / Rz 25 MAX / Rz1 50 MAX"
+        },
+        "access_directions": [
+          "+Z"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "length",
+            "nominal_mm": 4.0,
+            "upper_limit_mm": 4.05,
+            "lower_limit_mm": 3.95
+          },
+          {
+            "dimension_type": "radius",
+            "nominal_mm": 1.9,
+            "upper_limit_mm": 1.925,
+            "lower_limit_mm": 1.875
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "section_aa"
+        ]
+      },
+      {
+        "feature_id": "F07",
+        "feature_type": "fillet",
+        "name": "Flange transition fillets",
+        "description": "Fillet transitions between the central flange faces and the cylindrical hubs.",
+        "geometry": {
+          "radius_mm": 2.5
+        },
+        "instance_count": 2,
+        "access_directions": [
+          "radial"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "callout_qualifiers": [
+          {
+            "qualifier": "2X",
+            "dimension_type": "radius",
+            "nominal_mm": 2.5
+          }
+        ],
+        "source_views": [
+          "section_aa"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "relationship_id": "R01",
+        "from_feature_id": "F01",
+        "to_feature_id": "F02",
+        "relationship_type": "datum_referenced",
+        "detail": "The flange diameter position control references datum A, established by the central bore."
+      },
+      {
+        "relationship_id": "R02",
+        "from_feature_id": "F01",
+        "to_feature_id": "F02",
+        "relationship_type": "coaxial",
+        "detail": "The flange cylinder and central bore share the component's nominal rotational axis."
+      },
+      {
+        "relationship_id": "R03",
+        "from_feature_id": "F04",
+        "to_feature_id": "F02",
+        "relationship_type": "datum_referenced",
+        "detail": "The position control on both hub cylinders references datum A."
+      },
+      {
+        "relationship_id": "R04",
+        "from_feature_id": "F04",
+        "to_feature_id": "F02",
+        "relationship_type": "coaxial",
+        "detail": "The hub cylinders flank the flange along the central bore's rotational axis."
+      },
+      {
+        "relationship_id": "R05",
+        "from_feature_id": "F03",
+        "to_feature_id": "F02",
+        "relationship_type": "datum_referenced",
+        "detail": "The left end face perpendicularity control references datum A."
+      },
+      {
+        "relationship_id": "R06",
+        "from_feature_id": "F03",
+        "to_feature_id": "F02",
+        "relationship_type": "perpendicular",
+        "detail": "The left end face is controlled perpendicular to the datum A bore axis."
+      },
+      {
+        "relationship_id": "R07",
+        "from_feature_id": "F05",
+        "to_feature_id": "F03",
+        "relationship_type": "datum_referenced",
+        "detail": "The right end face parallelism control references datum B."
+      },
+      {
+        "relationship_id": "R08",
+        "from_feature_id": "F05",
+        "to_feature_id": "F03",
+        "relationship_type": "parallel",
+        "detail": "The right end face is controlled parallel to the datum B left end face."
+      },
+      {
+        "relationship_id": "R09",
+        "from_feature_id": "F03",
+        "to_feature_id": "F05",
+        "relationship_type": "opposite_face",
+        "detail": "These are the opposing axial end faces of the component."
+      },
+      {
+        "relationship_id": "R10",
+        "from_feature_id": "F06",
+        "to_feature_id": "F02",
+        "relationship_type": "coaxial",
+        "detail": "The internal coned surface extends from the central bore along the same rotational axis."
+      },
+      {
+        "relationship_id": "R11",
+        "from_feature_id": "F06",
+        "to_feature_id": "F02",
+        "relationship_type": "intersecting",
+        "detail": "The coned surface joins the straight central bore at its internal transition."
+      },
+      {
+        "relationship_id": "R12",
+        "from_feature_id": "F06",
+        "to_feature_id": "F05",
+        "relationship_type": "intersecting",
+        "detail": "The coned surface opens at the right end face."
+      },
+      {
+        "relationship_id": "R13",
+        "from_feature_id": "F07",
+        "to_feature_id": "F04",
+        "relationship_type": "intersecting",
+        "detail": "The flange transition fillets join the cylindrical hub surfaces."
+      }
+    ],
+    "datum_scheme": {
+      "datums": [
+        {
+          "datum_letter": "A",
+          "feature_id": "F02",
+          "surface_type": "cylindrical",
+          "description": "Axis of central through bore \u00d8 14.3 / 14.1"
+        },
+        {
+          "datum_letter": "B",
+          "feature_id": "F03",
+          "surface_type": "planar",
+          "description": "Leftmost annular end face"
+        }
+      ],
+      "datum_hierarchy_notes": "Datum A establishes the bore-derived reference axis. Datum B is the left end face, controlled perpendicular to A; the right end face is controlled parallel to B. The supplied controls reference A and B individually, so no combined datum-reference-frame precedence or tertiary datum is explicitly specified."
+    },
+    "part_notes": "Material: ASTM A311 GRADE 1141-1144 STEEL STRESS PROOF. Material standard: ASTM A311. Scale: 3:2. General tolerance: ASME Y14.5-2009. Projection: third angle. Heat treatment: none specified. Coating: PHOSPHATE COAT PER PS-119.0. General notes: FINISH: PHOSPHATE COAT PER PS-119.0. DEBURR: BREAK ALL SHARP EDGES 0.5 MAX.. TOLERANCE: METRIC DIMENSIONS & TOLERANCES GOVERN THE DESIGN. ENGLISH DIMENSIONS IF INCLUDED ARE FOR INFORMATION PURPOSES ONLY.. INSPECTION: = MUST CONFORM LAST NUMBER TOTAL NUMBER. Testing: CRUSH TEST per PS-122.5 (TBDkN, TBDkN, TBDmm). Extraction notes: Crush test load and displacement parameters are listed as TBD (To Be Determined). Title block specifies minimum yield strength as 'AS SHOWN MIN. YIELD: 690 MPa'.",
+    "overall_complexity": "moderate"
+  },
+  "component_specs": [],
+  "component_spec_links": [],
+  "assumptions": [
+    {
+      "assumption_id": "A01",
+      "text": "front_view:F1 is retained as a singleton representing the flange cylinder. section_aa:F3 represents the separate hub cylinders, not another observation of the flange. The section-cut marker identifies the shared axial section but does not establish identity between these distinct diameters."
+    },
+    {
+      "assumption_id": "A02",
+      "text": "section_aa:F3 is retained as one two-instance hub observation because no separately identified hub features exist in the supplied graphs. Its two axial-length callouts describe the two hubs and are not treated as conflicting measurements of one cylinder; their side allocation remains unresolved."
+    },
+    {
+      "assumption_id": "A03",
+      "text": "section_aa:F6 is retained as a singleton observation carrying its explicit two-instance count. There are no separately identified fillet observations to support aggregate identity groups."
+    },
+    {
+      "assumption_id": "A04",
+      "text": "The nominal flange axial thickness and straight-bore length are treated as derivable from the overall end-face separation, the two hub lengths, and the coned-surface axial length. No separate missing-length clarification is raised for those quantities."
+    },
+    {
+      "assumption_id": "A05",
+      "text": "The intersection of the datum A axis and datum B plane is adopted as the coordinate origin for bookkeeping, without asserting an explicit combined datum precedence absent from the supplied feature-control frames."
+    },
+    {
+      "assumption_id": "A06",
+      "clarification_id": "C01",
+      "text": "The 1.925 / 1.875 callout specifies the radial depth (radial height) of the internal coned surface, measured radially from the inner cylindrical bore to the outer edge of the cone at the right end face."
+    },
+    {
+      "assumption_id": "A07",
+      "clarification_id": "C02",
+      "text": "The hub axial-length limit of 5.13 / 4.87 applies to the hub adjacent to datum B, measured from the datum B face to the flange."
+    }
+  ]
+}

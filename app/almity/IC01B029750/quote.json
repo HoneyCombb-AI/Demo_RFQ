@@ -1,0 +1,102 @@
+{
+  "drawing_number": "IC01B029750",
+  "part_name": "INNER COMPONENT",
+  "material": "SAE J403 GRADE 1008-1020",
+  "quantity": 100,
+  "quote_status": "complete",
+  "weights": {
+    "raw_bar_dia_mm": 32.5,
+    "actual_bar_dia_mm": 32.5,
+    "gross_weight_kg": 0.3996,
+    "gross_weight_g": 399.6,
+    "net_weight_kg": 0.2287,
+    "net_weight_g": 228.7,
+    "scrap_weight_kg": 0.171,
+    "scrap_weight_g": 171.0,
+    "net_weight_source": "routing"
+  },
+  "direct_cost": {
+    "material_cost_inr": 53.95,
+    "material_rate_per_kg_inr": 135.0,
+    "machining_cost_inr": 16.17,
+    "direct_base_inr": 70.11
+  },
+  "cif_and_overheads": {
+    "packaging_charges_inr": 1.0,
+    "overhead_25_pct_inr": 17.53,
+    "logistics_cost_inr": 9.37,
+    "total_cif_inr": 98.01,
+    "scrap_recovery_credit_inr": -3.42,
+    "total_cost_per_pc_inr": 94.59
+  },
+  "pricing_and_duties": {
+    "profit_10_pct_inr": 7.01,
+    "actual_cost_inr": 101.6,
+    "icc_and_rejection_inr": 2.48,
+    "custom_duty_3_5_pct_inr": 3.56,
+    "warehouse_cost_4_pct_inr": 4.06,
+    "final_landed_price_inr": 111.7
+  },
+  "machining_operations": [
+    {
+      "sequence": 1,
+      "operation_name": "Saw Cut Tubular Blanks",
+      "machine_family": "saw",
+      "cycle_time_sec": 47.7,
+      "cycle_time_raw_sec": 47.7,
+      "hourly_rate_inr": 290.0,
+      "cost_per_piece_inr": 3.84,
+      "cost_per_piece_raw": 3.8425
+    },
+    {
+      "sequence": 2,
+      "operation_name": "CNC Turn – First End",
+      "machine_family": "cnc_lathe",
+      "cycle_time_sec": 72.8,
+      "cycle_time_raw_sec": 72.8,
+      "hourly_rate_inr": 280.0,
+      "cost_per_piece_inr": 5.66,
+      "cost_per_piece_raw": 5.662222222222222
+    },
+    {
+      "sequence": 3,
+      "operation_name": "CNC Turn – Second End",
+      "machine_family": "cnc_lathe",
+      "cycle_time_sec": 72.8,
+      "cycle_time_raw_sec": 72.8,
+      "hourly_rate_inr": 280.0,
+      "cost_per_piece_inr": 5.66,
+      "cost_per_piece_raw": 5.662222222222222
+    },
+    {
+      "sequence": 4,
+      "operation_name": "Production Deburr and Clean",
+      "machine_family": "finish_bench",
+      "cycle_time_sec": 168.2,
+      "cycle_time_raw_sec": 168.2,
+      "hourly_rate_inr": 200.0,
+      "cost_per_piece_inr": 0.0,
+      "cost_per_piece_raw": 0.0
+    },
+    {
+      "sequence": 5,
+      "operation_name": "Bulk Phosphate Coating",
+      "machine_family": "plating_line",
+      "cycle_time_sec": 126.5,
+      "cycle_time_raw_sec": 126.5,
+      "hourly_rate_inr": 300.0,
+      "cost_per_piece_inr": 0.0,
+      "cost_per_piece_raw": 0.0
+    },
+    {
+      "sequence": 6,
+      "operation_name": "Final Shop-Floor Quality Gate",
+      "machine_family": "inspection",
+      "cycle_time_sec": 194.5,
+      "cycle_time_raw_sec": 194.5,
+      "hourly_rate_inr": 250.0,
+      "cost_per_piece_inr": 1.0,
+      "cost_per_piece_raw": 1.0
+    }
+  ]
+}

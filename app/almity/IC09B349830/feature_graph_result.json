@@ -1,0 +1,340 @@
+{
+  "analysis_id": "IC09B349830_merge_20261006T065920Z",
+  "part": {
+    "name": "INNER COMPONENT",
+    "drawing_number": "IC09B349830",
+    "revision": "C4",
+    "material": "ASTM A311 CLASS A 1035-1144",
+    "units": "mm"
+  },
+  "feature_graph": {
+    "part_envelope": {
+      "length_mm": 75.13,
+      "max_diameter_mm": 56.13
+    },
+    "coordinate_system": {
+      "primary_axis": "Z",
+      "orientation_notes": "Use the front-view convention: global Z follows the central bore axis, with X and Y in the front-view plane and viewing direction -Z. Section A-A describes the longitudinal axis as its local X and the radial direction as local Y; normalize those view-local axes to this global convention. Datum A establishes the radial origin, but an axial zero is not specified.",
+      "datum_origin": "A"
+    },
+    "features": [
+      {
+        "feature_id": "F01",
+        "feature_type": "internal_bore",
+        "name": "Central bore \u00d822",
+        "description": "Central cylindrical bore of nominal diameter 22.00 mm, designated as Datum A.",
+        "geometry": {
+          "diameter_mm": 22.0,
+          "position_description": "Centred on the primary axis of rotation",
+          "axis_direction": "+Z"
+        },
+        "access_directions": [
+          "+Z",
+          "-Z"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 22.0,
+            "plus_mm": 0.2,
+            "minus_mm": 0.0
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "front_view"
+        ]
+      },
+      {
+        "feature_id": "F02",
+        "feature_type": "datum_face",
+        "name": "Opposing end faces (Datum B)",
+        "description": "Two parallel planar end faces defining the overall length of the part and establishing Datum B.",
+        "geometry": {
+          "length_mm": 75.0,
+          "axis_direction": "+X"
+        },
+        "instance_count": 2,
+        "access_directions": [
+          "-X",
+          "+X"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "length",
+            "nominal_mm": 75.0,
+            "upper_limit_mm": 75.13,
+            "lower_limit_mm": 74.87
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "flatness",
+            "tolerance_value_mm": 0.3,
+            "datum_references": [],
+            "applied_to": "Both Datum B end faces"
+          }
+        ],
+        "callout_qualifiers": [],
+        "source_views": [
+          "section_a_a"
+        ]
+      },
+      {
+        "feature_id": "F03",
+        "feature_type": "external_cylinder",
+        "name": "Stepped outer cylinder ends (2X)",
+        "description": "Symmetrical cylindrical steps on the left and right ends of the part, controlled for position relative to Datum A.",
+        "geometry": {
+          "diameter_mm": 35.0,
+          "outer_diameter_mm": 35.0,
+          "length_mm": 23.5,
+          "axis_direction": "+X"
+        },
+        "instance_count": 2,
+        "access_directions": [
+          "+Y",
+          "-Y",
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 35.0,
+            "upper_limit_mm": 35.13,
+            "lower_limit_mm": 34.87,
+            "qualifier": "2X"
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "position",
+            "tolerance_value_mm": 0.25,
+            "material_condition": "MMC",
+            "datum_references": [
+              "A"
+            ],
+            "applied_to": "2X \u00d835 cylindrical ends"
+          }
+        ],
+        "callout_qualifiers": [],
+        "source_views": [
+          "section_a_a"
+        ]
+      },
+      {
+        "feature_id": "F04",
+        "feature_type": "external_cylinder",
+        "name": "Central outer cylindrical boss",
+        "description": "Enlarged central cylindrical barrel section with axial length 28.00 mm and diameter 56.13/55.87 mm.",
+        "geometry": {
+          "diameter_mm": 56.0,
+          "outer_diameter_mm": 56.0,
+          "length_mm": 28.0,
+          "axis_direction": "+X"
+        },
+        "instance_count": 1,
+        "access_directions": [
+          "+Y",
+          "-Y",
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 56.0,
+            "upper_limit_mm": 56.13,
+            "lower_limit_mm": 55.87
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "position",
+            "tolerance_value_mm": 0.25,
+            "material_condition": "MMC",
+            "datum_references": [
+              "A"
+            ],
+            "applied_to": "Central \u00d856 cylindrical boss"
+          }
+        ],
+        "callout_qualifiers": [],
+        "source_views": [
+          "section_a_a"
+        ]
+      },
+      {
+        "feature_id": "F05",
+        "feature_type": "radius",
+        "name": "Central boss shoulder convex radii (2X)",
+        "description": "Convex external corner radii of R10.00 transitioning from the central boss outer diameter to the flanks.",
+        "geometry": {
+          "radius_mm": 10.0
+        },
+        "instance_count": 2,
+        "access_directions": [
+          "+Y",
+          "-Y",
+          "radial"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "callout_qualifiers": [
+          {
+            "qualifier": "2X",
+            "dimension_type": "radius",
+            "nominal_mm": 10.0
+          }
+        ],
+        "source_views": [
+          "section_a_a"
+        ]
+      },
+      {
+        "feature_id": "F06",
+        "feature_type": "fillet",
+        "name": "Shoulder transition concave neck fillets (2X)",
+        "description": "Concave neck fillets of R10.00 transitioning from the \u00d835 cylindrical ends up to the flanks of the central boss.",
+        "geometry": {
+          "radius_mm": 10.0
+        },
+        "instance_count": 2,
+        "access_directions": [
+          "+Y",
+          "-Y",
+          "radial"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "callout_qualifiers": [
+          {
+            "qualifier": "2X",
+            "dimension_type": "radius",
+            "nominal_mm": 10.0
+          }
+        ],
+        "source_views": [
+          "section_a_a"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "relationship_id": "R01",
+        "from_feature_id": "F03",
+        "to_feature_id": "F01",
+        "relationship_type": "coaxial",
+        "detail": "The cylindrical ends and central bore share the part's axis of revolution."
+      },
+      {
+        "relationship_id": "R02",
+        "from_feature_id": "F04",
+        "to_feature_id": "F01",
+        "relationship_type": "coaxial",
+        "detail": "The central boss and central bore share the part's axis of revolution."
+      },
+      {
+        "relationship_id": "R03",
+        "from_feature_id": "F03",
+        "to_feature_id": "F04",
+        "relationship_type": "coaxial",
+        "detail": "The end cylinders and central boss lie on the common section centerline."
+      },
+      {
+        "relationship_id": "R04",
+        "from_feature_id": "F03",
+        "to_feature_id": "F01",
+        "relationship_type": "datum_referenced",
+        "detail": "The position control on the cylindrical ends references Datum A, established by the central bore."
+      },
+      {
+        "relationship_id": "R05",
+        "from_feature_id": "F04",
+        "to_feature_id": "F01",
+        "relationship_type": "datum_referenced",
+        "detail": "The position control on the central boss references Datum A, established by the central bore."
+      },
+      {
+        "relationship_id": "R06",
+        "from_feature_id": "F02",
+        "to_feature_id": "F01",
+        "relationship_type": "perpendicular",
+        "detail": "The opposing planar end faces are geometrically normal to the longitudinal bore axis; this edge does not assert a perpendicularity tolerance."
+      },
+      {
+        "relationship_id": "R07",
+        "from_feature_id": "F02",
+        "to_feature_id": "F03",
+        "relationship_type": "intersecting",
+        "detail": "The opposing end faces bound the outer ends of the cylindrical end steps."
+      },
+      {
+        "relationship_id": "R08",
+        "from_feature_id": "F05",
+        "to_feature_id": "F04",
+        "relationship_type": "intersecting",
+        "detail": "The convex shoulder blends join the central boss outer surface at its shoulder boundaries."
+      },
+      {
+        "relationship_id": "R09",
+        "from_feature_id": "F06",
+        "to_feature_id": "F03",
+        "relationship_type": "intersecting",
+        "detail": "The concave neck fillets join the cylindrical end steps to the shoulder transitions."
+      }
+    ],
+    "datum_scheme": {
+      "datums": [
+        {
+          "datum_letter": "A",
+          "feature_id": "F01",
+          "surface_type": "cylindrical",
+          "description": "Internal cylindrical surface of the central bore."
+        },
+        {
+          "datum_letter": "B",
+          "feature_id": "F02",
+          "surface_type": "planar",
+          "description": "Opposing outer end faces of the component."
+        }
+      ],
+      "datum_hierarchy_notes": "A is the sole datum referenced in both position-control frames. B is defined on the opposing end faces, but no supplied feature-control frame establishes an A\u2013B hierarchy. The intended construction of Datum B requires clarification; neither an individual end face nor a derived median plane has been selected."
+    },
+    "part_notes": "Material: ASTM A311 CLASS A 1035-1144. Material standard: ASTM A311. Scale: 1:1. General tolerance: ASME Y14.5-2009. Projection: third angle. Heat treatment: none specified. Coating: ZINC NICKEL PLATE PER PS-152.17E. General notes: DEBURR: BREAK ALL SHARP EDGES 0.5 MAX.. FINISH: ZINC NICKEL PLATE PER PS-152.17E. INSPECTION: MUST CONFORM LAST NUMBER TOTAL NUMBER. TOLERANCE: METRIC DIMENSIONS & TOLERANCES GOVERN THE DESIGN. ENGLISH DIMENSIONS IF INCLUDED ARE FOR INFORMATION PURPOSES ONLY.. Testing: CRUSH TEST per PS-122.5 (100kN, 200kN, 0.375mm).",
+    "overall_complexity": "moderate"
+  },
+  "component_specs": [],
+  "component_spec_links": [],
+  "assumptions": [
+    {
+      "assumption_id": "A01",
+      "text": "All supplied feature observations remain singletons. Although Section A-A notes the central through-bore, its feature list contains no bore observation that can legitimately be grouped with front_view:F1; no synthetic member or field override was created."
+    },
+    {
+      "assumption_id": "A02",
+      "text": "The explicit through-bore statement in the Section A-A extraction notes resolves the front-view uncertainty about through versus blind condition, so no bore-depth clarification is raised."
+    },
+    {
+      "assumption_id": "A03",
+      "text": "The paired end faces, end cylinders, convex shoulder radii, and concave neck fillets retain their supplied multiplicities. No individually identified counterparts exist, so no aggregate identity groups are required."
+    },
+    {
+      "assumption_id": "A04",
+      "text": "The convex shoulder radii and concave neck fillets remain distinct features despite their matching radius callouts, because their surface roles and locations differ."
+    },
+    {
+      "assumption_id": "A05",
+      "text": "The differing axial letters in the two coordinate notes are treated as view-local conventions. Global Z is selected from the front-view bore-axis convention rather than treating the section's local X as a different physical axis."
+    },
+    {
+      "assumption_id": "A06",
+      "text": "Datum B remains attached to the supplied paired-end-face observation pending C01. No particular end face or median plane is silently substituted."
+    },
+    {
+      "assumption_id": "A07",
+      "clarification_id": "C01",
+      "text": "Datum B is intended as the derived median plane of the opposing end faces, as both end faces are identically identified with Datum B annotations across the overall length dimension."
+    }
+  ]
+}

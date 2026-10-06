@@ -1,0 +1,796 @@
+{
+  "analysis_id": "BP00B369210_merge_20261005T125058Z",
+  "source_feature_graph_id": "BP00B369210_merge_20261005T125058Z",
+  "quantity": 100,
+  "part_family": "hybrid",
+  "base_geometry": "complex",
+  "stock": {
+    "form": "round_bar",
+    "diameter_mm": 75.0,
+    "length_mm": 208.0,
+    "machining_allowance_mm": 0.5
+  },
+  "operations": [
+    {
+      "sequence": 1,
+      "name": "Saw Cut Blank",
+      "machine_family": "saw",
+      "setup_note": "Locate round bar against the length stop and cut individual blanks for the provisional X-axis machining route. Release stock procurement only after material and geometry clarifications are closed.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "setup_time_min": 5.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "saw_cut",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "saw_cut",
+            "cut_diameter_mm": 75.0,
+            "cut_count": 1
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 2,
+      "name": "CNC Turn \u2013 First End",
+      "machine_family": "cnc_lathe",
+      "setup_note": "Grip the opposite raw-stock end in soft jaws, using steady support where needed, and face the exposed arm end. Run a consolidated canned profile on the accessible first-side boss and shoulder regions, retaining the stock required for the arms and non-axisymmetric datum-A protrusion.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "setup_time_min": 20.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "face_turn",
+          "target_feature_ids": [
+            "F02"
+          ],
+          "inputs": {
+            "kind": "radial_turn",
+            "start_diameter_mm": 75.0,
+            "finish_diameter_mm": 0.0,
+            "groove_count": 1,
+            "total_stock_mm": 4.0
+          }
+        },
+        {
+          "sequence": 2,
+          "operation_type": "rough_turn_od",
+          "target_feature_ids": [
+            "F03"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 75.0,
+            "finish_diameter_mm": 71.72,
+            "cut_length_mm": 30.0
+          }
+        },
+        {
+          "sequence": 3,
+          "operation_type": "rough_turn_od",
+          "target_feature_ids": [
+            "F04",
+            "F07"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 75.0,
+            "finish_diameter_mm": 42.8,
+            "cut_length_mm": 7.39
+          }
+        },
+        {
+          "sequence": 4,
+          "operation_type": "finish_turn_od",
+          "target_feature_ids": [
+            "F03"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 71.72,
+            "finish_diameter_mm": 70.92,
+            "cut_length_mm": 30.0
+          }
+        },
+        {
+          "sequence": 5,
+          "operation_type": "finish_turn_od",
+          "target_feature_ids": [
+            "F04",
+            "F07"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 42.8,
+            "finish_diameter_mm": 42.0,
+            "cut_length_mm": 7.39
+          }
+        },
+        {
+          "sequence": 6,
+          "operation_type": "groove_od",
+          "target_feature_ids": [
+            "F04"
+          ],
+          "inputs": {
+            "kind": "radial_turn",
+            "start_diameter_mm": 47.0,
+            "finish_diameter_mm": 42.0,
+            "groove_width_mm": 2.5,
+            "groove_count": 2
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 3,
+      "name": "CNC Turn \u2013 Second End",
+      "machine_family": "cnc_lathe",
+      "setup_note": "Reverse the blank into bored soft jaws locating on the first-operation cylindrical surfaces and an axial stop. Face the opposite arm end to the overall length and complete the remaining boss, shoulder and blend regions without removing the retained prismatic-feature stock.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "setup_time_min": 20.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "face_turn",
+          "target_feature_ids": [
+            "F02"
+          ],
+          "inputs": {
+            "kind": "radial_turn",
+            "start_diameter_mm": 75.0,
+            "finish_diameter_mm": 0.0,
+            "groove_count": 1,
+            "total_stock_mm": 4.0
+          }
+        },
+        {
+          "sequence": 2,
+          "operation_type": "rough_turn_od",
+          "target_feature_ids": [
+            "F03"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 75.0,
+            "finish_diameter_mm": 71.72,
+            "cut_length_mm": 30.0
+          }
+        },
+        {
+          "sequence": 3,
+          "operation_type": "rough_turn_od",
+          "target_feature_ids": [
+            "F04",
+            "F07"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 75.0,
+            "finish_diameter_mm": 42.8,
+            "cut_length_mm": 7.39
+          }
+        },
+        {
+          "sequence": 4,
+          "operation_type": "finish_turn_od",
+          "target_feature_ids": [
+            "F03"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 71.72,
+            "finish_diameter_mm": 70.92,
+            "cut_length_mm": 30.0
+          }
+        },
+        {
+          "sequence": 5,
+          "operation_type": "finish_turn_od",
+          "target_feature_ids": [
+            "F04",
+            "F07"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 42.8,
+            "finish_diameter_mm": 42.0,
+            "cut_length_mm": 7.39
+          }
+        },
+        {
+          "sequence": 6,
+          "operation_type": "groove_od",
+          "target_feature_ids": [
+            "F04"
+          ],
+          "inputs": {
+            "kind": "radial_turn",
+            "start_diameter_mm": 47.0,
+            "finish_diameter_mm": 42.0,
+            "groove_width_mm": 2.5,
+            "groove_count": 2
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 4,
+      "name": "VMC \u2013 Datum A, Arms and Slots",
+      "machine_family": "vmc_3axis",
+      "setup_note": "Locate on the turned shoulders in a supported, mechanically indexable fixture that retains one clamping while presenting the datum-A flanks, arm surfaces and through-slot direction. Rough the datum surfaces first and all thin-section features before finishing; then finish and pick up A, finish the arms, establish B with the right slot, and finish the left slot from A\u2013B.",
+      "datum_references": [
+        "A",
+        "B"
+      ],
+      "material_machinability": "medium",
+      "setup_time_min": 45.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "face_mill",
+          "target_feature_ids": [
+            "F05"
+          ],
+          "inputs": {
+            "kind": "face_mill",
+            "mill_length_mm": 42.43,
+            "mill_width_mm": 70.92,
+            "total_stock_mm": 3.0,
+            "face_count": 1
+          }
+        },
+        {
+          "sequence": 2,
+          "operation_type": "face_mill",
+          "target_feature_ids": [
+            "F05"
+          ],
+          "inputs": {
+            "kind": "face_mill",
+            "mill_length_mm": 42.43,
+            "mill_width_mm": 70.92,
+            "total_stock_mm": 3.0,
+            "face_count": 1
+          }
+        },
+        {
+          "sequence": 3,
+          "operation_type": "profile_mill",
+          "target_feature_ids": [
+            "F05"
+          ],
+          "inputs": {
+            "kind": "contour_mill",
+            "path_length_mm": 144.85,
+            "radial_width_mm": 2.04,
+            "total_depth_mm": 70.92,
+            "path_count": 1
+          }
+        },
+        {
+          "sequence": 4,
+          "operation_type": "profile_mill",
+          "target_feature_ids": [
+            "F02"
+          ],
+          "inputs": {
+            "kind": "contour_mill",
+            "path_length_mm": 184.0,
+            "radial_width_mm": 26.5,
+            "total_depth_mm": 7.39,
+            "path_count": 2
+          }
+        },
+        {
+          "sequence": 5,
+          "operation_type": "side_mill",
+          "target_feature_ids": [
+            "F02"
+          ],
+          "inputs": {
+            "kind": "contour_mill",
+            "path_length_mm": 70.0,
+            "radial_width_mm": 33.805,
+            "total_depth_mm": 22.0,
+            "path_count": 2
+          }
+        },
+        {
+          "sequence": 6,
+          "operation_type": "side_mill",
+          "target_feature_ids": [
+            "F02"
+          ],
+          "inputs": {
+            "kind": "contour_mill",
+            "path_length_mm": 70.0,
+            "radial_width_mm": 33.805,
+            "total_depth_mm": 22.0,
+            "path_count": 2
+          }
+        },
+        {
+          "sequence": 7,
+          "operation_type": "slot_mill",
+          "target_feature_ids": [
+            "F09"
+          ],
+          "inputs": {
+            "kind": "contour_mill",
+            "path_length_mm": 23.75,
+            "radial_width_mm": 20.75,
+            "total_depth_mm": 7.39,
+            "path_count": 1
+          }
+        },
+        {
+          "sequence": 8,
+          "operation_type": "slot_mill",
+          "target_feature_ids": [
+            "F08"
+          ],
+          "inputs": {
+            "kind": "contour_mill",
+            "path_length_mm": 23.75,
+            "radial_width_mm": 20.75,
+            "total_depth_mm": 7.39,
+            "path_count": 1
+          }
+        },
+        {
+          "sequence": 9,
+          "operation_type": "face_mill",
+          "target_feature_ids": [
+            "F05"
+          ],
+          "inputs": {
+            "kind": "face_mill",
+            "mill_length_mm": 42.43,
+            "mill_width_mm": 70.92,
+            "total_stock_mm": 0.5,
+            "face_count": 1
+          }
+        },
+        {
+          "sequence": 10,
+          "operation_type": "face_mill",
+          "target_feature_ids": [
+            "F05"
+          ],
+          "inputs": {
+            "kind": "face_mill",
+            "mill_length_mm": 42.43,
+            "mill_width_mm": 70.92,
+            "total_stock_mm": 0.5,
+            "face_count": 1
+          }
+        },
+        {
+          "sequence": 11,
+          "operation_type": "profile_mill",
+          "target_feature_ids": [
+            "F05"
+          ],
+          "inputs": {
+            "kind": "contour_mill",
+            "path_length_mm": 144.85,
+            "radial_width_mm": 0.5,
+            "total_depth_mm": 70.92,
+            "path_count": 1
+          }
+        },
+        {
+          "sequence": 12,
+          "operation_type": "profile_mill",
+          "target_feature_ids": [
+            "F02"
+          ],
+          "inputs": {
+            "kind": "contour_mill",
+            "path_length_mm": 184.0,
+            "radial_width_mm": 0.5,
+            "total_depth_mm": 7.39,
+            "path_count": 2
+          }
+        },
+        {
+          "sequence": 13,
+          "operation_type": "side_mill",
+          "target_feature_ids": [
+            "F02"
+          ],
+          "inputs": {
+            "kind": "contour_mill",
+            "path_length_mm": 70.0,
+            "radial_width_mm": 0.5,
+            "total_depth_mm": 22.0,
+            "path_count": 2
+          }
+        },
+        {
+          "sequence": 14,
+          "operation_type": "side_mill",
+          "target_feature_ids": [
+            "F02"
+          ],
+          "inputs": {
+            "kind": "contour_mill",
+            "path_length_mm": 70.0,
+            "radial_width_mm": 0.5,
+            "total_depth_mm": 22.0,
+            "path_count": 2
+          }
+        },
+        {
+          "sequence": 15,
+          "operation_type": "slot_mill",
+          "target_feature_ids": [
+            "F09"
+          ],
+          "inputs": {
+            "kind": "contour_mill",
+            "path_length_mm": 23.75,
+            "radial_width_mm": 20.75,
+            "total_depth_mm": 7.39,
+            "path_count": 1
+          }
+        },
+        {
+          "sequence": 16,
+          "operation_type": "slot_mill",
+          "target_feature_ids": [
+            "F08"
+          ],
+          "inputs": {
+            "kind": "contour_mill",
+            "path_length_mm": 23.75,
+            "radial_width_mm": 20.75,
+            "total_depth_mm": 7.39,
+            "path_count": 1
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 5,
+      "name": "Production Deburr and Clean",
+      "machine_family": "finish_bench",
+      "setup_note": "Support the machined component without marking datum A and rapidly remove machining burrs, including both slot exits. Break sharp edges within the drawing's 0.5 mm maximum, then remove chips and cutting-fluid residue.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "setup_time_min": 3.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "deburr",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "manual",
+            "complexity": "medium",
+            "edge_length_mm": 1400.0
+          }
+        },
+        {
+          "sequence": 2,
+          "operation_type": "clean_degrease",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "manual",
+            "complexity": "medium",
+            "estimated_time_min": 1.0
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 6,
+      "name": "Local Bond-Zone Surface Preparation",
+      "machine_family": "outside_vendor",
+      "setup_note": "Present the fully machined parts to a qualified vendor for localized abrasive preparation of F06, with surrounding finished surfaces protected. This provisional process must be confirmed against the applicable bond-preparation specification before release.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "setup_time_min": 0.0,
+      "in_house": false,
+      "outside_process": "bond_surface_preparation",
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "mask",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "manual",
+            "complexity": "medium",
+            "feature_count": 1,
+            "estimated_time_min": 2.0
+          }
+        },
+        {
+          "sequence": 2,
+          "operation_type": "shot_blast",
+          "target_feature_ids": [
+            "F06"
+          ],
+          "inputs": {
+            "kind": "surface_treat",
+            "treated_area_mm2": 3627.0,
+            "batch_size_parts": 100,
+            "requires_bake": false
+          }
+        },
+        {
+          "sequence": 3,
+          "operation_type": "unmask",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "manual",
+            "complexity": "medium",
+            "feature_count": 1,
+            "estimated_time_min": 1.0
+          }
+        },
+        {
+          "sequence": 4,
+          "operation_type": "clean_degrease",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "manual",
+            "complexity": "medium",
+            "estimated_time_min": 1.0
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 7,
+      "name": "Batch Phosphate Coat",
+      "machine_family": "plating_line",
+      "setup_note": "Process the 100-piece order on the in-house bulk phosphate line, splitting it into rated barrel loads as necessary and protecting the finished geometry from handling damage. Clean and verify a water-break-free surface before applying PS-119.0 phosphate, followed by the specification-required rinsing and drying.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "setup_time_min": 15.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "clean_degrease",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "manual",
+            "complexity": "medium",
+            "estimated_time_min": 1.0
+          }
+        },
+        {
+          "sequence": 2,
+          "operation_type": "manual_inspect",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "inspection",
+            "dimension_count": 8,
+            "gdt_count": 5,
+            "sampling_rate_pct": 100.0,
+            "requires_fixture": false
+          }
+        },
+        {
+          "sequence": 3,
+          "operation_type": "phosphate",
+          "target_feature_ids": [
+            "F02",
+            "F03",
+            "F04",
+            "F05",
+            "F06",
+            "F07",
+            "F08",
+            "F09"
+          ],
+          "inputs": {
+            "kind": "surface_treat",
+            "treated_area_mm2": 12238.78,
+            "batch_size_parts": 100,
+            "requires_bake": false
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 8,
+      "name": "Final Shop-Floor Quality Gate",
+      "machine_family": "inspection",
+      "setup_note": "Seat the finished part in a dedicated datum-A nest and use slot-boundary gauges with the appropriate MMC datum-B simulation to verify the slot pattern. Perform sampled shop-floor checks of arm dimensions, parallelism, shoulders and coating condition using dedicated gauges and SPC records rather than 100% CMM layout.",
+      "datum_references": [
+        "A",
+        "B"
+      ],
+      "material_machinability": "medium",
+      "setup_time_min": 5.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "manual_inspect",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "inspection",
+            "dimension_count": 8,
+            "gdt_count": 5,
+            "sampling_rate_pct": 100.0,
+            "requires_fixture": true
+          }
+        }
+      ]
+    }
+  ],
+  "clarifications": [
+    {
+      "clarification_id": "C01",
+      "question": "Which material grade is required to meet the specified minimum yield strength of 690 MPa?",
+      "blocks": [
+        1,
+        2,
+        3,
+        4,
+        6,
+        7
+      ],
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C02",
+      "question": "What hardness is required for the supplied material?",
+      "blocks": [
+        1,
+        2,
+        3,
+        4,
+        7
+      ],
+      "suggested_default": "Use certified, machinable stock below approximately 45 HRC that already satisfies the specified mechanical properties; add no manufacturing heat treatment.",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C03",
+      "question": "Is X the common rotational axis of the central outer profile and both external \u00d842 shoulders?",
+      "blocks": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "suggested_default": "Provisionally use X for the two turning setups, preserving stock for all non-axisymmetric features; do not release turning until confirmed.",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C04",
+      "question": "Can you provide the released 3D model defining the central external contour?",
+      "blocks": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C05",
+      "question": "Is the 23.6\u201323.9 mm long axis of each slot actually along Z, given that the confirmed arm width along Z is only 21.62\u201322.38 mm?",
+      "blocks": [
+        4
+      ],
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C06",
+      "question": "Does the formed-area thickness-variation note require this component to be manufactured by forming rather than machining from solid stock?",
+      "blocks": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "suggested_default": "Treat the note as applicable only where formed areas exist, not as a mandatory blank-manufacturing instruction.",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C07",
+      "question": "Can you provide the controlling PS-119.0 phosphate process specification?",
+      "blocks": [
+        2,
+        3,
+        4,
+        7,
+        8
+      ],
+      "suggested_default": "Provisionally assume full-surface phosphate with dimensional buildup accommodated before coating; release requires confirmation of the actual process requirements.",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C08",
+      "question": "What surface-preparation specification applies to the F06 bond zone on BP00B369210?",
+      "blocks": [
+        6,
+        7,
+        8
+      ],
+      "suggested_default": "Localized abrasive preparation before phosphate, with no bond-incompatible oil or sealer on F06; confirm because the extracted PS-135.22 reference names BP00B369211.",
+      "priority": "high"
+    }
+  ],
+  "assumptions": [
+    {
+      "assumption_id": "A01",
+      "text": "This is a provisional hybrid route, not a production-released process. The extracted geometry does not establish an unambiguous rotational model, and the slot long dimension conflicts with the confirmed arm width; the blocking clarifications must be closed before machining."
+    },
+    {
+      "assumption_id": "A02",
+      "text": "The provisional stock envelope uses 200 mm along X and a 70.92 mm maximum circular cross-section, giving a 75 mm diameter by 208 mm blank. The reported 7.39 mm and 22.38 mm envelope values are not treated as the complete central-body envelope."
+    },
+    {
+      "assumption_id": "A03",
+      "text": "Standard round stock is selected for the 100-piece order because neither a forged blank nor mandatory directional grain flow is specified. The formed-area note alone does not establish a forming requirement; mandatory forming would invalidate this stock selection and require a revised route."
+    },
+    {
+      "assumption_id": "A04",
+      "text": "The customer's supplied interpretation of F07 is accepted: its 2X \u00d842 callout identifies the same external shoulders as F04, not internal bores. Turning therefore physically produces both feature records, and no hole-making or bore-finishing route is required."
+    },
+    {
+      "assumption_id": "A05",
+      "text": "ALM-ROUTE-001 and ALM-TURN-001 are applied as two consolidated lathe setups. Separate diameter-specific sub-operation records represent nonoverlapping portions of each G71/G70 profile, not repeated full-depth roughing cycles: F03 represents accessible axial bands, and F04/F07 represent the corresponding first-side or second-side shoulder."
+    },
+    {
+      "assumption_id": "A06",
+      "text": "The R2.5 shoulder blends require dedicated groove/form cutting after adjacent diameters are finished. They are retained within their respective lathe setups rather than assigned additional workholdings."
+    },
+    {
+      "assumption_id": "A07",
+      "text": "ALM-VMC-001 is applied through one retained-clamp VMC fixture with mechanical indexing, subject to confirmed tool access. VMC sub-operations 1\u20138 are roughing and 9\u201316 are finishing; each repeated face or side-milling record addresses a distinct flank or opposing surface. Straddle milling may replace paired side cuts only where cutter and fixture clearance permit it."
+    },
+    {
+      "assumption_id": "A08",
+      "text": "The VMC establishes rough datum surfaces first, roughs all thin-section features before final finishing, then finishes and picks up datum A before finishing dependent features. The right slot establishes B before the left slot's final boundary is machined; finish milling uses climb cutting."
+    },
+    {
+      "assumption_id": "A09",
+      "text": "The turning template's center drilling is omitted because steady support avoids creating unshown center holes. Internal boring and threading are omitted because no such features remain after resolving F07; general edge breaking is consolidated at the deburr gate, and parting is unnecessary because individual blanks are sawn and both ends are faced."
+    },
+    {
+      "assumption_id": "A10",
+      "text": "The milling template's pocketing, center drilling, drilling, reaming, tapping, countersinking and counterboring are omitted because no corresponding features are identified. The elongated holes are produced directly by slot milling; their sizes and positions must be resolved before cutting."
+    },
+    {
+      "assumption_id": "A11",
+      "text": "F06 is provisionally produced by localized abrasive preparation at an outside vendor because blasting capability is not listed in-house. Its preparation method and position relative to phosphating remain subject to the applicable bonding specification."
+    },
+    {
+      "assumption_id": "A12",
+      "text": "ALM-BENCH-001 is applied by using the in-house bulk phosphate line rather than outsourcing coating. Coating masking and unmasking are provisionally omitted because no precision bore, thread or explicitly uncoated mating surface is identified; specification-defined exclusions would require those steps."
+    },
+    {
+      "assumption_id": "A13",
+      "text": "The surface-treatment template's cure/bake is provisionally omitted because phosphate is not a thermoset coating and the supplied information does not establish a hydrogen-embrittlement relief requirement. Material certification and PS-119.0 must resolve this before coating; if relief is required, add qualified outside baking within the specified time window, including the four-hour limit where applicable."
+    },
+    {
+      "assumption_id": "A14",
+      "text": "All dimensional cutting, radiusing and deburring precede phosphate. General edge breaks are provisionally 0.3\u20130.5 mm to satisfy the coating-edge rule without exceeding the drawing maximum; coated dimensions must accommodate the actual specified buildup."
+    },
+    {
+      "assumption_id": "A15",
+      "text": "No manufacturing heat treatment or post-hardening finishing is added because none is specified. Material is provisionally classified as medium-machinability stock below approximately 45 HRC; ALM-FEAS-003 requires outside heat treatment, transport and subsequent hard finishing only if the confirmed material requirements introduce hardening."
+    },
+    {
+      "assumption_id": "A16",
+      "text": "ALM-BENCH-002 and ALM-INSP-001/002 are applied through rapid production deburr/clean gates and sampled dedicated-gauge inspection, not prolonged hand finishing or 100% CMM layout. The common final quality gate satisfies both machining templates and the coating-inspection step; functional or destructive testing is omitted because none is specified."
+    }
+  ]
+}

@@ -1,0 +1,269 @@
+{
+  "analysis_id": "OC03B347690_merge_20261005T123647Z",
+  "part": {
+    "name": "OUTER COMPONENT",
+    "drawing_number": "0C03B347690",
+    "revision": "A",
+    "material": "ASTM B 221M GRADE 6061 T6",
+    "units": "mm"
+  },
+  "feature_graph": {
+    "part_envelope": {
+      "length_mm": 28.38,
+      "max_diameter_mm": 76.29
+    },
+    "coordinate_system": {
+      "primary_axis": "Z",
+      "orientation_notes": "Use the front-view frame: X horizontal, Y vertical, and Z along the cylinder axis. The horizontal cylinder axis in Section A-A corresponds to world Z; its extracted +X axis and access directions are treated as view-local. Datum A establishes the center axis but does not establish an axial zero or angular clocking.",
+      "datum_origin": "A"
+    },
+    "features": [
+      {
+        "feature_id": "F01",
+        "feature_type": "chamfer",
+        "name": "End radius or chamfer",
+        "description": "Transitional edge break specified as either a radius or chamfer on the end rim, typical for both ends.",
+        "geometry": {
+          "depth_mm": 0.75,
+          "width_mm": 2.0,
+          "height_mm": 0.75,
+          "position_description": "At the rim/edge of the component, typical at both ends"
+        },
+        "instance_count": 2,
+        "access_directions": [
+          "+Z",
+          "-Z",
+          "+X",
+          "-X",
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "width",
+            "nominal_mm": 2.0,
+            "upper_limit_mm": 3.0,
+            "lower_limit_mm": 1.0
+          },
+          {
+            "dimension_type": "height",
+            "nominal_mm": 0.75,
+            "upper_limit_mm": 1.0,
+            "lower_limit_mm": 0.5
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "detail_x",
+          "section_aa"
+        ]
+      },
+      {
+        "feature_id": "F02",
+        "feature_type": "part_body",
+        "name": "Main cylindrical body",
+        "description": "Annular / cylindrical body represented by concentric circular outlines, bisected vertically by section cut line A-A.",
+        "geometry": {
+          "axis_direction": "+Z"
+        },
+        "instance_count": 1,
+        "access_directions": [
+          "+Z",
+          "-Z"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "front_view"
+        ]
+      },
+      {
+        "feature_id": "F03",
+        "feature_type": "flat_face",
+        "name": "Annular end faces",
+        "description": "Opposing parallel planar annular end faces defining the overall length of the cylindrical component.",
+        "geometry": {
+          "length_mm": 28.25,
+          "axis_direction": "+X"
+        },
+        "instance_count": 2,
+        "access_directions": [
+          "+X",
+          "-X"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "length",
+            "nominal_mm": 28.25,
+            "upper_limit_mm": 28.38,
+            "lower_limit_mm": 28.12
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "section_aa"
+        ]
+      },
+      {
+        "feature_id": "F04",
+        "feature_type": "internal_bore",
+        "name": "Central bore (Datum A)",
+        "description": "Through cylindrical inner bore establishing Datum A.",
+        "geometry": {
+          "diameter_mm": 72.01,
+          "inner_diameter_mm": 72.01,
+          "length_mm": 28.25,
+          "depth_mm": 28.25,
+          "depth_condition": "THRU",
+          "hole_count": 1,
+          "axis_direction": "+X"
+        },
+        "instance_count": 1,
+        "access_directions": [
+          "+X",
+          "-X"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 72.01,
+            "upper_limit_mm": 72.14,
+            "lower_limit_mm": 71.88
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "section_aa"
+        ]
+      },
+      {
+        "feature_id": "F05",
+        "feature_type": "external_cylinder",
+        "name": "Outer cylindrical surface",
+        "description": "Outer diameter surface of the cylindrical component with position and circularity controls.",
+        "geometry": {
+          "diameter_mm": 76.225,
+          "outer_diameter_mm": 76.225,
+          "length_mm": 28.25,
+          "position_description": "Coaxial with datum A",
+          "axis_direction": "+X"
+        },
+        "instance_count": 1,
+        "access_directions": [
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 76.225,
+            "upper_limit_mm": 76.29,
+            "lower_limit_mm": 76.16,
+            "qualifier": "AVG."
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "position",
+            "tolerance_value_mm": 0.25,
+            "material_condition": "MMC",
+            "datum_references": [
+              "A"
+            ],
+            "applied_to": "outer cylindrical surface at MMC relative to datum A at MMC"
+          },
+          {
+            "gdt_type": "circularity",
+            "tolerance_value_mm": 0.13,
+            "datum_references": [],
+            "applied_to": "outer cylindrical surface in free state"
+          }
+        ],
+        "callout_qualifiers": [],
+        "source_views": [
+          "section_aa"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "relationship_id": "R01",
+        "from_feature_id": "F05",
+        "to_feature_id": "F04",
+        "relationship_type": "coaxial",
+        "detail": "The outer cylindrical surface is explicitly described as coaxial with datum A, established by the central bore."
+      },
+      {
+        "relationship_id": "R02",
+        "from_feature_id": "F05",
+        "to_feature_id": "F04",
+        "relationship_type": "datum_referenced",
+        "detail": "The outer cylindrical surface position control references datum A."
+      },
+      {
+        "relationship_id": "R03",
+        "from_feature_id": "F03",
+        "to_feature_id": "F04",
+        "relationship_type": "perpendicular",
+        "detail": "The annular end faces terminate the cylinder normal to its bore axis. This describes geometric orientation, not an additional GD&T control."
+      },
+      {
+        "relationship_id": "R04",
+        "from_feature_id": "F01",
+        "to_feature_id": "F05",
+        "relationship_type": "intersecting",
+        "detail": "The detailed edge breaks meet the outer cylindrical surface at both end transitions."
+      },
+      {
+        "relationship_id": "R05",
+        "from_feature_id": "F01",
+        "to_feature_id": "F03",
+        "relationship_type": "intersecting",
+        "detail": "The detailed edge breaks meet the annular end faces at their outer rims."
+      },
+      {
+        "relationship_id": "R06",
+        "from_feature_id": "F02",
+        "to_feature_id": "F04",
+        "relationship_type": "coaxial",
+        "detail": "The concentric annular body outlines and central section-cut reference establish the body axis as the central bore axis."
+      }
+    ],
+    "datum_scheme": {
+      "datums": [
+        {
+          "datum_letter": "A",
+          "feature_id": "F04",
+          "surface_type": "cylindrical",
+          "description": "Internal through cylindrical bore surface"
+        }
+      ],
+      "datum_hierarchy_notes": "A is the sole defined datum and establishes the primary bore axis. The outer-cylinder position control references A at maximum material boundary, as recorded in its applied-to text. No secondary or tertiary datum is defined; axial location and clocking are not established by this datum scheme."
+    },
+    "part_notes": "Material: ASTM B 221M GRADE 6061 T6. Material standard: ASTM B 221M. Scale: 1:1. General tolerance: ASME Y14.5-2009. Projection: third angle. Heat treatment: none specified. Coating: none specified. General notes: PROCESS: MEDIA BLAST PER PS-175.1 IMMEDIATELY PRIOR TO BOND PREP. DEBURR: BREAK ALL SHARP EDGES 0.5 MAX.. TOLERANCE: METRIC DIMENSIONS & TOLERANCES GOVERN THE DESIGN. ENGLISH DIMENSIONS IF INCLUDED ARE FOR INFORMATION PURPOSES ONLY..",
+    "overall_complexity": "moderate"
+  },
+  "component_specs": [],
+  "component_spec_links": [],
+  "clarifications": [],
+  "assumptions": [
+    {
+      "assumption_id": "A01",
+      "text": "The explicit DETAIL X reference identifies detail_x:F1 and section_aa:F3 as the same repeated end-edge feature. detail_x:F1 is canonical because it supplies the edge-break specification and limit callouts."
+    },
+    {
+      "assumption_id": "A02",
+      "text": "Both edge observations describe the same two interchangeable end instances. They are retained as one count-two feature group, not split into individually identified ends or treated as aggregate references."
+    },
+    {
+      "assumption_id": "A03",
+      "text": "front_view:F1 describes the complete annular body rather than one particular surface. It is retained as a singleton instead of being equated with the separately extracted bore, outer cylinder, or end faces."
+    },
+    {
+      "assumption_id": "A04",
+      "text": "The front-view coordinate frame is used as the global frame. Section A-A's horizontal axial +X notation is interpreted as view-local rather than as a conflicting physical cylinder axis."
+    }
+  ]
+}

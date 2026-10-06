@@ -1,0 +1,112 @@
+{
+  "drawing_number": "BP00B369210",
+  "part_name": "INNER COMPONENT-BALL STUD",
+  "material": "AISI 1018",
+  "quantity": 100,
+  "quote_status": "complete",
+  "weights": {
+    "raw_bar_dia_mm": 75.0,
+    "actual_bar_dia_mm": 75.0,
+    "gross_weight_kg": 4.9337,
+    "gross_weight_g": 4933.7,
+    "net_weight_kg": 1.4601,
+    "net_weight_g": 1460.1,
+    "scrap_weight_kg": 3.4736,
+    "scrap_weight_g": 3473.6,
+    "net_weight_source": "routing"
+  },
+  "direct_cost": {
+    "material_cost_inr": 320.69,
+    "material_rate_per_kg_inr": 65.0,
+    "machining_cost_inr": 360.11,
+    "direct_base_inr": 680.8
+  },
+  "cif_and_overheads": {
+    "packaging_charges_inr": 11.84,
+    "overhead_25_pct_inr": 170.2,
+    "logistics_cost_inr": 59.79,
+    "total_cif_inr": 922.64,
+    "scrap_recovery_credit_inr": -69.47,
+    "total_cost_per_pc_inr": 853.17
+  },
+  "pricing_and_duties": {
+    "profit_10_pct_inr": 68.08,
+    "actual_cost_inr": 921.25,
+    "icc_and_rejection_inr": 20.03,
+    "custom_duty_3_5_pct_inr": 32.24,
+    "warehouse_cost_4_pct_inr": 36.85,
+    "final_landed_price_inr": 1010.37
+  },
+  "machining_operations": [
+    {
+      "sequence": 1,
+      "operation_name": "Saw Cut Blank",
+      "machine_family": "saw",
+      "cycle_time_sec": 94.3,
+      "cycle_time_raw_sec": 94.3,
+      "hourly_rate_inr": 290.0,
+      "cost_per_piece_inr": 7.6,
+      "cost_per_piece_raw": 7.596388888888889
+    },
+    {
+      "sequence": 2,
+      "operation_name": "CNC Turn – First End",
+      "machine_family": "cnc_lathe",
+      "cycle_time_sec": 128.6,
+      "cycle_time_raw_sec": 128.6,
+      "hourly_rate_inr": 280.0,
+      "cost_per_piece_inr": 10.0,
+      "cost_per_piece_raw": 10.002222222222223
+    },
+    {
+      "sequence": 3,
+      "operation_name": "CNC Turn – Second End",
+      "machine_family": "cnc_lathe",
+      "cycle_time_sec": 128.6,
+      "cycle_time_raw_sec": 128.6,
+      "hourly_rate_inr": 280.0,
+      "cost_per_piece_inr": 10.0,
+      "cost_per_piece_raw": 10.002222222222223
+    },
+    {
+      "sequence": 4,
+      "operation_name": "VMC – Datum A, Arms and Slots",
+      "machine_family": "vmc_3axis",
+      "cycle_time_sec": 2652.1,
+      "cycle_time_raw_sec": 2652.1,
+      "hourly_rate_inr": 450.0,
+      "cost_per_piece_inr": 331.51,
+      "cost_per_piece_raw": 331.5125
+    },
+    {
+      "sequence": 5,
+      "operation_name": "Production Deburr and Clean",
+      "machine_family": "finish_bench",
+      "cycle_time_sec": 261.1,
+      "cycle_time_raw_sec": 261.1,
+      "hourly_rate_inr": 200.0,
+      "cost_per_piece_inr": 0.0,
+      "cost_per_piece_raw": 0.0
+    },
+    {
+      "sequence": 7,
+      "operation_name": "Batch Phosphate Coat",
+      "machine_family": "plating_line",
+      "cycle_time_sec": 467.1,
+      "cycle_time_raw_sec": 467.1,
+      "hourly_rate_inr": 300.0,
+      "cost_per_piece_inr": 0.0,
+      "cost_per_piece_raw": 0.0
+    },
+    {
+      "sequence": 8,
+      "operation_name": "Final Shop-Floor Quality Gate",
+      "machine_family": "inspection",
+      "cycle_time_sec": 335.6,
+      "cycle_time_raw_sec": 335.6,
+      "hourly_rate_inr": 250.0,
+      "cost_per_piece_inr": 1.0,
+      "cost_per_piece_raw": 1.0
+    }
+  ]
+}

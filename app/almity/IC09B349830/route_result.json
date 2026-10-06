@@ -1,0 +1,478 @@
+{
+  "analysis_id": "IC09B349830_merge_20261006T065920Z",
+  "source_feature_graph_id": "IC09B349830_merge_20261006T065920Z",
+  "quantity": 100,
+  "part_family": "turned",
+  "base_geometry": "rotational",
+  "stock": {
+    "form": "round_bar",
+    "diameter_mm": 57.0,
+    "length_mm": 82.0,
+    "machining_allowance_mm": 0.3
+  },
+  "operations": [
+    {
+      "sequence": 1,
+      "name": "Saw Cut Drawn Bar Blanks",
+      "machine_family": "saw",
+      "setup_note": "Clamp certified precision-drawn bar against a length stop and saw individual blanks with allowance for facing both ends. Reserve an additional blank for the provisional destructive-test sample.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "setup_time_min": 5.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "saw_cut",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "saw_cut",
+            "cut_diameter_mm": 57.0,
+            "cut_count": 1
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 2,
+      "name": "CNC Turn \u2013 First End",
+      "machine_family": "cnc_lathe",
+      "setup_note": "Grip the unmachined second-end portion in bored soft jaws, leaving the first end and central boss exposed; use the first faced end as a temporary axial reference. Establish the through-bore datum A in this spindle alignment before finishing the exposed OD profile, including only the first-end instances of the paired features.",
+      "datum_references": [
+        "A"
+      ],
+      "material_machinability": "medium",
+      "setup_time_min": 10.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "face_turn",
+          "target_feature_ids": [
+            "F02"
+          ],
+          "inputs": {
+            "kind": "radial_turn",
+            "start_diameter_mm": 57.0,
+            "finish_diameter_mm": 0.0,
+            "groove_count": 1,
+            "total_stock_mm": 3.5
+          }
+        },
+        {
+          "sequence": 2,
+          "operation_type": "rough_turn_od",
+          "target_feature_ids": [
+            "F03",
+            "F05",
+            "F06"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 57.0,
+            "finish_diameter_mm": 35.8,
+            "cut_length_mm": 23.5
+          }
+        },
+        {
+          "sequence": 3,
+          "operation_type": "spot_drill",
+          "target_feature_ids": [
+            "F01"
+          ],
+          "inputs": {
+            "kind": "point_drill",
+            "hole_diameter_mm": 6.0,
+            "hole_depth_mm": 2.0,
+            "hole_count": 1,
+            "through_hole": false
+          }
+        },
+        {
+          "sequence": 4,
+          "operation_type": "peck_drill",
+          "target_feature_ids": [
+            "F01"
+          ],
+          "inputs": {
+            "kind": "point_drill",
+            "hole_diameter_mm": 20.0,
+            "hole_depth_mm": 78.5,
+            "hole_count": 1,
+            "through_hole": true
+          }
+        },
+        {
+          "sequence": 5,
+          "operation_type": "rough_bore_id",
+          "target_feature_ids": [
+            "F01"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 20.0,
+            "finish_diameter_mm": 21.2,
+            "cut_length_mm": 78.5
+          }
+        },
+        {
+          "sequence": 6,
+          "operation_type": "finish_bore_id",
+          "target_feature_ids": [
+            "F01"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 21.2,
+            "finish_diameter_mm": 22.0,
+            "cut_length_mm": 78.5
+          }
+        },
+        {
+          "sequence": 7,
+          "operation_type": "finish_turn_od",
+          "target_feature_ids": [
+            "F04"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 57.0,
+            "finish_diameter_mm": 56.0,
+            "cut_length_mm": 28.0
+          }
+        },
+        {
+          "sequence": 8,
+          "operation_type": "finish_turn_od",
+          "target_feature_ids": [
+            "F03",
+            "F05",
+            "F06"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 35.8,
+            "finish_diameter_mm": 35.0,
+            "cut_length_mm": 23.5
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 3,
+      "name": "CNC Turn \u2013 Second End",
+      "machine_family": "cnc_lathe",
+      "setup_note": "Reverse the part onto a short expanding mandrel locating directly in completed bore A, with the first finished face against a temporary axial stop and the second end unobstructed. Face to overall length and run the opposite-end canned roughing/finishing profile, controlling mandrel pressure to avoid bore distortion.",
+      "datum_references": [
+        "A"
+      ],
+      "material_machinability": "medium",
+      "setup_time_min": 20.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "face_turn",
+          "target_feature_ids": [
+            "F02"
+          ],
+          "inputs": {
+            "kind": "radial_turn",
+            "start_diameter_mm": 57.0,
+            "finish_diameter_mm": 22.0,
+            "groove_count": 1,
+            "total_stock_mm": 3.5
+          }
+        },
+        {
+          "sequence": 2,
+          "operation_type": "rough_turn_od",
+          "target_feature_ids": [
+            "F03",
+            "F05",
+            "F06"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 57.0,
+            "finish_diameter_mm": 35.8,
+            "cut_length_mm": 23.5
+          }
+        },
+        {
+          "sequence": 3,
+          "operation_type": "finish_turn_od",
+          "target_feature_ids": [
+            "F03",
+            "F05",
+            "F06"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 35.8,
+            "finish_diameter_mm": 35.0,
+            "cut_length_mm": 23.5
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 4,
+      "name": "Production Deburr and Clean",
+      "machine_family": "finish_bench",
+      "setup_note": "Present completed parts in a protective bench nest and rapidly deburr both end-face edges and both bore openings. Apply the specified 0.5 mm maximum edge break, then remove chips and machining-fluid residue before plating.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "setup_time_min": 2.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "deburr",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "manual",
+            "complexity": "medium",
+            "edge_length_mm": 358.1
+          }
+        },
+        {
+          "sequence": 2,
+          "operation_type": "clean_degrease",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "manual",
+            "complexity": "low",
+            "feature_count": 1,
+            "estimated_time_min": 0.5
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 5,
+      "name": "Bulk Zinc-Nickel Plating",
+      "machine_family": "plating_line",
+      "setup_note": "Load fully machined, deburred parts into qualified bulk barrels for zinc-nickel plating per PS-152.17E, with chemical cleaning, activation and rinsing controlled by the approved line procedure. Plan split barrel loads rather than assuming the entire order fits one barrel, and release this operation only after specification, line qualification and baking requirements are resolved.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "setup_time_min": 10.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "clean_degrease",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "manual",
+            "complexity": "low",
+            "feature_count": 1,
+            "estimated_time_min": 0.5
+          }
+        },
+        {
+          "sequence": 2,
+          "operation_type": "plate",
+          "target_feature_ids": [
+            "F01",
+            "F02",
+            "F03",
+            "F04",
+            "F05",
+            "F06"
+          ],
+          "inputs": {
+            "kind": "surface_treat",
+            "treated_area_mm2": 18200.0,
+            "batch_size_parts": 100,
+            "requires_bake": false
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 6,
+      "name": "Periodic Crush Test",
+      "machine_family": "outside_vendor",
+      "setup_note": "Submit a sacrificial finished lot sample to a qualified compression-testing laboratory using PS-122.5 tooling and the approved loading orientation. Test on a sampling basis rather than testing every delivery part, and retain the report for lot release.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "setup_time_min": 0.0,
+      "in_house": false,
+      "outside_process": "special_testing",
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "outside_process",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "manual",
+            "complexity": "medium",
+            "feature_count": 1
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 7,
+      "name": "Final Shop-Floor Quality Gate",
+      "machine_family": "inspection",
+      "setup_note": "Locate sampled plated parts from bore A in dedicated functional gauging, with plug, snap, length and profile gauges used under the approved control plan. Verify dimensional and geometric requirements, coating acceptance and the crush-test report; apply the confirmed Datum B construction without imposing an unsupported A\u2013B hierarchy.",
+      "datum_references": [
+        "A",
+        "B"
+      ],
+      "material_machinability": "medium",
+      "setup_time_min": 10.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "manual_inspect",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "inspection",
+            "dimension_count": 4,
+            "gdt_count": 3,
+            "sampling_rate_pct": 100.0,
+            "requires_fixture": false
+          }
+        }
+      ]
+    }
+  ],
+  "clarifications": [
+    {
+      "clarification_id": "C01",
+      "question": "Should Datum B be constructed as the derived median plane of the two opposing end faces?",
+      "blocks": [
+        7
+      ],
+      "suggested_default": "Use the derived median plane, consistent with the supplied interpretation; retain individual faced ends only as temporary machining stops.",
+      "priority": "medium"
+    },
+    {
+      "clarification_id": "C02",
+      "question": "Which exact steel grade is required by the material callout's 1035\u20131144 designation?",
+      "blocks": [
+        1,
+        2,
+        3,
+        6
+      ],
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C03",
+      "question": "Can you provide the controlled PS-152.17E zinc-nickel plating specification?",
+      "blocks": [
+        2,
+        3,
+        5,
+        7
+      ],
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C04",
+      "question": "Is the available in-house plating line qualified for zinc-nickel plating to PS-152.17E?",
+      "blocks": [
+        5
+      ],
+      "suggested_default": "Plan in-house bulk plating as directed by the organizational correction; if qualification is unavailable, subcontract zinc_nickel_plating.",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C05",
+      "question": "What certified tensile strength applies to the delivered drawn bar?",
+      "blocks": [
+        5
+      ],
+      "suggested_default": "Provisionally assume below 1000 MPa, subject to certificate verification; add hydrogen-embrittlement relief baking if the strength or coating specification requires it.",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C06",
+      "question": "Can you provide the controlled PS-122.5 crush-test specification?",
+      "blocks": [
+        6
+      ],
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C07",
+      "question": "What sampling rate is required for the crush test?",
+      "blocks": [
+        6
+      ],
+      "suggested_default": "Test one sacrificial component for this 100-piece delivery lot.",
+      "priority": "medium"
+    }
+  ],
+  "assumptions": [
+    {
+      "assumption_id": "A01",
+      "text": "All section-local axial X directions are normalized to global Z; the bore, stepped ends and central boss form one coaxial rotational part."
+    },
+    {
+      "assumption_id": "A02",
+      "text": "Use provisional \u00d857 precision-drawn bar and an 82 mm sawn blank, subject to commercial stock availability. The near-net diameter follows the cold-drawn-stock correction rather than the generic 3\u20135 mm diameter allowance."
+    },
+    {
+      "assumption_id": "A03",
+      "text": "The selected drawn stock requires only a light central-boss cleanup skim. F04 therefore receives one dedicated finish-turn sub-operation, permitted by ALM-IC-002, with no full-body roughing or OD grinding."
+    },
+    {
+      "assumption_id": "A04",
+      "text": "Both R10 blend types are generated incidentally by the respective end's canned roughing/finishing profile, overriding the generic requirement for separate large-radius form operations. Each end setup produces only its accessible instance of F03, F05 and F06."
+    },
+    {
+      "assumption_id": "A05",
+      "text": "The bore is through, as established by the supplied extraction notes. Spotting followed by peck drilling creates the boring starter hole; a separate pilot-drill stage is omitted, and full-size undersize drilling is represented by the peck-drill sub-operation rather than duplicated."
+    },
+    {
+      "assumption_id": "A06",
+      "text": "Use a through-coolant carbide or damped boring arrangement suitable for the full blank length. Rough and finish boring provide the datum bore without reaming, honing or an H7 bore-finishing route because the specified diameter tolerance is +0.20/0 mm."
+    },
+    {
+      "assumption_id": "A07",
+      "text": "Tailstock center drilling is omitted because the part is short and does not require between-centers support. Turning-template grooving, threading and hole-template tapping or fastener recesses are omitted because no corresponding features exist; part-off is omitted because individual blanks are saw cut."
+    },
+    {
+      "assumption_id": "A08",
+      "text": "The turning-template chamfer/edge-break step and hole-deburring step are consolidated into the production bench deburr operation; no separate dimensioned chamfer feature is present."
+    },
+    {
+      "assumption_id": "A09",
+      "text": "All milling-specific steps in the preloaded milling template are omitted because the graph contains no flats, slots, pockets or cross-holes. Common stock preparation, hole making, deburring and inspection are provided by the rotational route."
+    },
+    {
+      "assumption_id": "A10",
+      "text": "No forging, hardening or grinding route is required: standard drawn bar suits the geometry, no heat treatment is specified, and the supplied tolerances do not justify grinding."
+    },
+    {
+      "assumption_id": "A11",
+      "text": "Provisionally plate all listed surfaces, including the bore, with no masking or unmasking steps because no coating exclusions or precision-fit masking requirements are identified. Confirm this interpretation against PS-152.17E before production."
+    },
+    {
+      "assumption_id": "A12",
+      "text": "Hydrogen-embrittlement baking is provisionally omitted pending the material certificate and PS-152.17E. If required, insert a qualified bake within the specified post-plating time window; an embrittlement-relief bake is not a hardening operation."
+    },
+    {
+      "assumption_id": "A13",
+      "text": "Drawing limits are provisionally treated as finished, plated dimensions. OD, bore and overall-length machining targets must account for the confirmed coating buildup; no coating thickness is guessed in this pass."
+    },
+    {
+      "assumption_id": "A14",
+      "text": "Reserve one additional sacrificial component so the provisional sampled crush test does not reduce the delivery of 100 acceptable pieces. Test the finished coated condition unless PS-122.5 specifies a different stage."
+    },
+    {
+      "assumption_id": "A15",
+      "text": "Crush testing is subcontracted because a calibrated compression system and the required PS-122.5 fixtures are not demonstrated by the listed in-house test capabilities."
+    },
+    {
+      "assumption_id": "A16",
+      "text": "Use rapid production-line deburring and sampled shop-floor gauging under the organizational time caps, not lengthy hand finishing or 100% CMM layout. The final quality gate includes coating inspection; additional coating qualification tests are governed by the controlled specification."
+    }
+  ]
+}

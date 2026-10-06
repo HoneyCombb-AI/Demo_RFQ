@@ -1,0 +1,102 @@
+{
+  "drawing_number": "IC09B349830",
+  "part_name": "INNER COMPONENT",
+  "material": "ASTM A311 CLASS A 1035-1144",
+  "quantity": 100,
+  "quote_status": "complete",
+  "weights": {
+    "raw_bar_dia_mm": 57.0,
+    "actual_bar_dia_mm": 57.0,
+    "gross_weight_kg": 1.3519,
+    "gross_weight_g": 1351.9,
+    "net_weight_kg": 0.4411,
+    "net_weight_g": 441.1,
+    "scrap_weight_kg": 0.9108,
+    "scrap_weight_g": 910.8,
+    "net_weight_source": "routing"
+  },
+  "direct_cost": {
+    "material_cost_inr": 121.67,
+    "material_rate_per_kg_inr": 90.0,
+    "machining_cost_inr": 32.45,
+    "direct_base_inr": 154.12
+  },
+  "cif_and_overheads": {
+    "packaging_charges_inr": 3.24,
+    "overhead_25_pct_inr": 38.53,
+    "logistics_cost_inr": 18.06,
+    "total_cif_inr": 213.96,
+    "scrap_recovery_credit_inr": -18.22,
+    "total_cost_per_pc_inr": 195.74
+  },
+  "pricing_and_duties": {
+    "profit_10_pct_inr": 15.41,
+    "actual_cost_inr": 211.15,
+    "icc_and_rejection_inr": 5.52,
+    "custom_duty_3_5_pct_inr": 7.39,
+    "warehouse_cost_4_pct_inr": 8.45,
+    "final_landed_price_inr": 232.5
+  },
+  "machining_operations": [
+    {
+      "sequence": 1,
+      "operation_name": "Saw Cut Drawn Bar Blanks",
+      "machine_family": "saw",
+      "cycle_time_sec": 70.3,
+      "cycle_time_raw_sec": 70.3,
+      "hourly_rate_inr": 290.0,
+      "cost_per_piece_inr": 5.66,
+      "cost_per_piece_raw": 5.663055555555555
+    },
+    {
+      "sequence": 2,
+      "operation_name": "CNC Turn – First End",
+      "machine_family": "cnc_lathe",
+      "cycle_time_sec": 241.3,
+      "cycle_time_raw_sec": 241.3,
+      "hourly_rate_inr": 280.0,
+      "cost_per_piece_inr": 18.77,
+      "cost_per_piece_raw": 18.767777777777777
+    },
+    {
+      "sequence": 3,
+      "operation_name": "CNC Turn – Second End",
+      "machine_family": "cnc_lathe",
+      "cycle_time_sec": 90.2,
+      "cycle_time_raw_sec": 90.2,
+      "hourly_rate_inr": 280.0,
+      "cost_per_piece_inr": 7.02,
+      "cost_per_piece_raw": 7.015555555555555
+    },
+    {
+      "sequence": 4,
+      "operation_name": "Production Deburr and Clean",
+      "machine_family": "finish_bench",
+      "cycle_time_sec": 92.0,
+      "cycle_time_raw_sec": 92.0,
+      "hourly_rate_inr": 200.0,
+      "cost_per_piece_inr": 0.0,
+      "cost_per_piece_raw": 0.0
+    },
+    {
+      "sequence": 5,
+      "operation_name": "Bulk Zinc-Nickel Plating",
+      "machine_family": "plating_line",
+      "cycle_time_sec": 118.9,
+      "cycle_time_raw_sec": 118.9,
+      "hourly_rate_inr": 300.0,
+      "cost_per_piece_inr": 0.0,
+      "cost_per_piece_raw": 0.0
+    },
+    {
+      "sequence": 7,
+      "operation_name": "Final Shop-Floor Quality Gate",
+      "machine_family": "inspection",
+      "cycle_time_sec": 197.5,
+      "cycle_time_raw_sec": 197.5,
+      "hourly_rate_inr": 250.0,
+      "cost_per_piece_inr": 1.0,
+      "cost_per_piece_raw": 1.0
+    }
+  ]
+}

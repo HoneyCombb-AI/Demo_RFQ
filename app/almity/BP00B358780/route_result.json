@@ -1,6 +1,6 @@
 {
-  "analysis_id": "BP00B358780_merge_20260829T195122Z",
-  "source_feature_graph_id": "BP00B358780_merge_20260829T195122Z",
+  "analysis_id": "BP00B358780_merge_20261005T120745Z",
+  "source_feature_graph_id": "BP00B358780_merge_20261005T120745Z",
   "quantity": 100,
   "part_family": "hybrid",
   "base_geometry": "complex",
@@ -10,9 +10,9 @@
   "operations": [
     {
       "sequence": 1,
-      "name": "Outside Vendor \u2013 Closed-Die Forging Supply",
+      "name": "Vendor Supply \u2013 Near-Net Forging",
       "machine_family": "outside_vendor",
-      "setup_note": "Supplier produces the near-net 6082-T6 closed-die forging with the central body, lugs, flange, cutouts, slots, radii, and peripheral notches incorporated in the die tooling. Forging thermal processing and certification to TM-2005 are included in the purchased blank.",
+      "setup_note": "Supplier matched dies form the lug contours, collar, journal transitions, relief and peripheral notches to the released forging/CAD definition. Supply the 100-piece order as trimmed, skin-cleaned, certified T6 preforms; this operation represents the purchased forging supply, not an additional charge on top of purchased blanks.",
       "datum_references": [],
       "material_machinability": "easy",
       "setup_time_min": 0.0,
@@ -23,28 +23,21 @@
           "sequence": 1,
           "operation_type": "forge_closed_die",
           "target_feature_ids": [
-            "F01",
             "F02",
+            "F03",
             "F05",
             "F06",
             "F07",
+            "F10",
             "F11",
-            "F12",
-            "F13",
-            "F14",
-            "F15",
-            "F16",
-            "F17",
-            "F18",
-            "F19"
+            "F12"
           ],
           "inputs": {
             "kind": "forge",
-            "billet_weight_kg": 0.5,
-            "forged_weight_kg": 0.46,
-            "number_of_blows": 2,
-            "die_stations": 2,
-            "forging_temp_c": 500.0,
+            "billet_weight_kg": 0.410133,
+            "forged_weight_kg": 0.410133,
+            "number_of_blows": 1,
+            "die_stations": 1,
             "max_section_thickness_mm": 40.065
           }
         }
@@ -52,74 +45,14 @@
     },
     {
       "sequence": 2,
-      "name": "Forge Flash Trim and Blend",
-      "machine_family": "finish_bench",
-      "setup_note": "Support the incoming near-net forging without loading the functional boss surfaces. Remove residual trim-line flash and blend affected radii smoothly without notches or stress risers.",
-      "datum_references": [],
-      "material_machinability": "easy",
-      "setup_time_min": 4.0,
-      "in_house": true,
-      "sub_operations": [
-        {
-          "sequence": 1,
-          "operation_type": "trim_flash",
-          "target_feature_ids": [
-            "F05",
-            "F06",
-            "F07",
-            "F11",
-            "F12",
-            "F13",
-            "F14",
-            "F15",
-            "F17",
-            "F18",
-            "F19"
-          ],
-          "inputs": {
-            "kind": "forge",
-            "billet_weight_kg": 0.46,
-            "forged_weight_kg": 0.41,
-            "number_of_blows": 1,
-            "die_stations": 1,
-            "max_section_thickness_mm": 40.065
-          }
-        },
-        {
-          "sequence": 2,
-          "operation_type": "deburr",
-          "target_feature_ids": [
-            "F05",
-            "F06",
-            "F07",
-            "F11",
-            "F12",
-            "F13",
-            "F15",
-            "F16",
-            "F17",
-            "F18",
-            "F19"
-          ],
-          "inputs": {
-            "kind": "manual",
-            "complexity": "medium",
-            "edge_length_mm": 500.0,
-            "feature_count": 11
-          }
-        }
-      ]
-    },
-    {
-      "sequence": 3,
-      "name": "Pre-Machining Forging NDT",
+      "name": "Vendor Forging Integrity Gate",
       "machine_family": "outside_vendor",
-      "setup_note": "Inspect the cleaned aluminium forging before machining so laps, seams, cold shuts, or surface-breaking cracks are rejected before value-added work. Process the order as a vendor inspection lot with traceability to TM-2005 material certification.",
+      "setup_note": "At the forging supplier, present cleaned preforms to the penetrant inspection station before release for machining. Apply the approved TM-2005 acceptance specification and retain lot traceability.",
       "datum_references": [],
       "material_machinability": "easy",
       "setup_time_min": 0.0,
       "in_house": false,
-      "outside_process": "special_testing_fpi",
+      "outside_process": "fpi_ndt",
       "sub_operations": [
         {
           "sequence": 1,
@@ -130,8 +63,40 @@
             "dimension_count": 0,
             "gdt_count": 0,
             "sampling_rate_pct": 100.0,
-            "inspected_area_mm2": 53125.0,
+            "inspected_area_mm2": 15834.0,
             "requires_fixture": false
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 3,
+      "name": "Forging Flash Smooth and Clean",
+      "machine_family": "finish_bench",
+      "setup_note": "Support the received T6 forging in a soft bench nest and smooth residual trimmed flash without altering die-formed contours. Remove loose contamination before chucking and avoid notches or stress risers at blends.",
+      "datum_references": [],
+      "material_machinability": "easy",
+      "setup_time_min": 3.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "deburr",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "manual",
+            "complexity": "medium",
+            "edge_length_mm": 502.0
+          }
+        },
+        {
+          "sequence": 2,
+          "operation_type": "clean_degrease",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "manual",
+            "complexity": "medium",
+            "estimated_time_min": 1.5
           }
         }
       ]
@@ -140,7 +105,75 @@
       "sequence": 4,
       "name": "CNC Turn \u2013 First End",
       "machine_family": "cnc_lathe",
-      "setup_note": "Locate the irregular near-net forging in dedicated soft jaws on the forged flange and support as required; indicate the boss before cutting. Face the first flange side and canned-cycle rough and finish turn the central cylinder to establish datum axis C.",
+      "setup_note": "Hold the forged left lug in balanced contour soft jaws aligned to X, with non-marking travelling support where the unsupported span requires it. Skim the right end, establish journal datum C using light G71/G70 cuts, and finish the designated collar right-face land in the same spindle orientation.",
+      "datum_references": [
+        "C"
+      ],
+      "material_machinability": "easy",
+      "setup_time_min": 25.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "face_turn",
+          "target_feature_ids": [
+            "F03"
+          ],
+          "inputs": {
+            "kind": "radial_turn",
+            "start_diameter_mm": 80.2,
+            "finish_diameter_mm": 0.0,
+            "groove_count": 1,
+            "total_stock_mm": 2.0
+          }
+        },
+        {
+          "sequence": 2,
+          "operation_type": "rough_turn_od",
+          "target_feature_ids": [
+            "F07"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 80.2,
+            "finish_diameter_mm": 40.865,
+            "cut_length_mm": 62.01
+          }
+        },
+        {
+          "sequence": 3,
+          "operation_type": "finish_turn_od",
+          "target_feature_ids": [
+            "F07"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 40.865,
+            "finish_diameter_mm": 40.065,
+            "cut_length_mm": 62.01
+          }
+        },
+        {
+          "sequence": 4,
+          "operation_type": "face_turn",
+          "target_feature_ids": [
+            "F02"
+          ],
+          "inputs": {
+            "kind": "radial_turn",
+            "start_diameter_mm": 80.2,
+            "finish_diameter_mm": 40.065,
+            "groove_count": 1,
+            "total_stock_mm": 0.5
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 5,
+      "name": "CNC Turn \u2013 Second End",
+      "machine_family": "cnc_lathe",
+      "setup_note": "Reverse the part into a protective split-sleeve fixture on finished datum C, using the first machined collar face as the axial pickup. Face the opposite end and collar land, then lightly skim and finish the collar OD while retaining the specified die-formed drafts, blends and relief.",
       "datum_references": [
         "C"
       ],
@@ -152,158 +185,145 @@
           "sequence": 1,
           "operation_type": "face_turn",
           "target_feature_ids": [
-            "F02"
+            "F03"
           ],
           "inputs": {
             "kind": "radial_turn",
-            "start_diameter_mm": 82.0,
-            "finish_diameter_mm": 42.0,
-            "groove_count": 1
+            "start_diameter_mm": 80.2,
+            "finish_diameter_mm": 0.0,
+            "groove_count": 1,
+            "total_stock_mm": 2.0
           }
         },
         {
           "sequence": 2,
-          "operation_type": "rough_turn_od",
-          "target_feature_ids": [
-            "F01"
-          ],
-          "inputs": {
-            "kind": "axial_turn",
-            "start_diameter_mm": 42.0,
-            "finish_diameter_mm": 40.865,
-            "cut_length_mm": 62.01
-          }
-        },
-        {
-          "sequence": 3,
-          "operation_type": "finish_turn_od",
-          "target_feature_ids": [
-            "F01"
-          ],
-          "inputs": {
-            "kind": "axial_turn",
-            "start_diameter_mm": 40.865,
-            "finish_diameter_mm": 40.065,
-            "cut_length_mm": 62.01
-          }
-        }
-      ]
-    },
-    {
-      "sequence": 5,
-      "name": "CNC Turn \u2013 Second End",
-      "machine_family": "cnc_lathe",
-      "setup_note": "Flip and locate in protected soft jaws from finished datum cylinder C, controlling axial position from the first turned side. Face the opposite flange side to establish datum B, then canned-cycle rough and finish the outer cylindrical boundary.",
-      "datum_references": [
-        "B",
-        "C"
-      ],
-      "material_machinability": "easy",
-      "setup_time_min": 18.0,
-      "in_house": true,
-      "sub_operations": [
-        {
-          "sequence": 1,
           "operation_type": "face_turn",
           "target_feature_ids": [
             "F02"
           ],
           "inputs": {
             "kind": "radial_turn",
-            "start_diameter_mm": 82.0,
+            "start_diameter_mm": 80.2,
             "finish_diameter_mm": 40.065,
-            "groove_count": 1
-          }
-        },
-        {
-          "sequence": 2,
-          "operation_type": "rough_turn_od",
-          "target_feature_ids": [
-            "F14"
-          ],
-          "inputs": {
-            "kind": "axial_turn",
-            "start_diameter_mm": 82.0,
-            "finish_diameter_mm": 80.8,
-            "cut_length_mm": 7.63
+            "groove_count": 1,
+            "total_stock_mm": 0.5
           }
         },
         {
           "sequence": 3,
+          "operation_type": "rough_turn_od",
+          "target_feature_ids": [
+            "F02"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 80.2,
+            "finish_diameter_mm": 80.8,
+            "cut_length_mm": 6.63
+          }
+        },
+        {
+          "sequence": 4,
           "operation_type": "finish_turn_od",
           "target_feature_ids": [
-            "F14"
+            "F02"
           ],
           "inputs": {
             "kind": "axial_turn",
             "start_diameter_mm": 80.8,
             "finish_diameter_mm": 80.0,
-            "cut_length_mm": 7.63
+            "cut_length_mm": 6.63
           }
         }
       ]
     },
     {
       "sequence": 6,
-      "name": "VMC \u2013 Straddle Milling, Slotting and Cross Drilling",
+      "name": "VMC \u2013 Gang Flats, Holes and Mounting Slot",
       "machine_family": "vmc_3axis",
-      "setup_note": "Locate the part in a dedicated gang fixture from turned datum C and flange face B; straddle-mill the four opposing arm flats together to establish datum A. Without unloading, spotface the lug pads and machine the left slot and right clearance hole from the established datums.",
+      "setup_note": "Clamp datum C in a protective, positively clocked indexable fixture and retain that single clamping while indexing for opposing Y and Z access; use gang/straddle cutters for paired flats. Establish A first, pick up its finished plane, and establish B by drilling before finishing the left slot relative to A-B; machine both sides of each contact pad by indexed access.",
       "datum_references": [
+        "C",
         "A",
-        "B",
-        "C"
+        "B"
       ],
       "material_machinability": "easy",
-      "setup_time_min": 30.0,
+      "setup_time_min": 40.0,
       "in_house": true,
       "sub_operations": [
         {
           "sequence": 1,
-          "operation_type": "face_mill",
+          "operation_type": "side_mill",
           "target_feature_ids": [
-            "F18",
-            "F19"
+            "F06"
           ],
           "inputs": {
-            "kind": "face_mill",
-            "mill_length_mm": 57.4,
-            "mill_width_mm": 38.0,
-            "total_stock_mm": 1.0,
-            "face_count": 4
+            "kind": "contour_mill",
+            "path_length_mm": 57.4,
+            "radial_width_mm": 0.5,
+            "total_depth_mm": 6.63,
+            "path_count": 1
           }
         },
         {
           "sequence": 2,
-          "operation_type": "spotface",
+          "operation_type": "side_mill",
           "target_feature_ids": [
-            "F09",
-            "F10"
+            "F05"
           ],
           "inputs": {
-            "kind": "point_drill",
-            "hole_diameter_mm": 35.0,
-            "hole_depth_mm": 0.5,
-            "hole_count": 4,
-            "through_hole": false
+            "kind": "contour_mill",
+            "path_length_mm": 44.0,
+            "radial_width_mm": 0.5,
+            "total_depth_mm": 12.0,
+            "path_count": 1
           }
         },
         {
           "sequence": 3,
+          "operation_type": "side_mill",
+          "target_feature_ids": [
+            "F06"
+          ],
+          "inputs": {
+            "kind": "contour_mill",
+            "path_length_mm": 57.4,
+            "radial_width_mm": 0.5,
+            "total_depth_mm": 6.63,
+            "path_count": 1
+          }
+        },
+        {
+          "sequence": 4,
+          "operation_type": "side_mill",
+          "target_feature_ids": [
+            "F05",
+            "F12"
+          ],
+          "inputs": {
+            "kind": "contour_mill",
+            "path_length_mm": 44.0,
+            "radial_width_mm": 0.5,
+            "total_depth_mm": 12.0,
+            "path_count": 1
+          }
+        },
+        {
+          "sequence": 5,
           "operation_type": "spot_drill",
           "target_feature_ids": [
-            "F03",
             "F04"
           ],
           "inputs": {
             "kind": "point_drill",
             "hole_diameter_mm": 6.0,
             "hole_depth_mm": 2.0,
-            "hole_count": 3,
+            "hole_count": 1,
             "through_hole": false
           }
         },
         {
-          "sequence": 4,
+          "sequence": 6,
           "operation_type": "drill",
           "target_feature_ids": [
             "F04"
@@ -311,74 +331,75 @@
           "inputs": {
             "kind": "point_drill",
             "hole_diameter_mm": 19.45,
-            "hole_depth_mm": 38.0,
+            "hole_depth_mm": 12.0,
             "hole_count": 1,
             "through_hole": true
           }
         },
         {
-          "sequence": 5,
-          "operation_type": "drill",
-          "target_feature_ids": [
-            "F03"
-          ],
-          "inputs": {
-            "kind": "point_drill",
-            "hole_diameter_mm": 16.25,
-            "hole_depth_mm": 38.0,
-            "hole_count": 2,
-            "through_hole": true
-          }
-        },
-        {
-          "sequence": 6,
+          "sequence": 7,
           "operation_type": "slot_mill",
           "target_feature_ids": [
-            "F03"
+            "F01"
           ],
           "inputs": {
             "kind": "contour_mill",
-            "path_length_mm": 3.2,
+            "path_length_mm": 57.45,
             "radial_width_mm": 16.25,
-            "total_depth_mm": 38.0,
+            "total_depth_mm": 6.63,
             "path_count": 1
+          }
+        },
+        {
+          "sequence": 8,
+          "operation_type": "spotface",
+          "target_feature_ids": [
+            "F08",
+            "F09"
+          ],
+          "inputs": {
+            "kind": "point_drill",
+            "hole_diameter_mm": 35.0,
+            "hole_depth_mm": 0.5,
+            "hole_count": 2,
+            "through_hole": false
+          }
+        },
+        {
+          "sequence": 9,
+          "operation_type": "spotface",
+          "target_feature_ids": [
+            "F08",
+            "F09"
+          ],
+          "inputs": {
+            "kind": "point_drill",
+            "hole_diameter_mm": 35.0,
+            "hole_depth_mm": 0.5,
+            "hole_count": 2,
+            "through_hole": false
           }
         }
       ]
     },
     {
       "sequence": 7,
-      "name": "Final Bench Deburr and Clean",
+      "name": "Final Deburr and Clean",
       "machine_family": "finish_bench",
-      "setup_note": "Deburr the turned shoulders, milled flats, spotfaces, slot, and both sides of the through features without rolling material onto datum surfaces. Break all remaining sharp edges to the drawing maximum and clean the completed parts.",
-      "datum_references": [
-        "A",
-        "B",
-        "C"
-      ],
+      "setup_note": "Support the machined part in a soft nest and rapidly deburr hole exits, slot boundaries and remaining machined edges to the 0.5 mm maximum edge-break requirement. Clean chips from both mounting openings and contact faces without rounding datum surfaces.",
+      "datum_references": [],
       "material_machinability": "easy",
-      "setup_time_min": 4.0,
+      "setup_time_min": 3.0,
       "in_house": true,
       "sub_operations": [
         {
           "sequence": 1,
           "operation_type": "deburr",
-          "target_feature_ids": [
-            "F01",
-            "F02",
-            "F03",
-            "F04",
-            "F09",
-            "F10",
-            "F14",
-            "F18",
-            "F19"
-          ],
+          "target_feature_ids": [],
           "inputs": {
             "kind": "manual",
             "complexity": "medium",
-            "edge_length_mm": 1250.0,
-            "feature_count": 9
+            "edge_length_mm": 1500.0
           }
         },
         {
@@ -388,23 +409,23 @@
           "inputs": {
             "kind": "manual",
             "complexity": "medium",
-            "estimated_time_min": 2.0
+            "estimated_time_min": 1.0
           }
         }
       ]
     },
     {
       "sequence": 8,
-      "name": "Final Shop-Floor Inspection",
+      "name": "Final Shop-Floor Quality Gate",
       "machine_family": "inspection",
-      "setup_note": "Locate from datums A, B, and C and perform the final sampling inspection with dedicated plug, snap, height, and flatness gauges. Verify the boss diameters, flange face, arm flats, hole or slot positions, overall condition, and absence of detrimental forging defects.",
+      "setup_note": "Present sampled parts to dedicated snap, plug and datum-specific functional gauges under the approved SPC plan. Check A-B mounting controls separately from C-referenced controls, with sampled flatness, collar perpendicularity, journal finish and visual blend/flash checks.",
       "datum_references": [
         "A",
         "B",
         "C"
       ],
       "material_machinability": "easy",
-      "setup_time_min": 10.0,
+      "setup_time_min": 5.0,
       "in_house": true,
       "sub_operations": [
         {
@@ -425,91 +446,145 @@
   "clarifications": [
     {
       "clarification_id": "C01",
-      "question": "What is the complete CAD-defined depth and three-dimensional extent of peripheral notches F15?",
+      "question": "Can you provide the released Revision B3 master CAD model?",
       "blocks": [
-        1
+        1,
+        4,
+        5,
+        6,
+        8
       ],
-      "suggested_default": "Produce F15 entirely in the closed-die forging and perform no separate contour milling.",
       "priority": "high"
     },
     {
       "clarification_id": "C02",
-      "question": "What is the complete CAD-defined depth and end condition of inner central slot F16?",
+      "question": "Does Revision B3 retain the interpretation that the collar is 6.63 mm over the outer radii and 7.63 mm at its base?",
       "blocks": [
-        1
+        1,
+        4,
+        5,
+        8
       ],
-      "suggested_default": "Produce F16 as a through feature in the closed-die forging, consistent with feature-graph assumption A12.",
+      "suggested_default": "Use the supplied over-radii interpretation provisionally, but release collar machining only against confirmed Revision B3 geometry.",
       "priority": "high"
     },
     {
       "clarification_id": "C03",
-      "question": "What is the complete CAD-defined depth and three-dimensional extent of outer central cutouts F17?",
+      "question": "Does the 12.15/11.85 mm feature F12 define the right lug's external thickness rather than an axial slot?",
       "blocks": [
-        1
+        1,
+        6,
+        8
       ],
-      "suggested_default": "Produce F17 entirely in the closed-die forging and perform no separate pocket milling.",
+      "suggested_default": "Treat F12 as the right lug thickness and produce it by paired side milling; do not cut an additional axial slot.",
       "priority": "high"
     },
     {
       "clarification_id": "C04",
-      "question": "Does the \u00d880 outer boundary F14 define the finish-turned outside diameter of central flange F02?",
+      "question": "What is the specified axial extent of the diameter-70 relief F10?",
       "blocks": [
         1,
-        5
+        8
       ],
-      "suggested_default": "Treat F14 as the finish-turned outer cylindrical boundary of the central flange region.",
+      "suggested_default": "Use the released master CAD definition; do not infer a 5 mm axial width from radial depth or blend radius.",
       "priority": "high"
     },
     {
       "clarification_id": "C05",
-      "question": "Is left slotted hole F03 intended to be drilled at its lobe locations and then finish slot-milled through?",
+      "question": "Is qualified near-net forging tooling already available for this 100-piece order?",
       "blocks": [
-        6
+        1
       ],
-      "suggested_default": "Spot and drill the slot lobe locations, then finish the through slot with one production slot-milling pass.",
-      "priority": "medium"
+      "suggested_default": "Source an existing qualified supplier preform; if tooling is unavailable, quote its non-recurring cost separately without substituting solid bar.",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C06",
+      "question": "What pre-machining NDT acceptance specification applies to this forging under TM-2005?",
+      "blocks": [
+        1,
+        2
+      ],
+      "suggested_default": "Retain supplier penetrant inspection before machining, with the acceptance specification approved before production.",
+      "priority": "high"
     }
   ],
   "assumptions": [
     {
       "assumption_id": "A01",
-      "text": "ALM-TURN-002 is treated as the more specific override to ALM-FORG-002: the turning stage is split into two mandatory opposed spindle setups, followed by one consolidated VMC setup."
+      "text": "The forging material designation and organizational overrides require a purchased near-net forging, not envelope-sized bar. All stock dimensions and machining allowance remain null because the preform is defined by its forging drawing."
     },
     {
       "assumption_id": "A02",
-      "text": "Features F05-F07 and F11-F19 are primarily near-net forged features; only the explicitly identified datums, cylindrical boundaries, arm flats, spotfaces, and holes receive machining."
+      "text": "Supplier billet weighing/cutting, heating, press trimming and skin removal are upstream activities included in the purchased forging supply, not separately quoted shop operations. Supplier-certified T6 processing replaces the generic forging template's normalize/anneal step; no post-machining heat treatment is specified."
     },
     {
       "assumption_id": "A03",
-      "text": "The purchased forging is supplied and certified in the specified 6082-T6 condition, so no separate post-forge solution-treatment or artificial-aging operation is routed."
+      "text": "The supplier must certify the specified material condition and minimum yield requirement. Steel-specific forging temperatures, hot-trim temperatures and mandatory normalizing guidance are not applied to this aluminium preform."
     },
     {
       "assumption_id": "A04",
-      "text": "Billet sawing, billet heating, die loading, and intermediate forging stages from the forging template are supplier-controlled activities included in the purchased closed-die forging rather than separate Almity operations."
+      "text": "The die supplies the rounded lug ends, large blends, drafts, diameter-70 relief and four peripheral collar cutouts to their final unmachined requirements. No separate VMC contour, pocket or flange-notch machining is added; supplier capability for these details must be verified against the released CAD."
     },
     {
       "assumption_id": "A05",
-      "text": "Separate shot blasting or descaling is omitted because the aluminium forging is assumed to arrive clean after supplier processing; residual trim-line material is removed and blended at the finish bench."
+      "text": "The approximately 410 g finished mass places this part in ALM-FORG-002's mid-range class, not ALM-FORG-003's under-350 g class. Gross forging billet allowance includes flash and process losses and must not be interpreted as machining removal from the trimmed preform."
     },
     {
       "assumption_id": "A06",
-      "text": "Turning-template center drilling, boring, grooving, threading, parting, and lathe chamfering are omitted because the near-net forging has no axial bore, groove, thread, or bar-fed part-off requirement; final edge breaking is performed at the bench."
+      "text": "Near-net cleanup allowances follow ALM-FORG-002: light turned-feature stock and limited milled-feature stock, with no full-envelope roughing. Because the supplier removes detrimental skin before delivery, the generic minimum 1.5 mm first-cut instruction does not override the organizational light-cleanup route."
     },
     {
       "assumption_id": "A07",
-      "text": "Milling-template saw cutting, perimeter profiling, pocket milling, reaming, tapping, counterboring, and separate contour blending are omitted under the near-net forging and consolidated bar-pin machining corrections."
+      "text": "The two main machining stages are represented by two distinct lathe chuckings followed by one VMC clamping. Each lathe chucking contains facing and G71/G70 profile passes; journal and collar diameters remain separate sub-operations rather than being combined into a mixed-diameter cut."
     },
     {
       "assumption_id": "A08",
-      "text": "Hole-making pilot drilling, peck drilling, reaming, boring, tapping, and countersinking are omitted because F03 and F04 are short through clearance features with no H7 fit, thread, or deep-hole requirement."
+      "text": "Lathe facing is restricted to designated axial end surfaces and collar lands. Large die-formed radii and drafts are retained rather than recut, and the generic grooving step is omitted because F10 is supplied by the die."
     },
     {
       "assumption_id": "A09",
-      "text": "Circular machined patches F09 and F10 are interpreted as spotfaces centered on the lug hole and slot locations and are machined in the consolidated VMC setup."
+      "text": "Dedicated contour jaws, protective journal sleeves, suitable non-marking support and a positively clocked indexable VMC fixture are required. Fixture indexing changes access direction without unloading or releasing the part; gang/straddle tooling machines opposing flats where feasible."
     },
     {
       "assumption_id": "A10",
-      "text": "Pending confirmation, F03 is routed by drilling its lobe locations followed by a single finish slot-milling pass; no multi-pass pocket or perimeter profiling is used."
+      "text": "VMC sub-operation 1 machines the left lug's opposing Y flats and establishes A; sub-operation 2 machines the right lug's Y flats. Sub-operations 3 and 4 machine the left and right Z face pairs respectively, with the left thickness taken from master CAD and F12 provisionally interpreted as the right lug thickness."
+    },
+    {
+      "assumption_id": "A11",
+      "text": "External flat machining precedes drilling. F04 is spotted and drilled to establish B before F01 is finished by slot milling relative to A-B; no extra left-lug hole is inferred from the aggregate lug description."
+    },
+    {
+      "assumption_id": "A12",
+      "text": "The left and right contact pads are provisionally flush with their adjacent lug faces, following the supplied graph assumptions. The two spotface sub-operations finish the positive-Z and negative-Z pad instances respectively, removing forging cleanup stock without creating an unsupported recess depth."
+    },
+    {
+      "assumption_id": "A13",
+      "text": "Saw cutting and parting are omitted for individual forged blanks. Lathe centre drilling is omitted because no centre-hole feature is specified and external support is used; axial boring, threading and knurling are omitted because corresponding features are absent."
+    },
+    {
+      "assumption_id": "A14",
+      "text": "Milling-template profile and pocket steps are unnecessary because those contours are die-formed. Spot drilling replaces centre drilling for F04; pilot and deep-hole drilling are unnecessary for the short clearance hole, and reaming, precision boring, tapping, countersinking and counterboring are omitted because their requirements are absent."
+    },
+    {
+      "assumption_id": "A15",
+      "text": "Finish milling uses climb cutting. General sharp-edge treatment is consolidated into the rapid bench deburr operations rather than represented as invented chamfer features."
+    },
+    {
+      "assumption_id": "A16",
+      "text": "Supplier penetrant inspection provides the pre-machining forging integrity gate. Magnetic-particle inspection is inapplicable to aluminium, and ultrasonic inspection is not added unless TM-2005 or the confirmed safety classification requires it."
+    },
+    {
+      "assumption_id": "A17",
+      "text": "Final inspection is a sampled shop-floor gauge gate, not a 100 percent CMM layout. A-B and C controls remain independent; listing all three datums at inspection does not establish a unified A-B-C hierarchy."
+    },
+    {
+      "assumption_id": "A18",
+      "text": "No coating, functional test, crush test or post-machining hardening is specified, so those conditional processes are omitted. Bench and inspection work follow the organizational rapid-production and sampling principles; cycle-time inputs remain for Pass 2."
+    },
+    {
+      "assumption_id": "A19",
+      "text": "Inspection, cleaning and general deburring have empty target lists because they do not produce separately identified graph features. Every non-body feature is physically formed by the supplier die or produced by its dedicated machining sub-operation."
     }
   ]
 }

@@ -1,0 +1,92 @@
+{
+  "drawing_number": "0C03B347690",
+  "part_name": "OUTER COMPONENT",
+  "material": "ASTM B 221M GRADE 6061 T6",
+  "quantity": 100,
+  "quote_status": "complete",
+  "weights": {
+    "raw_bar_dia_mm": 80.0,
+    "actual_bar_dia_mm": 80.0,
+    "gross_weight_kg": 0.0903,
+    "gross_weight_g": 90.3,
+    "net_weight_kg": 0.053,
+    "net_weight_g": 53.0,
+    "scrap_weight_kg": 0.0373,
+    "scrap_weight_g": 37.3,
+    "net_weight_source": "routing"
+  },
+  "direct_cost": {
+    "material_cost_inr": 12.19,
+    "material_rate_per_kg_inr": 135.0,
+    "machining_cost_inr": 14.52,
+    "direct_base_inr": 26.71
+  },
+  "cif_and_overheads": {
+    "packaging_charges_inr": 1.0,
+    "overhead_25_pct_inr": 6.68,
+    "logistics_cost_inr": 2.17,
+    "total_cif_inr": 36.55,
+    "scrap_recovery_credit_inr": -0.75,
+    "total_cost_per_pc_inr": 35.81
+  },
+  "pricing_and_duties": {
+    "profit_10_pct_inr": 2.67,
+    "actual_cost_inr": 38.48,
+    "icc_and_rejection_inr": 0.78,
+    "custom_duty_3_5_pct_inr": 1.35,
+    "warehouse_cost_4_pct_inr": 1.54,
+    "final_landed_price_inr": 42.14
+  },
+  "machining_operations": [
+    {
+      "sequence": 1,
+      "operation_name": "Saw Cut Tube Blank",
+      "machine_family": "saw",
+      "cycle_time_sec": 46.7,
+      "cycle_time_raw_sec": 46.7,
+      "hourly_rate_inr": 290.0,
+      "cost_per_piece_inr": 3.76,
+      "cost_per_piece_raw": 3.7619444444444445
+    },
+    {
+      "sequence": 2,
+      "operation_name": "CNC Turn – First End",
+      "machine_family": "cnc_lathe",
+      "cycle_time_sec": 74.3,
+      "cycle_time_raw_sec": 74.3,
+      "hourly_rate_inr": 280.0,
+      "cost_per_piece_inr": 5.78,
+      "cost_per_piece_raw": 5.778888888888889
+    },
+    {
+      "sequence": 3,
+      "operation_name": "CNC Turn – Second End",
+      "machine_family": "cnc_lathe",
+      "cycle_time_sec": 51.1,
+      "cycle_time_raw_sec": 51.1,
+      "hourly_rate_inr": 280.0,
+      "cost_per_piece_inr": 3.97,
+      "cost_per_piece_raw": 3.9744444444444444
+    },
+    {
+      "sequence": 4,
+      "operation_name": "Production Deburr and Clean",
+      "machine_family": "finish_bench",
+      "cycle_time_sec": 126.6,
+      "cycle_time_raw_sec": 126.6,
+      "hourly_rate_inr": 200.0,
+      "cost_per_piece_inr": 0.0,
+      "cost_per_piece_raw": 0.0
+    },
+    {
+      "sequence": 5,
+      "operation_name": "Shop-Floor Quality Release",
+      "machine_family": "inspection",
+      "cycle_time_sec": 179.8,
+      "cycle_time_raw_sec": 179.8,
+      "hourly_rate_inr": 250.0,
+      "cost_per_piece_inr": 1.0,
+      "cost_per_piece_raw": 1.0
+    }
+  ]
+}

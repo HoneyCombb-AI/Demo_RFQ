@@ -1,0 +1,349 @@
+{
+  "analysis_id": "IC01B029750_merge_20261005T110028Z",
+  "part": {
+    "name": "INNER COMPONENT",
+    "drawing_number": "IC01B029750",
+    "revision": "F1",
+    "material": "SAE J403 GRADE 1008-1020",
+    "units": "mm"
+  },
+  "feature_graph": {
+    "part_envelope": {
+      "length_mm": 75.88,
+      "width_mm": 3.5,
+      "max_diameter_mm": 31.43
+    },
+    "coordinate_system": {
+      "primary_axis": "Z",
+      "orientation_notes": "Use the end-view coordinate convention: XY is the end-view plane and Z is the sleeve longitudinal axis. Section A-A uses view-local X for this same longitudinal axis and view-local Y for the transverse height; its cut-normal Z is therefore a local view designation, not world Z. Section B-B supplies the local tooth profile. No datum-based origin is established."
+    },
+    "features": [
+      {
+        "feature_id": "F01",
+        "feature_type": "internal_bore",
+        "name": "Central through bore",
+        "description": "Continuous longitudinal through bore running along the component axis with corner breaks at each bore entry.",
+        "geometry": {
+          "diameter_mm": 16.25,
+          "inner_diameter_mm": 16.25,
+          "depth_condition": "THRU",
+          "hole_count": 1,
+          "position_description": "Centred on component axis",
+          "axis_direction": "+X"
+        },
+        "instance_count": 1,
+        "access_directions": [
+          "+Z",
+          "-Z",
+          "+X",
+          "-X"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 20.25,
+            "upper_limit_mm": 20.75,
+            "lower_limit_mm": 19.75,
+            "qualifier": "TYP"
+          },
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 16.25,
+            "upper_limit_mm": 16.4,
+            "lower_limit_mm": 16.1,
+            "qualifier": "1"
+          },
+          {
+            "dimension_type": "chamfer",
+            "nominal_mm": 2.0,
+            "upper_limit_mm": 2.5,
+            "lower_limit_mm": 1.5,
+            "qualifier": "2X"
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "end_view",
+          "section_aa"
+        ]
+      },
+      {
+        "feature_id": "F02",
+        "feature_type": "spline",
+        "name": "Knurl detail",
+        "description": "Straight knurl / serration tooth profile, 28-32 places equally spaced at both ends.",
+        "geometry": {
+          "diameter_mm": 26.9,
+          "inner_diameter_mm": 20.25,
+          "outer_diameter_mm": 26.9,
+          "depth_mm": 0.255,
+          "width_mm": 0.76,
+          "angle_deg": 50.0,
+          "position_description": "Equally spaced at both ends of the component",
+          "axis_direction": "+Z"
+        },
+        "access_directions": [
+          "+Z",
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 26.9,
+            "upper_limit_mm": 27.4,
+            "lower_limit_mm": 26.4,
+            "qualifier": "TYP"
+          },
+          {
+            "dimension_type": "angle_deg",
+            "nominal_mm": 50.0,
+            "angle_deg": 50.0
+          },
+          {
+            "dimension_type": "depth",
+            "nominal_mm": 0.255,
+            "upper_limit_mm": 0.32,
+            "lower_limit_mm": 0.19
+          },
+          {
+            "dimension_type": "width",
+            "nominal_mm": 0.76,
+            "upper_limit_mm": 0.76,
+            "qualifier": "MAX."
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "end_view",
+          "section_bb"
+        ]
+      },
+      {
+        "feature_id": "F03",
+        "feature_type": "part_body",
+        "name": "Sleeve overall body",
+        "description": "Full-length tubular sleeve body with length dimension specified under knurls between opposing end faces.",
+        "geometry": {
+          "length_mm": 75.73,
+          "axis_direction": "+X"
+        },
+        "instance_count": 1,
+        "access_directions": [
+          "+X",
+          "-X"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "length",
+            "nominal_mm": 75.73,
+            "upper_limit_mm": 75.88,
+            "lower_limit_mm": 75.58,
+            "qualifier": "UNDER KNURLS"
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "section_aa"
+        ]
+      },
+      {
+        "feature_id": "F04",
+        "feature_type": "flange",
+        "name": "End shoulders",
+        "description": "Raised cylindrical collars/shoulders located at both ends of the sleeve.",
+        "geometry": {
+          "diameter_mm": 31.3,
+          "outer_diameter_mm": 31.3,
+          "width_mm": 3.0,
+          "axis_direction": "+X"
+        },
+        "instance_count": 2,
+        "access_directions": [
+          "radial",
+          "+X",
+          "-X"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 31.3,
+            "upper_limit_mm": 31.43,
+            "lower_limit_mm": 31.17,
+            "qualifier": "2X"
+          },
+          {
+            "dimension_type": "width",
+            "nominal_mm": 3.0,
+            "upper_limit_mm": 3.5,
+            "lower_limit_mm": 2.5,
+            "qualifier": "2X"
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "section_aa"
+        ]
+      },
+      {
+        "feature_id": "F05",
+        "feature_type": "external_cylinder",
+        "name": "Central outer cylinder",
+        "description": "Main central cylindrical outside diameter between the two end shoulders.",
+        "geometry": {
+          "diameter_mm": 26.9,
+          "outer_diameter_mm": 26.9,
+          "axis_direction": "+X"
+        },
+        "instance_count": 1,
+        "access_directions": [
+          "radial",
+          "+Y",
+          "-Y"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "section_aa"
+        ]
+      },
+      {
+        "feature_id": "F06",
+        "feature_type": "fillet",
+        "name": "Shoulder transition fillets",
+        "description": "Internal corner fillets at the transition from central cylinder \u00d826.90 to both end shoulders \u00d831.43.",
+        "geometry": {
+          "radius_mm": 2.0
+        },
+        "instance_count": 2,
+        "access_directions": [
+          "radial"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "callout_qualifiers": [
+          {
+            "qualifier": "2X",
+            "dimension_type": "radius",
+            "nominal_mm": 2.0
+          }
+        ],
+        "source_views": [
+          "section_aa"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "relationship_id": "R01",
+        "from_feature_id": "F01",
+        "to_feature_id": "F05",
+        "relationship_type": "coaxial",
+        "detail": "The longitudinal through bore and central outside cylinder share the sleeve centerline."
+      },
+      {
+        "relationship_id": "R02",
+        "from_feature_id": "F01",
+        "to_feature_id": "F04",
+        "relationship_type": "coaxial",
+        "detail": "Both cylindrical end shoulders are centered on the longitudinal bore axis."
+      },
+      {
+        "relationship_id": "R03",
+        "from_feature_id": "F05",
+        "to_feature_id": "F04",
+        "relationship_type": "coaxial",
+        "detail": "The central outside cylinder and the end shoulders share the longitudinal sleeve axis."
+      },
+      {
+        "relationship_id": "R04",
+        "from_feature_id": "F02",
+        "to_feature_id": "F01",
+        "relationship_type": "concentric",
+        "detail": "The end view places the annular serration pattern around the central bore center."
+      },
+      {
+        "relationship_id": "R05",
+        "from_feature_id": "F02",
+        "to_feature_id": "F04",
+        "relationship_type": "radial_pattern",
+        "detail": "The B-B detail defines equally spaced knurl teeth at both ends; the end shoulders explicitly reference that detail."
+      },
+      {
+        "relationship_id": "R06",
+        "from_feature_id": "F06",
+        "to_feature_id": "F05",
+        "relationship_type": "intersecting",
+        "detail": "The transition fillets join the central outside cylinder at its shoulder transitions."
+      },
+      {
+        "relationship_id": "R07",
+        "from_feature_id": "F06",
+        "to_feature_id": "F04",
+        "relationship_type": "intersecting",
+        "detail": "The transition fillets join the end shoulders to the central outside cylinder."
+      }
+    ],
+    "datum_scheme": {
+      "datums": [],
+      "datum_hierarchy_notes": "No datum definitions or GD&T feature control frames are supplied. A-A and B-B are section identifiers, while the inspection and revision balloons do not establish datums."
+    },
+    "part_notes": "Material: SAE J403 GRADE 1008-1020. Material standard: SAE J403. Scale: 1:1. General tolerance: ASME Y14.5M-1994. Projection: third angle. Heat treatment: none specified. Coating: PHOSPHATE COAT PER PS-119.0. General notes: DEBURR: BREAK ALL SHARP EDGES 0.5 MAX.. FINISH: PHOSPHATE COAT PER PS-119.0. TOLERANCE: METRIC DIMENSIONS & TOLERANCES GOVERN THE DESIGN. ENGLISH DIMENSIONS IF INCLUDED ARE FOR INFORMATION PURPOSES ONLY.. INSPECTION: [HEXAGON] = MUST CONFORM LAST NUMBER TOTAL NUMBER. Testing: CRUSH TEST per PS-122.10 0.38mm (165kN, 82.5kN, 0.38mm). Extraction notes: Title block specifies minimum yield strength 'AS SHOWN MIN. YIELD: 435 MPa'. Drawing scale is designated as 'FULL' (1:1). Dates in revision table and title block follow YYMMDD / MMDDYY notation.",
+    "overall_complexity": "moderate"
+  },
+  "component_specs": [],
+  "component_spec_links": [],
+  "assumptions": [
+    {
+      "assumption_id": "A01",
+      "text": "Grouped end_view:F1 with section_aa:F5 using the A-A cut-through-center-axis correspondence and their central-bore descriptions. This identity is provisional pending C01; the incompatible diameter callouts have not been treated as truncation or resolved by selecting a nominal."
+    },
+    {
+      "assumption_id": "A02",
+      "text": "Selected section_aa:F5 as the provisional bore canonical because the longitudinal section provides the more complete bore observation and directly establishes the THRU condition. This selection does not authorize machining while C01 remains unresolved."
+    },
+    {
+      "assumption_id": "A03",
+      "text": "Grouped end_view:F2 with section_bb:F1 through the explicit B-B cross-reference. Selected the enlarged B-B detail as canonical because it provides the tooth-profile definition; the parent end view supplies the annular boundaries."
+    },
+    {
+      "assumption_id": "A04",
+      "text": "Retained section_aa:F3 as a separate feature from the knurl group. The smooth central outside cylinder and the serrated end-face zone are distinct physical regions despite a coincident reported diameter."
+    },
+    {
+      "assumption_id": "A05",
+      "text": "Retained the paired shoulders and paired transition fillets as their existing interchangeable-instance observations. No individually distinguished counterparts are supplied, so no aggregate-reference splitting is needed."
+    },
+    {
+      "assumption_id": "A06",
+      "text": "Interpreted B-B as the tooth-profile detail for the radial end-face serrations identified in the parent view. Its request for an axial engagement length was not treated as an independently missing straight-knurl length, and no axial extent was invented."
+    },
+    {
+      "assumption_id": "A07",
+      "text": "Adopted the end-view world-axis convention and treated section A-A coordinates as view-local coordinates describing the same sleeve axis."
+    },
+    {
+      "assumption_id": "A08",
+      "text": "Treated ASME Y14.5M-1994 as the supplied dimensioning and tolerancing interpretation standard, not as a source of numerical default tolerances for untoleranced dimensions."
+    },
+    {
+      "assumption_id": "A09",
+      "clarification_id": "C02",
+      "text": "The two bore-entry corner breaks shown in Section A-A are 45\u00b0 chamfers."
+    },
+    {
+      "assumption_id": "A10",
+      "clarification_id": "C01",
+      "text": "The \u00d820.75/19.75 callout applies to the bore entrance chamfer (corner break) at the end face, which defines the inner boundary of the face knurl, whereas the \u00d816.4/16.1 callout in section A-A specifies the through-bore diameter."
+    },
+    {
+      "assumption_id": "A11",
+      "clarification_id": "C03",
+      "text": "Dimensions lacking an explicit tolerance, such as \u00d8 26.90, R 2.00, and the 50\u00b0 angle, are assumed to be governed by standard title block general tolerances in accordance with ASME Y14.5. Under this standard, untoleranced features follow general decimal-place tolerances (typically \u00b10.13 mm / \u00b10.010 in for two decimal places and \u00b11\u00b0 for angles)."
+    }
+  ]
+}

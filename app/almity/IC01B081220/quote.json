@@ -3,104 +3,98 @@
   "part_name": "INNER COMPONENT",
   "material": "SAE J403 GRADE 1010-1020 CD STEEL",
   "quantity": 100,
+  "quote_status": "complete",
   "weights": {
-    "raw_bar_dia_mm": 46.2,
-    "actual_bar_dia_mm": 46.431,
-    "gross_weight_kg": 1.2198,
-    "net_weight_kg": 0.7791,
-    "scrap_weight_kg": 0.4408,
+    "raw_bar_dia_mm": 46.5,
+    "actual_bar_dia_mm": 46.5,
+    "gross_weight_kg": 1.2242,
+    "gross_weight_g": 1224.2,
+    "net_weight_kg": 0.7222,
+    "net_weight_g": 722.2,
+    "scrap_weight_kg": 0.5021,
+    "scrap_weight_g": 502.1,
     "net_weight_source": "routing"
   },
   "direct_cost": {
-    "material_cost_inr": 164.68,
+    "material_cost_inr": 165.27,
     "material_rate_per_kg_inr": 135.0,
-    "machining_cost_inr": 40.5,
-    "direct_base_inr": 205.17
+    "machining_cost_inr": 24.36,
+    "direct_base_inr": 189.63
   },
   "cif_and_overheads": {
-    "packaging_charges_inr": 1.0,
-    "overhead_25_pct_inr": 51.29,
-    "logistics_cost_inr": 31.91,
-    "total_cif_inr": 289.37,
-    "scrap_recovery_credit_inr": -12.34,
-    "total_cost_per_pc_inr": 277.03
+    "packaging_charges_inr": 2.94,
+    "overhead_25_pct_inr": 47.41,
+    "logistics_cost_inr": 29.58,
+    "total_cif_inr": 269.55,
+    "scrap_recovery_credit_inr": -10.04,
+    "total_cost_per_pc_inr": 259.51
   },
   "pricing_and_duties": {
-    "profit_10_pct_inr": 20.52,
-    "actual_cost_inr": 297.55,
-    "icc_and_rejection_inr": 7.4,
-    "custom_duty_3_5_pct_inr": 10.41,
-    "warehouse_cost_4_pct_inr": 11.9,
-    "final_landed_price_inr": 319.87
+    "profit_10_pct_inr": 18.96,
+    "actual_cost_inr": 278.47,
+    "icc_and_rejection_inr": 7.1,
+    "custom_duty_3_5_pct_inr": 9.75,
+    "warehouse_cost_4_pct_inr": 11.14,
+    "final_landed_price_inr": 306.45
   },
   "machining_operations": [
     {
       "sequence": 1,
-      "operation_name": "Saw Cut Tube Blank",
+      "operation_name": "Saw Cut Tube Blanks",
       "machine_family": "saw",
-      "cycle_time_sec": 56.4,
+      "cycle_time_sec": 57.4,
+      "cycle_time_raw_sec": 57.4,
       "hourly_rate_inr": 290.0,
-      "efficiency": 0.85,
-      "cost_per_piece_inr": 5.35,
-      "cost_per_piece_raw": 5.345098039215686
+      "cost_per_piece_inr": 4.62,
+      "cost_per_piece_raw": 4.623888888888889
     },
     {
       "sequence": 2,
       "operation_name": "CNC Turn – First End",
       "machine_family": "cnc_lathe",
-      "cycle_time_sec": 82.8,
+      "cycle_time_sec": 150.9,
+      "cycle_time_raw_sec": 150.9,
       "hourly_rate_inr": 280.0,
-      "efficiency": 0.85,
-      "cost_per_piece_inr": 7.58,
-      "cost_per_piece_raw": 7.576470588235294
+      "cost_per_piece_inr": 11.74,
+      "cost_per_piece_raw": 11.736666666666666
     },
     {
       "sequence": 3,
       "operation_name": "CNC Turn – Second End",
       "machine_family": "cnc_lathe",
-      "cycle_time_sec": 82.8,
+      "cycle_time_sec": 90.0,
+      "cycle_time_raw_sec": 90.0,
       "hourly_rate_inr": 280.0,
-      "efficiency": 0.85,
-      "cost_per_piece_inr": 7.58,
-      "cost_per_piece_raw": 7.576470588235294
+      "cost_per_piece_inr": 7.0,
+      "cost_per_piece_raw": 7.0
+    },
+    {
+      "sequence": 4,
+      "operation_name": "Production Deburr and Clean",
+      "machine_family": "finish_bench",
+      "cycle_time_sec": 173.0,
+      "cycle_time_raw_sec": 173.0,
+      "hourly_rate_inr": 200.0,
+      "cost_per_piece_inr": 0.0,
+      "cost_per_piece_raw": 0.0
     },
     {
       "sequence": 5,
-      "operation_name": "Deburr and Clean",
-      "machine_family": "finish_bench",
-      "cycle_time_sec": 174.0,
-      "hourly_rate_inr": 200.0,
-      "efficiency": 0.85,
+      "operation_name": "Corrosion-Resistant Treatment – Provisional Zinc",
+      "machine_family": "plating_line",
+      "cycle_time_sec": 129.5,
+      "cycle_time_raw_sec": 129.5,
+      "hourly_rate_inr": 300.0,
       "cost_per_piece_inr": 0.0,
       "cost_per_piece_raw": 0.0
     },
     {
       "sequence": 6,
-      "operation_name": "Corrosion-Resistant Coating",
-      "machine_family": "plating_line",
-      "cycle_time_sec": 163.2,
-      "hourly_rate_inr": 300.0,
-      "efficiency": 0.85,
-      "cost_per_piece_inr": 16.0,
-      "cost_per_piece_raw": 16.0
-    },
-    {
-      "sequence": 7,
-      "operation_name": "Periodic Crush Test",
-      "machine_family": "test_bench",
-      "cycle_time_sec": 31.2,
-      "hourly_rate_inr": 400.0,
-      "efficiency": 0.85,
-      "cost_per_piece_inr": 3.0,
-      "cost_per_piece_raw": 3.0
-    },
-    {
-      "sequence": 8,
-      "operation_name": "Final Shop-Floor Inspection",
+      "operation_name": "Final Shop-Floor Quality Gate",
       "machine_family": "inspection",
-      "cycle_time_sec": 105.6,
+      "cycle_time_sec": 123.9,
+      "cycle_time_raw_sec": 123.9,
       "hourly_rate_inr": 250.0,
-      "efficiency": 0.85,
       "cost_per_piece_inr": 1.0,
       "cost_per_piece_raw": 1.0
     }

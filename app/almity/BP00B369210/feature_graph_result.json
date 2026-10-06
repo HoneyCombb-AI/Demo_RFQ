@@ -1,0 +1,500 @@
+{
+  "analysis_id": "BP00B369210_merge_20261005T125058Z",
+  "part": {
+    "name": "INNER COMPONENT-BALL STUD",
+    "drawing_number": "BP00B369210",
+    "units": "mm"
+  },
+  "feature_graph": {
+    "part_envelope": {
+      "length_mm": 200.0,
+      "width_mm": 7.39,
+      "height_mm": 22.38,
+      "max_diameter_mm": 70.92
+    },
+    "coordinate_system": {
+      "primary_axis": "Y",
+      "orientation_notes": "X follows the overall arm span, Y follows the through-slot machining direction, and Z is transverse to the arms in the top-view plane. The section_aa and top_view coordinate notes establish this convention. The side_view A-A arrows described along -X conflict with section_aa's reported Z cut normal; that marker is not used to infer correspondence between the side-view circular feature and the external shoulders.",
+      "datum_origin": "A"
+    },
+    "features": [
+      {
+        "feature_id": "F01",
+        "feature_type": "part_body",
+        "name": "Part overall length envelope",
+        "description": "Total horizontal extent of the component between left and right arm ends.",
+        "geometry": {
+          "length_mm": 200.0,
+          "position_description": "Centered symmetrically along X axis",
+          "axis_direction": "+X"
+        },
+        "instance_count": 1,
+        "access_directions": [
+          "+X",
+          "-X"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "section_aa",
+          "top_view"
+        ]
+      },
+      {
+        "feature_id": "F02",
+        "feature_type": "arm",
+        "name": "Opposing lateral arms",
+        "description": "Two horizontal arm extensions extending left and right from the central body with top surfaces parallel to Datum A.",
+        "geometry": {
+          "height_mm": 22.0,
+          "axis_direction": "+X"
+        },
+        "instance_count": 2,
+        "access_directions": [
+          "+Y",
+          "-Y",
+          "+Z",
+          "-Z"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "height",
+            "nominal_mm": 22.0,
+            "upper_limit_mm": 22.38,
+            "lower_limit_mm": 21.62,
+            "qualifier": "2X"
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "parallelism",
+            "tolerance_value_mm": 0.25,
+            "datum_references": [
+              "A"
+            ],
+            "applied_to": "Top planar surface of left arm"
+          },
+          {
+            "gdt_type": "parallelism",
+            "tolerance_value_mm": 0.25,
+            "datum_references": [
+              "A"
+            ],
+            "applied_to": "Top planar surface of right arm"
+          }
+        ],
+        "callout_qualifiers": [],
+        "source_views": [
+          "section_aa"
+        ]
+      },
+      {
+        "feature_id": "F03",
+        "feature_type": "boss",
+        "name": "Central body section",
+        "description": "Main central body feature with outer cylindrical/ring profile.",
+        "geometry": {
+          "diameter_mm": 70.92,
+          "length_mm": 60.0
+        },
+        "instance_count": 1,
+        "access_directions": [
+          "+Y",
+          "-Y",
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "position_x",
+            "nominal_mm": 30.0,
+            "upper_limit_mm": 30.13,
+            "lower_limit_mm": 29.87
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [
+          {
+            "qualifier": "O/R",
+            "dimension_type": "diameter",
+            "nominal_mm": 70.92
+          }
+        ],
+        "source_views": [
+          "section_aa"
+        ]
+      },
+      {
+        "feature_id": "F04",
+        "feature_type": "shaft_step",
+        "name": "Central body stepped shoulders",
+        "description": "Stepped cylindrical/shoulder bosses on both sides of the central body with blend fillets.",
+        "geometry": {
+          "diameter_mm": 42.0,
+          "length_mm": 7.39,
+          "width_mm": 7.39,
+          "radius_mm": 2.5
+        },
+        "instance_count": 2,
+        "access_directions": [
+          "+X",
+          "-X",
+          "+Y",
+          "-Y",
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 42.0,
+            "upper_limit_mm": 42.13,
+            "lower_limit_mm": 41.87,
+            "qualifier": "2X"
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [
+          {
+            "qualifier": "2X",
+            "dimension_type": "width",
+            "nominal_mm": 7.39
+          },
+          {
+            "qualifier": "4X",
+            "dimension_type": "radius",
+            "nominal_mm": 2.5
+          }
+        ],
+        "source_views": [
+          "section_aa"
+        ]
+      },
+      {
+        "feature_id": "F05",
+        "feature_type": "tapered_external",
+        "name": "Angled tapered protrusion (ball stud base)",
+        "description": "Downwards-pointing 90-degree tapered protrusion with rounded tip and blend radii, defining Datum A.",
+        "geometry": {
+          "taper_included_angle_deg": 90.0,
+          "radius_mm": 9.68,
+          "angle_deg": 90.0,
+          "axis_direction": "-Y"
+        },
+        "instance_count": 1,
+        "access_directions": [
+          "-Y",
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "angle_deg",
+            "nominal_mm": 90.0,
+            "angle_deg": 90.0
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "flatness",
+            "tolerance_value_mm": 0.25,
+            "datum_references": [],
+            "applied_to": "2 angled surfaces establishing Datum A"
+          }
+        ],
+        "callout_qualifiers": [
+          {
+            "qualifier": "2X",
+            "dimension_type": "radius",
+            "nominal_mm": 10.0
+          }
+        ],
+        "source_views": [
+          "section_aa"
+        ]
+      },
+      {
+        "feature_id": "F06",
+        "feature_type": "coating_zone",
+        "name": "Bond preparation area",
+        "description": "Local surface preparation zone indicated along the lower transition radius and conical flank by a phantom/chain boundary line.",
+        "geometry": {},
+        "instance_count": 1,
+        "access_directions": [
+          "-Y"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "section_aa"
+        ]
+      },
+      {
+        "feature_id": "F07",
+        "feature_type": "internal_bore",
+        "name": "2X \u00d842.00 bore",
+        "description": "Internal circular bore or spherical diameter callout indicated by double-ended arrow across diameter.",
+        "geometry": {
+          "diameter_mm": 42.0,
+          "hole_count": 2,
+          "position_description": "Centred on vertical and horizontal centerlines",
+          "axis_direction": "+Z"
+        },
+        "instance_count": 2,
+        "access_directions": [
+          "+Z",
+          "-Z"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "callout_qualifiers": [
+          {
+            "qualifier": "2X",
+            "dimension_type": "diameter",
+            "nominal_mm": 42.0
+          }
+        ],
+        "source_views": [
+          "side_view"
+        ]
+      },
+      {
+        "feature_id": "F08",
+        "feature_type": "slot",
+        "name": "Left elongated hole",
+        "description": "Vertically elongated slot through left arm, 20.6-20.9 mm wide along X by 23.6-23.9 mm long along Z, located 157 mm basic from Datum B.",
+        "geometry": {
+          "length_mm": 23.75,
+          "depth_condition": "THRU",
+          "width_mm": 20.75,
+          "hole_count": 1,
+          "position_description": "157 mm basic along X from right hole Datum B",
+          "axis_direction": "+Y"
+        },
+        "instance_count": 1,
+        "access_directions": [
+          "+Y",
+          "-Y"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "width",
+            "nominal_mm": 20.75,
+            "upper_limit_mm": 20.9,
+            "lower_limit_mm": 20.6
+          },
+          {
+            "dimension_type": "length",
+            "nominal_mm": 23.75,
+            "upper_limit_mm": 23.9,
+            "lower_limit_mm": 23.6
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "position",
+            "tolerance_value_mm": 0.25,
+            "material_condition": "MMC",
+            "datum_references": [
+              "A",
+              "B"
+            ],
+            "applied_to": "Left elongated hole boundary at MMC with datum references A and B at MMC"
+          }
+        ],
+        "callout_qualifiers": [
+          {
+            "qualifier": "BASIC",
+            "dimension_type": "position_x",
+            "nominal_mm": 157.0
+          }
+        ],
+        "source_views": [
+          "top_view"
+        ]
+      },
+      {
+        "feature_id": "F09",
+        "feature_type": "slot",
+        "name": "Right elongated hole (Datum B)",
+        "description": "Vertically elongated slot through right arm establishing Datum B, 20.6-20.9 mm wide along X by 23.6-23.9 mm long along Z.",
+        "geometry": {
+          "length_mm": 23.75,
+          "depth_condition": "THRU",
+          "width_mm": 20.75,
+          "hole_count": 1,
+          "position_description": "Located on right arm, serves as Datum B origin for pattern",
+          "axis_direction": "+Y"
+        },
+        "instance_count": 1,
+        "access_directions": [
+          "+Y",
+          "-Y"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "width",
+            "nominal_mm": 20.75,
+            "upper_limit_mm": 20.9,
+            "lower_limit_mm": 20.6
+          },
+          {
+            "dimension_type": "length",
+            "nominal_mm": 23.75,
+            "upper_limit_mm": 23.9,
+            "lower_limit_mm": 23.6
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "position",
+            "tolerance_value_mm": 0.25,
+            "material_condition": "MMC",
+            "datum_references": [
+              "A"
+            ],
+            "applied_to": "Right elongated hole boundary at MMC with datum reference A"
+          }
+        ],
+        "callout_qualifiers": [],
+        "source_views": [
+          "top_view"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "relationship_id": "R01",
+        "from_feature_id": "F02",
+        "to_feature_id": "F05",
+        "relationship_type": "parallel",
+        "detail": "Both arm top surfaces have parallelism controls relative to datum A."
+      },
+      {
+        "relationship_id": "R02",
+        "from_feature_id": "F02",
+        "to_feature_id": "F05",
+        "relationship_type": "datum_referenced",
+        "detail": "The arm parallelism controls reference datum A."
+      },
+      {
+        "relationship_id": "R03",
+        "from_feature_id": "F08",
+        "to_feature_id": "F05",
+        "relationship_type": "datum_referenced",
+        "detail": "The left slot position control references datum A as the primary datum."
+      },
+      {
+        "relationship_id": "R04",
+        "from_feature_id": "F08",
+        "to_feature_id": "F09",
+        "relationship_type": "datum_referenced",
+        "detail": "The left slot position control references the right slot boundary as datum B at MMC."
+      },
+      {
+        "relationship_id": "R05",
+        "from_feature_id": "F09",
+        "to_feature_id": "F05",
+        "relationship_type": "datum_referenced",
+        "detail": "The position control on the right slot establishing datum B references datum A."
+      },
+      {
+        "relationship_id": "R06",
+        "from_feature_id": "F08",
+        "to_feature_id": "F09",
+        "relationship_type": "offset",
+        "detail": "The top view specifies a basic center-to-center separation along X between the left slot and the right datum-B slot."
+      },
+      {
+        "relationship_id": "R07",
+        "from_feature_id": "F08",
+        "to_feature_id": "F02",
+        "relationship_type": "intersecting",
+        "detail": "The left elongated slot passes through the left member of the opposing-arm feature."
+      },
+      {
+        "relationship_id": "R08",
+        "from_feature_id": "F09",
+        "to_feature_id": "F02",
+        "relationship_type": "intersecting",
+        "detail": "The right elongated slot passes through the right member of the opposing-arm feature."
+      },
+      {
+        "relationship_id": "R09",
+        "from_feature_id": "F04",
+        "to_feature_id": "F03",
+        "relationship_type": "intersecting",
+        "detail": "The stepped shoulders join both sides of the central body through the described blend fillets."
+      },
+      {
+        "relationship_id": "R10",
+        "from_feature_id": "F06",
+        "to_feature_id": "F05",
+        "relationship_type": "on_same_face",
+        "detail": "The bond-preparation zone occupies the lower transition and flank surfaces of the central protrusion."
+      }
+    ],
+    "datum_scheme": {
+      "datums": [
+        {
+          "datum_letter": "A",
+          "feature_id": "F05",
+          "surface_type": "planar",
+          "description": "Two angled surfaces with 90\u00b0 included angle on the central protrusion"
+        },
+        {
+          "datum_letter": "B",
+          "feature_id": "F09",
+          "surface_type": "unknown",
+          "description": "Boundary feature of size of the right elongated hole/slot"
+        }
+      ],
+      "datum_hierarchy_notes": "The slot position controls establish A as the primary datum. The left slot additionally references B as the secondary datum at MMC. The right slot establishes datum B and is itself position-controlled relative to A. No tertiary datum is defined."
+    },
+    "part_notes": "Scale: 1:1. General tolerance: ASME Y14.5-2009. Projection: third angle. Heat treatment: none specified. Coating: PHOSPHATE COAT PER PS-119.0. General notes: TOLERANCE: METAL THICKNESS VARIATION \u00b130% ALLOWABLE IN FORMED AREAS. FINISH: PHOSPHATE COAT PER PS-119.0. DEBURR: BREAK ALL SHARP EDGES 0.5 MAX.. Extraction notes: Title block specifies 'AS SHOWN MIN. YIELD: 690MPa', but no explicit material alloy/grade is stated. Revision table is completely unpopulated. Applicability table specifies process 'PS-135.22 *' for BP00B369211.",
+    "overall_complexity": "moderate"
+  },
+  "component_specs": [],
+  "component_spec_links": [],
+  "assumptions": [
+    {
+      "assumption_id": "A01",
+      "text": "Grouped section_aa:F1 with top_view:F1 using Signal 5: both are part-body observations of the same overall arm-to-arm extent, with matching nominal lengths. Selected section_aa:F1 as canonical because it explicitly identifies the axial extent in the section view; neither observation is flagged as truncated."
+    },
+    {
+      "assumption_id": "A02",
+      "text": "Retained side_view:F1 as an unresolved singleton rather than merging it with section_aa:F4. The A-A marker identifies a central cutting plane but does not uniquely identify a matching section feature, and the internal-bore interpretation conflicts with the external-shoulder interpretation. Equal nominal diameters alone do not establish identity."
+    },
+    {
+      "assumption_id": "A03",
+      "text": "Kept top_view:F2 and top_view:F3 as distinct singleton slots despite identical sizes because they have distinct positions and datum roles; only the right slot establishes datum B."
+    },
+    {
+      "assumption_id": "A04",
+      "text": "Retained section_aa:F2 and section_aa:F4 as their existing multi-instance observations. No other section separately models their individual arm or shoulder instances, so no aggregate_refs treatment is applied."
+    },
+    {
+      "assumption_id": "A05",
+      "text": "Selected Y as the primary machining axis from the explicitly identified through-slot access directions. Used the mutually consistent top_view and section_aa world-axis convention without resolving the conflicting side_view cutting-arrow orientation."
+    },
+    {
+      "assumption_id": "A06",
+      "clarification_id": "C01",
+      "text": "The 2X \u00d842.00 callout identifies the external stepped shoulders shown in Section A-A, which correspond to the toleranced \u00d842.13/41.87 outer diameters on either side of the central body rather than internal bores."
+    },
+    {
+      "assumption_id": "A07",
+      "clarification_id": "C02",
+      "text": "The finished width of the opposing arms along Z is 21.62 to 22.38 mm (nominal 22.00 mm), as specified by the 2X 22.38 / 21.62 dimension callout."
+    },
+    {
+      "assumption_id": "A08",
+      "clarification_id": "C03",
+      "text": "The note referenced by the asterisk specifies surface preparation for adhesive bonding across the conical feature bounded by the chain-double-dashed line between the adjacent R 2.50 fillets."
+    },
+    {
+      "assumption_id": "A09",
+      "clarification_id": "C04",
+      "text": "The specified Z-direction extent of the datum-A protrusion is assumed to be 70.92 mm based on the \u00d8 70.92 O/R vertical/diametrical callout, with the corresponding horizontal axial extent specified as 60.00 mm."
+    }
+  ]
+}
