@@ -5,7 +5,9 @@ import { Badge } from "@/components/ui/badge"
 import { HelpCircle } from "lucide-react"
 
 export function ClarificationsTab({ data }: { data: ReportData }) {
-  const clarifications = data.feasibility.clarifications || []
+  const clarifications = (data.feasibility.clarifications || []).filter(
+    (c) => !c.suggested_default
+  )
 
   if (clarifications.length === 0) {
     return (

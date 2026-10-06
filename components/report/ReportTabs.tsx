@@ -31,7 +31,7 @@ export function ReportTabs({
     quoteData?.pricing_and_duties?.final_landed_price_inr ??
     null
   const price = finalPrice != null ? formatCurrency(finalPrice, "INR") : "-"
-  const clarificationsCount = data.feasibility.clarifications?.length || 0
+  const clarificationsCount = (data.feasibility.clarifications || []).filter((c) => !c.suggested_default).length
 
   const [internalTab, setInternalTab] = React.useState("specs")
   const currentTab = activeTab !== undefined ? activeTab : internalTab
