@@ -1,0 +1,912 @@
+{
+  "analysis_id": "ASD26056_6422_Wheel_merge_20261011T151242Z",
+  "part": {
+    "name": "WHEEL",
+    "drawing_number": "ASD26056",
+    "revision": "00",
+    "material": "HR13",
+    "units": "mm"
+  },
+  "feature_graph": {
+    "part_envelope": {
+      "width_mm": 9.2,
+      "height_mm": 5.0,
+      "max_diameter_mm": 149.1
+    },
+    "coordinate_system": {
+      "primary_axis": "Z",
+      "orientation_notes": "Z is the wheel spindle and bore axis; X and Y lie in the wheel plane. The main view and DETAIL W look along -Z. SECTION A-A and DETAIL C are displayed rotated relative to normal text orientation; that display rotation does not change the world axes. Datum Q establishes the axial centerline, but no datum plane establishing an axial zero is defined.",
+      "datum_origin": "Q"
+    },
+    "features": [
+      {
+        "feature_id": "F01",
+        "feature_type": "internal_bore",
+        "name": "Central bore \u00d8100.02 H8",
+        "description": "Precision central bore of nominal diameter 100.02 mm with H8 tolerance (+0.054/+0 mm), establishing datum Q, with Ra 3.2 \u00b5m surface finish.",
+        "geometry": {
+          "diameter_mm": 100.02,
+          "depth_condition": "THRU",
+          "hole_count": 1,
+          "axis_direction": "+Z"
+        },
+        "instance_count": 1,
+        "surface_finish": {
+          "ra_value": 3.2,
+          "finish_symbol": "3.2"
+        },
+        "access_directions": [
+          "+Z",
+          "-Z"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 100.02,
+            "plus_mm": 0.054,
+            "minus_mm": 0.0,
+            "tolerance_class": "H8"
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [
+          {
+            "qualifier": "BASIC",
+            "dimension_type": "diameter",
+            "nominal_mm": 119.5
+          }
+        ],
+        "source_views": [
+          "section_aa",
+          "main_view",
+          "isometric_view"
+        ]
+      },
+      {
+        "feature_id": "F02",
+        "feature_type": "hole_pattern",
+        "name": "Three counterbored mounting holes",
+        "description": "Pattern of three counterbored mounting holes located on the annular web, each controlled by position tolerance relative to compound datum P-Q.",
+        "geometry": {
+          "diameter_mm": 16.3,
+          "depth_condition": "THRU",
+          "angle_deg": 38.0,
+          "hole_count": 3,
+          "axis_direction": "-Z"
+        },
+        "instance_count": 3,
+        "access_directions": [
+          "+Z",
+          "-Z"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "angle_deg",
+            "nominal_mm": 38.0,
+            "qualifier": "BASIC",
+            "angle_deg": 38.0
+          },
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 16.3,
+            "plus_mm": 0.1,
+            "minus_mm": 0.1
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "position",
+            "tolerance_value_mm": 0.1,
+            "datum_references": [
+              "P",
+              "Q"
+            ],
+            "applied_to": "Three counterbored mounting holes"
+          }
+        ],
+        "callout_qualifiers": [
+          {
+            "qualifier": "BASIC",
+            "dimension_type": "angle_deg",
+            "nominal_mm": 38.0
+          }
+        ],
+        "source_views": [
+          "main_view",
+          "section_aa",
+          "isometric_view"
+        ]
+      },
+      {
+        "feature_id": "F03",
+        "feature_type": "through_hole",
+        "name": "Rim lightening / timing hole",
+        "description": "Through hole or slot positioned radially within the rim body.",
+        "geometry": {
+          "diameter_mm": 5.5,
+          "depth_condition": "THRU",
+          "angle_deg": 35.0,
+          "hole_count": 1,
+          "position_description": "Located 6.5 mm from the R72.5 radius line",
+          "axis_direction": "+Z"
+        },
+        "instance_count": 1,
+        "access_directions": [
+          "+Z",
+          "-Z"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 5.5,
+            "plus_mm": 0.1,
+            "minus_mm": 0.0
+          },
+          {
+            "dimension_type": "position_y",
+            "nominal_mm": 6.5,
+            "plus_mm": 0.3,
+            "minus_mm": 0.3
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [
+          {
+            "qualifier": "BASIC",
+            "dimension_type": "angle_deg",
+            "nominal_mm": 35.0
+          }
+        ],
+        "source_views": [
+          "detail_w",
+          "main_view",
+          "isometric_view"
+        ]
+      },
+      {
+        "feature_id": "F04",
+        "feature_type": "spline",
+        "name": "External trigger teeth profile",
+        "description": "Pattern of 58 rectangular teeth and slots around the wheel circumference spaced at 6 deg intervals with an 18 deg gap between the 1st and 58th tooth.",
+        "geometry": {
+          "depth_mm": 5.0,
+          "depth_condition": "THRU",
+          "width_mm": 4.1,
+          "height_mm": 5.0,
+          "radius_mm": 0.5,
+          "angle_deg": 6.0,
+          "hole_count": 58,
+          "position_description": "Distributed angularly around periphery with 6 deg pitch",
+          "axis_direction": "+Z"
+        },
+        "instance_count": 58,
+        "access_directions": [
+          "radial",
+          "+Z",
+          "-Z"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "angle_deg",
+            "nominal_mm": 6.0,
+            "plus_mm": 0.0833,
+            "minus_mm": 0.0833,
+            "qualifier": "58X",
+            "angle_deg": 6.0
+          },
+          {
+            "dimension_type": "angle_deg",
+            "nominal_mm": 18.0,
+            "plus_mm": 0.1667,
+            "minus_mm": 0.1667,
+            "angle_deg": 18.0
+          },
+          {
+            "dimension_type": "width",
+            "nominal_mm": 4.1,
+            "plus_mm": 0.07,
+            "minus_mm": 0.07
+          },
+          {
+            "dimension_type": "radius",
+            "nominal_mm": 0.5,
+            "plus_mm": 0.2,
+            "minus_mm": 0.2,
+            "qualifier": "TYP"
+          },
+          {
+            "dimension_type": "radius",
+            "nominal_mm": 0.5,
+            "plus_mm": 0.2,
+            "minus_mm": 0.2
+          },
+          {
+            "dimension_type": "angle_deg",
+            "nominal_mm": 55.0,
+            "qualifier": "BASIC",
+            "angle_deg": 55.0
+          },
+          {
+            "dimension_type": "angle_deg",
+            "nominal_mm": 14.167,
+            "plus_mm": 0.167,
+            "minus_mm": 0.167,
+            "angle_deg": 14.167
+          },
+          {
+            "dimension_type": "angle_deg",
+            "nominal_mm": 132.0,
+            "plus_mm": 0.25,
+            "minus_mm": 0.25,
+            "angle_deg": 132.0
+          },
+          {
+            "dimension_type": "angle_deg",
+            "nominal_mm": 21.0,
+            "qualifier": "REF",
+            "angle_deg": 21.0
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [
+          {
+            "qualifier": "BASIC",
+            "dimension_type": "angle_deg",
+            "nominal_mm": 55.0
+          },
+          {
+            "qualifier": "REF",
+            "dimension_type": "angle_deg",
+            "nominal_mm": 21.0
+          }
+        ],
+        "source_views": [
+          "detail_w",
+          "main_view",
+          "isometric_view"
+        ]
+      },
+      {
+        "feature_id": "F05",
+        "feature_type": "slot",
+        "name": "Radial drive slot / keyway",
+        "description": "Internal slot/keyway breaking outward from the central bore with parallel width 8\u00b10.1 and rounded end \u00d812\u00b10.2, located at basic coordinates X=51.1, Y=37.1.",
+        "geometry": {
+          "diameter_mm": 12.0,
+          "width_mm": 8.0,
+          "angle_deg": 36.0,
+          "axis_direction": "-Z"
+        },
+        "instance_count": 1,
+        "access_directions": [
+          "+Z",
+          "-Z"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "width",
+            "nominal_mm": 8.0,
+            "plus_mm": 0.1,
+            "minus_mm": 0.1
+          },
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 12.0,
+            "plus_mm": 0.2,
+            "minus_mm": 0.2
+          },
+          {
+            "dimension_type": "angle_deg",
+            "nominal_mm": 36.0,
+            "qualifier": "REF",
+            "angle_deg": 36.0
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [
+          {
+            "qualifier": "BASIC",
+            "dimension_type": "position_y",
+            "nominal_mm": 37.1
+          },
+          {
+            "qualifier": "BASIC",
+            "dimension_type": "position_x",
+            "nominal_mm": 51.1
+          },
+          {
+            "qualifier": "REF",
+            "dimension_type": "angle_deg",
+            "nominal_mm": 36.0
+          }
+        ],
+        "source_views": [
+          "main_view",
+          "isometric_view"
+        ]
+      },
+      {
+        "feature_id": "F06",
+        "feature_type": "chamfer",
+        "name": "Outer rim chamfer",
+        "description": "Outer edge chamfer on the rim profile, dimensioned as 1.5\u00b10.1 x 45\u00b0 after lapping, with a pre-lapping dimension of 45\u00b0 x 2.4\u00b10.1 and Ra 3.2 surface finish.",
+        "geometry": {
+          "width_mm": 1.5,
+          "angle_deg": 45.0
+        },
+        "instance_count": 1,
+        "surface_finish": {
+          "ra_value": 3.2,
+          "finish_symbol": "3.2"
+        },
+        "access_directions": [
+          "+Z",
+          "+X"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "chamfer",
+            "nominal_mm": 1.5,
+            "plus_mm": 0.1,
+            "minus_mm": 0.1,
+            "angle_deg": 45.0
+          },
+          {
+            "dimension_type": "chamfer",
+            "nominal_mm": 2.4,
+            "plus_mm": 0.1,
+            "minus_mm": 0.1,
+            "qualifier": "before Lapping",
+            "angle_deg": 45.0
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "detail_c"
+        ]
+      },
+      {
+        "feature_id": "F07",
+        "feature_type": "edge_break",
+        "name": "Edge break",
+        "description": "Edge break chamfer at the corner of the rim section, specified as 0.5 x 45\u00b0.",
+        "geometry": {
+          "width_mm": 0.5,
+          "angle_deg": 45.0
+        },
+        "instance_count": 1,
+        "access_directions": [
+          "+Z",
+          "+X"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "chamfer",
+            "nominal_mm": 0.5,
+            "qualifier": "Edge Break",
+            "angle_deg": 45.0
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [
+          {
+            "qualifier": "Edge Break",
+            "dimension_type": "chamfer",
+            "nominal_mm": 0.5
+          }
+        ],
+        "source_views": [
+          "detail_c"
+        ]
+      },
+      {
+        "feature_id": "F08",
+        "feature_type": "flat_face",
+        "name": "Slice planar side face",
+        "description": "Planar face of the slice or blade element, controlled by a flatness tolerance.",
+        "geometry": {},
+        "access_directions": [],
+        "dimensional_tolerances": [],
+        "gdt_controls": [
+          {
+            "gdt_type": "flatness",
+            "tolerance_value_mm": 0.2,
+            "datum_references": [],
+            "applied_to": "Planar side face of the slice"
+          }
+        ],
+        "callout_qualifiers": [],
+        "source_views": [
+          "detail_rounding_side_of_slice"
+        ]
+      },
+      {
+        "feature_id": "F09",
+        "feature_type": "edge_break",
+        "name": "Slice edge rounding",
+        "description": "Rounded transition on one corner of the slice profile as indicated by the note 'Rounding Side of Slice'.",
+        "geometry": {},
+        "access_directions": [],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "detail_rounding_side_of_slice"
+        ]
+      },
+      {
+        "feature_id": "F10",
+        "feature_type": "radius",
+        "name": "Rim root radius",
+        "description": "Outer/root cylindrical radius surface locating the base of the peripheral teeth.",
+        "geometry": {
+          "radius_mm": 72.5,
+          "position_description": "Concentric with central part axis",
+          "axis_direction": "+Z"
+        },
+        "access_directions": [
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "radius",
+            "nominal_mm": 72.5,
+            "plus_mm": 0.1,
+            "minus_mm": 0.0
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "detail_w"
+        ]
+      },
+      {
+        "feature_id": "F11",
+        "feature_type": "part_body",
+        "name": "Toothed wheel body",
+        "description": "Annular ring gear/wheel component featuring an external toothed profile, a large central bore, and mounting features on the front face.",
+        "geometry": {},
+        "access_directions": [
+          "+Z",
+          "-Z",
+          "radial"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "isometric_view"
+        ]
+      },
+      {
+        "feature_id": "F12",
+        "feature_type": "boss",
+        "name": "Raised mounting bosses",
+        "description": "Three circular raised bosses/pads spaced along a pitch circle on the front annular face.",
+        "geometry": {
+          "hole_count": 3
+        },
+        "instance_count": 3,
+        "access_directions": [
+          "+Z"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "isometric_view"
+        ]
+      },
+      {
+        "feature_id": "F13",
+        "feature_type": "flat_face",
+        "name": "Side A planar face",
+        "description": "Primary flat face on Side A of the wheel disc, controlled by a 0.2 mm flatness tolerance and Ra 3.2 \u00b5m surface finish.",
+        "geometry": {
+          "axis_direction": "-Z"
+        },
+        "instance_count": 1,
+        "surface_finish": {
+          "ra_value": 3.2,
+          "finish_symbol": "3.2"
+        },
+        "access_directions": [
+          "-Z"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [
+          {
+            "gdt_type": "flatness",
+            "tolerance_value_mm": 0.2,
+            "datum_references": [],
+            "applied_to": "Side A flat face"
+          }
+        ],
+        "callout_qualifiers": [],
+        "source_views": [
+          "section_aa"
+        ]
+      },
+      {
+        "feature_id": "F14",
+        "feature_type": "flat_face",
+        "name": "Side B planar face",
+        "description": "Opposing flat reference face on Side B of the wheel disc.",
+        "geometry": {
+          "axis_direction": "+Z"
+        },
+        "instance_count": 1,
+        "access_directions": [
+          "+Z"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "section_aa"
+        ]
+      },
+      {
+        "feature_id": "F15",
+        "feature_type": "flange",
+        "name": "Outer rim",
+        "description": "Outer rim/flange of the wheel with total axial thickness 3.5 mm (+0.1/0) and radial flange width 9.0 mm (+0.2/0).",
+        "geometry": {
+          "width_mm": 9.0,
+          "wall_thickness_mm": 3.5,
+          "axis_direction": "+Z"
+        },
+        "instance_count": 1,
+        "access_directions": [
+          "+Z",
+          "-Z",
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "wall_thickness",
+            "nominal_mm": 3.5,
+            "plus_mm": 0.1,
+            "minus_mm": 0.0
+          },
+          {
+            "dimension_type": "width",
+            "nominal_mm": 9.0,
+            "plus_mm": 0.2,
+            "minus_mm": 0.0
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "section_aa"
+        ]
+      },
+      {
+        "feature_id": "F16",
+        "feature_type": "pocket",
+        "name": "Stepped recess face",
+        "description": "Intermediate annular step/recess with thickness 2.4 \u00b10.1 mm, controlled by 0.2 mm flatness and Ra 3.2 \u00b5m finish.",
+        "geometry": {
+          "wall_thickness_mm": 2.4,
+          "axis_direction": "+Z"
+        },
+        "instance_count": 1,
+        "surface_finish": {
+          "ra_value": 3.2,
+          "finish_symbol": "3.2"
+        },
+        "access_directions": [
+          "+Z"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "wall_thickness",
+            "nominal_mm": 2.4,
+            "plus_mm": 0.1,
+            "minus_mm": 0.1
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "flatness",
+            "tolerance_value_mm": 0.2,
+            "datum_references": [],
+            "applied_to": "Stepped recess face"
+          }
+        ],
+        "callout_qualifiers": [],
+        "source_views": [
+          "section_aa"
+        ]
+      },
+      {
+        "feature_id": "F17",
+        "feature_type": "web",
+        "name": "Central web",
+        "description": "Thin web connecting rim to central hub section, having an axial thickness of 1.5 \u00b10.1 mm.",
+        "geometry": {
+          "wall_thickness_mm": 1.5,
+          "axis_direction": "+Z"
+        },
+        "instance_count": 1,
+        "access_directions": [
+          "+Z",
+          "-Z"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "wall_thickness",
+            "nominal_mm": 1.5,
+            "plus_mm": 0.1,
+            "minus_mm": 0.1
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "section_aa"
+        ]
+      },
+      {
+        "feature_id": "F18",
+        "feature_type": "external_cylinder",
+        "name": "Wheel outer diameter",
+        "description": "Outer cylindrical surface of the wheel/disc with nominal diameter 149 mm.",
+        "geometry": {
+          "diameter_mm": 149.0,
+          "outer_diameter_mm": 149.0,
+          "axis_direction": "+Z"
+        },
+        "access_directions": [
+          "+X",
+          "-X"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 149.0,
+            "plus_mm": 0.1,
+            "minus_mm": 0.0
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "concentricity",
+            "tolerance_value_mm": 0.1,
+            "datum_references": [],
+            "applied_to": "Outer cylindrical surface"
+          }
+        ],
+        "callout_qualifiers": [],
+        "source_views": [
+          "section_bb"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "relationship_id": "R01",
+        "from_feature_id": "F02",
+        "to_feature_id": "F01",
+        "relationship_type": "datum_referenced",
+        "detail": "The mounting-hole position control references Q, defined by the SECTION A-A central bore. The additional referenced datum P remains unidentified."
+      },
+      {
+        "relationship_id": "R02",
+        "from_feature_id": "F18",
+        "to_feature_id": "F01",
+        "relationship_type": "coaxial",
+        "detail": "The wheel outer cylinder and central bore share the wheel axis of revolution. This geometric relationship does not establish the missing reference for the concentricity control."
+      },
+      {
+        "relationship_id": "R03",
+        "from_feature_id": "F10",
+        "to_feature_id": "F01",
+        "relationship_type": "concentric",
+        "detail": "The rim root radius is explicitly described as concentric with the central part axis."
+      },
+      {
+        "relationship_id": "R04",
+        "from_feature_id": "F15",
+        "to_feature_id": "F01",
+        "relationship_type": "coaxial",
+        "detail": "The turned outer rim surrounds the central bore about the wheel spindle axis."
+      },
+      {
+        "relationship_id": "R05",
+        "from_feature_id": "F16",
+        "to_feature_id": "F01",
+        "relationship_type": "coaxial",
+        "detail": "The annular stepped recess shares the turned wheel axis with the central bore."
+      },
+      {
+        "relationship_id": "R06",
+        "from_feature_id": "F13",
+        "to_feature_id": "F14",
+        "relationship_type": "opposite_face",
+        "detail": "Side A and Side B are explicitly identified as opposing wheel faces."
+      },
+      {
+        "relationship_id": "R07",
+        "from_feature_id": "F02",
+        "to_feature_id": "F12",
+        "relationship_type": "coaxial",
+        "detail": "Each mounting hole is centered within its corresponding raised boss. This is a pairwise relationship between the three corresponding instances, not one common axis for the entire pattern."
+      },
+      {
+        "relationship_id": "R08",
+        "from_feature_id": "F02",
+        "to_feature_id": "F11",
+        "relationship_type": "radial_pattern",
+        "detail": "Three mounting holes are distributed around the wheel on the depicted bolt circle. Equal angular spacing is not established."
+      },
+      {
+        "relationship_id": "R09",
+        "from_feature_id": "F04",
+        "to_feature_id": "F15",
+        "relationship_type": "radial_pattern",
+        "detail": "The peripheral tooth-and-slot pattern is distributed around the outer rim, with the specified repeated pitch and interrupted tooth gap."
+      },
+      {
+        "relationship_id": "R10",
+        "from_feature_id": "F04",
+        "to_feature_id": "F15",
+        "relationship_type": "intersecting",
+        "detail": "The peripheral slots are cut into the outer rim."
+      },
+      {
+        "relationship_id": "R11",
+        "from_feature_id": "F05",
+        "to_feature_id": "F01",
+        "relationship_type": "intersecting",
+        "detail": "The main-view description explicitly identifies the radial drive slot as breaking into the central bore."
+      },
+      {
+        "relationship_id": "R12",
+        "from_feature_id": "F02",
+        "to_feature_id": "F03",
+        "relationship_type": "on_same_face",
+        "detail": "The mounting-hole entries and timing/alignment-hole entry are depicted on the same front annular face."
+      }
+    ],
+    "datum_scheme": {
+      "datums": [
+        {
+          "datum_letter": "Q",
+          "feature_id": "F01",
+          "surface_type": "cylindrical",
+          "description": "Internal bore \u00d8100.02 H8 axis/surface"
+        }
+      ],
+      "datum_hierarchy_notes": "Q is explicitly defined on the SECTION A-A central bore. The mounting-hole controls reference P and Q, described as compound datum P-Q; no definition of P is supplied. Do not infer that P-Q establishes a conventional sequential primary/secondary datum hierarchy. Flatness controls require no datum references."
+    },
+    "part_notes": "Material: HR13. Scale: 1:1. General tolerance: ISO 2768-mK. Projection: first angle. Heat treatment: none specified. Coating: none specified. General notes: PROCESS: FOR ALL THE PROFILE OF THE TEETH IS NOT ALLOWED ROUNDING OF CUTTING OR STAMP.. DEBURR: BURRS AND SHARP EDGES NOT ADMITTED. DEBURR: REMOVE ALL BURRS AND SHARP EDGES WITH CHAMFER OR RADIUS 0.1 MAX.. MARKING: DMC CONTAINING: P/N, SUPPLIER NUMBER, MANUFACTURING DATE, SERIAL NUMBER. INSPECTION: TEETH INTEGRITY CHECK CONTROLLED 100%. TOLERANCE: Refer ISO 2768-mK for unspecified tolerances.. PROCESS: Dimension specified by point 1 is valid for the turning Phase. PROCESS: Notes valid for the lapidation Phase: - Side B remove 0.1 mm - Side A remove upto maintain the height of 3.5 +0.1 & 1.5+/-0... (theoretical removal of 0.9 mm). DEBURR: WORKPIECE EDGES (Std. ISO 13715). FINISH: Roughness Ra 3.2. Chemical Composition: C=0.10 Max., Mn=0.50 Max., P=0.025 Max., S=0.020 Max., Al=0.015 Max.. Mechanical Properties: Yield Strength= 180-260 MPa, Tensile Strength = 270-380 MPa, Elongation: 35%. Testing: Teeth Integrity Check Controlled 100% (100%). Mechanical Properties Testing Yield Strength = 180-260 MPa, Tensile Strength = 270-380 MPa, Elongation = 35% (Yield Strength: 180-260 MPa; Tensile Strength: 270-380 MPa; Elongation: 35%). Extraction notes: Lapidation phase note regarding Side A height tolerance is partially cut off at '1.5+/-0...'. Part number, date (04-04-2026), and revision (00) are extracted from part_id_box.",
+    "overall_complexity": "moderate"
+  },
+  "component_specs": [],
+  "component_spec_links": [],
+  "assumptions": [
+    {
+      "assumption_id": "A01",
+      "text": "The central-bore observations are grouped using the A-A cut-through-center reference and unique central-opening topology. SECTION A-A is canonical because it supplies the explicit tolerance, finish and datum-Q definition. The conflicting main-view diameter is retained as an unresolved engineering issue, not treated as truncation."
+    },
+    {
+      "assumption_id": "A02",
+      "text": "SECTION A-A F7 is interpreted as a cut observation of one instance of the three-hole mounting pattern, supported by the main-view A-A cut-through-mounting-hole reference. No distinct datum or instance-specific control separates the holes, so one interchangeable pattern group is used. MAIN VIEW is canonical to preserve the three-instance pattern identity, positioning callout and GD&T."
+    },
+    {
+      "assumption_id": "A03",
+      "text": "The DETAIL W alignment-hole observation is grouped with MAIN VIEW F3 through the explicit DETAIL W reference. The isometric timing hole is included using its unique position between mounting bosses. DETAIL W is canonical because it provides the hole diameter and radial-location callout."
+    },
+    {
+      "assumption_id": "A04",
+      "text": "The main-view external teeth, DETAIL W peripheral teeth/slots and isometric interrupted external teeth are treated as one circumferential profile. DETAIL W is canonical for its fuller profile dimensions and explicit multiplicity. Feature type and name are sourced from MAIN VIEW to retain the external-profile identity rather than classify the entire pattern as one isolated slot."
+    },
+    {
+      "assumption_id": "A05",
+      "text": "The isometric rectangular recess is grouped with the main-view radial drive slot using the unique noncircular recess adjacent to a mounting feature in the supplied spatial views. MAIN VIEW is canonical because it provides the explicit slot dimensions and location. The isometric pocket classification is not used to infer a blind depth."
+    },
+    {
+      "assumption_id": "A06",
+      "text": "The DETAIL C chamfer and edge break remain separate singleton constituents. References from the bore and tooth-profile observations do not justify merging an edge treatment with its entire parent feature, and the supplied descriptions disagree about the treated edge's location."
+    },
+    {
+      "assumption_id": "A07",
+      "text": "The slice planar face remains a singleton rather than being merged with Side A or the stepped recess solely because their flatness tolerances match. The slice rounding also remains separate; the tooth-profile radius is not transferred to an unidentified corner."
+    },
+    {
+      "assumption_id": "A08",
+      "text": "The rim root-radius surface, outer cylindrical surface and outer flange remain distinct features. Their common axis does not make them the same physical surface."
+    },
+    {
+      "assumption_id": "A09",
+      "text": "The DETAIL W tooth-pitch angle and main-view tooth timing/orientation angles are treated as different dimensions of the same profile, not conflicting measurements of one angle. All original callouts must remain available."
+    },
+    {
+      "assumption_id": "A10",
+      "text": "The raw main-view timing callout '14\u00b0\u00b110\u2032' is treated as the stated engineering requirement. Its extracted nominal of 14.167 is considered a transcription/conversion inconsistency, not an alternative engineering nominal; no geometry or callout values are rewritten in this merge."
+    },
+    {
+      "assumption_id": "A11",
+      "text": "No separate axial-depth question is raised for features explicitly marked THRU. The DETAIL W 5 mm dimension is not assumed to establish axial tooth thickness; the rim thickness is independently supplied in SECTION A-A."
+    },
+    {
+      "assumption_id": "A12",
+      "clarification_id": "C01",
+      "text": "The finished diameter of the datum-Q central bore is \u00d8100.02 H8 as defined in SECTION A-A."
+    },
+    {
+      "assumption_id": "A13",
+      "clarification_id": "C02",
+      "text": "Datum P is defined by the central bore (inner diameter) of the wheel, which establishes the central datum axis for the mounting-hole position controls."
+    },
+    {
+      "assumption_id": "A14",
+      "clarification_id": "C03",
+      "text": "The concentricity control on the \u00d8149 outer cylinder is governed by the part's central rotational axis, represented by the horizontal centerline in SECTION B-B."
+    },
+    {
+      "assumption_id": "A15",
+      "clarification_id": "C04",
+      "text": "The counterbore diameter for the three mounting holes is \u00d812 \u00b10.2 mm, as indicated by the callout pointing to the outer diameter of the hole feature."
+    },
+    {
+      "assumption_id": "A16",
+      "clarification_id": "C05",
+      "text": "The counterbore depth for the three mounting holes is assumed to be 8 \u00b1 0.1 mm, corresponding to the \u00d812 \u00b1 0.2 mm counterbore feature indicated on the drawing."
+    },
+    {
+      "assumption_id": "A17",
+      "clarification_id": "C06",
+      "text": "The centers of the three mounting holes are located on a basic pitch-circle diameter of \u00d8119.5 mm."
+    },
+    {
+      "assumption_id": "A18",
+      "clarification_id": "C07",
+      "text": "The three mounting holes are arranged on a basic bolt circle of \u00d8119.5 mm, with the primary hole centered directly on reference axis A-A, and the remaining two holes located at basic angles of 35\u00b0 and 38\u00b0 on opposite sides of the axis A-A (145\u00b0 and 142\u00b0 relative to the first hole)."
+    },
+    {
+      "assumption_id": "A19",
+      "clarification_id": "C08",
+      "text": "The outside diameter of the three raised mounting bosses is assumed to be 14 mm, concentric with the through-holes on the pitch circle. This corresponds to standard boss proportions for the mounting holes and complements the 1.5 mm boss height indicated in the drawing notes."
+    },
+    {
+      "assumption_id": "A20",
+      "clarification_id": "C09",
+      "text": "The height of the raised mounting bosses above the adjacent front face is 1.5 \u00b1 0.1 mm, with the 3.5 +0.1 mm dimension corresponding to the depth of the adjacent recessed face established during the turning phase."
+    },
+    {
+      "assumption_id": "A21",
+      "clarification_id": "C10",
+      "text": "The radial drive slot extends completely through the local material thickness, as no blind depth or depth symbol is specified in the callout."
+    },
+    {
+      "assumption_id": "A22",
+      "clarification_id": "C11",
+      "text": "DETAIL C applies to the datum-Q bore/Side B edge, as confirmed by the detail callout circle encircling the inner bore corner at Datum Q rather than the outer rim edge."
+    },
+    {
+      "assumption_id": "A23",
+      "clarification_id": "C12",
+      "text": "The edge identified by 'Rounding Side of Slice' is assumed to require a radius of 1 mm (R1), as designated by the flag note 1 callout."
+    },
+    {
+      "assumption_id": "A24",
+      "clarification_id": "C13",
+      "text": "The inner boundary diameter of the annular stepped recess coincides with the central bore and is \u00d8100.02 mm (tolerance class H8, +0.054/+0 mm)."
+    },
+    {
+      "assumption_id": "A25",
+      "clarification_id": "C14",
+      "text": "The outer boundary diameter of the annular stepped recess is 118 mm (\u00d8118 mm), derived from the \u00d8100 H8 central bore diameter plus twice the 9 mm radial recess width."
+    },
+    {
+      "assumption_id": "A26",
+      "clarification_id": "C15",
+      "text": "The 5 mm dimension is oriented in the radial direction, defined between the tooth root (at the rim root radius of R72.5 mm) and the tooth tip crest. It represents the full radial tooth height extending from the rim root to the tooth tip."
+    }
+  ]
+}

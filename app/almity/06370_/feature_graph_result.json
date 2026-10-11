@@ -1,0 +1,166 @@
+{
+  "analysis_id": "063700_merge_20261010T223552Z",
+  "part": {
+    "name": "OUTER TUBE",
+    "drawing_number": "06370_",
+    "revision": "F",
+    "material": "S.A.E. 1010-1026 S.S.T., CDBW, OR ERW DOM\nOPT. - ROLLED, WELDED & STRESS RELIEF ANNEALED STEEL. MIN. YIELD 207 N/MM²(30,000 PSI)",
+    "units": "mm"
+  },
+  "feature_graph": {
+    "part_envelope": {
+      "length_mm": 16.0,
+      "max_diameter_mm": 144.75
+    },
+    "coordinate_system": {
+      "primary_axis": "Z",
+      "orientation_notes": "Z follows the tube and bore axis. The end view looks along -Z, with X horizontal and Y vertical. In the longitudinal section, Z is horizontal, Y is vertical, and X is normal to the cut plane. No datum-defined origin is supplied."
+    },
+    "features": [
+      {
+        "feature_id": "F01",
+        "feature_type": "external_cylinder",
+        "name": "Outer cylindrical surface",
+        "description": "Outer diameter surface of the outer tube, dimensioned with limit tolerances and reference wall thickness.",
+        "geometry": {
+          "diameter_mm": 144.5,
+          "outer_diameter_mm": 144.5,
+          "length_mm": 15.875,
+          "wall_thickness_mm": 4.8,
+          "position_description": "Centred on orthogonal centerlines",
+          "axis_direction": "+Z"
+        },
+        "instance_count": 1,
+        "access_directions": [
+          "radial",
+          "+Z",
+          "-Z",
+          "+Y",
+          "-Y"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 144.5,
+            "upper_limit_mm": 144.75,
+            "lower_limit_mm": 144.25
+          },
+          {
+            "dimension_type": "length",
+            "nominal_mm": 15.875,
+            "upper_limit_mm": 16.0,
+            "lower_limit_mm": 15.75
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [
+          {
+            "qualifier": "REF",
+            "dimension_type": "wall_thickness",
+            "nominal_mm": 4.8
+          }
+        ],
+        "source_views": [
+          "end_view",
+          "section_view"
+        ]
+      },
+      {
+        "feature_id": "F02",
+        "feature_type": "internal_bore",
+        "name": "Through central bore",
+        "description": "Inner through bore of the outer tube spanning the entire 16 mm axial length.",
+        "geometry": {
+          "diameter_mm": 135.0,
+          "inner_diameter_mm": 135.0,
+          "depth_mm": 15.875,
+          "depth_condition": "THRU",
+          "hole_count": 1,
+          "axis_direction": "+Z"
+        },
+        "instance_count": 1,
+        "access_directions": [
+          "+Z",
+          "-Z"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 135.0,
+            "upper_limit_mm": 135.25,
+            "lower_limit_mm": 134.75
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "section_view"
+        ]
+      },
+      {
+        "feature_id": "F03",
+        "feature_type": "radius",
+        "name": "Bore end edge radii",
+        "description": "Corner radii applied at both axial ends of the tube bore/ends.",
+        "geometry": {
+          "radius_mm": 1.0,
+          "axis_direction": "+Z"
+        },
+        "instance_count": 2,
+        "access_directions": [
+          "+Z",
+          "-Z"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "radius",
+            "nominal_mm": 1.0,
+            "plus_mm": 0.13,
+            "minus_mm": 0.13,
+            "qualifier": "BOTH ENDS"
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "section_view"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "relationship_id": "R01",
+        "from_feature_id": "F01",
+        "to_feature_id": "F02",
+        "relationship_type": "coaxial",
+        "detail": "The outer cylindrical surface and central through bore share the tube's Z axis, consistent with the concentric boundaries in the end view."
+      },
+      {
+        "relationship_id": "R02",
+        "from_feature_id": "F03",
+        "to_feature_id": "F02",
+        "relationship_type": "intersecting",
+        "detail": "The bore end radii meet the central bore surface at both axial ends."
+      }
+    ],
+    "datum_scheme": {
+      "datums": [],
+      "datum_hierarchy_notes": "No datum definitions or GD&T datum precedence are provided. The circled characters identified in the section extraction notes are revision indicators, not datums."
+    },
+    "part_notes": "Material: S.A.E. 1010-1026 S.S.T., CDBW, OR ERW DOM\nOPT. - ROLLED, WELDED & STRESS RELIEF ANNEALED STEEL. MIN. YIELD 207 N/MM²(30,000 PSI). Material standard: S.A.E. 1010-1026. Heat treatment: SUB-CRITICAL STRESS RELIEF ANNEAL: TWO HOURS MINIMUM AT 1250°F.. Coating: none specified. General notes: PROCESS: 063700: PROCESS AS SHOWN. PROCESS: 063701: PROCESS PER PS-135.6. DEBURR: BREAK ALL SHARP EDGES 0.5 MAX.. PROCESS: SUB-CRITICAL STRESS RELIEF ANNEAL: TWO HOURS MINIMUM AT 1250°F.. PROCESS: OPT. - ROLLED, WELDED & STRESS RELIEF ANNEALED STEEL. MIN. YIELD 207 N/MM²(30,000 PSI). USED ON 809971. Extraction notes: Part number is drawn as a tabulated base number '06370_' with specific configurations 063700 and 063701 shown in the process table. Early revisions in revision table are identified primarily by release / change notice numbers.",
+    "overall_complexity": "simple"
+  },
+  "component_specs": [],
+  "component_spec_links": [],
+  "clarifications": [],
+  "assumptions": [
+    {
+      "assumption_id": "A01",
+      "text": "Grouped end_view:F1 with section_view:F1 as the same outer cylindrical surface based on the unique tube surface identified in both views and their consistent axial orientations; no numerical match was inferred from the truncated end-view text."
+    },
+    {
+      "assumption_id": "A02",
+      "text": "Selected section_view:F1 as canonical because it supplies complete geometry and explicit limit-toleranced callouts, while the end-view diameter text is explicitly truncated."
+    }
+  ]
+}

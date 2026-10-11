@@ -1,0 +1,984 @@
+{
+  "analysis_id": "ASD26088_8561_DRAWING_merge_20261011T144829Z",
+  "part": {
+    "name": "ENGAGING SLEEVE 3 POSITION BAS",
+    "drawing_number": "ASD26088_8561",
+    "revision": "00",
+    "units": "mm"
+  },
+  "feature_graph": {
+    "part_envelope": {
+      "length_mm": 9.1,
+      "width_mm": 6.75,
+      "height_mm": 0.15,
+      "max_diameter_mm": 156.2
+    },
+    "coordinate_system": {
+      "primary_axis": "Z",
+      "orientation_notes": "Z is the sleeve rotational and machining-spindle axis established by datum A. The main view lies in XY and is viewed along -Z. The axial wall details show Z horizontally and radial Y vertically; Detail D identifies tangential X into the page. Datum A establishes radial centering but not an axial zero. Axial registration depends on the unresolved E and N surface definitions.",
+      "datum_origin": "A"
+    },
+    "features": [
+      {
+        "feature_id": "F01",
+        "feature_type": "spline",
+        "name": "Internal splines",
+        "description": "Internal involute/straight splines traversing through the core of the sleeve.",
+        "geometry": {
+          "diameter_mm": 117.3,
+          "inner_diameter_mm": 117.3,
+          "outer_diameter_mm": 129.0,
+          "width_mm": 5.5,
+          "radius_mm": 2.0,
+          "position_description": "Centred on main part axis Z",
+          "axis_direction": "axial"
+        },
+        "instance_count": 1,
+        "access_directions": [
+          "+Z",
+          "-Z",
+          "-Y",
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "radius",
+            "nominal_mm": 2.0,
+            "lower_limit_mm": 2.0,
+            "qualifier": "MIN"
+          },
+          {
+            "dimension_type": "width",
+            "nominal_mm": 5.5,
+            "plus_mm": 0.1,
+            "minus_mm": 0.1
+          },
+          {
+            "dimension_type": "radius",
+            "nominal_mm": 2.0,
+            "lower_limit_mm": 2.0,
+            "qualifier": "MIN"
+          },
+          {
+            "dimension_type": "radius_edge",
+            "nominal_mm": 0.0,
+            "plus_mm": 0.5,
+            "minus_mm": 0.5,
+            "qualifier": "2X"
+          },
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 117.3,
+            "plus_mm": 0.1,
+            "minus_mm": 0.1
+          },
+          {
+            "dimension_type": "radius",
+            "nominal_mm": 1.25,
+            "plus_mm": 0.25,
+            "minus_mm": 0.25,
+            "qualifier": "2x"
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [
+          {
+            "qualifier": "REF",
+            "dimension_type": "diameter",
+            "nominal_mm": 129.0
+          },
+          {
+            "qualifier": "BASIC",
+            "dimension_type": "diameter",
+            "nominal_mm": 120.65
+          }
+        ],
+        "source_views": [
+          "main_view",
+          "detail_c",
+          "section_dd",
+          "detail_a",
+          "isometric_view"
+        ]
+      },
+      {
+        "feature_id": "F02",
+        "feature_type": "part_body",
+        "name": "Sleeve main body",
+        "description": "Annular cylindrical sleeve body with concentric inner and outer diameters and wall sections.",
+        "geometry": {
+          "axis_direction": "+Z"
+        },
+        "access_directions": [
+          "+Z",
+          "-Z",
+          "radial"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "main_view",
+          "isometric_view"
+        ]
+      },
+      {
+        "feature_id": "F03",
+        "feature_type": "groove",
+        "name": "Shift fork annular groove",
+        "description": "Deep annular U-groove on the outer diameter for shift fork engagement, featuring ground/precision side walls with flatness and roughness controls, and circular runout on the bottom diameter.",
+        "geometry": {
+          "diameter_mm": 143.0,
+          "outer_diameter_mm": 143.0,
+          "width_mm": 13.5,
+          "radius_mm": 0.75,
+          "axis_direction": "+Z"
+        },
+        "instance_count": 1,
+        "surface_finish": {
+          "ra_value": 0.6,
+          "finish_symbol": "Ra 0,6 [3]"
+        },
+        "access_directions": [
+          "radial",
+          "+Y",
+          "-Y"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 144.5,
+            "upper_limit_mm": 144.5,
+            "qualifier": "2 x ... MAX"
+          },
+          {
+            "dimension_type": "width",
+            "nominal_mm": 13.5,
+            "plus_mm": 0.1,
+            "minus_mm": 0.1
+          },
+          {
+            "dimension_type": "radius",
+            "nominal_mm": 0.75,
+            "plus_mm": 0.25,
+            "minus_mm": 0.25,
+            "qualifier": "2x"
+          },
+          {
+            "dimension_type": "radius",
+            "nominal_mm": 0.75,
+            "plus_mm": 0.2,
+            "minus_mm": 0.2,
+            "qualifier": "2x"
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "runout",
+            "tolerance_value_mm": 0.2,
+            "datum_references": [
+              "A"
+            ],
+            "applied_to": "Bottom cylindrical surface of shift fork groove"
+          },
+          {
+            "gdt_type": "flatness",
+            "tolerance_value_mm": 0.2,
+            "datum_references": [],
+            "applied_to": "Left side wall of shift fork groove"
+          },
+          {
+            "gdt_type": "flatness",
+            "tolerance_value_mm": 0.2,
+            "datum_references": [],
+            "applied_to": "Right side wall of shift fork groove"
+          }
+        ],
+        "callout_qualifiers": [],
+        "source_views": [
+          "detail_d",
+          "detail_a",
+          "section_dd",
+          "isometric_view"
+        ]
+      },
+      {
+        "feature_id": "F04",
+        "feature_type": "flange",
+        "name": "Left outer flange and stepped face",
+        "description": "Left flange defining the outer rim with theoretical axial position 6.75 mm from Datum E, step width 1.9 mm, corner chamfer 0.5x45\u00b0, transition fillet R0.8, step chamfers 0.3x45\u00b0, and position control to Datum E and Datum A.",
+        "geometry": {
+          "diameter_mm": 156.0,
+          "outer_diameter_mm": 156.0,
+          "width_mm": 6.75,
+          "radius_mm": 0.8,
+          "axis_direction": "-Z"
+        },
+        "instance_count": 1,
+        "access_directions": [
+          "-Z",
+          "radial",
+          "+Y",
+          "-Y"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "width",
+            "nominal_mm": 1.9,
+            "plus_mm": 0.1,
+            "minus_mm": 0.1,
+            "qualifier": "2x"
+          },
+          {
+            "dimension_type": "chamfer",
+            "nominal_mm": 0.5,
+            "plus_mm": 0.3,
+            "minus_mm": 0.3,
+            "angle_deg": 45.0
+          },
+          {
+            "dimension_type": "radius",
+            "nominal_mm": 0.8,
+            "plus_mm": 0.4,
+            "minus_mm": 0.4,
+            "qualifier": "2x"
+          },
+          {
+            "dimension_type": "chamfer",
+            "nominal_mm": 0.3,
+            "plus_mm": 0.3,
+            "minus_mm": 0.3,
+            "qualifier": "4x",
+            "angle_deg": 45.0
+          },
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 156.0,
+            "plus_mm": 0.2,
+            "minus_mm": 0.2,
+            "qualifier": "2 x"
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "position",
+            "tolerance_value_mm": 0.25,
+            "material_condition": "RFS",
+            "datum_references": [
+              "E",
+              "A"
+            ],
+            "applied_to": "Left stepped face of the outer flange"
+          },
+          {
+            "gdt_type": "runout",
+            "tolerance_value_mm": 0.4,
+            "datum_references": [
+              "A"
+            ],
+            "applied_to": "Two outer cylindrical rim land faces flanking the central groove"
+          }
+        ],
+        "callout_qualifiers": [
+          {
+            "qualifier": "2x",
+            "dimension_type": "width",
+            "nominal_mm": 6.75
+          }
+        ],
+        "source_views": [
+          "detail_a",
+          "section_dd",
+          "detail_d"
+        ]
+      },
+      {
+        "feature_id": "F05",
+        "feature_type": "flange",
+        "name": "Right outer flange and stepped face",
+        "description": "Right flange defining the opposite rim with a 1.5x45\u00b0 chamfer and step face position controlled to Datum N and Datum A.",
+        "geometry": {
+          "diameter_mm": 156.0,
+          "outer_diameter_mm": 156.0,
+          "axis_direction": "+Z"
+        },
+        "instance_count": 1,
+        "access_directions": [
+          "+Z",
+          "radial",
+          "+Y",
+          "-Y"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "chamfer",
+            "nominal_mm": 1.5,
+            "plus_mm": 0.3,
+            "minus_mm": 0.3,
+            "angle_deg": 45.0
+          },
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 156.0,
+            "plus_mm": 0.2,
+            "minus_mm": 0.2,
+            "qualifier": "2 x"
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "position",
+            "tolerance_value_mm": 0.25,
+            "material_condition": "RFS",
+            "datum_references": [
+              "N",
+              "A"
+            ],
+            "applied_to": "Right stepped face of the outer flange"
+          },
+          {
+            "gdt_type": "runout",
+            "tolerance_value_mm": 0.4,
+            "datum_references": [
+              "A"
+            ],
+            "applied_to": "Two outer cylindrical rim land faces flanking the central groove"
+          }
+        ],
+        "callout_qualifiers": [],
+        "source_views": [
+          "detail_a",
+          "section_dd",
+          "detail_d"
+        ]
+      },
+      {
+        "feature_id": "F06",
+        "feature_type": "spline",
+        "name": "Internal engaging spline tooth pointing",
+        "description": "Pointing chamfers/tapers on internal engaging spline teeth, defined with symmetrical 10\u00b0 flanks, \u00d8120.65 theoretical gauge diameter, and \u00d8126.3 \u00b10.5 root/start diameter.",
+        "geometry": {
+          "diameter_mm": 126.3,
+          "inner_diameter_mm": 120.65,
+          "outer_diameter_mm": 126.3,
+          "length_mm": 1.0,
+          "angle_deg": 10.0,
+          "position_description": "Nominal axial distance 1 mm from front to flank at \u00d8120.65",
+          "axis_direction": "+Z"
+        },
+        "access_directions": [
+          "radial",
+          "-Y",
+          "axial",
+          "+Z",
+          "-Z"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 126.3,
+            "plus_mm": 0.5,
+            "minus_mm": 0.5,
+            "qualifier": "2 x"
+          },
+          {
+            "dimension_type": "angle_deg",
+            "nominal_mm": 10.0,
+            "angle_deg": 10.0
+          },
+          {
+            "dimension_type": "angle_deg",
+            "nominal_mm": 10.0,
+            "angle_deg": 10.0
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [
+          {
+            "qualifier": "REF",
+            "dimension_type": "length",
+            "nominal_mm": 1.0
+          }
+        ],
+        "source_views": [
+          "detail_d",
+          "section_uu"
+        ]
+      },
+      {
+        "feature_id": "F07",
+        "feature_type": "radius",
+        "name": "Standard corner radius (Detail B)",
+        "description": "Outer corner edge rounding with reference radius (R0,75).",
+        "geometry": {
+          "radius_mm": 0.75,
+          "position_description": "On corner profile shown in Detail B"
+        },
+        "instance_count": 1,
+        "access_directions": [
+          "radial"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "callout_qualifiers": [
+          {
+            "qualifier": "REF",
+            "dimension_type": "radius",
+            "nominal_mm": 0.75
+          }
+        ],
+        "source_views": [
+          "detail_b"
+        ]
+      },
+      {
+        "feature_id": "F08",
+        "feature_type": "chamfer",
+        "name": "Alternative corner chamfer (Detail B)",
+        "description": "Alternative design for the corner edge break featuring a 0.75\u00b10.25 x 45\u00b0 chamfer, applying 2x.",
+        "geometry": {
+          "width_mm": 0.75,
+          "angle_deg": 45.0,
+          "hole_count": 2,
+          "position_description": "Alternative corner treatment on Detail B profile"
+        },
+        "instance_count": 2,
+        "access_directions": [
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "chamfer",
+            "nominal_mm": 0.75,
+            "plus_mm": 0.25,
+            "minus_mm": 0.25,
+            "qualifier": "2x",
+            "angle_deg": 45.0
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "detail_b"
+        ]
+      },
+      {
+        "feature_id": "F09",
+        "feature_type": "pocket",
+        "name": "Left internal profile contour",
+        "description": "Left interior profile/transition contour of the engaging sleeve cavity, controlled by a surface profile tolerance relative to datums N and A.",
+        "geometry": {},
+        "instance_count": 1,
+        "access_directions": [
+          "radial"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [
+          {
+            "gdt_type": "profile_of_surface",
+            "tolerance_value_mm": 0.4,
+            "datum_references": [
+              "N",
+              "A"
+            ],
+            "applied_to": "Left internal profile contour"
+          }
+        ],
+        "callout_qualifiers": [],
+        "source_views": [
+          "detail_e"
+        ]
+      },
+      {
+        "feature_id": "F10",
+        "feature_type": "pocket",
+        "name": "Right internal profile contour",
+        "description": "Right interior profile/transition contour of the engaging sleeve cavity, controlled by a surface profile tolerance relative to datums E and A.",
+        "geometry": {},
+        "instance_count": 1,
+        "access_directions": [
+          "radial"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [
+          {
+            "gdt_type": "profile_of_surface",
+            "tolerance_value_mm": 0.4,
+            "datum_references": [
+              "E",
+              "A"
+            ],
+            "applied_to": "Right internal profile contour"
+          }
+        ],
+        "callout_qualifiers": [],
+        "source_views": [
+          "detail_e"
+        ]
+      },
+      {
+        "feature_id": "F11",
+        "feature_type": "shaft_step",
+        "name": "Outer step shoulders",
+        "description": "Stepped outer diameters flanking the outer flanges on both axial ends.",
+        "geometry": {
+          "diameter_mm": 139.0,
+          "outer_diameter_mm": 139.0,
+          "axis_direction": "axial"
+        },
+        "instance_count": 2,
+        "access_directions": [
+          "radial",
+          "+Y",
+          "-Y"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 139.0,
+            "plus_mm": 0.2,
+            "minus_mm": 0.2,
+            "qualifier": "2 x"
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "section_dd"
+        ]
+      },
+      {
+        "feature_id": "F12",
+        "feature_type": "counterbore",
+        "name": "End counterbores",
+        "description": "Internal entry recesses/counterbores at both axial faces leading into the internal spline.",
+        "geometry": {
+          "diameter_mm": 130.0,
+          "inner_diameter_mm": 130.0,
+          "hole_count": 2,
+          "axis_direction": "axial"
+        },
+        "instance_count": 2,
+        "access_directions": [
+          "+Z",
+          "-Z"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 130.0,
+            "plus_mm": 0.5,
+            "minus_mm": 0.5,
+            "qualifier": "2 x"
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "section_dd"
+        ]
+      },
+      {
+        "feature_id": "F13",
+        "feature_type": "pad",
+        "name": "Raised detent pad",
+        "description": "Raised detent pad with central plateau and symmetric ramped flanks angled at 20 deg with R0.5 mm fillet transitions, raised at least 0.15 mm above the adjacent sleeve surface with 9.1 mm basic base width.",
+        "geometry": {
+          "length_mm": 9.1,
+          "height_mm": 0.15,
+          "radius_mm": 0.5,
+          "angle_deg": 20.0,
+          "position_description": "Symmetrically positioned with basic dimension 9.1 mm between Datums E and N, controlled within 0.35 mm position tolerance relative to Datums E, N, and A",
+          "axis_direction": "radial"
+        },
+        "access_directions": [
+          "radial",
+          "+Y"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "angle_deg",
+            "nominal_mm": 20.0,
+            "plus_mm": 2.0,
+            "minus_mm": 2.0,
+            "qualifier": "2X",
+            "angle_deg": 20.0
+          },
+          {
+            "dimension_type": "radius",
+            "nominal_mm": 0.5,
+            "plus_mm": 0.25,
+            "minus_mm": 0.25,
+            "qualifier": "2X"
+          },
+          {
+            "dimension_type": "height",
+            "nominal_mm": 0.15,
+            "lower_limit_mm": 0.15,
+            "qualifier": "2X MIN"
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "position",
+            "tolerance_value_mm": 0.35,
+            "material_condition": "RFS",
+            "datum_references": [
+              "N",
+              "A"
+            ],
+            "applied_to": "left boundary/flank of raised detent pad"
+          },
+          {
+            "gdt_type": "position",
+            "tolerance_value_mm": 0.35,
+            "material_condition": "RFS",
+            "datum_references": [
+              "E",
+              "A"
+            ],
+            "applied_to": "right boundary/flank of raised detent pad"
+          }
+        ],
+        "callout_qualifiers": [
+          {
+            "qualifier": "REF",
+            "dimension_type": "length",
+            "nominal_mm": 8.7
+          }
+        ],
+        "source_views": [
+          "section_tt"
+        ]
+      },
+      {
+        "feature_id": "F14",
+        "feature_type": "edge_break",
+        "name": "Flank edge transition",
+        "description": "ISO 13715 edge break / state callout applied to tooth edge transitions (2x).",
+        "geometry": {
+          "length_mm": 0.05,
+          "radius_mm": 0.05,
+          "position_description": "Located at flank transition corners"
+        },
+        "instance_count": 2,
+        "access_directions": [
+          "radial"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "callout_qualifiers": [
+          {
+            "qualifier": "2x",
+            "dimension_type": "radius_edge",
+            "nominal_mm": 0.05
+          }
+        ],
+        "source_views": [
+          "section_uu"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "relationship_id": "R01",
+        "from_feature_id": "F02",
+        "to_feature_id": "F01",
+        "relationship_type": "coaxial",
+        "detail": "The sleeve body and internal spline share the central rotational axis shown in the main and sectional views."
+      },
+      {
+        "relationship_id": "R02",
+        "from_feature_id": "F01",
+        "to_feature_id": "F02",
+        "relationship_type": "radial_pattern",
+        "detail": "The main view explicitly identifies a uniformly spaced circumferential pattern of internal teeth around the sleeve axis."
+      },
+      {
+        "relationship_id": "R03",
+        "from_feature_id": "F04",
+        "to_feature_id": "F03",
+        "relationship_type": "datum_referenced",
+        "detail": "The left stepped-face position control references datum E, provisionally represented by the left groove wall pending datum clarification."
+      },
+      {
+        "relationship_id": "R04",
+        "from_feature_id": "F04",
+        "to_feature_id": "F01",
+        "relationship_type": "datum_referenced",
+        "detail": "The left stepped-face position control references datum A on the internal spline pitch cylinder."
+      },
+      {
+        "relationship_id": "R05",
+        "from_feature_id": "F05",
+        "to_feature_id": "F03",
+        "relationship_type": "datum_referenced",
+        "detail": "The right stepped-face position control references datum N, provisionally represented by the right groove wall pending datum clarification."
+      },
+      {
+        "relationship_id": "R06",
+        "from_feature_id": "F05",
+        "to_feature_id": "F01",
+        "relationship_type": "datum_referenced",
+        "detail": "The right stepped-face position control references datum A on the internal spline pitch cylinder."
+      },
+      {
+        "relationship_id": "R07",
+        "from_feature_id": "F04",
+        "to_feature_id": "F01",
+        "relationship_type": "concentric",
+        "detail": "The shared outer-land observation applies circular runout relative to datum A to the left flange cylindrical land."
+      },
+      {
+        "relationship_id": "R08",
+        "from_feature_id": "F05",
+        "to_feature_id": "F01",
+        "relationship_type": "concentric",
+        "detail": "The shared outer-land observation applies circular runout relative to datum A to the right flange cylindrical land."
+      },
+      {
+        "relationship_id": "R09",
+        "from_feature_id": "F03",
+        "to_feature_id": "F01",
+        "relationship_type": "datum_referenced",
+        "detail": "The groove-bottom circular runout control references datum A."
+      },
+      {
+        "relationship_id": "R10",
+        "from_feature_id": "F03",
+        "to_feature_id": "F01",
+        "relationship_type": "concentric",
+        "detail": "The groove-bottom cylindrical surface is controlled for circular runout about the spline datum axis."
+      },
+      {
+        "relationship_id": "R11",
+        "from_feature_id": "F04",
+        "to_feature_id": "F05",
+        "relationship_type": "opposite_face",
+        "detail": "The left and right flange stepped faces occupy opposing axial sides of the central fork groove."
+      },
+      {
+        "relationship_id": "R12",
+        "from_feature_id": "F11",
+        "to_feature_id": "F01",
+        "relationship_type": "coaxial",
+        "detail": "The outer step shoulders are shown as concentric stepped cylindrical surfaces around the internal spline axis."
+      },
+      {
+        "relationship_id": "R13",
+        "from_feature_id": "F12",
+        "to_feature_id": "F01",
+        "relationship_type": "coaxial",
+        "detail": "The opposing entry counterbores lead into the internal spline along the same sleeve axis."
+      },
+      {
+        "relationship_id": "R14",
+        "from_feature_id": "F06",
+        "to_feature_id": "F01",
+        "relationship_type": "coaxial",
+        "detail": "The spline pointing profile uses the same theoretical gauge cylinder and sleeve axis as the internal spline."
+      },
+      {
+        "relationship_id": "R15",
+        "from_feature_id": "F06",
+        "to_feature_id": "F01",
+        "relationship_type": "intersecting",
+        "detail": "The pointing tapers form the engagement ends of the internal spline teeth."
+      },
+      {
+        "relationship_id": "R16",
+        "from_feature_id": "F14",
+        "to_feature_id": "F06",
+        "relationship_type": "intersecting",
+        "detail": "Section U-U places the edge-break treatment at the tooth flank transition corners."
+      },
+      {
+        "relationship_id": "R17",
+        "from_feature_id": "F13",
+        "to_feature_id": "F01",
+        "relationship_type": "intersecting",
+        "detail": "The main-view T-T cut passes through an internal spline tooth and exposes the raised detent-pad subfeature."
+      },
+      {
+        "relationship_id": "R18",
+        "from_feature_id": "F13",
+        "to_feature_id": "F03",
+        "relationship_type": "datum_referenced",
+        "detail": "The left detent boundary position control references datum N. Its groove-wall mapping is provisional because T-T also reports a conflicting datum definition."
+      },
+      {
+        "relationship_id": "R19",
+        "from_feature_id": "F13",
+        "to_feature_id": "F03",
+        "relationship_type": "datum_referenced",
+        "detail": "The right detent boundary position control references datum E. Its groove-wall mapping is provisional because T-T also reports a conflicting datum definition."
+      },
+      {
+        "relationship_id": "R20",
+        "from_feature_id": "F13",
+        "to_feature_id": "F01",
+        "relationship_type": "datum_referenced",
+        "detail": "Both detent boundary position controls reference datum A."
+      },
+      {
+        "relationship_id": "R21",
+        "from_feature_id": "F09",
+        "to_feature_id": "F03",
+        "relationship_type": "datum_referenced",
+        "detail": "The left internal contour surface-profile control references datum N, provisionally mapped to the right groove wall."
+      },
+      {
+        "relationship_id": "R22",
+        "from_feature_id": "F09",
+        "to_feature_id": "F01",
+        "relationship_type": "datum_referenced",
+        "detail": "The left internal contour surface-profile control references datum A."
+      },
+      {
+        "relationship_id": "R23",
+        "from_feature_id": "F10",
+        "to_feature_id": "F03",
+        "relationship_type": "datum_referenced",
+        "detail": "The right internal contour surface-profile control references datum E, provisionally mapped to the left groove wall."
+      },
+      {
+        "relationship_id": "R24",
+        "from_feature_id": "F10",
+        "to_feature_id": "F01",
+        "relationship_type": "datum_referenced",
+        "detail": "The right internal contour surface-profile control references datum A."
+      },
+      {
+        "relationship_id": "R25",
+        "from_feature_id": "F07",
+        "to_feature_id": "F03",
+        "relationship_type": "intersecting",
+        "detail": "The D-D detail callout locates the standard corner-radius treatment at the upper outer groove corner."
+      },
+      {
+        "relationship_id": "R26",
+        "from_feature_id": "F08",
+        "to_feature_id": "F03",
+        "relationship_type": "intersecting",
+        "detail": "The alternative chamfer treats the same Detail B outer groove corners instead of the standard radius; these treatments are mutually exclusive."
+      }
+    ],
+    "datum_scheme": {
+      "datums": [
+        {
+          "datum_letter": "A",
+          "feature_id": "F01",
+          "surface_type": "cylindrical",
+          "description": "Pitch diameter cylinder of the internal spline."
+        },
+        {
+          "datum_letter": "E",
+          "feature_id": "F03",
+          "surface_type": "planar",
+          "description": "Left inner side wall of the central annular groove; provisional mapping pending reconciliation with the conflicting T-T definition."
+        },
+        {
+          "datum_letter": "N",
+          "feature_id": "F03",
+          "surface_type": "planar",
+          "description": "Right inner side wall of the central annular groove; provisional mapping pending reconciliation with the conflicting T-T definition."
+        }
+      ],
+      "datum_hierarchy_notes": "Datum A supplies the common rotational axis. The position and surface-profile frames use E followed by A, or N followed by A; there is no evidence of a universal three-datum precedence sequence. Detail A defines E and N on the groove walls, whereas T-T reports those same letters on detent-flank boundaries. The groove-wall definitions and all dependent graph edges are provisional until C01 and C02 are resolved. The conflicting definitions do not establish identity between the groove and detent pad."
+    },
+    "part_notes": "Heat treatment: CASE HARDENED ACC.TO STD 1094,1 DC = 0,8\u00b10,4 INDUCTION HEATING MAY BE USED FOR HARDENING KHR= 350-460 HV SURFACE HARDNESS= 58-63 HRC. Coating: none specified. General notes: INSPECTION: WETTED SURFACE FOR CLEANLINESS EVALUATION: 445 cm2. DIGITAL SHAPE MODEL IS BASIS WHERE DIMENSIONS ARE OMITTED STD 101-0001. TOLERANCE: COAXIAL- AND RUN OUT DEMANDS APPLIES TO ALL DIAMETERS UNLESS OTHERWISE STATED: [COAXIALITY | \u00d80,2 | A], [CIRCULAR RUNOUT | 0,3 | A]. MARKING: MARKED ACCORDING TO STD 5051,16 MET 2-6-E-3. DEBURR: Edge indications per ISO 13715: 0,3 and +0,1/-0,3. PROCESS: CASE HARDENED ACC.TO STD 1094,1 DC = 0,8\u00b10,4 INDUCTION HEATING MAY BE USED FOR HARDENING KHR= 350-460 HV SURFACE HARDNESS= 58-63 HRC. PROCESS: DIMENSIONS IN VIEW C AS WELL AS SECTION T-T AND U-U APPLIES TO 28x TEETH. FINISH: SURFACE ROUGHNESS, UNLESS OTHERWISE STATED: Ra 6,3. Extraction notes: Material, drawing scale, and projection symbol are not present in the provided view crops.",
+    "overall_complexity": "complex"
+  },
+  "component_specs": [],
+  "component_spec_links": [],
+  "assumptions": [
+    {
+      "assumption_id": "A01",
+      "text": "The main-view and isometric body observations describe the same annular sleeve. With neither dimensioned, the main view is canonical because it supplies the orthographic section-navigation context."
+    },
+    {
+      "assumption_id": "A02",
+      "text": "The main-view tooth pattern, Detail C transverse profile, D-D internal spline, Detail A internal spline transition, and isometric internal teeth are treated as observations of the same spline system. The Detail C link is explicit; the remaining observations are matched by the single internal tooth system and their sectional or pictorial locations. D-D is canonical because it supplies a toleranced working diameter and defines datum A."
+    },
+    {
+      "assumption_id": "A03",
+      "text": "The spline observations describe interchangeable teeth rather than individually identified teeth. The explicit main-view pattern count is retained as the multiplicity source; observations of one sectional tooth or of the whole spline are not treated as distinct tooth instances or as aggregate_refs."
+    },
+    {
+      "assumption_id": "A04",
+      "text": "Detail C supplies the spline summary radius because it identifies the transverse tooth-root fillets. Detail A's transition fillet is a different local corner treatment, not an irreconcilable radius conflict, and its callout remains preserved."
+    },
+    {
+      "assumption_id": "A05",
+      "text": "Detail D and U-U are grouped on Signal 5 using their common theoretical gauge diameter and matching tooth-end/flank context. They remain a separate pointing subfeature from the main spline so that U-U's local reference front-to-flank distance is not interpreted as the overall spline length. Detail D is canonical because it defines the pointing profile more completely."
+    },
+    {
+      "assumption_id": "A06",
+      "text": "The outer-groove observations are merged by their unique position between the two fork flanges and their detail-navigation context. Detail D is canonical for its location, finish, and GD&T evidence. The toleranced D-D groove-root nominal overrides the maximum-only diameter fields from Detail D; the maximum constraint remains preserved as a callout and is compatible with that nominal."
+    },
+    {
+      "assumption_id": "A07",
+      "text": "The left and right flanges remain separate because their positions, chamfers, and datum references differ. The D-D flange pair and Detail D cylindrical-land pair are shared aggregate observations contributing to both individual flange groups, without increasing either individual count."
+    },
+    {
+      "assumption_id": "A08",
+      "text": "Detail A is used for the individually defined flange observations and their uncropped local dimensions and controls. Its partially visible outer-diameter callout is not used as an authoritative source; the uncropped D-D aggregate supplies the flange outer diameter."
+    },
+    {
+      "assumption_id": "A09",
+      "text": "Datum E and N are provisionally mapped to the explicit groove-wall definitions in Detail A. The contradictory T-T definitions are retained as unresolved datum conflicts through C01 and C02, rather than merging the detent pad with the groove or creating duplicate datum letters."
+    },
+    {
+      "assumption_id": "A10",
+      "text": "Section and detail navigation labels are interpreted according to their physical subjects. The T-T marker on the spline identifies a cut through the tooth but does not make its raised pad identical to the entire spline. Likewise, body-level D-D and U-U markers do not make all features in those sections identical to the body."
+    },
+    {
+      "assumption_id": "A11",
+      "text": "Detail B's radius and chamfer remain separate, mutually exclusive permitted treatments of the identified outer groove corners. They are not merged with the groove's other radius callouts merely because a radius value matches, and they are not interpreted as two required consecutive operations."
+    },
+    {
+      "assumption_id": "A12",
+      "text": "The outer step shoulders and end counterbores remain distinct from the flange and spline groups because they describe separate cylindrical zones. The two Detail E contours likewise remain separate because they occupy opposite positions and have different datum precedence."
+    },
+    {
+      "assumption_id": "A13",
+      "clarification_id": "C01",
+      "text": "Datum E is established by the left inner groove wall identified in Detail A. The vertical line in Section T-T merely represents the projected datum plane used as the baseline to locate the detent flank."
+    },
+    {
+      "assumption_id": "A14",
+      "clarification_id": "C02",
+      "text": "Datum N is established by the right inner groove wall identified in Detail A. The detent flank in Section T-T is a toleranced feature positioned relative to datum N, rather than the datum feature itself."
+    },
+    {
+      "assumption_id": "A15",
+      "clarification_id": "C03",
+      "text": "Assume the internal spline specification TR-20515634 conforms to the drawing views with a basic pitch diameter of \u00d8120.65 (Datum A), a minor diameter of \u00d8117.3 \u00b1 0.1 mm, and a major root diameter of \u00d8126.3 \u00b1 0.5 mm. Columns B and C are assumed to correspond to the basic tooth width and measurement over/between pins of 15.58 mm at \u00d8120.65 with a 10\u00b0 flank angle."
+    },
+    {
+      "assumption_id": "A16",
+      "clarification_id": "C04",
+      "text": "The sleeve's overall axial end-face-to-end-face length is assumed to be 31.3 mm, determined from Detail D (scale 5:1) by scaling the symmetric profile relative to the 15.58 mm central groove width."
+    },
+    {
+      "assumption_id": "A17",
+      "clarification_id": "C05",
+      "text": "The axial depth for the 2 x \u00d8130 \u00b1 0.5 end counterbores is governed by Detail D (and Detail A), as the axial depth dimensions are omitted from Section D-D and defined in the corresponding detail callouts."
+    },
+    {
+      "assumption_id": "A18",
+      "clarification_id": "C06",
+      "text": "The nominal geometry for the internal contours in Detail E is assumed to be defined directly by the master 3D CAD model, serving as the basic profile reference for the 0.4 profile tolerances relative to datums N, E, and A."
+    },
+    {
+      "assumption_id": "A19",
+      "clarification_id": "C07",
+      "text": "The raised detent pad is assumed to extend continuously around the full 360\u00b0 circumference as an annular feature, as no discrete circumferential limits or instance counts are indicated."
+    },
+    {
+      "assumption_id": "A20",
+      "clarification_id": "C08",
+      "text": "There are two instances of the raised detent pad on the sleeve, with one pad located 9.1 mm from Datum N and the other symmetrically located 9.1 mm from Datum E as indicated by the dual datum callouts and the '2x 0,15 MIN' dimension."
+    }
+  ]
+}

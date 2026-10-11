@@ -1,0 +1,581 @@
+{
+  "analysis_id": "MB09B700520_merge_20261010T230433Z",
+  "quantity": 100,
+  "t_cycle_per_part_sec": 1397.7,
+  "t_cycle_total_batch_sec": 139770.0,
+  "t_setup_total_batch_sec": 9240.0,
+  "operations": [
+    {
+      "sequence": 1,
+      "name": "CNC Turn – First End",
+      "machine_family": "cnc_lathe",
+      "in_house": true,
+      "setup_time_sec": 1200.0,
+      "t_setup_per_piece_sec": 12.0,
+      "t_handling_sec": 24.0,
+      "t_machining_sec": 5.4,
+      "t_op_total_sec": 42.4,
+      "sub_op_results": [
+        {
+          "operation_seq": 1,
+          "sub_op_seq": 1,
+          "operation_type": "face_turn",
+          "kind": "radial_turn",
+          "rpm": null,
+          "feed_mm_min": null,
+          "t_cut_sec": 0.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 0.0,
+          "trace": {
+            "operation_type": "face_turn",
+            "kind": "radial_turn",
+            "machinability": "medium",
+            "travel": 0.0,
+            "D_avg": 58.6,
+            "Vc": 110,
+            "fn": 0.12,
+            "rpm": 597.51,
+            "total_stock_mm": 0.5,
+            "max_doc": 5.0,
+            "passes": 1,
+            "groove_count": 1,
+            "t_pure_cut": 0.0
+          },
+          "warnings": []
+        },
+        {
+          "operation_seq": 1,
+          "sub_op_seq": 2,
+          "operation_type": "finish_turn_od",
+          "kind": "axial_turn",
+          "rpm": null,
+          "feed_mm_min": null,
+          "t_cut_sec": 5.2,
+          "t_tool_sec": 0.2,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 5.4,
+          "trace": {
+            "operation_type": "finish_turn_od",
+            "kind": "axial_turn",
+            "machinability": "medium",
+            "D_avg": 59.0,
+            "radial_stock": 0.4,
+            "fn": 0.24,
+            "doc": 3.0,
+            "Vc": 135,
+            "rpm": 728.336,
+            "passes": 1,
+            "t_pure_cut": 0.0526314,
+            "indexing_factor": 0.1,
+            "non_cut_factor": 1.5,
+            "aux_time_min": 0.0,
+            "t_cut": 0.0868418
+          },
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "sequence": 2,
+      "name": "CNC Turn – Second End",
+      "machine_family": "cnc_lathe",
+      "in_house": true,
+      "setup_time_sec": 900.0,
+      "t_setup_per_piece_sec": 9.0,
+      "t_handling_sec": 24.0,
+      "t_machining_sec": 5.4,
+      "t_op_total_sec": 39.4,
+      "sub_op_results": [
+        {
+          "operation_seq": 2,
+          "sub_op_seq": 1,
+          "operation_type": "face_turn",
+          "kind": "radial_turn",
+          "rpm": null,
+          "feed_mm_min": null,
+          "t_cut_sec": 0.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 0.0,
+          "trace": {
+            "operation_type": "face_turn",
+            "kind": "radial_turn",
+            "machinability": "medium",
+            "travel": 0.0,
+            "D_avg": 58.6,
+            "Vc": 110,
+            "fn": 0.12,
+            "rpm": 597.51,
+            "total_stock_mm": 0.5,
+            "max_doc": 5.0,
+            "passes": 1,
+            "groove_count": 1,
+            "t_pure_cut": 0.0
+          },
+          "warnings": []
+        },
+        {
+          "operation_seq": 2,
+          "sub_op_seq": 2,
+          "operation_type": "finish_turn_od",
+          "kind": "axial_turn",
+          "rpm": null,
+          "feed_mm_min": null,
+          "t_cut_sec": 5.2,
+          "t_tool_sec": 0.2,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 5.4,
+          "trace": {
+            "operation_type": "finish_turn_od",
+            "kind": "axial_turn",
+            "machinability": "medium",
+            "D_avg": 59.0,
+            "radial_stock": 0.4,
+            "fn": 0.24,
+            "doc": 3.0,
+            "Vc": 135,
+            "rpm": 728.336,
+            "passes": 1,
+            "t_pure_cut": 0.0526314,
+            "indexing_factor": 0.1,
+            "non_cut_factor": 1.5,
+            "aux_time_min": 0.0,
+            "t_cut": 0.0868418
+          },
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "sequence": 3,
+      "name": "VMC – Flats, Interrupted Profile and Mounting Holes",
+      "machine_family": "vmc_3axis",
+      "in_house": true,
+      "setup_time_sec": 2100.0,
+      "t_setup_per_piece_sec": 21.0,
+      "t_handling_sec": 24.0,
+      "t_machining_sec": 280.6,
+      "t_op_total_sec": 375.1,
+      "sub_op_results": [
+        {
+          "operation_seq": 3,
+          "sub_op_seq": 1,
+          "operation_type": "side_mill",
+          "kind": "contour_mill",
+          "rpm": null,
+          "feed_mm_min": null,
+          "t_cut_sec": 58.4,
+          "t_tool_sec": 4.1,
+          "t_rapid_sec": 5.8,
+          "t_sub_total_sec": 68.4,
+          "trace": {
+            "operation_type": "side_mill",
+            "kind": "contour_mill",
+            "machinability": "medium",
+            "tool_dia": 16.0,
+            "Vc": 90,
+            "fz": 0.08,
+            "axial": 5.0,
+            "rpm": 1790.49,
+            "feed_rate": 572.958,
+            "z_passes": 9,
+            "r_passes": 1,
+            "t_cut": 0.973894
+          },
+          "warnings": []
+        },
+        {
+          "operation_seq": 3,
+          "sub_op_seq": 2,
+          "operation_type": "profile_mill",
+          "kind": "contour_mill",
+          "rpm": null,
+          "feed_mm_min": null,
+          "t_cut_sec": 118.9,
+          "t_tool_sec": 8.3,
+          "t_rapid_sec": 11.9,
+          "t_sub_total_sec": 139.2,
+          "trace": {
+            "operation_type": "profile_mill",
+            "kind": "contour_mill",
+            "machinability": "medium",
+            "tool_dia": 16.0,
+            "Vc": 90,
+            "fz": 0.08,
+            "axial": 5.0,
+            "rpm": 1790.49,
+            "feed_rate": 572.958,
+            "z_passes": 9,
+            "r_passes": 1,
+            "t_cut": 1.98234
+          },
+          "warnings": []
+        },
+        {
+          "operation_seq": 3,
+          "sub_op_seq": 3,
+          "operation_type": "spot_drill",
+          "kind": "point_drill",
+          "rpm": null,
+          "feed_mm_min": null,
+          "t_cut_sec": 1.7,
+          "t_tool_sec": 0.1,
+          "t_rapid_sec": 0.1,
+          "t_sub_total_sec": 1.9,
+          "trace": {
+            "operation_type": "spot_drill",
+            "kind": "point_drill",
+            "machinability": "medium",
+            "Vc": 32,
+            "fn": 0.14,
+            "rpm": 2037.18,
+            "total_depth": 4.0,
+            "peck_retracts": 0,
+            "t_one": 0.014025,
+            "t_cut": 0.0280499,
+            "feed_mm_min": 285.206
+          },
+          "warnings": []
+        },
+        {
+          "operation_seq": 3,
+          "sub_op_seq": 4,
+          "operation_type": "drill",
+          "kind": "point_drill",
+          "rpm": null,
+          "feed_mm_min": null,
+          "t_cut_sec": 64.0,
+          "t_tool_sec": 3.8,
+          "t_rapid_sec": 3.2,
+          "t_sub_total_sec": 71.1,
+          "trace": {
+            "operation_type": "drill",
+            "kind": "point_drill",
+            "machinability": "medium",
+            "Vc": 32,
+            "fn": 0.14,
+            "rpm": 516.396,
+            "total_depth": 38.5813,
+            "peck_retracts": 0,
+            "t_one": 0.533661,
+            "t_cut": 1.06732,
+            "feed_mm_min": 72.2955
+          },
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "sequence": 4,
+      "name": "Cold Form – Outer Tube End Curls",
+      "machine_family": "sheet_metal_stamping",
+      "in_house": true,
+      "setup_time_sec": 1800.0,
+      "t_setup_per_piece_sec": 18.0,
+      "t_handling_sec": 24.0,
+      "t_machining_sec": 64.4,
+      "t_op_total_sec": 117.8,
+      "sub_op_results": [
+        {
+          "operation_seq": 4,
+          "sub_op_seq": 1,
+          "operation_type": "stamp_form",
+          "kind": "bend",
+          "rpm": null,
+          "feed_mm_min": null,
+          "t_cut_sec": 64.4,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 64.4,
+          "trace": {
+            "base": 15.0,
+            "length_add": 3.682,
+            "thick_add": 0.5,
+            "sec_per_bend": 24.182,
+            "flange_extra": 16.0,
+            "t_cut": 1.07273
+          },
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "sequence": 5,
+      "name": "Cylindrical Grind – Called-Out Ground Surface",
+      "machine_family": "cylindrical_grinder",
+      "in_house": true,
+      "setup_time_sec": 1500.0,
+      "t_setup_per_piece_sec": 15.0,
+      "t_handling_sec": 24.0,
+      "t_machining_sec": 152.5,
+      "t_op_total_sec": 218.4,
+      "sub_op_results": [
+        {
+          "operation_seq": 5,
+          "sub_op_seq": 1,
+          "operation_type": "od_grind",
+          "kind": "cylindrical_grind",
+          "rpm": null,
+          "feed_mm_min": null,
+          "t_cut_sec": 132.6,
+          "t_tool_sec": 13.3,
+          "t_rapid_sec": 6.6,
+          "t_sub_total_sec": 152.5,
+          "trace": {
+            "work_speed": 20.0,
+            "work_rpm": 90.9262,
+            "finish_stock": 0.02,
+            "infeed_rough": 0.45,
+            "infeed_finish": 0.08,
+            "t_rough": 0.288889,
+            "t_finish": 0.25,
+            "t_spark": 0.0549897,
+            "traverses": 4,
+            "t_cut": 2.21055,
+            "t_tool": 0.221055,
+            "t_rapid": 0.110527
+          },
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "sequence": 6,
+      "name": "Production Bench – Deburr, Clean and Mark",
+      "machine_family": "finish_bench",
+      "in_house": true,
+      "setup_time_sec": 240.0,
+      "t_setup_per_piece_sec": 2.4,
+      "t_handling_sec": 24.0,
+      "t_machining_sec": 205.6,
+      "t_op_total_sec": 268.3,
+      "sub_op_results": [
+        {
+          "operation_seq": 6,
+          "sub_op_seq": 1,
+          "operation_type": "deburr",
+          "kind": "manual",
+          "rpm": null,
+          "feed_mm_min": null,
+          "t_cut_sec": 140.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 140.0,
+          "trace": {
+            "operation_type": "deburr",
+            "base": 2.33333,
+            "complexity_mult": 1.0,
+            "sec_per_feat": 2.0,
+            "t_cut_sec": 140.0
+          },
+          "warnings": []
+        },
+        {
+          "operation_seq": 6,
+          "sub_op_seq": 2,
+          "operation_type": "clean_degrease",
+          "kind": "manual",
+          "rpm": null,
+          "feed_mm_min": null,
+          "t_cut_sec": 60.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 60.0,
+          "trace": {
+            "operation_type": "clean_degrease",
+            "base": 1.0,
+            "complexity_mult": 1.0,
+            "sec_per_feat": 15.0,
+            "t_cut_sec": 60.0
+          },
+          "warnings": []
+        },
+        {
+          "operation_seq": 6,
+          "sub_op_seq": 3,
+          "operation_type": "mark_stamp",
+          "kind": "manual",
+          "rpm": null,
+          "feed_mm_min": null,
+          "t_cut_sec": 5.6,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 5.6,
+          "trace": {
+            "operation_type": "mark_stamp",
+            "base": 0.133333,
+            "complexity_mult": 0.7,
+            "sec_per_feat": 8.0,
+            "t_cut_sec": 5.6
+          },
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "sequence": 7,
+      "name": "Batch Phosphate and Ground-Surface Oil",
+      "machine_family": "plating_line",
+      "in_house": true,
+      "setup_time_sec": 900.0,
+      "t_setup_per_piece_sec": 9.0,
+      "t_handling_sec": 24.0,
+      "t_machining_sec": 135.0,
+      "t_op_total_sec": 191.8,
+      "sub_op_results": [
+        {
+          "operation_seq": 7,
+          "sub_op_seq": 1,
+          "operation_type": "mask",
+          "kind": "manual",
+          "rpm": null,
+          "feed_mm_min": null,
+          "t_cut_sec": 10.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 10.0,
+          "trace": {
+            "operation_type": "mask",
+            "base": 0.166667,
+            "complexity_mult": 1.0,
+            "sec_per_feat": 10.0,
+            "t_cut_sec": 10.0
+          },
+          "warnings": []
+        },
+        {
+          "operation_seq": 7,
+          "sub_op_seq": 2,
+          "operation_type": "clean_degrease",
+          "kind": "manual",
+          "rpm": null,
+          "feed_mm_min": null,
+          "t_cut_sec": 60.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 60.0,
+          "trace": {
+            "operation_type": "clean_degrease",
+            "base": 1.0,
+            "complexity_mult": 1.0,
+            "sec_per_feat": 15.0,
+            "t_cut_sec": 60.0
+          },
+          "warnings": []
+        },
+        {
+          "operation_seq": 7,
+          "sub_op_seq": 3,
+          "operation_type": "phosphate",
+          "kind": "surface_treat",
+          "rpm": null,
+          "feed_mm_min": null,
+          "t_cut_sec": 39.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 39.0,
+          "trace": {
+            "cycle": 35.0,
+            "batch": 100,
+            "dwell": 15.0
+          },
+          "warnings": []
+        },
+        {
+          "operation_seq": 7,
+          "sub_op_seq": 4,
+          "operation_type": "unmask",
+          "kind": "manual",
+          "rpm": null,
+          "feed_mm_min": null,
+          "t_cut_sec": 5.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 5.0,
+          "trace": {
+            "operation_type": "unmask",
+            "base": 0.0833333,
+            "complexity_mult": 1.0,
+            "sec_per_feat": 5.0,
+            "t_cut_sec": 5.0
+          },
+          "warnings": []
+        },
+        {
+          "operation_seq": 7,
+          "sub_op_seq": 5,
+          "operation_type": "outside_process",
+          "kind": "manual",
+          "rpm": null,
+          "feed_mm_min": null,
+          "t_cut_sec": 21.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 21.0,
+          "trace": {
+            "operation_type": "outside_process",
+            "base": 0.5,
+            "complexity_mult": 0.7,
+            "sec_per_feat": 15.0,
+            "t_cut_sec": 21.0
+          },
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "sequence": 8,
+      "name": "Final Shop-Floor Gauge and Sampled Test Gate",
+      "machine_family": "inspection",
+      "in_house": true,
+      "setup_time_sec": 600.0,
+      "t_setup_per_piece_sec": 6.0,
+      "t_handling_sec": 15.0,
+      "t_machining_sec": 105.0,
+      "t_op_total_sec": 144.5,
+      "sub_op_results": [
+        {
+          "operation_seq": 8,
+          "sub_op_seq": 1,
+          "operation_type": "manual_inspect",
+          "kind": "inspection",
+          "rpm": null,
+          "feed_mm_min": null,
+          "t_cut_sec": 90.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 90.0,
+          "trace": {
+            "t_full": 1.5,
+            "t_cut": 1.5
+          },
+          "warnings": []
+        },
+        {
+          "operation_seq": 8,
+          "sub_op_seq": 2,
+          "operation_type": "outside_process",
+          "kind": "manual",
+          "rpm": null,
+          "feed_mm_min": null,
+          "t_cut_sec": 15.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 15.0,
+          "trace": {
+            "operation_type": "outside_process",
+            "base": 0.25,
+            "complexity_mult": 1.0,
+            "sec_per_feat": 15.0,
+            "t_cut_sec": 15.0
+          },
+          "warnings": []
+        }
+      ]
+    }
+  ],
+  "warnings": [
+    "Loaded org machining overrides from: engine/data/machining_data_almity.yaml"
+  ]
+}

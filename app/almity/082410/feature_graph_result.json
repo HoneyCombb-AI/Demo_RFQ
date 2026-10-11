@@ -1,0 +1,257 @@
+{
+  "analysis_id": "082410_merge_20261010T225439Z",
+  "part": {
+    "name": "INNER COMPONENT",
+    "drawing_number": "082410",
+    "revision": "D",
+    "material": "SAE 1010-1020 STEEL",
+    "units": "mm"
+  },
+  "feature_graph": {
+    "part_envelope": {
+      "length_mm": 104.0,
+      "max_diameter_mm": 165.48
+    },
+    "coordinate_system": {
+      "primary_axis": "X",
+      "orientation_notes": "X follows the sleeve and bore axis. Y is vertical in the axial front and detail views; Z is normal to the front projection plane, into the page. The left view looks along +X. No datum-based coordinate origin is defined."
+    },
+    "features": [
+      {
+        "feature_id": "F01",
+        "feature_type": "tapered_external",
+        "name": "External tapered section",
+        "description": "External conical taper transitioning from the main body diameter down to the end cylindrical land.",
+        "geometry": {
+          "diameter_mm": 165.1,
+          "outer_diameter_mm": 165.1,
+          "length_mm": 12.7,
+          "angle_deg": 3.8,
+          "axis_direction": "+X"
+        },
+        "instance_count": 1,
+        "access_directions": [
+          "+Y",
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 165.1,
+            "upper_limit_mm": 165.48,
+            "lower_limit_mm": 164.72
+          },
+          {
+            "dimension_type": "angle_deg",
+            "nominal_mm": 3.8,
+            "qualifier": "REF",
+            "angle_deg": 3.8
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [
+          {
+            "qualifier": "REF",
+            "dimension_type": "angle_deg",
+            "nominal_mm": 3.8
+          }
+        ],
+        "source_views": [
+          "detail_z"
+        ]
+      },
+      {
+        "feature_id": "F02",
+        "feature_type": "external_cylinder",
+        "name": "End cylindrical land",
+        "description": "Outer cylindrical land at the axial end of the component with a reference wall thickness to the internal bore.",
+        "geometry": {
+          "diameter_mm": 164.25,
+          "outer_diameter_mm": 164.25,
+          "length_mm": 6.35,
+          "wall_thickness_mm": 5.0,
+          "axis_direction": "+X"
+        },
+        "instance_count": 1,
+        "access_directions": [
+          "+Y",
+          "+X",
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 164.25,
+            "upper_limit_mm": 164.5,
+            "lower_limit_mm": 164.0
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [
+          {
+            "qualifier": "REF",
+            "dimension_type": "wall_thickness",
+            "nominal_mm": 5.0
+          }
+        ],
+        "source_views": [
+          "detail_z"
+        ]
+      },
+      {
+        "feature_id": "F03",
+        "feature_type": "chamfer",
+        "name": "ID entry chamfer",
+        "description": "Internal diameter chamfer at the end face, called out for both ends of the component.",
+        "geometry": {
+          "width_mm": 1.25,
+          "angle_deg": 45.0,
+          "hole_count": 2,
+          "axis_direction": "+X"
+        },
+        "instance_count": 2,
+        "access_directions": [
+          "+X",
+          "-X"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "chamfer",
+            "nominal_mm": 1.25,
+            "upper_limit_mm": 1.5,
+            "lower_limit_mm": 1.0,
+            "qualifier": "BOTH ENDS",
+            "angle_deg": 45.0
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "detail_z"
+        ]
+      },
+      {
+        "feature_id": "F04",
+        "feature_type": "external_cylinder",
+        "name": "Outer cylinder body",
+        "description": "Main outer cylindrical surface and body of the sleeve, defining the overall length of the component.",
+        "geometry": {
+          "length_mm": 103.93,
+          "position_description": "Centred on horizontal cylinder axis along X",
+          "axis_direction": "+X"
+        },
+        "access_directions": [
+          "+Y",
+          "-Y",
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "length",
+            "nominal_mm": 103.93,
+            "upper_limit_mm": 104.0,
+            "lower_limit_mm": 103.86
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "front_view"
+        ]
+      },
+      {
+        "feature_id": "F05",
+        "feature_type": "internal_bore",
+        "name": "Internal through bore",
+        "description": "Precision cylindrical through bore running along the horizontal axis through the entire length of the part.",
+        "geometry": {
+          "diameter_mm": 153.885,
+          "inner_diameter_mm": 153.885,
+          "length_mm": 103.93,
+          "depth_mm": 103.93,
+          "depth_condition": "THRU",
+          "position_description": "Coaxial with part body along X axis",
+          "axis_direction": "+X"
+        },
+        "access_directions": [
+          "+X",
+          "-X"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 153.885,
+            "upper_limit_mm": 153.95,
+            "lower_limit_mm": 153.82
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "front_view"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "relationship_id": "R01",
+        "from_feature_id": "F05",
+        "to_feature_id": "F04",
+        "relationship_type": "coaxial",
+        "detail": "The through bore is explicitly described as coaxial with the cylindrical body along X."
+      },
+      {
+        "relationship_id": "R02",
+        "from_feature_id": "F01",
+        "to_feature_id": "F04",
+        "relationship_type": "coaxial",
+        "detail": "The external taper transitions from the main body and follows the component's rotational axis."
+      },
+      {
+        "relationship_id": "R03",
+        "from_feature_id": "F02",
+        "to_feature_id": "F01",
+        "relationship_type": "coaxial",
+        "detail": "The end cylindrical land and adjoining external taper share the component's rotational axis."
+      },
+      {
+        "relationship_id": "R04",
+        "from_feature_id": "F03",
+        "to_feature_id": "F05",
+        "relationship_type": "coaxial",
+        "detail": "The ID entry chamfers are located at the two ends of the central through bore."
+      }
+    ],
+    "datum_scheme": {
+      "datums": [],
+      "datum_hierarchy_notes": "No datum definitions or GD&T datum references are provided."
+    },
+    "part_notes": "Material: SAE 1010-1020 STEEL. Scale: FULL. General tolerance: ASME Y14.5M-1994. Projection: third angle. Heat treatment: none specified. Coating: PHOSPHATE COAT PER PS-119.0. General notes: TOLERANCE: TOL (UOS): \u00b10.5. DEBURR: BREAK ALL SHARP EDGES 0.5 MAX.. FINISH: PHOSPHATE COAT PER PS-119.0. Extraction notes: Leading digits in the revision table date column are slightly truncated by the border.",
+    "overall_complexity": "simple"
+  },
+  "component_specs": [],
+  "component_spec_links": [],
+  "assumptions": [
+    {
+      "assumption_id": "A01",
+      "text": "The DETAIL Z label on front_view:F1 is interpreted as locating an end-region enlargement, not establishing identity between the entire main cylindrical body and detail_z:F1. The body and taper remain separate features because their descriptions and axial spans identify distinct surfaces."
+    },
+    {
+      "assumption_id": "A02",
+      "text": "detail_z:F2 remains separate from front_view:F1: it represents the short end cylindrical land, whereas front_view:F1 represents the main body and carries the overall part length."
+    },
+    {
+      "assumption_id": "A03",
+      "text": "detail_z:F3 is retained as one interchangeable two-instance chamfer feature. BOTH ENDS establishes its multiplicity; no separately identified chamfer observations require aggregate grouping."
+    },
+    {
+      "assumption_id": "A04",
+      "text": "The left view is used only for axisymmetric spatial context. It supplies no feature observations or dimensions to merge, so the main-body diameter scope remains a clarification rather than an inferred geometry value."
+    },
+    {
+      "assumption_id": "A05",
+      "clarification_id": "C01",
+      "text": "The large-end outside-diameter limits specified in Detail Z apply continuously to the main straight cylindrical body."
+    }
+  ]
+}

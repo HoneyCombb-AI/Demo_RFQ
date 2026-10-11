@@ -1,0 +1,229 @@
+{
+  "analysis_id": "063710_merge_20261010T224006Z",
+  "part": {
+    "name": "INNER TUBE",
+    "drawing_number": "06371_",
+    "revision": "G",
+    "material": "S.A.E.-1010-1020 ST'L.",
+    "units": "mm"
+  },
+  "feature_graph": {
+    "part_envelope": {
+      "length_mm": 16.0,
+      "max_diameter_mm": 95.53
+    },
+    "coordinate_system": {
+      "primary_axis": "Z",
+      "orientation_notes": "Z is the longitudinal tube and bore axis. In the front view, X is horizontal and Y is vertical. In the side view, Z is horizontal, Y is vertical, and X is normal to the page. The front-view center establishes the axis location in X and Y; no axial origin or datum reference frame is defined."
+    },
+    "features": [
+      {
+        "feature_id": "F01",
+        "feature_type": "external_cylinder",
+        "name": "Main tube outer cylinder",
+        "description": "Outer cylindrical body of the inner tube with reference wall thickness dimensioned to the bore",
+        "geometry": {
+          "diameter_mm": 95.39,
+          "outer_diameter_mm": 95.39,
+          "depth_condition": "THRU",
+          "wall_thickness_mm": 9.0,
+          "position_description": "Centred on drawing coordinate origin",
+          "axis_direction": "+Z"
+        },
+        "instance_count": 1,
+        "access_directions": [
+          "+X",
+          "-X",
+          "+Y",
+          "-Y",
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 95.39,
+            "upper_limit_mm": 95.53,
+            "lower_limit_mm": 95.25
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [
+          {
+            "qualifier": "REF",
+            "dimension_type": "wall_thickness",
+            "nominal_mm": 9.0
+          }
+        ],
+        "source_views": [
+          "front_view",
+          "side_view"
+        ]
+      },
+      {
+        "feature_id": "F02",
+        "feature_type": "internal_bore",
+        "name": "Internal bore with chamfers",
+        "description": "Inner through bore at the collar end with 30-degree entry chamfers on both sides and circularity form tolerance",
+        "geometry": {
+          "diameter_mm": 77.345,
+          "inner_diameter_mm": 77.345,
+          "depth_condition": "THRU",
+          "angle_deg": 30.0,
+          "hole_count": 1,
+          "position_description": "Coaxial with outer cylinder F1",
+          "axis_direction": "+Z"
+        },
+        "instance_count": 1,
+        "access_directions": [
+          "+Z",
+          "-Z"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 77.345,
+            "upper_limit_mm": 77.47,
+            "lower_limit_mm": 77.22
+          },
+          {
+            "dimension_type": "chamfer",
+            "nominal_mm": 0.8,
+            "upper_limit_mm": 1.0,
+            "lower_limit_mm": 0.6,
+            "qualifier": "BOTH SIDES",
+            "angle_deg": 30.0
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "circularity",
+            "tolerance_value_mm": 0.13,
+            "datum_references": [],
+            "applied_to": "77.22 / 77.47 \u00d8 inner bore"
+          }
+        ],
+        "callout_qualifiers": [],
+        "source_views": [
+          "front_view",
+          "side_view"
+        ]
+      },
+      {
+        "feature_id": "F03",
+        "feature_type": "flange",
+        "name": "End collar",
+        "description": "Collar/ring feature at the end of the tube with length defined by limit dimensions",
+        "geometry": {
+          "outer_diameter_mm": 95.39,
+          "length_mm": 15.875,
+          "position_description": "At the right end of the tube",
+          "axis_direction": "+Z"
+        },
+        "instance_count": 1,
+        "access_directions": [
+          "radial",
+          "+Z",
+          "-Z"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "length",
+            "nominal_mm": 15.875,
+            "upper_limit_mm": 16.0,
+            "lower_limit_mm": 15.75
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "side_view"
+        ]
+      },
+      {
+        "feature_id": "F04",
+        "feature_type": "radius",
+        "name": "Collar corner radii",
+        "description": "Corner radii applied to both ends of the outer cylindrical surface of the end collar",
+        "geometry": {
+          "radius_mm": 1.6,
+          "position_description": "Both outer ends of the 16.00/15.75 collar"
+        },
+        "instance_count": 2,
+        "access_directions": [
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "radius",
+            "nominal_mm": 1.6,
+            "plus_mm": 0.13,
+            "minus_mm": 0.13,
+            "qualifier": "BOTH ENDS"
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "side_view"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "relationship_id": "R01",
+        "from_feature_id": "F02",
+        "to_feature_id": "F01",
+        "relationship_type": "coaxial",
+        "detail": "The bore is explicitly described as coaxial with the outer cylinder; the front view confirms their common centerline."
+      },
+      {
+        "relationship_id": "R02",
+        "from_feature_id": "F03",
+        "to_feature_id": "F01",
+        "relationship_type": "coaxial",
+        "detail": "The end collar is an annular zone at the end of the tube, sharing its longitudinal axis."
+      },
+      {
+        "relationship_id": "R03",
+        "from_feature_id": "F03",
+        "to_feature_id": "F02",
+        "relationship_type": "coaxial",
+        "detail": "The collar's internal opening is provided by the tube bore."
+      },
+      {
+        "relationship_id": "R04",
+        "from_feature_id": "F04",
+        "to_feature_id": "F03",
+        "relationship_type": "intersecting",
+        "detail": "The corner-radius surfaces meet the collar outer surface at its two axial ends."
+      }
+    ],
+    "datum_scheme": {
+      "datums": [],
+      "datum_hierarchy_notes": "No datum definitions or datum-referenced controls are supplied. The circled letters are explicitly identified as revision markers, not datums. The bore circularity control is datum-independent."
+    },
+    "part_notes": "Material: S.A.E.-1010-1020 ST'L.. Material standard: SAE. Heat treatment: none specified. Coating: none specified. General notes: PROCESS: 063710 PROCESS AS SHOWN. PROCESS: 063711 PROCESS PER PS-135.6. DEBURR: BREAK ALL SHARP EDGES 0.5 MAX.. USED ON 809971. Extraction notes: Drawing number in title block is written as '06371_' with dashboard variations '063710' and '063711' detailed in the process notes. Metric-to-English conversion table indicates dimensions are dual with metric as primary.",
+    "overall_complexity": "simple"
+  },
+  "component_specs": [],
+  "component_spec_links": [],
+  "assumptions": [
+    {
+      "assumption_id": "A01",
+      "text": "Grouped front_view:F1 with side_view:F1 using the front-to-side projection continuity and their identification as the main tube outer surface. Selected side_view:F1 as canonical because it supplies explicit diameter limits, whereas the front-view dimension text is clipped."
+    },
+    {
+      "assumption_id": "A02",
+      "text": "Grouped front_view:F2 with side_view:F4 as the single central through bore of the tube, based on the matching tubular topology and common centerline. Selected side_view:F4 as canonical because it provides the bore limits, chamfer callout, and circularity control."
+    },
+    {
+      "assumption_id": "A03",
+      "text": "Retained side_view:F2 as a separate collar zone rather than merging it with the main outer cylinder merely because their extracted outer diameters agree; its distinct axial extent and associated corner radii identify a separately described feature."
+    },
+    {
+      "assumption_id": "A04",
+      "clarification_id": "C01",
+      "text": "The overall axial length of the inner tube is 16.00 / 15.75 mm (with limits of 15.75 mm to 16.00 mm), spanning between the two finished end faces."
+    }
+  ]
+}

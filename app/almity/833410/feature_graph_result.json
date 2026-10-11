@@ -1,0 +1,649 @@
+{
+  "analysis_id": "833410_merge_20261010T225953Z",
+  "part": {
+    "name": "BONDED BUSHING",
+    "drawing_number": "833410",
+    "revision": "P1",
+    "material": "SEE DWG. / COMPONENTS",
+    "units": "mm"
+  },
+  "feature_graph": {
+    "part_envelope": {
+      "length_mm": 140.2,
+      "max_diameter_mm": 200.7
+    },
+    "coordinate_system": {
+      "primary_axis": "X",
+      "orientation_notes": "X is the bushing longitudinal and dominant machining axis, horizontal in the section view. Y is vertical. Z is normal to the section plane and horizontal in the end views. The left view looks along +X and the right view along -X. For the assembled coordinate convention, the origin is the intersection of datum A's plane with datum B's axis.",
+      "datum_origin": "A"
+    },
+    "features": [
+      {
+        "feature_id": "F01",
+        "feature_type": "external_cylinder",
+        "name": "Outer metal sleeve",
+        "description": "Cylindrical outer metal sleeve (Item 2 / optional Item 4) surrounding the bonded bushing assembly.",
+        "geometry": {
+          "diameter_mm": 200.57,
+          "outer_diameter_mm": 200.57,
+          "length_mm": 107.65,
+          "position_description": "Outer boundary of bushing assembly",
+          "axis_direction": "+X"
+        },
+        "instance_count": 1,
+        "access_directions": [
+          "radial",
+          "+X",
+          "-X"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 200.57,
+            "upper_limit_mm": 200.7,
+            "lower_limit_mm": 200.44
+          },
+          {
+            "dimension_type": "length",
+            "nominal_mm": 107.65,
+            "upper_limit_mm": 107.9,
+            "lower_limit_mm": 107.4
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "position",
+            "tolerance_value_mm": 0.25,
+            "material_condition": "MMC",
+            "datum_references": [
+              "D",
+              "E"
+            ],
+            "applied_to": "\u00d8 200.70 / 200.44 outer cylinder relative to Datum D and Datum E at MMC"
+          }
+        ],
+        "callout_qualifiers": [],
+        "source_views": [
+          "section_view",
+          "detail_x"
+        ]
+      },
+      {
+        "feature_id": "F02",
+        "feature_type": "internal_bore",
+        "name": "Central bore",
+        "description": "Central cylindrical bore located through the inner core of the bushing.",
+        "geometry": {
+          "diameter_mm": 9.53,
+          "hole_count": 1,
+          "position_description": "Centred on the bushing central axis",
+          "axis_direction": "+X"
+        },
+        "instance_count": 1,
+        "access_directions": [
+          "+X",
+          "-X"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "left_view"
+        ]
+      },
+      {
+        "feature_id": "F03",
+        "feature_type": "external_cylinder",
+        "name": "Outer cylindrical body",
+        "description": "Outer circular boundary of the bushing body with limit radius R 91 / 89 mm.",
+        "geometry": {
+          "radius_mm": 90.0,
+          "axis_direction": "+X"
+        },
+        "instance_count": 1,
+        "access_directions": [
+          "radial",
+          "-X",
+          "+X"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "radius",
+            "nominal_mm": 90.0,
+            "upper_limit_mm": 91.0,
+            "lower_limit_mm": 89.0
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "right_view"
+        ]
+      },
+      {
+        "feature_id": "F04",
+        "feature_type": "hole_pattern",
+        "name": "Pattern of 3 counterbored holes",
+        "description": "Three counterbored holes with \u00d828/27 through holes and \u00d845.5/44.5 counterbores, positioned by basic dimensions and controlled for true position establishing Datum C.",
+        "geometry": {
+          "diameter_mm": 27.5,
+          "inner_diameter_mm": 27.5,
+          "outer_diameter_mm": 45.0,
+          "depth_condition": "STEPPED",
+          "hole_count": 3,
+          "axis_direction": "-X"
+        },
+        "instance_count": 3,
+        "access_directions": [
+          "-X",
+          "+X"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 27.5,
+            "upper_limit_mm": 28.0,
+            "lower_limit_mm": 27.0,
+            "qualifier": "3 HOLES"
+          },
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 45.0,
+            "upper_limit_mm": 45.5,
+            "lower_limit_mm": 44.5,
+            "qualifier": "C'BORE"
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "position",
+            "tolerance_value_mm": 0.9,
+            "material_condition": "MMC",
+            "datum_references": [
+              "A",
+              "B"
+            ],
+            "applied_to": "3 counterbored holes"
+          }
+        ],
+        "callout_qualifiers": [],
+        "source_views": [
+          "right_view"
+        ]
+      },
+      {
+        "feature_id": "F05",
+        "feature_type": "journal",
+        "name": "Inner sleeve left journal",
+        "description": "Turned cylindrical surface on the left side of the inner metal sleeve (Item 3), defining Datum B.",
+        "geometry": {
+          "diameter_mm": 154.0,
+          "axis_direction": "+X"
+        },
+        "instance_count": 1,
+        "access_directions": [
+          "-X",
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 154.0,
+            "upper_limit_mm": 154.025,
+            "lower_limit_mm": 153.975
+          },
+          {
+            "dimension_type": "chamfer",
+            "nominal_mm": 6.0,
+            "upper_limit_mm": 6.5,
+            "lower_limit_mm": 5.5,
+            "angle_deg": 45.0
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "perpendicularity",
+            "tolerance_value_mm": 0.5,
+            "material_condition": "RFS",
+            "datum_references": [
+              "A"
+            ],
+            "applied_to": "\u00d8 154.025 / 153.975 cylinder relative to Datum A"
+          }
+        ],
+        "callout_qualifiers": [],
+        "source_views": [
+          "section_view"
+        ]
+      },
+      {
+        "feature_id": "F06",
+        "feature_type": "datum_face",
+        "name": "Datum A left annular face",
+        "description": "Leftmost planar annular face of the inner metal sleeve (Item 3), serving as Datum A.",
+        "geometry": {
+          "length_mm": 137.7,
+          "axis_direction": "-X"
+        },
+        "instance_count": 1,
+        "access_directions": [
+          "-X"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "length",
+            "nominal_mm": 137.7,
+            "upper_limit_mm": 140.2,
+            "lower_limit_mm": 135.2
+          },
+          {
+            "dimension_type": "length",
+            "nominal_mm": 120.0,
+            "upper_limit_mm": 120.5,
+            "lower_limit_mm": 119.5
+          },
+          {
+            "dimension_type": "length",
+            "nominal_mm": 30.05,
+            "upper_limit_mm": 32.3,
+            "lower_limit_mm": 27.8
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "section_view"
+        ]
+      },
+      {
+        "feature_id": "F07",
+        "feature_type": "tapered_bore",
+        "name": "Central tapered cavity",
+        "description": "Blind tapered bore internal to the inner metal sleeve (Item 3) extending from the Datum A face.",
+        "geometry": {
+          "depth_mm": 95.0,
+          "depth_condition": "BLIND",
+          "radius_mm": 65.8,
+          "hole_count": 1,
+          "axis_direction": "-X"
+        },
+        "instance_count": 1,
+        "access_directions": [
+          "-X"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "radius",
+            "nominal_mm": 65.8,
+            "upper_limit_mm": 68.8,
+            "lower_limit_mm": 62.8,
+            "qualifier": "P"
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [
+          {
+            "qualifier": "REF",
+            "dimension_type": "depth",
+            "nominal_mm": 95.0
+          }
+        ],
+        "source_views": [
+          "section_view"
+        ]
+      },
+      {
+        "feature_id": "F08",
+        "feature_type": "external_cylinder",
+        "name": "Inner sleeve bonding diameter",
+        "description": "Intermediate outer cylindrical surface of the inner metal sleeve where elastomer is bonded.",
+        "geometry": {
+          "diameter_mm": 142.0,
+          "axis_direction": "+X"
+        },
+        "instance_count": 1,
+        "access_directions": [
+          "radial"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "callout_qualifiers": [
+          {
+            "qualifier": "REF",
+            "dimension_type": "diameter",
+            "nominal_mm": 142.0
+          }
+        ],
+        "source_views": [
+          "section_view"
+        ]
+      },
+      {
+        "feature_id": "F09",
+        "feature_type": "datum_face",
+        "name": "Datum D shoulder face",
+        "description": "Planar vertical shoulder face at the right side of the inner metal member, defining Datum D.",
+        "geometry": {
+          "length_mm": 21.7,
+          "axis_direction": "+X"
+        },
+        "instance_count": 1,
+        "access_directions": [
+          "+X"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "length",
+            "nominal_mm": 21.7,
+            "upper_limit_mm": 22.2,
+            "lower_limit_mm": 21.2
+          },
+          {
+            "dimension_type": "length",
+            "nominal_mm": 2.0,
+            "upper_limit_mm": 3.0,
+            "lower_limit_mm": 1.0
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "section_view"
+        ]
+      },
+      {
+        "feature_id": "F10",
+        "feature_type": "flange",
+        "name": "Inner member right flange",
+        "description": "Turned outer diameter of the flange at the right end of the inner metal sleeve, defining Datum E.",
+        "geometry": {
+          "diameter_mm": 188.0,
+          "outer_diameter_mm": 188.0,
+          "axis_direction": "+X"
+        },
+        "instance_count": 1,
+        "access_directions": [
+          "+X",
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 188.0,
+            "upper_limit_mm": 188.13,
+            "lower_limit_mm": 187.87
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "section_view"
+        ]
+      },
+      {
+        "feature_id": "F11",
+        "feature_type": "counterbore",
+        "name": "Right side counterbore recess",
+        "description": "Recess counterbore on the right-hand face of the inner metal sleeve.",
+        "geometry": {
+          "diameter_mm": 160.0,
+          "depth_mm": 15.7,
+          "depth_condition": "BLIND",
+          "hole_count": 1,
+          "axis_direction": "+X"
+        },
+        "instance_count": 1,
+        "access_directions": [
+          "+X"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "depth",
+            "nominal_mm": 15.7,
+            "upper_limit_mm": 16.2,
+            "lower_limit_mm": 15.2
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [
+          {
+            "qualifier": "REF",
+            "dimension_type": "diameter",
+            "nominal_mm": 160.0
+          }
+        ],
+        "source_views": [
+          "section_view"
+        ]
+      },
+      {
+        "feature_id": "F12",
+        "feature_type": "groove",
+        "name": "Elastomer relief void",
+        "description": "Relief groove / void feature molded into the elastomeric body (Item 1).",
+        "geometry": {
+          "axis_direction": "radial"
+        },
+        "instance_count": 1,
+        "access_directions": [
+          "radial"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "section_view"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "relationship_id": "R01",
+        "from_feature_id": "F05",
+        "to_feature_id": "F06",
+        "relationship_type": "perpendicular",
+        "detail": "The journal has an explicit perpendicularity control relative to datum A."
+      },
+      {
+        "relationship_id": "R02",
+        "from_feature_id": "F05",
+        "to_feature_id": "F06",
+        "relationship_type": "datum_referenced",
+        "detail": "The journal's perpendicularity control references datum A."
+      },
+      {
+        "relationship_id": "R03",
+        "from_feature_id": "F04",
+        "to_feature_id": "F06",
+        "relationship_type": "datum_referenced",
+        "detail": "The hole-pattern position control references datum A as primary."
+      },
+      {
+        "relationship_id": "R04",
+        "from_feature_id": "F04",
+        "to_feature_id": "F05",
+        "relationship_type": "datum_referenced",
+        "detail": "The hole-pattern position control references datum B as secondary."
+      },
+      {
+        "relationship_id": "R05",
+        "from_feature_id": "F01",
+        "to_feature_id": "F09",
+        "relationship_type": "datum_referenced",
+        "detail": "The outer sleeve position control references datum D as primary."
+      },
+      {
+        "relationship_id": "R06",
+        "from_feature_id": "F01",
+        "to_feature_id": "F10",
+        "relationship_type": "datum_referenced",
+        "detail": "The outer sleeve position control references datum E as secondary."
+      },
+      {
+        "relationship_id": "R07",
+        "from_feature_id": "F02",
+        "to_feature_id": "F05",
+        "relationship_type": "coaxial",
+        "detail": "The central bore is explicitly centred on the bushing axis, shared by the inner sleeve journal."
+      },
+      {
+        "relationship_id": "R08",
+        "from_feature_id": "F07",
+        "to_feature_id": "F05",
+        "relationship_type": "coaxial",
+        "detail": "The central tapered cavity and journal share the inner member's longitudinal axis of revolution."
+      },
+      {
+        "relationship_id": "R09",
+        "from_feature_id": "F08",
+        "to_feature_id": "F05",
+        "relationship_type": "coaxial",
+        "detail": "The bonding cylinder and journal are cylindrical surfaces of the same inner sleeve about its longitudinal axis."
+      },
+      {
+        "relationship_id": "R10",
+        "from_feature_id": "F10",
+        "to_feature_id": "F05",
+        "relationship_type": "coaxial",
+        "detail": "The turned right flange and left journal share the inner member's longitudinal axis."
+      },
+      {
+        "relationship_id": "R11",
+        "from_feature_id": "F11",
+        "to_feature_id": "F10",
+        "relationship_type": "coaxial",
+        "detail": "The right-side counterbore recess and surrounding turned flange share the section's axis of revolution."
+      },
+      {
+        "relationship_id": "R12",
+        "from_feature_id": "F01",
+        "to_feature_id": "F10",
+        "relationship_type": "coaxial",
+        "detail": "The surrounding outer sleeve is nominally coaxial with the inner member's flange; its position control references that flange as datum E."
+      },
+      {
+        "relationship_id": "R13",
+        "from_feature_id": "F03",
+        "to_feature_id": "F01",
+        "relationship_type": "coaxial",
+        "detail": "The right-view circular body profile and surrounding sleeve are centred on the bushing's longitudinal axis."
+      },
+      {
+        "relationship_id": "R14",
+        "from_feature_id": "F06",
+        "to_feature_id": "F09",
+        "relationship_type": "parallel",
+        "detail": "Both datum faces are planar and normal to the longitudinal X axis."
+      },
+      {
+        "relationship_id": "R15",
+        "from_feature_id": "F06",
+        "to_feature_id": "F09",
+        "relationship_type": "opposite_face",
+        "detail": "Datum A is the left annular face and datum D is the oppositely facing right shoulder of the same inner metal member."
+      },
+      {
+        "relationship_id": "R16",
+        "from_feature_id": "F04",
+        "to_feature_id": "F03",
+        "relationship_type": "radial_pattern",
+        "detail": "The three counterbored holes are arranged around the circular body's central axis at the stated basic Y/Z locations; equal angular spacing is not assumed."
+      }
+    ],
+    "datum_scheme": {
+      "datums": [
+        {
+          "datum_letter": "A",
+          "feature_id": "F06",
+          "surface_type": "planar",
+          "description": "Left vertical annular face of inner metal sleeve"
+        },
+        {
+          "datum_letter": "B",
+          "feature_id": "F05",
+          "surface_type": "cylindrical",
+          "description": "Outer cylindrical journal surface \u00d8 154.025 / 153.975 of inner metal sleeve"
+        },
+        {
+          "datum_letter": "C",
+          "feature_id": "F04",
+          "surface_type": "cylindrical",
+          "description": "Pattern of 3 counterbored holes defined via datum flag attached to position FCF"
+        },
+        {
+          "datum_letter": "D",
+          "feature_id": "F09",
+          "surface_type": "planar",
+          "description": "Vertical shoulder face at right side of inner metal sleeve"
+        },
+        {
+          "datum_letter": "E",
+          "feature_id": "F10",
+          "surface_type": "cylindrical",
+          "description": "Outer cylindrical surface of right flange \u00d8 188.13 / 187.87 of inner metal sleeve"
+        }
+      ],
+      "datum_hierarchy_notes": "The hole-pattern position control establishes A as primary and B as secondary, with B referenced at MMC. The journal is controlled perpendicular to A. The outer sleeve uses a separate reference frame with D primary and E secondary, with E referenced at MMC. C is defined by the three-hole pattern but is not referenced by another extracted control. No single ordered A-B-C-D-E hierarchy is established."
+    },
+    "part_notes": "Material: SEE DWG. / COMPONENTS. Scale: HALF. General tolerance: ASME Y14.5M-1994. Projection: third angle. Heat treatment: none specified. Coating: none specified. General notes: INSPECTION: MUST MEET TS-833410. DEBURR: BREAK ALL SHARP EDGES 0.5 MAX.. TOLERANCE: METRIC DIMENSIONS & TOLERANCES GOVERN THE DESIGN. ENGLISH DIMENSIONS IF INCLUDED ARE FOR INFORMATION PURPOSES ONLY.. TOLERANCE: TOL. (UOS): X.X=\u00b10.5, X.XX=\u00b10.25, ANGLES=\u00b12\u00b0. Extraction notes: First line in notes_block is partially cut off at the top border (appears to read 'PROCESS PER TS 14010'). Engineering reference notes list SIM TO: 833170, 833580 and TEST FIXTURE SK-2852.",
+    "overall_complexity": "moderate"
+  },
+  "component_specs": [],
+  "component_spec_links": [],
+  "assumptions": [
+    {
+      "assumption_id": "A01",
+      "text": "Grouped detail_x:F1 with section_view:F8 using the explicit X detail reference. The detail is treated as the optional local contour of the outer sleeve, not an additional simultaneously present component. section_view:F8 is canonical because it supplies the dimensional and GD&T definition; its external-cylinder classification is retained."
+    },
+    {
+      "assumption_id": "A02",
+      "text": "Retained right_view:F1 as a singleton. Neither a cross-reference nor a datum identity establishes equivalence with section_view:F6 or section_view:F8, and their radial definitions do not support dimension-based grouping."
+    },
+    {
+      "assumption_id": "A03",
+      "text": "Retained left_view:F1 as a singleton rather than merging it with the central tapered cavity or the off-axis hole pattern. Its stated through-core description is accepted without requesting a blind-hole depth."
+    },
+    {
+      "assumption_id": "A04",
+      "text": "The three-hole counterbore pattern is not merged with section_view:F7, which describes a separate central recess. The recess depth is not used to resolve the pattern's 'DEPTH AS SHOWN' callout."
+    },
+    {
+      "assumption_id": "A05",
+      "text": "Adopted the intersection of datum A's plane and datum B's axis as the coordinate origin. This is a synthesis convention based on the extracted A-B reference frame, not an explicitly labelled drawing origin."
+    },
+    {
+      "assumption_id": "A06",
+      "text": "For the elastomer relief, requested the governing functional rate rather than independent fixed void dimensions because the extracted note explicitly makes size and shape rate-dependent."
+    },
+    {
+      "assumption_id": "A07",
+      "clarification_id": "C01",
+      "text": "The outer sleeve conforms to the standard profile specified in View X, omitting the optional outer sleeve configuration."
+    },
+    {
+      "assumption_id": "A08",
+      "clarification_id": "C02",
+      "text": "The outer metal sleeve has a nominal wall thickness of 6.285 mm (ranging from 6.155 mm to 6.415 mm), calculated from the specified outer diameter of \u00d8200.70/200.44 mm and inner diameter of \u00d8188.13/187.87 mm."
+    },
+    {
+      "assumption_id": "A09",
+      "clarification_id": "C03",
+      "text": "A corner-transition radius of R 0.5 mm maximum is assumed for the optional View X profile at the shoulder transition between the \u00d8 200.70/200.44 outer diameter and the \u00d8 188.13/187.87 step. This satisfies standard engineering drawing conventions for unspecified internal corner fillets on stepped sleeves."
+    },
+    {
+      "assumption_id": "A10",
+      "clarification_id": "C04",
+      "text": "The central tapered cavity has an included taper angle of 6\u00b0 (3\u00b0 draft angle per side), extending over the 95 mm depth from the cavity entrance diameter of 68.8/62.8 mm."
+    },
+    {
+      "assumption_id": "A11",
+      "clarification_id": "C05",
+      "text": "The counterbore depth for the three-hole pattern marked 'DEPTH AS SHOWN' is assumed to be defined in the corresponding section view, with a nominal depth of 3.0 mm relative to the primary Datum A surface."
+    },
+    {
+      "assumption_id": "A12",
+      "clarification_id": "C06",
+      "text": "The elastomer relief void size and shape are governed by the required functional bushing spring rate, as designated by the drawing callout 'RATE TO DETERMINE VOID SIZE & SHAPE'."
+    }
+  ]
+}

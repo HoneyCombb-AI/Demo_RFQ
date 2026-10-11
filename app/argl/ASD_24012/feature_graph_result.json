@@ -1,0 +1,1629 @@
+{
+  "analysis_id": "ASD24012_DRAWING_merge_20261011T153537Z",
+  "part": {
+    "drawing_number": "ASD 24012",
+    "revision": "AA",
+    "material": "ISO683-3 16MnCr5",
+    "units": "mm"
+  },
+  "feature_graph": {
+    "part_envelope": {
+      "length_mm": 15.83,
+      "width_mm": 17.900000000000002,
+      "height_mm": 11.4,
+      "max_diameter_mm": 195.15
+    },
+    "coordinate_system": {
+      "primary_axis": "Z",
+      "orientation_notes": "The front and lug-detail projections lie in XY, with +X right and +Y up. Z is the central rotational and axial machining direction. Adopt +Z from the datum A front face toward the rear annular face, consistent with the face access directions in section A-A. Section A-A has Y vertical, Z horizontal and X as its cut normal. Use the datum B axis for the radial center and datum C for angular orientation where explicitly referenced; angular orientation for controls referencing C-C remains unresolved.",
+      "datum_origin": "A"
+    },
+    "features": [
+      {
+        "feature_id": "F01",
+        "feature_type": "external_cylinder",
+        "name": "Outer rim surface R93.3",
+        "description": "Concentric cylindrical outer surface of the body from which the radial lug extends, located at radius 93.3 mm from the part center.",
+        "geometry": {
+          "outer_diameter_mm": 186.6,
+          "radius_mm": 93.3,
+          "position_description": "93.3 mm radius from part center",
+          "axis_direction": "+Z"
+        },
+        "instance_count": 1,
+        "access_directions": [
+          "+Z",
+          "-Z",
+          "radial",
+          "+X",
+          "+Y"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "radius",
+            "nominal_mm": 93.3,
+            "plus_mm": 0.2,
+            "minus_mm": 0.2,
+            "qualifier": "from center"
+          },
+          {
+            "dimension_type": "radius",
+            "nominal_mm": 93.3,
+            "plus_mm": 0.2,
+            "minus_mm": 0.2,
+            "qualifier": "from center"
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "detail_u",
+          "detail_v",
+          "detail_w",
+          "detail_x"
+        ]
+      },
+      {
+        "feature_id": "F02",
+        "feature_type": "lug",
+        "name": "Pattern of 10 stepped lugs",
+        "description": "Pattern of 10 external asymmetrical stepped lugs with primary width 14.8 mm, right-side shoulder at 8.4 mm from centerline, corner breaks, step radii, and root fillets.",
+        "geometry": {
+          "outer_diameter_mm": 195.0,
+          "length_mm": 3.5,
+          "width_mm": 14.8,
+          "radius_mm": 1.0,
+          "angle_deg": 13.0,
+          "hole_count": 10,
+          "position_description": "Oriented at basic angle of 13\u00b0 from X axis, projecting from R93.3 root surface, positioned to datums A and B",
+          "axis_direction": "+Z"
+        },
+        "instance_count": 10,
+        "access_directions": [
+          "+Z",
+          "-Z",
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "width",
+            "nominal_mm": 14.8,
+            "plus_mm": 0.1,
+            "minus_mm": 0.1,
+            "qualifier": "10x"
+          },
+          {
+            "dimension_type": "width",
+            "nominal_mm": 8.4,
+            "plus_mm": 0.0,
+            "minus_mm": 0.2,
+            "qualifier": "10x"
+          },
+          {
+            "dimension_type": "length",
+            "nominal_mm": 3.5,
+            "plus_mm": 0.1,
+            "minus_mm": 0.1,
+            "qualifier": "10x"
+          },
+          {
+            "dimension_type": "chamfer",
+            "nominal_mm": 0.5,
+            "upper_limit_mm": 0.5,
+            "qualifier": "10x, max., both sides"
+          },
+          {
+            "dimension_type": "radius",
+            "nominal_mm": 1.0,
+            "plus_mm": 0.0,
+            "minus_mm": 0.3,
+            "qualifier": "10x"
+          },
+          {
+            "dimension_type": "radius",
+            "nominal_mm": 1.0,
+            "plus_mm": 0.0,
+            "minus_mm": 0.3,
+            "qualifier": "10x"
+          },
+          {
+            "dimension_type": "radius",
+            "nominal_mm": 3.5,
+            "plus_mm": 0.0,
+            "minus_mm": 0.3,
+            "qualifier": "10x"
+          },
+          {
+            "dimension_type": "radius",
+            "nominal_mm": 0.8,
+            "plus_mm": 0.0,
+            "minus_mm": 0.3,
+            "qualifier": "10x"
+          },
+          {
+            "dimension_type": "angle_deg",
+            "nominal_mm": 13.0,
+            "angle_deg": 13.0
+          },
+          {
+            "dimension_type": "angle_deg",
+            "nominal_mm": 2.0,
+            "plus_mm": 3.0,
+            "minus_mm": 3.0
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "position",
+            "tolerance_value_mm": 0.15,
+            "material_condition": "MMC",
+            "datum_references": [
+              "A",
+              "B"
+            ],
+            "applied_to": "10x 14.8\u00b10.1 lug width"
+          }
+        ],
+        "callout_qualifiers": [
+          {
+            "qualifier": "10x",
+            "dimension_type": "width",
+            "nominal_mm": 7.4
+          },
+          {
+            "qualifier": "TYP",
+            "dimension_type": "angle_deg",
+            "nominal_mm": 13.0
+          }
+        ],
+        "source_views": [
+          "detail_u",
+          "front_view",
+          "isometric_view"
+        ]
+      },
+      {
+        "feature_id": "F03",
+        "feature_type": "lug",
+        "name": "Radial drive lug",
+        "description": "External radial lug/tooth projecting from the body contour with a width of 17.8 mm, height of 11.4 mm, crest corner breaks, and root fillets.",
+        "geometry": {
+          "outer_diameter_mm": 195.0,
+          "width_mm": 17.8,
+          "height_mm": 11.4,
+          "radius_mm": 1.0,
+          "angle_deg": 2.0,
+          "hole_count": 10,
+          "position_description": "True position offset 10.4 mm basic from radial datum B line, controlled via position tolerance 0.15 MMC to datums A and B.",
+          "axis_direction": "radial"
+        },
+        "instance_count": 1,
+        "access_directions": [
+          "+Z",
+          "-Z",
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "width",
+            "nominal_mm": 17.8,
+            "plus_mm": 0.1,
+            "minus_mm": 0.1
+          },
+          {
+            "dimension_type": "height",
+            "nominal_mm": 11.4,
+            "plus_mm": 0.0,
+            "minus_mm": 0.2
+          },
+          {
+            "dimension_type": "chamfer",
+            "nominal_mm": 0.5,
+            "upper_limit_mm": 0.5,
+            "qualifier": "max. both sides"
+          },
+          {
+            "dimension_type": "radius",
+            "nominal_mm": 1.0,
+            "plus_mm": 0.0,
+            "minus_mm": 0.3
+          },
+          {
+            "dimension_type": "radius",
+            "nominal_mm": 1.0,
+            "plus_mm": 0.0,
+            "minus_mm": 0.3
+          },
+          {
+            "dimension_type": "angle_deg",
+            "nominal_mm": 2.0,
+            "plus_mm": 3.0,
+            "minus_mm": 3.0
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "position",
+            "tolerance_value_mm": 0.15,
+            "material_condition": "MMC",
+            "datum_references": [
+              "A",
+              "B"
+            ],
+            "applied_to": "Lug width 17.8\u00b10,1 flanks"
+          }
+        ],
+        "callout_qualifiers": [
+          {
+            "qualifier": "BASIC",
+            "dimension_type": "position_x",
+            "nominal_mm": 10.4
+          },
+          {
+            "qualifier": "TYP",
+            "dimension_type": "angle_deg",
+            "nominal_mm": 13.0
+          }
+        ],
+        "source_views": [
+          "detail_v",
+          "front_view",
+          "isometric_view"
+        ]
+      },
+      {
+        "feature_id": "F04",
+        "feature_type": "lug",
+        "name": "External stepped radial lug",
+        "description": "External radial lug feature projecting from the R93.3 rim, featuring a 14 mm width with true position control, an asymmetric 7.4 mm basic location, a stepped lower contour, and specific corner/fillet radii.",
+        "geometry": {
+          "outer_diameter_mm": 195.0,
+          "length_mm": 8.4,
+          "width_mm": 14.0,
+          "radius_mm": 1.0,
+          "angle_deg": 2.0,
+          "hole_count": 10,
+          "position_description": "7.4 mm basic dimension from centerline to bottom edge; controlled to datums A and B",
+          "axis_direction": "radial"
+        },
+        "access_directions": [
+          "+X",
+          "+Y",
+          "radial",
+          "+Z",
+          "-Z"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "width",
+            "nominal_mm": 14.0,
+            "plus_mm": 0.1,
+            "minus_mm": 0.1
+          },
+          {
+            "dimension_type": "length",
+            "nominal_mm": 8.4,
+            "plus_mm": 0.0,
+            "minus_mm": 0.2
+          },
+          {
+            "dimension_type": "width",
+            "nominal_mm": 3.5,
+            "plus_mm": 0.1,
+            "minus_mm": 0.1
+          },
+          {
+            "dimension_type": "chamfer",
+            "nominal_mm": 0.5,
+            "qualifier": "both sides"
+          },
+          {
+            "dimension_type": "radius",
+            "nominal_mm": 1.0,
+            "plus_mm": 0.0,
+            "minus_mm": 0.3
+          },
+          {
+            "dimension_type": "radius",
+            "nominal_mm": 1.0,
+            "plus_mm": 0.0,
+            "minus_mm": 0.3
+          },
+          {
+            "dimension_type": "radius",
+            "nominal_mm": 3.5,
+            "plus_mm": 0.0,
+            "minus_mm": 0.3
+          },
+          {
+            "dimension_type": "radius",
+            "nominal_mm": 0.8,
+            "plus_mm": 0.0,
+            "minus_mm": 0.3
+          },
+          {
+            "dimension_type": "angle_deg",
+            "nominal_mm": 2.0,
+            "plus_mm": 3.0,
+            "minus_mm": 3.0
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "position",
+            "tolerance_value_mm": 0.15,
+            "material_condition": "MMC",
+            "datum_references": [
+              "A",
+              "B"
+            ],
+            "applied_to": "14\u00b10.1 width feature of the lug"
+          }
+        ],
+        "callout_qualifiers": [
+          {
+            "qualifier": "both sides",
+            "dimension_type": "chamfer",
+            "nominal_mm": 0.5
+          },
+          {
+            "qualifier": "TYP",
+            "dimension_type": "angle_deg",
+            "nominal_mm": 13.0
+          }
+        ],
+        "source_views": [
+          "detail_w",
+          "front_view",
+          "isometric_view"
+        ]
+      },
+      {
+        "feature_id": "F05",
+        "feature_type": "lug",
+        "name": "Radial lug profile",
+        "description": "Projecting lug/tab feature of width 12.8 mm controlled with position tolerance to datums A and B, including outer corner edge break, root fillet, and basic location dimension 7.4.",
+        "geometry": {
+          "outer_diameter_mm": 195.0,
+          "width_mm": 12.8,
+          "radius_mm": 1.0,
+          "angle_deg": 2.0,
+          "hole_count": 10,
+          "axis_direction": "+Z"
+        },
+        "access_directions": [
+          "+Z",
+          "-Z",
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "width",
+            "nominal_mm": 12.8,
+            "plus_mm": 0.1,
+            "minus_mm": 0.1
+          },
+          {
+            "dimension_type": "chamfer",
+            "nominal_mm": 0.5,
+            "qualifier": "both sides"
+          },
+          {
+            "dimension_type": "radius",
+            "nominal_mm": 1.0,
+            "plus_mm": 0.0,
+            "minus_mm": 0.3
+          },
+          {
+            "dimension_type": "angle_deg",
+            "nominal_mm": 2.0,
+            "plus_mm": 3.0,
+            "minus_mm": 3.0
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "position",
+            "tolerance_value_mm": 0.15,
+            "material_condition": "MMC",
+            "datum_references": [
+              "A",
+              "B"
+            ],
+            "applied_to": "Lug width 12.8\u00b10.1"
+          }
+        ],
+        "callout_qualifiers": [
+          {
+            "qualifier": "both sides",
+            "dimension_type": "chamfer",
+            "nominal_mm": 0.5
+          },
+          {
+            "qualifier": "TYP",
+            "dimension_type": "angle_deg",
+            "nominal_mm": 13.0
+          }
+        ],
+        "source_views": [
+          "detail_x",
+          "front_view",
+          "isometric_view"
+        ]
+      },
+      {
+        "feature_id": "F06",
+        "feature_type": "pocket",
+        "name": "Roller clutch ramp pockets (20x)",
+        "description": "Pattern of 20 internal roller clutch ramp pockets configured for \u00d87.5mm rollers in stop position, defined by eccentric offset centers (11.097, 1.958), ramp radius R83.932mm, angle 58.1\u00b0, pocket radius R3mm, and blend radius R1.5mm max.",
+        "geometry": {
+          "diameter_mm": 7.5,
+          "radius_mm": 3.0,
+          "angle_deg": 58.1,
+          "hole_count": 20,
+          "position_description": "Center of R3 contact circle is offset (0,462\u00b0) from Datum C; profile transition points are located at basic angles 0,7\u00b0 and 3,45\u00b0 from Datum C",
+          "axis_direction": "+Z"
+        },
+        "instance_count": 20,
+        "surface_finish": {
+          "ra_value": 1.6,
+          "finish_symbol": "Ra 1,6"
+        },
+        "access_directions": [
+          "+Z",
+          "-Z",
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "radius",
+            "nominal_mm": 3.0,
+            "plus_mm": 0.0,
+            "minus_mm": 0.3,
+            "qualifier": "20x"
+          },
+          {
+            "dimension_type": "radius",
+            "nominal_mm": 1.5,
+            "upper_limit_mm": 1.5,
+            "qualifier": "MAX"
+          },
+          {
+            "dimension_type": "angle_deg",
+            "nominal_mm": 58.1,
+            "angle_deg": 58.1
+          },
+          {
+            "dimension_type": "angle_deg",
+            "nominal_mm": 14.4,
+            "angle_deg": 14.4
+          },
+          {
+            "dimension_type": "angle_deg",
+            "nominal_mm": 14.4,
+            "angle_deg": 14.4
+          },
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 154.44,
+            "plus_mm": 0.013,
+            "minus_mm": 0.013,
+            "qualifier": "REF"
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "position",
+            "tolerance_value_mm": 0.25,
+            "datum_references": [
+              "A",
+              "B",
+              "C-C"
+            ],
+            "applied_to": "20x roller ramp pockets"
+          },
+          {
+            "gdt_type": "profile_of_surface",
+            "tolerance_value_mm": 0.08,
+            "datum_references": [
+              "A",
+              "C"
+            ],
+            "applied_to": "Contoured pocket profile surface (20x)"
+          },
+          {
+            "gdt_type": "perpendicularity",
+            "tolerance_value_mm": 0.08,
+            "datum_references": [
+              "A"
+            ],
+            "applied_to": "Pocket flanks/surfaces to datum face A (20x)"
+          },
+          {
+            "gdt_type": "straightness",
+            "tolerance_value_mm": 0.025,
+            "datum_references": [],
+            "applied_to": "Pocket surface elements along width (20x)"
+          }
+        ],
+        "callout_qualifiers": [
+          {
+            "qualifier": "REF",
+            "dimension_type": "diameter",
+            "nominal_mm": 7.5
+          },
+          {
+            "qualifier": "REF",
+            "dimension_type": "radius",
+            "nominal_mm": 11.269
+          },
+          {
+            "qualifier": "REF",
+            "dimension_type": "angle_deg",
+            "nominal_mm": 0.462
+          }
+        ],
+        "source_views": [
+          "detail_z",
+          "detail_y"
+        ]
+      },
+      {
+        "feature_id": "F07",
+        "feature_type": "groove",
+        "name": "Relief groove adjacent to lug",
+        "description": "Step / relief undercut on the right side of the radial lug flank, having a width of 3.5 mm and transition radii R3.5 and R0.8.",
+        "geometry": {
+          "width_mm": 3.5,
+          "radius_mm": 3.5,
+          "position_description": "Immediately adjacent to the right flank of lug F1",
+          "axis_direction": "radial"
+        },
+        "instance_count": 1,
+        "access_directions": [
+          "+Z",
+          "-Z",
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "width",
+            "nominal_mm": 3.5,
+            "plus_mm": 0.1,
+            "minus_mm": 0.1
+          },
+          {
+            "dimension_type": "radius",
+            "nominal_mm": 3.5,
+            "plus_mm": 0.0,
+            "minus_mm": 0.3
+          },
+          {
+            "dimension_type": "radius",
+            "nominal_mm": 0.8,
+            "plus_mm": 0.0,
+            "minus_mm": 0.3
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "detail_v"
+        ]
+      },
+      {
+        "feature_id": "F08",
+        "feature_type": "undercut",
+        "name": "Lower flank stepped profile / relief",
+        "description": "Stepped contour on the lower flank of the lug defined by an offset of 8.4 mm, a step dimension of 3.5 mm, and three transition blend radii R1, R3.5, and R0.8.",
+        "geometry": {
+          "width_mm": 3.5,
+          "radius_mm": 3.5,
+          "axis_direction": "+Z"
+        },
+        "access_directions": [
+          "+Z",
+          "-Z",
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "position_y",
+            "nominal_mm": 8.4,
+            "plus_mm": 0.0,
+            "minus_mm": 0.2
+          },
+          {
+            "dimension_type": "width",
+            "nominal_mm": 3.5,
+            "plus_mm": 0.1,
+            "minus_mm": 0.1
+          },
+          {
+            "dimension_type": "radius",
+            "nominal_mm": 1.0,
+            "plus_mm": 0.0,
+            "minus_mm": 0.3
+          },
+          {
+            "dimension_type": "radius",
+            "nominal_mm": 3.5,
+            "plus_mm": 0.0,
+            "minus_mm": 0.3
+          },
+          {
+            "dimension_type": "radius",
+            "nominal_mm": 0.8,
+            "plus_mm": 0.0,
+            "minus_mm": 0.3
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "detail_x"
+        ]
+      },
+      {
+        "feature_id": "F09",
+        "feature_type": "boss",
+        "name": "Outer tooth / lug profile (20x)",
+        "description": "Outer radial tooth or lug projection repeated 20 times around the periphery, angularly bounded by basic angles from Datum C.",
+        "geometry": {
+          "angle_deg": 7.9,
+          "hole_count": 20,
+          "position_description": "Extends angularly from 1,7\u00b0 left of Datum C to 6,2\u00b0 right of Datum C",
+          "axis_direction": "+Z"
+        },
+        "instance_count": 20,
+        "access_directions": [
+          "+Z",
+          "-Z",
+          "radial"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "detail_y"
+        ]
+      },
+      {
+        "feature_id": "F10",
+        "feature_type": "lug",
+        "name": "External drive lugs (5x)",
+        "description": "Pattern of 5 external drive lugs evenly spaced at 72\u00b0 around the outer perimeter of diameter \u00d8167.5mm.",
+        "geometry": {
+          "diameter_mm": 167.5,
+          "outer_diameter_mm": 167.5,
+          "angle_deg": 72.0,
+          "hole_count": 5,
+          "axis_direction": "+Z"
+        },
+        "instance_count": 5,
+        "access_directions": [
+          "radial",
+          "+Z",
+          "-Z"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 167.5,
+            "plus_mm": 0.15,
+            "minus_mm": 0.15
+          },
+          {
+            "dimension_type": "angle_deg",
+            "nominal_mm": 72.0,
+            "qualifier": "5x",
+            "angle_deg": 72.0
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "concentricity",
+            "tolerance_value_mm": 0.15,
+            "datum_references": [
+              "B"
+            ],
+            "applied_to": "Outer diameter \u00d8167.5"
+          },
+          {
+            "gdt_type": "position",
+            "tolerance_value_mm": 0.25,
+            "datum_references": [
+              "A",
+              "B",
+              "C-C"
+            ],
+            "applied_to": "5x outer lugs"
+          }
+        ],
+        "callout_qualifiers": [
+          {
+            "qualifier": "5x",
+            "dimension_type": "angle_deg",
+            "nominal_mm": 72.0
+          }
+        ],
+        "source_views": [
+          "detail_z"
+        ]
+      },
+      {
+        "feature_id": "F11",
+        "feature_type": "internal_bore",
+        "name": "Datum B internal cylindrical lands (5x)",
+        "description": "Interrupted internal bore comprising 5 cylindrical sectors with diameter \u00d8154.6mm, defining Datum B.",
+        "geometry": {
+          "diameter_mm": 154.6,
+          "inner_diameter_mm": 154.6,
+          "hole_count": 5,
+          "position_description": "Centred on part axis, establishes Datum B",
+          "axis_direction": "+Z"
+        },
+        "instance_count": 5,
+        "surface_finish": {
+          "ra_value": 0.5,
+          "finish_symbol": "Ra 0,5"
+        },
+        "access_directions": [
+          "+Z",
+          "-Z"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 154.6,
+            "plus_mm": 0.05,
+            "minus_mm": 0.0,
+            "qualifier": "5x"
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "perpendicularity",
+            "tolerance_value_mm": 0.03,
+            "datum_references": [
+              "A"
+            ],
+            "applied_to": "5x inner cylindrical lands (Datum B)"
+          },
+          {
+            "gdt_type": "circularity",
+            "tolerance_value_mm": 0.05,
+            "datum_references": [],
+            "applied_to": "5x inner cylindrical lands (Datum B)"
+          }
+        ],
+        "callout_qualifiers": [],
+        "source_views": [
+          "detail_z"
+        ]
+      },
+      {
+        "feature_id": "F12",
+        "feature_type": "slot",
+        "name": "Internal drive slots / recesses (5x)",
+        "description": "Pattern of 5 internal radial recesses between Datum B lands, width 14mm, recessed diameter \u00d8155.01mm, with four R1.5 corner blend radii.",
+        "geometry": {
+          "diameter_mm": 155.01,
+          "inner_diameter_mm": 155.01,
+          "width_mm": 14.0,
+          "radius_mm": 1.5,
+          "angle_deg": 13.2,
+          "hole_count": 5,
+          "axis_direction": "+Z"
+        },
+        "instance_count": 5,
+        "access_directions": [
+          "+Z",
+          "-Z"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "width",
+            "nominal_mm": 14.0,
+            "plus_mm": 0.1,
+            "minus_mm": 0.1,
+            "qualifier": "5x"
+          },
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 155.01,
+            "plus_mm": 0.1,
+            "minus_mm": 0.1
+          },
+          {
+            "dimension_type": "radius",
+            "nominal_mm": 1.5,
+            "plus_mm": 0.3,
+            "minus_mm": 0.3,
+            "qualifier": "5x"
+          },
+          {
+            "dimension_type": "radius",
+            "nominal_mm": 1.5,
+            "plus_mm": 0.3,
+            "minus_mm": 0.3,
+            "qualifier": "5x"
+          },
+          {
+            "dimension_type": "radius",
+            "nominal_mm": 1.5,
+            "plus_mm": 0.3,
+            "minus_mm": 0.3,
+            "qualifier": "5x"
+          },
+          {
+            "dimension_type": "radius",
+            "nominal_mm": 1.5,
+            "plus_mm": 0.3,
+            "minus_mm": 0.3,
+            "qualifier": "5x"
+          },
+          {
+            "dimension_type": "angle_deg",
+            "nominal_mm": 13.2,
+            "angle_deg": 13.2
+          },
+          {
+            "dimension_type": "angle_deg",
+            "nominal_mm": 72.0,
+            "qualifier": "5x",
+            "angle_deg": 72.0
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [
+          {
+            "qualifier": "5x",
+            "dimension_type": "angle_deg",
+            "nominal_mm": 72.0
+          }
+        ],
+        "source_views": [
+          "detail_z"
+        ]
+      },
+      {
+        "feature_id": "F13",
+        "feature_type": "external_cylinder",
+        "name": "Outer lug tip diameter",
+        "description": "Outer cylindrical envelope formed by the tips of the 10 external drive lugs.",
+        "geometry": {
+          "diameter_mm": 195.0,
+          "axis_direction": "+Z"
+        },
+        "access_directions": [
+          "radial",
+          "+Z",
+          "-Z"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 195.0,
+            "plus_mm": 0.15,
+            "minus_mm": 0.15
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "concentricity",
+            "tolerance_value_mm": 0.2,
+            "datum_references": [
+              "B"
+            ],
+            "applied_to": "Outer diameter \u00d8195"
+          }
+        ],
+        "callout_qualifiers": [],
+        "source_views": [
+          "front_view"
+        ]
+      },
+      {
+        "feature_id": "F14",
+        "feature_type": "external_cylinder",
+        "name": "Outer body root diameter",
+        "description": "External cylindrical surface representing the root diameter between and supporting the external lugs.",
+        "geometry": {
+          "diameter_mm": 187.2,
+          "axis_direction": "+Z"
+        },
+        "access_directions": [
+          "radial",
+          "+Z",
+          "-Z"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 187.2,
+            "plus_mm": 0.15,
+            "minus_mm": 0.15
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "concentricity",
+            "tolerance_value_mm": 0.2,
+            "datum_references": [
+              "B"
+            ],
+            "applied_to": "Outer body diameter \u00d8187.2"
+          }
+        ],
+        "callout_qualifiers": [],
+        "source_views": [
+          "front_view"
+        ]
+      },
+      {
+        "feature_id": "F15",
+        "feature_type": "part_body",
+        "name": "Ring main body",
+        "description": "Annular ring-shaped body (clutch / synchronizer dog ring) with external driving dogs and internal splined profile.",
+        "geometry": {
+          "depth_condition": "THRU",
+          "axis_direction": "+Z"
+        },
+        "access_directions": [
+          "+Z",
+          "-Z",
+          "radial"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "isometric_view"
+        ]
+      },
+      {
+        "feature_id": "F16",
+        "feature_type": "spline",
+        "name": "Internal spline / dog teeth",
+        "description": "Internal axial teeth/splines visible along the inner bore perimeter with profiled relieved sections.",
+        "geometry": {
+          "depth_condition": "THRU",
+          "axis_direction": "+Z"
+        },
+        "access_directions": [
+          "+Z",
+          "-Z",
+          "axial"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "isometric_view"
+        ]
+      },
+      {
+        "feature_id": "F17",
+        "feature_type": "datum_face",
+        "name": "Front annular face (Datum A)",
+        "description": "Primary datum face forming the front planar annular rim of the part.",
+        "geometry": {
+          "axis_direction": "-Z"
+        },
+        "surface_finish": {
+          "ra_value": 1.6,
+          "finish_symbol": "Ra 1,6"
+        },
+        "access_directions": [
+          "-Z"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [
+          {
+            "gdt_type": "flatness",
+            "tolerance_value_mm": 0.1,
+            "datum_references": [],
+            "applied_to": "Front annular face (Datum A)"
+          }
+        ],
+        "callout_qualifiers": [],
+        "source_views": [
+          "section_aa"
+        ]
+      },
+      {
+        "feature_id": "F18",
+        "feature_type": "flat_face",
+        "name": "Rear annular face",
+        "description": "Opposite planar face of the ring, parallel to Datum A with total thickness of 15.8 mm.",
+        "geometry": {
+          "length_mm": 15.8,
+          "axis_direction": "+Z"
+        },
+        "surface_finish": {
+          "ra_value": 1.6,
+          "finish_symbol": "Ra 1,6"
+        },
+        "access_directions": [
+          "+Z"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "length",
+            "nominal_mm": 15.8,
+            "plus_mm": 0.03,
+            "minus_mm": 0.03
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "parallelism",
+            "tolerance_value_mm": 0.1,
+            "datum_references": [
+              "A"
+            ],
+            "applied_to": "Rear annular face"
+          }
+        ],
+        "callout_qualifiers": [],
+        "source_views": [
+          "section_aa"
+        ]
+      },
+      {
+        "feature_id": "F19",
+        "feature_type": "counterbore",
+        "name": "Front bore counterbore recess",
+        "description": "Cylindrical shallow counterbore / shoulder recess cut into the front face (Datum A side) at diameter 176 mm with depth 2.9 mm.",
+        "geometry": {
+          "diameter_mm": 176.0,
+          "depth_mm": 2.9,
+          "depth_condition": "BLIND",
+          "axis_direction": "+Z"
+        },
+        "access_directions": [
+          "-Z"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 176.0,
+            "plus_mm": 0.0,
+            "minus_mm": 0.5
+          },
+          {
+            "dimension_type": "depth",
+            "nominal_mm": 2.9,
+            "plus_mm": 0.1,
+            "minus_mm": 0.1
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "section_aa"
+        ]
+      },
+      {
+        "feature_id": "F20",
+        "feature_type": "fillet",
+        "name": "Shoulder fillet",
+        "description": "Internal transition radius at the left stepped shoulder.",
+        "geometry": {
+          "radius_mm": 0.8
+        },
+        "access_directions": [],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "radius",
+            "nominal_mm": 0.8,
+            "plus_mm": 0.3,
+            "minus_mm": 0.3
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "section_bb"
+        ]
+      },
+      {
+        "feature_id": "F21",
+        "feature_type": "chamfer",
+        "name": "Bottom-left chamfer",
+        "description": "Angled lead-in chamfer with rounded corner transition at the bottom-left edge.",
+        "geometry": {
+          "length_mm": 1.0,
+          "angle_deg": 20.0
+        },
+        "access_directions": [],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "angle_deg",
+            "nominal_mm": 20.0,
+            "plus_mm": 3.0,
+            "minus_mm": 3.0,
+            "angle_deg": 20.0
+          },
+          {
+            "dimension_type": "length",
+            "nominal_mm": 1.0,
+            "plus_mm": 0.5,
+            "minus_mm": 0.2
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "section_bb"
+        ]
+      },
+      {
+        "feature_id": "F22",
+        "feature_type": "chamfer",
+        "name": "Bottom-right chamfer",
+        "description": "Angled lead-in chamfer with rounded corner transition at the bottom-right edge.",
+        "geometry": {
+          "length_mm": 1.0,
+          "angle_deg": 20.0
+        },
+        "access_directions": [],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "angle_deg",
+            "nominal_mm": 20.0,
+            "plus_mm": 3.0,
+            "minus_mm": 3.0,
+            "angle_deg": 20.0
+          },
+          {
+            "dimension_type": "length",
+            "nominal_mm": 1.0,
+            "plus_mm": 0.5,
+            "minus_mm": 0.2
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "section_bb"
+        ]
+      },
+      {
+        "feature_id": "F23",
+        "feature_type": "chamfer",
+        "name": "Left edge chamfer",
+        "description": "30-degree chamfer on the bottom-left edge of the feature, repeated at 5 locations.",
+        "geometry": {
+          "width_mm": 1.0,
+          "angle_deg": 30.0
+        },
+        "instance_count": 5,
+        "access_directions": [
+          "-Y"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "chamfer",
+            "nominal_mm": 1.0,
+            "plus_mm": 0.5,
+            "minus_mm": 0.2,
+            "qualifier": "5x"
+          },
+          {
+            "dimension_type": "angle_deg",
+            "nominal_mm": 30.0,
+            "plus_mm": 5.0,
+            "minus_mm": 5.0,
+            "qualifier": "5x",
+            "angle_deg": 30.0
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "section_cc"
+        ]
+      },
+      {
+        "feature_id": "F24",
+        "feature_type": "chamfer",
+        "name": "Right edge chamfer",
+        "description": "30-degree chamfer on the bottom-right edge of the feature, repeated at 5 locations.",
+        "geometry": {
+          "width_mm": 1.0,
+          "angle_deg": 30.0
+        },
+        "instance_count": 5,
+        "access_directions": [
+          "-Y"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "chamfer",
+            "nominal_mm": 1.0,
+            "plus_mm": 0.5,
+            "minus_mm": 0.2,
+            "qualifier": "5x"
+          },
+          {
+            "dimension_type": "angle_deg",
+            "nominal_mm": 30.0,
+            "plus_mm": 5.0,
+            "minus_mm": 5.0,
+            "qualifier": "5x",
+            "angle_deg": 30.0
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "section_cc"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "relationship_id": "R01",
+        "from_feature_id": "F02",
+        "to_feature_id": "F17",
+        "relationship_type": "datum_referenced",
+        "detail": "Lug position control references datum A."
+      },
+      {
+        "relationship_id": "R02",
+        "from_feature_id": "F02",
+        "to_feature_id": "F11",
+        "relationship_type": "datum_referenced",
+        "detail": "Lug position control references datum B."
+      },
+      {
+        "relationship_id": "R03",
+        "from_feature_id": "F03",
+        "to_feature_id": "F17",
+        "relationship_type": "datum_referenced",
+        "detail": "Lug position control references datum A."
+      },
+      {
+        "relationship_id": "R04",
+        "from_feature_id": "F03",
+        "to_feature_id": "F11",
+        "relationship_type": "datum_referenced",
+        "detail": "Lug position control references datum B."
+      },
+      {
+        "relationship_id": "R05",
+        "from_feature_id": "F04",
+        "to_feature_id": "F17",
+        "relationship_type": "datum_referenced",
+        "detail": "Lug position control references datum A."
+      },
+      {
+        "relationship_id": "R06",
+        "from_feature_id": "F04",
+        "to_feature_id": "F11",
+        "relationship_type": "datum_referenced",
+        "detail": "Lug position control references datum B."
+      },
+      {
+        "relationship_id": "R07",
+        "from_feature_id": "F05",
+        "to_feature_id": "F17",
+        "relationship_type": "datum_referenced",
+        "detail": "Lug position control references datum A."
+      },
+      {
+        "relationship_id": "R08",
+        "from_feature_id": "F05",
+        "to_feature_id": "F11",
+        "relationship_type": "datum_referenced",
+        "detail": "Lug position control references datum B."
+      },
+      {
+        "relationship_id": "R09",
+        "from_feature_id": "F10",
+        "to_feature_id": "F17",
+        "relationship_type": "datum_referenced",
+        "detail": "Five-lug position control references datum A."
+      },
+      {
+        "relationship_id": "R10",
+        "from_feature_id": "F10",
+        "to_feature_id": "F11",
+        "relationship_type": "datum_referenced",
+        "detail": "Five-lug position and concentricity controls reference datum B."
+      },
+      {
+        "relationship_id": "R11",
+        "from_feature_id": "F10",
+        "to_feature_id": "F11",
+        "relationship_type": "concentric",
+        "detail": "The lug envelope has an explicit concentricity control to datum B."
+      },
+      {
+        "relationship_id": "R12",
+        "from_feature_id": "F10",
+        "to_feature_id": "F11",
+        "relationship_type": "radial_pattern",
+        "detail": "The five-lug pattern has explicit equal angular spacing about the central bore axis."
+      },
+      {
+        "relationship_id": "R13",
+        "from_feature_id": "F11",
+        "to_feature_id": "F17",
+        "relationship_type": "datum_referenced",
+        "detail": "The interrupted bore's perpendicularity control references datum A."
+      },
+      {
+        "relationship_id": "R14",
+        "from_feature_id": "F11",
+        "to_feature_id": "F17",
+        "relationship_type": "perpendicular",
+        "detail": "The datum B cylindrical lands have an explicit perpendicularity control to datum A."
+      },
+      {
+        "relationship_id": "R15",
+        "from_feature_id": "F06",
+        "to_feature_id": "F17",
+        "relationship_type": "datum_referenced",
+        "detail": "Merged pocket position, surface-profile and perpendicularity controls reference datum A."
+      },
+      {
+        "relationship_id": "R16",
+        "from_feature_id": "F06",
+        "to_feature_id": "F11",
+        "relationship_type": "datum_referenced",
+        "detail": "The roller-pocket position control references datum B."
+      },
+      {
+        "relationship_id": "R17",
+        "from_feature_id": "F06",
+        "to_feature_id": "F09",
+        "relationship_type": "datum_referenced",
+        "detail": "The surface-profile control in detail Y references radial datum plane C."
+      },
+      {
+        "relationship_id": "R18",
+        "from_feature_id": "F06",
+        "to_feature_id": "F17",
+        "relationship_type": "perpendicular",
+        "detail": "Detail Y explicitly controls pocket surfaces perpendicular to datum A."
+      },
+      {
+        "relationship_id": "R19",
+        "from_feature_id": "F06",
+        "to_feature_id": "F11",
+        "relationship_type": "radial_pattern",
+        "detail": "The roller pockets are explicitly identified as a circumferential repeated pattern in the bore."
+      },
+      {
+        "relationship_id": "R20",
+        "from_feature_id": "F13",
+        "to_feature_id": "F11",
+        "relationship_type": "datum_referenced",
+        "detail": "The outer lug-tip envelope's concentricity control references datum B."
+      },
+      {
+        "relationship_id": "R21",
+        "from_feature_id": "F13",
+        "to_feature_id": "F11",
+        "relationship_type": "concentric",
+        "detail": "The outer lug-tip envelope has an explicit concentricity control to datum B."
+      },
+      {
+        "relationship_id": "R22",
+        "from_feature_id": "F14",
+        "to_feature_id": "F11",
+        "relationship_type": "datum_referenced",
+        "detail": "The main-view root cylinder's concentricity control references datum B."
+      },
+      {
+        "relationship_id": "R23",
+        "from_feature_id": "F14",
+        "to_feature_id": "F11",
+        "relationship_type": "concentric",
+        "detail": "The main-view root cylinder has an explicit concentricity control to datum B."
+      },
+      {
+        "relationship_id": "R24",
+        "from_feature_id": "F18",
+        "to_feature_id": "F17",
+        "relationship_type": "datum_referenced",
+        "detail": "The rear-face parallelism control references datum A."
+      },
+      {
+        "relationship_id": "R25",
+        "from_feature_id": "F18",
+        "to_feature_id": "F17",
+        "relationship_type": "parallel",
+        "detail": "Section A-A explicitly controls the rear annular face parallel to datum A."
+      },
+      {
+        "relationship_id": "R26",
+        "from_feature_id": "F18",
+        "to_feature_id": "F17",
+        "relationship_type": "opposite_face",
+        "detail": "Section A-A identifies these as the opposing front and rear annular faces."
+      },
+      {
+        "relationship_id": "R27",
+        "from_feature_id": "F01",
+        "to_feature_id": "F11",
+        "relationship_type": "coaxial",
+        "detail": "The detail root contour is dimensioned from the part center and has its cylindrical axis along Z, shared with the centered datum B bore."
+      },
+      {
+        "relationship_id": "R28",
+        "from_feature_id": "F19",
+        "to_feature_id": "F11",
+        "relationship_type": "coaxial",
+        "detail": "The central front counterbore and centered interrupted bore share the ring's axial centerline."
+      },
+      {
+        "relationship_id": "R29",
+        "from_feature_id": "F12",
+        "to_feature_id": "F11",
+        "relationship_type": "radial_pattern",
+        "detail": "The internal recesses have explicit equal angular spacing around the datum B lands."
+      },
+      {
+        "relationship_id": "R30",
+        "from_feature_id": "F19",
+        "to_feature_id": "F17",
+        "relationship_type": "intersecting",
+        "detail": "The counterbore is explicitly cut into the datum A front face."
+      },
+      {
+        "relationship_id": "R31",
+        "from_feature_id": "F02",
+        "to_feature_id": "F01",
+        "relationship_type": "intersecting",
+        "detail": "Detail U explicitly describes its lug profile as projecting from the detail root cylinder."
+      },
+      {
+        "relationship_id": "R32",
+        "from_feature_id": "F03",
+        "to_feature_id": "F01",
+        "relationship_type": "intersecting",
+        "detail": "Detail V identifies the root contour as the base surface below its lug."
+      },
+      {
+        "relationship_id": "R33",
+        "from_feature_id": "F04",
+        "to_feature_id": "F01",
+        "relationship_type": "intersecting",
+        "detail": "Detail W explicitly describes the lug as extending from its root rim surface."
+      },
+      {
+        "relationship_id": "R34",
+        "from_feature_id": "F05",
+        "to_feature_id": "F01",
+        "relationship_type": "intersecting",
+        "detail": "Detail X explicitly describes the lug as extending from its cylindrical root contour."
+      },
+      {
+        "relationship_id": "R35",
+        "from_feature_id": "F07",
+        "to_feature_id": "F03",
+        "relationship_type": "intersecting",
+        "detail": "The relief is explicitly located on the right flank of the detail V lug."
+      },
+      {
+        "relationship_id": "R36",
+        "from_feature_id": "F08",
+        "to_feature_id": "F05",
+        "relationship_type": "intersecting",
+        "detail": "The stepped relief explicitly forms the lower flank of the detail X lug."
+      }
+    ],
+    "datum_scheme": {
+      "datums": [
+        {
+          "datum_letter": "A",
+          "feature_id": "F17",
+          "surface_type": "planar",
+          "description": "Front annular planar face of the ring"
+        },
+        {
+          "datum_letter": "B",
+          "feature_id": "F11",
+          "surface_type": "cylindrical",
+          "description": "Interrupted internal bore surface composed of 5 lands (\u00d8154.6 +0.05/0)"
+        },
+        {
+          "datum_letter": "C",
+          "feature_id": "F09",
+          "surface_type": "planar",
+          "description": "Radial datum center plane established on the vertical extension line of the tooth/pocket sector"
+        }
+      ],
+      "datum_hierarchy_notes": "The position controls in detail Z specify A as primary, B as secondary and C-C as tertiary. Detail Y separately specifies A then C for surface profile, and A for perpendicularity. Datum C-C has no definition in the supplied graphs and is not assumed equivalent to datum C or to the section cut C-C; its datum-reference edges remain unresolved. Datum C is represented by the tooth-sector feature carrying its radial center-plane reference, not by a separately invented planar feature."
+    },
+    "part_notes": "Material: ISO683-3 16MnCr5. Material standard: ISO683-3. Scale: 2:1. General tolerance: ISO 8015. Projection: first angle. Heat treatment: Case hardened and tempered Surface hardness (700 +100/0) HV10 CHD 550 HV = 0.5 +0,3/0. Coating: none specified. General notes: Proposal supplier drawing. FINISH: Ra 6.3 (Ra 0.5, Ra 1.6, Ra 1.6). DEBURR: ISO 13715 -0.6. PROCESS: Case hardened and tempered. PROCESS: Surface hardness (700 +100/0) HV10. PROCESS: CHD 550 HV = 0.5 +0,3/0. 1 = Intersection point of the ramp radius with counter ramp on center line. MARKING: 2 = Marked with date (Year/month/day/serial No.) YYMMDDXXXX Text size:5mm. INSPECTION: Residual magnetism 5 A/cm max.. INSPECTION: Cleanliness class (SKK) 2D, Max. contaminant mass 1 mg/pcs, Surface area: 360 cm\u00b2. Extraction notes: Revision AA identified from revision delta symbols in notes block. Tolerancing standard ISO 8015 indicated in title block.",
+    "overall_complexity": "complex"
+  },
+  "component_specs": [],
+  "component_spec_links": [],
+  "assumptions": [
+    {
+      "assumption_id": "A01",
+      "text": "The main-view and isometric external-lug observations are treated as aggregate observations of the outer lug family. Their counterparts in U, V, W and X remain separate because the parent leaders identify different locations and the toleranced widths differ. Each detail is canonical for its own profile; the shared aggregate observations do not create standalone nodes or determine instance counts."
+    },
+    {
+      "assumption_id": "A02",
+      "text": "Detail U's explicit tenfold qualifiers are retained as supplied, not redistributed to V, W or X and not added to other counts to infer a total. Their applicability where the other detail widths differ is unresolved and is addressed by C01."
+    },
+    {
+      "assumption_id": "A03",
+      "text": "Detail Z's five-lug feature is not merged with the outer ten-lug observations despite the broad detail Z reference on front_view:F3. Its distinct envelope, multiplicity and spatial zone show that the detail circle covers geometry beyond that outer-lug observation."
+    },
+    {
+      "assumption_id": "A04",
+      "text": "The root cylinders in U, V, W and X are grouped on Signal 5: matching feature type, identical toleranced radius from the common part center and consistent supporting-root context. Detail W is canonical because it supplies both radius and diameter and identifies the cylindrical axis consistently with the projection notes."
+    },
+    {
+      "assumption_id": "A05",
+      "text": "The main-view root cylinder is provisionally retained as a separate singleton from the U\u2013X root group. Its nominal and tolerance do not reconcile with the detail radius by diameter conversion, and the supplied sections do not establish whether these are different axial surfaces. No conflicting value is silently selected."
+    },
+    {
+      "assumption_id": "A06",
+      "text": "The detail Y pocket is merged with detail_z:F4 using the explicit Y callout on that feature and the section-level Y callout around the roller-stop pocket. Detail Z is canonical for its more extensive dimensional definition and explicit radius tolerance; detail Y contributes its profile, perpendicularity, straightness and finish controls."
+    },
+    {
+      "assumption_id": "A07",
+      "text": "Datum C is associated with detail_y:F2 as the carrier of the radial tooth/pocket-sector center plane. Both Y features reference that plane, but the pocket contact-circle center is explicitly offset from it. No new datum-surface node is invented."
+    },
+    {
+      "assumption_id": "A08",
+      "text": "Datum C-C is left undefined rather than equated with datum C or the identically named section cut. Relationships to that unknown datum are withheld pending C03."
+    },
+    {
+      "assumption_id": "A09",
+      "text": "isometric_view:F1 and isometric_view:F2 remain ungrouped pictorial observations. The body observation spans several separately defined surfaces, and the generic internal spline observation cannot be identified confidently with one particular internal land, slot or tooth feature. No standard spline specification is inferred from its descriptive name."
+    },
+    {
+      "assumption_id": "A10",
+      "text": "The B-B and C-C edge observations remain distinct singletons. Matching dimensions on opposing edges do not establish identity, and the supplied cut references do not identify a unique dimensioned parent profile for attaching them."
+    },
+    {
+      "assumption_id": "A11",
+      "text": "Overall ring thickness and counterbore depth are not automatically assigned as axial extents of every lug or internal profile. Those lengths would be arithmetically derivable once the relevant front and rear termination surfaces are confirmed; C04 and C05 ask for that missing geometric relationship rather than for redundant dimensions."
+    },
+    {
+      "assumption_id": "A12",
+      "clarification_id": "C01",
+      "text": "The tenfold requirement (10x 14.8\u00b10.1) in Detail U applies exclusively to the 10 standard lugs of that configuration and does not apply to Details V, W, and X. The lugs in Details V, W, and X represent distinct individual features governed by their own independently specified widths of 17.8\u00b10.1 mm, 14\u00b10.1 mm, and 12.8\u00b10.1 mm, respectively."
+    },
+    {
+      "assumption_id": "A13",
+      "clarification_id": "C02",
+      "text": "Yes, the R93.3 root contours in details U\u2013X represent the same continuous cylindrical root surface dimensioned as \u00d8187.2\u00b10.15 in the main view. They are assumed to be the same physical feature, with \u00d8187.2 defining the overall root diameter between the outer lugs."
+    },
+    {
+      "assumption_id": "A14",
+      "clarification_id": "C03",
+      "text": "Datum C-C is established by the 14 mm wide internal slot (notch/keyway) dimensioned 5x 14\u00b10.1 on the inner diameter, whose opposing side faces define the datum center plane."
+    },
+    {
+      "assumption_id": "A15",
+      "clarification_id": "C04",
+      "text": "The external lug profiles and their flank reliefs in details U\u2013X are assumed to extend continuously across the full axial distance between datum A and the rear annular face, as no intermediate axial stop or terminating depth is indicated."
+    },
+    {
+      "assumption_id": "A16",
+      "clarification_id": "C05",
+      "text": "The circumferential cam profiles shown in details Z and Y extend continuously along the full axial length from the front counterbore shoulder to the rear annular face without interruptions or undercuts."
+    },
+    {
+      "assumption_id": "A17",
+      "clarification_id": "C06",
+      "text": "The B-B shoulder fillet and edge treatments are required at all external lug locations, encompassing all 10 lugs defined in Detail U as well as the individual lugs defined in Details V, W, and X (13 lugs total). The R93.3\u00b10.2 shoulder radius and corresponding edge geometries are explicitly defined across all four detail views."
+    },
+    {
+      "assumption_id": "A18",
+      "clarification_id": "C07",
+      "text": "The section C-C chamfers apply to the five internal radial lugs (pads), which are dimensioned with a width of 14 \u00b1 0.1 mm and an inner diameter of \u00d8154.6 +0.05/0 mm (Datum B)."
+    }
+  ]
+}

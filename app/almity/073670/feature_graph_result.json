@@ -1,0 +1,614 @@
+{
+  "analysis_id": "073670_merge_20261010T224457Z",
+  "part": {
+    "name": "OUTER TUBE",
+    "drawing_number": "073670",
+    "revision": "E8",
+    "material": "ASTM A622M",
+    "units": "mm"
+  },
+  "feature_graph": {
+    "part_envelope": {
+      "width_mm": 3.0,
+      "height_mm": 116.84,
+      "max_diameter_mm": 129.0
+    },
+    "coordinate_system": {
+      "primary_axis": "Y",
+      "orientation_notes": "Y follows the tube and bore axis, with +Y toward the open rim. Section views lie in XY with Z normal to the cut plane. Top views lie in XZ and look along -Y. Datum A locates the central axis but does not establish an axial origin plane or angular clocking.",
+      "datum_origin": "A"
+    },
+    "features": [
+      {
+        "feature_id": "F01",
+        "feature_type": "external_cylinder",
+        "name": "Outer cylindrical body",
+        "description": "Finished outer cylindrical diameter of the tube with circularity control and overall height.",
+        "geometry": {
+          "diameter_mm": 126.21,
+          "outer_diameter_mm": 126.21,
+          "height_mm": 114.3,
+          "wall_thickness_mm": 4.2,
+          "position_description": "Centred on main part axis",
+          "axis_direction": "+Y"
+        },
+        "instance_count": 1,
+        "surface_finish": {
+          "finish_symbol": "125"
+        },
+        "access_directions": [
+          "+X",
+          "-X",
+          "radial",
+          "+Y",
+          "-Y"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 126.21,
+            "upper_limit_mm": 126.34,
+            "lower_limit_mm": 126.08
+          },
+          {
+            "dimension_type": "height",
+            "nominal_mm": 114.3,
+            "upper_limit_mm": 114.55,
+            "lower_limit_mm": 114.05
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "circularity",
+            "tolerance_value_mm": 0.25,
+            "datum_references": [],
+            "applied_to": "Outer cylindrical diameter"
+          }
+        ],
+        "callout_qualifiers": [
+          {
+            "qualifier": "REF",
+            "dimension_type": "wall_thickness",
+            "nominal_mm": 4.2
+          }
+        ],
+        "source_views": [
+          "section_view_machined",
+          "top_view_machined"
+        ]
+      },
+      {
+        "feature_id": "F02",
+        "feature_type": "internal_bore",
+        "name": "Inner bore (Datum A)",
+        "description": "Main unmachined inner cylindrical cavity of the tube, establishing Datum A.",
+        "geometry": {
+          "diameter_mm": 117.81,
+          "inner_diameter_mm": 117.81,
+          "depth_condition": "BLIND",
+          "hole_count": 1,
+          "axis_direction": "+Y"
+        },
+        "instance_count": 1,
+        "surface_finish": {
+          "ra_value": 6.3,
+          "finish_symbol": "250"
+        },
+        "access_directions": [
+          "+Y"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 117.81,
+            "upper_limit_mm": 118.06,
+            "lower_limit_mm": 117.56
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "section_view_unmachined",
+          "section_view_machined"
+        ]
+      },
+      {
+        "feature_id": "F03",
+        "feature_type": "flat_face",
+        "name": "Tube end flat face",
+        "description": "Annular end face of the outer tube wall with a minimum flat width of 3 mm measured from the inner bore to the outer edge chamfer.",
+        "geometry": {
+          "width_mm": 3.0,
+          "position_description": "At the axial end of the tube wall"
+        },
+        "access_directions": [
+          "axial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "width",
+            "nominal_mm": 3.0,
+            "lower_limit_mm": 3.0,
+            "qualifier": "MIN."
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "detail_view_z"
+        ]
+      },
+      {
+        "feature_id": "F04",
+        "feature_type": "chamfer",
+        "name": "Tube end outer chamfer or radius",
+        "description": "Outer edge transition at the tube end, permitted as either a radius or a chamfer with a maximum axial length of 7.1 mm.",
+        "geometry": {
+          "length_mm": 7.1,
+          "position_description": "Transition on the outer diameter at the tube end face"
+        },
+        "access_directions": [
+          "axial",
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "length",
+            "nominal_mm": 7.1,
+            "upper_limit_mm": 7.1,
+            "qualifier": "MAX."
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "detail_view_z"
+        ]
+      },
+      {
+        "feature_id": "F05",
+        "feature_type": "flat_face",
+        "name": "Bottom base wall",
+        "description": "Base floor of the outer tube having a specified wall thickness.",
+        "geometry": {
+          "wall_thickness_mm": 4.8,
+          "axis_direction": "+Y"
+        },
+        "access_directions": [
+          "-Y",
+          "+Y"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "wall_thickness",
+            "nominal_mm": 4.8,
+            "upper_limit_mm": 5.05,
+            "lower_limit_mm": 4.55
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "section_view_machined"
+        ]
+      },
+      {
+        "feature_id": "F06",
+        "feature_type": "internal_bore",
+        "name": "Inner cavity clearance envelope",
+        "description": "Minimum internal clearance envelope indicated by dashed profile with reference pointer to the inside bottom face.",
+        "geometry": {
+          "diameter_mm": 108.0,
+          "inner_diameter_mm": 108.0,
+          "depth_condition": "BLIND",
+          "axis_direction": "+Y"
+        },
+        "access_directions": [
+          "+Y"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 108.0,
+            "lower_limit_mm": 108.0,
+            "qualifier": "MIN"
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "section_view_machined"
+        ]
+      },
+      {
+        "feature_id": "F07",
+        "feature_type": "external_cylinder",
+        "name": "Outer cylindrical surface",
+        "description": "Unmachined deep-drawn cylindrical body of the outer tube.",
+        "geometry": {
+          "diameter_mm": 128.0,
+          "outer_diameter_mm": 128.0,
+          "height_mm": 116.84,
+          "axis_direction": "+Y"
+        },
+        "instance_count": 1,
+        "surface_finish": {
+          "ra_value": 3.2,
+          "finish_symbol": "125"
+        },
+        "access_directions": [
+          "radial",
+          "+Y",
+          "-Y"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 128.0,
+            "upper_limit_mm": 129.0,
+            "lower_limit_mm": 127.0
+          },
+          {
+            "dimension_type": "height",
+            "nominal_mm": 116.84,
+            "lower_limit_mm": 116.84,
+            "qualifier": "MIN"
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "section_view_unmachined"
+        ]
+      },
+      {
+        "feature_id": "F08",
+        "feature_type": "flat_face",
+        "name": "Top rim face",
+        "description": "Top annular opening edge of the tube, specified to have no splits from forming.",
+        "geometry": {
+          "axis_direction": "+Y"
+        },
+        "instance_count": 1,
+        "access_directions": [
+          "+Y"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "section_view_unmachined"
+        ]
+      },
+      {
+        "feature_id": "F09",
+        "feature_type": "flat_face",
+        "name": "Bottom wall",
+        "description": "Closed bottom wall of the drawn cup with limit tolerance wall thickness.",
+        "geometry": {
+          "wall_thickness_mm": 6.6,
+          "axis_direction": "-Y"
+        },
+        "instance_count": 1,
+        "access_directions": [
+          "-Y",
+          "+Y"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "wall_thickness",
+            "nominal_mm": 6.6,
+            "upper_limit_mm": 7.6,
+            "lower_limit_mm": 5.6
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "section_view_unmachined"
+        ]
+      },
+      {
+        "feature_id": "F10",
+        "feature_type": "radius",
+        "name": "Bottom external corner radius",
+        "description": "Formed external corner radius transitioning between the outer cylindrical wall and the bottom face.",
+        "geometry": {
+          "radius_mm": 10.0
+        },
+        "instance_count": 1,
+        "access_directions": [
+          "radial",
+          "-Y"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "radius",
+            "nominal_mm": 10.0,
+            "upper_limit_mm": 11.0,
+            "lower_limit_mm": 9.0
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "section_view_unmachined"
+        ]
+      },
+      {
+        "feature_id": "F11",
+        "feature_type": "through_hole",
+        "name": "Center manufacturing hole",
+        "description": "Central hole designated for manufacturing purposes, centered on the part axis.",
+        "geometry": {
+          "diameter_mm": 13.25,
+          "depth_condition": "THRU",
+          "hole_count": 1,
+          "position_description": "Centered at X=0, Z=0",
+          "axis_direction": "-Y"
+        },
+        "instance_count": 1,
+        "access_directions": [
+          "+Y",
+          "-Y"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 13.25,
+            "upper_limit_mm": 13.5,
+            "lower_limit_mm": 13.0,
+            "qualifier": "HOLE FOR MANUFACTURING PURPOSES"
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "top_view_unmachined"
+        ]
+      },
+      {
+        "feature_id": "F12",
+        "feature_type": "hole_pattern",
+        "name": "4-hole pattern on bolt circle",
+        "description": "Pattern of four equally spaced holes on an 82.5 mm bolt circle, controlled by positional tolerance relative to datum A.",
+        "geometry": {
+          "diameter_mm": 13.25,
+          "hole_count": 4,
+          "pcd_mm": 82.5,
+          "position_description": "4 holes equally spaced on \u00d882.5 bolt circle, oriented along principal axes",
+          "axis_direction": "-Y"
+        },
+        "instance_count": 4,
+        "access_directions": [
+          "+Y",
+          "-Y"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 13.25,
+            "upper_limit_mm": 13.5,
+            "lower_limit_mm": 13.0,
+            "qualifier": "4 HOLES EQ. SP."
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "position",
+            "tolerance_value_mm": 0.25,
+            "datum_references": [
+              "A"
+            ],
+            "applied_to": "4 HOLES EQ. SP. ON AN \u00d8 82.5 B.C."
+          }
+        ],
+        "callout_qualifiers": [
+          {
+            "qualifier": "B.C.",
+            "dimension_type": "diameter",
+            "nominal_mm": 82.5
+          }
+        ],
+        "source_views": [
+          "top_view_unmachined"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "relationship_id": "R01",
+        "from_feature_id": "F01",
+        "to_feature_id": "F02",
+        "relationship_type": "coaxial",
+        "detail": "The finished exterior and main bore share the central tube axis."
+      },
+      {
+        "relationship_id": "R02",
+        "from_feature_id": "F07",
+        "to_feature_id": "F02",
+        "relationship_type": "coaxial",
+        "detail": "The formed exterior and datum bore share the central tube axis."
+      },
+      {
+        "relationship_id": "R03",
+        "from_feature_id": "F11",
+        "to_feature_id": "F02",
+        "relationship_type": "coaxial",
+        "detail": "The manufacturing hole is explicitly centered on the main part axis."
+      },
+      {
+        "relationship_id": "R04",
+        "from_feature_id": "F06",
+        "to_feature_id": "F02",
+        "relationship_type": "coaxial",
+        "detail": "The dashed internal clearance envelope is centered within the main tube cavity."
+      },
+      {
+        "relationship_id": "R05",
+        "from_feature_id": "F12",
+        "to_feature_id": "F02",
+        "relationship_type": "radial_pattern",
+        "detail": "The equally spaced bolt-circle holes are arranged around the datum bore axis."
+      },
+      {
+        "relationship_id": "R06",
+        "from_feature_id": "F12",
+        "to_feature_id": "F02",
+        "relationship_type": "datum_referenced",
+        "detail": "The hole-pattern position control references datum A, defined by the main inner bore."
+      },
+      {
+        "relationship_id": "R07",
+        "from_feature_id": "F11",
+        "to_feature_id": "F12",
+        "relationship_type": "on_same_face",
+        "detail": "The central manufacturing hole and peripheral hole pattern open through the same bottom wall."
+      },
+      {
+        "relationship_id": "R08",
+        "from_feature_id": "F11",
+        "to_feature_id": "F09",
+        "relationship_type": "intersecting",
+        "detail": "The central manufacturing hole passes through the formed bottom wall."
+      },
+      {
+        "relationship_id": "R09",
+        "from_feature_id": "F12",
+        "to_feature_id": "F09",
+        "relationship_type": "intersecting",
+        "detail": "The bolt-circle holes pass through the formed bottom wall."
+      },
+      {
+        "relationship_id": "R10",
+        "from_feature_id": "F04",
+        "to_feature_id": "F01",
+        "relationship_type": "intersecting",
+        "detail": "The enlarged rim transition joins the finished outside cylindrical surface."
+      },
+      {
+        "relationship_id": "R11",
+        "from_feature_id": "F04",
+        "to_feature_id": "F03",
+        "relationship_type": "intersecting",
+        "detail": "The permitted outer-edge transition terminates at the annular end flat."
+      },
+      {
+        "relationship_id": "R12",
+        "from_feature_id": "F03",
+        "to_feature_id": "F02",
+        "relationship_type": "intersecting",
+        "detail": "The annular end flat borders the opening of the main bore."
+      },
+      {
+        "relationship_id": "R13",
+        "from_feature_id": "F10",
+        "to_feature_id": "F07",
+        "relationship_type": "intersecting",
+        "detail": "The formed outside bottom radius joins the unmachined cylindrical wall."
+      },
+      {
+        "relationship_id": "R14",
+        "from_feature_id": "F10",
+        "to_feature_id": "F09",
+        "relationship_type": "intersecting",
+        "detail": "The formed outside bottom radius joins the bottom wall."
+      },
+      {
+        "relationship_id": "R15",
+        "from_feature_id": "F03",
+        "to_feature_id": "F05",
+        "relationship_type": "opposite_face",
+        "detail": "The finished opening-end flat and bottom base wall occupy opposite axial ends of the cup."
+      },
+      {
+        "relationship_id": "R16",
+        "from_feature_id": "F08",
+        "to_feature_id": "F09",
+        "relationship_type": "opposite_face",
+        "detail": "The formed top rim and closed bottom wall occupy opposite axial ends of the cup."
+      },
+      {
+        "relationship_id": "R17",
+        "from_feature_id": "F07",
+        "to_feature_id": "F01",
+        "relationship_type": "machining_dependency",
+        "detail": "The explicitly unmachined exterior supplies the stock condition for the finished cylindrical exterior."
+      },
+      {
+        "relationship_id": "R18",
+        "from_feature_id": "F09",
+        "to_feature_id": "F05",
+        "relationship_type": "machining_dependency",
+        "detail": "The explicitly unmachined bottom wall supplies the stock condition for the finished base wall."
+      }
+    ],
+    "datum_scheme": {
+      "datums": [
+        {
+          "datum_letter": "A",
+          "feature_id": "F02",
+          "surface_type": "cylindrical",
+          "description": "Inner bore cylinder of the unmachined tube."
+        }
+      ],
+      "datum_hierarchy_notes": "Datum A establishes the bore axis and is the sole datum referenced by the hole-pattern position control. No secondary or tertiary datum is defined. Circularity of the finished exterior is a form control and does not introduce another datum."
+    },
+    "part_notes": "Material: ASTM A622M. Material standard: ASTM A622M. Scale: FULL. Heat treatment: none specified. Coating: none specified. General notes: PROCESS: (D) MAT'L: ASTM A622M. DEBURR: BREAK ALL SHARP EDGES 0.5 MAX.. PROCESS: PART NO. 073672 REL. P USED ON: 073670 PROCESS: AS SHOWN (UNMACHINED). PROCESS: PART NO. 073670 REL. P USED ON: 073671 PROCESS: MACHINED (E7). PROCESS: PART NO. 073671 REL. P USED ON: 810630 PROCESS: PER PS-135.6 ON SURFACE MARKED *, (MACHINED). Extraction notes: Dates are formatted as MMDDYY. Drawing defines a process hierarchy: part 073672 (as shown unmachined) -> 073670 (machined) -> 073671 (machined per PS-135.6). Revision D updated the material to ASTM A622M (previously SAE 1010-1020).",
+    "overall_complexity": "moderate"
+  },
+  "component_specs": [],
+  "component_spec_links": [],
+  "assumptions": [
+    {
+      "assumption_id": "A01",
+      "text": "The machined top-view exterior is grouped with the machined section exterior using the section-cut reference and central-axis correspondence. The section observation is canonical because it carries the dimensional limits and circularity control."
+    },
+    {
+      "assumption_id": "A02",
+      "text": "The main bore observations are grouped on Signal 5: their feature types, diameter limits, blind-cavity condition, and tube-axis context agree. The unmachined section is canonical because it explicitly defines datum A and provides converted surface roughness."
+    },
+    {
+      "assumption_id": "A03",
+      "text": "The unmachined and finished exterior observations are retained as separate process-state nodes. Their different dimensional requirements are intentional stock-versus-finished requirements, not truncation errors; combining them would mix incompatible limits."
+    },
+    {
+      "assumption_id": "A04",
+      "text": "The unmachined and finished bottom-wall observations are retained as separate process-state nodes because their thickness requirements differ intentionally."
+    },
+    {
+      "assumption_id": "A05",
+      "text": "The VIEW Z marker attached to the main bore identifies the rim region rather than an identity between the bore and either detail feature. The end flat and outer-edge transition remain distinct singleton features."
+    },
+    {
+      "assumption_id": "A06",
+      "text": "The forming-stage top rim remains separate from the finished detail end flat: there is no direct identity reference or matching dimensional evidence connecting those observations."
+    },
+    {
+      "assumption_id": "A07",
+      "text": "The formed bottom radius remains a singleton requirement of the unmachined condition. It is not automatically imposed as the finished corner profile."
+    },
+    {
+      "assumption_id": "A08",
+      "text": "The section extraction notes establish that the bottom-wall openings are through-holes. The top-view geometry-needs entries requesting hole depth do not create a genuine missing-depth question."
+    },
+    {
+      "assumption_id": "A09",
+      "text": "The dashed minimum-clearance envelope is retained separately from the main bore because it expresses an internal clearance requirement rather than another observation of the same cylindrical surface."
+    },
+    {
+      "assumption_id": "A10",
+      "text": "The radius-or-chamfer alternative in VIEW Z is treated as an intentional manufacturing choice within the stated bounds; no exact angle or radius clarification is required."
+    },
+    {
+      "assumption_id": "A11",
+      "clarification_id": "C02",
+      "text": "The outside bottom corner profile retains the as-formed geometry without a secondary finish-radius machining operation, conforming to the final finished envelope dimensions."
+    },
+    {
+      "assumption_id": "A12",
+      "clarification_id": "C01",
+      "text": "The asterisk references the 108 MIN. diameter requirement, indicating that the 108 mm minimum clearance diameter envelope extends down to the inside bottom surface."
+    }
+  ]
+}

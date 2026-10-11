@@ -1,0 +1,317 @@
+{
+  "analysis_id": "063700_merge_20261010T223552Z",
+  "source_feature_graph_id": "063700_merge_20261010T223552Z",
+  "quantity": 100,
+  "part_family": "turned",
+  "base_geometry": "rotational",
+  "stock": {
+    "form": "tube",
+    "diameter_mm": 145.0,
+    "bore_diameter_mm": 134.7,
+    "length_mm": 21.0,
+    "machining_allowance_mm": 0.25
+  },
+  "operations": [
+    {
+      "sequence": 1,
+      "name": "Saw \u2013 Tube Blanks",
+      "machine_family": "saw",
+      "setup_note": "Support the unhardened tube in a non-crushing cradle and set the length stop for individual blanks with facing allowance at both ends.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "setup_time_min": 8.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "saw_cut",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "saw_cut",
+            "cut_diameter_mm": 145.0,
+            "bore_diameter_mm": 134.7,
+            "cut_count": 1
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 2,
+      "name": "CNC Turn \u2013 First End",
+      "machine_family": "cnc_lathe",
+      "setup_note": "Hold the unhardened blank in bored full-wrap soft jaws with low clamping pressure, using the tube axis and first faced end as shop references. Finish the accessible bore segment and its end radius together before skimming the corresponding OD segment and breaking the outer edge.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "setup_time_min": 20.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "face_turn",
+          "target_feature_ids": [
+            "F01"
+          ],
+          "inputs": {
+            "kind": "radial_turn",
+            "start_diameter_mm": 145.0,
+            "finish_diameter_mm": 134.7,
+            "groove_count": 1,
+            "total_stock_mm": 2.5
+          }
+        },
+        {
+          "sequence": 2,
+          "operation_type": "finish_bore_id",
+          "target_feature_ids": [
+            "F02",
+            "F03"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 134.7,
+            "finish_diameter_mm": 135.0,
+            "cut_length_mm": 7.9375
+          }
+        },
+        {
+          "sequence": 3,
+          "operation_type": "finish_turn_od",
+          "target_feature_ids": [
+            "F01"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 145.0,
+            "finish_diameter_mm": 144.5,
+            "cut_length_mm": 7.9375
+          }
+        },
+        {
+          "sequence": 4,
+          "operation_type": "chamfer_turn",
+          "target_feature_ids": [
+            "F01"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 144.5,
+            "finish_diameter_mm": 143.5,
+            "cut_length_mm": 0.5
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 3,
+      "name": "CNC Turn \u2013 Second End",
+      "machine_family": "cnc_lathe",
+      "setup_note": "Flip the unhardened ring into protective full-wrap soft jaws located on the finished OD and first face, then face the opposite end to final length. Complete only the previously unmachined bore and OD segments, blending into the first-end cuts and producing the opposite bore radius and outer edge break.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "setup_time_min": 15.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "face_turn",
+          "target_feature_ids": [
+            "F01"
+          ],
+          "inputs": {
+            "kind": "radial_turn",
+            "start_diameter_mm": 145.0,
+            "finish_diameter_mm": 134.7,
+            "groove_count": 1,
+            "total_stock_mm": 2.5
+          }
+        },
+        {
+          "sequence": 2,
+          "operation_type": "finish_bore_id",
+          "target_feature_ids": [
+            "F02",
+            "F03"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 134.7,
+            "finish_diameter_mm": 135.0,
+            "cut_length_mm": 7.9375
+          }
+        },
+        {
+          "sequence": 3,
+          "operation_type": "finish_turn_od",
+          "target_feature_ids": [
+            "F01"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 145.0,
+            "finish_diameter_mm": 144.5,
+            "cut_length_mm": 7.9375
+          }
+        },
+        {
+          "sequence": 4,
+          "operation_type": "chamfer_turn",
+          "target_feature_ids": [
+            "F01"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 144.5,
+            "finish_diameter_mm": 143.5,
+            "cut_length_mm": 0.5
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 4,
+      "name": "Outside \u2013 Sub-Critical Stress Relief",
+      "machine_family": "outside_vendor",
+      "setup_note": "Vendor to clean and support the finished rings against ovality, then perform the specified sub-critical stress-relief anneal for at least two hours at 1250\u00b0F (approximately 677\u00b0C), with controlled cooling and certification. The 100-piece order is assumed to fit one suitably spaced furnace load; use a protective atmosphere to avoid scale on finished surfaces.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "setup_time_min": 0.0,
+      "in_house": false,
+      "outside_process": "heat_treat",
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "stress_relieve",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "furnace_cycle",
+            "batch_size_parts": 100,
+            "part_mass_kg": 0.72,
+            "max_section_thickness_mm": 4.8,
+            "target_temp_c": 676.7,
+            "soak_time_min": 120.0
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 5,
+      "name": "Final Shop-Floor Gauge Inspection",
+      "machine_family": "inspection",
+      "setup_note": "Inspect cooled, stress-relieved rings using dedicated OD, bore and length gauges under SPC sampling, supporting them without distortion. Check both bore radii with a radius template, verify the edge breaks and review material and stress-relief certification.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "setup_time_min": 5.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "manual_inspect",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "inspection",
+            "dimension_count": 4,
+            "gdt_count": 0,
+            "sampling_rate_pct": 100.0,
+            "requires_fixture": false
+          }
+        }
+      ]
+    }
+  ],
+  "clarifications": [
+    {
+      "clarification_id": "C01",
+      "question": "Which configuration is required: 063700 or 063701?",
+      "blocks": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "suggested_default": "063700, manufactured to the process shown on the supplied drawing.",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C02",
+      "question": "If configuration 063701 is required, can you provide specification PS-135.6?",
+      "blocks": [
+        4,
+        5
+      ],
+      "suggested_default": "This route covers 063700 only; hold production of 063701 until PS-135.6 is reviewed.",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C03",
+      "question": "Can you confirm availability or approval of near-net seamless tubing at nominal \u00d8145 mm OD \u00d7 \u00d8134.7 mm ID?",
+      "blocks": [
+        1,
+        2,
+        3
+      ],
+      "suggested_default": "Quote using these provisional tube dimensions and verify supplier dimensional limits permit cleanup to the drawing sizes before purchasing.",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C04",
+      "question": "What certification evidence is required to demonstrate the 207 N/mm\u00b2 minimum yield strength after stress relief?",
+      "blocks": [
+        4,
+        5
+      ],
+      "suggested_default": "Require supplier/vendor certification covering the final stress-relieved material condition; do not add destructive testing without an acceptance requirement.",
+      "priority": "medium"
+    }
+  ],
+  "assumptions": [
+    {
+      "assumption_id": "A01",
+      "text": "The route provisionally applies to configuration 063700. Requirements unique to 063701 cannot be established without PS-135.6."
+    },
+    {
+      "assumption_id": "A02",
+      "text": "Precision seamless tube is selected under ALM-IC-001. \u00d8145 mm OD and \u00d8134.7 mm ID are provisional procurement dimensions, not verified commercial availability; the stock must be clean and sufficiently round for light sizing cuts."
+    },
+    {
+      "assumption_id": "A03",
+      "text": "The 21 mm blank provides approximately 5 mm total axial facing allowance above the maximum finished length. Near-net diameters require finish skims only, so OD and ID roughing and drilling from solid are omitted."
+    },
+    {
+      "assumption_id": "A04",
+      "text": "Each lathe setup sizes only its accessible axial segments, with minimal blending overlap rather than repeating full-length material removal. Bore finishing precedes OD finishing because the ring is thin-walled."
+    },
+    {
+      "assumption_id": "A05",
+      "text": "Both R1 \u00b10.13 bore-edge radii are programmed within their respective finish-bore profiles, as required by the organizational profile-pass correction; no separate radius-forming operation is added."
+    },
+    {
+      "assumption_id": "A06",
+      "text": "No drawing datums are defined. The tube axis and faced ends are manufacturing references only, and no datum letters are invented."
+    },
+    {
+      "assumption_id": "A07",
+      "text": "Center drilling and tailstock support are unnecessary for this short hollow ring. Grooving and threading are absent, and part-off is unnecessary because individual blanks are sawn before turning."
+    },
+    {
+      "assumption_id": "A08",
+      "text": "The supplementary hole-making sequence contributes finish boring only. Spotting, pilot/full-size/deep drilling, reaming, tapping and fastener recess machining are omitted because the tube already has its bore and no corresponding features are specified."
+    },
+    {
+      "assumption_id": "A09",
+      "text": "The specified treatment is sub-critical stress relief, not hardening. Selective-hardening masking, austenitizing, quenching, quench straightening and tempering are inapplicable; cleaning, furnace loading, heating, holding, cooling and process certification are included in the vendor operation."
+    },
+    {
+      "assumption_id": "A10",
+      "text": "All dimensions are finished before stress relief, with no post-treatment machining, in accordance with the organizational route skeleton. The vendor is assumed able to maintain final dimensional limits and minimum yield strength; no hardness target or explicit grind callout is present, so hardness testing and grinding are not added."
+    },
+    {
+      "assumption_id": "A11",
+      "text": "The bore radii and lathe outer-edge breaks satisfy the 0.5 mm maximum sharp-edge-break note without a separate bench pass. No coating, crush test or functional test is specified, so these optional operations are omitted."
+    },
+    {
+      "assumption_id": "A12",
+      "text": "Exactly one final manual gauge gate is used, with no intermediate inspection or CMM layout. Blank preparation, stress relief and inspection have empty target lists because they do not cut or form a listed finished geometric feature."
+    }
+  ]
+}

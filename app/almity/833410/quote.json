@@ -1,0 +1,103 @@
+{
+  "drawing_number": "833410",
+  "part_name": "BONDED BUSHING",
+  "material": "SEE DWG. / COMPONENTS",
+  "quantity": 100,
+  "quote_status": "complete",
+  "weights": {
+    "raw_bar_dia_mm": 205.0,
+    "actual_bar_dia_mm": 205.0,
+    "gross_weight_kg": 37.0843,
+    "gross_weight_g": 37084.3,
+    "net_weight_kg": 5.4069,
+    "net_weight_g": 5406.9,
+    "scrap_weight_kg": 31.6774,
+    "scrap_weight_g": 31677.4,
+    "net_weight_source": "routing"
+  },
+  "direct_cost": {
+    "material_cost_inr": 2781.32,
+    "material_rate_per_kg_inr": 75.0,
+    "material_substitution": null,
+    "machining_cost_inr": 631.66,
+    "direct_base_inr": 3412.98
+  },
+  "cif_and_overheads": {
+    "packaging_charges_inr": 45.42,
+    "overhead_25_pct_inr": 853.25,
+    "logistics_cost_inr": 221.43,
+    "total_cif_inr": 4533.07,
+    "scrap_recovery_credit_inr": -633.55,
+    "total_cost_per_pc_inr": 3899.52
+  },
+  "pricing_and_duties": {
+    "profit_10_pct_inr": 341.3,
+    "actual_cost_inr": 4240.82,
+    "icc_and_rejection_inr": 46.46,
+    "custom_duty_3_5_pct_inr": 148.43,
+    "warehouse_cost_4_pct_inr": 169.63,
+    "final_landed_price_inr": 4605.34
+  },
+  "machining_operations": [
+    {
+      "sequence": 1,
+      "operation_name": "Saw – Inner Member Blank",
+      "machine_family": "saw",
+      "cycle_time_sec": 463.0,
+      "cycle_time_raw_sec": 463.0,
+      "hourly_rate_inr": 290.0,
+      "cost_per_piece_inr": 37.3,
+      "cost_per_piece_raw": 37.297222222222224
+    },
+    {
+      "sequence": 2,
+      "operation_name": "CNC Turn – First End",
+      "machine_family": "cnc_lathe",
+      "cycle_time_sec": 5272.3,
+      "cycle_time_raw_sec": 5272.3,
+      "hourly_rate_inr": 280.0,
+      "cost_per_piece_inr": 410.07,
+      "cost_per_piece_raw": 410.0677777777778
+    },
+    {
+      "sequence": 3,
+      "operation_name": "CNC Turn – Second End",
+      "machine_family": "cnc_lathe",
+      "cycle_time_sec": 1568.8,
+      "cycle_time_raw_sec": 1568.8,
+      "hourly_rate_inr": 280.0,
+      "cost_per_piece_inr": 122.02,
+      "cost_per_piece_raw": 122.01777777777778
+    },
+    {
+      "sequence": 4,
+      "operation_name": "VMC – Three-Hole Pattern",
+      "machine_family": "vmc_3axis",
+      "cycle_time_sec": 466.2,
+      "cycle_time_raw_sec": 466.2,
+      "hourly_rate_inr": 450.0,
+      "cost_per_piece_inr": 58.27,
+      "cost_per_piece_raw": 58.275
+    },
+    {
+      "sequence": 6,
+      "operation_name": "Bench – Deburr and Clean",
+      "machine_family": "finish_bench",
+      "cycle_time_sec": 120.0,
+      "cycle_time_raw_sec": 1084.6,
+      "hourly_rate_inr": 200.0,
+      "cost_per_piece_inr": 3.0,
+      "cost_per_piece_raw": 3.0
+    },
+    {
+      "sequence": 9,
+      "operation_name": "Final Shop-Floor Gauge and Functional Gate",
+      "machine_family": "inspection",
+      "cycle_time_sec": 15.0,
+      "cycle_time_raw_sec": 768.2,
+      "hourly_rate_inr": 250.0,
+      "cost_per_piece_inr": 1.0,
+      "cost_per_piece_raw": 1.0
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "drawing_number": "082410",
+  "part_name": "INNER COMPONENT",
+  "material": "SAE 1010-1020 STEEL",
+  "quantity": 100,
+  "quote_status": "complete",
+  "weights": {
+    "raw_bar_dia_mm": 165.5,
+    "actual_bar_dia_mm": 165.5,
+    "gross_weight_kg": 2.6483,
+    "gross_weight_g": 2648.3,
+    "net_weight_kg": 2.4429,
+    "net_weight_g": 2442.9,
+    "scrap_weight_kg": 0.2054,
+    "scrap_weight_g": 205.4,
+    "net_weight_source": "routing"
+  },
+  "direct_cost": {
+    "material_cost_inr": 357.52,
+    "material_rate_per_kg_inr": 135.0,
+    "material_substitution": null,
+    "machining_cost_inr": 90.17,
+    "direct_base_inr": 447.69
+  },
+  "cif_and_overheads": {
+    "packaging_charges_inr": 20.52,
+    "overhead_25_pct_inr": 111.92,
+    "logistics_cost_inr": 100.04,
+    "total_cif_inr": 680.17,
+    "scrap_recovery_credit_inr": -4.11,
+    "total_cost_per_pc_inr": 676.06
+  },
+  "pricing_and_duties": {
+    "profit_10_pct_inr": 44.77,
+    "actual_cost_inr": 720.83,
+    "icc_and_rejection_inr": 11.26,
+    "custom_duty_3_5_pct_inr": 25.23,
+    "warehouse_cost_4_pct_inr": 28.83,
+    "final_landed_price_inr": 786.15
+  },
+  "machining_operations": [
+    {
+      "sequence": 1,
+      "operation_name": "Saw – Tube Blanks",
+      "machine_family": "saw",
+      "cycle_time_sec": 76.2,
+      "cycle_time_raw_sec": 76.2,
+      "hourly_rate_inr": 290.0,
+      "cost_per_piece_inr": 6.14,
+      "cost_per_piece_raw": 6.138333333333334
+    },
+    {
+      "sequence": 2,
+      "operation_name": "CNC Turn – First End",
+      "machine_family": "cnc_lathe",
+      "cycle_time_sec": 787.6,
+      "cycle_time_raw_sec": 787.6,
+      "hourly_rate_inr": 280.0,
+      "cost_per_piece_inr": 61.26,
+      "cost_per_piece_raw": 61.257777777777775
+    },
+    {
+      "sequence": 3,
+      "operation_name": "CNC Turn – Second End",
+      "machine_family": "cnc_lathe",
+      "cycle_time_sec": 279.9,
+      "cycle_time_raw_sec": 279.9,
+      "hourly_rate_inr": 280.0,
+      "cost_per_piece_inr": 21.77,
+      "cost_per_piece_raw": 21.77
+    },
+    {
+      "sequence": 4,
+      "operation_name": "Phosphate – PS-119.0",
+      "machine_family": "plating_line",
+      "cycle_time_sec": 125.3,
+      "cycle_time_raw_sec": 125.3,
+      "hourly_rate_inr": 300.0,
+      "cost_per_piece_inr": 0.0,
+      "cost_per_piece_raw": 0.0
+    },
+    {
+      "sequence": 5,
+      "operation_name": "Final Shop-Floor Inspection",
+      "machine_family": "inspection",
+      "cycle_time_sec": 15.0,
+      "cycle_time_raw_sec": 123.9,
+      "hourly_rate_inr": 250.0,
+      "cost_per_piece_inr": 1.0,
+      "cost_per_piece_raw": 1.0
+    }
+  ]
+}

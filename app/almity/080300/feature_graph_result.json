@@ -1,0 +1,160 @@
+{
+  "analysis_id": "080300_merge_20261010T224706Z",
+  "part": {
+    "name": "INNER TUBE",
+    "drawing_number": "080300",
+    "revision": "D1",
+    "material": "SAE 1010-1026 STEEL",
+    "units": "mm"
+  },
+  "feature_graph": {
+    "part_envelope": {
+      "max_diameter_mm": 154.75
+    },
+    "coordinate_system": {
+      "primary_axis": "X",
+      "orientation_notes": "Use the section-view frame: X follows the tube axis, Y is radial in the section plane, and Z is the section-cut normal. The left view looks along X. The detail-view axial notation is treated as local rather than as the world-axis definition."
+    },
+    "features": [
+      {
+        "feature_id": "F01",
+        "feature_type": "chamfer",
+        "name": "Internal corner chamfer",
+        "description": "45-degree chamfer located at the internal corner/shoulder of the tube wall, specified at both ends.",
+        "geometry": {
+          "angle_deg": 45.0,
+          "position_description": "At internal bore/shoulder corner at both ends of the inner tube",
+          "axis_direction": "+Z"
+        },
+        "instance_count": 2,
+        "access_directions": [
+          "+Z",
+          "-Z"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "chamfer",
+            "nominal_mm": 1.25,
+            "upper_limit_mm": 1.5,
+            "lower_limit_mm": 1.0,
+            "qualifier": "BOTH ENDS",
+            "angle_deg": 45.0
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "detail_view_x"
+        ]
+      },
+      {
+        "feature_id": "F02",
+        "feature_type": "external_cylinder",
+        "name": "Outer cylindrical surface",
+        "description": "Main outer cylindrical body of the inner tube with outer diameter 154.75/154.50 mm and variable length 'A'.",
+        "geometry": {
+          "diameter_mm": 154.625,
+          "outer_diameter_mm": 154.625,
+          "wall_thickness_mm": 6.3,
+          "axis_direction": "+X"
+        },
+        "access_directions": [
+          "radial",
+          "+Y",
+          "-Y"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 154.625,
+            "upper_limit_mm": 154.75,
+            "lower_limit_mm": 154.5
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [
+          {
+            "qualifier": "REF",
+            "dimension_type": "wall_thickness",
+            "nominal_mm": 6.3
+          }
+        ],
+        "source_views": [
+          "section_view"
+        ]
+      },
+      {
+        "feature_id": "F03",
+        "feature_type": "internal_bore",
+        "name": "Central through bore",
+        "description": "Through bore extending along the X axis with inner diameter 142.13/142.00 mm and chamfered entry edges at both ends.",
+        "geometry": {
+          "diameter_mm": 142.065,
+          "inner_diameter_mm": 142.065,
+          "depth_condition": "THRU",
+          "axis_direction": "+X"
+        },
+        "access_directions": [
+          "+X",
+          "-X"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 142.065,
+            "upper_limit_mm": 142.13,
+            "lower_limit_mm": 142.0
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "section_view"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "relationship_id": "R01",
+        "from_feature_id": "F03",
+        "to_feature_id": "F02",
+        "relationship_type": "coaxial",
+        "detail": "The central bore and outer cylindrical surface share the tube axis, corroborated by the concentric end-view silhouettes."
+      },
+      {
+        "relationship_id": "R02",
+        "from_feature_id": "F01",
+        "to_feature_id": "F03",
+        "relationship_type": "intersecting",
+        "detail": "The detail identifies internal corner chamfers at both ends, corresponding to the chamfered bore entry edges described in the section."
+      }
+    ],
+    "datum_scheme": {
+      "datums": [],
+      "datum_hierarchy_notes": "No datum definitions or GD&T datum precedence are supplied."
+    },
+    "part_notes": "Material: SAE 1010-1026 STEEL. Material standard: SAE. Scale: 1:2. General tolerance: ASME Y14.5M-1994. Projection: third angle. Heat treatment: none specified. Coating: none specified. General notes: DEBURR: BREAK ALL SHARP EDGES 0.5 MAX.. TOLERANCE: METRIC DIMENSIONS & TOLERANCES GOVERN THE DESIGN. ENGLISH DIMENSIONS IF INCLUDED ARE FOR INFORMATION PURPOSES ONLY.. TOLERANCE: TOL.(UOS): X.X=\u00b10.5 X.XX=\u00b10.25 ANGLES=\u00b12\u00b0. Extraction notes: Drawing includes a part configuration table listing variants 080300 (DIM A: 93.67/93.17, PROCESS: NONE), 080301 (DIM A: 90.13/90.00, PROCESS: PS-119.0), and 080302 (DIM A: 90.13/90.00, PROCESS: PS-135.6, USED ON: 814500).",
+    "overall_complexity": "simple"
+  },
+  "component_specs": [],
+  "component_spec_links": [],
+  "assumptions": [
+    {
+      "assumption_id": "A01",
+      "text": "The outer cylinder, central bore, and end-chamfer pair remain separate singleton observations. The X detail marker locates a corner treatment on the tube; it does not make the chamfer and the complete outer cylindrical surface the same physical feature."
+    },
+    {
+      "assumption_id": "A02",
+      "text": "The explicit internal-corner identification in VIEW X, corroborated by the section bore's chamfered-entry description and the end-view inner-edge context, governs chamfer placement. The parent view's outer-corner wording is treated as an approximate description of the detail-marker location."
+    },
+    {
+      "assumption_id": "A03",
+      "text": "The section-view coordinate frame governs global orientation because it explicitly defines the tube axis and is consistent with the left-view viewing direction. The detail's differing axial notation is interpreted as local; no source geometry fields are rewritten."
+    },
+    {
+      "assumption_id": "A04",
+      "clarification_id": "C01",
+      "text": "The required tube length \u201cA\u201d is assumed to be 65 mm, derived from the drawing scale relative to the specified outer diameter of 154.75 mm."
+    }
+  ]
+}

@@ -1,0 +1,530 @@
+{
+  "analysis_id": "043840_merge_20261010T222629Z",
+  "part": {
+    "name": "TAPER PIN",
+    "drawing_number": "04384_",
+    "revision": "D",
+    "material": "MAT'L: STEEL LASALLE STRESS PROOF OPT'L: SAE 4140, 5132 OR 8640 (30-38 Rc) MIN YIELD 100,000 PSI OPT'L: ASTM A311 CLASS B GRADE 1141/1144 MIN YIELD 100,000 PSI",
+    "units": "inch"
+  },
+  "feature_graph": {
+    "part_envelope": {
+      "length_mm": 8.075,
+      "width_mm": 0.02,
+      "max_diameter_mm": 1.955
+    },
+    "coordinate_system": {
+      "primary_axis": "X",
+      "orientation_notes": "X follows the pin centerline and dominant turning axis. +X points toward the right end face and internal threaded bore; -X points toward the left external thread. The main view looks along -Z with Y vertical. The end-view plane is YZ. Datum A establishes the longitudinal axis but does not establish an axial zero.",
+      "datum_origin": "A"
+    },
+    "features": [
+      {
+        "feature_id": "F01",
+        "feature_type": "thread_relief",
+        "name": "Thread relief undercut",
+        "description": "Annular undercut/relief groove between the 1.250-12 thread and the tapered section.",
+        "geometry": {
+          "diameter_mm": 1.14,
+          "outer_diameter_mm": 1.136,
+          "width_mm": 0.259,
+          "radius_mm": 0.05,
+          "angle_deg": 21.65,
+          "position_description": "At junction between cylindrical shank and tapered body",
+          "axis_direction": "radial"
+        },
+        "instance_count": 1,
+        "access_directions": [
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 1.14,
+            "upper_limit_mm": 1.144,
+            "lower_limit_mm": 1.136
+          },
+          {
+            "dimension_type": "width",
+            "nominal_mm": 0.259,
+            "upper_limit_mm": 0.269,
+            "lower_limit_mm": 0.249
+          },
+          {
+            "dimension_type": "radius",
+            "nominal_mm": 0.05,
+            "upper_limit_mm": 0.06,
+            "lower_limit_mm": 0.04
+          },
+          {
+            "dimension_type": "angle_deg",
+            "nominal_mm": 21.65,
+            "angle_deg": 21.65
+          },
+          {
+            "dimension_type": "width",
+            "nominal_mm": 0.18,
+            "upper_limit_mm": 0.18,
+            "qualifier": "MAX."
+          },
+          {
+            "dimension_type": "radius",
+            "nominal_mm": 0.06,
+            "lower_limit_mm": 0.06,
+            "qualifier": "MIN."
+          },
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 1.136,
+            "lower_limit_mm": 1.136,
+            "qualifier": "MIN."
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "main_view",
+          "detail_optional_undercut"
+        ]
+      },
+      {
+        "feature_id": "F02",
+        "feature_type": "countersink",
+        "name": "Permissible lathe center hole",
+        "description": "Lathe center hole indicated by concentric dashed circles at the center axis of the pin end face with note 'CENTERS PERMISSIBLE'.",
+        "geometry": {
+          "depth_condition": "BLIND",
+          "position_description": "Centred on the primary longitudinal axis of the pin",
+          "axis_direction": "+X"
+        },
+        "access_directions": [
+          "+X",
+          "-X"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "end_view"
+        ]
+      },
+      {
+        "feature_id": "F03",
+        "feature_type": "chamfer",
+        "name": "Left end chamfer",
+        "description": "Outer entry chamfer at the left end of the 1.250-12 UNF external thread.",
+        "geometry": {
+          "width_mm": 0.06,
+          "angle_deg": 45.0,
+          "axis_direction": "-X"
+        },
+        "instance_count": 1,
+        "access_directions": [
+          "-X",
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "chamfer",
+            "nominal_mm": 0.06,
+            "angle_deg": 45.0
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "main_view"
+        ]
+      },
+      {
+        "feature_id": "F04",
+        "feature_type": "external_thread",
+        "name": "Left external thread",
+        "description": "UNF external thread on the left pin spindle with true position control relative to Datum A.",
+        "geometry": {
+          "diameter_mm": 1.25,
+          "length_mm": 1.85,
+          "thread_spec": "1.250\"-12 UNF-2A",
+          "thread_class": "2A",
+          "axis_direction": "-X"
+        },
+        "instance_count": 1,
+        "access_directions": [
+          "-X",
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "thread_spec",
+            "nominal_mm": 1.25,
+            "tolerance_class": "2A",
+            "qualifier": "FULL THREAD"
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "position",
+            "tolerance_value_mm": 0.01,
+            "material_condition": "MMC",
+            "datum_references": [
+              "A"
+            ],
+            "applied_to": "MAJOR DIAMETER"
+          }
+        ],
+        "callout_qualifiers": [
+          {
+            "qualifier": "REF",
+            "dimension_type": "length",
+            "nominal_mm": 1.85
+          }
+        ],
+        "source_views": [
+          "main_view"
+        ]
+      },
+      {
+        "feature_id": "F05",
+        "feature_type": "tapered_external",
+        "name": "External tapered shaft section",
+        "description": "Conical shaft section with 1.50 in/ft taper, specified gage diameter, and runout control to Datum A.",
+        "geometry": {
+          "diameter_mm": 1.388,
+          "outer_diameter_mm": 1.75,
+          "length_mm": 3.315,
+          "taper_ratio": "1.50\" TAPER/FT",
+          "axis_direction": "radial"
+        },
+        "instance_count": 1,
+        "surface_finish": {
+          "ra_value": 50.0,
+          "finish_symbol": "50"
+        },
+        "access_directions": [
+          "radial",
+          "-X"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 1.75,
+            "upper_limit_mm": 1.76,
+            "lower_limit_mm": 1.74,
+            "qualifier": "GAGE"
+          },
+          {
+            "dimension_type": "length",
+            "nominal_mm": 2.9,
+            "upper_limit_mm": 2.93,
+            "lower_limit_mm": 2.87
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "runout",
+            "tolerance_value_mm": 0.01,
+            "datum_references": [
+              "A"
+            ],
+            "applied_to": "Tapered surface"
+          }
+        ],
+        "callout_qualifiers": [
+          {
+            "qualifier": "REF",
+            "dimension_type": "diameter",
+            "nominal_mm": 1.388
+          },
+          {
+            "qualifier": "REF",
+            "dimension_type": "length",
+            "nominal_mm": 3.315
+          },
+          {
+            "qualifier": "REF",
+            "dimension_type": "position_x",
+            "nominal_mm": 5.165
+          }
+        ],
+        "source_views": [
+          "main_view"
+        ]
+      },
+      {
+        "feature_id": "F06",
+        "feature_type": "fillet",
+        "name": "Taper-to-body shoulder fillet",
+        "description": "Transition radius between the large end of the taper and the main cylinder body.",
+        "geometry": {
+          "radius_mm": 0.19,
+          "axis_direction": "radial"
+        },
+        "instance_count": 1,
+        "access_directions": [
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "radius",
+            "nominal_mm": 0.19,
+            "upper_limit_mm": 0.21,
+            "lower_limit_mm": 0.17
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "main_view"
+        ]
+      },
+      {
+        "feature_id": "F07",
+        "feature_type": "external_cylinder",
+        "name": "Main cylindrical body (Datum A)",
+        "description": "Large outer cylindrical journal of the pin, defining primary Datum A, including an indicated bond preparation area.",
+        "geometry": {
+          "diameter_mm": 1.95,
+          "outer_diameter_mm": 1.95,
+          "length_mm": 2.88,
+          "axis_direction": "radial"
+        },
+        "instance_count": 1,
+        "surface_finish": {
+          "ra_value": 125.0,
+          "finish_symbol": "125"
+        },
+        "access_directions": [
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 1.95,
+            "upper_limit_mm": 1.955,
+            "lower_limit_mm": 1.945
+          },
+          {
+            "dimension_type": "length",
+            "nominal_mm": 2.88,
+            "upper_limit_mm": 2.89,
+            "lower_limit_mm": 2.87
+          },
+          {
+            "dimension_type": "length",
+            "nominal_mm": 3.295,
+            "upper_limit_mm": 3.325,
+            "lower_limit_mm": 3.265
+          },
+          {
+            "dimension_type": "length",
+            "nominal_mm": 8.045,
+            "upper_limit_mm": 8.075,
+            "lower_limit_mm": 8.015
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "main_view"
+        ]
+      },
+      {
+        "feature_id": "F08",
+        "feature_type": "flat_face",
+        "name": "Right end face and chamfers",
+        "description": "Flat face at the right extremity of the pin with green color coding note and 3X edge chamfers.",
+        "geometry": {
+          "width_mm": 0.02,
+          "angle_deg": 45.0,
+          "axis_direction": "+X"
+        },
+        "instance_count": 1,
+        "access_directions": [
+          "+X"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "chamfer",
+            "nominal_mm": 0.02,
+            "qualifier": "3X",
+            "angle_deg": 45.0
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [
+          {
+            "qualifier": "3X",
+            "dimension_type": "chamfer",
+            "nominal_mm": 0.02
+          }
+        ],
+        "source_views": [
+          "main_view"
+        ]
+      },
+      {
+        "feature_id": "F09",
+        "feature_type": "internal_thread",
+        "name": "Right coaxial threaded bore",
+        "description": "Blind internal hole tapped from the right face, consisting of a .578 tap drill and .625-18 UNF-2B thread.",
+        "geometry": {
+          "inner_diameter_mm": 0.625,
+          "depth_mm": 1.0,
+          "depth_condition": "BLIND",
+          "thread_spec": ".625\"-18 UNF-2B",
+          "thread_class": "2B",
+          "hole_count": 1,
+          "axis_direction": "+X"
+        },
+        "instance_count": 1,
+        "access_directions": [
+          "+X"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "depth",
+            "nominal_mm": 1.25,
+            "plus_mm": 0.06,
+            "minus_mm": 0.06
+          },
+          {
+            "dimension_type": "thread_spec",
+            "nominal_mm": 0.625,
+            "tolerance_class": "2B",
+            "qualifier": "MINIMUM"
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "main_view"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "relationship_id": "R01",
+        "from_feature_id": "F04",
+        "to_feature_id": "F07",
+        "relationship_type": "datum_referenced",
+        "detail": "The external-thread major diameter has a position control referencing Datum A."
+      },
+      {
+        "relationship_id": "R02",
+        "from_feature_id": "F05",
+        "to_feature_id": "F07",
+        "relationship_type": "datum_referenced",
+        "detail": "The tapered surface has a runout control referencing Datum A."
+      },
+      {
+        "relationship_id": "R03",
+        "from_feature_id": "F05",
+        "to_feature_id": "F07",
+        "relationship_type": "concentric",
+        "detail": "The taper is rotationally controlled about the cylindrical Datum A axis by the runout requirement."
+      },
+      {
+        "relationship_id": "R04",
+        "from_feature_id": "F04",
+        "to_feature_id": "F07",
+        "relationship_type": "coaxial",
+        "detail": "The external thread and main cylindrical body share the longitudinal pin centerline."
+      },
+      {
+        "relationship_id": "R05",
+        "from_feature_id": "F01",
+        "to_feature_id": "F04",
+        "relationship_type": "coaxial",
+        "detail": "The annular thread relief lies at the end of the external-thread segment about the same longitudinal axis."
+      },
+      {
+        "relationship_id": "R06",
+        "from_feature_id": "F03",
+        "to_feature_id": "F04",
+        "relationship_type": "coaxial",
+        "detail": "The left entry chamfer surrounds the end of the external thread."
+      },
+      {
+        "relationship_id": "R07",
+        "from_feature_id": "F06",
+        "to_feature_id": "F05",
+        "relationship_type": "coaxial",
+        "detail": "The circumferential shoulder fillet blends the large end of the taper into the cylindrical body about the pin centerline."
+      },
+      {
+        "relationship_id": "R08",
+        "from_feature_id": "F09",
+        "to_feature_id": "F07",
+        "relationship_type": "coaxial",
+        "detail": "The right threaded bore is explicitly described as coaxial with the pin body."
+      },
+      {
+        "relationship_id": "R09",
+        "from_feature_id": "F02",
+        "to_feature_id": "F07",
+        "relationship_type": "coaxial",
+        "detail": "The permissible center hole is centered on the primary longitudinal pin axis."
+      },
+      {
+        "relationship_id": "R10",
+        "from_feature_id": "F08",
+        "to_feature_id": "F07",
+        "relationship_type": "perpendicular",
+        "detail": "The right terminal flat face is normal to the longitudinal cylinder axis; this is a geometric relationship, not an extracted perpendicularity tolerance."
+      },
+      {
+        "relationship_id": "R11",
+        "from_feature_id": "F09",
+        "to_feature_id": "F08",
+        "relationship_type": "intersecting",
+        "detail": "The blind threaded bore opens through the right terminal face."
+      }
+    ],
+    "datum_scheme": {
+      "datums": [
+        {
+          "datum_letter": "A",
+          "feature_id": "F07",
+          "surface_type": "cylindrical",
+          "description": "Outer cylindrical surface of the \u00d81.955/1.945 main body"
+        }
+      ],
+      "datum_hierarchy_notes": "A is the sole defined datum and establishes the primary longitudinal axis. The external-thread position control and tapered-surface runout control both reference A. No secondary or tertiary datum is defined."
+    },
+    "part_notes": "Material: MAT'L: STEEL LASALLE STRESS PROOF OPT'L: SAE 4140, 5132 OR 8640 (30-38 Rc) MIN YIELD 100,000 PSI OPT'L: ASTM A311 CLASS B GRADE 1141/1144 MIN YIELD 100,000 PSI. Material standard: ASTM A311. Scale: FULL. General tolerance: ASME Y14.5M-1994. Projection: third angle. Heat treatment: none specified. Coating: PHOSPHATE COAT PER PS-119.0. General notes: INSPECTION: * 1.5\"/FT. TAPER-MUST SHOW 60% MIN. SATISFACTORY AREA OF CONTACT PROPERLY DISTRIBUTED WHEN BLUED IN MASTER GAGE REF. SAEJ491a. FINISH: PHOSPHATE COAT PER PS-119.0. DEBURR: BREAK ALL SHARP EDGES .020 MAX.. TOLERANCE: ENGLISH DIMENSIONS & TOLERANCES GOVERN THE DESIGN. METRIC DIMENSIONS IF INCLUDED ARE FOR INFORMATION PURPOSES ONLY.. PROCESS: PART NO. 043840 PROCESS PER AS SHOWN; PART NO. 043841 PROCESS PER PS-135.18 *. ENG REF: SIMILAR TO 057300. Extraction notes: Drawing number is shown with a dash/underscore suffix (04384_). Tolerance block defines .XX = \u00b1.020, .XXX = \u00b1.010, ANGLES = \u00b12\u00b0.",
+    "overall_complexity": "moderate"
+  },
+  "component_specs": [],
+  "component_spec_links": [],
+  "assumptions": [
+    {
+      "assumption_id": "A01",
+      "text": "Grouped main_view:F3 with detail_optional_undercut:F1 using the explicit optional-undercut detail reference. They describe alternative implementations of the same relief location, not two separate grooves."
+    },
+    {
+      "assumption_id": "A02",
+      "text": "Selected main_view:F3 as canonical and as the default production design because it provides the main-view toleranced relief definition. The optional-detail requirements are alternative-design requirements and must not be imposed cumulatively on the main-view relief."
+    },
+    {
+      "assumption_id": "A03",
+      "text": "Retained end_view:F1 as a standalone permissible manufacturing-center feature rather than merging it with main_view:F8. The end view does not identify which end carries the permissible center, and it does not establish identity with the threaded bore. No mandatory center-hole dimensions are requested because centers are expressly permissible."
+    },
+    {
+      "assumption_id": "A04",
+      "text": "The extraction notes explicitly identify inch dimensions stored directly in fields named *_mm. These source numbers are preserved without conversion during merging and require inch-aware downstream handling."
+    },
+    {
+      "assumption_id": "A05",
+      "text": "Retained main_view:F7 as the supplied compound face-and-chamfer observation. Its face count does not override the explicit 3X chamfer qualifier, and no spatial chamfer pattern is inferred."
+    },
+    {
+      "assumption_id": "A06",
+      "text": "No separate usable-thread-length clarification is raised for main_view:F2: FULL THREAD identifies the threaded segment, and its axial extent is constrained by the extracted segment and relief dimensions."
+    },
+    {
+      "assumption_id": "A07",
+      "clarification_id": "C01",
+      "text": "The bond preparation is governed by the callout '* BOND PREP THIS AREA ALL AROUND' applied circumferentially over the 2.870\u20132.890 inch axial length of the \u00d81.955\u20131.945 cylinder, conforming to the indicated 125 microinch surface finish."
+    }
+  ]
+}

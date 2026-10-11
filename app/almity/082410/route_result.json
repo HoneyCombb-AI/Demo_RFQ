@@ -1,0 +1,319 @@
+{
+  "analysis_id": "082410_merge_20261010T225439Z",
+  "source_feature_graph_id": "082410_merge_20261010T225439Z",
+  "quantity": 100,
+  "part_family": "turned",
+  "base_geometry": "rotational",
+  "stock": {
+    "form": "tube",
+    "diameter_mm": 165.5,
+    "bore_diameter_mm": 153.5,
+    "length_mm": 110.0,
+    "machining_allowance_mm": 0.2
+  },
+  "operations": [
+    {
+      "sequence": 1,
+      "name": "Saw \u2013 Tube Blanks",
+      "machine_family": "saw",
+      "setup_note": "Support the unhardened precision seamless tube in a tube-compatible clamp and use a length stop to produce individual blanks with facing allowance at both ends.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "setup_time_min": 5.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "saw_cut",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "saw_cut",
+            "cut_diameter_mm": 165.5,
+            "bore_diameter_mm": 153.5,
+            "cut_count": 1
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 2,
+      "name": "CNC Turn \u2013 First End",
+      "machine_family": "cnc_lathe",
+      "setup_note": "Hold the plain opposite end of the unhardened tube in bored, full-contact soft jaws with low clamping force and clearance behind the through bore; face the taper/land end and finish-size the bore before finishing the accessible OD profile. Produce the taper, end land and first ID chamfer in this loading, incorporating the general external edge breaks into the profile.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "setup_time_min": 20.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "face_turn",
+          "target_feature_ids": [
+            "F04"
+          ],
+          "inputs": {
+            "kind": "radial_turn",
+            "start_diameter_mm": 165.5,
+            "finish_diameter_mm": 153.5,
+            "groove_count": 1,
+            "total_stock_mm": 3.035
+          }
+        },
+        {
+          "sequence": 2,
+          "operation_type": "finish_bore_id",
+          "target_feature_ids": [
+            "F05"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 153.5,
+            "finish_diameter_mm": 153.885,
+            "cut_length_mm": 103.93
+          }
+        },
+        {
+          "sequence": 3,
+          "operation_type": "finish_turn_od",
+          "target_feature_ids": [
+            "F04"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 165.5,
+            "finish_diameter_mm": 165.1,
+            "cut_length_mm": 42.44
+          }
+        },
+        {
+          "sequence": 4,
+          "operation_type": "turn_taper",
+          "target_feature_ids": [
+            "F01"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 165.5,
+            "finish_diameter_mm": 164.25,
+            "cut_length_mm": 12.7,
+            "taper_included_angle_deg": 3.8
+          }
+        },
+        {
+          "sequence": 5,
+          "operation_type": "finish_turn_od",
+          "target_feature_ids": [
+            "F02"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 165.5,
+            "finish_diameter_mm": 164.25,
+            "cut_length_mm": 6.35
+          }
+        },
+        {
+          "sequence": 6,
+          "operation_type": "chamfer_turn",
+          "target_feature_ids": [
+            "F03"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 153.885,
+            "finish_diameter_mm": 156.385,
+            "cut_length_mm": 1.25
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 3,
+      "name": "CNC Turn \u2013 Second End",
+      "machine_family": "cnc_lathe",
+      "setup_note": "Reverse the part and locate its finished straight OD in full-contact soft jaws, using the first faced end as the axial shop reference and limiting clamping force to avoid sleeve distortion. Face to final overall length, finish only the previously gripped body segment, and cut the second ID chamfer with the remaining external edge breaks included in the profile.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "setup_time_min": 20.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "face_turn",
+          "target_feature_ids": [
+            "F04"
+          ],
+          "inputs": {
+            "kind": "radial_turn",
+            "start_diameter_mm": 165.5,
+            "finish_diameter_mm": 153.885,
+            "groove_count": 1,
+            "total_stock_mm": 3.035
+          }
+        },
+        {
+          "sequence": 2,
+          "operation_type": "finish_turn_od",
+          "target_feature_ids": [
+            "F04"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 165.5,
+            "finish_diameter_mm": 165.1,
+            "cut_length_mm": 42.44
+          }
+        },
+        {
+          "sequence": 3,
+          "operation_type": "chamfer_turn",
+          "target_feature_ids": [
+            "F03"
+          ],
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 153.885,
+            "finish_diameter_mm": 156.385,
+            "cut_length_mm": 1.25
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 4,
+      "name": "Phosphate \u2013 PS-119.0",
+      "machine_family": "plating_line",
+      "setup_note": "Load fully machined parts on supports that expose the OD, bore and both ends to the in-house phosphate process without damaging finished surfaces. Split the 100-piece order into capacity-limited rack or basket loads, keeping preparation, rinsing and any specification-required post-treatment within this line operation.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "setup_time_min": 10.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "clean_degrease",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "manual",
+            "complexity": "low",
+            "estimated_time_min": 1.0
+          }
+        },
+        {
+          "sequence": 2,
+          "operation_type": "phosphate",
+          "target_feature_ids": [
+            "F01",
+            "F02",
+            "F03",
+            "F04",
+            "F05"
+          ],
+          "inputs": {
+            "kind": "surface_treat",
+            "treated_area_mm2": 123600.0,
+            "batch_size_parts": 100,
+            "requires_bake": false
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 5,
+      "name": "Final Shop-Floor Inspection",
+      "machine_family": "inspection",
+      "setup_note": "Present coated, temperature-stabilized parts at the shop-floor gauge station for SPC-sampled bore, OD and length checks using dedicated plug, snap/ring and length gauges. Include visual confirmation of both ID chamfers, edge breaks and phosphate coverage in this single final gate.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "setup_time_min": 5.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "manual_inspect",
+          "target_feature_ids": [],
+          "inputs": {
+            "kind": "inspection",
+            "dimension_count": 6,
+            "gdt_count": 0,
+            "sampling_rate_pct": 100.0,
+            "requires_fixture": false
+          }
+        }
+      ]
+    }
+  ],
+  "clarifications": [
+    {
+      "clarification_id": "C01",
+      "question": "Do the Detail Z outside-diameter limits of 164.72\u2013165.48 mm also apply to the full straight cylindrical body F04?",
+      "blocks": [
+        2,
+        3,
+        5
+      ],
+      "suggested_default": "Apply the 165.1 mm nominal diameter and 164.72\u2013165.48 mm limits continuously to the straight body, following the supplied feature-graph assumption.",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C02",
+      "question": "Can you supply the applicable revision of phosphate specification PS-119.0?",
+      "blocks": [
+        4,
+        5
+      ],
+      "suggested_default": "Plan an in-house phosphate conversion-coating operation, but hold coating production release until PS-119.0 is available.",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C03",
+      "question": "Do the drawing's dimensional limits apply after phosphating?",
+      "blocks": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "suggested_default": "Treat the limits as final coated-part requirements and establish machining targets using the dimensional effect specified by PS-119.0.",
+      "priority": "medium"
+    }
+  ],
+  "assumptions": [
+    {
+      "assumption_id": "A01",
+      "text": "Precision seamless tube with nominal OD 165.5 mm and ID 153.5 mm is assumed commercially obtainable in the permitted grade range and in an unhardened, scale-free condition. Procurement must confirm availability and tube tolerances before release; these dimensions are a provisional near-net stock selection, not a verified catalogue size."
+    },
+    {
+      "assumption_id": "A02",
+      "text": "The straight body F04 is provisionally assigned the 165.1 mm nominal OD and Detail Z diameter limits, consistent with the supplied assumption. The 110 mm blank length provides approximately 6 mm total facing allowance."
+    },
+    {
+      "assumption_id": "A03",
+      "text": "The single taper and cylindrical land occupy the first machined end. F03 represents two physical ID chamfers, with one produced in each of exactly two lathe setups; no drawing datum letters are introduced."
+    },
+    {
+      "assumption_id": "A04",
+      "text": "The taper is controlled by its endpoint diameters and axial span. The 3.8-degree REF annotation is treated as non-controlling rather than an additional independent machining requirement."
+    },
+    {
+      "assumption_id": "A05",
+      "text": "Near-net, scale-free tube requires light finish cuts only: no major-OD roughing, drilling from solid or rough boring is routed. The through bore is finished in the first loading before final OD cuts, and the second loading finishes only the body segment previously covered by the jaws."
+    },
+    {
+      "assumption_id": "A06",
+      "text": "Center drilling and tailstock support are unnecessary for this short, hollow sleeve. Part-off is omitted because individual blanks are saw-cut; grooving, threading, spotting, pilot/full/peck drilling, reaming, tapping, counterboring and spotfacing are omitted because no corresponding features exist. The ID chamfers are turned rather than countersunk."
+    },
+    {
+      "assumption_id": "A07",
+      "text": "All accessible sharp edges are broken within the two lathe profiles to the drawing's 0.5 mm maximum, leaving no residual edges requiring a separate bench operation. Cleaning is integrated into the coating line; no VMC, heat-treatment or grinding operation is required by the drawing."
+    },
+    {
+      "assumption_id": "A08",
+      "text": "Phosphate provisionally covers all surfaces, including the bore, with no masking because no untreated areas, threads or H7-or-tighter fit are specified. Masking and unmasking are therefore omitted pending PS-119.0; no standalone cure or hydrogen-relief bake is justified for the specified unhardened low-carbon steel."
+    },
+    {
+      "assumption_id": "A09",
+      "text": "Coating inspection is consolidated into the single final manual gauge gate. No intermediate inspection, CMM layout, coating-specific destructive test or sampled crush/functional test is added without an explicit drawing or PS-119.0 requirement."
+    }
+  ]
+}

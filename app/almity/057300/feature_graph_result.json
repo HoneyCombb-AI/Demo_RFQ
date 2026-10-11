@@ -1,0 +1,479 @@
+{
+  "analysis_id": "057300_merge_20261010T223020Z",
+  "part": {
+    "name": "TAPERED PIN",
+    "drawing_number": "057300",
+    "revision": "J",
+    "material": "MAT'L: STEEL LASALLE STRESS PROOF OPT'L: SAE 4140 (30-38 Rc) MIN YIELD 100,000 PSI OPT'L: ASTM A311 CLASS B GRADE 1141/1144 MIN YIELD 100,000 PSI",
+    "units": "inch"
+  },
+  "feature_graph": {
+    "part_envelope": {
+      "length_mm": 8.06,
+      "max_diameter_mm": 2.13
+    },
+    "coordinate_system": {
+      "primary_axis": "X",
+      "orientation_notes": "X follows the pin's axis of revolution, with the external threaded stud at the -X end and the main cylindrical body and internal threaded opening at the +X end. In the front and detail views, Y is vertical and Z is into the page; in the end view, Y is vertical and Z is horizontal. Datum A establishes the axis and radial origin, but no axial zero or clocking datum is specified.",
+      "datum_origin": "A"
+    },
+    "features": [
+      {
+        "feature_id": "F01",
+        "feature_type": "thread_relief",
+        "name": "Thread relief groove",
+        "description": "Relief groove / neck between the external thread and the tapered body with corner radius and 21.65 deg transition angle.",
+        "geometry": {
+          "diameter_mm": 1.14,
+          "inner_diameter_mm": 1.14,
+          "width_mm": 0.259,
+          "radius_mm": 0.05,
+          "angle_deg": 21.65,
+          "axis_direction": "+X"
+        },
+        "instance_count": 1,
+        "access_directions": [
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 1.14,
+            "upper_limit_mm": 1.144,
+            "lower_limit_mm": 1.136
+          },
+          {
+            "dimension_type": "width",
+            "nominal_mm": 0.259,
+            "upper_limit_mm": 0.269,
+            "lower_limit_mm": 0.249
+          },
+          {
+            "dimension_type": "radius",
+            "nominal_mm": 0.05,
+            "upper_limit_mm": 0.06,
+            "lower_limit_mm": 0.04
+          },
+          {
+            "dimension_type": "angle_deg",
+            "nominal_mm": 21.65,
+            "angle_deg": 21.65
+          },
+          {
+            "dimension_type": "width",
+            "nominal_mm": 0.18,
+            "upper_limit_mm": 0.18,
+            "qualifier": "MAX."
+          },
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 1.136,
+            "lower_limit_mm": 1.136,
+            "qualifier": "MIN."
+          },
+          {
+            "dimension_type": "radius",
+            "nominal_mm": 0.06,
+            "lower_limit_mm": 0.06,
+            "qualifier": "MIN."
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "front_view",
+          "detail_view_optional_undercut"
+        ]
+      },
+      {
+        "feature_id": "F02",
+        "feature_type": "flat_face",
+        "name": "Pin end face",
+        "description": "Transverse circular end face of the tapered pin showing concentric feature outlines, annotated with CENTERS PERMISSIBLE allowing lathe center drilling.",
+        "geometry": {
+          "position_description": "End face normal to the pin axis",
+          "axis_direction": "+X"
+        },
+        "instance_count": 1,
+        "access_directions": [
+          "+X"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "end_view"
+        ]
+      },
+      {
+        "feature_id": "F03",
+        "feature_type": "external_thread",
+        "name": "External thread 1.250-12 UNF-2A",
+        "description": "External threaded stud on the left end with entry chamfer and major diameter position tolerance to Datum A.",
+        "geometry": {
+          "outer_diameter_mm": 1.25,
+          "length_mm": 1.855,
+          "thread_spec": "1.250\"-12 UNF-2A",
+          "thread_class": "2A",
+          "axis_direction": "+X"
+        },
+        "instance_count": 1,
+        "access_directions": [
+          "-X",
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "thread_spec",
+            "nominal_mm": 1.25,
+            "tolerance_class": "2A",
+            "qualifier": "FULL THREAD"
+          },
+          {
+            "dimension_type": "chamfer",
+            "nominal_mm": 0.07,
+            "angle_deg": 45.0
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "position",
+            "tolerance_value_mm": 0.01,
+            "material_condition": "MMC",
+            "datum_references": [
+              "A"
+            ],
+            "applied_to": "MAJOR DIAMETER"
+          }
+        ],
+        "callout_qualifiers": [
+          {
+            "qualifier": "REF",
+            "dimension_type": "length",
+            "nominal_mm": 1.855
+          }
+        ],
+        "source_views": [
+          "front_view"
+        ]
+      },
+      {
+        "feature_id": "F04",
+        "feature_type": "tapered_external",
+        "name": "Tapered body",
+        "description": "External conical section with 1.50 in/ft taper, circular runout tolerance to Datum A, and surface finish 100 Ra.",
+        "geometry": {
+          "diameter_mm": 1.387,
+          "outer_diameter_mm": 1.75,
+          "length_mm": 3.315,
+          "taper_ratio": "1.50\"/FT",
+          "axis_direction": "+X"
+        },
+        "instance_count": 1,
+        "surface_finish": {
+          "ra_value": 100.0,
+          "finish_symbol": "100"
+        },
+        "access_directions": [
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 1.75,
+            "upper_limit_mm": 1.76,
+            "lower_limit_mm": 1.74,
+            "qualifier": "GAGE"
+          },
+          {
+            "dimension_type": "length",
+            "nominal_mm": 2.9,
+            "upper_limit_mm": 2.93,
+            "lower_limit_mm": 2.87
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "runout",
+            "tolerance_value_mm": 0.01,
+            "datum_references": [
+              "A"
+            ],
+            "applied_to": "Tapered surface"
+          }
+        ],
+        "callout_qualifiers": [
+          {
+            "qualifier": "*",
+            "dimension_type": "taper",
+            "nominal_mm": 1.5
+          },
+          {
+            "qualifier": "REF",
+            "dimension_type": "diameter",
+            "nominal_mm": 1.387
+          },
+          {
+            "qualifier": "REF",
+            "dimension_type": "length",
+            "nominal_mm": 3.315
+          }
+        ],
+        "source_views": [
+          "front_view"
+        ]
+      },
+      {
+        "feature_id": "F05",
+        "feature_type": "fillet",
+        "name": "Shoulder transition fillet",
+        "description": "Transition radius between the tapered body and the large cylindrical body shoulder.",
+        "geometry": {
+          "radius_mm": 0.19
+        },
+        "instance_count": 1,
+        "access_directions": [
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "radius",
+            "nominal_mm": 0.19,
+            "upper_limit_mm": 0.21,
+            "lower_limit_mm": 0.17
+          },
+          {
+            "dimension_type": "position_x",
+            "nominal_mm": 3.295,
+            "upper_limit_mm": 3.325,
+            "lower_limit_mm": 3.265
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [
+          {
+            "qualifier": "REF",
+            "dimension_type": "position_x",
+            "nominal_mm": 5.17
+          }
+        ],
+        "source_views": [
+          "front_view"
+        ]
+      },
+      {
+        "feature_id": "F06",
+        "feature_type": "external_cylinder",
+        "name": "Main cylindrical body (Datum A)",
+        "description": "Large outer cylindrical diameter on the right end forming Datum A, with surface finish 125 Ra and end chamfer.",
+        "geometry": {
+          "diameter_mm": 2.125,
+          "outer_diameter_mm": 2.125,
+          "length_mm": 2.88,
+          "axis_direction": "+X"
+        },
+        "instance_count": 1,
+        "surface_finish": {
+          "ra_value": 125.0,
+          "finish_symbol": "125"
+        },
+        "access_directions": [
+          "+X",
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 2.125,
+            "upper_limit_mm": 2.13,
+            "lower_limit_mm": 2.12
+          },
+          {
+            "dimension_type": "length",
+            "nominal_mm": 2.88,
+            "upper_limit_mm": 2.89,
+            "lower_limit_mm": 2.87
+          },
+          {
+            "dimension_type": "length",
+            "nominal_mm": 8.05,
+            "upper_limit_mm": 8.06,
+            "lower_limit_mm": 8.04
+          },
+          {
+            "dimension_type": "chamfer",
+            "nominal_mm": 0.02,
+            "qualifier": "3X",
+            "angle_deg": 45.0
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [
+          {
+            "qualifier": "3X",
+            "dimension_type": "chamfer",
+            "nominal_mm": 0.02
+          }
+        ],
+        "source_views": [
+          "front_view"
+        ]
+      },
+      {
+        "feature_id": "F07",
+        "feature_type": "internal_thread",
+        "name": "Internal threaded hole .625-18 UNF-2B",
+        "description": "Blind threaded hole drilled and tapped coaxially into the right end face of the pin.",
+        "geometry": {
+          "inner_diameter_mm": 0.625,
+          "depth_mm": 1.0,
+          "depth_condition": "BLIND",
+          "thread_spec": ".625\"-18 UNF-2B",
+          "thread_class": "2B",
+          "hole_count": 1,
+          "axis_direction": "+X"
+        },
+        "instance_count": 1,
+        "access_directions": [
+          "+X"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "depth",
+            "nominal_mm": 1.25,
+            "plus_mm": 0.06,
+            "minus_mm": 0.06
+          },
+          {
+            "dimension_type": "thread_spec",
+            "nominal_mm": 0.625,
+            "tolerance_class": "2B",
+            "qualifier": "DEEP MINIMUM"
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "front_view"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "relationship_id": "R01",
+        "from_feature_id": "F03",
+        "to_feature_id": "F06",
+        "relationship_type": "coaxial",
+        "detail": "The external thread and datum cylinder share the pin's nominal X-axis centerline."
+      },
+      {
+        "relationship_id": "R02",
+        "from_feature_id": "F01",
+        "to_feature_id": "F06",
+        "relationship_type": "coaxial",
+        "detail": "The circumferential thread relief shares the pin axis with the datum cylinder."
+      },
+      {
+        "relationship_id": "R03",
+        "from_feature_id": "F04",
+        "to_feature_id": "F06",
+        "relationship_type": "coaxial",
+        "detail": "The tapered body and main cylindrical body share the nominal axis of revolution."
+      },
+      {
+        "relationship_id": "R04",
+        "from_feature_id": "F07",
+        "to_feature_id": "F06",
+        "relationship_type": "coaxial",
+        "detail": "The blind internal threaded hole is explicitly described as coaxial with the pin."
+      },
+      {
+        "relationship_id": "R05",
+        "from_feature_id": "F03",
+        "to_feature_id": "F06",
+        "relationship_type": "datum_referenced",
+        "detail": "The position control on the external thread major diameter references datum A, established by the main cylindrical body."
+      },
+      {
+        "relationship_id": "R06",
+        "from_feature_id": "F04",
+        "to_feature_id": "F06",
+        "relationship_type": "datum_referenced",
+        "detail": "The tapered-surface runout control references datum A."
+      },
+      {
+        "relationship_id": "R07",
+        "from_feature_id": "F04",
+        "to_feature_id": "F06",
+        "relationship_type": "concentric",
+        "detail": "The tapered-surface runout control relates the taper to the axis established by datum A; this edge does not imply a separate concentricity tolerance."
+      },
+      {
+        "relationship_id": "R08",
+        "from_feature_id": "F05",
+        "to_feature_id": "F04",
+        "relationship_type": "intersecting",
+        "detail": "The shoulder transition fillet joins the tapered body at their shared boundary."
+      },
+      {
+        "relationship_id": "R09",
+        "from_feature_id": "F05",
+        "to_feature_id": "F06",
+        "relationship_type": "intersecting",
+        "detail": "The shoulder transition fillet joins the main cylindrical-body shoulder."
+      },
+      {
+        "relationship_id": "R10",
+        "from_feature_id": "F07",
+        "to_feature_id": "F02",
+        "relationship_type": "intersecting",
+        "detail": "The internal threaded hole opens through the transverse right-end face, identified by the matching +X access direction."
+      },
+      {
+        "relationship_id": "R11",
+        "from_feature_id": "F02",
+        "to_feature_id": "F06",
+        "relationship_type": "perpendicular",
+        "detail": "The end-face plane is explicitly normal to the pin axis established by the datum cylinder. This expresses geometric orientation, not an additional GD&T control."
+      }
+    ],
+    "datum_scheme": {
+      "datums": [
+        {
+          "datum_letter": "A",
+          "feature_id": "F06",
+          "surface_type": "cylindrical",
+          "description": "Outer cylindrical surface Ø 2.130 / 2.120 on right section of pin"
+        }
+      ],
+      "datum_hierarchy_notes": "A is the sole defined datum and establishes the cylindrical datum axis. Both the external-thread position control and tapered-surface runout control reference A. No secondary or tertiary datum is specified."
+    },
+    "part_notes": "Material: MAT'L: STEEL LASALLE STRESS PROOF OPT'L: SAE 4140 (30-38 Rc) MIN YIELD 100,000 PSI OPT'L: ASTM A311 CLASS B GRADE 1141/1144 MIN YIELD 100,000 PSI. Material standard: ASTM A311. Scale: 1:2. General tolerance: ASME Y14.5M-1994. Projection: third angle. Heat treatment: 30-38 Rc. Coating: PHOSPHATE COAT PER PS-119.0. General notes: FINISH: PHOSPHATE COAT PER PS-119.0. INSPECTION: * 1.5\"/FT. TAPER-MUST SHOW 60% MIN. SATISFACTORY AREA OF CONTACT PROPERLY DISTRIBUTED WHEN BLUED IN MASTER GAGE REF. SAEJ491a. DEBURR: BREAK ALL SHARP EDGES .02 MAX. Testing: Master gage bluing contact test per SAEJ491a MUST SHOW 60% MIN. SATISFACTORY AREA OF CONTACT PROPERLY DISTRIBUTED WHEN BLUED IN MASTER GAGE (1.5\"/FT. TAPER, 60% MIN. AREA OF CONTACT).",
+    "overall_complexity": "moderate"
+  },
+  "component_specs": [],
+  "component_spec_links": [],
+  "clarifications": [],
+  "assumptions": [
+    {
+      "assumption_id": "A01",
+      "text": "The explicit detail reference on front_view:F2 identifies detail_view_optional_undercut:F1 as an alternative configuration of the same shoulder-relief zone, not an additional physical groove."
+    },
+    {
+      "assumption_id": "A02",
+      "text": "front_view:F2 is canonical because it defines the baseline relief profile and its axial context. The front-view configuration is the default production interpretation; the optional detail remains a permitted alternative. Callouts from these configurations must not be enforced cumulatively."
+    },
+    {
+      "assumption_id": "A03",
+      "text": "end_view:F1 remains a singleton because the front view contains no separately extracted flat-face observation. Its +X access direction identifies it as the right-end face containing the internal threaded opening."
+    },
+    {
+      "assumption_id": "A04",
+      "text": "The explicit inch-unit note governs the dimensional values despite Stage 1 field names ending in _mm. Values are preserved unchanged by this merge and must not be treated downstream as already normalized millimetres."
+    },
+    {
+      "assumption_id": "A05",
+      "text": "Unqualified surface-finish symbols are interpreted as Ra in microinches under the inch-based drawing convention. The Stage 1 surface_finish_ra values are not assumed to have already been converted to micrometres."
+    }
+  ]
+}

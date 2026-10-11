@@ -1,0 +1,311 @@
+{
+  "analysis_id": "MB09B700520_merge_20261010T230433Z",
+  "part": {
+    "name": "BUSHING",
+    "drawing_number": "MB09B700520",
+    "revision": "D",
+    "material": "MAKE FROM BUSHING: 839310",
+    "units": "mm"
+  },
+  "feature_graph": {
+    "part_envelope": {
+      "length_mm": 141.5,
+      "width_mm": 28.96,
+      "max_diameter_mm": 70.05
+    },
+    "coordinate_system": {
+      "primary_axis": "X",
+      "orientation_notes": "Use the Section A-A frame for the bar pin: X follows its longitudinal and turning axis, Y follows the transverse mounting-hole axes, and Z is the stated cut normal. The front view assigns Z to its central/depth axis and describes the A-A viewing direction along -X. These view conventions do not establish a consistent common frame, so no cross-view axis registration is assumed."
+    },
+    "features": [
+      {
+        "feature_id": "F01",
+        "feature_type": "flat_face",
+        "name": "Opposed vertical flats",
+        "description": "Pair of parallel vertical flat faces bounding the central opening.",
+        "geometry": {
+          "width_mm": 28.705,
+          "position_description": "Centered symmetrically about the vertical center axis Y"
+        },
+        "instance_count": 2,
+        "access_directions": [
+          "+Z",
+          "-Z"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "width",
+            "nominal_mm": 28.705,
+            "upper_limit_mm": 28.96,
+            "lower_limit_mm": 28.45,
+            "qualifier": "2X"
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "front_view"
+        ]
+      },
+      {
+        "feature_id": "F02",
+        "feature_type": "internal_bore",
+        "name": "Interrupted cylindrical bore",
+        "description": "Internal cylindrical surface interrupted by the two opposed vertical flats.",
+        "geometry": {
+          "diameter_mm": 42.25,
+          "hole_count": 2,
+          "position_description": "Concentric with the central Z axis",
+          "axis_direction": "+Z"
+        },
+        "instance_count": 2,
+        "access_directions": [
+          "+Z",
+          "-Z"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "callout_qualifiers": [
+          {
+            "qualifier": "2X",
+            "dimension_type": "diameter",
+            "nominal_mm": 42.25
+          }
+        ],
+        "source_views": [
+          "front_view"
+        ]
+      },
+      {
+        "feature_id": "F03",
+        "feature_type": "part_body",
+        "name": "Bar pin body",
+        "description": "Main forged/machined bar pin body with turned ends and transverse mounting holes.",
+        "geometry": {
+          "length_mm": 141.5,
+          "axis_direction": "+X"
+        },
+        "instance_count": 1,
+        "access_directions": [
+          "+X",
+          "-X",
+          "+Y",
+          "-Y"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "section_aa"
+        ]
+      },
+      {
+        "feature_id": "F04",
+        "feature_type": "external_cylinder",
+        "name": "Bar pin central contour boss",
+        "description": "Enlarged central cylindrical/spherical journal on the bar pin, ground to finish.",
+        "geometry": {
+          "diameter_mm": 70.015,
+          "outer_diameter_mm": 70.015,
+          "axis_direction": "+X"
+        },
+        "instance_count": 1,
+        "access_directions": [
+          "radial",
+          "+Y",
+          "-Y"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 70.015,
+            "upper_limit_mm": 70.05,
+            "lower_limit_mm": 69.98
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "section_aa"
+        ]
+      },
+      {
+        "feature_id": "F05",
+        "feature_type": "through_hole",
+        "name": "Transverse mounting holes",
+        "description": "Two transverse through holes drilled through the ends of the bar pin.",
+        "geometry": {
+          "diameter_mm": 19.725,
+          "depth_condition": "THRU",
+          "hole_count": 2,
+          "axis_direction": "+Y"
+        },
+        "instance_count": 2,
+        "access_directions": [
+          "+Y",
+          "-Y"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 19.725,
+            "upper_limit_mm": 19.95,
+            "lower_limit_mm": 19.5,
+            "qualifier": "2X"
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [
+          {
+            "qualifier": "REF",
+            "dimension_type": "position_x",
+            "nominal_mm": 25.1
+          }
+        ],
+        "source_views": [
+          "section_aa"
+        ]
+      },
+      {
+        "feature_id": "F06",
+        "feature_type": "external_cylinder",
+        "name": "Outer tube",
+        "description": "Outer metallic tube encasing the bonded rubber bushing with formed/radiused ends.",
+        "geometry": {
+          "diameter_mm": 58.6,
+          "outer_diameter_mm": 58.6,
+          "length_mm": 60.95,
+          "radius_mm": 6.2,
+          "axis_direction": "+X"
+        },
+        "instance_count": 1,
+        "access_directions": [
+          "radial",
+          "+X",
+          "-X"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "length",
+            "nominal_mm": 60.95,
+            "upper_limit_mm": 61.7,
+            "lower_limit_mm": 60.2
+          },
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 58.6,
+            "upper_limit_mm": 59.6,
+            "lower_limit_mm": 57.6,
+            "qualifier": "2X"
+          },
+          {
+            "dimension_type": "position_x",
+            "nominal_mm": 40.28,
+            "upper_limit_mm": 41.28,
+            "lower_limit_mm": 39.28
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [
+          {
+            "qualifier": "2X",
+            "dimension_type": "radius",
+            "nominal_mm": 6.2
+          }
+        ],
+        "source_views": [
+          "section_aa"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "relationship_id": "R01",
+        "from_feature_id": "F01",
+        "to_feature_id": "F02",
+        "relationship_type": "intersecting",
+        "detail": "The opposed flats intersect and interrupt the cylindrical profile, as explicitly described in the front-view graph."
+      },
+      {
+        "relationship_id": "R02",
+        "from_feature_id": "F04",
+        "to_feature_id": "F03",
+        "relationship_type": "coaxial",
+        "detail": "The central journal is described as a boss on the bar-pin body, with both longitudinal axes directed along section X."
+      },
+      {
+        "relationship_id": "R03",
+        "from_feature_id": "F05",
+        "to_feature_id": "F03",
+        "relationship_type": "perpendicular",
+        "detail": "The transverse mounting-hole axes follow section Y, perpendicular to the body's longitudinal X axis. This is geometric orientation evidence, not a GD&T perpendicularity control."
+      },
+      {
+        "relationship_id": "R04",
+        "from_feature_id": "F05",
+        "to_feature_id": "F03",
+        "relationship_type": "intersecting",
+        "detail": "The mounting holes pass through the material at the bar-pin ends."
+      }
+    ],
+    "datum_scheme": {
+      "datums": [],
+      "datum_hierarchy_notes": "No datum definitions or GD&T datum-reference hierarchy are supplied. A-A identifies a section cut; the circled C1\u2013C7 and D indicators are explicitly identified as revision markers, not datums."
+    },
+    "part_notes": "Material: MAKE FROM BUSHING: 839310. Scale: 1:1. General tolerance: ASME Y14.5M-1994. Projection: third angle. Heat treatment: none specified. Coating: PHOSPHATE COAT METALS. General notes: INSPECTION: MUST MEET TS-839310. PROCESS: AFTER GRINDING, APPLY LIGHT COAT OF OIL TO O.T. GROUND SURFACE PER PS-123.0. PROCESS: REMOVAL OF PHOSPHATE PERMITTED IN LOCALIZED AREAS DUE TO FLASH REMOVAL, CURLING & OD GRIND. FINISH: PHOSPHATE COAT METALS. DEBURR: MUST BE FREE OF FLASH AND/OR SHARP EDGES THAT MAY BE DETRIMENTAL TO SATISFACTORY ASSEMBLY, SAFE HANDLING AND FUNCTION.. MARKING: PATENT NO. 5122011. PROCESS: MAKE FROM BUSHING: 839310. TOLERANCE: METRIC DIMENSIONS & TOLERANCES GOVERN THE DESIGN. ENGLISH DIMENSIONS IF INCLUDED ARE FOR INFORMATION PURPOSES ONLY.. Testing: Technical Specification per TS-839310 MUST MEET TS-839310. Extraction notes: Note text appears to read 'O.T. GROUND SURFACE', likely intended as 'O.D. GROUND SURFACE'. Revision C7 references elastomer specification SAE J200 M4AA624A13B13F17Z1.",
+    "overall_complexity": "moderate"
+  },
+  "component_specs": [],
+  "component_spec_links": [],
+  "assumptions": [
+    {
+      "assumption_id": "A01",
+      "text": "All six observations are retained as singletons. Although the front-view features carry A-A cut references, the section graph does not identify corresponding flat or interrupted-bore surfaces. The cut references establish section association but do not justify merging these surfaces with the complete bar-pin body, central boss, mounting holes, or outer tube."
+    },
+    {
+      "assumption_id": "A02",
+      "text": "The front-view features remain classified as extracted, pending confirmation of their component ownership; the image is not used to reinterpret an internal surface as an external bar-pin surface."
+    },
+    {
+      "assumption_id": "A03",
+      "text": "Existing multi-instance observations are retained without splitting. No individually distinguished counterparts are supplied, so none is treated as an aggregate shared among separate identity groups."
+    },
+    {
+      "assumption_id": "A04",
+      "text": "Section A-A supplies the working coordinate frame because it explicitly defines the bar-pin longitudinal and transverse machining axes. The front-view frame is treated as view-local rather than silently equated with that frame."
+    },
+    {
+      "assumption_id": "A05",
+      "text": "No hole-depth clarification is raised for the transverse mounting holes: their THRU designation establishes termination despite the extraction's depth-related geometry-needs entry."
+    },
+    {
+      "assumption_id": "A06",
+      "text": "No coaxial relationship is asserted between the outer tube and central journal. Their shared axis direction alone does not establish a shared centerline."
+    },
+    {
+      "assumption_id": "A07",
+      "clarification_id": "C01",
+      "text": "The bar pin carries the opposed-flat and cylindrical profile (dimensioned 28.96/28.45 mm across flats and 2X \u00d8 42.25 mm) shown in the front view."
+    },
+    {
+      "assumption_id": "A08",
+      "clarification_id": "C02",
+      "text": "The axial extent of the front-view profile formed by the opposed flats and interrupted cylindrical surface is 42.25 mm, as defined by the 2X \u00d8 42.25 diameter callout along the vertical centerline (Section A-A)."
+    },
+    {
+      "assumption_id": "A09",
+      "clarification_id": "C03",
+      "text": "The axial length of the bar pin's central contour boss is assumed to be 60.2 to 61.7 mm (nominal 61.0 mm), coinciding with the outer tube length defined by dimension C4 and centered symmetrically on the bar pin."
+    },
+    {
+      "assumption_id": "A10",
+      "clarification_id": "C04",
+      "text": "The central journal is assumed to have a convex, barrel-shaped (spherical) axial contour that is symmetrical about the bushing center and blends smoothly into the adjacent cylindrical pin sections."
+    },
+    {
+      "assumption_id": "A11",
+      "clarification_id": "C05",
+      "text": "The required inner diameter of the outer tube at its swaged ends is specified by dimension C6 as \u00d8 57.6 to 59.6 mm (2X \u00d8 59.6 / 57.6)."
+    }
+  ]
+}

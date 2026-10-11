@@ -1,0 +1,1341 @@
+{
+  "analysis_id": "ASD22059GR_merge_20261011T160242Z",
+  "part": {
+    "name": "Ring gear",
+    "drawing_number": "ASD22059GF",
+    "material": "31CrMoV9ZR",
+    "units": "mm"
+  },
+  "feature_graph": {
+    "part_envelope": {
+      "length_mm": 26.0,
+      "width_mm": 26.005,
+      "height_mm": 4.27,
+      "max_diameter_mm": 221.1
+    },
+    "coordinate_system": {
+      "primary_axis": "Z",
+      "orientation_notes": "Z is the ring gear rotation and dominant axial machining axis. X and Y span the transverse plane. Front and rear views look along -Z and +Z respectively. Section A-A has cut normal X, with Z horizontal and radial Y vertical. The BS I reference face is the +Z-access side; nBS II is the -Z-access side.",
+      "datum_origin": "A"
+    },
+    "features": [
+      {
+        "feature_id": "F01",
+        "feature_type": "external_cylinder",
+        "name": "Outer cylindrical surface",
+        "description": "Precision outer diameter of the ring gear with tight unilateral tolerance and cylindricity control.",
+        "geometry": {
+          "diameter_mm": 221.1,
+          "outer_diameter_mm": 221.1,
+          "length_mm": 26.0,
+          "position_description": "Outer tip face of the external lugs",
+          "axis_direction": "Z"
+        },
+        "instance_count": 1,
+        "surface_finish": {
+          "finish_symbol": "WWW (triangles)"
+        },
+        "access_directions": [
+          "+Y",
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 221.1,
+            "plus_mm": 0.0,
+            "minus_mm": 0.007
+          },
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 221.1,
+            "plus_mm": 0.0,
+            "minus_mm": 0.007,
+            "qualifier": "\u27e851\u27e9"
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "cylindricity",
+            "tolerance_value_mm": 0.01,
+            "datum_references": [],
+            "applied_to": "Outer cylindrical surface \u00d8221.1"
+          }
+        ],
+        "callout_qualifiers": [],
+        "source_views": [
+          "detail_y",
+          "section_aa",
+          "detail_z"
+        ]
+      },
+      {
+        "feature_id": "F02",
+        "feature_type": "groove",
+        "name": "Outer circumferential groove / slot",
+        "description": "Circumferential retaining/locating groove on the outer diameter with 3.18 mm width and R0.8 mm corner fillets.",
+        "geometry": {
+          "width_mm": 3.18,
+          "radius_mm": 0.8,
+          "position_description": "11.35 mm from datum A to groove centerline",
+          "axis_direction": "radial"
+        },
+        "instance_count": 1,
+        "access_directions": [
+          "+Y",
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "width",
+            "nominal_mm": 3.18,
+            "plus_mm": 0.12,
+            "minus_mm": 0.02
+          },
+          {
+            "dimension_type": "radius",
+            "nominal_mm": 0.8,
+            "plus_mm": 0.1,
+            "minus_mm": 0.1,
+            "qualifier": "left corner fillet"
+          },
+          {
+            "dimension_type": "radius",
+            "nominal_mm": 0.8,
+            "plus_mm": 0.1,
+            "minus_mm": 0.1,
+            "qualifier": "right corner fillet"
+          },
+          {
+            "dimension_type": "position_z",
+            "nominal_mm": 11.35,
+            "plus_mm": 0.0,
+            "minus_mm": 0.05
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "position",
+            "tolerance_value_mm": 0.1,
+            "datum_references": [
+              "A",
+              "B",
+              "C"
+            ],
+            "applied_to": "Groove side flanks (combined zone CZ)"
+          },
+          {
+            "gdt_type": "parallelism",
+            "tolerance_value_mm": 0.05,
+            "datum_references": [
+              "A"
+            ],
+            "applied_to": "Centerline plane of outer circumferential groove"
+          }
+        ],
+        "callout_qualifiers": [],
+        "source_views": [
+          "detail_y",
+          "section_aa",
+          "isometric_view"
+        ]
+      },
+      {
+        "feature_id": "F03",
+        "feature_type": "spline",
+        "name": "Internal helical gear teeth",
+        "description": "Internal running gear teeth (Laufverzahnung) with helical angle indicated across the bore.",
+        "geometry": {
+          "diameter_mm": 194.1,
+          "inner_diameter_mm": 194.1,
+          "length_mm": 26.0,
+          "depth_condition": "THRU",
+          "height_mm": 4.27,
+          "position_description": "Internal circumference of the ring gear",
+          "axis_direction": "Z"
+        },
+        "instance_count": 1,
+        "access_directions": [
+          "-Y",
+          "+Z",
+          "-Z",
+          "radial"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [
+          {
+            "gdt_type": "runout",
+            "tolerance_value_mm": 0.12,
+            "datum_references": [
+              "B"
+            ],
+            "applied_to": "Tip diameter circle da of internal gear"
+          }
+        ],
+        "callout_qualifiers": [
+          {
+            "qualifier": "REF",
+            "dimension_type": "height",
+            "nominal_mm": 4.27
+          },
+          {
+            "qualifier": "REF",
+            "dimension_type": "position_z",
+            "nominal_mm": 1.3
+          },
+          {
+            "qualifier": "REF",
+            "dimension_type": "diameter",
+            "nominal_mm": 189.6
+          },
+          {
+            "qualifier": "REF",
+            "dimension_type": "diameter",
+            "nominal_mm": 194.1
+          },
+          {
+            "qualifier": "REF",
+            "dimension_type": "diameter",
+            "nominal_mm": 198.0
+          }
+        ],
+        "source_views": [
+          "detail_y",
+          "detail_z",
+          "front_view",
+          "hardness_evaluation",
+          "isometric_view",
+          "section_aa"
+        ]
+      },
+      {
+        "feature_id": "F04",
+        "feature_type": "lug",
+        "name": "External lug pattern (50 drive dogs)",
+        "description": "Pattern of 50 rectangular drive dogs/lugs equally spaced around the outer circumference at 7.2 degrees.",
+        "geometry": {
+          "width_mm": 5.8,
+          "angle_deg": 7.2,
+          "hole_count": 50,
+          "position_description": "Symmetrically positioned relative to datums A and B",
+          "axis_direction": "+Z"
+        },
+        "instance_count": 50,
+        "access_directions": [
+          "radial",
+          "+Z",
+          "-Z",
+          "+X",
+          "-X",
+          "+Y",
+          "-Y"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "angle_deg",
+            "nominal_mm": 7.2,
+            "qualifier": "50x",
+            "angle_deg": 7.2
+          },
+          {
+            "dimension_type": "angle_deg",
+            "nominal_mm": 7.2,
+            "angle_deg": 7.2
+          },
+          {
+            "dimension_type": "width",
+            "nominal_mm": 5.8,
+            "plus_mm": 0.05,
+            "minus_mm": 0.05
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "position",
+            "tolerance_value_mm": 0.1,
+            "datum_references": [
+              "A",
+              "B",
+              "C"
+            ],
+            "applied_to": "Angular position of external drive lugs relative to datums A, B, and C"
+          },
+          {
+            "gdt_type": "position",
+            "tolerance_value_mm": 0.1,
+            "datum_references": [
+              "A",
+              "B"
+            ],
+            "applied_to": "Width centerplane of the external lug"
+          }
+        ],
+        "callout_qualifiers": [
+          {
+            "qualifier": "50x",
+            "dimension_type": "angle_deg",
+            "nominal_mm": 7.2
+          }
+        ],
+        "source_views": [
+          "front_view",
+          "detail_z",
+          "isometric_view"
+        ]
+      },
+      {
+        "feature_id": "F05",
+        "feature_type": "external_cylinder",
+        "name": "Outer cylinder rim",
+        "description": "Outer cylindrical surface between external lugs, diameter 213.9 mm, controlled by circular runout to datums A and B.",
+        "geometry": {
+          "diameter_mm": 213.9,
+          "outer_diameter_mm": 213.9,
+          "position_description": "Outer body diameter between lugs",
+          "axis_direction": "+Z"
+        },
+        "access_directions": [
+          "radial",
+          "+Z",
+          "-Z"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 213.9,
+            "plus_mm": 0.1,
+            "minus_mm": 0.1
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "runout",
+            "tolerance_value_mm": 0.1,
+            "datum_references": [
+              "A",
+              "B"
+            ],
+            "applied_to": "Outer cylinder diameter \u00d8213.9"
+          }
+        ],
+        "callout_qualifiers": [],
+        "source_views": [
+          "detail_z",
+          "front_view"
+        ]
+      },
+      {
+        "feature_id": "F06",
+        "feature_type": "datum_face",
+        "name": "Reference side flat face (BS I / Datum A)",
+        "description": "Right-hand planar annular end face of the ring gear, designated as BS I (Bezugsseite I) and defining primary datum A.",
+        "geometry": {
+          "axis_direction": "+Z"
+        },
+        "instance_count": 1,
+        "surface_finish": {
+          "ra_value": 3.2,
+          "finish_symbol": "Ra 3,2"
+        },
+        "access_directions": [
+          "+Z"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [
+          {
+            "gdt_type": "flatness",
+            "tolerance_value_mm": 0.01,
+            "datum_references": [],
+            "applied_to": "Reference side flat face BS I"
+          }
+        ],
+        "callout_qualifiers": [],
+        "source_views": [
+          "section_aa",
+          "isometric_view"
+        ]
+      },
+      {
+        "feature_id": "F07",
+        "feature_type": "shaft_step",
+        "name": "Outer relief step",
+        "description": "Stepped outer shoulder diameter \u00d8207.1 with circular runout tolerance relative to datum B.",
+        "geometry": {
+          "diameter_mm": 207.1,
+          "outer_diameter_mm": 207.1,
+          "axis_direction": "Z"
+        },
+        "instance_count": 1,
+        "access_directions": [
+          "+Y",
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 207.1,
+            "plus_mm": 0.1,
+            "minus_mm": 0.1
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "runout",
+            "tolerance_value_mm": 0.2,
+            "datum_references": [
+              "B"
+            ],
+            "applied_to": "Cylindrical relief step \u00d8207.1"
+          }
+        ],
+        "callout_qualifiers": [],
+        "source_views": [
+          "detail_y"
+        ]
+      },
+      {
+        "feature_id": "F08",
+        "feature_type": "fillet",
+        "name": "Lug root transition fillet",
+        "description": "Fillet radius at transition between outer diameter and side flank of external lug.",
+        "geometry": {
+          "radius_mm": 1.0,
+          "position_description": "At the root corner of the external lug"
+        },
+        "access_directions": [
+          "radial",
+          "+Z",
+          "-Z"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "radius",
+            "nominal_mm": 1.0,
+            "plus_mm": 0.1,
+            "minus_mm": 0.1
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "detail_z"
+        ]
+      },
+      {
+        "feature_id": "F09",
+        "feature_type": "part_body",
+        "name": "Ring gear body",
+        "description": "Annular cylindrical ring gear body with internal gearing, external engagement teeth, an external circumferential groove, and parallel annular end faces.",
+        "geometry": {
+          "axis_direction": "+Z"
+        },
+        "instance_count": 1,
+        "access_directions": [
+          "+Z",
+          "-Z",
+          "+X",
+          "-X",
+          "+Y",
+          "-Y"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "isometric_view"
+        ]
+      },
+      {
+        "feature_id": "F10",
+        "feature_type": "flat_face",
+        "name": "DMC marking area",
+        "description": "Square laser marking area for Data Matrix Code (DMC) with an outer quiet zone (Ruhezone), located on the rear face at the 6 o'clock position below the internal gear teeth.",
+        "geometry": {
+          "length_mm": 6.0,
+          "width_mm": 6.0,
+          "position_description": "On vertical centerline at Y = -98.1 mm (basic dimension) from horizontal centerline of the ring gear",
+          "axis_direction": "-Z"
+        },
+        "instance_count": 1,
+        "access_directions": [
+          "-Z"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "rear_view"
+        ]
+      },
+      {
+        "feature_id": "F11",
+        "feature_type": "edge_break",
+        "name": "Revolving tooth deburr / tip edge break",
+        "description": "Revolving deburred edge break at gear tooth tip and flank transitions, defined by radial break a_tip and axial/side break b_tip.",
+        "geometry": {
+          "position_description": "Revolving along tooth tip, flank, and root boundaries across gear teeth"
+        },
+        "access_directions": [
+          "+Z",
+          "-Z",
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "chamfer",
+            "nominal_mm": -0.65,
+            "upper_limit_mm": -0.1,
+            "lower_limit_mm": -1.2
+          },
+          {
+            "dimension_type": "chamfer",
+            "nominal_mm": -0.3,
+            "upper_limit_mm": -0.1,
+            "lower_limit_mm": -0.5
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "revolving_deburred"
+        ]
+      },
+      {
+        "feature_id": "F12",
+        "feature_type": "flat_face",
+        "name": "Non-reference side flat face (nBS II)",
+        "description": "Left-hand planar annular end face of the ring gear, designated as nBS II (nicht-Bezugsseite II).",
+        "geometry": {
+          "width_mm": 26.0,
+          "axis_direction": "-Z"
+        },
+        "instance_count": 1,
+        "surface_finish": {
+          "ra_value": 3.2,
+          "finish_symbol": "Ra 3,2"
+        },
+        "access_directions": [
+          "-Z"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "width",
+            "nominal_mm": 26.0,
+            "plus_mm": 0.005,
+            "minus_mm": 0.005,
+            "qualifier": "\u27e851\u27e9"
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "parallelism",
+            "tolerance_value_mm": 0.01,
+            "datum_references": [
+              "A"
+            ],
+            "applied_to": "Non-reference side flat face nBS II"
+          }
+        ],
+        "callout_qualifiers": [],
+        "source_views": [
+          "section_aa"
+        ]
+      },
+      {
+        "feature_id": "F13",
+        "feature_type": "chamfer",
+        "name": "Internal tooth entry chamfer (BS side)",
+        "description": "Angled lead-in chamfer on the internal teeth at the reference side (BS I) face.",
+        "geometry": {
+          "length_mm": 2.5,
+          "angle_deg": 55.0,
+          "axis_direction": "+Z"
+        },
+        "instance_count": 1,
+        "access_directions": [
+          "+Z"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "angle_deg",
+            "nominal_mm": 55.0,
+            "plus_mm": 3.0,
+            "minus_mm": 3.0,
+            "angle_deg": 55.0
+          },
+          {
+            "dimension_type": "length",
+            "nominal_mm": 2.5,
+            "plus_mm": 0.2,
+            "minus_mm": 0.2
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "section_aa"
+        ]
+      },
+      {
+        "feature_id": "F14",
+        "feature_type": "chamfer",
+        "name": "Internal tooth entry chamfer (nBS side)",
+        "description": "Angled lead-in chamfer on the internal teeth at the non-reference side (nBS II) face.",
+        "geometry": {
+          "length_mm": 0.5,
+          "angle_deg": 30.0,
+          "axis_direction": "-Z"
+        },
+        "instance_count": 1,
+        "access_directions": [
+          "-Z"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "angle_deg",
+            "nominal_mm": 30.0,
+            "plus_mm": 3.0,
+            "minus_mm": 3.0,
+            "angle_deg": 30.0
+          },
+          {
+            "dimension_type": "length",
+            "nominal_mm": 0.5,
+            "plus_mm": 0.2,
+            "minus_mm": 0.2
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "section_aa"
+        ]
+      },
+      {
+        "feature_id": "F15",
+        "feature_type": "chamfer",
+        "name": "Gear tooth tip chamfer",
+        "description": "Standard tooth tip chamfer (Kopfkantenbruch) inclined at 35\u00b0 \u00b1 5\u00b0 relative to the tooth symmetry/radial axis, spanning between tip diameter \u00d8 da and form/chamfer diameter \u00d8 dFa = \u00d8 dNa.",
+        "geometry": {
+          "angle_deg": 35.0,
+          "position_description": "Located at the outer tip of gear teeth",
+          "axis_direction": "+Z"
+        },
+        "access_directions": [
+          "+Z",
+          "-Z",
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "angle_deg",
+            "nominal_mm": 35.0,
+            "plus_mm": 5.0,
+            "minus_mm": 5.0,
+            "angle_deg": 35.0
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "tip_chamfer"
+        ]
+      },
+      {
+        "feature_id": "F16",
+        "feature_type": "chamfer",
+        "name": "Alternative tip chamfer",
+        "description": "Alternative design configuration for gear tooth tip chamfer, specifying a 35\u00b0 \u00b1 5\u00b0 chamfer between \u00d8 da and \u00d8 dFa = \u00d8 dNa.",
+        "geometry": {
+          "angle_deg": 35.0,
+          "position_description": "Alternative design at the outer tip of gear teeth",
+          "axis_direction": "+Z"
+        },
+        "access_directions": [
+          "+Z",
+          "-Z",
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "angle_deg",
+            "nominal_mm": 35.0,
+            "plus_mm": 5.0,
+            "minus_mm": 5.0,
+            "angle_deg": 35.0
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "tip_chamfer"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "relationship_id": "R01",
+        "from_feature_id": "F12",
+        "to_feature_id": "F06",
+        "relationship_type": "datum_referenced",
+        "detail": "The non-reference end face has a parallelism control referencing datum A."
+      },
+      {
+        "relationship_id": "R02",
+        "from_feature_id": "F12",
+        "to_feature_id": "F06",
+        "relationship_type": "parallel",
+        "detail": "The parallelism control establishes the non-reference end face parallel to the datum A reference face."
+      },
+      {
+        "relationship_id": "R03",
+        "from_feature_id": "F12",
+        "to_feature_id": "F06",
+        "relationship_type": "opposite_face",
+        "detail": "Section A-A identifies nBS II and BS I as the opposing annular end faces."
+      },
+      {
+        "relationship_id": "R04",
+        "from_feature_id": "F02",
+        "to_feature_id": "F06",
+        "relationship_type": "datum_referenced",
+        "detail": "The groove position and parallelism controls reference datum A."
+      },
+      {
+        "relationship_id": "R05",
+        "from_feature_id": "F02",
+        "to_feature_id": "F01",
+        "relationship_type": "datum_referenced",
+        "detail": "The groove position control references datum B, established by the external lug crest cylinder."
+      },
+      {
+        "relationship_id": "R06",
+        "from_feature_id": "F02",
+        "to_feature_id": "F04",
+        "relationship_type": "datum_referenced",
+        "detail": "The groove position control references datum C, the centerplane of the designated indexing lug within the external lug pattern."
+      },
+      {
+        "relationship_id": "R07",
+        "from_feature_id": "F02",
+        "to_feature_id": "F06",
+        "relationship_type": "parallel",
+        "detail": "Section A-A controls the groove centerline plane parallel to datum A."
+      },
+      {
+        "relationship_id": "R08",
+        "from_feature_id": "F07",
+        "to_feature_id": "F01",
+        "relationship_type": "datum_referenced",
+        "detail": "The outer relief step has a circular runout control referencing datum B."
+      },
+      {
+        "relationship_id": "R09",
+        "from_feature_id": "F07",
+        "to_feature_id": "F01",
+        "relationship_type": "concentric",
+        "detail": "Circular runout of the relief step is controlled about the datum B axis."
+      },
+      {
+        "relationship_id": "R10",
+        "from_feature_id": "F04",
+        "to_feature_id": "F06",
+        "relationship_type": "datum_referenced",
+        "detail": "The external lug width and angular pattern position controls reference datum A."
+      },
+      {
+        "relationship_id": "R11",
+        "from_feature_id": "F04",
+        "to_feature_id": "F01",
+        "relationship_type": "datum_referenced",
+        "detail": "The external lug width and angular pattern position controls reference datum B."
+      },
+      {
+        "relationship_id": "R12",
+        "from_feature_id": "F04",
+        "to_feature_id": "F04",
+        "relationship_type": "datum_referenced",
+        "detail": "The angular pattern position control references datum C carried by the designated indexing lug within this compound pattern feature; this edge represents an internal datum reference, not an additional lug instance."
+      },
+      {
+        "relationship_id": "R13",
+        "from_feature_id": "F05",
+        "to_feature_id": "F06",
+        "relationship_type": "datum_referenced",
+        "detail": "The outer rim runout controls reference datum A."
+      },
+      {
+        "relationship_id": "R14",
+        "from_feature_id": "F05",
+        "to_feature_id": "F01",
+        "relationship_type": "datum_referenced",
+        "detail": "The outer rim runout controls reference datum B."
+      },
+      {
+        "relationship_id": "R15",
+        "from_feature_id": "F05",
+        "to_feature_id": "F01",
+        "relationship_type": "concentric",
+        "detail": "Runout of the cylindrical rim between the lugs is controlled about the datum B axis."
+      },
+      {
+        "relationship_id": "R16",
+        "from_feature_id": "F03",
+        "to_feature_id": "F01",
+        "relationship_type": "datum_referenced",
+        "detail": "The internal gear tip-circle runout control references datum B."
+      },
+      {
+        "relationship_id": "R17",
+        "from_feature_id": "F03",
+        "to_feature_id": "F01",
+        "relationship_type": "concentric",
+        "detail": "The internal gear tip-circle runout is controlled about the datum B axis."
+      },
+      {
+        "relationship_id": "R18",
+        "from_feature_id": "F03",
+        "to_feature_id": "F01",
+        "relationship_type": "coaxial",
+        "detail": "The internal gearing and external crest cylinder share the ring gear rotation axis Z."
+      },
+      {
+        "relationship_id": "R19",
+        "from_feature_id": "F02",
+        "to_feature_id": "F01",
+        "relationship_type": "coaxial",
+        "detail": "The continuous outer circumferential groove is centered about the external cylinder and ring gear axis."
+      },
+      {
+        "relationship_id": "R20",
+        "from_feature_id": "F09",
+        "to_feature_id": "F03",
+        "relationship_type": "coaxial",
+        "detail": "The annular part body and internal gearing share the world Z rotation axis."
+      },
+      {
+        "relationship_id": "R21",
+        "from_feature_id": "F04",
+        "to_feature_id": "F01",
+        "relationship_type": "radial_pattern",
+        "detail": "The front view explicitly defines equally spaced external drive lugs around the outer circumference and common rotation axis."
+      },
+      {
+        "relationship_id": "R22",
+        "from_feature_id": "F02",
+        "to_feature_id": "F04",
+        "relationship_type": "intersecting",
+        "detail": "The isometric observation explicitly shows the circumferential groove dividing the external dogs into two axial tiers."
+      },
+      {
+        "relationship_id": "R23",
+        "from_feature_id": "F02",
+        "to_feature_id": "F01",
+        "relationship_type": "intersecting",
+        "detail": "Detail Y and Section A-A locate the groove in the external cylindrical surface."
+      },
+      {
+        "relationship_id": "R24",
+        "from_feature_id": "F08",
+        "to_feature_id": "F04",
+        "relationship_type": "intersecting",
+        "detail": "The root transition fillet meets the side flank of the external lug."
+      },
+      {
+        "relationship_id": "R25",
+        "from_feature_id": "F08",
+        "to_feature_id": "F05",
+        "relationship_type": "intersecting",
+        "detail": "The root transition fillet joins the external lug flank to the outer cylinder between lugs."
+      },
+      {
+        "relationship_id": "R26",
+        "from_feature_id": "F13",
+        "to_feature_id": "F03",
+        "relationship_type": "intersecting",
+        "detail": "The BS-side entry chamfer is formed on the reference-side ends of the internal teeth."
+      },
+      {
+        "relationship_id": "R27",
+        "from_feature_id": "F14",
+        "to_feature_id": "F03",
+        "relationship_type": "intersecting",
+        "detail": "The nBS-side entry chamfer is formed on the non-reference-side ends of the internal teeth."
+      },
+      {
+        "relationship_id": "R28",
+        "from_feature_id": "F13",
+        "to_feature_id": "F06",
+        "relationship_type": "intersecting",
+        "detail": "The reference-side tooth entry chamfer meets the BS I annular end face."
+      },
+      {
+        "relationship_id": "R29",
+        "from_feature_id": "F14",
+        "to_feature_id": "F12",
+        "relationship_type": "intersecting",
+        "detail": "The non-reference-side tooth entry chamfer meets the nBS II annular end face."
+      },
+      {
+        "relationship_id": "R30",
+        "from_feature_id": "F15",
+        "to_feature_id": "F03",
+        "relationship_type": "intersecting",
+        "detail": "The standard tip-chamfer configuration modifies the internal gear tooth tip-to-flank transition."
+      },
+      {
+        "relationship_id": "R31",
+        "from_feature_id": "F16",
+        "to_feature_id": "F03",
+        "relationship_type": "intersecting",
+        "detail": "The alternative tip-chamfer configuration modifies the same internal tooth tip zone if that configuration is selected; it is not established as an additional simultaneous operation."
+      },
+      {
+        "relationship_id": "R32",
+        "from_feature_id": "F11",
+        "to_feature_id": "F03",
+        "relationship_type": "intersecting",
+        "detail": "The revolving deburr requirement applies along internal gear tooth tip, flank, and root boundaries."
+      },
+      {
+        "relationship_id": "R33",
+        "from_feature_id": "F10",
+        "to_feature_id": "F12",
+        "relationship_type": "on_same_face",
+        "detail": "The DMC marking patch is on the rear, negative-Z annular end face corresponding to nBS II."
+      },
+      {
+        "relationship_id": "R34",
+        "from_feature_id": "F13",
+        "to_feature_id": "F14",
+        "relationship_type": "opposite_face",
+        "detail": "The two tooth entry chamfers are explicitly assigned to opposing BS I and nBS II ends."
+      }
+    ],
+    "datum_scheme": {
+      "datums": [
+        {
+          "datum_letter": "A",
+          "feature_id": "F06",
+          "surface_type": "planar",
+          "description": "Reference side flat annular end face (BS I)"
+        },
+        {
+          "datum_letter": "B",
+          "feature_id": "F01",
+          "surface_type": "cylindrical",
+          "description": "Outer crest cylindrical surface of the external lugs"
+        },
+        {
+          "datum_letter": "C",
+          "feature_id": "F04",
+          "surface_type": "planar",
+          "description": "Centerplane of the 5.8\u00b10.05 mm wide external lug"
+        }
+      ],
+      "datum_hierarchy_notes": "The A-B-C position frames establish A as the primary reference end plane, B as the secondary axis derived from the external lug crest cylinder, and C as the tertiary angular indexing centerplane of the designated lug. Datum C is carried within the compound external lug pattern node. Other controls reference A alone, B alone, or A-B as explicitly shown. The gear-table inspection reference GG is not defined by the supplied section graphs and remains subject to clarification."
+    },
+    "part_notes": "Material: 31CrMoV9ZR. Scale: 1:1. General tolerance: ISO 2768-mK. Heat treatment: Nitriert / Nitrided: (1) = Oberfl\u00e4chenh\u00e4rte / Surface hardness (750 +200/0) HV0,2 bei / at [\u00d8 194,1] und Zahnmitte / and middle line of tooth; (2) = NHD 400 = 0,2 +0,25/0 Nicht g\u00fcltig f\u00fcr d_NHD, Flanke / Not valid for d_NHD, flank: CLT = 0,008 +0,01/0, Porensaumschicht / Porous layer < 40% CLT; (3) = Kernh\u00e4rte / Core Hardness (300 +100/0) HV10; weitere W\u00e4rmebehandlungsangaben nach ISO 6336-5 Qualit\u00e4t MQ / further heat treatment parameters according to ISO 6336-5 Quality MQ. Coating: Korrosionsschutz nach S 132299. Trockene Oberfl\u00e4che. Konserviert mit VCI-Folie. / Corrosion protection acc. S 132299. Dry surface. Conservation with VCI-Plastics.. General notes: PROCESS: Verzahnungsdaten sind in der Verzahnungstabelle und nicht im 3D-Modell definiert / Gearing data is defined in the gearing table and not in the 3D-model. Position der Laschen zur Innenverzahnung ist beliebig / Position of the plates to the internal gearing is arbitrary. INSPECTION: Sauberkeitsanalyse nach S 252012-40: Methode A; Sauberkeitsklasse nach S 252001-1: SKK 3A; Oberfl\u00e4che: 684,4 cm\u00b2 / Cleanliness analysis acc. to S 252012-40: method A; Cleanliness class acc. to S 252001-1: SKK 3A; Surface: 684,4 cm\u00b2. INSPECTION: Restmagnetismus 4 A/cm max. nach S 243010 / Residual magnetism 4 A/cm max. acc. to S 243010. DEBURR: = BS I: Verzahnung stirnseitig umlaufend entgratet. Dimensionen nach <EG>. nBS II: kein positives Material auf Flanke zul\u00e4ssig / = BS I: Gearing teeth deburred around circumference on face side. Dimension acc. to <EG>. nBS II: no positive material on flank permitted. MARKING: = Signiert mit DMC nach ES 000292 - gelasert. Position umlaufend w\u00e4hlbar. Markierung darf nicht in Radien oder Fasen laufen und muss komplett auf der Planfl\u00e4che angebracht werden / = Marked with DMC to ES 000292 - lasered. Position can be selected all around. Marking is not allowed to run in radii or chamfers and must be positioned completly on the plane surface. TOLERANCE: Umlaufende Toleranz g\u00fcltig f\u00fcr Kopf-, Flanke- und Fu\u00dfbereich, Fase von d_a bis d_Ff gew\u00e4hrleistet. / Revolving tolerance valid for tip, flank and root area, chamfer guaranteed from d_a to d_Ff. Size ISO 14405. FINISH: General surface finish Ra 3.2 (Ra 0.8 +0.2/-0.3). Testing: Gear Waviness Control per AS 003113-112, IN_UBAE_10010 requirements: A(if necessary), B, C; 2FI waviness requirement: Equation acc. to IN_UBAE_10010 (Z_i = 113, fi'' = 19 \u00b5m, wzwp = 5.65, n0 = 1, k = 0, az+/-1 = 5 \u00b5m, Evaluation range: 2...240 order). Profile and flank line measurements Profile and flank line measurements at 5 teeth (tooth 1, 23, 46, 68 and 91 clockwise counted-viewing direction on BS). VS= Additional on tooth no.1 profile measuring on positions 1BS, 1m, 1 nBS and flank line measuring on 3 diameters 1f, 1m, 1a (5 teeth: 1, 23, 46, 68, 91). Minimum documentation / Mindestdokumentation Level A (GKS 0000): Chargenweise; Level A (GKS 9002): Chargenweise; Level C (GKS 9004): 100% (jeder lfd. Nr. zugeordnet). If view <51> is not available, the minimum documentation is acc. to measurement level A (For samples only) (GKS 0000, 9002, 9004). Cleanliness analysis per S 252012-40, S 252001-1 Cleanliness class SKK 3A, Surface: 684,4 cm\u00b2 (Method A). Extraction notes: Drawing number 'ASD22059GF' is partially truncated at the right frame boundary of the title block. Units are not explicitly labeled as mm or inch, though ISO 2768-mK and metric measurements are used throughout.",
+    "overall_complexity": "complex"
+  },
+  "component_specs": [
+    {
+      "section_id": "gear_data_table",
+      "component_type": "internal_helical_gear",
+      "spec_title": "LAUFVERZAHNUNG / Cylindrical gears DIN 3960",
+      "spec_standard": "DIN 3960",
+      "parameters": [
+        {
+          "parameter_name": "Z\u00e4hnezahl / Number of teeth",
+          "symbol": "z",
+          "value_raw": "113",
+          "value_numeric": 113.0
+        },
+        {
+          "parameter_name": "Normalmodul / Normal module",
+          "symbol": "m_n",
+          "unit": "mm",
+          "value_raw": "1.5900",
+          "value_numeric": 1.59
+        },
+        {
+          "parameter_name": "Schr\u00e4gungsrichtung / Helix direction",
+          "value_raw": "left"
+        },
+        {
+          "parameter_name": "Schr\u00e4gungswinkel / Helix angle",
+          "symbol": "\u03b2",
+          "unit": "\u00b0",
+          "value_raw": "14.000",
+          "value_numeric": 14.0
+        },
+        {
+          "parameter_name": "Eingriffswinkel im Normalschnitt / Normal pressure angle",
+          "symbol": "\u03b1_n",
+          "unit": "\u00b0",
+          "value_raw": "17.000",
+          "value_numeric": 17.0
+        },
+        {
+          "parameter_name": "Profilverschiebungsfaktor / Profile shift coefficient",
+          "symbol": "x",
+          "value_raw": "-1.6000",
+          "value_numeric": -1.6
+        },
+        {
+          "parameter_name": "Teilkreisdurchmesser / Reference diameter",
+          "symbol": "d",
+          "unit": "mm",
+          "value_raw": "185.170",
+          "value_numeric": 185.17
+        },
+        {
+          "parameter_name": "Grundkreisdurchmesser / Base diameter",
+          "symbol": "d_b",
+          "unit": "mm",
+          "value_raw": "176.611",
+          "value_numeric": 176.611
+        },
+        {
+          "parameter_name": "Kopfkreisdurchmesser / Tip diameter",
+          "symbol": "d_a",
+          "unit": "mm",
+          "value_raw": "185.55 +0.20",
+          "value_numeric": 185.55,
+          "plus_tolerance": 0.2,
+          "minus_tolerance": 0.0
+        },
+        {
+          "parameter_name": "Kopfformkreisdurchmesser / Tip form diameter",
+          "symbol": "d_Fa",
+          "unit": "mm",
+          "value_raw": "185.850 +0.300",
+          "value_numeric": 185.85,
+          "plus_tolerance": 0.3,
+          "minus_tolerance": 0.0
+        },
+        {
+          "parameter_name": "Fu\u00dfformkreisdurchmesser / Root form diameter",
+          "symbol": "d_Ff",
+          "unit": "mm",
+          "value_raw": "193.441 (+0.200)",
+          "value_numeric": 193.441,
+          "plus_tolerance": 0.2,
+          "minus_tolerance": 0.0,
+          "row_notes": "Tolerance indicated in parentheses"
+        },
+        {
+          "parameter_name": "Fu\u00dfkreisdurchmesser / Root diameter",
+          "symbol": "d_f",
+          "unit": "mm",
+          "value_raw": "194.20 +0.30",
+          "value_numeric": 194.2,
+          "plus_tolerance": 0.3,
+          "minus_tolerance": 0.0
+        },
+        {
+          "parameter_name": "Rauheit Flanke (in Flankenh\u00f6henrichtung) / Flank roughness",
+          "symbol": "R_z,Fl",
+          "unit": "\u00b5m",
+          "value_raw": "\u2264 10.0",
+          "value_numeric": 10.0,
+          "row_notes": "Enclosed in inspection characteristic oval with flag 51"
+        },
+        {
+          "parameter_name": "FINISH MACHINING",
+          "value_raw": "FINISH MACHINING",
+          "row_notes": "Section header row 11"
+        },
+        {
+          "parameter_name": "Bezugsprofil Zahnrad / Reference profile of gear",
+          "value_raw": "Bezugsprofil Zahnrad / Reference profile of gear",
+          "row_notes": "Section header row 12.0"
+        },
+        {
+          "parameter_name": "Fu\u00dfh\u00f6henfaktor / Dedendum coefficent",
+          "symbol": "h*_fP",
+          "value_raw": "1.530",
+          "value_numeric": 1.53
+        },
+        {
+          "parameter_name": "Fu\u00dfradiusfaktor / Root radius factor",
+          "symbol": "\u03c1*_f",
+          "value_raw": "0.453",
+          "value_numeric": 0.453
+        },
+        {
+          "parameter_name": "Kopfh\u00f6henfaktor / Addendum coefficent",
+          "symbol": "h*_aP",
+          "value_raw": "1.420",
+          "value_numeric": 1.42
+        },
+        {
+          "parameter_name": "DIAMETRALES ZWEIKUGELMA\u00df FERTIGVERZAHNT / DIMENSION OVER BALLS FINISH MACHINING",
+          "value_raw": "DIAMETRALES ZWEIKUGELMA\u00df FERTIGVERZAHNT / DIMENSION OVER BALLS FINISH MACHINING",
+          "row_notes": "Section header row 18.0"
+        },
+        {
+          "parameter_name": "Messk\u00f6rper-Istdurchmesser / Diameter of ball",
+          "symbol": "D_M",
+          "unit": "mm",
+          "value_raw": "3.00",
+          "value_numeric": 3.0
+        },
+        {
+          "parameter_name": "diametrales Zweikugelmass / Dimension over balls",
+          "symbol": "M_dK",
+          "unit": "mm",
+          "value_raw": "185.177 +0.22",
+          "value_numeric": 185.177,
+          "plus_tolerance": 0.22,
+          "minus_tolerance": 0.0,
+          "row_notes": "Enclosed in inspection characteristic oval with flag 51"
+        },
+        {
+          "parameter_name": "Verzahnungsqualit\u00e4t (5) / Gear quality (5)",
+          "value_raw": "DIN 3961",
+          "standard_ref": "DIN 3961",
+          "row_notes": "Quality grade 5 enclosed in hexagonal symbol"
+        },
+        {
+          "parameter_name": "Profil-Formabweichung / Profile form deviation",
+          "symbol": "f_f\u03b1",
+          "unit": "\u00b5m",
+          "value_raw": "12",
+          "value_numeric": 12.0
+        },
+        {
+          "parameter_name": "Profil-Winkelabweichung / Profile slope deviation",
+          "symbol": "f_H\u03b1",
+          "unit": "\u00b5m",
+          "value_raw": "\u00b118",
+          "value_numeric": 18.0,
+          "plus_tolerance": 18.0,
+          "minus_tolerance": 18.0
+        },
+        {
+          "parameter_name": "Profil-Gesamtabweichung / Total profile deviation",
+          "symbol": "F_\u03b1",
+          "unit": "\u00b5m",
+          "value_raw": "20",
+          "value_numeric": 20.0
+        },
+        {
+          "parameter_name": "Flankenlinien-Formabweichung / Helix form deviation",
+          "symbol": "f_f\u03b2",
+          "unit": "\u00b5m",
+          "value_raw": "14",
+          "value_numeric": 14.0
+        },
+        {
+          "parameter_name": "Flankenlinien-Winkelabweichung / Helix slope deviation",
+          "symbol": "f_H\u03b2",
+          "unit": "\u00b5m",
+          "value_raw": "\u00b120",
+          "value_numeric": 20.0,
+          "plus_tolerance": 20.0,
+          "minus_tolerance": 20.0
+        },
+        {
+          "parameter_name": "Flankenlinien-Gesamtabweichung / Total helix deviation",
+          "symbol": "F_\u03b2",
+          "unit": "\u00b5m",
+          "value_raw": "21",
+          "value_numeric": 21.0
+        },
+        {
+          "parameter_name": "Teilungssprung / Adjacent pitch difference",
+          "symbol": "f_u",
+          "unit": "\u00b5m",
+          "value_raw": "19",
+          "value_numeric": 19.0
+        },
+        {
+          "parameter_name": "Teilungs-Einzelabweichung / Single pitch deviation",
+          "symbol": "f_p",
+          "unit": "\u00b5m",
+          "value_raw": "15",
+          "value_numeric": 15.0
+        },
+        {
+          "parameter_name": "Teilungs-Gesamtabweichung / Cumulative pitch deviation, total",
+          "symbol": "F_p",
+          "unit": "\u00b5m",
+          "value_raw": "83",
+          "value_numeric": 83.0
+        },
+        {
+          "parameter_name": "Rundlaufabweichung / Radial runout",
+          "symbol": "F_r",
+          "unit": "\u00b5m",
+          "value_raw": "106",
+          "value_numeric": 106.0,
+          "row_notes": "Enclosed in inspection characteristic oval with flag 51"
+        },
+        {
+          "parameter_name": "Zweiflanken-W\u00e4lzsprung / Radial composite deviation",
+          "symbol": "fi\u2033",
+          "unit": "\u00b5m",
+          "value_raw": "19",
+          "value_numeric": 19.0
+        },
+        {
+          "parameter_name": "Zweiflanken-W\u00e4lzabweichung / Radial composite deviation, total",
+          "symbol": "Fi\u2033",
+          "unit": "\u00b5m",
+          "value_raw": "110",
+          "value_numeric": 110.0
+        },
+        {
+          "parameter_name": "Verschr\u00e4nkung der Flankenlinie / helical twist deviation (VS)",
+          "symbol": "S_\u03b2f",
+          "unit": "\u00b5m",
+          "value_raw": "\u00b112",
+          "value_numeric": 12.0,
+          "plus_tolerance": 12.0,
+          "minus_tolerance": 12.0,
+          "row_notes": "Enclosed in inspection characteristic oval with flag 51"
+        },
+        {
+          "parameter_name": "Linie-Variation Winkelabweichung / Line variation angular deviation",
+          "symbol": "vF_H\u03b2",
+          "unit": "\u00b5m",
+          "value_raw": "20",
+          "value_numeric": 20.0
+        },
+        {
+          "parameter_name": "Auswertung von Profil und Flankenlinie / Analysis of profile and flank line",
+          "value_raw": "Definition of deviations and modifications are according to DIN ISO 21771 and DIN 21772; Verzahnungsmessung zu Bezug/reference of gear measurement A B GG",
+          "standard_ref": "DIN ISO 21771 and DIN 21772",
+          "row_notes": "Section header row 20.00 specifying datum A B GG"
+        },
+        {
+          "parameter_name": "Stirnprofil / Profile",
+          "value_raw": "Stirnprofil / Profile",
+          "row_notes": "Section header row 20.10"
+        },
+        {
+          "parameter_name": "min. Darstellungsbereich / Min. display range",
+          "symbol": "d_a.e...d_Ff.e, L_aF",
+          "unit": "mm",
+          "value_raw": "185.550...193.441"
+        },
+        {
+          "parameter_name": "Auswertbereich / Evaluation range",
+          "symbol": "d_Na.e...d_Nf.i, L_AE",
+          "unit": "mm",
+          "value_raw": "185.950...192.851"
+        },
+        {
+          "parameter_name": "Ausgleichsbereich / Regression range",
+          "symbol": "d_Na.i...d_Nf.i, L_\u03b1",
+          "unit": "mm",
+          "value_raw": "186.150...192.851"
+        },
+        {
+          "parameter_name": "Flankenlinie / Flank line",
+          "value_raw": "Flankenlinie / Flank line",
+          "row_notes": "Section header row 20.30"
+        },
+        {
+          "parameter_name": "Min. Darstellungsbereich / Min. display range",
+          "symbol": "b,max",
+          "unit": "mm",
+          "value_raw": "b",
+          "row_notes": "Value 'b' is given as a reference parameter inside a capsule symbol"
+        },
+        {
+          "parameter_name": "Auswertbereich / Evaluation range",
+          "symbol": "b_F",
+          "unit": "mm",
+          "value_raw": "bF",
+          "row_notes": "Value 'bF' is given as a reference parameter inside a capsule symbol"
+        },
+        {
+          "parameter_name": "Ausgleichsbereich / Regression range",
+          "symbol": "L_\u03b2",
+          "unit": "mm",
+          "value_raw": "L\u03b2",
+          "row_notes": "Value 'L\u03b2' is given as a reference parameter inside a capsule symbol"
+        }
+      ],
+      "extraction_notes": "The table specifies an internal gear (labeled 'internal gear' in the column header) calculated with KISSsoft 03/2017 B. Parameters 10, 18.2, 19.12, and 19.19 are marked with inspection oval flag 51. Several section titles (11, 12.0, 18.0, 20.00, 20.10, 20.30) span the table and define sub-sections."
+    }
+  ],
+  "component_spec_links": [
+    {
+      "spec_section_id": "gear_data_table",
+      "feature_ids": [
+        "F03"
+      ],
+      "link_notes": "These observations describe the same internal Laufverzahnung tooth zone. The table establishes its internal helical gear identity and supplies the symbolic gear diameters, tooth parameters, and inspection requirements referenced by the views. The external drive dogs are a separate feature and are not linked to this table."
+    }
+  ],
+  "assumptions": [
+    {
+      "assumption_id": "A01",
+      "text": "Grouped the datum B lug crest observation with the \u00d8221.1 external cylinder observations. The crest is the outer tip cylinder, whereas the separately dimensioned \u00d8213.9 cylinder is explicitly between the lugs. This surface-identity decision uses the descriptions and spatial context; no diameter was extracted from the images."
+    },
+    {
+      "assumption_id": "A02",
+      "text": "Selected detail_y:F1 as the external crest cylinder canonical because it supplies the toleranced diameter, axial length, explicit Z axis, and cylindricity control. Its dimensions agree with section_aa:F3; the section's radial axis label was not preferred over the axial cylinder orientation in Detail Y."
+    },
+    {
+      "assumption_id": "A03",
+      "text": "Represented the external dogs as one compound 50-instance pattern rather than separately modelling the detail lug and the remaining dogs. Detail Z is the linked representative enlargement and also identifies the selected indexing lug centerplane as datum C. The front-view canonical preserves the explicit pattern count and angular spacing. No aggregate_refs were used because the individual dogs are not separately enumerated elsewhere."
+    },
+    {
+      "assumption_id": "A04",
+      "text": "Grouped all observations of the unique internal tooth zone, including the hardness evaluation schematic. The front-view section and detail links anchor this identity; the isometric and hardness observations describe that same internal gearing, not additional splines. Hardness evaluation dimensions remain inspection-location callouts rather than alternative manufacturing diameters."
+    },
+    {
+      "assumption_id": "A05",
+      "text": "Selected detail_y:F4 as the internal gear canonical for its detailed radial and axial annotations, but deliberately sourced length_mm and depth_condition from section_aa:F5. The 23.4 L\u03b2 annotation is treated as the flank-line regression length identified by the gear table, not as a conflicting replacement for the 26 overall through-tooth extent. The two 1.3 offsets also support this distinction."
+    },
+    {
+      "assumption_id": "A06",
+      "text": "Treated the \u00d8194.1 annotation in Detail Y as the theoretical/root evaluation circle corroborated by hardness_evaluation:F1, not as the finished gear tip diameter. The gear table explicitly supplies the finished tip diameter separately. Sourced the merged gear description from section_aa:F5 to avoid carrying forward Detail Y's conflicting tip-diameter wording; all extracted callouts remain preserved."
+    },
+    {
+      "assumption_id": "A07",
+      "text": "Grouped isometric_view:F5 with the BS I datum A face because both are the accessible +Z annular end face. The rear DMC patch instead belongs to the opposing -Z nBS II face and remains a separate marking feature."
+    },
+    {
+      "assumption_id": "A08",
+      "text": "Grouped front_view:F3 with detail_z:F3 using the matching between-lugs cylinder description and shared A-B datum references. Preferred the explicitly toleranced detail observation. The front-view zero runout entry is an extraction placeholder for symbolic Fr, whose value is supplied by the gear table; it was not interpreted as a zero-tolerance requirement."
+    },
+    {
+      "assumption_id": "A09",
+      "text": "Kept tip_chamfer:F1 and tip_chamfer:F2 ungrouped because they are explicitly presented as standard and alternative configurations. Their matching angle and symbolic diameters do not establish that they are simultaneous physical features; configuration selection remains open."
+    },
+    {
+      "assumption_id": "A10",
+      "text": "Kept detail_y:F3 as a separate relief-step singleton and did not substitute its diameter for the groove bottom diameter. The supplied observations describe a shoulder step but do not establish that it is the groove floor."
+    },
+    {
+      "assumption_id": "A11",
+      "clarification_id": "C03",
+      "text": "The tooth tip chamfers conform to the standard configuration designated by tip_chamfer:F1."
+    },
+    {
+      "assumption_id": "A12",
+      "clarification_id": "C04",
+      "text": "The undimensioned outer rim corners identified in Detail Y are deburred only, with no discrete chamfer feature applied."
+    },
+    {
+      "assumption_id": "A13",
+      "clarification_id": "C01",
+      "text": "The bottom diameter of the outer circumferential groove is \u00d8207.1 \u00b1 0.1 mm, which corresponds to a nominal radial depth of 7.0 mm from the \u00d8221.1 outer diameter."
+    },
+    {
+      "assumption_id": "A14",
+      "clarification_id": "C02",
+      "text": "The \u00d8207.1 dimension defines the bottom diameter of the outer groove/relief step, which has an axial extent (width) of 3.18 mm (+0.12/-0.02 mm)."
+    },
+    {
+      "assumption_id": "A15",
+      "clarification_id": "C05",
+      "text": "GG designates the 3.18 mm wide circumferential groove (or its toleranced flanks) located on the \u00d8221.1 outer diameter in Detail Y, which serves as an axial reference feature for gear measurement alongside datums A and B."
+    }
+  ]
+}
