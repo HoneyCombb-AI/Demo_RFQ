@@ -5,66 +5,69 @@
   "quantity": 100,
   "quote_status": "complete",
   "weights": {
+    "blank_type": "rolled_ring",
+    "blank_outer_dia_mm": 160.0,
+    "blank_inner_dia_mm": 110.0,
+    "blank_thickness_mm": 32.0,
     "raw_bar_dia_mm": 160.0,
-    "actual_bar_dia_mm": 161.2,
-    "pcs_per_5m_bar": 331,
-    "gross_weight_kg": 2.4189,
-    "gross_weight_g": 2418.9,
-    "net_weight_kg": 1.0149,
-    "net_weight_g": 1014.9,
-    "scrap_weight_kg": 1.404,
-    "scrap_weight_g": 1404.0,
-    "net_weight_source": "feature_graph"
+    "actual_bar_dia_mm": 160.0,
+    "gross_weight_kg": 2.663,
+    "gross_weight_g": 2663.0,
+    "net_weight_kg": 0.9924,
+    "net_weight_g": 992.4,
+    "scrap_weight_kg": 1.6706,
+    "scrap_weight_g": 1670.6,
+    "net_weight_source": "estimated_geometry"
   },
   "direct_cost": {
-    "material_cost_inr": 245.69,
-    "machining_cost_inr": 623.88,
-    "heat_treatment_cost_inr": 45.67,
-    "direct_cost_subtotal_inr": 915.24
+    "material_cost_inr": 492.66,
+    "machining_cost_inr": 444.29,
+    "heat_treatment_cost_inr": 80.4,
+    "direct_cost_subtotal_inr": 1017.35
   },
   "overheads_and_surcharges": {
-    "factory_overhead_margin_inr": 915.24,
-    "tooling_inr": 183.05,
-    "rejection_inr": 40.27,
-    "inspection_inr": 36.61,
-    "cleaning_inr": 18.3,
-    "scrap_recovery_credit_inr": -29.83,
-    "export_packaging_inr": 20.3,
-    "fob_freight_inr": 15.22,
-    "packaging_and_fob_inr": 35.52
+    "factory_overhead_margin_inr": 1017.35,
+    "tooling_inr": 203.47,
+    "rejection_inr": 44.76,
+    "inspection_inr": 40.69,
+    "cleaning_inr": 20.35,
+    "scrap_recovery_credit_inr": -35.49,
+    "export_packaging_inr": 19.85,
+    "fob_freight_inr": 14.89,
+    "packaging_and_fob_inr": 34.74
   },
   "pricing_summary": {
-    "subtotal_before_margin_inr": 1199.15,
-    "overhead_and_margin_inr": 915.24,
-    "final_ex_works_price_inr": 2114.39
+    "subtotal_before_margin_inr": 1325.87,
+    "overhead_and_margin_inr": 1017.35,
+    "final_ex_works_price_inr": 2343.22
   },
   "machining_operations": [
     {
       "sequence": 3,
       "operation_name": "Dedicated Facing — Left End",
       "machine_family": "cnc_lathe",
-      "cycle_time_sec": 247.4,
+      "cycle_time_sec": 98.2,
       "hourly_rate_inr": 250.0,
-      "cost_per_piece_inr": 17.18,
-      "cost_per_piece_raw": 17.180555555555557
+      "cost_per_piece_inr": 6.82,
+      "cost_per_piece_raw": 6.819444444444445
     },
     {
       "sequence": 4,
       "operation_name": "Dedicated Facing and Bore Starting — Right End",
       "machine_family": "cnc_lathe",
-      "cycle_time_sec": 249.3,
+      "cycle_time_sec": 98.2,
       "hourly_rate_inr": 250.0,
-      "cost_per_piece_inr": 17.31,
-      "cost_per_piece_raw": 17.3125
+      "cost_per_piece_inr": 6.82,
+      "cost_per_piece_raw": 6.819444444444445
     },
     {
       "sequence": 5,
       "operation_name": "CNC Rough Turn and Bore — Right End",
       "machine_family": "cnc_lathe",
-      "cycle_time_sec": 1116.9,
+      "cycle_time_sec": 539.3,
       "hourly_rate_inr": 250.0,
-      "cost_per_piece_inr": 77.56,
-      "cost_per_piece_raw": 77.5625
+      "cost_per_piece_inr": 37.45,
+      "cost_per_piece_raw": 37.451388888888886
     },
     {
       "sequence": 6,
@@ -79,10 +82,10 @@
       "sequence": 8,
       "operation_name": "Generate Internal Splines to Soft Final Size",
       "machine_family": "gear_shaping",
-      "cycle_time_sec": 829.5,
+      "cycle_time_sec": 355.6,
       "hourly_rate_inr": 350.0,
-      "cost_per_piece_inr": 80.65,
-      "cost_per_piece_raw": 80.64583333333333
+      "cost_per_piece_inr": 34.57,
+      "cost_per_piece_raw": 34.57222222222222
     },
     {
       "sequence": 9,
@@ -115,10 +118,10 @@
       "sequence": 12,
       "operation_name": "Bench Tooth Pointing and Deburring",
       "machine_family": "finish_bench",
-      "cycle_time_sec": 876.9,
+      "cycle_time_sec": 110.2,
       "hourly_rate_inr": 200.0,
-      "cost_per_piece_inr": 48.72,
-      "cost_per_piece_raw": 48.71666666666667
+      "cost_per_piece_inr": 6.12,
+      "cost_per_piece_raw": 6.122222222222222
     },
     {
       "sequence": 13,
@@ -133,28 +136,37 @@
       "sequence": 15,
       "operation_name": "Pre-Heat-Treatment Clean and Dry",
       "machine_family": "finish_bench",
-      "cycle_time_sec": 167.0,
+      "cycle_time_sec": 76.8,
       "hourly_rate_inr": 200.0,
-      "cost_per_piece_inr": 9.28,
-      "cost_per_piece_raw": 9.277777777777779
+      "cost_per_piece_inr": 4.27,
+      "cost_per_piece_raw": 4.266666666666667
     },
     {
       "sequence": 19,
       "operation_name": "OD Grind External Cylindrical Surfaces",
       "machine_family": "od_grinding",
-      "cycle_time_sec": 367.1,
+      "cycle_time_sec": 300.0,
       "hourly_rate_inr": 600.0,
-      "cost_per_piece_inr": 61.18,
-      "cost_per_piece_raw": 61.18333333333333
+      "cost_per_piece_inr": 50.0,
+      "cost_per_piece_raw": 15.983333333333333
     },
     {
       "sequence": 21,
       "operation_name": "Final Micro-Deburr and Clean",
       "machine_family": "finish_bench",
-      "cycle_time_sec": 924.6,
+      "cycle_time_sec": 136.8,
       "hourly_rate_inr": 200.0,
-      "cost_per_piece_inr": 51.37,
-      "cost_per_piece_raw": 51.36666666666667
+      "cost_per_piece_inr": 7.6,
+      "cost_per_piece_raw": 7.600000000000001
+    },
+    {
+      "sequence": 20,
+      "operation_name": "Face Grind — Fork-Groove Side Walls (Ra 0.6)",
+      "machine_family": "od_grinding",
+      "cycle_time_sec": 180.0,
+      "hourly_rate_inr": 600.0,
+      "cost_per_piece_inr": 30.0,
+      "cost_per_piece_raw": 30.0
     }
   ]
 }
