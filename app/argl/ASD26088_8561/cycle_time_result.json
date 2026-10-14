@@ -1,80 +1,13 @@
 {
   "analysis_id": "ASD26088_8561_DRAWING_merge_20261011T144829Z",
   "quantity": 100,
-  "t_cycle_per_part_sec": 5046.4,
-  "t_cycle_total_batch_sec": 504640.0,
+  "t_cycle_per_part_sec": 6020.8,
+  "t_cycle_total_batch_sec": 602080.0,
   "t_setup_total_batch_sec": 20400.0,
   "operations": [
     {
       "sequence": 1,
-      "name": "Saw Cut Blanks",
-      "machine_family": "saw",
-      "in_house": true,
-      "setup_time_sec": 600.0,
-      "t_setup_per_piece_sec": 6.0,
-      "t_handling_sec": 24.0,
-      "t_machining_sec": 130.0,
-      "t_op_total_sec": 182.9,
-      "sub_op_results": [
-        {
-          "operation_seq": 1,
-          "sub_op_seq": 1,
-          "operation_type": "saw_cut",
-          "kind": "saw_cut",
-          "rpm": null,
-          "feed_mm_min": null,
-          "t_cut_sec": 130.0,
-          "t_tool_sec": 0.0,
-          "t_rapid_sec": 0.0,
-          "t_sub_total_sec": 130.0,
-          "trace": {
-            "operation_type": "saw_cut",
-            "kind": "saw_cut",
-            "machinability": "medium",
-            "area": 20106.2,
-            "cut_rate": 5000,
-            "blade_return": 0.1,
-            "t_cut": 4.12124
-          },
-          "warnings": []
-        }
-      ]
-    },
-    {
-      "sequence": 2,
-      "name": "Normalize Blanks",
-      "machine_family": "normalizing_furnace",
-      "in_house": true,
-      "setup_time_sec": 600.0,
-      "t_setup_per_piece_sec": 6.0,
-      "t_handling_sec": 24.0,
-      "t_machining_sec": 144.0,
-      "t_op_total_sec": 199.4,
-      "sub_op_results": [
-        {
-          "operation_seq": 2,
-          "sub_op_seq": 1,
-          "operation_type": "normalize",
-          "kind": "furnace_cycle",
-          "rpm": null,
-          "feed_mm_min": null,
-          "t_cut_sec": 144.0,
-          "t_tool_sec": 0.0,
-          "t_rapid_sec": 0.0,
-          "t_sub_total_sec": 144.0,
-          "trace": {
-            "ramp_min": 30,
-            "soak_min": 120.0,
-            "cycle_min": 210.0,
-            "eff_batch": 100
-          },
-          "warnings": []
-        }
-      ]
-    },
-    {
-      "sequence": 3,
-      "name": "Dedicated Facing \u2014 Left End",
+      "name": "Dedicated Facing — Left End",
       "machine_family": "cnc_lathe",
       "in_house": true,
       "setup_time_sec": 600.0,
@@ -114,8 +47,8 @@
       ]
     },
     {
-      "sequence": 4,
-      "name": "Dedicated Facing and Bore Starting \u2014 Right End",
+      "sequence": 2,
+      "name": "Dedicated Facing and Bore Starting — Right End",
       "machine_family": "cnc_lathe",
       "in_house": true,
       "setup_time_sec": 600.0,
@@ -155,8 +88,8 @@
       ]
     },
     {
-      "sequence": 5,
-      "name": "CNC Rough Turn and Bore \u2014 Right End",
+      "sequence": 3,
+      "name": "CNC Rough Turn and Bore — Right End",
       "machine_family": "cnc_lathe",
       "in_house": true,
       "setup_time_sec": 1200.0,
@@ -348,8 +281,8 @@
       ]
     },
     {
-      "sequence": 6,
-      "name": "CNC Rough Turn and Counterbore \u2014 Left End",
+      "sequence": 4,
+      "name": "CNC Rough Turn and Counterbore — Left End",
       "machine_family": "cnc_lathe",
       "in_house": true,
       "setup_time_sec": 1200.0,
@@ -481,7 +414,7 @@
       ]
     },
     {
-      "sequence": 7,
+      "sequence": 5,
       "name": "Pre-Spline Floor Gate",
       "machine_family": "inspection",
       "in_house": true,
@@ -511,7 +444,7 @@
       ]
     },
     {
-      "sequence": 8,
+      "sequence": 6,
       "name": "Generate Internal Splines to Soft Final Size",
       "machine_family": "gear_shaping",
       "in_house": true,
@@ -578,7 +511,7 @@
       ]
     },
     {
-      "sequence": 9,
+      "sequence": 7,
       "name": "CNC Datum-Referenced External Finishing",
       "machine_family": "cnc_lathe",
       "in_house": true,
@@ -879,8 +812,8 @@
       ]
     },
     {
-      "sequence": 10,
-      "name": "Soft Internal Contour and Pads \u2014 Left Access",
+      "sequence": 8,
+      "name": "Soft Internal Contour and Pads — Left Access",
       "machine_family": "vmc_5axis",
       "in_house": true,
       "setup_time_sec": 2400.0,
@@ -1000,8 +933,8 @@
       ]
     },
     {
-      "sequence": 11,
-      "name": "Soft Internal Contour and Pads \u2014 Right Access",
+      "sequence": 9,
+      "name": "Soft Internal Contour and Pads — Right Access",
       "machine_family": "vmc_5axis",
       "in_house": true,
       "setup_time_sec": 2100.0,
@@ -1121,7 +1054,7 @@
       ]
     },
     {
-      "sequence": 12,
+      "sequence": 10,
       "name": "Bench Tooth Pointing and Deburring",
       "machine_family": "finish_bench",
       "in_house": true,
@@ -1172,7 +1105,7 @@
       ]
     },
     {
-      "sequence": 13,
+      "sequence": 11,
       "name": "Permanent Part Marking",
       "machine_family": "finish_bench",
       "in_house": true,
@@ -1205,7 +1138,7 @@
       ]
     },
     {
-      "sequence": 14,
+      "sequence": 12,
       "name": "Pre-Heat-Treatment Floor Gate",
       "machine_family": "inspection",
       "in_house": true,
@@ -1235,7 +1168,7 @@
       ]
     },
     {
-      "sequence": 15,
+      "sequence": 13,
       "name": "Pre-Heat-Treatment Clean and Dry",
       "machine_family": "finish_bench",
       "in_house": true,
@@ -1268,15 +1201,15 @@
       ]
     },
     {
-      "sequence": 16,
+      "sequence": 14,
       "name": "Case Carburize and Quench",
       "machine_family": "sealed_quench_furnace",
       "in_house": true,
       "setup_time_sec": 900.0,
       "t_setup_per_piece_sec": 9.0,
       "t_handling_sec": 24.0,
-      "t_machining_sec": 200.1,
-      "t_op_total_sec": 268.4,
+      "t_machining_sec": 1350.0,
+      "t_op_total_sec": 1383.0,
       "sub_op_results": [
         {
           "operation_seq": 16,
@@ -1305,10 +1238,10 @@
           "kind": "furnace_cycle",
           "rpm": null,
           "feed_mm_min": null,
-          "t_cut_sec": 104.9,
+          "t_cut_sec": 1152.0,
           "t_tool_sec": 0.0,
           "t_rapid_sec": 0.0,
-          "t_sub_total_sec": 104.9,
+          "t_sub_total_sec": 1152.0,
           "trace": {
             "ramp_min": 45,
             "soak_min": 9.84615,
@@ -1339,7 +1272,7 @@
       ]
     },
     {
-      "sequence": 17,
+      "sequence": 15,
       "name": "Temper Case-Hardened Sleeves",
       "machine_family": "sealed_quench_furnace",
       "in_house": true,
@@ -1371,7 +1304,7 @@
       ]
     },
     {
-      "sequence": 18,
+      "sequence": 16,
       "name": "Post-Temper Shot Blast",
       "machine_family": "shot_peening",
       "in_house": true,
@@ -1402,15 +1335,15 @@
       ]
     },
     {
-      "sequence": 19,
+      "sequence": 17,
       "name": "OD Grind External Cylindrical Surfaces",
       "machine_family": "od_grinding",
       "in_house": true,
       "setup_time_sec": 1800.0,
       "t_setup_per_piece_sec": 18.0,
       "t_handling_sec": 20.0,
-      "t_machining_sec": 57.9,
-      "t_op_total_sec": 95.9,
+      "t_machining_sec": 300.0,
+      "t_op_total_sec": 338.0,
       "sub_op_results": [
         {
           "operation_seq": 19,
@@ -1419,10 +1352,10 @@
           "kind": "cylindrical_grind",
           "rpm": null,
           "feed_mm_min": null,
-          "t_cut_sec": 50.3,
-          "t_tool_sec": 4.8,
-          "t_rapid_sec": 2.4,
-          "t_sub_total_sec": 57.9,
+          "t_cut_sec": 255.0,
+          "t_tool_sec": 30.0,
+          "t_rapid_sec": 15.0,
+          "t_sub_total_sec": 300.0,
           "trace": {
             "work_speed": 20.0,
             "work_rpm": 40.809,
@@ -1442,7 +1375,7 @@
       ]
     },
     {
-      "sequence": 20,
+      "sequence": 18,
       "name": "Grinding-Burn Inspection Gate",
       "machine_family": "inspection",
       "in_house": false,
@@ -1472,7 +1405,7 @@
       ]
     },
     {
-      "sequence": 21,
+      "sequence": 19,
       "name": "Final Micro-Deburr and Clean",
       "machine_family": "finish_bench",
       "in_house": true,
@@ -1525,7 +1458,7 @@
       ]
     },
     {
-      "sequence": 22,
+      "sequence": 20,
       "name": "Final Analytical Inspection and Release",
       "machine_family": "inspection",
       "in_house": true,

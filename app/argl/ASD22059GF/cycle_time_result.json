@@ -1,13 +1,13 @@
 {
   "analysis_id": "ASD22059GR_merge_20261011T160242Z",
   "quantity": 100,
-  "t_cycle_per_part_sec": 8375.7,
-  "t_cycle_total_batch_sec": 837570.0,
+  "t_cycle_per_part_sec": 10869.8,
+  "t_cycle_total_batch_sec": 1086980.0,
   "t_setup_total_batch_sec": 35040.0,
   "operations": [
     {
       "sequence": 1,
-      "name": "CNC Turn \u2014 First Rough Setup",
+      "name": "CNC Turn — First Rough Setup",
       "machine_family": "cnc_lathe",
       "in_house": true,
       "setup_time_sec": 1200.0,
@@ -102,7 +102,7 @@
     },
     {
       "sequence": 2,
-      "name": "CNC Turn \u2014 Rear Rough Setup",
+      "name": "CNC Turn — Rear Rough Setup",
       "machine_family": "cnc_lathe",
       "in_house": true,
       "setup_time_sec": 900.0,
@@ -173,7 +173,7 @@
     },
     {
       "sequence": 3,
-      "name": "Indexed Mill \u2014 Rough External Dogs",
+      "name": "Indexed Mill — Rough External Dogs",
       "machine_family": "vmc_5axis",
       "in_house": true,
       "setup_time_sec": 2100.0,
@@ -267,14 +267,14 @@
     },
     {
       "sequence": 4,
-      "name": "Gear Shape \u2014 Rough Internal Teeth",
+      "name": "Gear Shape — Rough Internal Teeth",
       "machine_family": "gear_shaping",
       "in_house": true,
       "setup_time_sec": 2700.0,
       "t_setup_per_piece_sec": 27.0,
       "t_handling_sec": 24.0,
-      "t_machining_sec": 195.1,
-      "t_op_total_sec": 246.1,
+      "t_machining_sec": 1200.0,
+      "t_op_total_sec": 1251.0,
       "sub_op_results": [
         {
           "operation_seq": 4,
@@ -283,10 +283,10 @@
           "kind": "gear_shape",
           "rpm": null,
           "feed_mm_min": null,
-          "t_cut_sec": 169.6,
-          "t_tool_sec": 17.0,
-          "t_rapid_sec": 8.5,
-          "t_sub_total_sec": 195.1,
+          "t_cut_sec": 1020.0,
+          "t_tool_sec": 102.0,
+          "t_rapid_sec": 51.0,
+          "t_sub_total_sec": 1173.0,
           "trace": {
             "base_strokes": 1000.0,
             "mach_factor": 1.0,
@@ -306,7 +306,7 @@
     },
     {
       "sequence": 5,
-      "name": "CNC Turn \u2014 BS I Semi-Finish and Groove",
+      "name": "CNC Turn — BS I Semi-Finish and Groove",
       "machine_family": "cnc_lathe",
       "in_house": true,
       "setup_time_sec": 1500.0,
@@ -459,7 +459,7 @@
     },
     {
       "sequence": 6,
-      "name": "CNC Turn \u2014 nBS II Semi-Finish",
+      "name": "CNC Turn — nBS II Semi-Finish",
       "machine_family": "cnc_lathe",
       "in_house": true,
       "setup_time_sec": 1200.0,
@@ -530,7 +530,7 @@
     },
     {
       "sequence": 7,
-      "name": "Indexed Mill \u2014 Semi-Finish External Dogs",
+      "name": "Indexed Mill — Semi-Finish External Dogs",
       "machine_family": "vmc_5axis",
       "in_house": true,
       "setup_time_sec": 1500.0,
@@ -624,14 +624,14 @@
     },
     {
       "sequence": 8,
-      "name": "Gear Shape \u2014 Semi-Finish Internal Teeth",
+      "name": "Gear Shape — Semi-Finish Internal Teeth",
       "machine_family": "gear_shaping",
       "in_house": true,
       "setup_time_sec": 1800.0,
       "t_setup_per_piece_sec": 18.0,
       "t_handling_sec": 24.0,
-      "t_machining_sec": 195.1,
-      "t_op_total_sec": 237.1,
+      "t_machining_sec": 750.0,
+      "t_op_total_sec": 792.0,
       "sub_op_results": [
         {
           "operation_seq": 8,
@@ -640,10 +640,10 @@
           "kind": "gear_shape",
           "rpm": null,
           "feed_mm_min": null,
-          "t_cut_sec": 169.6,
-          "t_tool_sec": 17.0,
-          "t_rapid_sec": 8.5,
-          "t_sub_total_sec": 195.1,
+          "t_cut_sec": 637.5,
+          "t_tool_sec": 63.75,
+          "t_rapid_sec": 31.875,
+          "t_sub_total_sec": 730.0,
           "trace": {
             "base_strokes": 1000.0,
             "mach_factor": 1.0,
@@ -663,44 +663,7 @@
     },
     {
       "sequence": 9,
-      "name": "Internal Gear Shave",
-      "machine_family": "gear_shaving",
-      "in_house": true,
-      "setup_time_sec": 2100.0,
-      "t_setup_per_piece_sec": 21.0,
-      "t_handling_sec": 18.0,
-      "t_machining_sec": 355.3,
-      "t_op_total_sec": 394.3,
-      "sub_op_results": [
-        {
-          "operation_seq": 9,
-          "sub_op_seq": 1,
-          "operation_type": "shave_teeth",
-          "kind": "gear_finish",
-          "rpm": null,
-          "feed_mm_min": null,
-          "t_cut_sec": 355.3,
-          "t_tool_sec": 0.0,
-          "t_rapid_sec": 0.0,
-          "t_sub_total_sec": 355.3,
-          "trace": {
-            "removal_rate": 30.0,
-            "contact_ratio": 1.2,
-            "flank_volume": 177.636,
-            "dressing_interval": 9999,
-            "dressing_sec": 0,
-            "dressing_amortized": 0.0,
-            "t_cut": 5.9212,
-            "t_tool": 0.0,
-            "t_rapid": 0.0
-          },
-          "warnings": []
-        }
-      ]
-    },
-    {
-      "sequence": 10,
-      "name": "Tooth Chamfer \u2014 BS I",
+      "name": "Tooth Chamfer — BS I",
       "machine_family": "vmc_5axis",
       "in_house": true,
       "setup_time_sec": 1800.0,
@@ -748,8 +711,8 @@
       ]
     },
     {
-      "sequence": 11,
-      "name": "Tooth Chamfer \u2014 nBS II",
+      "sequence": 10,
+      "name": "Tooth Chamfer — nBS II",
       "machine_family": "vmc_5axis",
       "in_house": true,
       "setup_time_sec": 1500.0,
@@ -779,7 +742,7 @@
       ]
     },
     {
-      "sequence": 12,
+      "sequence": 11,
       "name": "Pre-Nitriding Deburr and Clean",
       "machine_family": "finish_bench",
       "in_house": true,
@@ -832,7 +795,7 @@
       ]
     },
     {
-      "sequence": 13,
+      "sequence": 12,
       "name": "Pre-Nitriding Inspection Gate",
       "machine_family": "inspection",
       "in_house": true,
@@ -913,7 +876,7 @@
       ]
     },
     {
-      "sequence": 14,
+      "sequence": 13,
       "name": "Controlled Nitriding",
       "machine_family": "sealed_quench_furnace",
       "in_house": false,
@@ -946,7 +909,7 @@
       ]
     },
     {
-      "sequence": 15,
+      "sequence": 14,
       "name": "Nitriding Acceptance Gate",
       "machine_family": "inspection",
       "in_house": true,
@@ -993,8 +956,8 @@
       ]
     },
     {
-      "sequence": 16,
-      "name": "Face Grind \u2014 Datum A",
+      "sequence": 15,
+      "name": "Face Grind — Datum A",
       "machine_family": "od_grinding",
       "in_house": true,
       "setup_time_sec": 1200.0,
@@ -1031,8 +994,8 @@
       ]
     },
     {
-      "sequence": 17,
-      "name": "Face Grind \u2014 nBS II",
+      "sequence": 16,
+      "name": "Face Grind — nBS II",
       "machine_family": "od_grinding",
       "in_house": true,
       "setup_time_sec": 900.0,
@@ -1069,8 +1032,8 @@
       ]
     },
     {
-      "sequence": 18,
-      "name": "Cylindrical Grind \u2014 Datum B and Groove",
+      "sequence": 17,
+      "name": "Cylindrical Grind — Datum B and Groove",
       "machine_family": "od_grinding",
       "in_house": true,
       "setup_time_sec": 2100.0,
@@ -1137,8 +1100,8 @@
       ]
     },
     {
-      "sequence": 19,
-      "name": "Indexed Form Grind \u2014 External Dogs",
+      "sequence": 18,
+      "name": "Indexed Form Grind — External Dogs",
       "machine_family": "gear_grinding",
       "in_house": true,
       "setup_time_sec": 2700.0,
@@ -1214,8 +1177,8 @@
       ]
     },
     {
-      "sequence": 20,
-      "name": "ID Grind \u2014 Internal Tooth-Tip Circle",
+      "sequence": 19,
+      "name": "ID Grind — Internal Tooth-Tip Circle",
       "machine_family": "id_grinding",
       "in_house": true,
       "setup_time_sec": 1800.0,
@@ -1254,15 +1217,15 @@
       ]
     },
     {
-      "sequence": 21,
+      "sequence": 20,
       "name": "Internal Helical Gear Hard Grind",
       "machine_family": "gear_grinding",
       "in_house": true,
       "setup_time_sec": 2700.0,
       "t_setup_per_piece_sec": 27.0,
       "t_handling_sec": 30.0,
-      "t_machining_sec": 651.4,
-      "t_op_total_sec": 708.4,
+      "t_machining_sec": 1980.0,
+      "t_op_total_sec": 2037.0,
       "sub_op_results": [
         {
           "operation_seq": 21,
@@ -1271,10 +1234,10 @@
           "kind": "gear_finish",
           "rpm": null,
           "feed_mm_min": null,
-          "t_cut_sec": 651.4,
-          "t_tool_sec": 0.0,
-          "t_rapid_sec": 0.0,
-          "t_sub_total_sec": 651.4,
+          "t_cut_sec": 1782.0,
+          "t_tool_sec": 126.0,
+          "t_rapid_sec": 63.0,
+          "t_sub_total_sec": 1971.0,
           "trace": {
             "cut1_sec": 145.111,
             "cut2_sec": 145.111,
@@ -1290,7 +1253,7 @@
       ]
     },
     {
-      "sequence": 22,
+      "sequence": 21,
       "name": "Grinding Integrity and Demagnetization",
       "machine_family": "inspection",
       "in_house": false,
@@ -1374,7 +1337,7 @@
       ]
     },
     {
-      "sequence": 23,
+      "sequence": 22,
       "name": "Final Micro-Deburr and Clean",
       "machine_family": "finish_bench",
       "in_house": true,
@@ -1427,7 +1390,7 @@
       ]
     },
     {
-      "sequence": 24,
+      "sequence": 23,
       "name": "Laser DMC Mark",
       "machine_family": "finish_bench",
       "in_house": false,
@@ -1467,7 +1430,7 @@
       ]
     },
     {
-      "sequence": 25,
+      "sequence": 24,
       "name": "Final Dimensional and Gear Acceptance",
       "machine_family": "inspection",
       "in_house": true,
@@ -1548,7 +1511,7 @@
       ]
     },
     {
-      "sequence": 26,
+      "sequence": 25,
       "name": "Specified Dry Corrosion Protection",
       "machine_family": "surface_finishing",
       "in_house": false,
@@ -1581,7 +1544,7 @@
       ]
     },
     {
-      "sequence": 27,
+      "sequence": 26,
       "name": "Protection Check and VCI Pack",
       "machine_family": "finish_bench",
       "in_house": true,

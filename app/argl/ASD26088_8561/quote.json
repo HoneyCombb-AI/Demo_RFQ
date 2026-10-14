@@ -20,31 +20,31 @@
     "net_weight_source": "estimated_geometry"
   },
   "direct_cost": {
-    "material_cost_inr": 270.48,
-    "machining_cost_inr": 380.27,
-    "heat_treatment_cost_inr": 44.66,
-    "direct_cost_subtotal_inr": 695.41
+    "material_cost_inr": 492.66,
+    "machining_cost_inr": 444.29,
+    "heat_treatment_cost_inr": 80.4,
+    "direct_cost_subtotal_inr": 1017.35
   },
   "overheads_and_surcharges": {
-    "factory_overhead_margin_inr": 695.41,
-    "tooling_inr": 139.08,
-    "rejection_inr": 30.6,
-    "inspection_inr": 27.82,
-    "cleaning_inr": 13.91,
+    "factory_overhead_margin_inr": 1017.35,
+    "tooling_inr": 203.47,
+    "rejection_inr": 44.76,
+    "inspection_inr": 40.69,
+    "cleaning_inr": 20.35,
     "scrap_recovery_credit_inr": -35.49,
     "export_packaging_inr": 19.85,
     "fob_freight_inr": 14.89,
     "packaging_and_fob_inr": 34.74
   },
   "pricing_summary": {
-    "subtotal_before_margin_inr": 906.07,
-    "overhead_and_margin_inr": 695.41,
-    "final_ex_works_price_inr": 1601.48
+    "subtotal_before_margin_inr": 1325.87,
+    "overhead_and_margin_inr": 1017.35,
+    "final_ex_works_price_inr": 2343.22
   },
   "machining_operations": [
     {
       "sequence": 3,
-      "operation_name": "Dedicated Facing \u2014 Left End",
+      "operation_name": "Dedicated Facing — Left End",
       "machine_family": "cnc_lathe",
       "cycle_time_sec": 98.2,
       "hourly_rate_inr": 250.0,
@@ -53,7 +53,7 @@
     },
     {
       "sequence": 4,
-      "operation_name": "Dedicated Facing and Bore Starting \u2014 Right End",
+      "operation_name": "Dedicated Facing and Bore Starting — Right End",
       "machine_family": "cnc_lathe",
       "cycle_time_sec": 98.2,
       "hourly_rate_inr": 250.0,
@@ -62,7 +62,7 @@
     },
     {
       "sequence": 5,
-      "operation_name": "CNC Rough Turn and Bore \u2014 Right End",
+      "operation_name": "CNC Rough Turn and Bore — Right End",
       "machine_family": "cnc_lathe",
       "cycle_time_sec": 539.3,
       "hourly_rate_inr": 250.0,
@@ -71,7 +71,7 @@
     },
     {
       "sequence": 6,
-      "operation_name": "CNC Rough Turn and Counterbore \u2014 Left End",
+      "operation_name": "CNC Rough Turn and Counterbore — Left End",
       "machine_family": "cnc_lathe",
       "cycle_time_sec": 290.9,
       "hourly_rate_inr": 250.0,
@@ -98,7 +98,7 @@
     },
     {
       "sequence": 10,
-      "operation_name": "Soft Internal Contour and Pads \u2014 Left Access",
+      "operation_name": "Soft Internal Contour and Pads — Left Access",
       "machine_family": "vmc_5axis",
       "cycle_time_sec": 596.5,
       "hourly_rate_inr": 600.0,
@@ -107,7 +107,7 @@
     },
     {
       "sequence": 11,
-      "operation_name": "Soft Internal Contour and Pads \u2014 Right Access",
+      "operation_name": "Soft Internal Contour and Pads — Right Access",
       "machine_family": "vmc_5axis",
       "cycle_time_sec": 593.5,
       "hourly_rate_inr": 600.0,
@@ -145,9 +145,9 @@
       "sequence": 19,
       "operation_name": "OD Grind External Cylindrical Surfaces",
       "machine_family": "od_grinding",
-      "cycle_time_sec": 95.9,
+      "cycle_time_sec": 300.0,
       "hourly_rate_inr": 600.0,
-      "cost_per_piece_inr": 15.98,
+      "cost_per_piece_inr": 50.0,
       "cost_per_piece_raw": 15.983333333333333
     },
     {
@@ -158,6 +158,15 @@
       "hourly_rate_inr": 200.0,
       "cost_per_piece_inr": 7.6,
       "cost_per_piece_raw": 7.600000000000001
+    },
+    {
+      "sequence": 20,
+      "operation_name": "Face Grind — Fork-Groove Side Walls (Ra 0.6)",
+      "machine_family": "od_grinding",
+      "cycle_time_sec": 180.0,
+      "hourly_rate_inr": 600.0,
+      "cost_per_piece_inr": 30.0,
+      "cost_per_piece_raw": 30.0
     }
   ]
 }

@@ -17,52 +17,7 @@
   "operations": [
     {
       "sequence": 1,
-      "name": "Saw Cut Blanks",
-      "machine_family": "saw",
-      "setup_note": "Clamp plain rolled ring (\u00d8160 OD \u00d7 \u00d8110 ID) against length stop and saw cut individual blanks of 32 mm length with allowance for facing.",
-      "datum_references": [],
-      "material_machinability": "medium",
-      "setup_time_min": 10.0,
-      "in_house": true,
-      "sub_operations": [
-        {
-          "sequence": 1,
-          "operation_type": "saw_cut",
-          "target_feature_ids": [],
-          "inputs": {
-            "kind": "saw_cut",
-            "cut_diameter_mm": 160.0,
-            "cut_count": 1
-          }
-        }
-      ]
-    },
-    {
-      "sequence": 2,
-      "name": "Normalize Blanks",
-      "machine_family": "normalizing_furnace",
-      "setup_note": "Rack the sawn blanks with circulation clearance and normalize before the dedicated facing stage. Provisionally divide the order into four loads of 25 blanks, subject to qualified furnace capacity and the approved material procedure.",
-      "datum_references": [],
-      "material_machinability": "medium",
-      "setup_time_min": 10.0,
-      "in_house": true,
-      "sub_operations": [
-        {
-          "sequence": 1,
-          "operation_type": "normalize",
-          "target_feature_ids": [],
-          "inputs": {
-            "kind": "furnace_cycle",
-            "batch_size_parts": 100,
-            "part_mass_kg": 6.31,
-            "max_section_thickness_mm": 40.0
-          }
-        }
-      ]
-    },
-    {
-      "sequence": 3,
-      "name": "Dedicated Facing \u2014 Left End",
+      "name": "Dedicated Facing — Left End",
       "machine_family": "cnc_lathe",
       "setup_note": "Hold the normalized blank on its raw OD and finish the -Z end face as a temporary axial reference. This is the first loading of the dedicated facing stage; datum A is not yet established.",
       "datum_references": [],
@@ -87,8 +42,8 @@
       ]
     },
     {
-      "sequence": 4,
-      "name": "Dedicated Facing and Bore Starting \u2014 Right End",
+      "sequence": 2,
+      "name": "Dedicated Facing and Bore Starting — Right End",
       "machine_family": "cnc_lathe",
       "setup_note": "Reverse blank against faced end and finish face opposite end to overall length 27.0 mm across the annulus wall.",
       "datum_references": [],
@@ -113,10 +68,10 @@
       ]
     },
     {
-      "sequence": 5,
-      "name": "CNC Rough Turn and Bore \u2014 Right End",
+      "sequence": 3,
+      "name": "CNC Rough Turn and Bore — Right End",
       "machine_family": "cnc_lathe",
-      "setup_note": "Grip rolled ring blank in bored soft jaws, rough external diameters, then rough bore ID from \u00d8110 to \u00d8116.5 and counterbore \u00d8129.2, followed by finish boring.",
+      "setup_note": "Grip rolled ring blank in bored soft jaws, rough external diameters, then rough bore ID from Ø110 to Ø116.5 and counterbore Ø129.2, followed by finish boring.",
       "datum_references": [],
       "material_machinability": "medium",
       "setup_time_min": 20.0,
@@ -203,8 +158,8 @@
       ]
     },
     {
-      "sequence": 6,
-      "name": "CNC Rough Turn and Counterbore \u2014 Left End",
+      "sequence": 4,
+      "name": "CNC Rough Turn and Counterbore — Left End",
       "machine_family": "cnc_lathe",
       "setup_note": "Reverse onto the prepared right-hand rim using low-pressure soft jaws, register on the finished +Z end, and indicate the prepared bore. Rough the left external diameters and complete the -Z entry counterbore without refacing the finished end.",
       "datum_references": [],
@@ -267,7 +222,7 @@
       ]
     },
     {
-      "sequence": 7,
+      "sequence": 5,
       "name": "Pre-Spline Floor Gate",
       "machine_family": "inspection",
       "setup_note": "Check the soft blank at the floor station using handheld bore, diameter and axial gauges. Confirm counterbore clearance and the stock envelope needed for spline generation and subsequent tooth-pad profiling.",
@@ -291,10 +246,10 @@
       ]
     },
     {
-      "sequence": 8,
+      "sequence": 6,
       "name": "Generate Internal Splines to Soft Final Size",
       "machine_family": "gear_shaping",
-      "setup_note": "Locate the soft blank from its prepared bore and end face in an annular fixture, with cutter entry and overtravel clear of both counterbores. Rough and finish the 28 internal teeth to the approved spline specification, establishing datum A without retaining post-hardening flank stock.",
+      "setup_note": "Locate the soft blank from its prepared bore and end face in an annular fixture, with cutter entry and overtravel clear of both counterbores. Rough and finish the 28 internal teeth to the approved spline specification, establishing datum A without retaining post-hardening flank stock. NOTE: The spline must be re-gauged after heat treatment and shot blasting to verify that hardening distortion has not taken it outside tolerance. If out-of-tolerance, hard spline grinding or re-processing is required; this is a customer-decision risk.",
       "datum_references": [
         "A"
       ],
@@ -339,10 +294,10 @@
       ]
     },
     {
-      "sequence": 9,
+      "sequence": 7,
       "name": "CNC Datum-Referenced External Finishing",
       "machine_family": "cnc_lathe",
-      "setup_note": "Mount the soft sleeve on a pitch-contact spline arbor establishing A, with both external ends accessible; finish the outer lands and internal stepped faces before cutting the fork groove. Establish provisional E and N on the groove walls, finish those walls in the soft condition, and retain grinding allowance only on the external cylindrical surfaces.",
+      "setup_note": "Mount the soft sleeve on a pitch-contact spline arbor establishing A, with both external ends accessible; finish the outer lands and internal stepped faces before cutting the fork groove. Establish provisional E and N on the groove walls, finish those walls in the soft condition, and retain grinding allowance only on the external cylindrical surfaces. NOTE (OPEN RISK): The fork-groove side walls require Ra 0.6 per the drawing. Achieving Ra 0.6 after carburizing, quenching, and shot blasting by soft-finishing alone is a process qualification risk. Customer must confirm whether post-hardening groove-wall grinding is acceptable; if required, a separate face-grinding operation must be added to the route.",
       "datum_references": [
         "A",
         "E",
@@ -490,8 +445,8 @@
       ]
     },
     {
-      "sequence": 10,
-      "name": "Soft Internal Contour and Pads \u2014 Left Access",
+      "sequence": 8,
+      "name": "Soft Internal Contour and Pads — Left Access",
       "machine_family": "vmc_5axis",
       "setup_note": "Clamp an external flange in an annular indexing fixture, pick up A with a removable spline datum gauge, and register axially from N before removing the gauge for cutter access. Machine the -Z-accessible contour and first pad locations across the 28 teeth from the controlled CAD model, roughing both feature groups before climb-finishing them.",
       "datum_references": [
@@ -561,8 +516,8 @@
       ]
     },
     {
-      "sequence": 11,
-      "name": "Soft Internal Contour and Pads \u2014 Right Access",
+      "sequence": 9,
+      "name": "Soft Internal Contour and Pads — Right Access",
       "machine_family": "vmc_5axis",
       "setup_note": "Reverse the sleeve in the annular indexing fixture, re-establish A with the removable spline gauge, and register axially from E. Machine the +Z-accessible contour and opposite pad locations across the 28 teeth from the controlled CAD model, roughing both feature groups before climb-finishing them.",
       "datum_references": [
@@ -632,7 +587,7 @@
       ]
     },
     {
-      "sequence": 12,
+      "sequence": 10,
       "name": "Bench Tooth Pointing and Deburring",
       "machine_family": "finish_bench",
       "setup_note": "Hold the soft sleeve in an open-ended bench indexing fixture, referencing the spline and approved axial datum surfaces. Use a guided bench-spindle pointing tool and profile gauge for the specified tooth-end geometry, then control the local flank transitions and remove remaining machining burrs.",
@@ -676,7 +631,7 @@
       ]
     },
     {
-      "sequence": 13,
+      "sequence": 11,
       "name": "Permanent Part Marking",
       "machine_family": "finish_bench",
       "setup_note": "Support the sleeve in a non-marring marking nest and apply the specified permanent identification after all soft cutting and tooth deburring. Use the approved marking location and method so identification survives hardening and shot blasting.",
@@ -699,7 +654,7 @@
       ]
     },
     {
-      "sequence": 14,
+      "sequence": 12,
       "name": "Pre-Heat-Treatment Floor Gate",
       "machine_family": "inspection",
       "setup_note": "Use handheld spline, groove-width, profile and edge gauges at the floor station to release the completed soft parts. Verify that the marking is legible and that only the intended external cylinders retain grinding allowance.",
@@ -727,7 +682,7 @@
       ]
     },
     {
-      "sequence": 15,
+      "sequence": 13,
       "name": "Pre-Heat-Treatment Clean and Dry",
       "machine_family": "finish_bench",
       "setup_note": "Place the marked sleeves in a cleaning basket, remove oil and coolant, and dry completely before furnace loading. No masking is applied under the provisional all-surface case-hardening interpretation.",
@@ -749,7 +704,7 @@
       ]
     },
     {
-      "sequence": 16,
+      "sequence": 14,
       "name": "Case Carburize and Quench",
       "machine_family": "sealed_quench_furnace",
       "setup_note": "Rack the clean sleeves on distortion-control ring supports with matching witness coupons and carburize followed by controlled quenching under the approved STD 1094,1 procedure. Provisionally use four qualified loads of 25 sleeves; batch certification includes case depth and core hardness.",
@@ -775,7 +730,7 @@
           "inputs": {
             "kind": "furnace_cycle",
             "batch_size_parts": 100,
-            "part_mass_kg": 1.65,
+            "part_mass_kg": 0.992,
             "max_section_thickness_mm": 19.35,
             "case_depth_mm": 0.8,
             "target_hardness_hrc": 60.5
@@ -788,7 +743,7 @@
           "inputs": {
             "kind": "furnace_cycle",
             "batch_size_parts": 100,
-            "part_mass_kg": 1.65,
+            "part_mass_kg": 0.992,
             "max_section_thickness_mm": 19.35,
             "target_hardness_hrc": 60.5
           }
@@ -796,10 +751,10 @@
       ]
     },
     {
-      "sequence": 17,
+      "sequence": 15,
       "name": "Temper Case-Hardened Sleeves",
       "machine_family": "sealed_quench_furnace",
-      "setup_note": "Transfer the quenched sleeves promptly to the qualified tempering load while retaining distortion-control support. Temper and cool to meet the specified 58\u201363 HRC surface hardness, retaining coupon traceability for each furnace batch.",
+      "setup_note": "Transfer the quenched sleeves promptly to the qualified tempering load while retaining distortion-control support. Temper and cool to meet the specified 58–63 HRC surface hardness, retaining coupon traceability for each furnace batch.",
       "datum_references": [],
       "material_machinability": "hardened",
       "setup_time_min": 10.0,
@@ -812,7 +767,7 @@
           "inputs": {
             "kind": "furnace_cycle",
             "batch_size_parts": 100,
-            "part_mass_kg": 1.65,
+            "part_mass_kg": 0.992,
             "max_section_thickness_mm": 19.35,
             "target_hardness_hrc": 60.5
           }
@@ -820,7 +775,7 @@
       ]
     },
     {
-      "sequence": 18,
+      "sequence": 16,
       "name": "Post-Temper Shot Blast",
       "machine_family": "shot_peening",
       "setup_note": "Support the tempered sleeves in the qualified blasting fixture and strip quench scale and oxide before any grinding or gauging. Use controlled exposure on finished spline and groove-wall surfaces, and remove loose blast media before release.",
@@ -844,7 +799,7 @@
       ]
     },
     {
-      "sequence": 19,
+      "sequence": 17,
       "name": "OD Grind External Cylindrical Surfaces",
       "machine_family": "od_grinding",
       "setup_note": "Locate the hardened sleeve on a pitch-contact spline mandrel establishing A, with axial registration from the approved groove datum and all external cylinders accessible. Grind the left rim, right rim, left shoulder, right shoulder and groove-bottom cylinder in that order, keeping the wheel clear of all groove walls and faces.",
@@ -877,7 +832,7 @@
       ]
     },
     {
-      "sequence": 20,
+      "sequence": 18,
       "name": "Grinding-Burn Inspection Gate",
       "machine_family": "inspection",
       "setup_note": "Submit the ground sleeves to a qualified provider for nital-etch examination of every ground cylinder immediately after grinding. This is a single visual acceptance gate with no dimensional fixture, and the provider must neutralize and rinse the examined surfaces.",
@@ -901,7 +856,7 @@
       ]
     },
     {
-      "sequence": 21,
+      "sequence": 19,
       "name": "Final Micro-Deburr and Clean",
       "machine_family": "finish_bench",
       "setup_note": "Support the hardened sleeve in a non-marring nest and remove only grinding-generated micro-burrs without altering the finished tooth pointing or flank transitions. Wash away abrasive residue and contaminants, then present the part clean and dry for final inspection.",
@@ -934,10 +889,38 @@
       ]
     },
     {
-      "sequence": 22,
+      "sequence": 20,
+      "name": "Face Grind — Fork-Groove Side Walls (Ra 0.6)",
+      "machine_family": "od_grinding",
+      "setup_note": "Locate on pitch-contact spline arbor and precision-grind both inner side walls of the central shift-fork groove (Datum E and N) to achieve final drawing specification of Ra 0.6. Soft finishing alone cannot reliably hold Ra 0.6 through carburizing, quenching and shot blasting.",
+      "datum_references": [
+        "A",
+        "E",
+        "N"
+      ],
+      "material_machinability": "hardened",
+      "setup_time_min": 25.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "face_grind",
+          "target_feature_ids": [
+            "F03"
+          ],
+          "inputs": {
+            "kind": "face_grind",
+            "radial_stock_mm": 0.1,
+            "target_ra": 0.6
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 21,
       "name": "Final Analytical Inspection and Release",
       "machine_family": "inspection",
-      "setup_note": "Locate the thermally stabilized sleeve in the final metrology fixture using the approved A, E and N definitions and apply each drawing control in its stated datum order. Consolidate dimensional/profile inspection, spline analysis, surface-finish and cleanliness acceptance, hardness testing and review of furnace-batch and grinding-burn certificates at this station.",
+      "setup_note": "Locate the thermally stabilized sleeve in the final metrology fixture using datums A, E and N. Perform 100% gear checker verification of internal spline pitch runout, profile and tooth span to confirm zero distortion out-of-tolerance from carburizing quench. Certify hardness and case depth.",
       "datum_references": [
         "A",
         "E",
@@ -1123,31 +1106,28 @@
         18,
         22
       ],
-      "suggested_default": "Follow SHAFT-003 and omit face grinding, but require process qualification demonstrating the final wall finish before production release.",
       "priority": "high"
     },
     {
       "clarification_id": "C12",
-      "question": "Is the finished fork-groove width 13.5 \u00b10.1 mm?",
+      "question": "Is the finished fork-groove width 13.5 ±0.1 mm?",
       "blocks": [
         9,
         14,
         19,
         22
       ],
-      "suggested_default": "Use the toleranced F03 value of 13.5 \u00b10.1 mm rather than the 15.58 mm width mentioned in the extracted overall-length assumption.",
       "priority": "high"
     },
     {
       "clarification_id": "C13",
-      "question": "What is the axial depth of each \u00d8130 end counterbore?",
+      "question": "What is the axial depth of each Ø130 end counterbore?",
       "blocks": [
         5,
         6,
         8,
         22
       ],
-      "suggested_default": "Take both depths from the approved digital model; do not infer them from the cropped views.",
       "priority": "high"
     },
     {
@@ -1161,7 +1141,7 @@
     },
     {
       "clarification_id": "C15",
-      "question": "What cleanliness acceptance specification applies to the stated 445 cm\u00b2 wetted surface?",
+      "question": "What cleanliness acceptance specification applies to the stated 445 cm² wetted surface?",
       "blocks": [
         21,
         22
@@ -1183,11 +1163,11 @@
   "assumptions": [
     {
       "assumption_id": "A01",
-      "text": "Finished sleeve overall length is 27.0 mm (13.5 mm central shift-fork groove + 2 x 6.75 mm shoulders). Recommended stock is plain rolled ring \u00d8160 OD \u00d7 \u00d8110 ID \u00d7 32 mm length (2.663 kg gross weight)."
+      "text": "Finished sleeve overall length is 27.0 mm (13.5 mm central shift-fork groove + 2 x 6.75 mm shoulders). Recommended stock is plain rolled ring Ø160 OD × Ø110 ID × 32 mm length (2.663 kg gross weight)."
     },
     {
       "assumption_id": "A02",
-      "text": "The unspecified material is provisionally treated as soft carburizing-compatible steel with medium machinability. Incoming hardness is unknown; 60 HRC after tempering is an estimating representative of the specified 58\u201363 HRC range, not a measured result."
+      "text": "The unspecified material is provisionally treated as soft carburizing-compatible steel with medium machinability. Incoming hardness is unknown; 60 HRC after tempering is an estimating representative of the specified 58–63 HRC range, not a measured result."
     },
     {
       "assumption_id": "A03",
@@ -1195,7 +1175,7 @@
     },
     {
       "assumption_id": "A04",
-      "text": "Dedicated facing operations face the rolled ring annulus wall (radial depth 25 mm). Center drilling is eliminated as the rolled ring blank already possesses an open \u00d8110 mm through-bore."
+      "text": "Dedicated facing operations face the rolled ring annulus wall (radial depth 25 mm). Center drilling is eliminated as the rolled ring blank already possesses an open Ø110 mm through-bore."
     },
     {
       "assumption_id": "A05",
@@ -1219,7 +1199,7 @@
     },
     {
       "assumption_id": "A10",
-      "text": "Post-hardening finishing is limited to external cylindrical OD grinding. The two \u00d8156 rims, two \u00d8139 shoulders and cylindrical fork-groove bottom are treated as eligible final-size external surfaces; provisionally retain 0.3 mm diametral grinding allowance, with no allowance on groove side walls or faces. The stock's 0.5 mm allowance represents general soft-machining allowance."
+      "text": "Post-hardening finishing is limited to external cylindrical OD grinding. The two Ø156 rims, two Ø139 shoulders and cylindrical fork-groove bottom are treated as eligible final-size external surfaces; provisionally retain 0.3 mm diametral grinding allowance, with no allowance on groove side walls or faces. The stock's 0.5 mm allowance represents general soft-machining allowance."
     },
     {
       "assumption_id": "A11",
@@ -1239,7 +1219,7 @@
     },
     {
       "assumption_id": "A15",
-      "text": "Hole-making sequence eliminates \u00d830 pilot drilling and \u00d8110 core drilling due to rolled ring hollow blank. ID machining proceeds directly by single-point rough and finish boring from \u00d8110 as-cut ID."
+      "text": "Hole-making sequence eliminates Ø30 pilot drilling and Ø110 core drilling due to rolled ring hollow blank. ID machining proceeds directly by single-point rough and finish boring from Ø110 as-cut ID."
     },
     {
       "assumption_id": "A16",

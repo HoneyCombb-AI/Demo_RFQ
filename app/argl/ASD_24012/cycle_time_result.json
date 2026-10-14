@@ -1,8 +1,8 @@
 {
   "analysis_id": "ASD24012_DRAWING_merge_20261011T153537Z",
   "quantity": 100,
-  "t_cycle_per_part_sec": 3726.0,
-  "t_cycle_total_batch_sec": 372600.0,
+  "t_cycle_per_part_sec": 5207.8,
+  "t_cycle_total_batch_sec": 520780.0,
   "t_setup_total_batch_sec": 21060.0,
   "operations": [
     {
@@ -40,7 +40,7 @@
     },
     {
       "sequence": 2,
-      "name": "Dedicated Facing \u2014 Datum A",
+      "name": "Dedicated Facing — Datum A",
       "machine_family": "cnc_lathe",
       "in_house": true,
       "setup_time_sec": 600.0,
@@ -81,7 +81,7 @@
     },
     {
       "sequence": 3,
-      "name": "Dedicated Facing \u2014 Rear Face",
+      "name": "Dedicated Facing — Rear Face",
       "machine_family": "cnc_lathe",
       "in_house": true,
       "setup_time_sec": 600.0,
@@ -122,7 +122,7 @@
     },
     {
       "sequence": 4,
-      "name": "CNC Turn \u2014 Rough Ring Blank",
+      "name": "CNC Turn — Rough Ring Blank",
       "machine_family": "cnc_lathe",
       "in_house": true,
       "setup_time_sec": 1200.0,
@@ -216,7 +216,7 @@
     },
     {
       "sequence": 5,
-      "name": "VMC \u2014 Rough Non-Axisymmetric Profiles",
+      "name": "VMC — Rough Non-Axisymmetric Profiles",
       "machine_family": "vmc_3axis",
       "in_house": true,
       "setup_time_sec": 2100.0,
@@ -527,7 +527,7 @@
     },
     {
       "sequence": 6,
-      "name": "CNC Turn \u2014 Finish Bore and Counterbore",
+      "name": "CNC Turn — Finish Bore and Counterbore",
       "machine_family": "cnc_lathe",
       "in_house": true,
       "setup_time_sec": 1800.0,
@@ -590,7 +590,7 @@
             "passes": 1,
             "t_pure_cut": 0.1,
             "t_cut": 0.167,
-            "note": "Lathe finish boring of front counterbore shoulder \u00d8176 x 2.9mm"
+            "note": "Lathe finish boring of front counterbore shoulder Ø176 x 2.9mm"
           },
           "warnings": []
         },
@@ -628,7 +628,7 @@
     },
     {
       "sequence": 7,
-      "name": "Floor Gate \u2014 Before Internal Tooth Cutting",
+      "name": "Floor Gate — Before Internal Tooth Cutting",
       "machine_family": "inspection",
       "in_house": true,
       "setup_time_sec": 120.0,
@@ -658,54 +658,14 @@
     },
     {
       "sequence": 8,
-      "name": "Shape Internal Spline \u2014 Soft Final Form",
-      "machine_family": "gear_shaping",
-      "in_house": true,
-      "setup_time_sec": 2400.0,
-      "t_setup_per_piece_sec": 24.0,
-      "t_handling_sec": 24.0,
-      "t_machining_sec": 167.0,
-      "t_op_total_sec": 215.0,
-      "sub_op_results": [
-        {
-          "operation_seq": 8,
-          "sub_op_seq": 1,
-          "operation_type": "shape_teeth",
-          "kind": "gear_shape",
-          "rpm": null,
-          "feed_mm_min": null,
-          "t_cut_sec": 145.0,
-          "t_tool_sec": 14.5,
-          "t_rapid_sec": 7.5,
-          "t_sub_total_sec": 167.0,
-          "trace": {
-            "base_strokes": 600.0,
-            "mach_factor": 1.0,
-            "strokes_min": 600.0,
-            "approach": 5.0,
-            "overtravel": 3.0,
-            "stroke_len": 23.8,
-            "rot_feed": 0.35,
-            "pitch_dia": 154.6,
-            "t_cut": 2.417,
-            "t_tool": 0.242,
-            "t_rapid": 0.125,
-            "note": "CNC gear/cam shaper 2-pass soft finishing of 20 internal roller clutch ramps"
-          },
-          "warnings": []
-        }
-      ]
-    },
-    {
-      "sequence": 9,
-      "name": "VMC \u2014 Finish Profiles and Rear Lug Edges",
+      "name": "VMC — Finish Profiles and Rear Lug Edges",
       "machine_family": "vmc_3axis",
       "in_house": true,
       "setup_time_sec": 2100.0,
       "t_setup_per_piece_sec": 21.0,
       "t_handling_sec": 24.0,
-      "t_machining_sec": 317.3,
-      "t_op_total_sec": 362.3,
+      "t_machining_sec": 600.0,
+      "t_op_total_sec": 645.0,
       "sub_op_results": [
         {
           "operation_seq": 9,
@@ -1062,15 +1022,15 @@
       ]
     },
     {
-      "sequence": 10,
-      "name": "VMC \u2014 Front Lug Fillets and Edge Treatments",
+      "sequence": 9,
+      "name": "VMC — Front Lug Fillets and Edge Treatments",
       "machine_family": "vmc_3axis",
       "in_house": true,
       "setup_time_sec": 1800.0,
       "t_setup_per_piece_sec": 18.0,
       "t_handling_sec": 24.0,
-      "t_machining_sec": 88.8,
-      "t_op_total_sec": 130.8,
+      "t_machining_sec": 300.0,
+      "t_op_total_sec": 342.0,
       "sub_op_results": [
         {
           "operation_seq": 10,
@@ -1156,15 +1116,15 @@
       ]
     },
     {
-      "sequence": 11,
-      "name": "Indexed Milling \u2014 Internal Pad Chamfers",
+      "sequence": 10,
+      "name": "Indexed Milling — Internal Pad Chamfers",
       "machine_family": "vmc_5axis",
       "in_house": true,
       "setup_time_sec": 1800.0,
       "t_setup_per_piece_sec": 18.0,
       "t_handling_sec": 24.0,
-      "t_machining_sec": 15.8,
-      "t_op_total_sec": 57.8,
+      "t_machining_sec": 33.7,
+      "t_op_total_sec": 75.7,
       "sub_op_results": [
         {
           "operation_seq": 11,
@@ -1223,8 +1183,8 @@
       ]
     },
     {
-      "sequence": 12,
-      "name": "Bench \u2014 Spline Tooth Chamfer and Deburr",
+      "sequence": 11,
+      "name": "Bench — Profile Edge Deburr and Clean",
       "machine_family": "finish_bench",
       "in_house": true,
       "setup_time_sec": 180.0,
@@ -1274,7 +1234,7 @@
       ]
     },
     {
-      "sequence": 13,
+      "sequence": 12,
       "name": "Mark Date and Serial Identification",
       "machine_family": "finish_bench",
       "in_house": true,
@@ -1307,8 +1267,8 @@
       ]
     },
     {
-      "sequence": 14,
-      "name": "Floor Gate \u2014 Before Heat Treatment",
+      "sequence": 13,
+      "name": "Floor Gate — Before Heat Treatment",
       "machine_family": "inspection",
       "in_house": true,
       "setup_time_sec": 120.0,
@@ -1337,7 +1297,7 @@
       ]
     },
     {
-      "sequence": 15,
+      "sequence": 14,
       "name": "Pre-Heat-Treatment Clean",
       "machine_family": "finish_bench",
       "in_house": true,
@@ -1370,15 +1330,15 @@
       ]
     },
     {
-      "sequence": 16,
+      "sequence": 15,
       "name": "Carburize and Quench",
       "machine_family": "sealed_quench_furnace",
       "in_house": true,
       "setup_time_sec": 900.0,
       "t_setup_per_piece_sec": 9.0,
       "t_handling_sec": 20.0,
-      "t_machining_sec": 165.0,
-      "t_op_total_sec": 194.0,
+      "t_machining_sec": 1350.0,
+      "t_op_total_sec": 1379.0,
       "sub_op_results": [
         {
           "operation_seq": 16,
@@ -1387,10 +1347,10 @@
           "kind": "furnace_cycle",
           "rpm": null,
           "feed_mm_min": null,
-          "t_cut_sec": 95.0,
+          "t_cut_sec": 1152.0,
           "t_tool_sec": 0.0,
           "t_rapid_sec": 0.0,
-          "t_sub_total_sec": 95.0,
+          "t_sub_total_sec": 1152.0,
           "trace": {
             "ramp_min": 45,
             "soak_min": 3.84615,
@@ -1423,7 +1383,7 @@
       ]
     },
     {
-      "sequence": 17,
+      "sequence": 16,
       "name": "Temper Case-Hardened Rings",
       "machine_family": "sealed_quench_furnace",
       "in_house": true,
@@ -1456,7 +1416,7 @@
       ]
     },
     {
-      "sequence": 18,
+      "sequence": 17,
       "name": "Shot Blast After Tempering",
       "machine_family": "shot_peening",
       "in_house": true,
@@ -1487,8 +1447,8 @@
       ]
     },
     {
-      "sequence": 19,
-      "name": "OD Grind \u2014 Lug-Tip Envelope",
+      "sequence": 18,
+      "name": "OD Grind — Lug-Tip Envelope",
       "machine_family": "od_grinding",
       "in_house": true,
       "setup_time_sec": 1800.0,
@@ -1527,8 +1487,8 @@
       ]
     },
     {
-      "sequence": 20,
-      "name": "Grinding Burn Release \u2014 Nital Etch",
+      "sequence": 19,
+      "name": "Grinding Burn Release — Nital Etch",
       "machine_family": "inspection",
       "in_house": false,
       "setup_time_sec": 0.0,
@@ -1557,7 +1517,7 @@
       ]
     },
     {
-      "sequence": 21,
+      "sequence": 20,
       "name": "Final Edge Check and Precision Clean",
       "machine_family": "finish_bench",
       "in_house": true,
@@ -1604,7 +1564,7 @@
       ]
     },
     {
-      "sequence": 22,
+      "sequence": 21,
       "name": "Consolidated Final Inspection",
       "machine_family": "inspection",
       "in_house": true,

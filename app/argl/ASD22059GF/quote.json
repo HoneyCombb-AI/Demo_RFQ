@@ -20,31 +20,31 @@
     "net_weight_source": "estimated_geometry"
   },
   "direct_cost": {
-    "material_cost_inr": 339.53,
-    "machining_cost_inr": 753.11,
-    "heat_treatment_cost_inr": 48.15,
-    "direct_cost_subtotal_inr": 1140.79
+    "material_cost_inr": 663.56,
+    "machining_cost_inr": 1058.36,
+    "heat_treatment_cost_inr": 150.0,
+    "direct_cost_subtotal_inr": 1871.92
   },
   "overheads_and_surcharges": {
-    "factory_overhead_margin_inr": 1140.79,
-    "tooling_inr": 228.16,
-    "rejection_inr": 50.19,
-    "inspection_inr": 45.63,
-    "cleaning_inr": 22.82,
+    "factory_overhead_margin_inr": 1871.92,
+    "tooling_inr": 374.38,
+    "rejection_inr": 82.36,
+    "inspection_inr": 74.88,
+    "cleaning_inr": 37.44,
     "scrap_recovery_credit_inr": -40.27,
     "export_packaging_inr": 33.84,
     "fob_freight_inr": 25.38,
     "packaging_and_fob_inr": 59.22
   },
   "pricing_summary": {
-    "subtotal_before_margin_inr": 1506.54,
-    "overhead_and_margin_inr": 1140.79,
-    "final_ex_works_price_inr": 2647.33
+    "subtotal_before_margin_inr": 2459.93,
+    "overhead_and_margin_inr": 1871.92,
+    "final_ex_works_price_inr": 4331.85
   },
   "machining_operations": [
     {
       "sequence": 1,
-      "operation_name": "CNC Turn \u2014 First Rough Setup",
+      "operation_name": "CNC Turn — First Rough Setup",
       "machine_family": "cnc_lathe",
       "cycle_time_sec": 233.8,
       "hourly_rate_inr": 250.0,
@@ -53,7 +53,7 @@
     },
     {
       "sequence": 2,
-      "operation_name": "CNC Turn \u2014 Rear Rough Setup",
+      "operation_name": "CNC Turn — Rear Rough Setup",
       "machine_family": "cnc_lathe",
       "cycle_time_sec": 149.4,
       "hourly_rate_inr": 250.0,
@@ -62,7 +62,7 @@
     },
     {
       "sequence": 3,
-      "operation_name": "Indexed Mill \u2014 Rough External Dogs",
+      "operation_name": "Indexed Mill — Rough External Dogs",
       "machine_family": "vmc_5axis",
       "cycle_time_sec": 514.8,
       "hourly_rate_inr": 600.0,
@@ -71,16 +71,16 @@
     },
     {
       "sequence": 4,
-      "operation_name": "Gear Shape \u2014 Rough Internal Teeth",
+      "operation_name": "Gear Shape — Rough Internal Teeth",
       "machine_family": "gear_shaping",
-      "cycle_time_sec": 246.1,
+      "cycle_time_sec": 1200.0,
       "hourly_rate_inr": 350.0,
-      "cost_per_piece_inr": 23.93,
+      "cost_per_piece_inr": 116.67,
       "cost_per_piece_raw": 23.926388888888887
     },
     {
       "sequence": 5,
-      "operation_name": "CNC Turn \u2014 BS I Semi-Finish and Groove",
+      "operation_name": "CNC Turn — BS I Semi-Finish and Groove",
       "machine_family": "cnc_lathe",
       "cycle_time_sec": 427.9,
       "hourly_rate_inr": 250.0,
@@ -89,7 +89,7 @@
     },
     {
       "sequence": 6,
-      "operation_name": "CNC Turn \u2014 nBS II Semi-Finish",
+      "operation_name": "CNC Turn — nBS II Semi-Finish",
       "machine_family": "cnc_lathe",
       "cycle_time_sec": 221.1,
       "hourly_rate_inr": 250.0,
@@ -98,7 +98,7 @@
     },
     {
       "sequence": 7,
-      "operation_name": "Indexed Mill \u2014 Semi-Finish External Dogs",
+      "operation_name": "Indexed Mill — Semi-Finish External Dogs",
       "machine_family": "vmc_5axis",
       "cycle_time_sec": 676.9,
       "hourly_rate_inr": 600.0,
@@ -107,25 +107,16 @@
     },
     {
       "sequence": 8,
-      "operation_name": "Gear Shape \u2014 Semi-Finish Internal Teeth",
+      "operation_name": "Gear Shape — Semi-Finish Internal Teeth",
       "machine_family": "gear_shaping",
-      "cycle_time_sec": 237.1,
+      "cycle_time_sec": 750.0,
       "hourly_rate_inr": 350.0,
-      "cost_per_piece_inr": 23.05,
+      "cost_per_piece_inr": 72.92,
       "cost_per_piece_raw": 23.051388888888887
     },
     {
-      "sequence": 9,
-      "operation_name": "Internal Gear Shave",
-      "machine_family": "gear_shaving",
-      "cycle_time_sec": 394.3,
-      "hourly_rate_inr": 450.0,
-      "cost_per_piece_inr": 49.29,
-      "cost_per_piece_raw": 49.2875
-    },
-    {
       "sequence": 10,
-      "operation_name": "Tooth Chamfer \u2014 BS I",
+      "operation_name": "Tooth Chamfer — BS I",
       "machine_family": "vmc_5axis",
       "cycle_time_sec": 326.8,
       "hourly_rate_inr": 600.0,
@@ -134,7 +125,7 @@
     },
     {
       "sequence": 11,
-      "operation_name": "Tooth Chamfer \u2014 nBS II",
+      "operation_name": "Tooth Chamfer — nBS II",
       "machine_family": "vmc_5axis",
       "cycle_time_sec": 181.4,
       "hourly_rate_inr": 600.0,
@@ -152,7 +143,7 @@
     },
     {
       "sequence": 16,
-      "operation_name": "Face Grind \u2014 Datum A",
+      "operation_name": "Face Grind — Datum A",
       "machine_family": "od_grinding",
       "cycle_time_sec": 98.0,
       "hourly_rate_inr": 600.0,
@@ -161,7 +152,7 @@
     },
     {
       "sequence": 17,
-      "operation_name": "Face Grind \u2014 nBS II",
+      "operation_name": "Face Grind — nBS II",
       "machine_family": "od_grinding",
       "cycle_time_sec": 95.0,
       "hourly_rate_inr": 600.0,
@@ -170,7 +161,7 @@
     },
     {
       "sequence": 18,
-      "operation_name": "Cylindrical Grind \u2014 Datum B and Groove",
+      "operation_name": "Cylindrical Grind — Datum B and Groove",
       "machine_family": "od_grinding",
       "cycle_time_sec": 209.6,
       "hourly_rate_inr": 600.0,
@@ -179,7 +170,7 @@
     },
     {
       "sequence": 19,
-      "operation_name": "Indexed Form Grind \u2014 External Dogs",
+      "operation_name": "Indexed Form Grind — External Dogs",
       "machine_family": "gear_grinding",
       "cycle_time_sec": 417.0,
       "hourly_rate_inr": 600.0,
@@ -188,7 +179,7 @@
     },
     {
       "sequence": 20,
-      "operation_name": "ID Grind \u2014 Internal Tooth-Tip Circle",
+      "operation_name": "ID Grind — Internal Tooth-Tip Circle",
       "machine_family": "id_grinding",
       "cycle_time_sec": 149.7,
       "hourly_rate_inr": 450.0,
@@ -199,9 +190,9 @@
       "sequence": 21,
       "operation_name": "Internal Helical Gear Hard Grind",
       "machine_family": "gear_grinding",
-      "cycle_time_sec": 708.4,
+      "cycle_time_sec": 1980.0,
       "hourly_rate_inr": 600.0,
-      "cost_per_piece_inr": 118.07,
+      "cost_per_piece_inr": 330.0,
       "cost_per_piece_raw": 118.06666666666666
     },
     {

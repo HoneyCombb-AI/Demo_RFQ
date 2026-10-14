@@ -1,6 +1,6 @@
 {
   "drawing_number": "ASD 24012",
-  "part_name": "",
+  "part_name": "CLUTCH RING",
   "material": "ISO683-3 16MnCr5",
   "quantity": 100,
   "quote_status": "complete",
@@ -20,31 +20,31 @@
     "net_weight_source": "estimated_geometry"
   },
   "direct_cost": {
-    "material_cost_inr": 227.32,
-    "machining_cost_inr": 258.43,
+    "material_cost_inr": 431.14,
+    "machining_cost_inr": 282.75,
     "heat_treatment_cost_inr": 70.4,
-    "direct_cost_subtotal_inr": 556.15
+    "direct_cost_subtotal_inr": 784.29
   },
   "overheads_and_surcharges": {
-    "factory_overhead_margin_inr": 556.15,
-    "tooling_inr": 111.23,
-    "rejection_inr": 24.47,
-    "inspection_inr": 22.25,
-    "cleaning_inr": 11.12,
+    "factory_overhead_margin_inr": 784.29,
+    "tooling_inr": 156.86,
+    "rejection_inr": 34.51,
+    "inspection_inr": 31.37,
+    "cleaning_inr": 15.69,
     "scrap_recovery_credit_inr": -31.07,
     "export_packaging_inr": 17.37,
     "fob_freight_inr": 13.03,
     "packaging_and_fob_inr": 30.4
   },
   "pricing_summary": {
-    "subtotal_before_margin_inr": 724.55,
-    "overhead_and_margin_inr": 556.15,
-    "final_ex_works_price_inr": 1280.7
+    "subtotal_before_margin_inr": 1022.05,
+    "overhead_and_margin_inr": 784.29,
+    "final_ex_works_price_inr": 1806.34
   },
   "machining_operations": [
     {
       "sequence": 2,
-      "operation_name": "Dedicated Facing \u2014 Datum A",
+      "operation_name": "Dedicated Facing — Datum A",
       "machine_family": "cnc_lathe",
       "cycle_time_sec": 83.9,
       "hourly_rate_inr": 250.0,
@@ -53,7 +53,7 @@
     },
     {
       "sequence": 3,
-      "operation_name": "Dedicated Facing \u2014 Rear Face",
+      "operation_name": "Dedicated Facing — Rear Face",
       "machine_family": "cnc_lathe",
       "cycle_time_sec": 83.9,
       "hourly_rate_inr": 250.0,
@@ -62,7 +62,7 @@
     },
     {
       "sequence": 4,
-      "operation_name": "CNC Turn \u2014 Rough Ring Blank",
+      "operation_name": "CNC Turn — Rough Ring Blank",
       "machine_family": "cnc_lathe",
       "cycle_time_sec": 246.9,
       "hourly_rate_inr": 250.0,
@@ -71,7 +71,7 @@
     },
     {
       "sequence": 5,
-      "operation_name": "VMC \u2014 Rough Non-Axisymmetric Profiles",
+      "operation_name": "VMC — Rough Non-Axisymmetric Profiles",
       "machine_family": "vmc_3axis",
       "cycle_time_sec": 853.2,
       "hourly_rate_inr": 400.0,
@@ -80,7 +80,7 @@
     },
     {
       "sequence": 6,
-      "operation_name": "CNC Turn \u2014 Finish Bore and Counterbore",
+      "operation_name": "CNC Turn — Finish Bore and Counterbore",
       "machine_family": "cnc_lathe",
       "cycle_time_sec": 160.8,
       "hourly_rate_inr": 250.0,
@@ -88,35 +88,26 @@
       "cost_per_piece_raw": 11.166666666666666
     },
     {
-      "sequence": 8,
-      "operation_name": "Shape Internal Spline \u2014 Soft Final Form",
-      "machine_family": "gear_shaping",
-      "cycle_time_sec": 215.0,
-      "hourly_rate_inr": 350.0,
-      "cost_per_piece_inr": 20.9,
-      "cost_per_piece_raw": 20.90277777777778
-    },
-    {
       "sequence": 9,
-      "operation_name": "VMC \u2014 Finish Profiles and Rear Lug Edges",
+      "operation_name": "VMC — Finish Profiles and Rear Lug Edges",
       "machine_family": "vmc_3axis",
-      "cycle_time_sec": 362.3,
+      "cycle_time_sec": 600.0,
       "hourly_rate_inr": 400.0,
-      "cost_per_piece_inr": 40.26,
+      "cost_per_piece_inr": 66.67,
       "cost_per_piece_raw": 40.25555555555555
     },
     {
       "sequence": 10,
-      "operation_name": "VMC \u2014 Front Lug Fillets and Edge Treatments",
+      "operation_name": "VMC — Front Lug Fillets and Edge Treatments",
       "machine_family": "vmc_3axis",
-      "cycle_time_sec": 130.8,
+      "cycle_time_sec": 300.0,
       "hourly_rate_inr": 400.0,
-      "cost_per_piece_inr": 14.53,
+      "cost_per_piece_inr": 33.33,
       "cost_per_piece_raw": 14.533333333333335
     },
     {
       "sequence": 11,
-      "operation_name": "Indexed Milling \u2014 Internal Pad Chamfers",
+      "operation_name": "Indexed Milling — Internal Pad Chamfers",
       "machine_family": "vmc_5axis",
       "cycle_time_sec": 57.8,
       "hourly_rate_inr": 600.0,
@@ -125,7 +116,7 @@
     },
     {
       "sequence": 12,
-      "operation_name": "Bench \u2014 Spline Tooth Chamfer and Deburr",
+      "operation_name": "Bench — Profile Edge Deburr and Clean",
       "machine_family": "finish_bench",
       "cycle_time_sec": 132.0,
       "hourly_rate_inr": 200.0,
@@ -152,7 +143,7 @@
     },
     {
       "sequence": 19,
-      "operation_name": "OD Grind \u2014 Lug-Tip Envelope",
+      "operation_name": "OD Grind — Lug-Tip Envelope",
       "machine_family": "od_grinding",
       "cycle_time_sec": 95.9,
       "hourly_rate_inr": 600.0,

@@ -20,117 +20,83 @@
     "net_weight_source": "feature_graph"
   },
   "direct_cost": {
-    "material_cost_inr": 36.46,
-    "machining_cost_inr": 187.41,
+    "material_cost_inr": 63.36,
+    "machining_cost_inr": 90.84,
     "heat_treatment_cost_inr": 5.04,
-    "direct_cost_subtotal_inr": 228.91
+    "direct_cost_subtotal_inr": 159.24
   },
   "overheads_and_surcharges": {
-    "factory_overhead_margin_inr": 228.91,
-    "tooling_inr": 45.78,
-    "rejection_inr": 10.07,
-    "inspection_inr": 9.16,
-    "cleaning_inr": 4.58,
+    "factory_overhead_margin_inr": 159.24,
+    "tooling_inr": 31.85,
+    "rejection_inr": 7.01,
+    "inspection_inr": 6.37,
+    "cleaning_inr": 3.18,
     "scrap_recovery_credit_inr": -3.26,
     "export_packaging_inr": 3.78,
     "fob_freight_inr": 2.84,
     "packaging_and_fob_inr": 6.62
   },
   "pricing_summary": {
-    "subtotal_before_margin_inr": 301.86,
-    "overhead_and_margin_inr": 228.91,
-    "final_ex_works_price_inr": 530.77
+    "subtotal_before_margin_inr": 211.01,
+    "overhead_and_margin_inr": 159.24,
+    "final_ex_works_price_inr": 370.25
   },
   "machining_operations": [
     {
       "sequence": 1,
-      "operation_name": "CNC Turn \u2013 Rough Side A, OD and Bore",
+      "operation_name": "CNC Turn — Setup 1 (Side A): Rough/Finish Face, Bore Q, OD and Chamfers",
       "machine_family": "cnc_lathe",
-      "cycle_time_sec": 128.0,
+      "cycle_time_sec": 180.0,
       "hourly_rate_inr": 250.0,
-      "cost_per_piece_inr": 8.89,
-      "cost_per_piece_raw": 8.88888888888889
+      "cost_per_piece_inr": 12.5
     },
     {
       "sequence": 2,
-      "operation_name": "CNC Turn \u2013 Rough Side B and Rim",
+      "operation_name": "CNC Turn — Setup 2 (Side B): Face Side B, Rim Finish and Chamfers",
       "machine_family": "cnc_lathe",
-      "cycle_time_sec": 213.7,
+      "cycle_time_sec": 180.0,
       "hourly_rate_inr": 250.0,
-      "cost_per_piece_inr": 14.84,
-      "cost_per_piece_raw": 14.840277777777777
+      "cost_per_piece_inr": 12.5
     },
     {
       "sequence": 3,
-      "operation_name": "VMC \u2013 Rough Non-Rotational Features",
+      "operation_name": "VMC — Rough Non-Rotational Profiles and Windows",
       "machine_family": "vmc_3axis",
-      "cycle_time_sec": 312.8,
+      "cycle_time_sec": 240.0,
       "hourly_rate_inr": 400.0,
-      "cost_per_piece_inr": 34.76,
-      "cost_per_piece_raw": 34.75555555555555
+      "cost_per_piece_inr": 26.67
     },
     {
       "sequence": 4,
-      "operation_name": "CNC Turn \u2013 Establish Final Bore Q",
-      "machine_family": "cnc_lathe",
-      "cycle_time_sec": 168.6,
-      "hourly_rate_inr": 250.0,
-      "cost_per_piece_inr": 11.71,
-      "cost_per_piece_raw": 11.708333333333332
+      "operation_name": "VMC — Finish Profiles, Bosses and Mounting Holes",
+      "machine_family": "vmc_3axis",
+      "cycle_time_sec": 240.0,
+      "hourly_rate_inr": 400.0,
+      "cost_per_piece_inr": 26.67
     },
     {
       "sequence": 5,
-      "operation_name": "CNC Turn \u2013 OD, Chamfer and Side A Allowance",
-      "machine_family": "cnc_lathe",
-      "cycle_time_sec": 181.5,
-      "hourly_rate_inr": 250.0,
-      "cost_per_piece_inr": 12.6,
-      "cost_per_piece_raw": 12.604166666666666
+      "operation_name": "Controlled Deburr and Pre-Lap Cleaning",
+      "machine_family": "finish_bench",
+      "cycle_time_sec": 90.0,
+      "hourly_rate_inr": 200.0,
+      "cost_per_piece_inr": 5.0
     },
     {
       "sequence": 6,
-      "operation_name": "CNC Turn \u2013 Side B Allowance and Rim Finish",
-      "machine_family": "cnc_lathe",
-      "cycle_time_sec": 214.3,
-      "hourly_rate_inr": 250.0,
-      "cost_per_piece_inr": 14.88,
-      "cost_per_piece_raw": 14.881944444444446
+      "operation_name": "Lap — Side B Reference Land (Batch Process)",
+      "machine_family": "lapping",
+      "cycle_time_sec": 45.0,
+      "hourly_rate_inr": 300.0,
+      "cost_per_piece_inr": 3.75
     },
     {
       "sequence": 7,
-      "operation_name": "VMC \u2013 Finish Profiles, Bosses and Mounting Holes",
-      "machine_family": "vmc_3axis",
-      "cycle_time_sec": 382.0,
-      "hourly_rate_inr": 400.0,
-      "cost_per_piece_inr": 42.44,
-      "cost_per_piece_raw": 42.44444444444444
-    },
-    {
-      "sequence": 8,
-      "operation_name": "Controlled Deburr and Pre-Lap Cleaning",
-      "machine_family": "finish_bench",
-      "cycle_time_sec": 196.8,
-      "hourly_rate_inr": 200.0,
-      "cost_per_piece_inr": 10.93,
-      "cost_per_piece_raw": 10.933333333333334
-    },
-    {
-      "sequence": 9,
-      "operation_name": "Lap \u2013 Side B Reference Land",
+      "operation_name": "Lap — Side A and Final Thickness (Batch Process)",
       "machine_family": "lapping",
-      "cycle_time_sec": 203.1,
+      "cycle_time_sec": 45.0,
       "hourly_rate_inr": 300.0,
-      "cost_per_piece_inr": 16.93,
-      "cost_per_piece_raw": 16.925
-    },
-    {
-      "sequence": 10,
-      "operation_name": "Lap \u2013 Side A and Final Thickness",
-      "machine_family": "lapping",
-      "cycle_time_sec": 233.1,
-      "hourly_rate_inr": 300.0,
-      "cost_per_piece_inr": 19.43,
-      "cost_per_piece_raw": 19.425
+      "cost_per_piece_inr": 3.75
     }
   ]
 }
