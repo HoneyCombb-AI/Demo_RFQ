@@ -205,7 +205,7 @@ export function QuoteTab({ quote }: { quote: JttQuoteData | any }) {
             <Table>
               <TableHeader className="bg-muted/50">
                 <TableRow>
-                  <TableHead className="w-[80px] text-xs font-semibold tracking-wider uppercase text-center">Op #</TableHead>
+                  <TableHead className="w-20 text-xs font-semibold tracking-wider uppercase text-center">Op #</TableHead>
                   <TableHead className="text-xs font-semibold tracking-wider uppercase">Operation Name</TableHead>
                   <TableHead className="text-xs font-semibold tracking-wider uppercase">Machine Family</TableHead>
                   <TableHead className="text-xs font-semibold tracking-wider uppercase text-right">Cycle Time (s)</TableHead>
