@@ -6,11 +6,13 @@
   "base_geometry": "rotational",
   "stock": {
     "form": "cold_rolled_ring_blank",
-    "shape": "forging",
+    "outer_diameter_mm": 158.0,
+    "inner_diameter_mm": 115.3,
+    "length_mm": 27.8,
     "diameter_mm": 158.0,
-    "bore_diameter_mm": 115.3,
-    "width_mm": 27.8,
-    "machining_allowance_mm": 1.0
+    "machining_allowance_mm": 1.0,
+    "weight_kg": 1.78,
+    "finish_part_weight_kg": 1.06
   },
   "operations": [
     {
@@ -20,11 +22,21 @@
       "setup_note": "Round raw material cold rolled into the ring section; width rolled with 0.4 mm face stock per side.",
       "datum_references": [],
       "material_machinability": "medium",
-      "material_hardness_hrc": null,
+      "setup_time_min": 30.0,
       "in_house": true,
-      "outside_process": null,
       "sub_operations": [
-        {"sequence": 1, "operation_type": "cold_roll_section", "target_feature_ids": []}
+        {
+          "sequence": 1,
+          "operation_type": "cold_roll_section",
+          "target_feature_ids": [],
+          "inputs": {
+            "section_area_mm2": 514,
+            "section": "27.8 wide \u00d8158-\u00d8130, 17 wide \u00d8130-\u00d8115.3",
+            "developed_length_mm": 460,
+            "blank_mass_kg": 1.78,
+            "line_speed_m_min": 10.0
+          }
+        }
       ]
     },
     {
@@ -34,12 +46,26 @@
       "setup_note": "Section bent into a ring; heat code marked; laser thickness measurement in line.",
       "datum_references": [],
       "material_machinability": "medium",
-      "material_hardness_hrc": null,
+      "setup_time_min": 10.0,
       "in_house": true,
-      "outside_process": null,
       "sub_operations": [
-        {"sequence": 1, "operation_type": "ring_coil", "target_feature_ids": []},
-        {"sequence": 2, "operation_type": "mark_stamp", "target_feature_ids": []}
+        {
+          "sequence": 1,
+          "operation_type": "ring_coil",
+          "target_feature_ids": [],
+          "inputs": {
+            "ring_mean_diameter_mm": 140,
+            "bend_time_s": 10
+          }
+        },
+        {
+          "sequence": 2,
+          "operation_type": "mark_stamp",
+          "target_feature_ids": [],
+          "inputs": {
+            "mark_time_s": 3
+          }
+        }
       ]
     },
     {
@@ -49,12 +75,27 @@
       "setup_note": "Ring ends flash-butt welded; weld upset trimmed flush on ID, OD and faces.",
       "datum_references": [],
       "material_machinability": "medium",
-      "material_hardness_hrc": null,
+      "setup_time_min": 10.0,
       "in_house": true,
-      "outside_process": null,
       "sub_operations": [
-        {"sequence": 1, "operation_type": "flash_butt_weld", "target_feature_ids": []},
-        {"sequence": 2, "operation_type": "trim_flash", "target_feature_ids": []}
+        {
+          "sequence": 1,
+          "operation_type": "flash_butt_weld",
+          "target_feature_ids": [],
+          "inputs": {
+            "weld_section_mm2": 514,
+            "flash_s": 20,
+            "upset_s": 4
+          }
+        },
+        {
+          "sequence": 2,
+          "operation_type": "trim_flash",
+          "target_feature_ids": [],
+          "inputs": {
+            "trim_s": 10
+          }
+        }
       ]
     },
     {
@@ -64,11 +105,18 @@
       "setup_note": "Batch / continuous conveyor furnace or induction normalizer; homogenises the weld zone before machining.",
       "datum_references": [],
       "material_machinability": "medium",
-      "material_hardness_hrc": null,
+      "setup_time_min": 0.0,
       "in_house": true,
-      "outside_process": null,
       "sub_operations": [
-        {"sequence": 1, "operation_type": "normalize", "target_feature_ids": []}
+        {
+          "sequence": 1,
+          "operation_type": "normalize",
+          "target_feature_ids": [],
+          "inputs": {
+            "part_mass_kg": 1.78,
+            "furnace_throughput_kg_h": 400
+          }
+        }
       ]
     },
     {
@@ -78,11 +126,19 @@
       "setup_note": "Descale after normalizing.",
       "datum_references": [],
       "material_machinability": "medium",
-      "material_hardness_hrc": null,
+      "setup_time_min": 0.0,
       "in_house": true,
-      "outside_process": null,
       "sub_operations": [
-        {"sequence": 1, "operation_type": "shot_blast", "target_feature_ids": []}
+        {
+          "sequence": 1,
+          "operation_type": "shot_blast",
+          "target_feature_ids": [],
+          "inputs": {
+            "part_mass_kg": 1.78,
+            "batch_kg": 150,
+            "batch_cycle_min": 12
+          }
+        }
       ]
     },
     {
@@ -92,49 +148,234 @@
       "setup_note": "Ring expanded / sized to restore roundness after welding and normalizing.",
       "datum_references": [],
       "material_machinability": "medium",
-      "material_hardness_hrc": null,
+      "setup_time_min": 10.0,
       "in_house": true,
-      "outside_process": null,
       "sub_operations": [
-        {"sequence": 1, "operation_type": "coin_size", "target_feature_ids": []}
+        {
+          "sequence": 1,
+          "operation_type": "coin_size",
+          "target_feature_ids": [],
+          "inputs": {
+            "stroke_s": 9
+          }
+        }
       ]
     },
     {
       "sequence": 7,
       "name": "CNC Turn - Setup 1 (Side A)",
       "machine_family": "cnc_lathe",
-      "setup_note": "Clamped on blank OD in soft jaws. Side-A profile (flange face, Ø139 shoulder, Ø130 hub, 10 deg cone) and spline tip bore Ø117.3 (datum A).",
-      "datum_references": ["A"],
+      "setup_note": "Clamped on blank OD in soft jaws. Side-A profile (flange face, \u00d8139 shoulder, \u00d8130 hub, 10 deg cone) and spline tip bore \u00d8117.3 (datum A).",
+      "datum_references": [
+        "A"
+      ],
       "material_machinability": "medium",
-      "material_hardness_hrc": null,
+      "setup_time_min": 20.0,
       "in_house": true,
-      "outside_process": null,
       "sub_operations": [
-        {"sequence": 1, "operation_type": "face_turn", "target_feature_ids": ["F40"]},
-        {"sequence": 2, "operation_type": "form_turn", "target_feature_ids": ["F04", "F34", "F22", "F06", "F11"]},
-        {"sequence": 3, "operation_type": "rough_bore_id", "target_feature_ids": ["F02"]},
-        {"sequence": 4, "operation_type": "finish_bore_id", "target_feature_ids": ["F02"]},
-        {"sequence": 5, "operation_type": "chamfer_turn", "target_feature_ids": ["F05", "F10"]}
+        {
+          "sequence": 1,
+          "operation_type": "face_turn",
+          "target_feature_ids": [
+            "F40"
+          ],
+          "inputs": {
+            "flange_face_radial_mm": 9.5,
+            "axial_stock_mm": 2.3,
+            "start_diameter_mm": 158.0,
+            "finish_diameter_mm": 139.0,
+            "vc_m_min": 200,
+            "f_mm_rev": 0.28,
+            "rpm_at_mean_d148": 430,
+            "passes": 2
+          }
+        },
+        {
+          "sequence": 2,
+          "operation_type": "form_turn",
+          "target_feature_ids": [
+            "F04",
+            "F34",
+            "F22",
+            "F06",
+            "F11"
+          ],
+          "inputs": {
+            "profile_length_mm": 27,
+            "elements": "flange face 9.5 + \u00d8139 shoulder 1.9 + shoulder face 4.5 + \u00d8130 hub step + R0.8/R1.25 + 10 deg cone \u00d8126.3-\u00d8117.3 4.6",
+            "vc_m_min": 240,
+            "f_mm_rev": 0.12,
+            "rpm_at_mean_d138": 553.6,
+            "passes": 1
+          }
+        },
+        {
+          "sequence": 3,
+          "operation_type": "rough_bore_id",
+          "target_feature_ids": [
+            "F02"
+          ],
+          "inputs": {
+            "start_diameter_mm": 115.3,
+            "finish_diameter_mm": 116.7,
+            "cut_length_mm": 17.0,
+            "vc_m_min": 180,
+            "f_mm_rev": 0.25,
+            "rpm": 496.9,
+            "passes": 1
+          }
+        },
+        {
+          "sequence": 4,
+          "operation_type": "finish_bore_id",
+          "target_feature_ids": [
+            "F02"
+          ],
+          "inputs": {
+            "start_diameter_mm": 116.7,
+            "finish_diameter_mm": 117.3,
+            "cut_length_mm": 17.0,
+            "vc_m_min": 220,
+            "f_mm_rev": 0.12,
+            "rpm": 600,
+            "passes": 1
+          }
+        },
+        {
+          "sequence": 5,
+          "operation_type": "chamfer_turn",
+          "target_feature_ids": [
+            "F05",
+            "F10"
+          ],
+          "inputs": {
+            "F05": "0.5 x 45",
+            "F10": "1.5 x 45",
+            "f_mm_rev": 0.12
+          }
+        }
       ]
     },
     {
       "sequence": 8,
       "name": "CNC Turn - Setup 2 (Side B)",
       "machine_family": "cnc_lathe",
-      "setup_note": "Flipped, clamped on bore Ø117.3 (expanding mandrel), located on side-A shoulder. Side-B profile, OD Ø156, fork groove 13.5 x Ø143.",
-      "datum_references": ["A"],
+      "setup_note": "Flipped, clamped on bore \u00d8117.3 (expanding mandrel), located on side-A shoulder. Side-B profile, OD \u00d8156, fork groove 13.5 x \u00d8143.",
+      "datum_references": [
+        "A"
+      ],
       "material_machinability": "medium",
-      "material_hardness_hrc": null,
+      "setup_time_min": 20.0,
       "in_house": true,
-      "outside_process": null,
       "sub_operations": [
-        {"sequence": 1, "operation_type": "face_turn", "target_feature_ids": ["F28"]},
-        {"sequence": 2, "operation_type": "form_turn", "target_feature_ids": ["F09", "F35", "F23", "F15"]},
-        {"sequence": 3, "operation_type": "rough_turn_od", "target_feature_ids": ["F01"]},
-        {"sequence": 4, "operation_type": "finish_turn_od", "target_feature_ids": ["F01"]},
-        {"sequence": 5, "operation_type": "groove_od", "target_feature_ids": ["F03"]},
-        {"sequence": 6, "operation_type": "groove_od", "target_feature_ids": ["F24"]},
-        {"sequence": 7, "operation_type": "chamfer_turn", "target_feature_ids": ["F08", "F16", "F41"]}
+        {
+          "sequence": 1,
+          "operation_type": "face_turn",
+          "target_feature_ids": [
+            "F28"
+          ],
+          "inputs": {
+            "flange_face_radial_mm": 9.5,
+            "axial_stock_mm": 2.3,
+            "vc_m_min": 200,
+            "f_mm_rev": 0.28,
+            "rpm_at_mean_d148": 430,
+            "passes": 2
+          }
+        },
+        {
+          "sequence": 2,
+          "operation_type": "form_turn",
+          "target_feature_ids": [
+            "F09",
+            "F35",
+            "F23",
+            "F15"
+          ],
+          "inputs": {
+            "profile_length_mm": 27,
+            "vc_m_min": 240,
+            "f_mm_rev": 0.12,
+            "rpm_at_mean_d138": 553.6,
+            "passes": 1
+          }
+        },
+        {
+          "sequence": 3,
+          "operation_type": "rough_turn_od",
+          "target_feature_ids": [
+            "F01"
+          ],
+          "inputs": {
+            "start_diameter_mm": 158.0,
+            "finish_diameter_mm": 156.6,
+            "cut_length_mm": 25.2,
+            "vc_m_min": 200,
+            "f_mm_rev": 0.28,
+            "rpm": 402.9,
+            "passes": 1
+          }
+        },
+        {
+          "sequence": 4,
+          "operation_type": "finish_turn_od",
+          "target_feature_ids": [
+            "F01"
+          ],
+          "inputs": {
+            "start_diameter_mm": 156.6,
+            "finish_diameter_mm": 156.0,
+            "cut_length_mm": 25.2,
+            "vc_m_min": 240,
+            "f_mm_rev": 0.15,
+            "rpm": 488,
+            "passes": 1
+          }
+        },
+        {
+          "sequence": 5,
+          "operation_type": "groove_od",
+          "target_feature_ids": [
+            "F03"
+          ],
+          "inputs": {
+            "groove_width_mm": 13.5,
+            "start_diameter_mm": 156.0,
+            "seat_diameter_mm": 143.0,
+            "depth_mm": 6.5,
+            "insert_width_mm": 4.0,
+            "vc_m_min": 140,
+            "rpm": 297,
+            "f_plunge_mm_rev": 0.1,
+            "f_lateral_mm_rev": 0.2
+          }
+        },
+        {
+          "sequence": 6,
+          "operation_type": "groove_od",
+          "target_feature_ids": [
+            "F24"
+          ],
+          "inputs": {
+            "profile_mm": "wall 6.5 + bottom 13.5 + wall 6.5",
+            "stock_left_per_wall_mm": 0.1,
+            "vc_m_min": 180,
+            "rpm": 382,
+            "f_mm_rev": 0.12
+          }
+        },
+        {
+          "sequence": 7,
+          "operation_type": "chamfer_turn",
+          "target_feature_ids": [
+            "F08",
+            "F16",
+            "F41"
+          ],
+          "inputs": {
+            "f_mm_rev": 0.12
+          }
+        }
       ]
     },
     {
@@ -142,13 +383,35 @@
       "name": "Shape Internal Splines",
       "machine_family": "gear_shaper",
       "setup_note": "Parts stacked on arbor; 28 internal teeth. Zones F12-F14 (back-taper COL:C) are the same teeth.",
-      "datum_references": ["A"],
+      "datum_references": [
+        "A"
+      ],
       "material_machinability": "medium",
-      "material_hardness_hrc": null,
+      "setup_time_min": 30.0,
       "in_house": true,
-      "outside_process": null,
       "sub_operations": [
-        {"sequence": 1, "operation_type": "shape_teeth", "target_feature_ids": ["F02"]}
+        {
+          "sequence": 1,
+          "operation_type": "shape_teeth",
+          "target_feature_ids": [
+            "F02"
+          ],
+          "inputs": {
+            "teeth": 28,
+            "tip_diameter_mm": 117.3,
+            "module_mm_assumed": 4.25,
+            "pitch_diameter_mm": 119.0,
+            "tooth_depth_mm": 3.5,
+            "face_width_mm": 15.0,
+            "vc_m_min": 28,
+            "stroke_length_mm": 19,
+            "double_strokes_min": 737,
+            "rotary_feed_rough_mm": 0.4,
+            "rotary_feed_finish_mm": 0.2,
+            "radial_infeed_mm_stroke": 0.02,
+            "back_taper_allowance": 0.3
+          }
+        }
       ]
     },
     {
@@ -156,13 +419,25 @@
       "name": "Teeth Entry Chamfer",
       "machine_family": "gear_hobber",
       "setup_note": "Conventional horizontal hobber; tooth pointing / entry chamfer on spline ends.",
-      "datum_references": ["A"],
+      "datum_references": [
+        "A"
+      ],
       "material_machinability": "medium",
-      "material_hardness_hrc": null,
+      "setup_time_min": 20.0,
       "in_house": true,
-      "outside_process": null,
       "sub_operations": [
-        {"sequence": 1, "operation_type": "teeth_chamfer", "target_feature_ids": ["F02"]}
+        {
+          "sequence": 1,
+          "operation_type": "teeth_chamfer",
+          "target_feature_ids": [
+            "F02"
+          ],
+          "inputs": {
+            "teeth": 28,
+            "ends": 2,
+            "s_per_end": 12
+          }
+        }
       ]
     },
     {
@@ -172,11 +447,14 @@
       "setup_note": "Wash before induction hardening.",
       "datum_references": [],
       "material_machinability": "medium",
-      "material_hardness_hrc": null,
+      "setup_time_min": 0.0,
       "in_house": true,
-      "outside_process": null,
       "sub_operations": [
-        {"sequence": 1, "operation_type": "clean_degrease", "target_feature_ids": []}
+        {
+          "sequence": 1,
+          "operation_type": "clean_degrease",
+          "target_feature_ids": []
+        }
       ]
     },
     {
@@ -186,11 +464,23 @@
       "setup_note": "DC 0.8, 58-63 HRC on splines; drawing allows induction heating.",
       "datum_references": [],
       "material_machinability": "medium",
-      "material_hardness_hrc": null,
+      "setup_time_min": 15.0,
       "in_house": true,
-      "outside_process": null,
       "sub_operations": [
-        {"sequence": 1, "operation_type": "induction_harden", "target_feature_ids": ["F02"]}
+        {
+          "sequence": 1,
+          "operation_type": "induction_harden",
+          "target_feature_ids": [
+            "F02"
+          ],
+          "inputs": {
+            "DC_mm": 0.8,
+            "hardness_hrc": "58-63",
+            "heat_s": 6,
+            "quench_s": 8,
+            "index_s": 4
+          }
+        }
       ]
     },
     {
@@ -200,11 +490,19 @@
       "setup_note": "Temper after induction hardening.",
       "datum_references": [],
       "material_machinability": "hardened",
-      "material_hardness_hrc": 60,
+      "setup_time_min": 0.0,
       "in_house": true,
-      "outside_process": null,
       "sub_operations": [
-        {"sequence": 1, "operation_type": "temper", "target_feature_ids": []}
+        {
+          "sequence": 1,
+          "operation_type": "temper",
+          "target_feature_ids": [],
+          "inputs": {
+            "part_mass_kg": 1.06,
+            "cycle_h": 2,
+            "load_kg": 800
+          }
+        }
       ]
     },
     {
@@ -212,13 +510,29 @@
       "name": "Hard Turn Fork Groove Walls",
       "machine_family": "cnc_lathe",
       "setup_note": "CBN, clamped on bore. Fork groove walls F25/F26 to 13.5 +/-0.1, Ra 0.6, flatness 0.2, runout 0.4.",
-      "datum_references": ["A"],
+      "datum_references": [
+        "A"
+      ],
       "material_machinability": "hardened",
-      "material_hardness_hrc": 60,
+      "setup_time_min": 20.0,
       "in_house": true,
-      "outside_process": null,
       "sub_operations": [
-        {"sequence": 1, "operation_type": "face_turn", "target_feature_ids": ["F25", "F26"]}
+        {
+          "sequence": 1,
+          "operation_type": "face_turn",
+          "target_feature_ids": [
+            "F25",
+            "F26"
+          ],
+          "inputs": {
+            "wall_height_mm": 6.5,
+            "walls": 2,
+            "stock_per_wall_mm": 0.1,
+            "vc_m_min": 150,
+            "rpm": 318,
+            "f_mm_rev": 0.06
+          }
+        }
       ]
     },
     {
@@ -228,11 +542,19 @@
       "setup_note": "Deburr spline ends and edges.",
       "datum_references": [],
       "material_machinability": "hardened",
-      "material_hardness_hrc": 60,
+      "setup_time_min": 5.0,
       "in_house": true,
-      "outside_process": null,
       "sub_operations": [
-        {"sequence": 1, "operation_type": "deburr", "target_feature_ids": ["F02"]}
+        {
+          "sequence": 1,
+          "operation_type": "deburr",
+          "target_feature_ids": [
+            "F02"
+          ],
+          "inputs": {
+            "brush_time_s": 30
+          }
+        }
       ]
     },
     {
@@ -240,18 +562,45 @@
       "name": "Final Inspection",
       "machine_family": "inspection",
       "setup_note": "Spline check, hardness, crack and rust check; marking; final wash for cleanliness.",
-      "datum_references": ["A"],
+      "datum_references": [
+        "A"
+      ],
       "material_machinability": "hardened",
-      "material_hardness_hrc": 60,
+      "setup_time_min": 10.0,
       "in_house": true,
-      "outside_process": null,
       "sub_operations": [
-        {"sequence": 1, "operation_type": "gear_check", "target_feature_ids": ["F02"]},
-        {"sequence": 2, "operation_type": "hardness_test", "target_feature_ids": []},
-        {"sequence": 3, "operation_type": "mpi_ndt", "target_feature_ids": []},
-        {"sequence": 4, "operation_type": "manual_inspect", "target_feature_ids": []},
-        {"sequence": 5, "operation_type": "mark_stamp", "target_feature_ids": []},
-        {"sequence": 6, "operation_type": "clean_degrease", "target_feature_ids": []}
+        {
+          "sequence": 1,
+          "operation_type": "gear_check",
+          "target_feature_ids": [
+            "F02"
+          ]
+        },
+        {
+          "sequence": 2,
+          "operation_type": "hardness_test",
+          "target_feature_ids": []
+        },
+        {
+          "sequence": 3,
+          "operation_type": "mpi_ndt",
+          "target_feature_ids": []
+        },
+        {
+          "sequence": 4,
+          "operation_type": "manual_inspect",
+          "target_feature_ids": []
+        },
+        {
+          "sequence": 5,
+          "operation_type": "mark_stamp",
+          "target_feature_ids": []
+        },
+        {
+          "sequence": 6,
+          "operation_type": "clean_degrease",
+          "target_feature_ids": []
+        }
       ]
     }
   ],
@@ -259,29 +608,48 @@
     {
       "clarification_id": "C01",
       "question": "Material is not stated on the drawing. Which grade?",
-      "blocks": [12],
+      "blocks": [
+        12
+      ],
       "suggested_default": "Induction-hardenable steel (e.g. 42CrMo4)",
       "priority": "high"
     },
     {
       "clarification_id": "C02",
       "question": "Back-taper spline zones (COL:C): cut on the in-house shaper with a tilted cutter, or a separate operation?",
-      "blocks": [9],
+      "blocks": [
+        9
+      ],
       "suggested_default": "Shaped on the in-house shaper",
       "priority": "medium"
     },
     {
       "clarification_id": "C03",
       "question": "Spline data sheet TR-20515634 (module, tooth form) is referenced but not on the drawing. Please supply it.",
-      "blocks": [9, 10],
-      "suggested_default": "Module about 4.25 (from 28 teeth, tip Ø117.3), stub tooth depth 3.5",
+      "blocks": [
+        9,
+        10
+      ],
+      "suggested_default": "Module about 4.25 (from 28 teeth, tip \u00d8117.3), stub tooth depth 3.5",
       "priority": "high"
     }
   ],
   "assumptions": [
-    {"assumption_id": "A01", "text": "Stock is the in-house ring blank (cold-rolled section, ring-bent, flash-butt welded). Allowance 1.0 mm per side on turned diameters, 0.4 mm per face."},
-    {"assumption_id": "A02", "text": "Steps 6-7 of the shop process were not given; assumed shot blast (descale) and ring sizing."},
-    {"assumption_id": "A03", "text": "Profile from section D-D and details A/D: OD Ø156 flanges 4.85 thick, fork groove 13.5 wide to Ø143, Ø139 shoulders 27 wide, Ø130 / Ø126.3 hub steps (outside, not bores), 10 deg cones (Ø120.65 at 15.58), spline tip bore Ø117.3. Top/bottom features in D-D are the same surface."},
-    {"assumption_id": "A04", "text": "Internal splines shaped in house (earlier route sent broaching outside)."}
+    {
+      "assumption_id": "A01",
+      "text": "Stock is the in-house ring blank (cold-rolled section, ring-bent, flash-butt welded). Allowance 1.0 mm per side on turned diameters, 0.4 mm per face."
+    },
+    {
+      "assumption_id": "A02",
+      "text": "Steps 6-7 of the shop process were not given; assumed shot blast (descale) and ring sizing."
+    },
+    {
+      "assumption_id": "A03",
+      "text": "Profile from section D-D and details A/D: OD \u00d8156 flanges 4.85 thick, fork groove 13.5 wide to \u00d8143, \u00d8139 shoulders 27 wide, \u00d8130 / \u00d8126.3 hub steps (outside, not bores), 10 deg cones (\u00d8120.65 at 15.58), spline tip bore \u00d8117.3. Top/bottom features in D-D are the same surface."
+    },
+    {
+      "assumption_id": "A04",
+      "text": "Internal splines shaped in house (earlier route sent broaching outside)."
+    }
   ]
 }
