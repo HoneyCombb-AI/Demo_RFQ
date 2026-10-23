@@ -1,1257 +1,301 @@
 {
-  "analysis_id": "ASD24012_DRAWING_merge_20261011T153537Z",
-  "source_feature_graph_id": "ASD24012_DRAWING_merge_20261011T153537Z",
-  "quantity": 100,
+  "analysis_id": "ASD24012_DRAWING_merge_20261023T162854Z",
+  "source_feature_graph_id": "ASD24012_DRAWING_merge_20261023T162854Z",
+  "quantity": 10,
   "part_family": "hybrid",
   "base_geometry": "rotational",
   "stock": {
-    "form": "rolled_ring",
-    "diameter_mm": 202.0,
-    "outer_diameter_mm": 202.0,
-    "inner_diameter_mm": 148.0,
-    "length_mm": 20.0,
-    "weight_kg": 2.3,
-    "finish_part_weight_kg": 0.87,
-    "machining_allowance_mm": 2.0
+    "form": "cold_rolled_ring_blank",
+    "shape": "forging",
+    "diameter_mm": 197.0,
+    "bore_diameter_mm": 152.6,
+    "width_mm": 16.6,
+    "machining_allowance_mm": 1.0
   },
   "operations": [
     {
       "sequence": 1,
-      "name": "Normalize Rolled Ring Blanks",
-      "machine_family": "normalizing_furnace",
-      "setup_note": "Rack the rolled ring blanks with circulation space and normalize/stress-relieve before any machining. Prepare 100 annular blanks (approx. 2.3 kg each, Ø202 × Ø148 × 20 mm) for batch normalizing.",
+      "name": "Cold Roll Ring Section",
+      "machine_family": "cold_rolling_mill",
+      "setup_note": "Round raw material cold rolled into the ring section; width rolled with 0.4 mm face stock per side.",
       "datum_references": [],
       "material_machinability": "medium",
-      "setup_time_min": 10.0,
+      "material_hardness_hrc": null,
       "in_house": true,
+      "outside_process": null,
       "sub_operations": [
-        {
-          "sequence": 1,
-          "operation_type": "normalize",
-          "target_feature_ids": [],
-          "inputs": {
-            "kind": "furnace_cycle",
-            "batch_size_parts": 100,
-            "part_mass_kg": 2.3,
-            "max_section_thickness_mm": 27.0
-          }
-        }
+        {"sequence": 1, "operation_type": "cold_roll_section", "target_feature_ids": []}
       ]
     },
     {
       "sequence": 2,
-      "name": "Dedicated Facing — Datum A",
-      "machine_family": "cnc_lathe",
-      "setup_note": "Grip the normalized blank on its raw OD and face the front surface across the 27 mm radial annular wall to establish datum A. Facing radial travel is Ø202 down to Ø148 mm ID.",
-      "datum_references": [
-        "A"
-      ],
+      "name": "Ring Making (CNC Ring Bending)",
+      "machine_family": "ring_making_machine",
+      "setup_note": "Section bent into a ring; heat code marked; laser thickness measurement in line.",
+      "datum_references": [],
       "material_machinability": "medium",
-      "setup_time_min": 10.0,
+      "material_hardness_hrc": null,
       "in_house": true,
+      "outside_process": null,
       "sub_operations": [
-        {
-          "sequence": 1,
-          "operation_type": "face_turn",
-          "target_feature_ids": [
-            "F17"
-          ],
-          "inputs": {
-            "kind": "radial_turn",
-            "start_diameter_mm": 202.0,
-            "finish_diameter_mm": 148.0,
-            "groove_count": 1,
-            "total_stock_mm": 2.1
-          }
-        }
+        {"sequence": 1, "operation_type": "ring_coil", "target_feature_ids": []},
+        {"sequence": 2, "operation_type": "mark_stamp", "target_feature_ids": []}
       ]
     },
     {
       "sequence": 3,
-      "name": "Dedicated Facing — Rear Face",
-      "machine_family": "cnc_lathe",
-      "setup_note": "Reverse the blank into bored soft jaws with datum A against an axial stop. Face the rear surface across the 27 mm radial annular wall to the soft-process thickness target and parallelism requirement.",
-      "datum_references": [
-        "A"
-      ],
+      "name": "Flash Butt Weld and Trim",
+      "machine_family": "flash_butt_welder",
+      "setup_note": "Ring ends flash-butt welded; weld upset trimmed flush on ID, OD and faces.",
+      "datum_references": [],
       "material_machinability": "medium",
-      "setup_time_min": 10.0,
+      "material_hardness_hrc": null,
       "in_house": true,
+      "outside_process": null,
       "sub_operations": [
-        {
-          "sequence": 1,
-          "operation_type": "face_turn",
-          "target_feature_ids": [
-            "F18"
-          ],
-          "inputs": {
-            "kind": "radial_turn",
-            "start_diameter_mm": 202.0,
-            "finish_diameter_mm": 148.0,
-            "groove_count": 1,
-            "total_stock_mm": 2.1
-          }
-        }
+        {"sequence": 1, "operation_type": "flash_butt_weld", "target_feature_ids": []},
+        {"sequence": 2, "operation_type": "trim_flash", "target_feature_ids": []}
       ]
     },
     {
       "sequence": 4,
-      "name": "CNC Turn — Rough Ring Blank",
-      "machine_family": "cnc_lathe",
-      "setup_note": "Locate the rear face against an axial stop and grip the blank OD with low-distortion soft jaws, leaving the datum A side accessible. Rough the OD from Ø202 to Ø196.1 mm, rough bore the as-rolled ID from Ø148 to Ø153.8 mm, and rough the F19 counterbore. Trepanning is completely eliminated with the rolled ring annulus blank.",
-      "datum_references": [
-        "A"
-      ],
+      "name": "Normalize Ring Blank",
+      "machine_family": "normalizing_furnace",
+      "setup_note": "Batch / continuous conveyor furnace or induction normalizer; homogenises the weld zone before machining.",
+      "datum_references": [],
       "material_machinability": "medium",
-      "setup_time_min": 20.0,
+      "material_hardness_hrc": null,
       "in_house": true,
+      "outside_process": null,
       "sub_operations": [
-        {
-          "sequence": 1,
-          "operation_type": "rough_turn_od",
-          "target_feature_ids": [
-            "F13"
-          ],
-          "inputs": {
-            "kind": "axial_turn",
-            "start_diameter_mm": 202.0,
-            "finish_diameter_mm": 196.1,
-            "cut_length_mm": 15.8
-          }
-        },
-        {
-          "sequence": 2,
-          "operation_type": "rough_bore_id",
-          "target_feature_ids": [
-            "F11"
-          ],
-          "inputs": {
-            "kind": "axial_turn",
-            "start_diameter_mm": 148.0,
-            "finish_diameter_mm": 153.8,
-            "cut_length_mm": 15.8
-          }
-        },
-        {
-          "sequence": 3,
-          "operation_type": "rough_bore_id",
-          "target_feature_ids": [
-            "F19"
-          ],
-          "inputs": {
-            "kind": "axial_turn",
-            "start_diameter_mm": 153.8,
-            "finish_diameter_mm": 175.2,
-            "cut_length_mm": 2.4
-          }
-        }
+        {"sequence": 1, "operation_type": "normalize", "target_feature_ids": []}
       ]
     },
     {
       "sequence": 5,
-      "name": "VMC — Rough Non-Axisymmetric Profiles",
-      "machine_family": "vmc_3axis",
-      "setup_note": "Seat datum A on an annular support fixture and locate from the preliminary bore, with low-profile rear-face clamps leaving the bore and perimeter accessible. Rough all lug, root, ramp and recess profiles before their finishing passes, retaining temporary soft-finishing stock.",
-      "datum_references": [
-        "A",
-        "B"
-      ],
+      "name": "Shot Blast",
+      "machine_family": "shot_blaster",
+      "setup_note": "Descale after normalizing.",
+      "datum_references": [],
       "material_machinability": "medium",
-      "setup_time_min": 35.0,
+      "material_hardness_hrc": null,
       "in_house": true,
+      "outside_process": null,
       "sub_operations": [
-        {
-          "sequence": 1,
-          "operation_type": "profile_mill",
-          "target_feature_ids": [
-            "F01",
-            "F14"
-          ],
-          "inputs": {
-            "kind": "contour_mill",
-            "path_length_mm": 398.0,
-            "radial_width_mm": 4.05,
-            "total_depth_mm": 15.8,
-            "path_count": 1
-          }
-        },
-        {
-          "sequence": 2,
-          "operation_type": "profile_mill",
-          "target_feature_ids": [
-            "F02"
-          ],
-          "inputs": {
-            "kind": "contour_mill",
-            "path_length_mm": 41.0,
-            "radial_width_mm": 4.05,
-            "total_depth_mm": 15.8,
-            "path_count": 10
-          }
-        },
-        {
-          "sequence": 3,
-          "operation_type": "profile_mill",
-          "target_feature_ids": [
-            "F03"
-          ],
-          "inputs": {
-            "kind": "contour_mill",
-            "path_length_mm": 61.5,
-            "radial_width_mm": 4.05,
-            "total_depth_mm": 15.8,
-            "path_count": 1
-          }
-        },
-        {
-          "sequence": 4,
-          "operation_type": "profile_mill",
-          "target_feature_ids": [
-            "F04"
-          ],
-          "inputs": {
-            "kind": "contour_mill",
-            "path_length_mm": 39.0,
-            "radial_width_mm": 4.05,
-            "total_depth_mm": 15.8,
-            "path_count": 1
-          }
-        },
-        {
-          "sequence": 5,
-          "operation_type": "profile_mill",
-          "target_feature_ids": [
-            "F05"
-          ],
-          "inputs": {
-            "kind": "contour_mill",
-            "path_length_mm": 36.5,
-            "radial_width_mm": 4.05,
-            "total_depth_mm": 15.8,
-            "path_count": 1
-          }
-        },
-        {
-          "sequence": 6,
-          "operation_type": "profile_mill",
-          "target_feature_ids": [
-            "F09"
-          ],
-          "inputs": {
-            "kind": "contour_mill",
-            "path_length_mm": 27.5,
-            "radial_width_mm": 6.45,
-            "total_depth_mm": 12.9,
-            "path_count": 20
-          }
-        },
-        {
-          "sequence": 7,
-          "operation_type": "profile_mill",
-          "target_feature_ids": [
-            "F10"
-          ],
-          "inputs": {
-            "kind": "contour_mill",
-            "path_length_mm": 44.0,
-            "radial_width_mm": 6.45,
-            "total_depth_mm": 12.9,
-            "path_count": 5
-          }
-        },
-        {
-          "sequence": 8,
-          "operation_type": "slot_mill",
-          "target_feature_ids": [
-            "F07"
-          ],
-          "inputs": {
-            "kind": "contour_mill",
-            "path_length_mm": 11.4,
-            "radial_width_mm": 2.7,
-            "total_depth_mm": 15.8,
-            "path_count": 1
-          }
-        },
-        {
-          "sequence": 9,
-          "operation_type": "slot_mill",
-          "target_feature_ids": [
-            "F08"
-          ],
-          "inputs": {
-            "kind": "contour_mill",
-            "path_length_mm": 8.4,
-            "radial_width_mm": 2.7,
-            "total_depth_mm": 15.8,
-            "path_count": 1
-          }
-        },
-        {
-          "sequence": 10,
-          "operation_type": "slot_mill",
-          "target_feature_ids": [
-            "F12"
-          ],
-          "inputs": {
-            "kind": "contour_mill",
-            "path_length_mm": 0.505,
-            "radial_width_mm": 13.2,
-            "total_depth_mm": 12.9,
-            "path_count": 5
-          }
-        },
-        {
-          "sequence": 11,
-          "operation_type": "pocket_mill",
-          "target_feature_ids": [
-            "F06"
-          ],
-          "inputs": {
-            "kind": "pocket_mill",
-            "pocket_area_mm2": 21.2,
-            "pocket_depth_mm": 12.9,
-            "corner_radius_mm": 1.5,
-            "pocket_count": 20
-          }
-        }
+        {"sequence": 1, "operation_type": "shot_blast", "target_feature_ids": []}
       ]
     },
     {
       "sequence": 6,
-      "name": "CNC Turn — Finish Bore and Counterbore",
-      "machine_family": "cnc_lathe",
-      "setup_note": "Support the rear face and grip the remaining lug-tip envelope with a relieved, low-pressure segmented fixture, leaving the front counterbore accessible. Pick up datum A, finish the future datum B lands and counterbore, then semi-finish the lug-tip envelope with OD grinding allowance. OPEN RISK: The F11 datum bore is finished soft to Ra 0.5. Carburizing, quenching and shot blasting are expected to degrade the bore finish and may alter diameter. A post-heat-treatment hard turning or bore-grinding operation may be required; customer must confirm whether bore finish survivability through heat treatment has been qualified for this part, or approve addition of a post-HT bore-grinding step.",
-      "datum_references": [
-        "A",
-        "B"
-      ],
+      "name": "Size Ring Blank",
+      "machine_family": "ring_sizing_machine",
+      "setup_note": "Ring expanded / sized to restore roundness after welding and normalizing.",
+      "datum_references": [],
       "material_machinability": "medium",
-      "setup_time_min": 30.0,
+      "material_hardness_hrc": null,
       "in_house": true,
+      "outside_process": null,
       "sub_operations": [
-        {
-          "sequence": 1,
-          "operation_type": "finish_bore_id",
-          "target_feature_ids": [
-            "F11"
-          ],
-          "inputs": {
-            "kind": "axial_turn",
-            "start_diameter_mm": 153.8,
-            "finish_diameter_mm": 154.6,
-            "cut_length_mm": 12.9
-          }
-        },
-        {
-          "sequence": 2,
-          "operation_type": "counterbore",
-          "target_feature_ids": [
-            "F19"
-          ],
-          "inputs": {
-            "kind": "axial_turn",
-            "start_diameter_mm": 175.2,
-            "finish_diameter_mm": 176.0,
-            "cut_length_mm": 2.9
-          }
-        },
-        {
-          "sequence": 3,
-          "operation_type": "finish_turn_od",
-          "target_feature_ids": [
-            "F13"
-          ],
-          "inputs": {
-            "kind": "axial_turn",
-            "start_diameter_mm": 196.1,
-            "finish_diameter_mm": 195.3,
-            "cut_length_mm": 15.8
-          }
-        }
+        {"sequence": 1, "operation_type": "coin_size", "target_feature_ids": []}
       ]
     },
     {
       "sequence": 7,
-      "name": "Floor Gate — Before Internal Tooth Cutting",
-      "machine_family": "inspection",
-      "setup_note": "Present the soft ring for handheld bore micrometer, thickness and face-to-bore checks before internal tooth cutting. Check preliminary angular indexing against the approved profile definition without a metrology fixture.",
-      "datum_references": [
-        "A",
-        "B"
-      ],
+      "name": "CNC Turn - Setup 1 (Face F39, OD)",
+      "machine_family": "cnc_lathe",
+      "setup_note": "Clamped on ID, located on rolled face. Face F39 and full OD profile turned.",
+      "datum_references": ["A"],
       "material_machinability": "medium",
-      "setup_time_min": 2.0,
+      "material_hardness_hrc": null,
       "in_house": true,
+      "outside_process": null,
       "sub_operations": [
-        {
-          "sequence": 1,
-          "operation_type": "manual_inspect",
-          "target_feature_ids": [],
-          "inputs": {
-            "kind": "inspection",
-            "dimension_count": 4,
-            "gdt_count": 2,
-            "sampling_rate_pct": 100.0,
-            "requires_fixture": false
-          }
-        }
+        {"sequence": 1, "operation_type": "face_turn", "target_feature_ids": ["F39"]},
+        {"sequence": 2, "operation_type": "rough_turn_od", "target_feature_ids": ["F03"]},
+        {"sequence": 3, "operation_type": "finish_turn_od", "target_feature_ids": ["F03"]},
+        {"sequence": 4, "operation_type": "chamfer_turn", "target_feature_ids": ["F46"]}
       ]
     },
     {
       "sequence": 8,
-      "name": "VMC — Finish Profiles and Rear Lug Edges",
-      "machine_family": "vmc_3axis",
-      "setup_note": "Seat datum A on the annular support fixture and center on the finished B lands, with the rear side accessible. Finish the C-C slot and C sector references before the controlled profiles, using climb-finishing passes and retaining grinding allowance only on F13 lug-tip arcs. OPEN RISK: The 20 roller-ramp contact pockets (F09) are currently finished soft by milling. As hardened contact surfaces for roller elements, these ramp profiles may require post-heat-treatment hard milling or grinding to achieve acceptable contact fatigue life. Customer must confirm surface finish and hardness requirements for F09, or approve a post-HT ramp-grinding step.",
-      "datum_references": [
-        "A",
-        "B",
-        "C",
-        "C-C"
-      ],
+      "name": "CNC Turn - Setup 2 (Face F40, Bores)",
+      "machine_family": "cnc_lathe",
+      "setup_note": "Flipped, clamped on OD, located on F39. Face F40 to width; bores turned, F33 left with stock for re-boring after HT.",
+      "datum_references": ["A"],
       "material_machinability": "medium",
-      "setup_time_min": 35.0,
+      "material_hardness_hrc": null,
       "in_house": true,
+      "outside_process": null,
       "sub_operations": [
-        {
-          "sequence": 1,
-          "operation_type": "slot_mill",
-          "target_feature_ids": [
-            "F12"
-          ],
-          "inputs": {
-            "kind": "contour_mill",
-            "path_length_mm": 14.41,
-            "radial_width_mm": 0.4,
-            "total_depth_mm": 15.8,
-            "path_count": 5
-          }
-        },
-        {
-          "sequence": 2,
-          "operation_type": "profile_mill",
-          "target_feature_ids": [
-            "F09"
-          ],
-          "inputs": {
-            "kind": "contour_mill",
-            "path_length_mm": 24.5,
-            "radial_width_mm": 0.4,
-            "total_depth_mm": 15.8,
-            "path_count": 20
-          }
-        },
-        {
-          "sequence": 3,
-          "operation_type": "pocket_mill",
-          "target_feature_ids": [
-            "F06"
-          ],
-          "inputs": {
-            "kind": "pocket_mill",
-            "pocket_area_mm2": 7.0,
-            "pocket_depth_mm": 12.9,
-            "corner_radius_mm": 1.5,
-            "pocket_count": 20
-          }
-        },
-        {
-          "sequence": 4,
-          "operation_type": "profile_mill",
-          "target_feature_ids": [
-            "F10"
-          ],
-          "inputs": {
-            "kind": "contour_mill",
-            "path_length_mm": 41.0,
-            "radial_width_mm": 0.4,
-            "total_depth_mm": 15.8,
-            "path_count": 5
-          }
-        },
-        {
-          "sequence": 5,
-          "operation_type": "profile_mill",
-          "target_feature_ids": [
-            "F01",
-            "F14"
-          ],
-          "inputs": {
-            "kind": "contour_mill",
-            "path_length_mm": 395.5,
-            "radial_width_mm": 0.4,
-            "total_depth_mm": 15.8,
-            "path_count": 1
-          }
-        },
-        {
-          "sequence": 6,
-          "operation_type": "profile_mill",
-          "target_feature_ids": [
-            "F02"
-          ],
-          "inputs": {
-            "kind": "contour_mill",
-            "path_length_mm": 37.5,
-            "radial_width_mm": 0.4,
-            "total_depth_mm": 15.8,
-            "path_count": 10
-          }
-        },
-        {
-          "sequence": 7,
-          "operation_type": "profile_mill",
-          "target_feature_ids": [
-            "F03"
-          ],
-          "inputs": {
-            "kind": "contour_mill",
-            "path_length_mm": 58.5,
-            "radial_width_mm": 0.4,
-            "total_depth_mm": 15.8,
-            "path_count": 1
-          }
-        },
-        {
-          "sequence": 8,
-          "operation_type": "profile_mill",
-          "target_feature_ids": [
-            "F04"
-          ],
-          "inputs": {
-            "kind": "contour_mill",
-            "path_length_mm": 36.0,
-            "radial_width_mm": 0.4,
-            "total_depth_mm": 15.8,
-            "path_count": 1
-          }
-        },
-        {
-          "sequence": 9,
-          "operation_type": "profile_mill",
-          "target_feature_ids": [
-            "F05"
-          ],
-          "inputs": {
-            "kind": "contour_mill",
-            "path_length_mm": 33.5,
-            "radial_width_mm": 0.4,
-            "total_depth_mm": 15.8,
-            "path_count": 1
-          }
-        },
-        {
-          "sequence": 10,
-          "operation_type": "slot_mill",
-          "target_feature_ids": [
-            "F07"
-          ],
-          "inputs": {
-            "kind": "contour_mill",
-            "path_length_mm": 29.5,
-            "radial_width_mm": 0.4,
-            "total_depth_mm": 15.8,
-            "path_count": 1
-          }
-        },
-        {
-          "sequence": 11,
-          "operation_type": "slot_mill",
-          "target_feature_ids": [
-            "F08"
-          ],
-          "inputs": {
-            "kind": "contour_mill",
-            "path_length_mm": 25.0,
-            "radial_width_mm": 0.4,
-            "total_depth_mm": 15.8,
-            "path_count": 1
-          }
-        },
-        {
-          "sequence": 12,
-          "operation_type": "chamfer_mill",
-          "target_feature_ids": [
-            "F02",
-            "F03",
-            "F04",
-            "F05"
-          ],
-          "inputs": {
-            "kind": "contour_mill",
-            "path_length_mm": 503.0,
-            "radial_width_mm": 0.5,
-            "total_depth_mm": 15.8,
-            "path_count": 1
-          }
-        },
-        {
-          "sequence": 13,
-          "operation_type": "chamfer_mill",
-          "target_feature_ids": [
-            "F22"
-          ],
-          "inputs": {
-            "kind": "contour_mill",
-            "path_length_mm": 15.8,
-            "radial_width_mm": 1.0,
-            "total_depth_mm": 15.8,
-            "path_count": 13
-          }
-        }
+        {"sequence": 1, "operation_type": "face_turn", "target_feature_ids": ["F40"]},
+        {"sequence": 2, "operation_type": "rough_bore_id", "target_feature_ids": ["F33"]},
+        {"sequence": 3, "operation_type": "semi_finish_bore_id", "target_feature_ids": ["F33"]},
+        {"sequence": 4, "operation_type": "chamfer_turn", "target_feature_ids": ["F47"]}
       ]
     },
     {
       "sequence": 9,
-      "name": "VMC — Front Lug Fillets and Edge Treatments",
+      "name": "VMC Mill External Lugs",
       "machine_family": "vmc_3axis",
-      "setup_note": "Reverse onto a rear-face support fixture, center on datum B and recover the approved angular references, leaving datum A facing the tool. Produce the front-side lug edge breaks, separately toleranced shoulder fillets and B-B lead-in chamfers at all 13 external lug locations. OPEN RISK: The 20 roller-ramp contact pockets (F09) are currently finished soft by milling. As hardened contact surfaces for roller elements, these ramp profiles may require post-heat-treatment hard milling or grinding to achieve acceptable contact fatigue life. Customer must confirm surface finish and hardness requirements for F09, or approve a post-HT ramp-grinding step.",
-      "datum_references": [
-        "A",
-        "B",
-        "C",
-        "C-C"
-      ],
+      "setup_note": "Ring clamped on faces, located on bore and lug. Irregularly spaced external lugs end-milled.",
+      "datum_references": ["A", "C"],
       "material_machinability": "medium",
-      "setup_time_min": 30.0,
+      "material_hardness_hrc": null,
       "in_house": true,
+      "outside_process": null,
       "sub_operations": [
-        {
-          "sequence": 1,
-          "operation_type": "profile_mill",
-          "target_feature_ids": [
-            "F20"
-          ],
-          "inputs": {
-            "kind": "contour_mill",
-            "path_length_mm": 1.2566,
-            "radial_width_mm": 0.8,
-            "total_depth_mm": 0.8,
-            "path_count": 13
-          }
-        },
-        {
-          "sequence": 2,
-          "operation_type": "chamfer_mill",
-          "target_feature_ids": [
-            "F21"
-          ],
-          "inputs": {
-            "kind": "contour_mill",
-            "path_length_mm": 15.8,
-            "radial_width_mm": 1.0,
-            "total_depth_mm": 0.364,
-            "path_count": 13
-          }
-        },
-        {
-          "sequence": 3,
-          "operation_type": "chamfer_mill",
-          "target_feature_ids": [
-            "F02",
-            "F03",
-            "F04",
-            "F05"
-          ],
-          "inputs": {
-            "kind": "contour_mill",
-            "path_length_mm": 503.0,
-            "radial_width_mm": 0.5,
-            "total_depth_mm": 0.5,
-            "path_count": 1
-          }
-        }
+        {"sequence": 1, "operation_type": "profile_mill", "target_feature_ids": ["F01", "F02", "F06"]},
+        {"sequence": 2, "operation_type": "slot_mill", "target_feature_ids": ["F22"]}
       ]
     },
     {
       "sequence": 10,
-      "name": "Indexed Milling — Internal Pad Chamfers",
-      "machine_family": "vmc_5axis",
-      "setup_note": "Locate the soft ring on A and B in a clearance fixture and index from the approved C-C slot. Index the five internal pad locations to provide the specified local -Y access for the two separately dimensioned 30-degree edge treatments.",
-      "datum_references": [
-        "A",
-        "B",
-        "C-C"
-      ],
+      "name": "VMC Mill Internal Cam Profile",
+      "machine_family": "vmc_3axis",
+      "setup_note": "Same fixture. Internal cam ramps, inner teeth and roller stop notches end-milled (depth = ring width 15.8).",
+      "datum_references": ["A", "C"],
       "material_machinability": "medium",
-      "setup_time_min": 30.0,
+      "material_hardness_hrc": null,
       "in_house": true,
+      "outside_process": null,
       "sub_operations": [
-        {
-          "sequence": 1,
-          "operation_type": "chamfer_mill",
-          "target_feature_ids": [
-            "F23"
-          ],
-          "inputs": {
-            "kind": "contour_mill",
-            "path_length_mm": 12.9,
-            "radial_width_mm": 1.0,
-            "total_depth_mm": 0.577,
-            "path_count": 5
-          }
-        },
-        {
-          "sequence": 2,
-          "operation_type": "chamfer_mill",
-          "target_feature_ids": [
-            "F24"
-          ],
-          "inputs": {
-            "kind": "contour_mill",
-            "path_length_mm": 12.9,
-            "radial_width_mm": 1.0,
-            "total_depth_mm": 0.577,
-            "path_count": 5
-          }
-        }
+        {"sequence": 1, "operation_type": "profile_mill", "target_feature_ids": ["F29"]},
+        {"sequence": 2, "operation_type": "slot_mill", "target_feature_ids": ["F35"]}
       ]
     },
     {
       "sequence": 11,
-      "name": "Bench — Profile Edge Deburr and Clean",
-      "machine_family": "finish_bench",
-      "setup_note": "Deburr turned and milled profile edges on bench prior to marking and heat treatment.",
+      "name": "Wash",
+      "machine_family": "washing_machine",
+      "setup_note": "Wash before carburizing.",
       "datum_references": [],
       "material_machinability": "medium",
-      "setup_time_min": 3.0,
+      "material_hardness_hrc": null,
       "in_house": true,
+      "outside_process": null,
       "sub_operations": [
-        {
-          "sequence": 1,
-          "operation_type": "teeth_chamfer",
-          "target_feature_ids": [
-            "F16"
-          ],
-          "inputs": {
-            "kind": "gear_finish",
-            "number_of_teeth": 20,
-            "normal_module_mm": 3.865,
-            "face_width_mm": 15.8,
-            "stock_per_flank_mm": 0.5,
-            "helix_angle_deg": 0.0
-          }
-        },
-        {
-          "sequence": 2,
-          "operation_type": "deburr",
-          "target_feature_ids": [],
-          "inputs": {
-            "kind": "manual",
-            "complexity": "high",
-            "edge_length_mm": 600.0
-          }
-        }
+        {"sequence": 1, "operation_type": "clean_degrease", "target_feature_ids": []}
       ]
     },
     {
       "sequence": 12,
-      "name": "Mark Date and Serial Identification",
-      "machine_family": "finish_bench",
-      "setup_note": "Support the completely soft-machined ring in a protected nest and stamp the approved marking location with YYMMDDXXXX identification at the specified text size. Use a marking method qualified to remain legible after carburizing and blasting without raising material on functional surfaces.",
+      "name": "Carburize and Quench",
+      "machine_family": "carburizing_furnace",
+      "setup_note": "Drawing requires case hardening 700 HV, CHD 0.5. 16MnCr5 is a case-hardening steel; induction hardening will not reach 700 HV.",
       "datum_references": [],
       "material_machinability": "medium",
-      "setup_time_min": 3.0,
+      "material_hardness_hrc": null,
       "in_house": true,
+      "outside_process": null,
       "sub_operations": [
-        {
-          "sequence": 1,
-          "operation_type": "mark_stamp",
-          "target_feature_ids": [],
-          "inputs": {
-            "kind": "manual",
-            "complexity": "medium",
-            "feature_count": 10
-          }
-        }
+        {"sequence": 1, "operation_type": "carburize", "target_feature_ids": []},
+        {"sequence": 2, "operation_type": "austenitize_quench", "target_feature_ids": []}
       ]
     },
     {
       "sequence": 13,
-      "name": "Floor Gate — Before Heat Treatment",
-      "machine_family": "inspection",
-      "setup_note": "Hand-gauge the completed soft ring for bore size, thickness, profile indexing, tooth fit, edge condition and marking before furnace release. Use shop-floor gauges only, with no CMM or analytical gear-checking fixture.",
-      "datum_references": [
-        "A",
-        "B",
-        "C",
-        "C-C"
-      ],
-      "material_machinability": "medium",
-      "setup_time_min": 2.0,
+      "name": "Temper",
+      "machine_family": "tempering_furnace",
+      "setup_note": "Low temper after quench.",
+      "datum_references": [],
+      "material_machinability": "hardened",
+      "material_hardness_hrc": 60,
       "in_house": true,
+      "outside_process": null,
       "sub_operations": [
-        {
-          "sequence": 1,
-          "operation_type": "manual_inspect",
-          "target_feature_ids": [],
-          "inputs": {
-            "kind": "inspection",
-            "dimension_count": 6,
-            "gdt_count": 2,
-            "sampling_rate_pct": 100.0,
-            "requires_fixture": false
-          }
-        }
+        {"sequence": 1, "operation_type": "temper", "target_feature_ids": []}
       ]
     },
     {
       "sequence": 14,
-      "name": "Pre-Heat-Treatment Clean",
-      "machine_family": "finish_bench",
-      "setup_note": "Wash and dry the marked rings to remove coolant, oils, chips and temporary layout materials before furnace loading. No selective carburizing mask is applied unless the customer identifies a surface that must remain soft.",
-      "datum_references": [],
-      "material_machinability": "medium",
-      "setup_time_min": 3.0,
+      "name": "Re-bore and Face - Setup 1",
+      "machine_family": "cnc_lathe",
+      "setup_note": "Hard turning with CBN, clamped on OD. Bore F33 Ø154.6 +0.05 Ra 0.5 and face F39.",
+      "datum_references": ["A"],
+      "material_machinability": "hardened",
+      "material_hardness_hrc": 60,
       "in_house": true,
+      "outside_process": null,
       "sub_operations": [
-        {
-          "sequence": 1,
-          "operation_type": "clean_degrease",
-          "target_feature_ids": [],
-          "inputs": {
-            "kind": "manual",
-            "complexity": "medium",
-            "estimated_time_min": 1.5
-          }
-        }
+        {"sequence": 1, "operation_type": "finish_bore_id", "target_feature_ids": ["F33"]},
+        {"sequence": 2, "operation_type": "face_turn", "target_feature_ids": ["F39"]}
       ]
     },
     {
       "sequence": 15,
-      "name": "Carburize and Quench",
-      "machine_family": "sealed_quench_furnace",
-      "setup_note": "Load clean soft rings on qualified anti-distortion supports with matching witness coupons. Part weight is approx. 0.87 kg. Carburize and quench to achieve the specified final CHD after planned OD stock removal; the rings leave this setup hardened.",
-      "datum_references": [],
-      "material_machinability": "medium",
-      "setup_time_min": 15.0,
+      "name": "Re-face - Setup 2",
+      "machine_family": "cnc_lathe",
+      "setup_note": "Flipped; hard turn face F40 to width 15.8 +/-0.03.",
+      "datum_references": ["A"],
+      "material_machinability": "hardened",
+      "material_hardness_hrc": 60,
       "in_house": true,
+      "outside_process": null,
       "sub_operations": [
-        {
-          "sequence": 1,
-          "operation_type": "carburize",
-          "target_feature_ids": [],
-          "inputs": {
-            "kind": "furnace_cycle",
-            "batch_size_parts": 100,
-            "part_mass_kg": 0.87,
-            "max_section_thickness_mm": 15.8,
-            "case_depth_mm": 0.5
-          }
-        },
-        {
-          "sequence": 2,
-          "operation_type": "austenitize_quench",
-          "target_feature_ids": [],
-          "inputs": {
-            "kind": "furnace_cycle",
-            "batch_size_parts": 100,
-            "part_mass_kg": 0.87,
-            "max_section_thickness_mm": 15.8
-          }
-        }
+        {"sequence": 1, "operation_type": "face_turn", "target_feature_ids": ["F40"]}
       ]
     },
     {
       "sequence": 16,
-      "name": "Temper Case-Hardened Rings",
-      "machine_family": "sealed_quench_furnace",
-      "setup_note": "Transfer each quenched rack load promptly into the qualified tempering cycle, retaining distortion-control support. Part weight: 0.87 kg. Maintain furnace-batch traceability and certify surface hardness and effective case depth using the accompanying witness coupons.",
+      "name": "Rotary Deburr",
+      "machine_family": "rotary_deburring_machine",
+      "setup_note": "Deburr cam, notch and lug edges.",
       "datum_references": [],
       "material_machinability": "hardened",
-      "setup_time_min": 10.0,
+      "material_hardness_hrc": 60,
       "in_house": true,
+      "outside_process": null,
       "sub_operations": [
-        {
-          "sequence": 1,
-          "operation_type": "temper",
-          "target_feature_ids": [],
-          "inputs": {
-            "kind": "furnace_cycle",
-            "batch_size_parts": 100,
-            "part_mass_kg": 0.87,
-            "max_section_thickness_mm": 15.8
-          }
-        }
+        {"sequence": 1, "operation_type": "deburr", "target_feature_ids": []}
       ]
     },
     {
       "sequence": 17,
-      "name": "Shot Blast After Tempering",
-      "machine_family": "shot_peening",
-      "setup_note": "Load tempered rings into a qualified low-intensity blasting fixture to remove furnace scale and oxide before grinding or gauging. Use suitable physical shielding and handling to preserve the soft-established datum B finish and roller-ramp surfaces.",
-      "datum_references": [],
-      "material_machinability": "hardened",
-      "setup_time_min": 10.0,
-      "in_house": true,
-      "sub_operations": [
-        {
-          "sequence": 1,
-          "operation_type": "shot_blast",
-          "target_feature_ids": [],
-          "inputs": {
-            "kind": "surface_treat",
-            "treated_area_mm2": 36000.0,
-            "batch_size_parts": 100,
-            "requires_bake": false
-          }
-        }
-      ]
-    },
-    {
-      "sequence": 18,
-      "name": "OD Grind — Lug-Tip Envelope",
-      "machine_family": "od_grinding",
-      "setup_note": "Seat the hardened ring against datum A on a low-distortion segmented mandrel locating only on the five datum B lands. Grind the interrupted F13 lug-tip envelope to final diameter and concentricity with dressed-wheel finishing and spark-out, without touching lug flanks or root contours.",
-      "datum_references": [
-        "A",
-        "B"
-      ],
-      "material_machinability": "hardened",
-      "setup_time_min": 30.0,
-      "in_house": true,
-      "sub_operations": [
-        {
-          "sequence": 1,
-          "operation_type": "od_grind",
-          "target_feature_ids": [
-            "F13"
-          ],
-          "inputs": {
-            "kind": "cylindrical_grind",
-            "grind_diameter_mm": 195.0,
-            "grind_length_mm": 15.8,
-            "radial_stock_mm": 0.15,
-            "land_count": 1
-          }
-        }
-      ]
-    },
-    {
-      "sequence": 19,
-      "name": "Hard Turn / ID Grind — F11 Datum Bore (Ra 0.5)",
-      "machine_family": "id_grinding",
-      "setup_note": "Precision ID-grind / hard-turn the F11 datum bore post-hardening to final dimension and Ra 0.5. Soft fine-boring alone will not hold size or Ra 0.5 through carburizing quench and shot blasting.",
-      "datum_references": [
-        "A"
-      ],
-      "material_machinability": "hardened",
-      "setup_time_min": 25.0,
-      "in_house": true,
-      "sub_operations": [
-        {
-          "sequence": 1,
-          "operation_type": "finish_bore_id",
-          "target_feature_ids": [
-            "F11"
-          ],
-          "inputs": {
-            "kind": "axial_turn",
-            "radial_stock_mm": 0.1,
-            "target_ra": 0.5
-          }
-        }
-      ]
-    },
-    {
-      "sequence": 20,
-      "name": "Hard Mill / Form Grind — 20 Roller-Ramp Pockets (F09)",
-      "machine_family": "vmc_5axis",
-      "setup_note": "Hard-mill or precision form-grind the 20 roller-ramp contact pockets (F09) post-hardening. The roller contact tracks require hard finishing to ensure fatigue life and surface finish.",
-      "datum_references": [
-        "A",
-        "B"
-      ],
-      "material_machinability": "hardened",
-      "setup_time_min": 30.0,
-      "in_house": true,
-      "sub_operations": [
-        {
-          "sequence": 1,
-          "operation_type": "profile_mill",
-          "target_feature_ids": [
-            "F09"
-          ],
-          "inputs": {
-            "kind": "contour_mill",
-            "radial_width_mm": 0.15,
-            "pocket_count": 20
-          }
-        }
-      ]
-    },
-    {
-      "sequence": 21,
-      "name": "Grinding Burn Release — Nital Etch",
+      "name": "Final Inspection",
       "machine_family": "inspection",
-      "setup_note": "Send the ground hardened rings to a qualified provider for nital-etch preparation and visual grinding-burn assessment of F13 OD envelope before release to final cleaning. Preserve individual identification and return the inspection record with the lot.",
-      "datum_references": [],
+      "setup_note": "Hardness, crack and rust check; demagnetise; date-code mark; final wash for cleanliness.",
+      "datum_references": ["A"],
       "material_machinability": "hardened",
-      "setup_time_min": 0.0,
-      "in_house": false,
-      "outside_process": "nital_etch_grinding_burn_inspection",
-      "sub_operations": [
-        {
-          "sequence": 1,
-          "operation_type": "manual_inspect",
-          "target_feature_ids": [],
-          "inputs": {
-            "kind": "inspection",
-            "dimension_count": 1,
-            "gdt_count": 0,
-            "sampling_rate_pct": 100.0,
-            "inspected_area_mm2": 3043.1,
-            "requires_fixture": false
-          }
-        }
-      ]
-    },
-    {
-      "sequence": 22,
-      "name": "Final Edge Check and Precision Clean",
-      "machine_family": "finish_bench",
-      "setup_note": "Support the hardened ring on protected pads and remove only grinding micro-burrs on F13 OD edges without altering specified chamfers or contact profiles. Wash out blast media, grinding swarf and etch residues in ultrasonic bath, then preserve for cleanliness requirements.",
-      "datum_references": [],
-      "material_machinability": "hardened",
-      "setup_time_min": 3.0,
+      "material_hardness_hrc": 60,
       "in_house": true,
+      "outside_process": null,
       "sub_operations": [
-        {
-          "sequence": 1,
-          "operation_type": "deburr",
-          "target_feature_ids": [],
-          "inputs": {
-            "kind": "manual",
-            "complexity": "low",
-            "edge_length_mm": 612.0
-          }
-        },
-        {
-          "sequence": 2,
-          "operation_type": "clean_degrease",
-          "target_feature_ids": [],
-          "inputs": {
-            "kind": "manual",
-            "complexity": "high",
-            "estimated_time_min": 1.0
-          }
-        }
-      ]
-    },
-    {
-      "sequence": 23,
-      "name": "Consolidated Final Inspection",
-      "machine_family": "inspection",
-      "setup_note": "Locate the clean hardened ring on A, the five B lands and the approved C/C-C references in the final inspection fixture. Consolidate dimensional/GD&T checks on CMM (3 min), spline tooth verification on gear checker (2 min), HV10 hardness testing (1 min), burn-release records, marking legibility, residual magnetism ≤5 A/cm and SKK 2D cleanliness with contaminant mass ≤1 mg per part.",
-      "datum_references": [
-        "A",
-        "B",
-        "C",
-        "C-C"
-      ],
-      "material_machinability": "hardened",
-      "setup_time_min": 20.0,
-      "in_house": true,
-      "sub_operations": [
-        {
-          "sequence": 1,
-          "operation_type": "cmm_inspect",
-          "target_feature_ids": [],
-          "inputs": {
-            "kind": "inspection",
-            "dimension_count": 18,
-            "gdt_count": 8,
-            "sampling_rate_pct": 100.0,
-            "requires_fixture": true
-          }
-        },
-        {
-          "sequence": 2,
-          "operation_type": "gear_check",
-          "target_feature_ids": [],
-          "inputs": {
-            "kind": "inspection",
-            "dimension_count": 4,
-            "gdt_count": 2,
-            "sampling_rate_pct": 100.0,
-            "requires_fixture": true
-          }
-        },
-        {
-          "sequence": 3,
-          "operation_type": "hardness_test",
-          "target_feature_ids": [],
-          "inputs": {
-            "kind": "inspection",
-            "dimension_count": 1,
-            "gdt_count": 0,
-            "sampling_rate_pct": 100.0,
-            "requires_fixture": false
-          }
-        }
+        {"sequence": 1, "operation_type": "hardness_test", "target_feature_ids": []},
+        {"sequence": 2, "operation_type": "mpi_ndt", "target_feature_ids": []},
+        {"sequence": 3, "operation_type": "manual_inspect", "target_feature_ids": []},
+        {"sequence": 4, "operation_type": "mark_stamp", "target_feature_ids": []},
+        {"sequence": 5, "operation_type": "clean_degrease", "target_feature_ids": []}
       ]
     }
   ],
   "clarifications": [
     {
       "clarification_id": "C01",
-      "question": "What is the released dimensioned tooth-profile definition for F16, which is currently represented only by a generic internal-spline callout without module, pressure angle, or tooth profile? Spline shaping has been excluded from the manufacturing route pending customer specification.",
-      "blocks": [
-        7,
-        8,
-        12,
-        22
-      ],
+      "question": "External lugs and internal cams are irregular, non-involute forms that cannot be hobbed. Is VMC end milling acceptable, or is broaching / wire EDM used?",
+      "blocks": [9, 10],
+      "suggested_default": "VMC end milling in house",
       "priority": "high"
     },
     {
       "clarification_id": "C02",
-      "question": "Which physical boundary of the five-lug F10 profile is controlled by Ø167.5?",
-      "blocks": [
-        5,
-        9,
-        22
-      ],
-      "suggested_default": "Treat Ø167.5 as a local milled drive-profile envelope, not as a complete turned OD step; confirm its boundary from the released model before machining.",
+      "question": "Drawing requires case hardening (700 HV, CHD 0.5). Is a carburizing furnace available in house?",
+      "blocks": [12],
+      "suggested_default": "Carburize and quench in house",
       "priority": "high"
     },
     {
       "clarification_id": "C03",
-      "question": "Which one of the five F12 slots establishes the absolute angular datum C-C?",
-      "blocks": [
-        5,
-        8,
-        9,
-        10,
-        11,
-        22
-      ],
-      "priority": "high"
-    },
-    {
-      "clarification_id": "C04",
-      "question": "On which axial side of the external lugs are the B-B left-side shoulder and lead-in edge treatments located?",
-      "blocks": [
-        9,
-        10
-      ],
-      "suggested_default": "Place F20 and F21 on the datum A side and F22 on the rear side, repeating the treatments at all 13 external lugs.",
-      "priority": "high"
-    },
-    {
-      "clarification_id": "C05",
-      "question": "Which surface is approved for the 5 mm-high YYMMDDXXXX stamped identification?",
-      "blocks": [
-        13
-      ],
-      "suggested_default": "Use an approved nonfunctional annular-face area clear of datum seating, ramp contacts and lug working edges.",
+      "question": "Bore F33 (Ra 0.5) after carburizing: is hard turning acceptable, or is ID grinding required?",
+      "blocks": [14],
+      "suggested_default": "Hard turning with CBN",
       "priority": "medium"
-    },
-    {
-      "clarification_id": "C06",
-      "question": "Is a qualified process-capability result available demonstrating that the soft-finished F11 datum lands retain their specified size and Ra 0.5 after carburizing, tempering and shot blasting?",
-      "blocks": [
-        6,
-        16,
-        18,
-        22
-      ],
-      "suggested_default": "Proceed with a first-article qualification using controlled furnace support and protected low-intensity blasting; do not add ID grinding or honing.",
-      "priority": "high"
     }
   ],
   "assumptions": [
-    {
-      "assumption_id": "A01",
-      "text": "The ring envelope is taken from the maximum diameter and axial thickness. Starting stock is a plain rolled ring annulus, Ø202 × Ø148 × 20 mm, approximately 2.33 kg gross weight. Finished part weight after turning, milling, and carburizing is approximately 0.87 kg."
-    },
-    {
-      "assumption_id": "A02",
-      "text": "The supplied resolved interpretations are adopted: F02 comprises ten standard lugs; F03, F04 and F05 are distinct individual lugs, giving 13 external lug locations. External profiles and reliefs span the full ring thickness; the internal cam profiles span from the counterbore shoulder to the rear face."
-    },
-    {
-      "assumption_id": "A03",
-      "text": "The supplied root-diameter resolution overrides the conflicting R93.3 extraction: F01 and F14 identify the same physical root surface, manufactured to Ø187.2±0.15. They are co-targeted by profile milling without creating two different root cylinders."
-    },
-    {
-      "assumption_id": "A04",
-      "text": "F09 and F10 are treated as locally accessible custom dog/sector profiles rather than involute gears or complete concentric turning steps. Their topology and the F10 controlled boundary require released drawing/model confirmation."
-    },
-    {
-      "assumption_id": "A05",
-      "text": "Plain rolled ring is selected as the optimal blank form for 100 pieces (approx. 233 kg total material). An existing ring rolling process requires no part die and eliminates solid core waste (~1.46 kg scrap per part). Central trepanning is eliminated since the bore is purchased near-net at Ø148 mm."
-    },
-    {
-      "assumption_id": "A06",
-      "text": "Dedicated facing cuts are applied across the annular wall (Ø202 down to Ø148 mm ID) in two workholding setups on the CNC lathe. Facing radial travel is 27 mm, establishing datum A and soft-process thickness."
-    },
-    {
-      "assumption_id": "A07",
-      "text": "Datums A and B are established before controlled profile finishing. Non-axisymmetric profiles are rough-machined before their finish passes to limit stress redistribution; the supported ring fixtures use low clamping pressure and clearance around the active cutting boundaries."
-    },
-    {
-      "assumption_id": "A08",
-      "text": "F11 is precision-bored in the soft condition to its final process target, achieving Ra 0.5 with a qualified fine-boring process. Controlled heat-treatment support must retain its final dimensional and geometric requirements; ID grinding, bore honing and lapping are excluded by SHAFT-003."
-    },
-    {
-      "assumption_id": "A09",
-      "text": "Only the accessible Ø195 F13 lug-tip envelope receives post-heat-treatment OD grinding, with approximately 0.3 mm diametral stock retained during soft machining. F01/F14 roots and F10 local lug arcs are not continuous external journals and are finished by soft profile milling, not conventional cylindrical grinding."
-    },
-    {
-      "assumption_id": "A10",
-      "text": "The corrections override standard post-heat-treatment stock requirements for faces, bores, spline teeth and other profiles that will not be hard-finished. These surfaces receive no unusable grinding allowance, and no face_grind, surface_grind, id_grind, profile_grind, double_disc_grind, bore_hone, lap or superfinish is included."
-    },
-    {
-      "assumption_id": "A11",
-      "text": "F16 remains a provisionally distinct internal tooth feature pending its dimensioned definition. Soft gear shaping is reserved in accordance with SHAFT-004, but no involute specification, module, pressure angle or tooth count is inferred; if F16 is only a pictorial aggregate of the existing milled profiles, the redundant shaping setup must be removed after confirmation."
-    },
-    {
-      "assumption_id": "A12",
-      "text": "The gear-manufacturing template is used only for internal tooth-cutting preparation, soft generation, tooth-end deburring and final checking. Hobbing is inapplicable to the internal feature; shaving, tooth grinding and tooth honing are suppressed by SHAFT-004, and spline tooth-end chamfering is assigned to the finish bench by SHAFT-008."
-    },
-    {
-      "assumption_id": "A13",
-      "text": "The broaching template's bore preparation, angular location, pre-hardening deburring, heat treatment and final checks are retained or merged. A dedicated broach stroke and broach-specific preparation are not selected because the spline definition and tool are unavailable, and the matched correction reserves internal spline cutting for soft shaping."
-    },
-    {
-      "assumption_id": "A14",
-      "text": "Turning-template threading and part-off are omitted because no threads exist and blanks are individually supplied plain rolled rings. Axisymmetric grooving is omitted because F07 and F08 are local lug reliefs produced by slot milling; the shallow F19 counterbore is rough-bored and then counterbored on the lathe."
-    },
-    {
-      "assumption_id": "A15",
-      "text": "Milling-template datum face milling is replaced by the dedicated lathe facing setups. Central bore opening requires only rough boring from the as-rolled Ø148 mm ID to Ø153.8 mm, eliminating trepanning. F19 counterbore roughing and finishing are consolidated into the lathe setups."
-    },
-    {
-      "assumption_id": "A16",
-      "text": "The separately toleranced F20 fillet receives its own profile-milling step rather than being treated as an incidental insert radius. F20–F22 are provisionally allocated to opposing axial lug edges; F23 and F24 apply to the five internal pads and retain dedicated indexed chamfer-milling steps because their supplied access is local -Y."
-    },
-    {
-      "assumption_id": "A17",
-      "text": "No selective soft-area requirement is supplied, so the optional heat-treatment masking step is omitted. Furnace loading, heating and soaking are incorporated into the carburizing cycle; quenching is represented by austenitize_quench, followed promptly by a separate tempering setup."
-    },
-    {
-      "assumption_id": "A18",
-      "text": "Heat-treatment straightening is omitted because the component is a short ring, not a bowed shaft; a separate stress-relief cycle is not specified. Anti-distortion racking and qualified quenching replace these conditional template steps, while furnace loads are divided according to actual capacity."
-    },
-    {
-      "assumption_id": "A19",
-      "text": "SHAFT-005 replaces manual post-furnace scale scrubbing with shot blasting after tempering. Subsequent washing removes media, swarf and chemical residue rather than duplicating the scale-removal operation."
-    },
-    {
-      "assumption_id": "A20",
-      "text": "Nital-etch grinding-burn inspection of the ground OD envelope is subcontracted or performed as a targeted visual surface release check with calibrated cycle time (1 min), not duplicate dimensional/GD&T inspection."
-    },
-    {
-      "assumption_id": "A21",
-      "text": "Specified hardness is retained as 700–800 HV10 and effective CHD as 0.5–0.8 mm at 550 HV, including after OD grinding. HRC fields remain null because no HRC value is directly specified; every setup after quenching is nevertheless classified as hardened."
-    },
-    {
-      "assumption_id": "A22",
-      "text": "Witness-coupon case-depth and microstructure certification belongs to the furnace batch, not a standalone post-heat-treatment inspection setup. Final inspection confirms the required records and hardness, surface finishes, cleanliness and residual magnetism; additional crack NDT or demagnetization is not automatically added without a requirement or measured nonconformance."
-    },
-    {
-      "assumption_id": "A23",
-      "text": "The mandatory marking is performed after all soft cutting and bench tooth chamfering, before pre-heat-treatment cleaning. No marking feature ID is invented; the marking surface requires approval."
-    }
+    {"assumption_id": "A01", "text": "Stock is the in-house ring blank (cold-rolled section, ring-bent, flash-butt welded). Allowance 1.0 mm per side on turned diameters, 0.4 mm per face."},
+    {"assumption_id": "A02", "text": "Steps 6-7 of the shop process were not given; assumed shot blast (descale) and ring sizing."},
+    {"assumption_id": "A03", "text": "Both faces are turned because the drawing needs width 15.8 +/-0.03 with Ra 1.6."},
+    {"assumption_id": "A04", "text": "No teeth entry chamfer step: the part has no involute gear teeth."},
+    {"assumption_id": "A05", "text": "Carburize, quench and temper replace induction hardening and tempering (steps 12-13)."}
   ]
 }

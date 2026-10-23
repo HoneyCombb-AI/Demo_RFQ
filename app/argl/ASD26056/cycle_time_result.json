@@ -1,111 +1,114 @@
 {
-  "analysis_id": "ASD26056_6422_Wheel_merge_20261011T151242Z",
-  "quantity": 100,
-  "t_cycle_per_part_sec": 1655.0,
-  "t_cycle_total_batch_sec": 165500.0,
-  "t_setup_total_batch_sec": 15720.0,
+  "analysis_id": "ASD26056_6422_Wheel_merge_20261023T164731Z",
+  "organization_id": "asd",
+  "quantity": 10,
   "operations": [
     {
-      "sequence": 1,
-      "name": "CNC Turn — Setup 1 (Side A): Rough/Finish Face, Bore Q, OD and Chamfers",
-      "machine_family": "cnc_lathe",
-      "in_house": true,
-      "setup_time_sec": 1200.0,
-      "t_setup_per_piece_sec": 12.0,
-      "t_handling_sec": 18.0,
-      "t_machining_sec": 150.0,
-      "t_op_total_sec": 180.0
+      "sequence": 1, "name": "Shear Strip", "machine_family": "shearing_machine", "in_house": true,
+      "setup_min": 10.0, "load_unload_min": 0.0, "cycle_min": 0.01,
+      "sub_operations": [
+        {"operation_sequence": 1, "sub_operation_sequence": 1, "operation_type": "shear_cut", "feature_id": null, "method": "manual",
+         "inputs": {"sheet_thickness_mm": 4.5, "strip_width_mm": 160, "strip_length_mm": 2500, "parts_per_strip": 16},
+         "params": {"shear_s_per_strip": 6}, "cut_min": 0.01, "non_cut_min": 0.0,
+         "note": "One 6 s shear per 2500 mm strip = 16 parts at 155 mm pitch."}
+      ]
     },
     {
-      "sequence": 2,
-      "name": "CNC Turn — Setup 2 (Side B): Face Side B, Rim Finish and Chamfers",
-      "machine_family": "cnc_lathe",
-      "in_house": true,
-      "setup_time_sec": 1200.0,
-      "t_setup_per_piece_sec": 12.0,
-      "t_handling_sec": 18.0,
-      "t_machining_sec": 150.0,
-      "t_op_total_sec": 180.0
+      "sequence": 2, "name": "Fine Blank Wheel", "machine_family": "fine_blanking_press", "in_house": true,
+      "setup_min": 30.0, "load_unload_min": 0.0, "cycle_min": 0.03,
+      "sub_operations": [
+        {"operation_sequence": 2, "sub_operation_sequence": 1, "operation_type": "punch", "feature_id": "F18,F02", "method": "manual",
+         "inputs": {"tip_diameter_mm": 149.0, "teeth": 58, "positions": 60, "tooth_width_mm": 4.1, "tooth_depth_mm": 5.0, "tooth_profile_perimeter_mm": 1020, "inner_perimeter_mm": 486, "total_cut_perimeter_mm": 1506, "thickness_mm": 4.5, "uts_mpa": 380},
+         "params": {"blanking_force_t": 235, "press_t": 400, "strokes_per_min": 35},
+         "cut_min": 0.03, "non_cut_min": 0.0,
+         "note": "Teeth: 58 x (4.1 tip + 2 x 5 flanks + 3.2 root) + 2-tooth gap = 1020 mm. Inner: Ø98 pre-pierce 308 + 3 x Ø9 85 + Ø12 38 + oval 25 + index 30 = 486. Force 0.9 x 380 x 1506 x 4.5 = 2.3 MN; + V-ring and counter-punch -> 400 t press at 35 spm = 0.029 min."},
+        {"operation_sequence": 2, "sub_operation_sequence": 2, "operation_type": "punch", "feature_id": "F01,F04,F05,F06,F07", "method": "manual",
+         "inputs": {"bore_prepierce_mm": 98.0, "holes": "3 x Ø9, Ø12", "slots": "oval 5.5, index 8"}, "params": {},
+         "cut_min": 0.0, "non_cut_min": 0.0, "note": "Same stroke as sub-op 1 (compound tool); perimeter counted there."}
+      ]
     },
     {
-      "sequence": 3,
-      "name": "VMC — Rough Non-Rotational Profiles and Windows",
-      "machine_family": "vmc_3axis",
-      "in_house": true,
-      "setup_time_sec": 1500.0,
-      "t_setup_per_piece_sec": 15.0,
-      "t_handling_sec": 20.0,
-      "t_machining_sec": 205.0,
-      "t_op_total_sec": 240.0
+      "sequence": 3, "name": "CNC Turn Bore", "machine_family": "cnc_lathe", "in_house": true,
+      "setup_min": 20.0, "load_unload_min": 0.25, "cycle_min": 0.58,
+      "sub_operations": [
+        {"operation_sequence": 3, "sub_operation_sequence": 1, "operation_type": "rough_bore_id", "feature_id": "F01", "method": "manual",
+         "inputs": {"from_mm": 98.0, "to_mm": 99.6, "length_mm": 6.5}, "params": {"vc_m_min": 250, "f_mm_rev": 0.25, "rpm": 804, "vf_mm_min": 201},
+         "cut_min": 0.03, "non_cut_min": 0.05, "note": "HR13 low-carbon (UTS 270-380), coated carbide. L = 4.5 + 2 approach = 6.5 / 201 = 0.032."},
+        {"operation_sequence": 3, "sub_operation_sequence": 2, "operation_type": "finish_bore_id", "feature_id": "F01", "method": "manual",
+         "inputs": {"to_mm": 100.02, "tol": "+0.054/0 H8", "ra_um": 3.2, "length_mm": 6.5}, "params": {"vc_m_min": 280, "f_mm_rev": 0.12, "rpm": 891, "vf_mm_min": 107},
+         "cut_min": 0.06, "non_cut_min": 0.05, "note": "6.5 / 107 = 0.061."},
+        {"operation_sequence": 3, "sub_operation_sequence": 3, "operation_type": "chamfer_turn", "feature_id": "F08", "method": "manual",
+         "inputs": {"chamfer": "2.4 x 45 deg side A (before lapping)", "edge_break_side_b_mm": 0.1}, "params": {"f_mm_rev": 0.12, "rpm": 800, "passes": 2},
+         "cut_min": 0.09, "non_cut_min": 0.05, "note": "2 passes x 3.4 mm path at 96 mm/min = 0.07 + side B 0.1 edge break 0.02."}
+      ]
     },
     {
-      "sequence": 4,
-      "name": "VMC — Finish Profiles, Bosses and Mounting Holes",
-      "machine_family": "vmc_3axis",
-      "in_house": true,
-      "setup_time_sec": 1500.0,
-      "t_setup_per_piece_sec": 15.0,
-      "t_handling_sec": 20.0,
-      "t_machining_sec": 205.0,
-      "t_op_total_sec": 240.0
+      "sequence": 4, "name": "VMC Counterbore Mounting Holes", "machine_family": "vmc_3axis", "in_house": true,
+      "setup_min": 20.0, "load_unload_min": 0.25, "cycle_min": 0.45,
+      "sub_operations": [
+        {"operation_sequence": 4, "sub_operation_sequence": 1, "operation_type": "counterbore", "feature_id": "F03", "method": "manual",
+         "inputs": {"count": 3, "diameter_mm": 16.3, "pilot_mm": 9.0, "depth_mm": 2.4, "pcd_mm": 119.5}, "params": {"vc_m_min": 120, "rpm": 2343, "f_mm_rev": 0.12, "vf_mm_min": 281},
+         "cut_min": 0.15, "non_cut_min": 0.05, "note": "Piloted Ø16.3 counterbore: (2.4 + 0.5) / 281 = 0.010 + 0.5 s dwell per hole, + 3 x 0.03 rapids/positioning = 0.15."}
+      ]
     },
     {
-      "sequence": 5,
-      "name": "Controlled Deburr and Pre-Lap Cleaning",
-      "machine_family": "finish_bench",
-      "in_house": true,
-      "setup_time_sec": 300.0,
-      "t_setup_per_piece_sec": 3.0,
-      "t_handling_sec": 12.0,
-      "t_machining_sec": 75.0,
-      "t_op_total_sec": 90.0
+      "sequence": 5, "name": "Rotary Surface Grind Side A", "machine_family": "rotary_surface_grinder", "in_house": true,
+      "setup_min": 10.0, "load_unload_min": 0.25, "cycle_min": 0.85,
+      "sub_operations": [
+        {"operation_sequence": 5, "sub_operation_sequence": 1, "operation_type": "surface_grind", "feature_id": "F14", "method": "manual",
+         "inputs": {"stock_mm": 0.8, "parts_per_load": 10}, "params": {"rough_downfeed_mm_min": 0.2, "finish_downfeed_mm_min": 0.05},
+         "cut_min": 0.60, "non_cut_min": 0.0, "note": "Per load of 10: 0.7 / 0.2 = 3.5 + 0.1 / 0.05 = 2.0 + 0.5 spark-out = 6.0 min -> 0.60/pc. Load, demag, unload 0.25/pc."}
+      ]
     },
     {
-      "sequence": 6,
-      "name": "Lap — Side B Reference Land (Batch Process)",
-      "machine_family": "lapping",
-      "in_house": true,
-      "setup_time_sec": 600.0,
-      "t_setup_per_piece_sec": 6.0,
-      "t_handling_sec": 9.0,
-      "t_machining_sec": 30.0,
-      "t_op_total_sec": 45.0
+      "sequence": 6, "name": "Double-Side Lap", "machine_family": "lapping_machine", "in_house": true,
+      "setup_min": 15.0, "load_unload_min": 0.30, "cycle_min": 0.90,
+      "sub_operations": [
+        {"operation_sequence": 6, "sub_operation_sequence": 1, "operation_type": "lap", "feature_id": "F13,F14", "method": "manual",
+         "inputs": {"stock_per_side_mm": 0.1, "parts_per_load": 10, "carriers": 5}, "params": {"removal_mm_min": 0.02},
+         "cut_min": 0.60, "non_cut_min": 0.0, "note": "Planetary lap, 5 carriers x 2 parts: 0.1 / 0.02 = 5.0 + 1.0 fine = 6.0 min per load -> 0.60/pc. Load, clean, unload 0.30/pc."}
+      ]
     },
     {
-      "sequence": 7,
-      "name": "Lap — Side A and Final Thickness (Batch Process)",
-      "machine_family": "lapping",
-      "in_house": true,
-      "setup_time_sec": 600.0,
-      "t_setup_per_piece_sec": 6.0,
-      "t_handling_sec": 9.0,
-      "t_machining_sec": 30.0,
-      "t_op_total_sec": 45.0
+      "sequence": 7, "name": "Brush Deburr", "machine_family": "rotary_deburring_machine", "in_house": true,
+      "setup_min": 5.0, "load_unload_min": 0.04, "cycle_min": 0.14,
+      "sub_operations": [
+        {"operation_sequence": 7, "sub_operation_sequence": 1, "operation_type": "deburr", "feature_id": "F02", "method": "manual",
+         "inputs": {}, "params": {"passes": 2}, "cut_min": 0.10, "non_cut_min": 0.0, "note": "Conveyor brush, both sides (flip), edge break <= 0.1, no tooth-profile rounding."}
+      ]
     },
     {
-      "sequence": 8,
-      "name": "Final Edge Check, Cleaning and DMC Marking",
-      "machine_family": "finish_bench",
-      "in_house": true,
-      "setup_time_sec": 240.0,
-      "t_setup_per_piece_sec": 2.4,
-      "t_handling_sec": 24.0,
-      "t_machining_sec": 221.6,
-      "t_op_total_sec": 248.0
+      "sequence": 8, "name": "Wash", "machine_family": "washing_machine", "in_house": true,
+      "setup_min": 0.0, "load_unload_min": 0.0, "cycle_min": 0.10,
+      "sub_operations": [
+        {"operation_sequence": 8, "sub_operation_sequence": 1, "operation_type": "clean_degrease", "feature_id": null, "method": "manual",
+         "inputs": {}, "params": {}, "cut_min": 0.10, "non_cut_min": 0.0, "note": "Basket wash, removes lapping slurry."}
+      ]
     },
     {
-      "sequence": 9,
-      "name": "Final Dimensional and 100% Tooth Integrity Inspection",
-      "machine_family": "inspection",
-      "in_house": true,
-      "setup_time_sec": 1200.0,
-      "t_setup_per_piece_sec": 12.0,
-      "t_handling_sec": 15.0,
-      "t_machining_sec": 360.0,
-      "t_op_total_sec": 387.0
+      "sequence": 9, "name": "DMC Laser Mark", "machine_family": "laser_marker", "in_house": true,
+      "setup_min": 5.0, "load_unload_min": 0.05, "cycle_min": 0.20,
+      "sub_operations": [
+        {"operation_sequence": 9, "sub_operation_sequence": 1, "operation_type": "mark_stamp", "feature_id": null, "method": "manual",
+         "inputs": {}, "params": {"mark_s": 9}, "cut_min": 0.15, "non_cut_min": 0.0, "note": "DMC fibre laser incl. read-back."}
+      ]
+    },
+    {
+      "sequence": 10, "name": "Final Inspection", "machine_family": "inspection", "in_house": true,
+      "setup_min": 10.0, "load_unload_min": 0.0, "cycle_min": 0.50,
+      "sub_operations": [
+        {"operation_sequence": 10, "sub_operation_sequence": 1, "operation_type": "gear_check", "feature_id": "F02", "method": "manual",
+         "inputs": {}, "params": {}, "cut_min": 0.10, "non_cut_min": 0.0, "note": "100% teeth integrity by vision camera, 6 s."},
+        {"operation_sequence": 10, "sub_operation_sequence": 2, "operation_type": "manual_inspect", "feature_id": "F01,F03", "method": "manual",
+         "inputs": {}, "params": {}, "cut_min": 0.40, "non_cut_min": 0.0, "note": "H8 plug gauge on Ø100.02, thickness 3.5 and counterbore depth 1.5, flatness, burr check."}
+      ]
     }
   ],
-  "warnings": [
-    "Loaded org machining overrides from: engine/data/machining_data_jal.yaml"
-  ]
+  "cycle_min_per_piece": 3.76,
+  "setup_min_per_order": 125.0,
+  "setup_min_per_piece": 12.5,
+  "total_min_per_piece": 16.26,
+  "conflicts": [],
+  "confidence": "high",
+  "low_confidence_reasons": []
 }
