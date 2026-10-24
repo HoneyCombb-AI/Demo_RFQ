@@ -1,302 +1,186 @@
 {
-  "analysis_id": "ASD22059GR_merge_20261011T160242Z",
-  "source_feature_graph_id": "ASD22059GR_merge_20261011T160242Z",
-  "quantity": 100,
-  "part_family": "hybrid",
+  "analysis_id": "ASD22059GR_merge_20261023T132911Z",
+  "source_feature_graph_id": "ASD22059GR_merge_20261023T132911Z",
+  "quantity": 10,
+  "part_family": "turned",
   "base_geometry": "rotational",
   "stock": {
-    "form": "rolled_ring",
-    "diameter_mm": 226.0,
-    "outer_diameter_mm": 226.0,
-    "inner_diameter_mm": 178.0,
-    "length_mm": 30.0,
-    "weight_kg": 3.587,
-    "finish_part_weight_kg": 1.692,
-    "machining_allowance_mm": 2.0
+    "form": "cold_rolled_ring_blank",
+    "outer_diameter_mm": 223.1,
+    "inner_diameter_mm": 183.5,
+    "length_mm": 26.6,
+    "diameter_mm": 223.1,
+    "machining_allowance_mm": 1.0,
+    "weight_kg": 2.64,
+    "finish_part_weight_kg": 1.71
   },
   "operations": [
     {
       "sequence": 1,
-      "name": "CNC Turn — First Rough Setup",
-      "machine_family": "cnc_lathe",
-      "setup_note": "Grip the pre-QT rolled ring blank (Ø226 × Ø178 × 30 mm) on its raw OD and face BS I across the 24 mm radial annular wall. Rough turn the OD to Ø222 mm and rough bore the as-rolled ID from Ø178 to Ø184 mm. Central trepanning is eliminated with the plain rolled ring blank.",
-      "datum_references": [
-        "A",
-        "B"
-      ],
+      "name": "Cold Roll Ring Section",
+      "machine_family": "cold_rolling_mill",
+      "setup_note": "Round raw material cold rolled into the trapezoidal ring section; width rolled to close tolerance so face turning is avoided.",
+      "datum_references": [],
       "material_machinability": "medium",
-      "setup_time_min": 20.0,
+      "setup_time_min": 30.0,
       "in_house": true,
       "sub_operations": [
         {
           "sequence": 1,
-          "operation_type": "face_turn",
-          "target_feature_ids": [
-            "F06"
-          ],
+          "operation_type": "cold_roll_section",
+          "target_feature_ids": [],
           "inputs": {
-            "kind": "radial_turn",
-            "start_diameter_mm": 226.0,
-            "finish_diameter_mm": 178.0,
-            "groove_count": 1,
-            "total_stock_mm": 2.0
-          }
-        },
-        {
-          "sequence": 2,
-          "operation_type": "rough_turn_od",
-          "target_feature_ids": [
-            "F01"
-          ],
-          "inputs": {
-            "kind": "axial_turn",
-            "start_diameter_mm": 226.0,
-            "finish_diameter_mm": 222.0,
-            "cut_length_mm": 26.0
-          }
-        },
-        {
-          "sequence": 3,
-          "operation_type": "rough_bore_id",
-          "target_feature_ids": [
-            "F03"
-          ],
-          "inputs": {
-            "kind": "axial_turn",
-            "start_diameter_mm": 178.0,
-            "finish_diameter_mm": 184.0,
-            "cut_length_mm": 26.0
+            "section_area_mm2": 526,
+            "section_width_mm": 26.6,
+            "section_height_mm": 19.8,
+            "developed_length_mm": 664,
+            "raw_rod_diameter_mm": 28,
+            "raw_rod_length_mm": 567,
+            "blank_mass_kg": 2.64,
+            "line_speed_m_min": 10.0
           }
         }
       ]
     },
     {
       "sequence": 2,
-      "name": "CNC Turn — Rear Rough Setup",
-      "machine_family": "cnc_lathe",
-      "setup_note": "Reverse into bored soft jaws locating on Datum A. Face nBS II across the 24 mm radial annular wall to rough axial width 26.5 mm and rough turn the accessible OD to Ø222 mm.",
-      "datum_references": [
-        "A",
-        "B"
-      ],
+      "name": "Ring Making (CNC Ring Bending)",
+      "machine_family": "ring_making_machine",
+      "setup_note": "Section bent into a ring; heat code marked; laser thickness measurement in line.",
+      "datum_references": [],
       "material_machinability": "medium",
-      "setup_time_min": 15.0,
+      "setup_time_min": 10.0,
       "in_house": true,
       "sub_operations": [
         {
           "sequence": 1,
-          "operation_type": "face_turn",
-          "target_feature_ids": [
-            "F12",
-            "F10"
-          ],
+          "operation_type": "ring_coil",
+          "target_feature_ids": [],
           "inputs": {
-            "kind": "radial_turn",
-            "start_diameter_mm": 226.0,
-            "finish_diameter_mm": 178.0,
-            "groove_count": 1,
-            "total_stock_mm": 2.0
+            "ring_mean_diameter_mm": 203.3,
+            "section_mm": "26.6 x 19.8",
+            "bend_time_s": 12
           }
         },
         {
           "sequence": 2,
-          "operation_type": "rough_turn_od",
-          "target_feature_ids": [
-            "F01"
-          ],
+          "operation_type": "mark_stamp",
+          "target_feature_ids": [],
           "inputs": {
-            "kind": "axial_turn",
-            "start_diameter_mm": 225.0,
-            "finish_diameter_mm": 222.1,
-            "cut_length_mm": 13.0
+            "mark_time_s": 3
           }
         }
       ]
     },
     {
       "sequence": 3,
-      "name": "Indexed Mill — Rough External Dogs",
-      "machine_family": "vmc_5axis",
-      "setup_note": "Seat preliminary A on an annular fixture, center from preliminary B, and use the rotary axis to establish the designated indexing lug C. Rough all 50 spaces, between-lug rim arcs, and root transitions before any finish profiling.",
-      "datum_references": [
-        "A",
-        "B",
-        "C"
-      ],
+      "name": "Flash Butt Weld and Trim",
+      "machine_family": "flash_butt_welder",
+      "setup_note": "Ring ends flash-butt welded; weld upset trimmed flush on ID, OD and faces.",
+      "datum_references": [],
       "material_machinability": "medium",
-      "setup_time_min": 35.0,
+      "setup_time_min": 10.0,
       "in_house": true,
       "sub_operations": [
         {
           "sequence": 1,
-          "operation_type": "slot_mill",
-          "target_feature_ids": [
-            "F04"
-          ],
+          "operation_type": "flash_butt_weld",
+          "target_feature_ids": [],
           "inputs": {
-            "kind": "contour_mill",
-            "path_length_mm": 27.0,
-            "radial_width_mm": 7.3,
-            "total_depth_mm": 3.3,
-            "path_count": 50
+            "weld_section_mm2": 526,
+            "flash_s": 20,
+            "upset_s": 4
           }
         },
         {
           "sequence": 2,
-          "operation_type": "profile_mill",
-          "target_feature_ids": [
-            "F05"
-          ],
+          "operation_type": "trim_flash",
+          "target_feature_ids": [],
           "inputs": {
-            "kind": "contour_mill",
-            "path_length_mm": 4.2,
-            "radial_width_mm": 0.35,
-            "total_depth_mm": 27.0,
-            "path_count": 50
-          }
-        },
-        {
-          "sequence": 3,
-          "operation_type": "profile_mill",
-          "target_feature_ids": [
-            "F08"
-          ],
-          "inputs": {
-            "kind": "contour_mill",
-            "path_length_mm": 2.04,
-            "radial_width_mm": 1.3,
-            "total_depth_mm": 27.0,
-            "path_count": 100
+            "trim_s": 10
           }
         }
       ]
     },
     {
       "sequence": 4,
-      "name": "Gear Shape — Rough Internal Teeth",
-      "machine_family": "gear_shaping",
-      "setup_note": "Locate on preliminary A and B in a low-distortion annular fixture with through-clearance for the cutter stroke. Rough-shape the 113-tooth left-hand helical internal gear using the specified gear table and qualified helical generating tooling.",
-      "datum_references": [
-        "A",
-        "B"
-      ],
+      "name": "Harden and Temper Ring Blank",
+      "machine_family": "normalizing_furnace",
+      "setup_note": "Replaces normalizing: drawing core hardness 300-400 HV10 needs a hardened and tempered blank; also homogenises the weld zone.",
+      "datum_references": [],
       "material_machinability": "medium",
-      "setup_time_min": 45.0,
+      "setup_time_min": 0.0,
       "in_house": true,
       "sub_operations": [
         {
           "sequence": 1,
-          "operation_type": "shape_teeth",
-          "target_feature_ids": [
-            "F03"
-          ],
+          "operation_type": "austenitize_quench",
+          "target_feature_ids": [],
           "inputs": {
-            "kind": "gear_shape",
-            "number_of_teeth": 113,
-            "normal_module_mm": 1.59,
-            "face_width_mm": 27.0,
-            "whole_depth_mm": 4.325,
-            "helix_angle_deg": 14.0,
-            "internal": true,
-            "number_of_cuts": 1
+            "part_mass_kg": 2.64,
+            "furnace_throughput_kg_h": 400
+          }
+        },
+        {
+          "sequence": 2,
+          "operation_type": "temper",
+          "target_feature_ids": [],
+          "inputs": {
+            "part_mass_kg": 2.64,
+            "furnace_throughput_kg_h": 400
           }
         }
       ]
     },
     {
       "sequence": 5,
-      "name": "CNC Turn — BS I Semi-Finish and Groove",
-      "machine_family": "cnc_lathe",
-      "setup_note": "Grip a rear crest band in pattern-relieved soft jaws with BS I accessible, using the rough rear face as the axial stop. Semi-finish A and the tooth-tip cylinder before semi-finishing the exposed crest diameter, then rough and finish the groove profile while retaining post-nitriding grinding allowance.",
-      "datum_references": [
-        "A",
-        "B",
-        "C"
-      ],
+      "name": "Shot Blast",
+      "machine_family": "shot_blaster",
+      "setup_note": "Descale after heat treatment.",
+      "datum_references": [],
       "material_machinability": "medium",
-      "setup_time_min": 25.0,
+      "setup_time_min": 0.0,
       "in_house": true,
       "sub_operations": [
         {
           "sequence": 1,
-          "operation_type": "face_turn",
-          "target_feature_ids": [
-            "F06"
-          ],
+          "operation_type": "shot_blast",
+          "target_feature_ids": [],
           "inputs": {
-            "kind": "radial_turn",
-            "start_diameter_mm": 222.1,
-            "finish_diameter_mm": 184.55,
-            "groove_count": 1,
-            "total_stock_mm": 0.4
-          }
-        },
-        {
-          "sequence": 2,
-          "operation_type": "semi_finish_bore_id",
-          "target_feature_ids": [
-            "F03"
-          ],
-          "inputs": {
-            "kind": "axial_turn",
-            "start_diameter_mm": 184.55,
-            "finish_diameter_mm": 185.25,
-            "cut_length_mm": 26.6
-          }
-        },
-        {
-          "sequence": 3,
-          "operation_type": "finish_turn_od",
-          "target_feature_ids": [
-            "F01"
-          ],
-          "inputs": {
-            "kind": "axial_turn",
-            "start_diameter_mm": 222.1,
-            "finish_diameter_mm": 221.4,
-            "cut_length_mm": 13.0
-          }
-        },
-        {
-          "sequence": 4,
-          "operation_type": "groove_od",
-          "target_feature_ids": [
-            "F02",
-            "F07"
-          ],
-          "inputs": {
-            "kind": "radial_turn",
-            "start_diameter_mm": 221.4,
-            "finish_diameter_mm": 207.9,
-            "groove_width_mm": 2.58,
-            "groove_count": 1
-          }
-        },
-        {
-          "sequence": 5,
-          "operation_type": "groove_od",
-          "target_feature_ids": [
-            "F02",
-            "F07"
-          ],
-          "inputs": {
-            "kind": "radial_turn",
-            "start_diameter_mm": 207.9,
-            "finish_diameter_mm": 207.4,
-            "groove_width_mm": 2.88,
-            "groove_count": 1
+            "part_mass_kg": 2.64,
+            "batch_kg": 150,
+            "batch_cycle_min": 12
           }
         }
       ]
     },
     {
       "sequence": 6,
-      "name": "CNC Turn — nBS II Semi-Finish",
+      "name": "Size Ring Blank",
+      "machine_family": "ring_sizing_machine",
+      "setup_note": "Ring expanded / sized to restore roundness after welding and heat treatment.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "setup_time_min": 10.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "coin_size",
+          "target_feature_ids": [],
+          "inputs": {
+            "stroke_s": 9
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 7,
+      "name": "CNC Turn - Setup 1 (OD)",
       "machine_family": "cnc_lathe",
-      "setup_note": "Reverse onto semi-finished A and grip a BS-side crest band in relieved soft jaws without loading the groove flanks. Semi-finish nBS II and the remaining crest band, retaining face and diameter allowance for hard finishing.",
+      "setup_note": "Clamped on ID, located on face F04 (Datum A). OD F01 left with grind stock. Faces as rolled.",
       "datum_references": [
-        "A",
-        "B"
+        "A"
       ],
       "material_machinability": "medium",
       "setup_time_min": 20.0,
@@ -304,17 +188,18 @@
       "sub_operations": [
         {
           "sequence": 1,
-          "operation_type": "face_turn",
+          "operation_type": "rough_turn_od",
           "target_feature_ids": [
-            "F12",
-            "F10"
+            "F01"
           ],
           "inputs": {
-            "kind": "radial_turn",
-            "start_diameter_mm": 222.1,
-            "finish_diameter_mm": 185.25,
-            "groove_count": 1,
-            "total_stock_mm": 0.4
+            "start_diameter_mm": 223.1,
+            "finish_diameter_mm": 221.9,
+            "cut_length_mm": 28.0,
+            "vc_m_min": 180,
+            "f_mm_rev": 0.28,
+            "rpm": 256.8,
+            "passes": 1
           }
         },
         {
@@ -324,109 +209,112 @@
             "F01"
           ],
           "inputs": {
-            "kind": "axial_turn",
-            "start_diameter_mm": 222.1,
-            "finish_diameter_mm": 221.4,
-            "cut_length_mm": 13.0
-          }
-        }
-      ]
-    },
-    {
-      "sequence": 7,
-      "name": "Indexed Mill — Semi-Finish External Dogs",
-      "machine_family": "vmc_5axis",
-      "setup_note": "Reload the annular fixture against semi-finished A, center from B, and pick up the designated lug centerplane C. Climb-profile all lug flanks, rim arcs, and separately toleranced R1 transitions, leaving controlled allowance for indexed hard form grinding.",
-      "datum_references": [
-        "A",
-        "B",
-        "C"
-      ],
-      "material_machinability": "medium",
-      "setup_time_min": 25.0,
-      "in_house": true,
-      "sub_operations": [
-        {
-          "sequence": 1,
-          "operation_type": "profile_mill",
-          "target_feature_ids": [
-            "F04"
-          ],
-          "inputs": {
-            "kind": "contour_mill",
-            "path_length_mm": 52.4,
-            "radial_width_mm": 0.3,
-            "total_depth_mm": 3.6,
-            "path_count": 50
-          }
-        },
-        {
-          "sequence": 2,
-          "operation_type": "profile_mill",
-          "target_feature_ids": [
-            "F05"
-          ],
-          "inputs": {
-            "kind": "contour_mill",
-            "path_length_mm": 5.0,
-            "radial_width_mm": 0.3,
-            "total_depth_mm": 26.2,
-            "path_count": 50
+            "start_diameter_mm": 221.9,
+            "finish_diameter_mm": 221.3,
+            "cut_length_mm": 28.0,
+            "vc_m_min": 220,
+            "f_mm_rev": 0.15,
+            "rpm": 315.6,
+            "passes": 1
           }
         },
         {
           "sequence": 3,
-          "operation_type": "profile_mill",
+          "operation_type": "groove_od",
           "target_feature_ids": [
-            "F08"
+            "F05"
           ],
           "inputs": {
-            "kind": "contour_mill",
-            "path_length_mm": 1.81,
-            "radial_width_mm": 0.15,
-            "total_depth_mm": 26.2,
-            "path_count": 100
+            "start_diameter_mm": 221.3,
+            "seat_diameter_mm": 207.1,
+            "groove_width_mm": 3.18,
+            "insert_width_mm": 3.0,
+            "vc_m_min": 150,
+            "rpm": 223,
+            "f_plunge_mm_rev": 0.07,
+            "f_finish_mm_rev": 0.1
+          }
+        },
+        {
+          "sequence": 4,
+          "operation_type": "chamfer_turn",
+          "target_feature_ids": [
+            "F06",
+            "F07"
+          ],
+          "inputs": {
+            "F06_leg_mm": 0.65,
+            "F07_angle_deg": 35,
+            "f_mm_rev": 0.12
           }
         }
       ]
     },
     {
       "sequence": 8,
-      "name": "Gear Shape — Semi-Finish Internal Teeth",
-      "machine_family": "gear_shaping",
-      "setup_note": "Locate the rough-shaped ring on semi-finished A and B with unobstructed cutter stroke. Semi-finish the internal involute and helix to the gear-table requirements, leaving qualified stock for subsequent light hard grinding.",
+      "name": "CNC Turn - Setup 2 (Bore)",
+      "machine_family": "cnc_lathe",
+      "setup_note": "Clamped on OD F01, located on F04. Bore turned to internal gear tip diameter.",
       "datum_references": [
-        "A",
-        "B"
+        "A"
       ],
       "material_machinability": "medium",
-      "setup_time_min": 30.0,
+      "setup_time_min": 20.0,
       "in_house": true,
       "sub_operations": [
         {
           "sequence": 1,
-          "operation_type": "shape_teeth",
+          "operation_type": "rough_bore_id",
           "target_feature_ids": [
-            "F03"
+            "F02"
           ],
           "inputs": {
-            "kind": "gear_shape",
-            "number_of_teeth": 113,
-            "normal_module_mm": 1.59,
-            "face_width_mm": 26.2,
-            "whole_depth_mm": 4.325,
-            "helix_angle_deg": 14.0,
-            "internal": true,
-            "number_of_cuts": 1
+            "start_diameter_mm": 183.55,
+            "finish_diameter_mm": 185.0,
+            "cut_length_mm": 28.0,
+            "vc_m_min": 170,
+            "f_mm_rev": 0.25,
+            "rpm": 294.8,
+            "passes": 1
+          }
+        },
+        {
+          "sequence": 2,
+          "operation_type": "finish_bore_id",
+          "target_feature_ids": [
+            "F02"
+          ],
+          "inputs": {
+            "start_diameter_mm": 185.0,
+            "finish_diameter_mm": 185.55,
+            "cut_length_mm": 28.0,
+            "vc_m_min": 200,
+            "f_mm_rev": 0.15,
+            "rpm": 344.1,
+            "passes": 1
+          }
+        },
+        {
+          "sequence": 3,
+          "operation_type": "chamfer_turn",
+          "target_feature_ids": [
+            "F14",
+            "F15"
+          ],
+          "inputs": {
+            "F14": "0.5 x 30 deg",
+            "F15": "2.5 x 55 deg",
+            "f_mm_rev": 0.1,
+            "rpm": 344
           }
         }
       ]
     },
     {
       "sequence": 9,
-      "name": "Tooth Chamfer — BS I",
-      "machine_family": "vmc_5axis",
-      "setup_note": "Support nBS II on an annular fixture and locate radially from B with BS I accessible. Form the specified BS-side entry chamfer and one selected 35-degree tip-chamfer configuration, allowing for the subsequent face and tooth finishing.",
+      "name": "Hob External Lugs",
+      "machine_family": "gear_hobber",
+      "setup_note": "50 straight-sided lugs at 7.2 deg, 5.8 wide, root \u00d8213.9 (F09) with R1 (F10) from the hob tip; 3 parts stacked on arbor; 2-start spline hob.",
       "datum_references": [
         "A",
         "B"
@@ -437,427 +325,115 @@
       "sub_operations": [
         {
           "sequence": 1,
-          "operation_type": "teeth_chamfer",
+          "operation_type": "hob_teeth",
           "target_feature_ids": [
-            "F13"
+            "F01"
           ],
           "inputs": {
-            "kind": "gear_finish",
-            "number_of_teeth": 113,
-            "normal_module_mm": 1.59,
-            "face_width_mm": 26.2,
-            "stock_per_flank_mm": 2.5,
-            "helix_angle_deg": 14.0,
-            "gear_quality_class": 5
-          }
-        },
-        {
-          "sequence": 2,
-          "operation_type": "teeth_chamfer",
-          "target_feature_ids": [
-            "F15",
-            "F16"
-          ],
-          "inputs": {
-            "kind": "gear_finish",
-            "number_of_teeth": 113,
-            "normal_module_mm": 1.59,
-            "face_width_mm": 26.2,
-            "stock_per_flank_mm": 0.15,
-            "helix_angle_deg": 14.0,
-            "gear_quality_class": 5
+            "lug_count": 50,
+            "lug_width_mm": 5.8,
+            "tip_diameter_mm": 221.3,
+            "root_diameter_mm": 213.9,
+            "face_width_mm": 26.0,
+            "stack": 3,
+            "hob_diameter_mm": 80,
+            "vc_m_min": 90,
+            "hob_rpm": 358,
+            "starts": 2,
+            "axial_feed_mm_per_wrev": 2.0,
+            "approach_mm": 16.8,
+            "overrun_mm": 3.0
           }
         }
       ]
     },
     {
       "sequence": 10,
-      "name": "Tooth Chamfer — nBS II",
-      "machine_family": "vmc_5axis",
-      "setup_note": "Reverse onto A and center from B with nBS II accessible. Form its specified tooth-entry chamfer with compensation for subsequent rear-face grinding.",
+      "name": "Shape Internal Helical Teeth",
+      "machine_family": "gear_shaper",
+      "setup_note": "Parts stacked on arbor; helical guide 14 deg LH. Internal teeth cannot be hobbed.",
       "datum_references": [
-        "A",
-        "B"
+        "A"
       ],
       "material_machinability": "medium",
-      "setup_time_min": 25.0,
+      "setup_time_min": 60.0,
       "in_house": true,
       "sub_operations": [
         {
           "sequence": 1,
-          "operation_type": "teeth_chamfer",
+          "operation_type": "shape_teeth",
           "target_feature_ids": [
-            "F14"
+            "F02"
           ],
           "inputs": {
-            "kind": "gear_finish",
-            "number_of_teeth": 113,
+            "teeth": 113,
             "normal_module_mm": 1.59,
-            "face_width_mm": 26.2,
-            "stock_per_flank_mm": 0.5,
-            "helix_angle_deg": 14.0,
-            "gear_quality_class": 5
+            "helix_deg": 14.0,
+            "pitch_diameter_mm": 185.17,
+            "tooth_depth_mm": 3.6,
+            "face_width_mm": 26.0,
+            "stack": 2,
+            "vc_m_min": 25,
+            "stroke_length_mm": 56,
+            "double_strokes_min": 223,
+            "rotary_feed_rough_mm": 0.35,
+            "rotary_feed_finish_mm": 0.2,
+            "radial_infeed_mm_stroke": 0.01
           }
         }
       ]
     },
     {
       "sequence": 11,
-      "name": "Pre-Nitriding Deburr and Clean",
-      "machine_family": "finish_bench",
-      "setup_note": "Support the ring in a non-marring open annular cradle that exposes both tooth ends and the external groove. Produce the specified revolving edge breaks, remove all positive flank material and machining burrs, then degrease and dry completely.",
+      "name": "Wash",
+      "machine_family": "washing_machine",
+      "setup_note": "Wash before nitriding.",
       "datum_references": [],
       "material_machinability": "medium",
-      "setup_time_min": 3.0,
+      "setup_time_min": 0.0,
       "in_house": true,
       "sub_operations": [
         {
           "sequence": 1,
-          "operation_type": "deburr",
-          "target_feature_ids": [
-            "F11"
-          ],
-          "inputs": {
-            "kind": "manual",
-            "complexity": "high",
-            "edge_length_mm": 800.0,
-            "feature_count": 226
-          }
-        },
-        {
-          "sequence": 2,
           "operation_type": "clean_degrease",
-          "target_feature_ids": [],
-          "inputs": {
-            "kind": "manual",
-            "complexity": "high",
-            "feature_count": 16,
-            "estimated_time_min": 2.0
-          }
+          "target_feature_ids": []
         }
       ]
     },
     {
       "sequence": 12,
-      "name": "Stress Relief — Pre-Nitriding",
-      "machine_family": "normalizing_furnace",
-      "setup_note": "Send the degreased ring, supported on anti-distortion fixtures, to an approved external heat treater for a controlled stress-relief cycle. The thin annular section must be fully stress-relieved before nitriding to prevent out-of-round distortion. Hold temperature and soak time per the approved pre-nitriding procedure for 31CrMoV9ZR and verify dimensional stability on a sample before batch release.",
+      "name": "Gas Nitride",
+      "machine_family": "nitriding_furnace",
+      "setup_note": "Drawing requires nitriding (NHD 0.2 mm, CLT 0.008 mm), not induction hardening. No temper after nitriding.",
       "datum_references": [],
       "material_machinability": "medium",
-      "setup_time_min": 10.0,
-      "in_house": false,
-      "outside_process": "stress_relief_pre_nitriding",
+      "setup_time_min": 0.0,
+      "in_house": true,
       "sub_operations": [
         {
           "sequence": 1,
-          "operation_type": "stress_relief",
-          "target_feature_ids": [],
+          "operation_type": "nitride",
+          "target_feature_ids": [
+            "F02"
+          ],
           "inputs": {
-            "kind": "furnace_cycle",
-            "batch_size_parts": 50,
-            "part_mass_kg": 3.587,
-            "max_section_thickness_mm": 26.0,
-            "target_temp_c": 550
+            "part_mass_kg": 1.71,
+            "NHD_mm": 0.2,
+            "CLT_mm": 0.008,
+            "cycle_h": 24,
+            "load_kg": 1000,
+            "pcs_per_load": 585
           }
         }
       ]
     },
     {
       "sequence": 13,
-      "name": "Pre-Nitriding Inspection Gate",
-      "machine_family": "inspection",
-      "setup_note": "In-process pre-nitriding gate check: verify critical pre-treatment dimensions (bore, OD, face runout), internal gear tooth span/over-pins, and core hardness before heat treatment release.",
-      "datum_references": [
-        "A",
-        "B",
-        "C"
-      ],
-      "material_machinability": "medium",
-      "setup_time_min": 25.0,
-      "in_house": true,
-      "sub_operations": [
-        {
-          "sequence": 1,
-          "operation_type": "cmm_inspect",
-          "target_feature_ids": [],
-          "inputs": {
-            "kind": "inspection",
-            "dimension_count": 16,
-            "gdt_count": 6,
-            "sampling_rate_pct": 100.0,
-            "requires_fixture": true
-          }
-        },
-        {
-          "sequence": 2,
-          "operation_type": "gear_check",
-          "target_feature_ids": [],
-          "inputs": {
-            "kind": "inspection",
-            "dimension_count": 4,
-            "gdt_count": 2,
-            "sampling_rate_pct": 100.0,
-            "requires_fixture": true
-          }
-        },
-        {
-          "sequence": 3,
-          "operation_type": "hardness_test",
-          "target_feature_ids": [],
-          "inputs": {
-            "kind": "inspection",
-            "dimension_count": 1,
-            "gdt_count": 0,
-            "sampling_rate_pct": 100.0,
-            "requires_fixture": false
-          }
-        },
-        {
-          "sequence": 4,
-          "operation_type": "manual_inspect",
-          "target_feature_ids": [],
-          "inputs": {
-            "kind": "inspection",
-            "dimension_count": 2,
-            "gdt_count": 0,
-            "sampling_rate_pct": 100.0,
-            "requires_fixture": false
-          }
-        }
-      ]
-    },
-    {
-      "sequence": 14,
-      "name": "Controlled Nitriding",
-      "machine_family": "nitriding_furnace",
-      "setup_note": "Send degreased, stress-relieved rings to qualified specialist for gas nitriding in a controlled nitriding furnace. Achieve specified case depth and surface hardness (800 HV min).",
-      "datum_references": [],
-      "material_machinability": "medium",
-      "setup_time_min": 0.0,
-      "in_house": false,
-      "outside_process": "controlled_nitriding",
-      "sub_operations": [
-        {
-          "sequence": 1,
-          "operation_type": "nitride",
-          "target_feature_ids": [],
-          "inputs": {
-            "kind": "furnace_cycle",
-            "batch_size_parts": 100,
-            "part_mass_kg": 1.69,
-            "max_section_thickness_mm": 17.8,
-            "case_depth_mm": 0.2
-          }
-        }
-      ]
-    },
-    {
-      "sequence": 15,
-      "name": "Nitriding Acceptance Gate",
-      "machine_family": "inspection",
-      "setup_note": "Confirm surface hardness ≥800 HV0.5 on accompanying witness coupons and inspect for distortion before finish grinding release.",
-      "datum_references": [
-        "A",
-        "B"
-      ],
-      "material_machinability": "hardened",
-      "setup_time_min": 15.0,
-      "in_house": true,
-      "sub_operations": [
-        {
-          "sequence": 1,
-          "operation_type": "hardness_test",
-          "target_feature_ids": [],
-          "inputs": {
-            "kind": "inspection",
-            "dimension_count": 2,
-            "gdt_count": 0,
-            "sampling_rate_pct": 100.0,
-            "requires_fixture": false
-          }
-        },
-        {
-          "sequence": 2,
-          "operation_type": "manual_inspect",
-          "target_feature_ids": [],
-          "inputs": {
-            "kind": "inspection",
-            "dimension_count": 1,
-            "gdt_count": 0,
-            "sampling_rate_pct": 100.0,
-            "requires_fixture": false
-          }
-        }
-      ]
-    },
-    {
-      "sequence": 16,
-      "name": "Face Grind — Datum A",
-      "machine_family": "od_grinding",
-      "setup_note": "Support the nitrided ring on nBS II in a low-distortion annular surface-grinding fixture without pulling thermal warp flat. Grind BS I to establish final datum A before other hard finishing.",
+      "name": "Grind Faces and OD",
+      "machine_family": "cylindrical_grinder",
+      "setup_note": "Width 26 +/-0.005, parallelism 0.01 and OD 221.1 +0/-0.007 need grinding after nitriding.",
       "datum_references": [
         "A"
-      ],
-      "material_machinability": "hardened",
-      "setup_time_min": 20.0,
-      "in_house": true,
-      "sub_operations": [
-        {
-          "sequence": 1,
-          "operation_type": "surface_grind",
-          "target_feature_ids": [
-            "F06"
-          ],
-          "inputs": {
-            "kind": "surface_grind",
-            "grind_length_mm": 221.1,
-            "grind_width_mm": 17.8,
-            "stock_mm": 0.1,
-            "surface_count": 1
-          }
-        }
-      ]
-    },
-    {
-      "sequence": 17,
-      "name": "Face Grind — nBS II",
-      "machine_family": "od_grinding",
-      "setup_note": "Reverse onto final A with distributed, low-distortion support. Grind nBS II to the specified overall width and parallelism, producing the same planar surface that carries the DMC area.",
-      "datum_references": [
-        "A"
-      ],
-      "material_machinability": "hardened",
-      "setup_time_min": 15.0,
-      "in_house": true,
-      "sub_operations": [
-        {
-          "sequence": 1,
-          "operation_type": "surface_grind",
-          "target_feature_ids": [
-            "F12",
-            "F10"
-          ],
-          "inputs": {
-            "kind": "surface_grind",
-            "grind_length_mm": 221.1,
-            "grind_width_mm": 17.8,
-            "stock_mm": 0.1,
-            "surface_count": 1
-          }
-        }
-      ]
-    },
-    {
-      "sequence": 18,
-      "name": "Cylindrical Grind — Datum B and Groove",
-      "machine_family": "od_grinding",
-      "setup_note": "Seat final A on an annular faceplate and indicate the preliminary crest axis using low-force internal support that leaves the outside accessible. Grind the interrupted lug crests to final B, then form-grind the groove flanks, R0.8 corners, and provisionally shared Ø207.1 floor.",
-      "datum_references": [
-        "A",
-        "B",
-        "C"
-      ],
-      "material_machinability": "hardened",
-      "setup_time_min": 35.0,
-      "in_house": true,
-      "sub_operations": [
-        {
-          "sequence": 1,
-          "operation_type": "od_grind",
-          "target_feature_ids": [
-            "F01"
-          ],
-          "inputs": {
-            "kind": "cylindrical_grind",
-            "grind_diameter_mm": 221.1,
-            "grind_length_mm": 26.0,
-            "radial_stock_mm": 0.15,
-            "land_count": 1
-          }
-        },
-        {
-          "sequence": 2,
-          "operation_type": "profile_grind",
-          "target_feature_ids": [
-            "F02",
-            "F07"
-          ],
-          "inputs": {
-            "kind": "cylindrical_grind",
-            "grind_diameter_mm": 207.1,
-            "grind_length_mm": 16.5,
-            "radial_stock_mm": 0.15,
-            "land_count": 1
-          }
-        }
-      ]
-    },
-    {
-      "sequence": 19,
-      "name": "Indexed Form Grind — External Dogs",
-      "machine_family": "gear_grinding",
-      "setup_note": "Locate on final A and B and index the designated lug centerplane C using a qualified programmable form-grinding fixture. Finish the 50 dog flank pairs, between-lug cylindrical arcs, and separately controlled R1 root transitions without disturbing the finished crests.",
-      "datum_references": [
-        "A",
-        "B",
-        "C"
-      ],
-      "material_machinability": "hardened",
-      "setup_time_min": 45.0,
-      "in_house": true,
-      "sub_operations": [
-        {
-          "sequence": 1,
-          "operation_type": "profile_grind",
-          "target_feature_ids": [
-            "F04"
-          ],
-          "inputs": {
-            "kind": "surface_grind",
-            "grind_length_mm": 26.0,
-            "grind_width_mm": 3.6,
-            "stock_mm": 0.15,
-            "surface_count": 50
-          }
-        },
-        {
-          "sequence": 2,
-          "operation_type": "profile_grind",
-          "target_feature_ids": [
-            "F05"
-          ],
-          "inputs": {
-            "kind": "surface_grind",
-            "grind_length_mm": 26.0,
-            "grind_width_mm": 5.6,
-            "stock_mm": 0.15,
-            "surface_count": 50
-          }
-        },
-        {
-          "sequence": 3,
-          "operation_type": "profile_grind",
-          "target_feature_ids": [
-            "F08"
-          ],
-          "inputs": {
-            "kind": "surface_grind",
-            "grind_length_mm": 26.0,
-            "grind_width_mm": 1.57,
-            "stock_mm": 0.15,
-            "surface_count": 50
-          }
-        }
-      ]
-    },
-    {
-      "sequence": 20,
-      "name": "ID Grind — Internal Tooth-Tip Circle",
-      "machine_family": "id_grinding",
-      "setup_note": "Locate the ring against final A and grip the final crest cylinder B in a pattern-relieved, low-force fixture. Finish-grind only the interrupted internal tooth-tip cylinder to the gear-table diameter and its runout requirement.",
-      "datum_references": [
-        "A",
-        "B"
       ],
       "material_machinability": "hardened",
       "setup_time_min": 30.0,
@@ -865,28 +441,45 @@
       "sub_operations": [
         {
           "sequence": 1,
-          "operation_type": "id_grind",
+          "operation_type": "double_disc_grind",
           "target_feature_ids": [
-            "F03"
+            "F03",
+            "F04"
           ],
           "inputs": {
-            "kind": "cylindrical_grind",
-            "grind_diameter_mm": 185.55,
-            "grind_length_mm": 26.0,
-            "radial_stock_mm": 0.15,
-            "land_count": 1
+            "stock_per_face_mm": 0.15,
+            "width_mm": 26.0,
+            "tol_mm": 0.005,
+            "parallelism_mm": 0.01,
+            "infeed_mm_min": 0.5,
+            "spark_out_min": 0.15
+          }
+        },
+        {
+          "sequence": 2,
+          "operation_type": "od_grind",
+          "target_feature_ids": [
+            "F01"
+          ],
+          "inputs": {
+            "start_diameter_mm": 221.3,
+            "finish_diameter_mm": 221.1,
+            "width_mm": 26.0,
+            "interrupted": true,
+            "rough_infeed_mm_min_dia": 0.4,
+            "finish_infeed_mm_min_dia": 0.1,
+            "spark_out_min": 0.1
           }
         }
       ]
     },
     {
-      "sequence": 21,
-      "name": "Internal Helical Gear Hard Grind",
-      "machine_family": "gear_grinding",
-      "setup_note": "Locate on final A and B in an internal-gear grinding fixture; angular phase relative to the external dogs is unrestricted. Apply only the qualified light flank correction needed for the specified profile, lead, DIN quality, and waviness while preserving the finished nitrided hardness, case depth, and compound layer.",
+      "sequence": 14,
+      "name": "Grind Internal Teeth",
+      "machine_family": "gear_grinder",
+      "setup_note": "DIN 3961 quality 5 needs gear grinding after nitriding. Takes the place of re-boring: the bore is the gear.",
       "datum_references": [
-        "A",
-        "B"
+        "A"
       ],
       "material_machinability": "hardened",
       "setup_time_min": 45.0,
@@ -896,266 +489,98 @@
           "sequence": 1,
           "operation_type": "grind_teeth",
           "target_feature_ids": [
-            "F03"
+            "F02"
           ],
           "inputs": {
-            "kind": "gear_finish",
-            "number_of_teeth": 113,
-            "normal_module_mm": 1.59,
-            "face_width_mm": 26.0,
-            "stock_per_flank_mm": 0.1,
-            "helix_angle_deg": 14.0,
-            "gear_quality_class": 5
+            "teeth": 113,
+            "face_width_mm": 23.4,
+            "quality": "DIN 3961 Q5",
+            "stroke_mm": 29.4,
+            "stroke_speed_mm_min": 3000,
+            "passes": 2,
+            "index_s": 1.0,
+            "dressing_min": 1.0
           }
         }
       ]
     },
     {
-      "sequence": 22,
-      "name": "Grinding Integrity and Demagnetization",
-      "machine_family": "inspection",
-      "setup_note": "MPI inspection for grinding micro-cracks, nital etch examination for grinding burn, and demagnetization to <3 A/cm.",
+      "sequence": 15,
+      "name": "Rotary Deburr",
+      "machine_family": "rotary_deburring_machine",
+      "setup_note": "Deburr tooth ends and edges.",
       "datum_references": [],
       "material_machinability": "hardened",
-      "setup_time_min": 0.0,
-      "in_house": false,
-      "outside_process": "grinding_integrity_inspection_and_demagnetization",
-      "sub_operations": [
-        {
-          "sequence": 1,
-          "operation_type": "outside_process",
-          "target_feature_ids": [],
-          "inputs": {
-            "kind": "manual",
-            "complexity": "high",
-            "feature_count": 1,
-            "estimated_time_min": 2.5
-          }
-        },
-        {
-          "sequence": 2,
-          "operation_type": "mpi_ndt",
-          "target_feature_ids": [],
-          "inputs": {
-            "kind": "inspection",
-            "dimension_count": 21,
-            "gdt_count": 10,
-            "sampling_rate_pct": 100.0,
-            "inspected_area_mm2": 68440.0,
-            "requires_fixture": false
-          }
-        },
-        {
-          "sequence": 3,
-          "operation_type": "outside_process",
-          "target_feature_ids": [],
-          "inputs": {
-            "kind": "manual",
-            "complexity": "medium",
-            "feature_count": 1,
-            "estimated_time_min": 0.5
-          }
-        },
-        {
-          "sequence": 4,
-          "operation_type": "manual_inspect",
-          "target_feature_ids": [],
-          "inputs": {
-            "kind": "inspection",
-            "dimension_count": 21,
-            "gdt_count": 10,
-            "sampling_rate_pct": 100.0,
-            "requires_fixture": false
-          }
-        }
-      ]
-    },
-    {
-      "sequence": 23,
-      "name": "Final Micro-Deburr and Clean",
-      "machine_family": "finish_bench",
-      "setup_note": "Support the hardened ring in an open, non-marring cradle and remove grinding micro-burrs without changing the finished tooth flanks or specified chamfers. Clean away all abrasive residue and dry the part for marking and cleanliness acceptance.",
-      "datum_references": [],
-      "material_machinability": "hardened",
-      "setup_time_min": 3.0,
+      "setup_time_min": 5.0,
       "in_house": true,
       "sub_operations": [
         {
           "sequence": 1,
           "operation_type": "deburr",
           "target_feature_ids": [
-            "F11"
+            "F02"
           ],
           "inputs": {
-            "kind": "manual",
-            "complexity": "high",
-            "edge_length_mm": 600.0,
-            "feature_count": 226
-          }
-        },
-        {
-          "sequence": 2,
-          "operation_type": "clean_degrease",
-          "target_feature_ids": [],
-          "inputs": {
-            "kind": "manual",
-            "complexity": "high",
-            "feature_count": 16,
-            "estimated_time_min": 2.0
+            "brush_time_s": 30
           }
         }
       ]
     },
     {
-      "sequence": 24,
-      "name": "Laser DMC Mark",
-      "machine_family": "finish_bench",
-      "setup_note": "A specialist laser-marking station supports the finished ring with nBS II accessible and verifies that the complete code and quiet zone lie on the planar face. Engrave the approved serialized DMC without entering tooth spaces, chamfers, or radii.",
-      "datum_references": [
-        "A",
-        "B"
-      ],
+      "sequence": 16,
+      "name": "DMC Laser Mark",
+      "machine_family": "laser_marker",
+      "setup_note": "DMC in zone F12.",
+      "datum_references": [],
       "material_machinability": "hardened",
-      "setup_time_min": 0.0,
-      "in_house": false,
-      "outside_process": "laser_dmc_marking",
-      "sub_operations": [
-        {
-          "sequence": 1,
-          "operation_type": "engrave",
-          "target_feature_ids": [
-            "F10"
-          ],
-          "inputs": {
-            "kind": "contour_mill",
-            "path_length_mm": 6.0,
-            "radial_width_mm": 6.0,
-            "total_depth_mm": 0.01,
-            "path_count": 1
-          }
-        }
-      ]
-    },
-    {
-      "sequence": 25,
-      "name": "Final Dimensional and Gear Acceptance",
-      "machine_family": "inspection",
-      "setup_note": "Final acceptance inspection on dedicated CNC CMM and CNC gear checker: evaluate Datum A, Datum B, 50 external dog profile and pitch, internal helical gear DIN quality, surface hardness, DMC readability, and cleanliness.",
-      "datum_references": [
-        "A",
-        "B",
-        "C"
-      ],
-      "material_machinability": "hardened",
-      "setup_time_min": 40.0,
+      "setup_time_min": 5.0,
       "in_house": true,
       "sub_operations": [
         {
           "sequence": 1,
-          "operation_type": "cmm_inspect",
-          "target_feature_ids": [],
+          "operation_type": "mark_stamp",
+          "target_feature_ids": [
+            "F12"
+          ],
           "inputs": {
-            "kind": "inspection",
-            "dimension_count": 20,
-            "gdt_count": 8,
-            "sampling_rate_pct": 100.0,
-            "requires_fixture": true
+            "mark_s": 15
           }
+        }
+      ]
+    },
+    {
+      "sequence": 17,
+      "name": "Final Inspection",
+      "machine_family": "inspection",
+      "setup_note": "Gear check, crack test, rust check; demagnetise to drawing residual magnetism limit; clean and VCI preserve.",
+      "datum_references": [
+        "A"
+      ],
+      "material_machinability": "hardened",
+      "setup_time_min": 10.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "gear_check",
+          "target_feature_ids": [
+            "F02"
+          ]
         },
         {
           "sequence": 2,
-          "operation_type": "gear_check",
-          "target_feature_ids": [],
-          "inputs": {
-            "kind": "inspection",
-            "dimension_count": 4,
-            "gdt_count": 4,
-            "sampling_rate_pct": 100.0,
-            "requires_fixture": true
-          }
+          "operation_type": "mpi_ndt",
+          "target_feature_ids": []
         },
         {
           "sequence": 3,
-          "operation_type": "hardness_test",
-          "target_feature_ids": [],
-          "inputs": {
-            "kind": "inspection",
-            "dimension_count": 1,
-            "gdt_count": 0,
-            "sampling_rate_pct": 100.0,
-            "requires_fixture": false
-          }
+          "operation_type": "manual_inspect",
+          "target_feature_ids": []
         },
         {
           "sequence": 4,
-          "operation_type": "manual_inspect",
-          "target_feature_ids": [],
-          "inputs": {
-            "kind": "inspection",
-            "dimension_count": 2,
-            "gdt_count": 0,
-            "sampling_rate_pct": 100.0,
-            "requires_fixture": false
-          }
-        }
-      ]
-    },
-    {
-      "sequence": 26,
-      "name": "Specified Dry Corrosion Protection",
-      "machine_family": "surface_finishing",
-      "setup_note": "A specialist applies the approved dry corrosion-protection process to fully machined, inspected, and marked rings without changing accepted dimensions or tooth-layer properties. Rack or batch the 100 pieces according to the qualified process capacity.",
-      "datum_references": [],
-      "material_machinability": "hardened",
-      "setup_time_min": 0.0,
-      "in_house": false,
-      "outside_process": "corrosion_protection_S132299",
-      "sub_operations": [
-        {
-          "sequence": 1,
-          "operation_type": "outside_process",
-          "target_feature_ids": [],
-          "inputs": {
-            "kind": "manual",
-            "complexity": "medium",
-            "feature_count": 1,
-            "estimated_time_min": 1.5
-          }
-        }
-      ]
-    },
-    {
-      "sequence": 27,
-      "name": "Protection Check and VCI Pack",
-      "machine_family": "finish_bench",
-      "setup_note": "Handle accepted rings with clean gloves on a protected packing cradle and verify the dry protection, code readability, and lot identification. Load each ring into approved VCI packaging and release the order with its inspection and thermal records.",
-      "datum_references": [],
-      "material_machinability": "hardened",
-      "setup_time_min": 3.0,
-      "in_house": true,
-      "sub_operations": [
-        {
-          "sequence": 1,
-          "operation_type": "manual_inspect",
-          "target_feature_ids": [],
-          "inputs": {
-            "kind": "inspection",
-            "dimension_count": 21,
-            "gdt_count": 10,
-            "sampling_rate_pct": 100.0,
-            "requires_fixture": false
-          }
-        },
-        {
-          "sequence": 2,
-          "operation_type": "load_unload",
-          "target_feature_ids": [],
-          "inputs": {
-            "kind": "manual",
-            "complexity": "low",
-            "feature_count": 1,
-            "estimated_time_min": 1.0
-          }
+          "operation_type": "clean_degrease",
+          "target_feature_ids": []
         }
       ]
     }
@@ -1163,213 +588,57 @@
   "clarifications": [
     {
       "clarification_id": "C01",
-      "question": "Does Ø207.1 identify the floor of F02 rather than a separate axially located relief step?",
+      "question": "Drawing calls DIN 3961 quality 5 internal teeth; shop capability is up to DIN 9. Is gear grinding available in house?",
       "blocks": [
-        5,
-        18
+        14
       ],
-      "suggested_default": "Follow supplied assumptions A13–A14: F07 is the Ø207.1 groove floor and shares F02's specified axial width.",
+      "suggested_default": "Gear grinding in house after nitriding",
       "priority": "high"
     },
     {
       "clarification_id": "C02",
-      "question": "May the starting bar be supplied quenched and tempered to the specified 300–400 HV10 core-hardness range?",
+      "question": "Width 26 +/-0.005 and OD 221.1 +0/-0.007 need grinding. Are face and OD grinders available in house?",
       "blocks": [
-        1,
-        9,
-        14
+        13
       ],
-      "suggested_default": "Purchase certified pre-quenched-and-tempered bar toward the lower portion of the permitted core-hardness range, compatible with shaping.",
+      "suggested_default": "Double-disc and OD grinding in house",
       "priority": "high"
     },
     {
       "clarification_id": "C03",
-      "question": "Is post-nitriding tooth-flank grinding permitted under the specified finished compound-layer requirement?",
+      "question": "External lugs (50 x 7.2 deg, 5.8 wide, \u00d8213.9 root to \u00d8221.1 tip, front view / detail Z): is hobbing with a straight-sided spline hob acceptable?",
       "blocks": [
-        8,
-        9,
-        14,
-        21,
-        25
+        9
       ],
-      "suggested_default": "Permit only a qualified light correction that demonstrably retains all finished hardness, NHD400, compound-layer, and porosity requirements; do not release production without qualification.",
-      "priority": "high"
+      "suggested_default": "Hobbed with 2-start spline hob, 3 parts stacked",
+      "priority": "medium"
     },
     {
       "clarification_id": "C04",
-      "question": "Which tooth-tip chamfer configuration is required, F15 or F16?",
+      "question": "Core hardness 300-400 HV10 needs a hardened and tempered blank. Replace normalizing with harden and temper?",
       "blocks": [
-        10
+        4
       ],
-      "suggested_default": "Use standard configuration F15, consistent with supplied assumption A11; perform only one tip-chamfer configuration.",
-      "priority": "medium"
-    },
-    {
-      "clarification_id": "C05",
-      "question": "What physical feature defines gear-measurement reference GG?",
-      "blocks": [
-        25
-      ],
-      "suggested_default": "Provisionally use the circumferential groove reference proposed in supplied assumption A15, subject to confirmation of the measurement construction.",
-      "priority": "medium"
-    },
-    {
-      "clarification_id": "C06",
-      "question": "Please provide corrosion-protection specification S 132299.",
-      "blocks": [
-        26,
-        27
-      ],
-      "suggested_default": "Quote a specialist dry-preservation allowance without selecting an unverified plating or coating chemistry.",
-      "priority": "high"
-    },
-    {
-      "clarification_id": "C07",
-      "question": "Please provide the Method A procedure in S 252012-40.",
-      "blocks": [
-        25
-      ],
-      "suggested_default": "Reserve cleanliness extraction and analysis at final acceptance; do not substitute an unrelated cleanliness procedure.",
-      "priority": "medium"
-    },
-    {
-      "clarification_id": "C08",
-      "question": "What particle acceptance limits define SKK 3A under S 252001-1?",
-      "blocks": [
-        25
-      ],
-      "priority": "medium"
-    },
-    {
-      "clarification_id": "C09",
-      "question": "What DMC payload is required by ES 000292?",
-      "blocks": [
-        24,
-        25
-      ],
-      "suggested_default": "Reserve individual serial-number traceability, but hold laser programming until the required payload is approved.",
-      "priority": "medium"
-    },
-    {
-      "clarification_id": "C10",
-      "question": "May the DMC area be moved radially if the indicated location cannot contain its complete 6 × 6 mm planar footprint?",
-      "blocks": [
-        24
-      ],
-      "suggested_default": "First use the permitted circumferential positioning freedom; if complete planar clearance is still unavailable, hold marking pending an approved radial relocation.",
-      "priority": "high"
-    },
-    {
-      "clarification_id": "C11",
-      "question": "Does view ⟨51⟩ apply to this production order?",
-      "blocks": [
-        25
-      ],
-      "suggested_default": "Apply the stated batch Level A records and 100% serialized Level C records rather than the sample-only fallback.",
-      "priority": "medium"
-    },
-    {
-      "clarification_id": "C12",
-      "question": "Which surfaces are subject to the Ra 0.8 +0.2/−0.3 requirement?",
-      "blocks": [
-        18,
-        19,
-        20,
-        21,
-        25
-      ],
-      "suggested_default": "Retain the explicitly specified Ra 3.2 on the end faces and Rz ≤10 on the gear flanks; provisionally apply the finer Ra requirement to precision ground cylindrical surfaces.",
+      "suggested_default": "Harden and temper instead of normalizing",
       "priority": "medium"
     }
   ],
   "assumptions": [
     {
       "assumption_id": "A01",
-      "text": "The manufacturing envelope is Ø221.1 by 26 mm axially. Starting stock is a certified quenched-and-tempered (300–400 HV core) plain rolled ring blank, Ø226 × Ø178 × 30 mm, approximately 3.5 kg gross weight. Finished gear mass is approximately 1.69 kg."
+      "text": "Stock is the in-house ring blank (cold-rolled section, ring-bent, flash-butt welded). Allowance 1.0 mm per side on turned diameters; faces as rolled."
     },
     {
       "assumption_id": "A02",
-      "text": "Starting stock is certified quenched-and-tempered material meeting 300–400 HV10 core hardness, compatible with gear shaping and subsequent finish gear grinding. No exact HRC is inferred from the Vickers requirements."
+      "text": "Steps 6-7 of the shop process were not given; assumed shot blast (descale) and ring sizing."
     },
     {
       "assumption_id": "A03",
-      "text": "A plain rolled ring blank (annulus approximately Ø226 × Ø178 × 30 mm, ~3.5 kg) in certified quenched-and-tempered 31CrMoV9 (300–400 HV core) is selected as the optimal blank form for 100 pieces. The near-net bore is purchased directly from the ring mill, eliminating solid-bar sawing and central-slug trepanning."
+      "text": "Faces F03/F04 left as rolled before grinding (no face turning)."
     },
     {
       "assumption_id": "A04",
-      "text": "Datum A is established provisionally by turning and finally by face grinding; B is finally established by grinding the interrupted lug crest cylinder. C is the designated lug centerplane, not an additional lug."
-    },
-    {
-      "assumption_id": "A05",
-      "text": "The later supplied assumptions A13–A14 are provisionally followed over the earlier separate-step interpretation: F07 is the Ø207.1 floor of F02. One groove-forming tool therefore physically produces both observations; a distinct shoulder would require revised geometry and routing."
-    },
-    {
-      "assumption_id": "A06",
-      "text": "The gear table governs F03 manufacturing geometry: the finished internal tip diameter is Ø185.55 +0.20 and the root diameter is Ø194.20 +0.30. Ø194.1 is a hardness/evaluation location, not the starting bore or finished tooth-tip diameter."
-    },
-    {
-      "assumption_id": "A07",
-      "text": "F05 consists of cylindrical arcs between the external dogs and cannot be generated by turning the entire blank down to Ø213.9. Indexed milling and form grinding produce these arcs while preserving the Ø221.1 lug crests."
-    },
-    {
-      "assumption_id": "A08",
-      "text": "The toleranced R1 lug-root transition F08 receives dedicated profiling steps despite its small radius. The R0.8 groove corners are included in the dedicated groove form."
-    },
-    {
-      "assumption_id": "A09",
-      "text": "F15 and F16 are mutually exclusive specifications for one tooth-tip zone, not simultaneous additional surfaces. Their shared sub-operation denotes one selected physical chamfer, provisionally F15, rather than two machining passes."
-    },
-    {
-      "assumption_id": "A10",
-      "text": "F10 is a marking region on F12, not a recessed pocket. Rear-face machining produces its plane, and laser engraving produces the code; its complete planar clearance remains a marking hold point."
-    },
-    {
-      "assumption_id": "A11",
-      "text": "Ordinary post-treatment stock is retained on faces, crest diameter, groove, tooth-tip cylinder, and external profiles. Tooth-flank allowance must instead be specifically qualified for light correction because ordinary case-carburized gear grinding allowances could remove the required nitrided compound layer."
-    },
-    {
-      "assumption_id": "A12",
-      "text": "The heat-treatment template is specialized to nitriding of certified pre-quenched-and-tempered stock. Austenitizing, carburizing, quenching, straightening, and subsequent tempering are omitted because no additional core-hardening cycle is specified; heating, holding, controlled cooling, and loading are included in the nitriding process."
-    },
-    {
-      "assumption_id": "A13",
-      "text": "No selective nitriding mask is specified, so uniform treatment is provisionally assumed. A dedicated stress-relief cycle is included prior to nitriding to relieve machining stresses and prevent ovality distortion of the thin ring section. Abrasive descaling is omitted for controlled-atmosphere nitriding to protect the thin compound layer."
-    },
-    {
-      "assumption_id": "A14",
-      "text": "The shop's shaping and gear-grinding machines are assumed to accept the required internal-helical tooling; its programmable form grinder is assumed capable of the indexed external dog profiles. Tooling and clearance checks must be completed before production."
-    },
-    {
-      "assumption_id": "A15",
-      "text": "Nitriding, laser marking, qualified grinding-integrity testing/demagnetization, and the unspecified preservation process are conservatively subcontracted because their specific capabilities are not established in the profile. The permitted sealed_quench_furnace, finish_bench, inspection, and surface_finishing keys classify those processes without asserting that the listed in-house equipment supports them."
-    },
-    {
-      "assumption_id": "A16",
-      "text": "Turning center holes and tailstock support are omitted for the short annular part; threading and thread relief are omitted because no threads exist. Part-off is omitted because blanks are individually supplied plain rolled rings, and undimensioned rim corners receive deburring rather than invented chamfers."
-    },
-    {
-      "assumption_id": "A17",
-      "text": "Milling datum-face steps are fulfilled by turning and later face grinding. Central bore opening requires only rough boring from the as-rolled Ø178 mm ID to Ø184 mm, eliminating solid core trepanning."
-    },
-    {
-      "assumption_id": "A18",
-      "text": "Bore honing is omitted because there is no smooth H6/H7 fit bore and the drawing's master axis is external datum B. The internal tooth-tip cylinder is finished by ID grinding before tooth-flank grinding."
-    },
-    {
-      "assumption_id": "A19",
-      "text": "Teeth honing, lapping, and superfinishing are omitted because the specified flank finish and DIN quality are routed through qualified gear grinding without an additional ultra-fine finish requirement. Grinding burn and crack examination remain acceptance gates."
-    },
-    {
-      "assumption_id": "A20",
-      "text": "S 132299 is not available, so no plating chemistry, thickness, acid activation, masking, cure, or hydrogen-relief bake is invented. Those surface-treatment template steps are conditional on the supplied specification; final machining, cleaning, specialist protection, protection inspection, and VCI packing are retained."
-    },
-    {
-      "assumption_id": "A21",
-      "text": "Major blank, dog, and tooth roughing precedes semi-finishing to reduce thin-ring stress redistribution. Groove cutting follows semi-finishing of its adjacent turned surfaces, and all final datum grinding precedes internal tooth hard finishing."
-    },
-    {
-      "assumption_id": "A22",
-      "text": "Inspection, cleaning, thermal processing, preservation, and packaging sub-operations have empty target lists because they do not cut or form the graph's geometric features. All operations following nitriding are classified as hardened despite the softer core."
+      "text": "Nitriding replaces induction hardening and tempering (steps 12-13), as the drawing requires."
     }
   ]
 }
