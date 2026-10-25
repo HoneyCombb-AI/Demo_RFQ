@@ -1,0 +1,1061 @@
+{
+  "analysis_id": "BGL_742_merge_20261025T181916Z",
+  "part": {
+    "drawing_number": "BGL742",
+    "material": "8620",
+    "units": "mm"
+  },
+  "feature_graph": {
+    "part_envelope": {
+      "height_mm": 37.3,
+      "max_diameter_mm": 208.25
+    },
+    "coordinate_system": {
+      "primary_axis": "Z \u2014 central ring-gear axis established by datum A",
+      "orientation_notes": "Use the main-view global frame: X horizontal and Y vertical in the front-view plane, with the view looking along -Z. Detail A also identifies the axial direction as Z. Section A-A uses view-local Y for axial height and X for radial position; its axial labels must not be interpreted as global Y. Its cut-normal metadata does not redefine the global machining axis. The axial origin is the intersection of datum A's axis with datum B's plane; no angular clocking origin is specified.",
+      "datum_origin": "B"
+    },
+    "features": [
+      {
+        "feature_id": "F01",
+        "feature_type": "external_cylinder",
+        "name": "Outer cylindrical body",
+        "description": "Main external cylindrical surface of the ring gear sleeve with 45-degree chamfers at both ends.",
+        "geometry": {
+          "diameter_mm": 208.0,
+          "outer_diameter_mm": 208.0,
+          "depth_condition": "THRU",
+          "height_mm": 37.3,
+          "angle_deg": 45.0,
+          "position_description": "Main component body",
+          "axis_direction": "+Y"
+        },
+        "instance_count": 1,
+        "access_directions": [
+          "+X",
+          "-X",
+          "radial",
+          "+Z",
+          "-Z"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 208.0,
+            "plus_mm": 0.25,
+            "minus_mm": 0.25
+          },
+          {
+            "dimension_type": "chamfer",
+            "nominal_mm": 1.0,
+            "plus_mm": 0.5,
+            "minus_mm": 0.5,
+            "qualifier": "2X"
+          },
+          {
+            "dimension_type": "angle_deg",
+            "nominal_mm": 45.0,
+            "plus_mm": 5.0,
+            "minus_mm": 5.0,
+            "qualifier": "2X"
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "position",
+            "tolerance_value_mm": 0.5,
+            "material_condition": "MMC",
+            "datum_references": [
+              "B",
+              "A"
+            ],
+            "applied_to": "Outer cylindrical surface \u00d8208"
+          }
+        ],
+        "callout_qualifiers": [
+          {
+            "qualifier": "BASIC",
+            "dimension_type": "height",
+            "nominal_mm": 37.3
+          }
+        ],
+        "source_views": [
+          "section_aa",
+          "main_view",
+          "isometric_view"
+        ]
+      },
+      {
+        "feature_id": "F02",
+        "feature_type": "spline",
+        "name": "Internal gear teeth / Pitch diameter (Datum A)",
+        "description": "Internal gear section where the pitch diameter serves as Datum A.",
+        "geometry": {
+          "position_description": "Coaxial with part central axis",
+          "axis_direction": "+Y"
+        },
+        "access_directions": [
+          "+Z",
+          "-Z"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "section_aa",
+          "main_view"
+        ]
+      },
+      {
+        "feature_id": "F03",
+        "feature_type": "groove",
+        "name": "Internal retaining groove \u00d8191",
+        "description": "Internal groove/recess with diameter \u00d8191 mm, width 3.2 mm, corner radii R0.25 MAX, and entry chamfer 25\u00b0.",
+        "geometry": {
+          "diameter_mm": 191.0,
+          "width_mm": 3.2,
+          "height_mm": 16.5,
+          "radius_mm": 0.25,
+          "angle_deg": 25.0,
+          "position_description": "16.5mm basic from top face F2",
+          "axis_direction": "+Z"
+        },
+        "instance_count": 1,
+        "access_directions": [
+          "+Z",
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 191.0,
+            "plus_mm": 0.2,
+            "minus_mm": 0.2
+          },
+          {
+            "dimension_type": "width",
+            "nominal_mm": 3.2,
+            "plus_mm": 0.09,
+            "minus_mm": 0.09
+          },
+          {
+            "dimension_type": "radius",
+            "nominal_mm": 0.25,
+            "upper_limit_mm": 0.25,
+            "qualifier": "2X MAX"
+          },
+          {
+            "dimension_type": "angle_deg",
+            "nominal_mm": 25.0,
+            "plus_mm": 5.0,
+            "minus_mm": 5.0,
+            "angle_deg": 25.0
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "position",
+            "tolerance_value_mm": 0.5,
+            "material_condition": "MMC",
+            "datum_references": [
+              "B",
+              "A"
+            ],
+            "applied_to": "Groove diameter \u00d8191"
+          },
+          {
+            "gdt_type": "perpendicularity",
+            "tolerance_value_mm": 0.05,
+            "datum_references": [
+              "A"
+            ],
+            "applied_to": "Groove datum face B"
+          }
+        ],
+        "callout_qualifiers": [
+          {
+            "qualifier": "BASIC",
+            "dimension_type": "position_y",
+            "nominal_mm": 16.5
+          }
+        ],
+        "source_views": [
+          "detail_a",
+          "section_aa"
+        ]
+      },
+      {
+        "feature_id": "F04",
+        "feature_type": "flat_face",
+        "name": "Top annular end face",
+        "description": "Upper flat annular face of the part.",
+        "geometry": {
+          "axis_direction": "+Y"
+        },
+        "instance_count": 1,
+        "access_directions": [
+          "+Y",
+          "+Z"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [
+          {
+            "gdt_type": "profile_of_surface",
+            "tolerance_value_mm": 0.5,
+            "datum_references": [
+              "B"
+            ],
+            "applied_to": "Top annular end face"
+          },
+          {
+            "gdt_type": "perpendicularity",
+            "tolerance_value_mm": 0.25,
+            "datum_references": [
+              "A"
+            ],
+            "applied_to": "Top annular end face"
+          },
+          {
+            "gdt_type": "profile_of_surface",
+            "tolerance_value_mm": 0.5,
+            "datum_references": [
+              "B"
+            ],
+            "applied_to": "Right end face"
+          },
+          {
+            "gdt_type": "parallelism",
+            "tolerance_value_mm": 0.05,
+            "datum_references": [
+              "B"
+            ],
+            "applied_to": "Right end face"
+          }
+        ],
+        "callout_qualifiers": [],
+        "source_views": [
+          "section_aa",
+          "detail_a"
+        ]
+      },
+      {
+        "feature_id": "F05",
+        "feature_type": "edge_break",
+        "name": "Tooth tip edge break (P to Q)",
+        "description": "Edge break specification on the tooth crest and tip between points P and Q (0 to 1 mm)",
+        "geometry": {
+          "position_description": "Extending from point P at tooth crest to point Q (Form Diameter, Max)",
+          "axis_direction": "axial"
+        },
+        "access_directions": [
+          "+Z",
+          "-Z"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "chamfer",
+            "nominal_mm": 0.5,
+            "upper_limit_mm": 1.0,
+            "lower_limit_mm": 0.0
+          },
+          {
+            "dimension_type": "chamfer",
+            "nominal_mm": 0.5,
+            "upper_limit_mm": 1.0,
+            "lower_limit_mm": 0.0
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "break_edge_detail"
+        ]
+      },
+      {
+        "feature_id": "F06",
+        "feature_type": "edge_break",
+        "name": "Tooth root edge break and transition (L to M)",
+        "description": "Edge break specification in root area from point L to point M (0 to 1 mm) with a 30\u00b0 max blended transition at point M",
+        "geometry": {
+          "angle_deg": 30.0,
+          "position_description": "Extending from point L to point M (Form Diameter, Max)",
+          "axis_direction": "axial"
+        },
+        "access_directions": [
+          "+Z",
+          "-Z"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "chamfer",
+            "nominal_mm": 0.5,
+            "upper_limit_mm": 1.0,
+            "lower_limit_mm": 0.0
+          },
+          {
+            "dimension_type": "chamfer",
+            "nominal_mm": 0.5,
+            "upper_limit_mm": 1.0,
+            "lower_limit_mm": 0.0
+          },
+          {
+            "dimension_type": "angle_deg",
+            "nominal_mm": 30.0,
+            "upper_limit_mm": 30.0,
+            "qualifier": "MAX",
+            "angle_deg": 30.0
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "break_edge_detail"
+        ]
+      },
+      {
+        "feature_id": "F07",
+        "feature_type": "spline",
+        "name": "Tooth active flank",
+        "description": "Active working flank of gear teeth where edge breaking is explicitly prohibited",
+        "geometry": {
+          "position_description": "Gear tooth flank between root (L-M) and crest (P-Q)",
+          "axis_direction": "axial"
+        },
+        "access_directions": [
+          "+Z",
+          "-Z"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "break_edge_detail"
+        ]
+      },
+      {
+        "feature_id": "F08",
+        "feature_type": "internal_bore",
+        "name": "Intermediate internal bore step \u00d8185.5",
+        "description": "Internal bore step with diameter \u00d8185.5 mm adjacent to the groove.",
+        "geometry": {
+          "diameter_mm": 185.5,
+          "hole_count": 1,
+          "axis_direction": "+Z"
+        },
+        "instance_count": 1,
+        "access_directions": [
+          "+Z",
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 185.5,
+            "plus_mm": 0.25,
+            "minus_mm": 0.25
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "position",
+            "tolerance_value_mm": 0.5,
+            "material_condition": "MMC",
+            "datum_references": [
+              "B",
+              "A"
+            ],
+            "applied_to": "Internal bore step \u00d8185.5"
+          }
+        ],
+        "callout_qualifiers": [],
+        "source_views": [
+          "detail_a"
+        ]
+      },
+      {
+        "feature_id": "F09",
+        "feature_type": "internal_bore",
+        "name": "Internal bore \u00d8185 with 30\u00b0 chamfer",
+        "description": "Main internal bore diameter \u00d8185 mm with a 30\u00b0 transition angle.",
+        "geometry": {
+          "diameter_mm": 185.0,
+          "angle_deg": 30.0,
+          "hole_count": 1,
+          "axis_direction": "+Z"
+        },
+        "instance_count": 1,
+        "access_directions": [
+          "+Z",
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 185.0,
+            "plus_mm": 0.25,
+            "minus_mm": 0.25
+          },
+          {
+            "dimension_type": "angle_deg",
+            "nominal_mm": 30.0,
+            "plus_mm": 5.0,
+            "minus_mm": 5.0,
+            "angle_deg": 30.0
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "position",
+            "tolerance_value_mm": 0.5,
+            "material_condition": "MMC",
+            "datum_references": [
+              "B",
+              "A"
+            ],
+            "applied_to": "Internal bore \u00d8185"
+          }
+        ],
+        "callout_qualifiers": [],
+        "source_views": [
+          "detail_a"
+        ]
+      },
+      {
+        "feature_id": "F10",
+        "feature_type": "undercut",
+        "name": "Internal relief groove R1.2",
+        "description": "Internal relief undercut with corner radius R1.2 mm, axial width 3.1 mm, and located 13.11 mm from groove reference step.",
+        "geometry": {
+          "length_mm": 13.11,
+          "width_mm": 3.1,
+          "radius_mm": 1.2,
+          "axis_direction": "+Z"
+        },
+        "instance_count": 1,
+        "access_directions": [
+          "+Z",
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "radius",
+            "nominal_mm": 1.2,
+            "plus_mm": 0.3,
+            "minus_mm": 0.3
+          },
+          {
+            "dimension_type": "width",
+            "nominal_mm": 3.1,
+            "plus_mm": 0.2,
+            "minus_mm": 0.2
+          },
+          {
+            "dimension_type": "length",
+            "nominal_mm": 13.11,
+            "plus_mm": 0.1,
+            "minus_mm": 0.1
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "detail_a"
+        ]
+      },
+      {
+        "feature_id": "F11",
+        "feature_type": "flat_face",
+        "name": "Bottom annular end face",
+        "description": "Lower flat annular face of the part with optional marking location note.",
+        "geometry": {
+          "axis_direction": "-Y"
+        },
+        "access_directions": [
+          "-Y"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [
+          {
+            "gdt_type": "profile_of_surface",
+            "tolerance_value_mm": 0.4,
+            "datum_references": [
+              "B"
+            ],
+            "applied_to": "Bottom annular end face"
+          },
+          {
+            "gdt_type": "perpendicularity",
+            "tolerance_value_mm": 0.25,
+            "datum_references": [
+              "A"
+            ],
+            "applied_to": "Bottom annular end face"
+          }
+        ],
+        "callout_qualifiers": [],
+        "source_views": [
+          "section_aa"
+        ]
+      },
+      {
+        "feature_id": "F12",
+        "feature_type": "internal_bore",
+        "name": "Upper counterbore / pilot entry",
+        "description": "Top internal bore with a 30-degree lead-in chamfer.",
+        "geometry": {
+          "diameter_mm": 188.0,
+          "inner_diameter_mm": 188.0,
+          "angle_deg": 30.0,
+          "axis_direction": "+Y"
+        },
+        "access_directions": [
+          "+Y"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 188.0,
+            "plus_mm": 0.2,
+            "minus_mm": 0.2
+          },
+          {
+            "dimension_type": "angle_deg",
+            "nominal_mm": 30.0,
+            "plus_mm": 5.0,
+            "minus_mm": 5.0
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "position",
+            "tolerance_value_mm": 0.5,
+            "material_condition": "MMC",
+            "datum_references": [
+              "B",
+              "A"
+            ],
+            "applied_to": "Upper counterbore \u00d8188"
+          }
+        ],
+        "callout_qualifiers": [],
+        "source_views": [
+          "section_aa"
+        ]
+      },
+      {
+        "feature_id": "F13",
+        "feature_type": "internal_bore",
+        "name": "Upper internal land bore",
+        "description": "Stepped internal bore of diameter \u00d8181.026 located 1mm below the top face.",
+        "geometry": {
+          "diameter_mm": 181.026,
+          "inner_diameter_mm": 181.026,
+          "depth_mm": 1.0,
+          "axis_direction": "+Y"
+        },
+        "access_directions": [
+          "+Y"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 181.026,
+            "plus_mm": 0.1,
+            "minus_mm": 0.1
+          },
+          {
+            "dimension_type": "depth",
+            "nominal_mm": 1.0,
+            "plus_mm": 0.3,
+            "minus_mm": 0.3
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "position",
+            "tolerance_value_mm": 0.0,
+            "material_condition": "MMC",
+            "datum_references": [
+              "B",
+              "A"
+            ],
+            "applied_to": "Internal bore \u00d8181.026"
+          }
+        ],
+        "callout_qualifiers": [],
+        "source_views": [
+          "section_aa"
+        ]
+      },
+      {
+        "feature_id": "F14",
+        "feature_type": "internal_bore",
+        "name": "Lower internal bore / lead-in",
+        "description": "Bottom internal counterbore/chamfer transition with diameter \u00d8189.5 and a 15-degree lead-in angle.",
+        "geometry": {
+          "diameter_mm": 189.5,
+          "inner_diameter_mm": 189.5,
+          "angle_deg": 15.0,
+          "axis_direction": "-Y"
+        },
+        "access_directions": [
+          "-Y"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 189.5,
+            "plus_mm": 0.25,
+            "minus_mm": 0.25
+          },
+          {
+            "dimension_type": "angle_deg",
+            "nominal_mm": 15.0,
+            "plus_mm": 5.0,
+            "minus_mm": 5.0
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "position",
+            "tolerance_value_mm": 0.5,
+            "material_condition": "MMC",
+            "datum_references": [
+              "B",
+              "A"
+            ],
+            "applied_to": "Lower internal bore \u00d8189.5"
+          }
+        ],
+        "callout_qualifiers": [],
+        "source_views": [
+          "section_aa"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "relationship_id": "R01",
+        "from_feature_id": "F01",
+        "to_feature_id": "F02",
+        "relationship_type": "coaxial",
+        "detail": "The outer ring cylinder and internal gear pitch cylinder share the central ring axis."
+      },
+      {
+        "relationship_id": "R02",
+        "from_feature_id": "F12",
+        "to_feature_id": "F02",
+        "relationship_type": "coaxial",
+        "detail": "The upper entry bore is a nominally coaxial step of the central internal profile."
+      },
+      {
+        "relationship_id": "R03",
+        "from_feature_id": "F13",
+        "to_feature_id": "F02",
+        "relationship_type": "coaxial",
+        "detail": "The upper internal land and gear pitch cylinder share the nominal central axis."
+      },
+      {
+        "relationship_id": "R04",
+        "from_feature_id": "F14",
+        "to_feature_id": "F02",
+        "relationship_type": "coaxial",
+        "detail": "The lower internal entry transition shares the nominal central gear axis."
+      },
+      {
+        "relationship_id": "R05",
+        "from_feature_id": "F08",
+        "to_feature_id": "F02",
+        "relationship_type": "coaxial",
+        "detail": "The intermediate bore is part of the stepped internal ring profile about the central axis."
+      },
+      {
+        "relationship_id": "R06",
+        "from_feature_id": "F09",
+        "to_feature_id": "F02",
+        "relationship_type": "coaxial",
+        "detail": "The detailed internal bore shares the nominal central axis of the ring gear."
+      },
+      {
+        "relationship_id": "R07",
+        "from_feature_id": "F03",
+        "to_feature_id": "F02",
+        "relationship_type": "coaxial",
+        "detail": "The circumferential retaining groove is nominally coaxial with the internal gear pitch cylinder."
+      },
+      {
+        "relationship_id": "R08",
+        "from_feature_id": "F04",
+        "to_feature_id": "F11",
+        "relationship_type": "opposite_face",
+        "detail": "These are the upper and lower annular end faces of the same ring body."
+      },
+      {
+        "relationship_id": "R09",
+        "from_feature_id": "F04",
+        "to_feature_id": "F02",
+        "relationship_type": "perpendicular",
+        "detail": "The upper end-face perpendicularity control references datum A, the gear pitch-cylinder axis."
+      },
+      {
+        "relationship_id": "R10",
+        "from_feature_id": "F11",
+        "to_feature_id": "F02",
+        "relationship_type": "perpendicular",
+        "detail": "The lower end-face perpendicularity control references datum A."
+      },
+      {
+        "relationship_id": "R11",
+        "from_feature_id": "F03",
+        "to_feature_id": "F02",
+        "relationship_type": "perpendicular",
+        "detail": "The datum B shoulder within the retaining groove is controlled perpendicular to datum A."
+      },
+      {
+        "relationship_id": "R12",
+        "from_feature_id": "F04",
+        "to_feature_id": "F03",
+        "relationship_type": "parallel",
+        "detail": "The corresponding end face in Detail A has a parallelism control relative to the datum B groove shoulder."
+      },
+      {
+        "relationship_id": "R13",
+        "from_feature_id": "F01",
+        "to_feature_id": "F03",
+        "relationship_type": "datum_referenced",
+        "detail": "Outer-cylinder position control references datum B, the groove shoulder."
+      },
+      {
+        "relationship_id": "R14",
+        "from_feature_id": "F01",
+        "to_feature_id": "F02",
+        "relationship_type": "datum_referenced",
+        "detail": "Outer-cylinder position control references datum A."
+      },
+      {
+        "relationship_id": "R15",
+        "from_feature_id": "F04",
+        "to_feature_id": "F03",
+        "relationship_type": "datum_referenced",
+        "detail": "Upper end-face profile and the corresponding Detail A parallelism controls reference datum B."
+      },
+      {
+        "relationship_id": "R16",
+        "from_feature_id": "F04",
+        "to_feature_id": "F02",
+        "relationship_type": "datum_referenced",
+        "detail": "Upper end-face perpendicularity control references datum A."
+      },
+      {
+        "relationship_id": "R17",
+        "from_feature_id": "F11",
+        "to_feature_id": "F03",
+        "relationship_type": "datum_referenced",
+        "detail": "Lower end-face profile control references datum B."
+      },
+      {
+        "relationship_id": "R18",
+        "from_feature_id": "F11",
+        "to_feature_id": "F02",
+        "relationship_type": "datum_referenced",
+        "detail": "Lower end-face perpendicularity control references datum A."
+      },
+      {
+        "relationship_id": "R19",
+        "from_feature_id": "F12",
+        "to_feature_id": "F03",
+        "relationship_type": "datum_referenced",
+        "detail": "Upper entry-bore position control references datum B."
+      },
+      {
+        "relationship_id": "R20",
+        "from_feature_id": "F12",
+        "to_feature_id": "F02",
+        "relationship_type": "datum_referenced",
+        "detail": "Upper entry-bore position control references datum A."
+      },
+      {
+        "relationship_id": "R21",
+        "from_feature_id": "F13",
+        "to_feature_id": "F03",
+        "relationship_type": "datum_referenced",
+        "detail": "Upper internal-land position control references datum B."
+      },
+      {
+        "relationship_id": "R22",
+        "from_feature_id": "F13",
+        "to_feature_id": "F02",
+        "relationship_type": "datum_referenced",
+        "detail": "Upper internal-land position control references datum A."
+      },
+      {
+        "relationship_id": "R23",
+        "from_feature_id": "F14",
+        "to_feature_id": "F03",
+        "relationship_type": "datum_referenced",
+        "detail": "Lower entry-bore position control references datum B."
+      },
+      {
+        "relationship_id": "R24",
+        "from_feature_id": "F14",
+        "to_feature_id": "F02",
+        "relationship_type": "datum_referenced",
+        "detail": "Lower entry-bore position control references datum A."
+      },
+      {
+        "relationship_id": "R25",
+        "from_feature_id": "F08",
+        "to_feature_id": "F03",
+        "relationship_type": "datum_referenced",
+        "detail": "Intermediate-bore position control references datum B."
+      },
+      {
+        "relationship_id": "R26",
+        "from_feature_id": "F08",
+        "to_feature_id": "F02",
+        "relationship_type": "datum_referenced",
+        "detail": "Intermediate-bore position control references datum A."
+      },
+      {
+        "relationship_id": "R27",
+        "from_feature_id": "F09",
+        "to_feature_id": "F03",
+        "relationship_type": "datum_referenced",
+        "detail": "Detailed internal-bore position control references datum B."
+      },
+      {
+        "relationship_id": "R28",
+        "from_feature_id": "F09",
+        "to_feature_id": "F02",
+        "relationship_type": "datum_referenced",
+        "detail": "Detailed internal-bore position control references datum A."
+      },
+      {
+        "relationship_id": "R29",
+        "from_feature_id": "F03",
+        "to_feature_id": "F03",
+        "relationship_type": "datum_referenced",
+        "detail": "The groove-diameter position control references its distinct datum B shoulder. This is an intra-feature reference between constituent surfaces of the merged groove, not a surface referencing itself."
+      },
+      {
+        "relationship_id": "R30",
+        "from_feature_id": "F03",
+        "to_feature_id": "F02",
+        "relationship_type": "datum_referenced",
+        "detail": "Groove-diameter position and groove-shoulder perpendicularity controls reference datum A."
+      }
+    ],
+    "datum_scheme": {
+      "datums": [
+        {
+          "datum_letter": "A",
+          "feature_id": "F02",
+          "surface_type": "cylindrical",
+          "description": "Pitch diameter cylinder of internal gear"
+        },
+        {
+          "datum_letter": "B",
+          "feature_id": "F03",
+          "surface_type": "planar",
+          "description": "Internal groove shoulder face at 16.5mm basic from top surface"
+        }
+      ],
+      "datum_hierarchy_notes": "Position controls explicitly use B as primary and A as secondary. Datum A supplies the central gear axis; datum B supplies the axial reference plane. The datum B shoulder is itself controlled perpendicular to A. End-face profile controls reference B, while end-face perpendicularity controls reference A. No tertiary clocking datum is defined. Datum B applies only to the shoulder within the merged groove feature, not to its cylindrical diameter."
+    },
+    "part_notes": "Material: 8620. Heat treatment: none specified. Coating: none specified. General notes: DEBURR: 1. UNLESS OTHERWISE SPECIFIED: BREAK EDGE 0.2-0.5.",
+    "overall_complexity": "moderate"
+  },
+  "component_specs": [
+    {
+      "section_id": "gear_data_table",
+      "component_type": "internal_spur_gear",
+      "spec_title": "INTERNAL GEAR DATA",
+      "spec_standard": "ISO 1328",
+      "parameters": [
+        {
+          "parameter_name": "DESIGN DATA SHEET",
+          "value_raw": "17562",
+          "value_numeric": 17562.0
+        },
+        {
+          "parameter_name": "NUMBER OF TEETH",
+          "value_raw": "70",
+          "value_numeric": 70.0
+        },
+        {
+          "parameter_name": "NORMAL MODULE",
+          "value_raw": "2.65",
+          "value_numeric": 2.65
+        },
+        {
+          "parameter_name": "NORMAL PRESSURE ANGLE",
+          "unit": "\u00b0",
+          "value_raw": "24\u00b0",
+          "value_numeric": 24.0
+        },
+        {
+          "parameter_name": "HELIX ANGLE @ PITCH DIA & HAND",
+          "unit": "\u00b0",
+          "value_raw": "0\u00b0 RH/LH",
+          "value_numeric": 0.0
+        },
+        {
+          "parameter_name": "NORMAL SPACE WIDTH @ PITCH DIA",
+          "value_raw": "3.89-3.99",
+          "row_notes": "Specified as a range (3.89 to 3.99)"
+        },
+        {
+          "parameter_name": "MAJOR DIAMETER",
+          "value_raw": "191.35-191.55",
+          "row_notes": "Specified as a range (191.35 to 191.55)"
+        },
+        {
+          "parameter_name": "FORM DIAMETER, MIN",
+          "value_raw": "190.2",
+          "value_numeric": 190.2
+        },
+        {
+          "parameter_name": "BASE DIAMETER",
+          "value_raw": "169.46268",
+          "value_numeric": 169.46268
+        },
+        {
+          "parameter_name": "TOOTH FLANK SURFACE FINISH, Ra",
+          "symbol": "Ra",
+          "value_raw": "3.2",
+          "value_numeric": 3.2
+        },
+        {
+          "parameter_name": "TOOTH ROOT SURFACE FINISH, Ra",
+          "symbol": "Ra",
+          "value_raw": "3.2",
+          "value_numeric": 3.2
+        },
+        {
+          "parameter_name": "INSPECTION DATUM",
+          "value_raw": "A",
+          "standard_ref": "ISO 1328",
+          "row_notes": "Under GEAR TOLERANCES - ISO1328 section"
+        },
+        {
+          "parameter_name": "PITCH DIA RUNOUT, Fr",
+          "symbol": "Fr",
+          "value_raw": "0.094",
+          "value_numeric": 0.094,
+          "standard_ref": "ISO 1328"
+        },
+        {
+          "parameter_name": "PROFILE DEVIATION, Fa",
+          "symbol": "F\u03b1",
+          "value_raw": "SEE CHART",
+          "standard_ref": "ISO 1328"
+        },
+        {
+          "parameter_name": "PROFILE FORM DEVIATION, ffa",
+          "symbol": "ff\u03b1",
+          "value_raw": "0.02",
+          "value_numeric": 0.02,
+          "standard_ref": "ISO 1328"
+        },
+        {
+          "parameter_name": "HELIX SLOPE DEVIATION, fH\u03b2",
+          "symbol": "fH\u03b2",
+          "value_raw": "SEE CHART",
+          "standard_ref": "ISO 1328"
+        },
+        {
+          "parameter_name": "HELIX FORM DEVIATION, ff\u03b2",
+          "symbol": "ff\u03b2",
+          "value_raw": "0.02",
+          "value_numeric": 0.02,
+          "standard_ref": "ISO 1328"
+        },
+        {
+          "parameter_name": "SINGLE PITCH DEVIATION, fpt",
+          "symbol": "fpt",
+          "value_raw": "0.023",
+          "value_numeric": 0.023,
+          "standard_ref": "ISO 1328"
+        }
+      ],
+      "extraction_notes": "The table includes a main parameter section followed by a 'GEAR TOLERANCES - ISO1328' sub-section."
+    }
+  ],
+  "component_spec_links": [
+    {
+      "spec_section_id": "gear_data_table",
+      "feature_ids": [
+        "F02",
+        "F07"
+      ],
+      "link_notes": "The internal gear data describes the internal tooth profile shown in the main view, its datum A pitch-cylinder representation in Section A-A, and the active working flank identified in the edge-break detail. The flank remains a separately scoped subfeature."
+    }
+  ],
+  "assumptions": [
+    {
+      "assumption_id": "A01",
+      "text": "The main-view and reference-isometric body observations are grouped with the outer-body observation in Section A-A. The main-view section marker establishes correspondence, and Section A-A is canonical because it supplies the complete exterior dimensions and attached controls. The broad isometric description is not split into additional tooth, groove, or face observations."
+    },
+    {
+      "assumption_id": "A02",
+      "text": "The main-view internal teeth and Section A-A pitch-diameter observation are grouped using the A-A section correspondence. Section A-A is canonical because it carries datum A and the pitch-diameter callout; feature_type is deliberately taken from main_view:F2 because the front view explicitly identifies the toothed profile rather than a smooth bore."
+    },
+    {
+      "assumption_id": "A03",
+      "text": "The SEE DETAIL A marker identifies detail_a:F1 and section_aa:F6 as the same retaining groove. Detail A is canonical for the groove profile, while Section A-A contributes its axial location and the datum B shoulder definition."
+    },
+    {
+      "assumption_id": "A04",
+      "text": "detail_a:F5 is interpreted as the upper end face section_aa:F2 because Detail A enlarges the upper groove region and the surface-profile control matches that face rather than the lower face. Section A-A is canonical for end-face identity; the additional Detail A parallelism control is retained."
+    },
+    {
+      "assumption_id": "A05",
+      "text": "break_edge_detail:F3 remains a separately scoped active-flank subfeature rather than being merged into the entire tooth-profile feature. Its prohibition on edge breaking must remain distinguishable from the permitted crest and root edge breaks, which also remain separate features."
+    },
+    {
+      "assumption_id": "A06",
+      "text": "The differently dimensioned internal bore steps remain distinct despite sharing datum references. In particular, detail_a:F2 is not merged with the datum A pitch-cylinder observation merely because its bore diameter coincides with the gear pitch diameter derivable from the specification table."
+    },
+    {
+      "assumption_id": "A07",
+      "text": "The global machining axis follows the mutually consistent main-view and Detail A Z-axis conventions. Section A-A's Y-axis designation is treated as view-local axial notation, not as a different physical part axis. Original extracted feature geometry is not rewritten."
+    },
+    {
+      "assumption_id": "A08",
+      "text": "The groove diameter and datum B shoulder remain constituent surfaces of one merged groove feature. The resulting intra-feature datum-reference relationship records the diameter's reference to the distinct shoulder, not a self-reference of the same controlled surface."
+    },
+    {
+      "assumption_id": "A09",
+      "text": "detail_a:F4 remains a separate relief undercut. Its SHAPE NOT IMPORTANT note is respected; no exact undercut diameter or correspondence to another bore step is invented."
+    },
+    {
+      "assumption_id": "A10",
+      "text": "The upper and lower entry features remain distinct bore/lead-in transitions. An additional independent constant-diameter depth is not assumed solely from their unfilled depth fields; their existing diameters, lead-in angles, and adjacent axial landmarks are retained without inventing geometry."
+    },
+    {
+      "assumption_id": "A11",
+      "clarification_id": "C01",
+      "text": "The axial length of the \u00d8185.5 \u00b1 0.25 intermediate internal bore step is 3.2 \u00b1 0.09 mm, measured between its defining shoulders as shown in Detail A."
+    },
+    {
+      "assumption_id": "A12",
+      "clarification_id": "C02",
+      "text": "The axial length of the \u00d8185\u00b10.25 internal bore is 9.91 mm nominal, determined by subtracting the 3.2\u00b10.09 mm step depth from the 13.11\u00b10.1 mm overall feature dimension."
+    },
+    {
+      "assumption_id": "A13",
+      "clarification_id": "C03",
+      "text": "The profile-deviation (F\u03b1) limit is assumed to be 0.4 mm relative to datum B as specified by the surface profile tolerance, applied across the active tooth flank between the maximum form diameter boundaries (points Q and M)."
+    },
+    {
+      "assumption_id": "A14",
+      "clarification_id": "C04",
+      "text": "The helix-slope-deviation fH\u03b2 limit specified by the referenced gear chart is assumed to be \u00b10.015 mm across the 37.3 mm tooth face width."
+    },
+    {
+      "assumption_id": "A15",
+      "clarification_id": "C05",
+      "text": "The maximum form diameter defining the M and Q boundaries corresponds directly to the specified form diameter value from the gear data table, designating the limit of the active involute profile where the 0\u20131 edge breaks terminate and blend into the tooth flank."
+    }
+  ]
+}
