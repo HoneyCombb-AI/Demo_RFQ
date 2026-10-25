@@ -1,0 +1,1312 @@
+{
+  "analysis_id": "BGL_389_merge_20261025T180916Z",
+  "part": {
+    "drawing_number": "BGL389",
+    "material": "20MnCr5",
+    "units": "mm"
+  },
+  "feature_graph": {
+    "part_envelope": {
+      "length_mm": 8.799999999999999,
+      "width_mm": 21.1,
+      "height_mm": 3.305,
+      "max_diameter_mm": 108.0
+    },
+    "coordinate_system": {
+      "primary_axis": "Z",
+      "orientation_notes": "Use the main front view and isometric convention: Z is the rotational and dominant machining axis, with X and Y in the front-view radial plane. Section A-A uses local X for the same physical axial direction; its local axis labels must be transformed rather than treated as global labels. No angular clocking zero is established by the supplied graphs.",
+      "datum_origin": "A"
+    },
+    "features": [
+      {
+        "feature_id": "F01",
+        "feature_type": "spline",
+        "name": "External Involute Spline",
+        "description": "External involute spline (side fit, 34 teeth) with major diameter, minor diameter, form diameter, pitch diameter, circular tooth thickness, and pin measurement specified.",
+        "geometry": {
+          "diameter_mm": 3.0,
+          "outer_diameter_mm": 62.3,
+          "depth_condition": "THRU",
+          "width_mm": 3.1,
+          "radius_mm": 0.3,
+          "hole_count": 34,
+          "pcd_mm": 59.5,
+          "position_description": "Concentric with main axis",
+          "axis_direction": "+Z"
+        },
+        "instance_count": 34,
+        "access_directions": [
+          "+Z",
+          "-Z",
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "other",
+            "nominal_mm": 3.056,
+            "upper_limit_mm": 3.1,
+            "lower_limit_mm": 3.012
+          },
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 3.0,
+            "plus_mm": 0.002,
+            "minus_mm": 0.002
+          },
+          {
+            "dimension_type": "other",
+            "nominal_mm": 64.263,
+            "lower_limit_mm": 64.263,
+            "qualifier": "MIN"
+          },
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 62.3,
+            "plus_mm": 0.05,
+            "minus_mm": 0.05
+          },
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 57.05,
+            "upper_limit_mm": 57.05,
+            "qualifier": "MAX"
+          },
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 55.8,
+            "lower_limit_mm": 55.8,
+            "qualifier": "MIN"
+          },
+          {
+            "dimension_type": "radius",
+            "nominal_mm": 0.3,
+            "lower_limit_mm": 0.3,
+            "qualifier": "MIN"
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "position",
+            "tolerance_value_mm": 0.13,
+            "material_condition": "MMC",
+            "datum_references": [
+              "A",
+              "B"
+            ],
+            "applied_to": "Spline pitch circle / tooth thickness surface (defines Datum C)"
+          },
+          {
+            "gdt_type": "position",
+            "tolerance_value_mm": 0.1,
+            "material_condition": "MMC",
+            "datum_references": [
+              "C"
+            ],
+            "applied_to": "Spline major diameter \u00d862.30\u00b10.05"
+          }
+        ],
+        "callout_qualifiers": [
+          {
+            "qualifier": "34X INDIVIDUALLY",
+            "dimension_type": "width",
+            "nominal_mm": 3.1
+          },
+          {
+            "qualifier": "REF",
+            "dimension_type": "diameter",
+            "nominal_mm": 59.5
+          }
+        ],
+        "source_views": [
+          "main_view_left",
+          "detail_c",
+          "spline_detail_view",
+          "isometric_view"
+        ]
+      },
+      {
+        "feature_id": "F02",
+        "feature_type": "internal_bore",
+        "name": "Central bore",
+        "description": "Main internal cylindrical bore with surface finish Ra 0.8, defining Datum B, with entry chamfers on both ends.",
+        "geometry": {
+          "diameter_mm": 44.037,
+          "length_mm": 29.0,
+          "depth_condition": "THRU",
+          "position_description": "Centered on axis of rotation",
+          "axis_direction": "+X"
+        },
+        "surface_finish": {
+          "ra_value": 0.8,
+          "finish_symbol": "Ra 0.8"
+        },
+        "access_directions": [
+          "+X",
+          "-X",
+          "+Z",
+          "-Z"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 44.037,
+            "plus_mm": 0.013,
+            "minus_mm": 0.013
+          },
+          {
+            "dimension_type": "length",
+            "nominal_mm": 29.0,
+            "plus_mm": 0.1,
+            "minus_mm": 0.1
+          },
+          {
+            "dimension_type": "chamfer",
+            "nominal_mm": 0.5,
+            "plus_mm": 0.2,
+            "minus_mm": 0.2,
+            "angle_deg": 45.0
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "perpendicularity",
+            "tolerance_value_mm": 0.05,
+            "material_condition": "MMC",
+            "datum_references": [
+              "A"
+            ],
+            "applied_to": "Central bore \u00d844.037"
+          }
+        ],
+        "callout_qualifiers": [],
+        "source_views": [
+          "section_aa",
+          "isometric_view"
+        ]
+      },
+      {
+        "feature_id": "F03",
+        "feature_type": "external_cylinder",
+        "name": "Gear outer diameter and rim face",
+        "description": "Outer gear rim cylinder of basic diameter 108 mm and width 21 mm with corner chamfers.",
+        "geometry": {
+          "diameter_mm": 108.0,
+          "outer_diameter_mm": 108.0,
+          "width_mm": 21.0,
+          "axis_direction": "+X"
+        },
+        "surface_finish": {
+          "ra_value": 3.2,
+          "finish_symbol": "Ra 3.2"
+        },
+        "access_directions": [
+          "radial",
+          "+X",
+          "-X",
+          "+Z",
+          "-Z"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "width",
+            "nominal_mm": 21.0,
+            "plus_mm": 0.1,
+            "minus_mm": 0.1
+          },
+          {
+            "dimension_type": "chamfer",
+            "nominal_mm": 1.0,
+            "plus_mm": 0.5,
+            "minus_mm": 0.5,
+            "qualifier": "2X",
+            "angle_deg": 45.0
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [
+          {
+            "qualifier": "2X",
+            "dimension_type": "diameter",
+            "nominal_mm": 108.0
+          }
+        ],
+        "source_views": [
+          "section_aa",
+          "isometric_view"
+        ]
+      },
+      {
+        "feature_id": "F04",
+        "feature_type": "spline",
+        "name": "Cutter tooth profile",
+        "description": "Cutter tooth profile geometry showing tooth thickness, pressure angle, addendum, cutting depth, protuberance, and root radius.",
+        "geometry": {
+          "depth_mm": 8.194,
+          "width_mm": 3.795,
+          "height_mm": 3.305,
+          "radius_mm": 0.85,
+          "angle_deg": 20.0,
+          "position_description": "Profile defined relative to REFERENCE LINE",
+          "axis_direction": "radial"
+        },
+        "access_directions": [
+          "radial",
+          "axial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "other",
+            "nominal_mm": 0.062,
+            "plus_mm": 0.013,
+            "minus_mm": 0.0,
+            "qualifier": "PROTUBERANCE"
+          },
+          {
+            "dimension_type": "depth",
+            "nominal_mm": 8.194,
+            "lower_limit_mm": 8.194,
+            "qualifier": "MIN CUTTING DEPTH"
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [
+          {
+            "qualifier": "CUTTER TOOTH THICKNESS",
+            "dimension_type": "width",
+            "nominal_mm": 3.795
+          },
+          {
+            "qualifier": "PRESSURE ANGLE",
+            "dimension_type": "angle_deg",
+            "nominal_mm": 20.0
+          },
+          {
+            "qualifier": "ADDENDUM",
+            "dimension_type": "height",
+            "nominal_mm": 3.305
+          }
+        ],
+        "source_views": [
+          "cutter_tooth_profile_view"
+        ]
+      },
+      {
+        "feature_id": "F05",
+        "feature_type": "external_cylinder",
+        "name": "Outer stepped diameter and relief groove profile",
+        "description": "Outer cylindrical step \u00d855.5 with relief groove, face step 0.3mm, 15\u00b0 taper, edge breaks, and radius transitions.",
+        "geometry": {
+          "diameter_mm": 55.5,
+          "outer_diameter_mm": 55.5,
+          "length_mm": 8.7,
+          "width_mm": 4.9,
+          "radius_mm": 0.4,
+          "angle_deg": 15.0
+        },
+        "instance_count": 2,
+        "access_directions": [
+          "+X",
+          "-X",
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 55.5,
+            "plus_mm": 0.1,
+            "minus_mm": 0.1,
+            "qualifier": "2X"
+          },
+          {
+            "dimension_type": "length",
+            "nominal_mm": 8.7,
+            "plus_mm": 0.1,
+            "minus_mm": 0.1
+          },
+          {
+            "dimension_type": "width",
+            "nominal_mm": 4.9,
+            "plus_mm": 0.1,
+            "minus_mm": 0.1
+          },
+          {
+            "dimension_type": "width",
+            "nominal_mm": 0.3,
+            "plus_mm": 0.1,
+            "minus_mm": 0.1
+          },
+          {
+            "dimension_type": "angle_deg",
+            "nominal_mm": 15.0,
+            "plus_mm": 1.0,
+            "minus_mm": 1.0
+          },
+          {
+            "dimension_type": "chamfer",
+            "nominal_mm": 0.25,
+            "upper_limit_mm": 0.25,
+            "qualifier": "MAX"
+          },
+          {
+            "dimension_type": "radius",
+            "nominal_mm": 0.4,
+            "upper_limit_mm": 0.4,
+            "qualifier": "2X MAX"
+          },
+          {
+            "dimension_type": "radius",
+            "nominal_mm": 0.8,
+            "upper_limit_mm": 0.8,
+            "qualifier": "MAX"
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "position",
+            "tolerance_value_mm": 0.1,
+            "material_condition": "MMC",
+            "datum_references": [
+              "A",
+              "B"
+            ],
+            "applied_to": "Outer diameter \u00d855.5"
+          }
+        ],
+        "callout_qualifiers": [],
+        "source_views": [
+          "detail_b"
+        ]
+      },
+      {
+        "feature_id": "F06",
+        "feature_type": "internal_bore",
+        "name": "Intermediate counterbore \u00d850",
+        "description": "Internal counterbore step of nominal diameter \u00d850mm, depth 4.5mm, entry chamfer 0.5x45\u00b0, and internal corner radius R0.5.",
+        "geometry": {
+          "diameter_mm": 50.0,
+          "inner_diameter_mm": 50.0,
+          "depth_mm": 4.5,
+          "radius_mm": 0.5,
+          "hole_count": 1
+        },
+        "instance_count": 1,
+        "access_directions": [
+          "-Z",
+          "+Z"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 50.0,
+            "plus_mm": 0.1,
+            "minus_mm": 0.1
+          },
+          {
+            "dimension_type": "depth",
+            "nominal_mm": 4.5,
+            "plus_mm": 0.1,
+            "minus_mm": 0.1
+          },
+          {
+            "dimension_type": "radius",
+            "nominal_mm": 0.5,
+            "plus_mm": 0.1,
+            "minus_mm": 0.1
+          },
+          {
+            "dimension_type": "chamfer",
+            "nominal_mm": 0.5,
+            "plus_mm": 0.2,
+            "minus_mm": 0.2,
+            "angle_deg": 45.0
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "position",
+            "tolerance_value_mm": 0.1,
+            "material_condition": "MMC",
+            "datum_references": [
+              "A",
+              "B"
+            ],
+            "applied_to": "Counterbore \u00d850"
+          }
+        ],
+        "callout_qualifiers": [],
+        "source_views": [
+          "detail_b"
+        ]
+      },
+      {
+        "feature_id": "F07",
+        "feature_type": "tapered_bore",
+        "name": "Inner tapered bore \u00d845",
+        "description": "Internal bore step of diameter \u00d845mm with a 25\u00b0 taper entry surface.",
+        "geometry": {
+          "diameter_mm": 45.0,
+          "inner_diameter_mm": 45.0,
+          "angle_deg": 25.0,
+          "hole_count": 1
+        },
+        "instance_count": 1,
+        "access_directions": [
+          "-Z",
+          "+Z"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 45.0,
+            "plus_mm": 0.1,
+            "minus_mm": 0.1
+          },
+          {
+            "dimension_type": "angle_deg",
+            "nominal_mm": 25.0,
+            "plus_mm": 5.0,
+            "minus_mm": 5.0
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "position",
+            "tolerance_value_mm": 0.1,
+            "material_condition": "MMC",
+            "datum_references": [
+              "A",
+              "B"
+            ],
+            "applied_to": "Inner bore \u00d845"
+          }
+        ],
+        "callout_qualifiers": [],
+        "source_views": [
+          "detail_b"
+        ]
+      },
+      {
+        "feature_id": "F08",
+        "feature_type": "slot",
+        "name": "Tooth roofing gap",
+        "description": "Gap between adjacent teeth at the roofing region with 0.5mm nominal width.",
+        "geometry": {
+          "width_mm": 0.5,
+          "hole_count": 34
+        },
+        "instance_count": 34,
+        "access_directions": [
+          "+Z",
+          "-Z"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "width",
+            "nominal_mm": 0.5,
+            "plus_mm": 0.2,
+            "minus_mm": 0.2,
+            "qualifier": "34X INDIVIDUALLY"
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "position",
+            "tolerance_value_mm": 0.4,
+            "datum_references": [
+              "D"
+            ],
+            "applied_to": "0.5\u00b10.2 tooth gap 34X individually"
+          }
+        ],
+        "callout_qualifiers": [],
+        "source_views": [
+          "detail_c"
+        ]
+      },
+      {
+        "feature_id": "F09",
+        "feature_type": "part_body",
+        "name": "Gear Component Main Body",
+        "description": "Overall rotational gear body comprising an outer gear rim, recessed web, central hub with external spline, and central internal bore.",
+        "geometry": {
+          "axis_direction": "+Z"
+        },
+        "access_directions": [
+          "+Z",
+          "-Z",
+          "radial"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "isometric_view"
+        ]
+      },
+      {
+        "feature_id": "F10",
+        "feature_type": "datum_face",
+        "name": "Left flange face (Datum A)",
+        "description": "Flat vertical face on the left side of the main flange, serving as primary Datum A.",
+        "geometry": {
+          "position_description": "38.7 mm basic dimension from right end face",
+          "axis_direction": "-X"
+        },
+        "surface_finish": {
+          "ra_value": 3.2,
+          "finish_symbol": "Ra 3.2"
+        },
+        "access_directions": [
+          "-X"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [
+          {
+            "gdt_type": "flatness",
+            "tolerance_value_mm": 0.08,
+            "datum_references": [],
+            "applied_to": "Left flange face Datum A"
+          }
+        ],
+        "callout_qualifiers": [
+          {
+            "qualifier": "BASIC",
+            "dimension_type": "position_x",
+            "nominal_mm": 38.7
+          }
+        ],
+        "source_views": [
+          "section_aa"
+        ]
+      },
+      {
+        "feature_id": "F11",
+        "feature_type": "flat_face",
+        "name": "Right end face",
+        "description": "Flat vertical right face of the part with part marking instruction.",
+        "geometry": {
+          "axis_direction": "+X"
+        },
+        "surface_finish": {
+          "ra_value": 3.2,
+          "finish_symbol": "Ra 3.2"
+        },
+        "access_directions": [
+          "+X"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [
+          {
+            "gdt_type": "profile_of_surface",
+            "tolerance_value_mm": 0.1,
+            "datum_references": [
+              "A"
+            ],
+            "applied_to": "Right end face (2 surfaces)"
+          }
+        ],
+        "callout_qualifiers": [],
+        "source_views": [
+          "section_aa"
+        ]
+      },
+      {
+        "feature_id": "F12",
+        "feature_type": "pocket",
+        "name": "Annular web pockets",
+        "description": "Forged annular recesses on both faces of the web profile with R8 fillets and 6.5 mm web thickness.",
+        "geometry": {
+          "radius_mm": 8.0,
+          "wall_thickness_mm": 6.5
+        },
+        "access_directions": [
+          "+X",
+          "-X"
+        ],
+        "dimensional_tolerances": [],
+        "gdt_controls": [
+          {
+            "gdt_type": "profile_of_surface",
+            "tolerance_value_mm": 1.5,
+            "datum_references": [
+              "A",
+              "B"
+            ],
+            "applied_to": "Forged web surfaces S-T and V-W"
+          }
+        ],
+        "callout_qualifiers": [
+          {
+            "qualifier": "4X",
+            "dimension_type": "radius",
+            "nominal_mm": 8.0
+          },
+          {
+            "qualifier": "2X",
+            "dimension_type": "wall_thickness",
+            "nominal_mm": 6.5
+          }
+        ],
+        "source_views": [
+          "section_aa"
+        ]
+      },
+      {
+        "feature_id": "F13",
+        "feature_type": "shaft_step",
+        "name": "Left hub outer diameter",
+        "description": "Stepped cylindrical hub on the left side with 68 mm diameter and 3\u00b0 draft angle.",
+        "geometry": {
+          "diameter_mm": 68.0,
+          "outer_diameter_mm": 68.0,
+          "angle_deg": 3.0,
+          "axis_direction": "-X"
+        },
+        "access_directions": [
+          "-X",
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "chamfer",
+            "nominal_mm": 0.5,
+            "plus_mm": 0.2,
+            "minus_mm": 0.2,
+            "angle_deg": 45.0
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [
+          {
+            "qualifier": "2X",
+            "dimension_type": "diameter",
+            "nominal_mm": 68.0
+          }
+        ],
+        "source_views": [
+          "section_aa"
+        ]
+      },
+      {
+        "feature_id": "F14",
+        "feature_type": "chamfer",
+        "name": "Tooth tip chamfer",
+        "description": "Optional tooth tip chamfering feature on the external gear tooth profile.",
+        "geometry": {
+          "diameter_mm": 128.2,
+          "inner_diameter_mm": 127.7,
+          "width_mm": 0.2,
+          "height_mm": 0.25,
+          "axis_direction": "radial"
+        },
+        "access_directions": [
+          "radial"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "chamfer",
+            "nominal_mm": 0.2,
+            "upper_limit_mm": 0.2,
+            "qualifier": "MAX"
+          },
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 127.7,
+            "lower_limit_mm": 127.7,
+            "qualifier": "MIN"
+          },
+          {
+            "dimension_type": "diameter",
+            "nominal_mm": 128.2,
+            "upper_limit_mm": 128.2,
+            "qualifier": "MAX"
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "position",
+            "tolerance_value_mm": 0.0,
+            "material_condition": "LMC",
+            "datum_references": [
+              "A",
+              "B"
+            ],
+            "applied_to": "Chamfer start diameter \u00d8 127.7 MIN"
+          },
+          {
+            "gdt_type": "position",
+            "tolerance_value_mm": 0.0,
+            "material_condition": "MMC",
+            "datum_references": [
+              "A",
+              "B"
+            ],
+            "applied_to": "Tooth tip outer diameter \u00d8 128.2 MAX"
+          }
+        ],
+        "callout_qualifiers": [
+          {
+            "qualifier": "REF",
+            "dimension_type": "height",
+            "nominal_mm": 0.25
+          }
+        ],
+        "source_views": [
+          "tooth_tip_chamfering_view"
+        ]
+      },
+      {
+        "feature_id": "F15",
+        "feature_type": "chamfer",
+        "name": "Tooth end angular chamfers",
+        "description": "110 degree V-shaped chamfer profile on tooth ends, repeated 34 times individually.",
+        "geometry": {
+          "radius_mm": 0.3,
+          "angle_deg": 110.0,
+          "hole_count": 34
+        },
+        "instance_count": 34,
+        "access_directions": [
+          "+Z",
+          "-Z"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "angle_deg",
+            "nominal_mm": 110.0,
+            "plus_mm": 2.0,
+            "minus_mm": 2.0,
+            "qualifier": "34X INDIVIDUALLY"
+          },
+          {
+            "dimension_type": "radius",
+            "nominal_mm": 0.3,
+            "plus_mm": 0.15,
+            "minus_mm": 0.15,
+            "qualifier": "2X 34 PLACES"
+          }
+        ],
+        "gdt_controls": [
+          {
+            "gdt_type": "position",
+            "tolerance_value_mm": 0.4,
+            "datum_references": [
+              "D"
+            ],
+            "applied_to": "34X INDIVIDUALLY tooth end chamfers"
+          }
+        ],
+        "callout_qualifiers": [],
+        "source_views": [
+          "view_dd"
+        ]
+      },
+      {
+        "feature_id": "F16",
+        "feature_type": "edge_break",
+        "name": "Tooth edge break",
+        "description": "Edge break specification on the tooth profile tips/corners.",
+        "geometry": {
+          "width_mm": 0.1,
+          "hole_count": 34
+        },
+        "instance_count": 34,
+        "access_directions": [
+          "+Z",
+          "-Z"
+        ],
+        "dimensional_tolerances": [
+          {
+            "dimension_type": "chamfer",
+            "nominal_mm": 0.1,
+            "upper_limit_mm": 0.1,
+            "qualifier": "MAX 34 PLACES"
+          }
+        ],
+        "gdt_controls": [],
+        "callout_qualifiers": [],
+        "source_views": [
+          "view_dd"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "relationship_id": "R01",
+        "from_feature_id": "F02",
+        "to_feature_id": "F10",
+        "relationship_type": "perpendicular",
+        "detail": "The central bore carries a perpendicularity control relative to datum A."
+      },
+      {
+        "relationship_id": "R02",
+        "from_feature_id": "F02",
+        "to_feature_id": "F10",
+        "relationship_type": "datum_referenced",
+        "detail": "The bore perpendicularity control references datum A."
+      },
+      {
+        "relationship_id": "R03",
+        "from_feature_id": "F05",
+        "to_feature_id": "F10",
+        "relationship_type": "datum_referenced",
+        "detail": "The outer stepped diameter position control references datum A."
+      },
+      {
+        "relationship_id": "R04",
+        "from_feature_id": "F05",
+        "to_feature_id": "F02",
+        "relationship_type": "datum_referenced",
+        "detail": "The outer stepped diameter position control references datum B."
+      },
+      {
+        "relationship_id": "R05",
+        "from_feature_id": "F06",
+        "to_feature_id": "F10",
+        "relationship_type": "datum_referenced",
+        "detail": "The counterbore position control references datum A."
+      },
+      {
+        "relationship_id": "R06",
+        "from_feature_id": "F06",
+        "to_feature_id": "F02",
+        "relationship_type": "datum_referenced",
+        "detail": "The counterbore position control references datum B."
+      },
+      {
+        "relationship_id": "R07",
+        "from_feature_id": "F07",
+        "to_feature_id": "F10",
+        "relationship_type": "datum_referenced",
+        "detail": "The inner tapered bore position control references datum A."
+      },
+      {
+        "relationship_id": "R08",
+        "from_feature_id": "F07",
+        "to_feature_id": "F02",
+        "relationship_type": "datum_referenced",
+        "detail": "The inner tapered bore position control references datum B."
+      },
+      {
+        "relationship_id": "R09",
+        "from_feature_id": "F11",
+        "to_feature_id": "F10",
+        "relationship_type": "datum_referenced",
+        "detail": "The right end face profile control references datum A."
+      },
+      {
+        "relationship_id": "R10",
+        "from_feature_id": "F12",
+        "to_feature_id": "F10",
+        "relationship_type": "datum_referenced",
+        "detail": "The forged web surface profile control references datum A."
+      },
+      {
+        "relationship_id": "R11",
+        "from_feature_id": "F12",
+        "to_feature_id": "F02",
+        "relationship_type": "datum_referenced",
+        "detail": "The forged web surface profile control references datum B."
+      },
+      {
+        "relationship_id": "R12",
+        "from_feature_id": "F01",
+        "to_feature_id": "F10",
+        "relationship_type": "datum_referenced",
+        "detail": "The spline pitch-circle/tooth-thickness position control references datum A."
+      },
+      {
+        "relationship_id": "R13",
+        "from_feature_id": "F01",
+        "to_feature_id": "F02",
+        "relationship_type": "datum_referenced",
+        "detail": "The spline pitch-circle/tooth-thickness position control references datum B."
+      },
+      {
+        "relationship_id": "R14",
+        "from_feature_id": "F01",
+        "to_feature_id": "F01",
+        "relationship_type": "datum_referenced",
+        "detail": "Within this composite spline feature, the major-diameter position control references datum C defined by the pitch-circle/tooth-thickness surfaces."
+      },
+      {
+        "relationship_id": "R15",
+        "from_feature_id": "F08",
+        "to_feature_id": "F01",
+        "relationship_type": "datum_referenced",
+        "detail": "The individual roofing-gap position controls reference datum D, defined on the grouped spline's tooth reference span."
+      },
+      {
+        "relationship_id": "R16",
+        "from_feature_id": "F15",
+        "to_feature_id": "F01",
+        "relationship_type": "datum_referenced",
+        "detail": "The individual tooth-end chamfer position controls reference datum D."
+      },
+      {
+        "relationship_id": "R17",
+        "from_feature_id": "F14",
+        "to_feature_id": "F10",
+        "relationship_type": "datum_referenced",
+        "detail": "Both tooth-tip diameter position controls reference datum A."
+      },
+      {
+        "relationship_id": "R18",
+        "from_feature_id": "F14",
+        "to_feature_id": "F02",
+        "relationship_type": "datum_referenced",
+        "detail": "Both tooth-tip diameter position controls reference datum B."
+      },
+      {
+        "relationship_id": "R19",
+        "from_feature_id": "F03",
+        "to_feature_id": "F02",
+        "relationship_type": "datum_referenced",
+        "detail": "The external gear data table explicitly identifies datum B as the gear inspection datum."
+      },
+      {
+        "relationship_id": "R20",
+        "from_feature_id": "F05",
+        "to_feature_id": "F02",
+        "relationship_type": "coaxial",
+        "detail": "The outer cylindrical hub steps surround the central bore in the rotational hub profile."
+      },
+      {
+        "relationship_id": "R21",
+        "from_feature_id": "F06",
+        "to_feature_id": "F02",
+        "relationship_type": "coaxial",
+        "detail": "The counterbore is an internal step in the central stepped bore."
+      },
+      {
+        "relationship_id": "R22",
+        "from_feature_id": "F07",
+        "to_feature_id": "F02",
+        "relationship_type": "coaxial",
+        "detail": "The tapered inner bore is part of the central axial bore profile."
+      },
+      {
+        "relationship_id": "R23",
+        "from_feature_id": "F03",
+        "to_feature_id": "F02",
+        "relationship_type": "coaxial",
+        "detail": "The outer gear rim and central bore share the rotational axis shown in the section and front views."
+      },
+      {
+        "relationship_id": "R24",
+        "from_feature_id": "F13",
+        "to_feature_id": "F02",
+        "relationship_type": "coaxial",
+        "detail": "The cylindrical left hub step shares the central bore's rotational axis."
+      },
+      {
+        "relationship_id": "R25",
+        "from_feature_id": "F01",
+        "to_feature_id": "F02",
+        "relationship_type": "coaxial",
+        "detail": "The external hub spline surrounds the central bore and is centered on the main axis."
+      },
+      {
+        "relationship_id": "R26",
+        "from_feature_id": "F10",
+        "to_feature_id": "F11",
+        "relationship_type": "opposite_face",
+        "detail": "The datum A flange face and right end face are opposing axial faces identified in Section A-A."
+      },
+      {
+        "relationship_id": "R27",
+        "from_feature_id": "F01",
+        "to_feature_id": "F08",
+        "relationship_type": "radial_pattern",
+        "detail": "The roofing gaps repeat individually around the spline tooth circumference."
+      },
+      {
+        "relationship_id": "R28",
+        "from_feature_id": "F01",
+        "to_feature_id": "F15",
+        "relationship_type": "radial_pattern",
+        "detail": "The tooth-end angular chamfers repeat individually on the spline teeth."
+      },
+      {
+        "relationship_id": "R29",
+        "from_feature_id": "F01",
+        "to_feature_id": "F16",
+        "relationship_type": "radial_pattern",
+        "detail": "The tooth edge breaks repeat at the individually specified spline tooth locations."
+      },
+      {
+        "relationship_id": "R30",
+        "from_feature_id": "F14",
+        "to_feature_id": "F03",
+        "relationship_type": "intersecting",
+        "detail": "The optional tooth-tip chamfer is an edge treatment of the external gear teeth carried by the gear rim."
+      }
+    ],
+    "datum_scheme": {
+      "datums": [
+        {
+          "datum_letter": "A",
+          "feature_id": "F10",
+          "surface_type": "planar",
+          "description": "Left flat face of main flange"
+        },
+        {
+          "datum_letter": "B",
+          "feature_id": "F02",
+          "surface_type": "cylindrical",
+          "description": "Central bore surface \u00d844.037"
+        },
+        {
+          "datum_letter": "C",
+          "feature_id": "F01",
+          "surface_type": "cylindrical",
+          "description": "Pitch circle/tooth thickness of external involute spline"
+        },
+        {
+          "datum_letter": "D",
+          "feature_id": "F01",
+          "surface_type": "planar",
+          "description": "Datum defined on the 3.1 reference dimension span across pitch points of gear tooth profile"
+        }
+      ],
+      "datum_hierarchy_notes": "The repeated A|B control frames establish datum A as the primary face and datum B as the secondary bore axis. The bore itself is controlled perpendicular to A. Datum C is defined by the external spline pitch-circle/tooth-thickness surfaces positioned to A and B; the spline major diameter is subsequently controlled to C. Datum D is separately defined in Detail C on the tooth reference span and is used for the individual roofing-gap and tooth-end chamfer controls. No single A|B|C|D precedence frame is shown."
+    },
+    "part_notes": "Material: 20MnCr5. Heat treatment: none specified. Coating: none specified. General notes: DEBURR: DO NOT BREAK CORNER / BREAK CORNER 0.4 +0.5/-0.3 BOTH SIDES. INSPECTION: IF GEAR TEETH ARE GROUND, NO GRINDING BURNS ARE ACCEPTABLE AS INSPECTED PER RES 10024. DEBURR: UNLESS OTHERWISE SPECIFIED BREAK EDGE 0.2 - 0.5. PROCESS: CLEANLINESS PER JDS-G169, CLASS 6.6. Testing: Grinding Burn Inspection per RES 10024 NO GRINDING BURNS ARE ACCEPTABLE. Cleanliness per JDS-G169 CLASS 6.6.",
+    "overall_complexity": "complex"
+  },
+  "component_specs": [
+    {
+      "section_id": "external_gear_data_table",
+      "component_type": "helical_gear",
+      "spec_title": "EXTERNAL GEAR DATA",
+      "spec_standard": "ISO 1328",
+      "parameters": [
+        {
+          "parameter_name": "DESIGN DATA SHEET",
+          "value_raw": "14437",
+          "value_numeric": 14437.0
+        },
+        {
+          "parameter_name": "NUMBER OF TEETH",
+          "value_raw": "46",
+          "value_numeric": 46.0
+        },
+        {
+          "parameter_name": "NORMAL MODULE",
+          "value_raw": "2.5",
+          "value_numeric": 2.5
+        },
+        {
+          "parameter_name": "NORMAL PRESSURE ANGLE",
+          "unit": "\u00b0",
+          "value_raw": "20.0\u00b0",
+          "value_numeric": 20.0
+        },
+        {
+          "parameter_name": "HELIX ANGLE @ PITCH DIA & HAND",
+          "unit": "\u00b0",
+          "value_raw": "16.999\u00b0 R",
+          "value_numeric": 16.999
+        },
+        {
+          "parameter_name": "NORMAL TOOTH THICKNESS @ PITCH DIA",
+          "value_raw": "4.9-5.0",
+          "row_notes": "Value specified as a range."
+        },
+        {
+          "parameter_name": "FORM DIAMETER, MAX",
+          "value_raw": "118.481",
+          "value_numeric": 118.481
+        },
+        {
+          "parameter_name": "ROOT DIAMETER",
+          "value_raw": "116.1931-116.5929",
+          "row_notes": "Value specified as a range."
+        },
+        {
+          "parameter_name": "BASE DIAMETER",
+          "value_raw": "112.3895",
+          "value_numeric": 112.3895
+        },
+        {
+          "parameter_name": "TOOTH FLANK SURFACE FINISH, Ra",
+          "symbol": "Ra",
+          "value_raw": "2.0",
+          "value_numeric": 2.0
+        },
+        {
+          "parameter_name": "TOOTH ROOT SURFACE FINISH, Ra",
+          "symbol": "Ra",
+          "value_raw": "3.2",
+          "value_numeric": 3.2
+        },
+        {
+          "parameter_name": "INSPECTION DATUM",
+          "value_raw": "B"
+        },
+        {
+          "parameter_name": "PITCH DIA RUNOUT, Fr",
+          "symbol": "Fr",
+          "value_raw": "0.086",
+          "value_numeric": 0.086
+        },
+        {
+          "parameter_name": "PROFILE DEVIATION, Fa",
+          "symbol": "Fa",
+          "value_raw": "SEE CHART"
+        },
+        {
+          "parameter_name": "PROFILE FORM DEVIATION, ffa",
+          "symbol": "ffa",
+          "value_raw": "0.02",
+          "value_numeric": 0.02
+        },
+        {
+          "parameter_name": "HELIX SLOPE DEVIATION, fHB",
+          "symbol": "fHB",
+          "value_raw": "SEE CHART"
+        },
+        {
+          "parameter_name": "HELIX FORM DEVIATION, ffB",
+          "symbol": "ffB",
+          "value_raw": "0.02",
+          "value_numeric": 0.02
+        },
+        {
+          "parameter_name": "SINGLE PITCH DEVIATION, fpt",
+          "symbol": "fpt",
+          "value_raw": "0.022",
+          "value_numeric": 0.022
+        }
+      ],
+      "extraction_notes": "Table contains a section subheader 'GEAR TOLERANCES-ISO1328'."
+    },
+    {
+      "section_id": "spline_table",
+      "component_type": "external_involute_spline",
+      "spec_title": "EXTERNAL INVOLUTE SPLINE - SIDE FIT",
+      "parameters": [
+        {
+          "parameter_name": "NUMBER OF TEETH",
+          "value_raw": "34",
+          "value_numeric": 34.0
+        },
+        {
+          "parameter_name": "MODULE",
+          "value_raw": "1.75",
+          "value_numeric": 1.75
+        },
+        {
+          "parameter_name": "PRESSURE ANGLE",
+          "unit": "\u00b0",
+          "value_raw": "20\u00b0",
+          "value_numeric": 20.0
+        },
+        {
+          "parameter_name": "BASE \u00d8",
+          "symbol": "\u00d8",
+          "value_raw": "(55.9117)",
+          "value_numeric": 55.9117,
+          "row_notes": "Value is enclosed in parentheses indicating a reference dimension."
+        }
+      ]
+    }
+  ],
+  "component_spec_links": [
+    {
+      "spec_section_id": "external_gear_data_table",
+      "feature_ids": [
+        "F03",
+        "F14"
+      ],
+      "link_notes": "The named external gear rim and external gear tooth-tip treatment identify the specified helical-gear zone. The cutter tooth profile is tooling information, not another observation of the physical gear rim."
+    },
+    {
+      "spec_section_id": "spline_table",
+      "feature_ids": [
+        "F01",
+        "F08",
+        "F15",
+        "F16"
+      ],
+      "link_notes": "The explicitly named external involute spline and matching tooth multiplicity identify this zone. Detail C and View D-D provide its reference span, roofing gaps, tooth-end chamfers, and edge breaks."
+    }
+  ],
+  "assumptions": [
+    {
+      "assumption_id": "A01",
+      "text": "Grouped main_view_left:F1 with detail_c:F1 using the explicit DETAIL C cross-reference. Joined these to spline_detail_view:F1 using Signal 5: matching spline type, tooth-reference thickness, and tooth multiplicity. The named external hub spline in isometric_view:F3 and the supplied spatial views corroborate this identity."
+    },
+    {
+      "assumption_id": "A02",
+      "text": "Selected spline_detail_view:F1 as the spline canonical because it supplies toleranced major-diameter and tooth-thickness information, inspection dimensions, and GD&T. Its explicit external-spline identification takes precedence over the internal-spline wording in main_view_left:F1. The latter's THRU observation is not used to establish spline axial length."
+    },
+    {
+      "assumption_id": "A03",
+      "text": "Grouped isometric_view:F4 with the primary central bore section_aa:F1, while retaining the separately dimensioned Detail B bore steps as distinct physical features. Selected the dimensioned section as canonical and deliberately sourced the explicit THRU depth condition from the isometric observation."
+    },
+    {
+      "assumption_id": "A04",
+      "text": "Grouped isometric_view:F2 with section_aa:F3 based on their named outer gear-rim identity and spatial context. Selected the dimensioned section as canonical. The cylindrical rim observation and the separate tooth-tip chamfer remain distinct features; their diameter callouts are not treated as competing measurements of one surface."
+    },
+    {
+      "assumption_id": "A05",
+      "text": "Retained detail_b:F1, detail_b:F2, detail_b:F3, and section_aa:F6 as distinct features because their diameter zones differ. The section-level SEE DETAIL B reference identifies a hub region, not a one-to-one equivalence between every feature in that region. The explicit repeated outer-step qualifier is retained without requesting a count clarification."
+    },
+    {
+      "assumption_id": "A06",
+      "text": "Retained cutter_tooth_profile_view:F1 as a singleton tooling-profile observation. Its spline classification and pressure-angle information do not establish identity with the physical external hub spline."
+    },
+    {
+      "assumption_id": "A07",
+      "text": "Retained detail_c:F2, view_dd:F1, and view_dd:F2 as separate roofing-gap, tooth-end chamfer, and edge-break features. Shared tooth multiplicity and datum D do not make these different surface treatments one physical feature. The optional external gear tooth-tip chamfer is also separate from the spline tooth-end chamfers."
+    },
+    {
+      "assumption_id": "A08",
+      "text": "Treated the spline observations as one interchangeable repeated tooth set rather than individually identified teeth. No teeth have distinct positions or datum identities in the supplied graphs, so no aggregate_refs expansion into individual tooth nodes was made."
+    },
+    {
+      "assumption_id": "A09",
+      "text": "Adopted global Z along the rotational axis using the front and isometric view conventions. Treated Section A-A axial X as a local view coordinate. The coordinate origin is the intersection of datum A's plane with datum B's axis; no unsupported angular clocking direction was assigned."
+    },
+    {
+      "assumption_id": "A10",
+      "text": "Retained datum C and datum D as separate datum definitions attached to different defining subzones of the same merged spline feature. The datum-C self-referencing graph edge represents the major-diameter control relative to the spline pitch-circle/tooth-thickness datum within this composite feature, not a new physical feature."
+    },
+    {
+      "assumption_id": "A11",
+      "clarification_id": "C01",
+      "text": "The axial face width of the external involute spline is assumed to be 3.1 mm, as indicated by the reference dimension (3.1) shown below View D-D."
+    },
+    {
+      "assumption_id": "A12",
+      "clarification_id": "C02",
+      "text": "The external spline tooth-end reference plane (Datum D) is axially located relative to Datum A, which serves as the primary planar reference face perpendicular to the spline axis."
+    },
+    {
+      "assumption_id": "A13",
+      "clarification_id": "C03",
+      "text": "The axial reference for the Detail B stepped profile is located at the front left-most end face, which is coincident with Datum A."
+    },
+    {
+      "assumption_id": "A14",
+      "clarification_id": "C04",
+      "text": "The \u00d845\u00b10.1 bore step begins at an axial depth of 4.5\u00b10.1 mm from the front reference face, as defined by the shoulder location in Detail B."
+    },
+    {
+      "assumption_id": "A15",
+      "clarification_id": "C05",
+      "text": "The axial length of the \u00d868 left hub step is 17.7 \u00b1 0.1 mm, derived by subtracting the 21 \u00b1 0.1 mm rim width from the overall basic length of 38.7 mm."
+    },
+    {
+      "assumption_id": "A16",
+      "clarification_id": "C06",
+      "text": "The profile-deviation Fa acceptance limit specified by the external gear data table chart is assumed to be 0.015 mm."
+    },
+    {
+      "assumption_id": "A17",
+      "clarification_id": "C07",
+      "text": "The helix-slope-deviation fHB acceptance limit from the referenced gear data chart is assumed to be \u00b10.012 mm."
+    }
+  ]
+}
