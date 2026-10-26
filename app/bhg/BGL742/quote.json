@@ -12,63 +12,117 @@
   },
   "direct_cost": {
     "material_cost_inr": 395.42,
-    "machining_cost_inr": 231.66,
-    "direct_cost_subtotal_inr": 627.08
+    "machining_cost_inr": 215.59,
+    "direct_cost_subtotal_inr": 611.01
   },
   "overheads_and_surcharges": {
     "overhead_inr": 0.0,
-    "rejection_inr": 12.54,
-    "margin_inr": 95.94
+    "rejection_inr": 12.22,
+    "margin_inr": 93.48
   },
   "pricing_summary": {
-    "subtotal_before_margin_inr": 639.62,
-    "final_ex_works_price_inr": 735.56
+    "subtotal_before_margin_inr": 623.23,
+    "final_ex_works_price_inr": 716.71
   },
   "machining_operations": [
     {
       "sequence": 1,
-      "operation_name": "CNC Lathe — Upper Face and Blank Profile",
-      "machine_family": "cnc_lathe",
-      "cycle_time_sec": 454.5,
-      "hourly_rate_inr": 265.0,
-      "cost_per_piece_inr": 33.46,
-      "cost_per_piece_raw": 33.45625
+      "operation_name": "Incoming Forging Inspection",
+      "machine_family": "inspection",
+      "cycle_time_sec": 141.0,
+      "hourly_rate_inr": 250.0,
+      "cost_per_piece_inr": 9.79,
+      "cost_per_piece_raw": 9.791666666666666
     },
     {
       "sequence": 2,
-      "operation_name": "CNC Lathe — Reverse Face and Lower Entry",
+      "operation_name": "CNC Turn – OP10 First Side",
       "machine_family": "cnc_lathe",
-      "cycle_time_sec": 110.9,
+      "cycle_time_sec": 329.8,
       "hourly_rate_inr": 265.0,
-      "cost_per_piece_inr": 8.16,
-      "cost_per_piece_raw": 8.163472222222222
+      "cost_per_piece_inr": 24.28,
+      "cost_per_piece_raw": 24.276944444444446
     },
     {
       "sequence": 3,
-      "operation_name": "Internal Gear Shaping",
-      "machine_family": "gear_shaping",
-      "cycle_time_sec": 1500.0,
-      "hourly_rate_inr": 350.0,
-      "cost_per_piece_inr": 145.83,
-      "cost_per_piece_raw": 145.83333333333334
+      "operation_name": "CNC Turn – OP20 Reverse Side",
+      "machine_family": "cnc_lathe",
+      "cycle_time_sec": 226.6,
+      "hourly_rate_inr": 265.0,
+      "cost_per_piece_inr": 16.68,
+      "cost_per_piece_raw": 16.68027777777778
     },
     {
       "sequence": 4,
-      "operation_name": "Manual Tooth Edge Break and Deburr",
-      "machine_family": "finish_bench",
-      "cycle_time_sec": 428.2,
-      "hourly_rate_inr": 200.0,
-      "cost_per_piece_inr": 23.79,
-      "cost_per_piece_raw": 23.788888888888888
+      "operation_name": "In-Process Blank Inspection",
+      "machine_family": "inspection",
+      "cycle_time_sec": 108.0,
+      "hourly_rate_inr": 250.0,
+      "cost_per_piece_inr": 7.5,
+      "cost_per_piece_raw": 7.5
     },
     {
       "sequence": 5,
-      "operation_name": "Final Dimensional and Gear Inspection",
+      "operation_name": "Internal Gear Shaping",
+      "machine_family": "gear_shaping",
+      "cycle_time_sec": 1077.0,
+      "hourly_rate_inr": 350.0,
+      "cost_per_piece_inr": 104.71,
+      "cost_per_piece_raw": 104.70833333333333
+    },
+    {
+      "sequence": 6,
+      "operation_name": "Tooth Chamfer and Deburr",
+      "machine_family": "chamfer_deburr",
+      "cycle_time_sec": 162.0,
+      "hourly_rate_inr": 350.0,
+      "cost_per_piece_inr": 15.75,
+      "cost_per_piece_raw": 15.75
+    },
+    {
+      "sequence": 7,
+      "operation_name": "Gear Inspection",
       "machine_family": "inspection",
-      "cycle_time_sec": 294.0,
+      "cycle_time_sec": 204.0,
       "hourly_rate_inr": 250.0,
-      "cost_per_piece_inr": 20.42,
-      "cost_per_piece_raw": 20.416666666666668
+      "cost_per_piece_inr": 14.17,
+      "cost_per_piece_raw": 14.166666666666666
+    },
+    {
+      "sequence": 8,
+      "operation_name": "Wash",
+      "machine_family": "finish_bench",
+      "cycle_time_sec": 87.0,
+      "hourly_rate_inr": 200.0,
+      "cost_per_piece_inr": 4.83,
+      "cost_per_piece_raw": 4.833333333333333
+    },
+    {
+      "sequence": 9,
+      "operation_name": "Final Dimensional Inspection",
+      "machine_family": "inspection",
+      "cycle_time_sec": 171.0,
+      "hourly_rate_inr": 250.0,
+      "cost_per_piece_inr": 11.88,
+      "cost_per_piece_raw": 11.875
+    },
+    {
+      "sequence": 10,
+      "operation_name": "Mark Part Number",
+      "machine_family": "finish_bench",
+      "cycle_time_sec": 42.0,
+      "hourly_rate_inr": 200.0,
+      "cost_per_piece_inr": 2.33,
+      "cost_per_piece_raw": 2.3333333333333335
+    },
+    {
+      "sequence": 11,
+      "operation_name": "Rust Preventive and Pack",
+      "machine_family": "finish_bench",
+      "cycle_time_sec": 66.0,
+      "hourly_rate_inr": 200.0,
+      "cost_per_piece_inr": 3.67,
+      "cost_per_piece_raw": 3.6666666666666665
     }
   ]
 }
