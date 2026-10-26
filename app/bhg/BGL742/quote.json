@@ -5,55 +5,46 @@
   "quantity": 100,
   "quote_status": "complete",
   "weights": {
-    "gross_weight_kg": 13.5035,
-    "net_weight_kg": 12.3279,
-    "scrap_weight_kg": 1.1756,
+    "gross_weight_kg": 5.2723,
+    "net_weight_kg": 2.8103,
+    "scrap_weight_kg": 2.462,
     "net_weight_source": "routing"
   },
   "direct_cost": {
-    "material_cost_inr": 1012.76,
-    "machining_cost_inr": 367.16,
-    "direct_cost_subtotal_inr": 1379.92
+    "material_cost_inr": 395.42,
+    "machining_cost_inr": 231.66,
+    "direct_cost_subtotal_inr": 627.08
   },
   "overheads_and_surcharges": {
     "overhead_inr": 0.0,
-    "rejection_inr": 27.6,
-    "margin_inr": 211.13
+    "rejection_inr": 12.54,
+    "margin_inr": 95.94
   },
   "pricing_summary": {
-    "subtotal_before_margin_inr": 1407.52,
-    "final_ex_works_price_inr": 1618.65
+    "subtotal_before_margin_inr": 639.62,
+    "final_ex_works_price_inr": 735.56
   },
   "machining_operations": [
     {
       "sequence": 1,
-      "operation_name": "Saw Cut Gear Blank",
-      "machine_family": "saw",
-      "cycle_time_sec": 300.0,
-      "hourly_rate_inr": 320.0,
-      "cost_per_piece_inr": 26.67,
-      "cost_per_piece_raw": 26.666666666666668
+      "operation_name": "CNC Lathe — Upper Face and Blank Profile",
+      "machine_family": "cnc_lathe",
+      "cycle_time_sec": 454.5,
+      "hourly_rate_inr": 265.0,
+      "cost_per_piece_inr": 33.46,
+      "cost_per_piece_raw": 33.45625
     },
     {
       "sequence": 2,
-      "operation_name": "CNC Lathe — Upper Face and Blank Profile",
+      "operation_name": "CNC Lathe — Reverse Face and Lower Entry",
       "machine_family": "cnc_lathe",
-      "cycle_time_sec": 341.8,
+      "cycle_time_sec": 110.9,
       "hourly_rate_inr": 265.0,
-      "cost_per_piece_inr": 25.16,
-      "cost_per_piece_raw": 25.16027777777778
+      "cost_per_piece_inr": 8.16,
+      "cost_per_piece_raw": 8.163472222222222
     },
     {
       "sequence": 3,
-      "operation_name": "CNC Lathe — Reverse Face and Lower Entry",
-      "machine_family": "cnc_lathe",
-      "cycle_time_sec": 105.3,
-      "hourly_rate_inr": 265.0,
-      "cost_per_piece_inr": 7.75,
-      "cost_per_piece_raw": 7.75125
-    },
-    {
-      "sequence": 4,
       "operation_name": "Internal Gear Shaping",
       "machine_family": "gear_shaping",
       "cycle_time_sec": 1500.0,
@@ -62,31 +53,22 @@
       "cost_per_piece_raw": 145.83333333333334
     },
     {
-      "sequence": 5,
-      "operation_name": "Internal Gear Shaving",
-      "machine_family": "gear_shaving",
-      "cycle_time_sec": 472.4,
-      "hourly_rate_inr": 450.0,
-      "cost_per_piece_inr": 59.05,
-      "cost_per_piece_raw": 59.05
-    },
-    {
-      "sequence": 6,
+      "sequence": 4,
       "operation_name": "Manual Tooth Edge Break and Deburr",
       "machine_family": "finish_bench",
-      "cycle_time_sec": 498.5,
+      "cycle_time_sec": 428.2,
       "hourly_rate_inr": 200.0,
-      "cost_per_piece_inr": 27.69,
-      "cost_per_piece_raw": 27.694444444444443
+      "cost_per_piece_inr": 23.79,
+      "cost_per_piece_raw": 23.788888888888888
     },
     {
-      "sequence": 7,
+      "sequence": 5,
       "operation_name": "Final Dimensional and Gear Inspection",
       "machine_family": "inspection",
-      "cycle_time_sec": 1080.0,
+      "cycle_time_sec": 294.0,
       "hourly_rate_inr": 250.0,
-      "cost_per_piece_inr": 75.0,
-      "cost_per_piece_raw": 75.0
+      "cost_per_piece_inr": 20.42,
+      "cost_per_piece_raw": 20.416666666666668
     }
   ]
 }

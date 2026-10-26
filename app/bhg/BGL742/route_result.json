@@ -5,39 +5,18 @@
   "part_family": "hybrid",
   "base_geometry": "rotational",
   "stock": {
-    "form": "round_bar",
+    "form": "forged_ring",
     "diameter_mm": 213.0,
-    "length_mm": 45.3,
-    "machining_allowance_mm": 0.5
+    "bore_diameter_mm": 175.0,
+    "length_mm": 58.0,
+    "machining_allowance_mm": 2.5
   },
   "operations": [
     {
       "sequence": 1,
-      "name": "Saw Cut Gear Blank",
-      "machine_family": "saw",
-      "setup_note": "Saw the round bar into individual oversize blanks, allowing material for facing both ends. No datum is established at this stage.",
-      "datum_references": [],
-      "material_machinability": "medium",
-      "setup_time_min": 5.0,
-      "in_house": true,
-      "sub_operations": [
-        {
-          "sequence": 1,
-          "operation_type": "saw_cut",
-          "target_feature_ids": [],
-          "inputs": {
-            "kind": "saw_cut",
-            "cut_diameter_mm": 213.0,
-            "cut_count": 1
-          }
-        }
-      ]
-    },
-    {
-      "sequence": 2,
-      "name": "CNC Lathe \u2014 Upper Face and Blank Profile",
+      "name": "CNC Lathe — Upper Face and Blank Profile",
       "machine_family": "cnc_lathe",
-      "setup_note": "Hold the sawn blank in a chuck, face the upper end, then machine the OD and upper-access internal profile while maintaining a common axis. Finish the internal groove shoulder that establishes datum B.",
+      "setup_note": "Chuck the bought-in forged ring (Ø213 / Ø175 × 58 mm). Face the upper end, turn the Ø208 OD over the 53.8 mm finished height, open the upper bores from the ring bore, and turn the Ø181.026 tooth minor across the 37.3 mm toothed section before shaping. Finish the Ø191 snap-ring groove, whose shoulder is datum B, and the R1.2 undercut.",
       "datum_references": [
         "B"
       ],
@@ -54,9 +33,9 @@
           "inputs": {
             "kind": "radial_turn",
             "start_diameter_mm": 213.0,
-            "finish_diameter_mm": 188.0,
+            "finish_diameter_mm": 175.0,
             "groove_count": 1,
-            "total_stock_mm": 4.0
+            "total_stock_mm": 2.1
           }
         },
         {
@@ -69,7 +48,7 @@
             "kind": "axial_turn",
             "start_diameter_mm": 213.0,
             "finish_diameter_mm": 208.8,
-            "cut_length_mm": 37.3
+            "cut_length_mm": 53.8
           }
         },
         {
@@ -82,7 +61,7 @@
             "kind": "axial_turn",
             "start_diameter_mm": 208.8,
             "finish_diameter_mm": 208.0,
-            "cut_length_mm": 37.3
+            "cut_length_mm": 53.8
           }
         },
         {
@@ -107,7 +86,7 @@
           ],
           "inputs": {
             "kind": "axial_turn",
-            "start_diameter_mm": 180.0,
+            "start_diameter_mm": 175.0,
             "finish_diameter_mm": 187.2,
             "cut_length_mm": 1.0
           }
@@ -120,9 +99,9 @@
           ],
           "inputs": {
             "kind": "axial_turn",
-            "start_diameter_mm": 180.0,
+            "start_diameter_mm": 175.0,
             "finish_diameter_mm": 180.226,
-            "cut_length_mm": 1.0
+            "cut_length_mm": 37.3
           }
         },
         {
@@ -133,7 +112,7 @@
           ],
           "inputs": {
             "kind": "axial_turn",
-            "start_diameter_mm": 180.0,
+            "start_diameter_mm": 175.0,
             "finish_diameter_mm": 184.7,
             "cut_length_mm": 3.2
           }
@@ -146,7 +125,7 @@
           ],
           "inputs": {
             "kind": "axial_turn",
-            "start_diameter_mm": 180.0,
+            "start_diameter_mm": 175.0,
             "finish_diameter_mm": 184.2,
             "cut_length_mm": 9.91
           }
@@ -174,7 +153,7 @@
             "kind": "axial_turn",
             "start_diameter_mm": 180.226,
             "finish_diameter_mm": 181.026,
-            "cut_length_mm": 1.0
+            "cut_length_mm": 37.3
           }
         },
         {
@@ -276,10 +255,10 @@
       ]
     },
     {
-      "sequence": 3,
-      "name": "CNC Lathe \u2014 Reverse Face and Lower Entry",
+      "sequence": 2,
+      "name": "CNC Lathe — Reverse Face and Lower Entry",
       "machine_family": "cnc_lathe",
-      "setup_note": "Reverse the blank and locate it from the machined OD and upper face; retain the established axis when facing the lower end and turning the lower bore entry.",
+      "setup_note": "Reverse the ring and locate it from the turned OD and the upper face. Face to the 53.8 mm overall height (16.5 mm from the top face to datum B plus 37.3 mm from datum B to the bottom face) and turn the lower Ø189.5 entry and 15° lead-in.",
       "datum_references": [
         "B"
       ],
@@ -295,10 +274,10 @@
           ],
           "inputs": {
             "kind": "radial_turn",
-            "start_diameter_mm": 213.0,
-            "finish_diameter_mm": 189.5,
+            "start_diameter_mm": 208.0,
+            "finish_diameter_mm": 175.0,
             "groove_count": 1,
-            "total_stock_mm": 4.0
+            "total_stock_mm": 2.1
           }
         },
         {
@@ -323,7 +302,7 @@
           ],
           "inputs": {
             "kind": "axial_turn",
-            "start_diameter_mm": 180.0,
+            "start_diameter_mm": 175.0,
             "finish_diameter_mm": 188.7,
             "cut_length_mm": 1.0
           }
@@ -358,10 +337,10 @@
       ]
     },
     {
-      "sequence": 4,
+      "sequence": 3,
       "name": "Internal Gear Shaping",
       "machine_family": "gear_shaping",
-      "setup_note": "Locate the turned blank on its machined bore axis and axial datum B, then shape the internal spur teeth across the face width. The turned bore is used as the pre-machining location reference for the gear axis.",
+      "setup_note": "Locate the soft ring on the turned Ø181.026 minor and axial datum B. Shape the internal spur teeth (70 teeth, module 2.65, 0° helix) across the 37.3 mm face. No shaving stock is left: flank and root finish are Ra 3.2, and no heat treatment is specified.",
       "datum_references": [
         "B"
       ],
@@ -390,40 +369,10 @@
       ]
     },
     {
-      "sequence": 5,
-      "name": "Internal Gear Shaving",
-      "machine_family": "gear_shaving",
-      "setup_note": "Locate from the shaped internal gear datum axis A and axial datum B. Shave the unhardened active flanks to improve tooth profile and finish.",
-      "datum_references": [
-        "A",
-        "B"
-      ],
-      "material_machinability": "medium",
-      "setup_time_min": 20.0,
-      "in_house": true,
-      "sub_operations": [
-        {
-          "sequence": 1,
-          "operation_type": "shave_teeth",
-          "target_feature_ids": [
-            "F07"
-          ],
-          "inputs": {
-            "kind": "gear_finish",
-            "number_of_teeth": 70,
-            "normal_module_mm": 2.65,
-            "face_width_mm": 37.3,
-            "stock_per_flank_mm": 0.05,
-            "helix_angle_deg": 0.0
-          }
-        }
-      ]
-    },
-    {
-      "sequence": 6,
+      "sequence": 4,
       "name": "Manual Tooth Edge Break and Deburr",
       "machine_family": "finish_bench",
-      "setup_note": "Support the ring without loading the tooth flanks. Break only the specified tooth crest and root edges; do not edge-break the active working flank.",
+      "setup_note": "Support the soft ring without loading the active flanks. Break only the specified tooth crest and root edges (F05 and F06, 0–1 mm). Do not edge-break the active flank F07. Deburr and wash.",
       "datum_references": [
         "A",
         "B"
@@ -471,10 +420,10 @@
       ]
     },
     {
-      "sequence": 7,
+      "sequence": 5,
       "name": "Final Dimensional and Gear Inspection",
       "machine_family": "inspection",
-      "setup_note": "Inspect the cleaned part using datum B for axial location and the internal gear datum A for axis and gear measurements. Verify the turned features, edge breaks, and specified gear characteristics.",
+      "setup_note": "Sampled inspection of the soft ring. A first-off CMM and gear-analyser check are averaged over the 100-piece lot; every piece gets a short check of runout, tooth size, groove width, and the edge break. No post-heat-treatment inspection is included.",
       "datum_references": [
         "A",
         "B"
@@ -491,7 +440,7 @@
             "kind": "inspection",
             "dimension_count": 24,
             "gdt_count": 14,
-            "sampling_rate_pct": 100.0,
+            "sampling_rate_pct": 10.0,
             "requires_fixture": true
           }
         },
@@ -503,7 +452,7 @@
             "kind": "inspection",
             "dimension_count": 6,
             "gdt_count": 0,
-            "sampling_rate_pct": 100.0,
+            "sampling_rate_pct": 20.0,
             "requires_fixture": true
           }
         },
@@ -525,40 +474,41 @@
   "clarifications": [
     {
       "clarification_id": "C01",
-      "question": "What ISO 1328 gear accuracy class is required for this internal gear?",
-      "blocks": [
-        4,
-        5,
-        7
-      ],
-      "suggested_default": "Proceed to the explicit tolerances and limits stated in the gear data; do not infer an additional accuracy class.",
-      "priority": "medium"
+      "question": "No heat treatment specified, quoted soft; confirm whether HT is in your scope.",
+      "why_it_matters": "The drawing and the extracted specifications state material 8620 and do not state a case depth, hardness, or carburise note. 8620 is often carburised, but nothing on this sheet puts heat treatment in scope, so the route and the price are soft and include no post-HT finishing. If heat treatment is yours to do, the route and the price both change.",
+      "blocks": [],
+      "suggested_default": null,
+      "priority": "high"
     }
   ],
   "assumptions": [
     {
       "assumption_id": "A01",
-      "text": "No heat treatment is included because the part notes explicitly state that none is specified. The route therefore remains in the soft-machining state; 8620 is assumed to be supplied in an annealed or normalized machinable condition."
+      "text": "No heat treatment is specified on the drawing or in the extracted specifications (part note: heat treatment none specified). The ring is quoted soft. 8620 in the bought-in blank is assumed annealed or normalised and machinable. Confirm whether heat treatment is in scope before release."
     },
     {
       "assumption_id": "A02",
-      "text": "Round bar is selected for the rotational blank. Although this produces substantial internal waste, no forged blank or directional-grain requirement is specified, and gears are to be machined from standard stock unless the drawing requires otherwise."
+      "text": "The blank is a bought-in forged/rolled ring from an outside forge shop, not round bar and not a forging made on the Bharat Gears floor. No saw, heat, forge, or trim operation is routed. The raw-material line is the purchase cost of that ring."
     },
     {
       "assumption_id": "A03",
-      "text": "Soft gear shaving is included after internal gear shaping to address the stated tooth-profile and surface-finish requirements. No post-hardening gear grinding, bore honing, face grinding, or tooth honing is included because no heat treatment or H7/H6 bore requirement is specified."
+      "text": "Finished overall height is 53.8 mm = 16.5 mm (top face to datum B) + 37.3 mm (datum B to the bottom face). The bought-in ring is Ø213 mm OD × Ø175 mm ID × 58 mm long: 2.5 mm radial allowance over the Ø208 nominal OD, about 3 mm radial allowance under the Ø181.026 tooth tip, and 2.1 mm on each face. Gross weight is 5.2723 kg at 7.85 g/cm³. Material is priced at ₹75/kg, the rate already used for this part."
     },
     {
       "assumption_id": "A04",
-      "text": "The round-bar blank is estimated at \u00d8213 mm by 45.3 mm long, allowing 4.75 mm on diameter and 8 mm on axial length relative to the part envelope."
+      "text": "Net weight is 2.8103 kg. That is a steel annulus Ø208 mm × effective ID Ø186.24 mm (mean of the Ø181.026 tooth tip and the Ø191.45 mean root) × 53.8 mm at 7.85 g/cm³, minus the Ø191 × 3.2 mm snap-ring groove. The bore is subtracted; the part is not costed as a solid disc. Scrap is 2.462 kg."
     },
     {
       "assumption_id": "A05",
-      "text": "Tooth edge breaking is limited to features F05 and F06. The active flank F07 is explicitly protected from edge breaking."
+      "text": "Internal shaving is not included. Flank and root finish are Ra 3.2 and no shaving stock is specified. The internal spur teeth are shaped only, across the 37.3 mm face, after the Ø181.026 minor is turned. The 37.3 mm figure is the toothed section from datum B to the bottom face, not the overall height."
     },
     {
       "assumption_id": "A06",
-      "text": "Part-off is omitted because individual blanks are saw-cut to length before lathe machining; the lathe is not being used for bar-fed parting."
+      "text": "Tooth edge breaking is limited to F05 and F06 (break edge 0–1 mm). The active flank F07 is not edge-broken. The general deburr note still applies."
+    },
+    {
+      "assumption_id": "A07",
+      "text": "Inspection time is an average per piece for a 100-piece lot: first-off CMM and a sampled gear-analyser check, plus a short 100% check of runout, tooth size, groove width, and the edge break. A full CMM and gear-analyser cycle is not charged on every piece. Setups are amortised over the 100 pieces and are inside the cycle time used for cost."
     }
   ]
 }
