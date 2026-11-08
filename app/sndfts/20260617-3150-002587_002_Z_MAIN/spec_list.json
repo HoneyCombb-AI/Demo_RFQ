@@ -1,0 +1,3909 @@
+[
+  {
+    "spec_id": "detail_y:F1_GDT1",
+    "callout_id": "F1_GDT1",
+    "section_id": "detail_y",
+    "source_view": "Y",
+    "feature_id": "F1",
+    "feature_name": "Upper horizontal face",
+    "feature_type": "face",
+    "spec_type": "geometric_tolerance",
+    "dimension_type": "profile_of_surface",
+    "description": "Profile of surface to datum A",
+    "nominal_value": "0.1 mm",
+    "tolerance_or_class": "0.1 mm",
+    "raw_text": "0.1 A",
+    "has_explicit_tolerance": true,
+    "kind": "profile_of_surface",
+    "value": 0.1,
+    "tol": null,
+    "qualifiers": [],
+    "multiplier": null,
+    "match_text": "0.1 A",
+    "match_numbers": [
+      0.1
+    ],
+    "match_tokens": [
+      "a"
+    ],
+    "instance_count": 1,
+    "tolerance_value_mm": 0.1,
+    "datum_references": [
+      "A"
+    ],
+    "material_condition": null,
+    "applied_to": "F1.face_id"
+  },
+  {
+    "spec_id": "detail_y:F4_SD1",
+    "callout_id": "F4_SD1",
+    "section_id": "detail_y",
+    "source_view": "Y",
+    "feature_id": "F4",
+    "feature_name": "Rounded internal corner",
+    "feature_type": "edge_treatment",
+    "spec_type": "dimensional",
+    "dimension_type": "radius",
+    "description": "Radius",
+    "nominal_value": "R 0.4 mm",
+    "tolerance_or_class": "General Tol",
+    "raw_text": "R0.4",
+    "has_explicit_tolerance": false,
+    "kind": "radius",
+    "value": 0.4,
+    "tol": null,
+    "qualifiers": [],
+    "multiplier": null,
+    "match_text": "R0.4",
+    "match_numbers": [
+      0.4
+    ],
+    "match_tokens": [],
+    "instance_count": 1
+  },
+  {
+    "spec_id": "detail_y:LD1",
+    "callout_id": "LD1",
+    "section_id": "detail_y",
+    "source_view": "Y",
+    "feature_id": "F3",
+    "feature_name": "Vertical datum face B",
+    "feature_type": "face",
+    "spec_type": "dimensional",
+    "dimension_type": "location",
+    "description": "Location horizontal F3.face_id → F1.face_id",
+    "nominal_value": "0.1 mm",
+    "tolerance_or_class": "General Tol",
+    "raw_text": "0.1",
+    "has_explicit_tolerance": false,
+    "kind": "location",
+    "value": 0.1,
+    "tol": null,
+    "qualifiers": [
+      "BASIC"
+    ],
+    "multiplier": null,
+    "match_text": "0.1",
+    "match_numbers": [
+      0.1
+    ],
+    "match_tokens": [],
+    "instance_count": 1,
+    "from_ref": {
+      "local_id": "F3",
+      "role": "face_id"
+    },
+    "to_ref": {
+      "local_id": "F1",
+      "role": "face_id"
+    }
+  },
+  {
+    "spec_id": "detail_z:F1_SD1",
+    "callout_id": "F1_SD1",
+    "section_id": "detail_z",
+    "source_view": "Z",
+    "feature_id": "F1",
+    "feature_name": "External turned diameter",
+    "feature_type": "turned_od",
+    "spec_type": "dimensional",
+    "dimension_type": "diameter",
+    "description": "Diameter",
+    "nominal_value": "Ø 317 mm",
+    "tolerance_or_class": "+0.2/-0 mm",
+    "raw_text": "Ø317 +0.2/-0",
+    "has_explicit_tolerance": true,
+    "kind": "diameter",
+    "value": 317.0,
+    "tol": {
+      "form": "deviation",
+      "plus": 0.2,
+      "minus": 0.0
+    },
+    "qualifiers": [],
+    "multiplier": null,
+    "match_text": "Ø317 +0.2/-0",
+    "match_numbers": [
+      317.0,
+      0.2
+    ],
+    "match_tokens": [],
+    "instance_count": 1
+  },
+  {
+    "spec_id": "detail_z:F1_SF",
+    "callout_id": "F1_SF",
+    "section_id": "detail_z",
+    "source_view": "Z",
+    "feature_id": "F1",
+    "feature_name": "External turned diameter",
+    "feature_type": "turned_od",
+    "spec_type": "surface_finish",
+    "dimension_type": "surface_finish",
+    "description": "Surface finish requirement",
+    "nominal_value": "X",
+    "tolerance_or_class": "X",
+    "raw_text": "X",
+    "has_explicit_tolerance": false,
+    "kind": "surface_finish",
+    "value": null,
+    "tol": null,
+    "qualifiers": [],
+    "multiplier": null,
+    "match_text": "X",
+    "match_numbers": [],
+    "match_tokens": [],
+    "instance_count": 1,
+    "surface_finish_ra": null,
+    "surface_finish_rz": null
+  },
+  {
+    "spec_id": "detail_z:F2_SF",
+    "callout_id": "F2_SF",
+    "section_id": "detail_z",
+    "source_view": "Z",
+    "feature_id": "F2",
+    "feature_name": "Left facing surface",
+    "feature_type": "face",
+    "spec_type": "surface_finish",
+    "dimension_type": "surface_finish",
+    "description": "Surface finish requirement",
+    "nominal_value": "X",
+    "tolerance_or_class": "X",
+    "raw_text": "X",
+    "has_explicit_tolerance": false,
+    "kind": "surface_finish",
+    "value": null,
+    "tol": null,
+    "qualifiers": [],
+    "multiplier": null,
+    "match_text": "X",
+    "match_numbers": [],
+    "match_tokens": [],
+    "instance_count": 1,
+    "surface_finish_ra": null,
+    "surface_finish_rz": null
+  },
+  {
+    "spec_id": "detail_z:F3_GDT1",
+    "callout_id": "F3_GDT1",
+    "section_id": "detail_z",
+    "source_view": "Z",
+    "feature_id": "F3",
+    "feature_name": "Shoulder face",
+    "feature_type": "face",
+    "spec_type": "geometric_tolerance",
+    "dimension_type": "position",
+    "description": "Position to datum A|B",
+    "nominal_value": "0.5 mm",
+    "tolerance_or_class": "0.5 mm",
+    "raw_text": "0.5 A B",
+    "has_explicit_tolerance": true,
+    "kind": "position",
+    "value": 0.5,
+    "tol": null,
+    "qualifiers": [],
+    "multiplier": null,
+    "match_text": "0.5 A B",
+    "match_numbers": [
+      0.5
+    ],
+    "match_tokens": [
+      "a",
+      "b"
+    ],
+    "instance_count": 1,
+    "tolerance_value_mm": 0.5,
+    "datum_references": [
+      "A",
+      "B"
+    ],
+    "material_condition": null,
+    "applied_to": "F3.face_id"
+  },
+  {
+    "spec_id": "detail_z:F4_SD1",
+    "callout_id": "F4_SD1",
+    "section_id": "detail_z",
+    "source_view": "Z",
+    "feature_id": "F4",
+    "feature_name": "Stepped profile",
+    "feature_type": "step",
+    "spec_type": "dimensional",
+    "dimension_type": "height",
+    "description": "Height [BASIC]",
+    "nominal_value": "1.5 mm",
+    "tolerance_or_class": "General Tol",
+    "raw_text": "1.5",
+    "has_explicit_tolerance": false,
+    "kind": "height",
+    "value": 1.5,
+    "tol": null,
+    "qualifiers": [
+      "BASIC"
+    ],
+    "multiplier": null,
+    "match_text": "1.5",
+    "match_numbers": [
+      1.5
+    ],
+    "match_tokens": [],
+    "instance_count": 1
+  },
+  {
+    "spec_id": "detail_z:LD1",
+    "callout_id": "LD1",
+    "section_id": "detail_z",
+    "source_view": "Z",
+    "feature_id": "F2",
+    "feature_name": "Left facing surface",
+    "feature_type": "face",
+    "spec_type": "dimensional",
+    "dimension_type": "location",
+    "description": "Location horizontal F2.face_id → F3.face_id",
+    "nominal_value": "2.2 mm",
+    "tolerance_or_class": "General Tol",
+    "raw_text": "2.2",
+    "has_explicit_tolerance": false,
+    "kind": "location",
+    "value": 2.2,
+    "tol": null,
+    "qualifiers": [
+      "BASIC"
+    ],
+    "multiplier": null,
+    "match_text": "2.2",
+    "match_numbers": [
+      2.2
+    ],
+    "match_tokens": [],
+    "instance_count": 1,
+    "from_ref": {
+      "local_id": "F2",
+      "role": "face_id"
+    },
+    "to_ref": {
+      "local_id": "F3",
+      "role": "face_id"
+    }
+  },
+  {
+    "spec_id": "front_view:F1_SD1",
+    "callout_id": "F1_SD1",
+    "section_id": "front_view",
+    "source_view": "front_view",
+    "feature_id": "F1",
+    "feature_name": "Central circular opening",
+    "feature_type": "hole",
+    "spec_type": "dimensional",
+    "dimension_type": "diameter",
+    "description": "Diameter [BASIC]",
+    "nominal_value": "Ø 118 mm",
+    "tolerance_or_class": "General Tol",
+    "raw_text": "Ø118",
+    "has_explicit_tolerance": false,
+    "kind": "diameter",
+    "value": 118.0,
+    "tol": null,
+    "qualifiers": [
+      "BASIC"
+    ],
+    "multiplier": null,
+    "match_text": "Ø118",
+    "match_numbers": [
+      118.0
+    ],
+    "match_tokens": [],
+    "instance_count": null
+  },
+  {
+    "spec_id": "front_view:F2_SD1",
+    "callout_id": "F2_SD1",
+    "section_id": "front_view",
+    "source_view": "front_view",
+    "feature_id": "F2",
+    "feature_name": "Small central hole",
+    "feature_type": "hole",
+    "spec_type": "dimensional",
+    "dimension_type": "diameter",
+    "description": "Diameter [BASIC]",
+    "nominal_value": "Ø 15.6 mm",
+    "tolerance_or_class": "General Tol",
+    "raw_text": "Ø15.6",
+    "has_explicit_tolerance": false,
+    "kind": "diameter",
+    "value": 15.6,
+    "tol": null,
+    "qualifiers": [
+      "BASIC"
+    ],
+    "multiplier": null,
+    "match_text": "Ø15.6",
+    "match_numbers": [
+      15.6
+    ],
+    "match_tokens": [],
+    "instance_count": null
+  },
+  {
+    "spec_id": "front_view:F3_SD1",
+    "callout_id": "F3_SD1",
+    "section_id": "front_view",
+    "source_view": "front_view",
+    "feature_id": "F3",
+    "feature_name": "Circular outer boss",
+    "feature_type": "boss",
+    "spec_type": "dimensional",
+    "dimension_type": "diameter",
+    "description": "Diameter",
+    "nominal_value": "Ø 28.8 mm",
+    "tolerance_or_class": "General Tol",
+    "raw_text": "Ø28.8",
+    "has_explicit_tolerance": false,
+    "kind": "diameter",
+    "value": 28.8,
+    "tol": null,
+    "qualifiers": [],
+    "multiplier": null,
+    "match_text": "Ø28.8",
+    "match_numbers": [
+      28.8
+    ],
+    "match_tokens": [],
+    "instance_count": null
+  },
+  {
+    "spec_id": "front_view:F10_SD1",
+    "callout_id": "F10_SD1",
+    "section_id": "front_view",
+    "source_view": "front_view",
+    "feature_id": "F10",
+    "feature_name": "Balancing holes",
+    "feature_type": "hole",
+    "spec_type": "dimensional",
+    "dimension_type": "diameter",
+    "description": "Diameter [MAX]",
+    "nominal_value": "Ø 20 mm",
+    "tolerance_or_class": "MAX",
+    "raw_text": "Ø20 MAX",
+    "has_explicit_tolerance": false,
+    "kind": "diameter",
+    "value": 20.0,
+    "tol": null,
+    "qualifiers": [
+      "MAX"
+    ],
+    "multiplier": null,
+    "match_text": "Ø20 MAX",
+    "match_numbers": [
+      20.0
+    ],
+    "match_tokens": [
+      "max"
+    ],
+    "instance_count": null
+  },
+  {
+    "spec_id": "front_view:LD1",
+    "callout_id": "LD1",
+    "section_id": "front_view",
+    "source_view": "front_view",
+    "feature_id": "F2",
+    "feature_name": "Small central hole",
+    "feature_type": "hole",
+    "spec_type": "dimensional",
+    "dimension_type": "location",
+    "description": "Location angular F2.axis → F4.center_point",
+    "nominal_value": "5 mm",
+    "tolerance_or_class": "General Tol",
+    "raw_text": "5",
+    "has_explicit_tolerance": false,
+    "kind": "location",
+    "value": 5.0,
+    "tol": null,
+    "qualifiers": [],
+    "multiplier": null,
+    "match_text": "5",
+    "match_numbers": [
+      5.0
+    ],
+    "match_tokens": [],
+    "instance_count": null,
+    "from_ref": {
+      "local_id": "F2",
+      "role": "axis"
+    },
+    "to_ref": {
+      "local_id": "F4",
+      "role": "center_point"
+    }
+  },
+  {
+    "spec_id": "front_view:LD2",
+    "callout_id": "LD2",
+    "section_id": "front_view",
+    "source_view": "front_view",
+    "feature_id": "F2",
+    "feature_name": "Small central hole",
+    "feature_type": "hole",
+    "spec_type": "dimensional",
+    "dimension_type": "location",
+    "description": "Location angular F2.axis → F5.center_point",
+    "nominal_value": "65 mm",
+    "tolerance_or_class": "General Tol",
+    "raw_text": "65",
+    "has_explicit_tolerance": false,
+    "kind": "location",
+    "value": 65.0,
+    "tol": null,
+    "qualifiers": [
+      "BASIC"
+    ],
+    "multiplier": null,
+    "match_text": "65",
+    "match_numbers": [
+      65.0
+    ],
+    "match_tokens": [],
+    "instance_count": null,
+    "from_ref": {
+      "local_id": "F2",
+      "role": "axis"
+    },
+    "to_ref": {
+      "local_id": "F5",
+      "role": "center_point"
+    }
+  },
+  {
+    "spec_id": "front_view:LD3",
+    "callout_id": "LD3",
+    "section_id": "front_view",
+    "source_view": "front_view",
+    "feature_id": "F2",
+    "feature_name": "Small central hole",
+    "feature_type": "hole",
+    "spec_type": "dimensional",
+    "dimension_type": "location",
+    "description": "Location angular F2.axis → F6.center_point",
+    "nominal_value": "125 mm",
+    "tolerance_or_class": "General Tol",
+    "raw_text": "125",
+    "has_explicit_tolerance": false,
+    "kind": "location",
+    "value": 125.0,
+    "tol": null,
+    "qualifiers": [
+      "BASIC"
+    ],
+    "multiplier": null,
+    "match_text": "125",
+    "match_numbers": [
+      125.0
+    ],
+    "match_tokens": [],
+    "instance_count": null,
+    "from_ref": {
+      "local_id": "F2",
+      "role": "axis"
+    },
+    "to_ref": {
+      "local_id": "F6",
+      "role": "center_point"
+    }
+  },
+  {
+    "spec_id": "front_view:LD4",
+    "callout_id": "LD4",
+    "section_id": "front_view",
+    "source_view": "front_view",
+    "feature_id": "F2",
+    "feature_name": "Small central hole",
+    "feature_type": "hole",
+    "spec_type": "dimensional",
+    "dimension_type": "location",
+    "description": "Location angular F2.axis → F7.center_point",
+    "nominal_value": "180 mm",
+    "tolerance_or_class": "General Tol",
+    "raw_text": "180",
+    "has_explicit_tolerance": false,
+    "kind": "location",
+    "value": 180.0,
+    "tol": null,
+    "qualifiers": [
+      "BASIC"
+    ],
+    "multiplier": null,
+    "match_text": "180",
+    "match_numbers": [
+      180.0
+    ],
+    "match_tokens": [],
+    "instance_count": null,
+    "from_ref": {
+      "local_id": "F2",
+      "role": "axis"
+    },
+    "to_ref": {
+      "local_id": "F7",
+      "role": "center_point"
+    }
+  },
+  {
+    "spec_id": "front_view:LD5",
+    "callout_id": "LD5",
+    "section_id": "front_view",
+    "source_view": "front_view",
+    "feature_id": "F2",
+    "feature_name": "Small central hole",
+    "feature_type": "hole",
+    "spec_type": "dimensional",
+    "dimension_type": "location",
+    "description": "Location angular F2.axis → F8.center_point",
+    "nominal_value": "245 mm",
+    "tolerance_or_class": "General Tol",
+    "raw_text": "245",
+    "has_explicit_tolerance": false,
+    "kind": "location",
+    "value": 245.0,
+    "tol": null,
+    "qualifiers": [
+      "BASIC"
+    ],
+    "multiplier": null,
+    "match_text": "245",
+    "match_numbers": [
+      245.0
+    ],
+    "match_tokens": [],
+    "instance_count": null,
+    "from_ref": {
+      "local_id": "F2",
+      "role": "axis"
+    },
+    "to_ref": {
+      "local_id": "F8",
+      "role": "center_point"
+    }
+  },
+  {
+    "spec_id": "front_view:LD6",
+    "callout_id": "LD6",
+    "section_id": "front_view",
+    "source_view": "front_view",
+    "feature_id": "F2",
+    "feature_name": "Small central hole",
+    "feature_type": "hole",
+    "spec_type": "dimensional",
+    "dimension_type": "location",
+    "description": "Location angular F2.axis → F9.center_point",
+    "nominal_value": "305 mm",
+    "tolerance_or_class": "General Tol",
+    "raw_text": "305",
+    "has_explicit_tolerance": false,
+    "kind": "location",
+    "value": 305.0,
+    "tol": null,
+    "qualifiers": [
+      "BASIC"
+    ],
+    "multiplier": null,
+    "match_text": "305",
+    "match_numbers": [
+      305.0
+    ],
+    "match_tokens": [],
+    "instance_count": null,
+    "from_ref": {
+      "local_id": "F2",
+      "role": "axis"
+    },
+    "to_ref": {
+      "local_id": "F9",
+      "role": "center_point"
+    }
+  },
+  {
+    "spec_id": "front_view:UD1",
+    "callout_id": "UD1",
+    "section_id": "front_view",
+    "source_view": "front_view",
+    "feature_id": "UNATTACHED",
+    "feature_name": "(unattached callout)",
+    "feature_type": "",
+    "spec_type": "dimensional",
+    "dimension_type": "radius",
+    "description": "Radius [REF]",
+    "nominal_value": "R 157 mm",
+    "tolerance_or_class": "General Tol",
+    "raw_text": "R157",
+    "has_explicit_tolerance": false,
+    "kind": "radius",
+    "value": 157.0,
+    "tol": null,
+    "qualifiers": [
+      "REF"
+    ],
+    "multiplier": null,
+    "match_text": "R157",
+    "match_numbers": [
+      157.0
+    ],
+    "match_tokens": [],
+    "instance_count": null
+  },
+  {
+    "spec_id": "front_view:UD2",
+    "callout_id": "UD2",
+    "section_id": "front_view",
+    "source_view": "front_view",
+    "feature_id": "UNATTACHED",
+    "feature_name": "(unattached callout)",
+    "feature_type": "",
+    "spec_type": "dimensional",
+    "dimension_type": "radius",
+    "description": "Radius [REF]",
+    "nominal_value": "R 149 mm",
+    "tolerance_or_class": "General Tol",
+    "raw_text": "R149",
+    "has_explicit_tolerance": false,
+    "kind": "radius",
+    "value": 149.0,
+    "tol": null,
+    "qualifiers": [
+      "REF"
+    ],
+    "multiplier": null,
+    "match_text": "R149",
+    "match_numbers": [
+      149.0
+    ],
+    "match_tokens": [],
+    "instance_count": null
+  },
+  {
+    "spec_id": "front_view:UD3",
+    "callout_id": "UD3",
+    "section_id": "front_view",
+    "source_view": "front_view",
+    "feature_id": "UNATTACHED",
+    "feature_name": "(unattached callout)",
+    "feature_type": "",
+    "spec_type": "dimensional",
+    "dimension_type": "radius",
+    "description": "Radius [REF]",
+    "nominal_value": "R 161 mm",
+    "tolerance_or_class": "General Tol",
+    "raw_text": "R161",
+    "has_explicit_tolerance": false,
+    "kind": "radius",
+    "value": 161.0,
+    "tol": null,
+    "qualifiers": [
+      "REF"
+    ],
+    "multiplier": null,
+    "match_text": "R161",
+    "match_numbers": [
+      161.0
+    ],
+    "match_tokens": [],
+    "instance_count": null
+  },
+  {
+    "spec_id": "front_view:UD4",
+    "callout_id": "UD4",
+    "section_id": "front_view",
+    "source_view": "front_view",
+    "feature_id": "UNATTACHED",
+    "feature_name": "(unattached callout)",
+    "feature_type": "",
+    "spec_type": "dimensional",
+    "dimension_type": "radius",
+    "description": "Radius [REF]",
+    "nominal_value": "R 130 mm",
+    "tolerance_or_class": "General Tol",
+    "raw_text": "R130",
+    "has_explicit_tolerance": false,
+    "kind": "radius",
+    "value": 130.0,
+    "tol": null,
+    "qualifiers": [
+      "REF"
+    ],
+    "multiplier": null,
+    "match_text": "R130",
+    "match_numbers": [
+      130.0
+    ],
+    "match_tokens": [],
+    "instance_count": null
+  },
+  {
+    "spec_id": "front_view:UD5",
+    "callout_id": "UD5",
+    "section_id": "front_view",
+    "source_view": "front_view",
+    "feature_id": "UNATTACHED",
+    "feature_name": "(unattached callout)",
+    "feature_type": "",
+    "spec_type": "dimensional",
+    "dimension_type": "angle",
+    "description": "Angle [BASIC]",
+    "nominal_value": "22°",
+    "tolerance_or_class": "General Tol",
+    "raw_text": "22°",
+    "has_explicit_tolerance": false,
+    "kind": "angle",
+    "value": 22.0,
+    "tol": null,
+    "qualifiers": [
+      "BASIC"
+    ],
+    "multiplier": null,
+    "match_text": "22°",
+    "match_numbers": [
+      22.0
+    ],
+    "match_tokens": [],
+    "instance_count": null
+  },
+  {
+    "spec_id": "front_view:UD6",
+    "callout_id": "UD6",
+    "section_id": "front_view",
+    "source_view": "front_view",
+    "feature_id": "UNATTACHED",
+    "feature_name": "(unattached callout)",
+    "feature_type": "",
+    "spec_type": "dimensional",
+    "dimension_type": "angle",
+    "description": "Angle [BASIC]",
+    "nominal_value": "22°",
+    "tolerance_or_class": "General Tol",
+    "raw_text": "22°",
+    "has_explicit_tolerance": false,
+    "kind": "angle",
+    "value": 22.0,
+    "tol": null,
+    "qualifiers": [
+      "BASIC"
+    ],
+    "multiplier": null,
+    "match_text": "22°",
+    "match_numbers": [
+      22.0
+    ],
+    "match_tokens": [],
+    "instance_count": null
+  },
+  {
+    "spec_id": "front_view:UD7",
+    "callout_id": "UD7",
+    "section_id": "front_view",
+    "source_view": "front_view",
+    "feature_id": "UNATTACHED",
+    "feature_name": "(unattached callout)",
+    "feature_type": "",
+    "spec_type": "dimensional",
+    "dimension_type": "angle",
+    "description": "Angle [BASIC]",
+    "nominal_value": "8°",
+    "tolerance_or_class": "General Tol",
+    "raw_text": "8°",
+    "has_explicit_tolerance": false,
+    "kind": "angle",
+    "value": 8.0,
+    "tol": null,
+    "qualifiers": [
+      "BASIC"
+    ],
+    "multiplier": null,
+    "match_text": "8°",
+    "match_numbers": [
+      8.0
+    ],
+    "match_tokens": [],
+    "instance_count": null
+  },
+  {
+    "spec_id": "front_view:UD8",
+    "callout_id": "UD8",
+    "section_id": "front_view",
+    "source_view": "front_view",
+    "feature_id": "UNATTACHED",
+    "feature_name": "(unattached callout)",
+    "feature_type": "",
+    "spec_type": "dimensional",
+    "dimension_type": "angle",
+    "description": "Angle [BASIC]",
+    "nominal_value": "30°",
+    "tolerance_or_class": "General Tol",
+    "raw_text": "30°",
+    "has_explicit_tolerance": false,
+    "kind": "angle",
+    "value": 30.0,
+    "tol": null,
+    "qualifiers": [
+      "BASIC"
+    ],
+    "multiplier": null,
+    "match_text": "30°",
+    "match_numbers": [
+      30.0
+    ],
+    "match_tokens": [],
+    "instance_count": null
+  },
+  {
+    "spec_id": "opposite_circular_view:F1_SD1",
+    "callout_id": "F1_SD1",
+    "section_id": "opposite_circular_view",
+    "source_view": "opposite_circular_view",
+    "feature_id": "F1",
+    "feature_name": "Circular perimeter identified by Ø298",
+    "feature_type": "turned_od",
+    "spec_type": "dimensional",
+    "dimension_type": "diameter",
+    "description": "Diameter [BASIC]",
+    "nominal_value": "Ø 298 mm",
+    "tolerance_or_class": "General Tol",
+    "raw_text": "Ø298",
+    "has_explicit_tolerance": false,
+    "kind": "diameter",
+    "value": 298.0,
+    "tol": null,
+    "qualifiers": [
+      "BASIC"
+    ],
+    "multiplier": null,
+    "match_text": "Ø298",
+    "match_numbers": [
+      298.0
+    ],
+    "match_tokens": [],
+    "instance_count": 1
+  },
+  {
+    "spec_id": "opposite_circular_view:F2_SD1",
+    "callout_id": "F2_SD1",
+    "section_id": "opposite_circular_view",
+    "source_view": "opposite_circular_view",
+    "feature_id": "F2",
+    "feature_name": "Concentric circular perimeter identified by Ø297",
+    "feature_type": "turned_od",
+    "spec_type": "dimensional",
+    "dimension_type": "diameter",
+    "description": "Diameter [BASIC]",
+    "nominal_value": "Ø 297 mm",
+    "tolerance_or_class": "General Tol",
+    "raw_text": "Ø297",
+    "has_explicit_tolerance": false,
+    "kind": "diameter",
+    "value": 297.0,
+    "tol": null,
+    "qualifiers": [
+      "BASIC"
+    ],
+    "multiplier": null,
+    "match_text": "Ø297",
+    "match_numbers": [
+      297.0
+    ],
+    "match_tokens": [],
+    "instance_count": 1
+  },
+  {
+    "spec_id": "opposite_circular_view:F3_SD1",
+    "callout_id": "F3_SD1",
+    "section_id": "opposite_circular_view",
+    "source_view": "opposite_circular_view",
+    "feature_id": "F3",
+    "feature_name": "Single shallow hole on the outer annular region",
+    "feature_type": "hole",
+    "spec_type": "dimensional",
+    "dimension_type": "diameter",
+    "description": "Diameter",
+    "nominal_value": "Ø 6.2 mm",
+    "tolerance_or_class": "+0.1/-0 mm",
+    "raw_text": "Ø6.2 +0.1/-0",
+    "has_explicit_tolerance": true,
+    "kind": "diameter",
+    "value": 6.2,
+    "tol": {
+      "form": "deviation",
+      "plus": 0.1,
+      "minus": 0.0
+    },
+    "qualifiers": [],
+    "multiplier": 1,
+    "match_text": "Ø6.2 +0.1/-0",
+    "match_numbers": [
+      6.2,
+      0.1
+    ],
+    "match_tokens": [],
+    "instance_count": 1
+  },
+  {
+    "spec_id": "opposite_circular_view:F3_SD2",
+    "callout_id": "F3_SD2",
+    "section_id": "opposite_circular_view",
+    "source_view": "opposite_circular_view",
+    "feature_id": "F3",
+    "feature_name": "Single shallow hole on the outer annular region",
+    "feature_type": "hole",
+    "spec_type": "dimensional",
+    "dimension_type": "depth",
+    "description": "Depth",
+    "nominal_value": "5 mm",
+    "tolerance_or_class": "General Tol",
+    "raw_text": "5",
+    "has_explicit_tolerance": false,
+    "kind": "depth",
+    "value": 5.0,
+    "tol": null,
+    "qualifiers": [],
+    "multiplier": null,
+    "match_text": "5",
+    "match_numbers": [
+      5.0
+    ],
+    "match_tokens": [],
+    "instance_count": 1
+  },
+  {
+    "spec_id": "opposite_circular_view:F3_GDT1",
+    "callout_id": "F3_GDT1",
+    "section_id": "opposite_circular_view",
+    "source_view": "opposite_circular_view",
+    "feature_id": "F3",
+    "feature_name": "Single shallow hole on the outer annular region",
+    "feature_type": "hole",
+    "spec_type": "geometric_tolerance",
+    "dimension_type": "position",
+    "description": "Position to datum A|B",
+    "nominal_value": "0.2 mm",
+    "tolerance_or_class": "0.2 mm",
+    "raw_text": "0.2 A B",
+    "has_explicit_tolerance": true,
+    "kind": "position",
+    "value": 0.2,
+    "tol": null,
+    "qualifiers": [],
+    "multiplier": null,
+    "match_text": "0.2 A B",
+    "match_numbers": [
+      0.2
+    ],
+    "match_tokens": [
+      "a",
+      "b"
+    ],
+    "instance_count": 1,
+    "tolerance_value_mm": 0.2,
+    "datum_references": [
+      "A",
+      "B"
+    ],
+    "material_condition": null,
+    "applied_to": "F3.center_point"
+  },
+  {
+    "spec_id": "opposite_circular_view:F4_SD1",
+    "callout_id": "F4_SD1",
+    "section_id": "opposite_circular_view",
+    "source_view": "opposite_circular_view",
+    "feature_id": "F4",
+    "feature_name": "Repeated lamella-related openings or spaces",
+    "feature_type": "slot",
+    "spec_type": "dimensional",
+    "dimension_type": "width",
+    "description": "Width",
+    "nominal_value": "39.5 mm",
+    "tolerance_or_class": "+0/-0.2 mm",
+    "raw_text": "39.5 +0/-0.2",
+    "has_explicit_tolerance": true,
+    "kind": "width",
+    "value": 39.5,
+    "tol": {
+      "form": "deviation",
+      "plus": 0.0,
+      "minus": 0.2
+    },
+    "qualifiers": [],
+    "multiplier": null,
+    "match_text": "39.5 +0/-0.2",
+    "match_numbers": [
+      39.5,
+      0.2
+    ],
+    "match_tokens": [],
+    "instance_count": 6
+  },
+  {
+    "spec_id": "opposite_circular_view:F4_SD2",
+    "callout_id": "F4_SD2",
+    "section_id": "opposite_circular_view",
+    "source_view": "opposite_circular_view",
+    "feature_id": "F4",
+    "feature_name": "Repeated lamella-related openings or spaces",
+    "feature_type": "slot",
+    "spec_type": "dimensional",
+    "dimension_type": "angular_pitch",
+    "description": "Angular pitch [BASIC]",
+    "nominal_value": "6X 60°",
+    "tolerance_or_class": "General Tol",
+    "raw_text": "6X 60°",
+    "has_explicit_tolerance": false,
+    "kind": "angular_pitch",
+    "value": 60.0,
+    "tol": null,
+    "qualifiers": [
+      "BASIC"
+    ],
+    "multiplier": 6,
+    "match_text": "6X 60°",
+    "match_numbers": [
+      60.0
+    ],
+    "match_tokens": [],
+    "instance_count": 6
+  },
+  {
+    "spec_id": "opposite_circular_view:F4_GDT1",
+    "callout_id": "F4_GDT1",
+    "section_id": "opposite_circular_view",
+    "source_view": "opposite_circular_view",
+    "feature_id": "F4",
+    "feature_name": "Repeated lamella-related openings or spaces",
+    "feature_type": "slot",
+    "spec_type": "geometric_tolerance",
+    "dimension_type": "parallelism",
+    "description": "Parallelism to datum A|B",
+    "nominal_value": "0.1 mm",
+    "tolerance_or_class": "0.1 mm",
+    "raw_text": "0.1 A B",
+    "has_explicit_tolerance": true,
+    "kind": "parallelism",
+    "value": 0.1,
+    "tol": null,
+    "qualifiers": [],
+    "multiplier": null,
+    "match_text": "0.1 A B",
+    "match_numbers": [
+      0.1
+    ],
+    "match_tokens": [
+      "a",
+      "b"
+    ],
+    "instance_count": 6,
+    "tolerance_value_mm": 0.1,
+    "datum_references": [
+      "A",
+      "B"
+    ],
+    "material_condition": null,
+    "applied_to": "F4.face_id"
+  },
+  {
+    "spec_id": "opposite_circular_view:F5_SD1",
+    "callout_id": "F5_SD1",
+    "section_id": "opposite_circular_view",
+    "source_view": "opposite_circular_view",
+    "feature_id": "F5",
+    "feature_name": "Repeated peripheral profile features",
+    "feature_type": "tooth_ring",
+    "spec_type": "dimensional",
+    "dimension_type": "angular_pitch",
+    "description": "Angular pitch [BASIC]",
+    "nominal_value": "36X 10°",
+    "tolerance_or_class": "General Tol",
+    "raw_text": "36X 10°",
+    "has_explicit_tolerance": false,
+    "kind": "angular_pitch",
+    "value": 10.0,
+    "tol": null,
+    "qualifiers": [
+      "BASIC"
+    ],
+    "multiplier": 36,
+    "match_text": "36X 10°",
+    "match_numbers": [
+      10.0
+    ],
+    "match_tokens": [],
+    "instance_count": null
+  },
+  {
+    "spec_id": "opposite_circular_view:F5_GDT1",
+    "callout_id": "F5_GDT1",
+    "section_id": "opposite_circular_view",
+    "source_view": "opposite_circular_view",
+    "feature_id": "F5",
+    "feature_name": "Repeated peripheral profile features",
+    "feature_type": "tooth_ring",
+    "spec_type": "geometric_tolerance",
+    "dimension_type": "profile_of_surface",
+    "description": "Profile of surface to datum A|B",
+    "nominal_value": "0.2 mm",
+    "tolerance_or_class": "0.2 mm",
+    "raw_text": "0.2 A B",
+    "has_explicit_tolerance": true,
+    "kind": "profile_of_surface",
+    "value": 0.2,
+    "tol": null,
+    "qualifiers": [],
+    "multiplier": null,
+    "match_text": "0.2 A B",
+    "match_numbers": [
+      0.2
+    ],
+    "match_tokens": [
+      "a",
+      "b"
+    ],
+    "instance_count": null,
+    "tolerance_value_mm": 0.2,
+    "datum_references": [
+      "A",
+      "B"
+    ],
+    "material_condition": null,
+    "applied_to": "F5.face_id"
+  },
+  {
+    "spec_id": "opposite_circular_view:LD1",
+    "callout_id": "LD1",
+    "section_id": "opposite_circular_view",
+    "source_view": "opposite_circular_view",
+    "feature_id": "F1",
+    "feature_name": "Circular perimeter identified by Ø298",
+    "feature_type": "turned_od",
+    "spec_type": "dimensional",
+    "dimension_type": "location",
+    "description": "Location angular F1.axis → F3.center_point",
+    "nominal_value": "30 mm",
+    "tolerance_or_class": "General Tol",
+    "raw_text": "30",
+    "has_explicit_tolerance": false,
+    "kind": "location",
+    "value": 30.0,
+    "tol": null,
+    "qualifiers": [
+      "BASIC"
+    ],
+    "multiplier": null,
+    "match_text": "30",
+    "match_numbers": [
+      30.0
+    ],
+    "match_tokens": [],
+    "instance_count": 1,
+    "from_ref": {
+      "local_id": "F1",
+      "role": "axis"
+    },
+    "to_ref": {
+      "local_id": "F3",
+      "role": "center_point"
+    }
+  },
+  {
+    "spec_id": "opposite_circular_view:UD1",
+    "callout_id": "UD1",
+    "section_id": "opposite_circular_view",
+    "source_view": "opposite_circular_view",
+    "feature_id": "UNATTACHED",
+    "feature_name": "(unattached callout)",
+    "feature_type": "",
+    "spec_type": "dimensional",
+    "dimension_type": "angle",
+    "description": "Angle [BASIC]",
+    "nominal_value": "12°",
+    "tolerance_or_class": "General Tol",
+    "raw_text": "12°",
+    "has_explicit_tolerance": false,
+    "kind": "angle",
+    "value": 12.0,
+    "tol": null,
+    "qualifiers": [
+      "BASIC"
+    ],
+    "multiplier": null,
+    "match_text": "12°",
+    "match_numbers": [
+      12.0
+    ],
+    "match_tokens": [],
+    "instance_count": null
+  },
+  {
+    "spec_id": "opposite_circular_view:UD2",
+    "callout_id": "UD2",
+    "section_id": "opposite_circular_view",
+    "source_view": "opposite_circular_view",
+    "feature_id": "UNATTACHED",
+    "feature_name": "(unattached callout)",
+    "feature_type": "",
+    "spec_type": "dimensional",
+    "dimension_type": "angle",
+    "description": "Angle [BASIC]",
+    "nominal_value": "25°",
+    "tolerance_or_class": "General Tol",
+    "raw_text": "25°",
+    "has_explicit_tolerance": false,
+    "kind": "angle",
+    "value": 25.0,
+    "tol": null,
+    "qualifiers": [
+      "BASIC"
+    ],
+    "multiplier": null,
+    "match_text": "25°",
+    "match_numbers": [
+      25.0
+    ],
+    "match_tokens": [],
+    "instance_count": null
+  },
+  {
+    "spec_id": "opposite_circular_view:UD3",
+    "callout_id": "UD3",
+    "section_id": "opposite_circular_view",
+    "source_view": "opposite_circular_view",
+    "feature_id": "UNATTACHED",
+    "feature_name": "(unattached callout)",
+    "feature_type": "",
+    "spec_type": "dimensional",
+    "dimension_type": "angle",
+    "description": "Angle [BASIC]",
+    "nominal_value": "35°",
+    "tolerance_or_class": "General Tol",
+    "raw_text": "35°",
+    "has_explicit_tolerance": false,
+    "kind": "angle",
+    "value": 35.0,
+    "tol": null,
+    "qualifiers": [
+      "BASIC"
+    ],
+    "multiplier": null,
+    "match_text": "35°",
+    "match_numbers": [
+      35.0
+    ],
+    "match_tokens": [],
+    "instance_count": null
+  },
+  {
+    "spec_id": "opposite_circular_view:UD4",
+    "callout_id": "UD4",
+    "section_id": "opposite_circular_view",
+    "source_view": "opposite_circular_view",
+    "feature_id": "UNATTACHED",
+    "feature_name": "(unattached callout)",
+    "feature_type": "",
+    "spec_type": "dimensional",
+    "dimension_type": "angle",
+    "description": "Angle",
+    "nominal_value": "55°",
+    "tolerance_or_class": "+2/-2 mm",
+    "raw_text": "55° +2/-2",
+    "has_explicit_tolerance": true,
+    "kind": "angle",
+    "value": 55.0,
+    "tol": {
+      "form": "deviation",
+      "plus": 2.0,
+      "minus": 2.0
+    },
+    "qualifiers": [],
+    "multiplier": null,
+    "match_text": "55° +2/-2",
+    "match_numbers": [
+      55.0,
+      2.0,
+      2.0
+    ],
+    "match_tokens": [],
+    "instance_count": null
+  },
+  {
+    "spec_id": "opposite_circular_view:UD5",
+    "callout_id": "UD5",
+    "section_id": "opposite_circular_view",
+    "source_view": "opposite_circular_view",
+    "feature_id": "UNATTACHED",
+    "feature_name": "(unattached callout)",
+    "feature_type": "",
+    "spec_type": "dimensional",
+    "dimension_type": "angle",
+    "description": "Angle [BASIC]",
+    "nominal_value": "60°",
+    "tolerance_or_class": "General Tol",
+    "raw_text": "60°",
+    "has_explicit_tolerance": false,
+    "kind": "angle",
+    "value": 60.0,
+    "tol": null,
+    "qualifiers": [
+      "BASIC"
+    ],
+    "multiplier": null,
+    "match_text": "60°",
+    "match_numbers": [
+      60.0
+    ],
+    "match_tokens": [],
+    "instance_count": null
+  },
+  {
+    "spec_id": "opposite_circular_view:UD6",
+    "callout_id": "UD6",
+    "section_id": "opposite_circular_view",
+    "source_view": "opposite_circular_view",
+    "feature_id": "UNATTACHED",
+    "feature_name": "(unattached callout)",
+    "feature_type": "",
+    "spec_type": "dimensional",
+    "dimension_type": "angle",
+    "description": "Angle [BASIC]",
+    "nominal_value": "85°",
+    "tolerance_or_class": "General Tol",
+    "raw_text": "85°",
+    "has_explicit_tolerance": false,
+    "kind": "angle",
+    "value": 85.0,
+    "tol": null,
+    "qualifiers": [
+      "BASIC"
+    ],
+    "multiplier": null,
+    "match_text": "85°",
+    "match_numbers": [
+      85.0
+    ],
+    "match_tokens": [],
+    "instance_count": null
+  },
+  {
+    "spec_id": "opposite_circular_view:UD7",
+    "callout_id": "UD7",
+    "section_id": "opposite_circular_view",
+    "source_view": "opposite_circular_view",
+    "feature_id": "UNATTACHED",
+    "feature_name": "(unattached callout)",
+    "feature_type": "",
+    "spec_type": "dimensional",
+    "dimension_type": "angle",
+    "description": "Angle [BASIC]",
+    "nominal_value": "120°",
+    "tolerance_or_class": "General Tol",
+    "raw_text": "120°",
+    "has_explicit_tolerance": false,
+    "kind": "angle",
+    "value": 120.0,
+    "tol": null,
+    "qualifiers": [
+      "BASIC"
+    ],
+    "multiplier": null,
+    "match_text": "120°",
+    "match_numbers": [
+      120.0
+    ],
+    "match_tokens": [],
+    "instance_count": null
+  },
+  {
+    "spec_id": "opposite_circular_view:UD8",
+    "callout_id": "UD8",
+    "section_id": "opposite_circular_view",
+    "source_view": "opposite_circular_view",
+    "feature_id": "UNATTACHED",
+    "feature_name": "(unattached callout)",
+    "feature_type": "",
+    "spec_type": "dimensional",
+    "dimension_type": "angle",
+    "description": "Angle [BASIC]",
+    "nominal_value": "145°",
+    "tolerance_or_class": "General Tol",
+    "raw_text": "145°",
+    "has_explicit_tolerance": false,
+    "kind": "angle",
+    "value": 145.0,
+    "tol": null,
+    "qualifiers": [
+      "BASIC"
+    ],
+    "multiplier": null,
+    "match_text": "145°",
+    "match_numbers": [
+      145.0
+    ],
+    "match_tokens": [],
+    "instance_count": null
+  },
+  {
+    "spec_id": "opposite_circular_view:UD9",
+    "callout_id": "UD9",
+    "section_id": "opposite_circular_view",
+    "source_view": "opposite_circular_view",
+    "feature_id": "UNATTACHED",
+    "feature_name": "(unattached callout)",
+    "feature_type": "",
+    "spec_type": "dimensional",
+    "dimension_type": "angle",
+    "description": "Angle [BASIC]",
+    "nominal_value": "180°",
+    "tolerance_or_class": "General Tol",
+    "raw_text": "180°",
+    "has_explicit_tolerance": false,
+    "kind": "angle",
+    "value": 180.0,
+    "tol": null,
+    "qualifiers": [
+      "BASIC"
+    ],
+    "multiplier": null,
+    "match_text": "180°",
+    "match_numbers": [
+      180.0
+    ],
+    "match_tokens": [],
+    "instance_count": null
+  },
+  {
+    "spec_id": "opposite_circular_view:UD10",
+    "callout_id": "UD10",
+    "section_id": "opposite_circular_view",
+    "source_view": "opposite_circular_view",
+    "feature_id": "UNATTACHED",
+    "feature_name": "(unattached callout)",
+    "feature_type": "",
+    "spec_type": "dimensional",
+    "dimension_type": "angle",
+    "description": "Angle [BASIC]",
+    "nominal_value": "215°",
+    "tolerance_or_class": "General Tol",
+    "raw_text": "215°",
+    "has_explicit_tolerance": false,
+    "kind": "angle",
+    "value": 215.0,
+    "tol": null,
+    "qualifiers": [
+      "BASIC"
+    ],
+    "multiplier": null,
+    "match_text": "215°",
+    "match_numbers": [
+      215.0
+    ],
+    "match_tokens": [],
+    "instance_count": null
+  },
+  {
+    "spec_id": "opposite_circular_view:UD11",
+    "callout_id": "UD11",
+    "section_id": "opposite_circular_view",
+    "source_view": "opposite_circular_view",
+    "feature_id": "UNATTACHED",
+    "feature_name": "(unattached callout)",
+    "feature_type": "",
+    "spec_type": "dimensional",
+    "dimension_type": "angle",
+    "description": "Angle [BASIC]",
+    "nominal_value": "240°",
+    "tolerance_or_class": "General Tol",
+    "raw_text": "240°",
+    "has_explicit_tolerance": false,
+    "kind": "angle",
+    "value": 240.0,
+    "tol": null,
+    "qualifiers": [
+      "BASIC"
+    ],
+    "multiplier": null,
+    "match_text": "240°",
+    "match_numbers": [
+      240.0
+    ],
+    "match_tokens": [],
+    "instance_count": null
+  },
+  {
+    "spec_id": "opposite_circular_view:UD12",
+    "callout_id": "UD12",
+    "section_id": "opposite_circular_view",
+    "source_view": "opposite_circular_view",
+    "feature_id": "UNATTACHED",
+    "feature_name": "(unattached callout)",
+    "feature_type": "",
+    "spec_type": "dimensional",
+    "dimension_type": "angle",
+    "description": "Angle [BASIC]",
+    "nominal_value": "265°",
+    "tolerance_or_class": "General Tol",
+    "raw_text": "265°",
+    "has_explicit_tolerance": false,
+    "kind": "angle",
+    "value": 265.0,
+    "tol": null,
+    "qualifiers": [
+      "BASIC"
+    ],
+    "multiplier": null,
+    "match_text": "265°",
+    "match_numbers": [
+      265.0
+    ],
+    "match_tokens": [],
+    "instance_count": null
+  },
+  {
+    "spec_id": "opposite_circular_view:UD13",
+    "callout_id": "UD13",
+    "section_id": "opposite_circular_view",
+    "source_view": "opposite_circular_view",
+    "feature_id": "UNATTACHED",
+    "feature_name": "(unattached callout)",
+    "feature_type": "",
+    "spec_type": "dimensional",
+    "dimension_type": "angle",
+    "description": "Angle [BASIC]",
+    "nominal_value": "300°",
+    "tolerance_or_class": "General Tol",
+    "raw_text": "300°",
+    "has_explicit_tolerance": false,
+    "kind": "angle",
+    "value": 300.0,
+    "tol": null,
+    "qualifiers": [
+      "BASIC"
+    ],
+    "multiplier": null,
+    "match_text": "300°",
+    "match_numbers": [
+      300.0
+    ],
+    "match_tokens": [],
+    "instance_count": null
+  },
+  {
+    "spec_id": "opposite_circular_view:UD14",
+    "callout_id": "UD14",
+    "section_id": "opposite_circular_view",
+    "source_view": "opposite_circular_view",
+    "feature_id": "UNATTACHED",
+    "feature_name": "(unattached callout)",
+    "feature_type": "",
+    "spec_type": "dimensional",
+    "dimension_type": "angle",
+    "description": "Angle [BASIC]",
+    "nominal_value": "325°",
+    "tolerance_or_class": "General Tol",
+    "raw_text": "325°",
+    "has_explicit_tolerance": false,
+    "kind": "angle",
+    "value": 325.0,
+    "tol": null,
+    "qualifiers": [
+      "BASIC"
+    ],
+    "multiplier": null,
+    "match_text": "325°",
+    "match_numbers": [
+      325.0
+    ],
+    "match_tokens": [],
+    "instance_count": null
+  },
+  {
+    "spec_id": "section_aa:F1_SD1",
+    "callout_id": "F1_SD1",
+    "section_id": "section_aa",
+    "source_view": "A-A",
+    "feature_id": "F1",
+    "feature_name": "Outer turned rim, Ø322",
+    "feature_type": "turned_od",
+    "spec_type": "dimensional",
+    "dimension_type": "diameter",
+    "description": "Diameter",
+    "nominal_value": "Ø 322 mm",
+    "tolerance_or_class": "+0/-0.2 mm",
+    "raw_text": "Ø322 +0/-0.2",
+    "has_explicit_tolerance": true,
+    "kind": "diameter",
+    "value": 322.0,
+    "tol": {
+      "form": "deviation",
+      "plus": 0.0,
+      "minus": 0.2
+    },
+    "qualifiers": [],
+    "multiplier": null,
+    "match_text": "Ø322 +0/-0.2",
+    "match_numbers": [
+      322.0,
+      0.2
+    ],
+    "match_tokens": [],
+    "instance_count": 1
+  },
+  {
+    "spec_id": "section_aa:F1_GDT1",
+    "callout_id": "F1_GDT1",
+    "section_id": "section_aa",
+    "source_view": "A-A",
+    "feature_id": "F1",
+    "feature_name": "Outer turned rim, Ø322",
+    "feature_type": "turned_od",
+    "spec_type": "geometric_tolerance",
+    "dimension_type": "parallelism",
+    "description": "Parallelism to datum A",
+    "nominal_value": "0.05 mm",
+    "tolerance_or_class": "0.05 mm",
+    "raw_text": "0.05 A",
+    "has_explicit_tolerance": true,
+    "kind": "parallelism",
+    "value": 0.05,
+    "tol": null,
+    "qualifiers": [],
+    "multiplier": null,
+    "match_text": "0.05 A",
+    "match_numbers": [
+      0.05
+    ],
+    "match_tokens": [
+      "a"
+    ],
+    "instance_count": 1,
+    "tolerance_value_mm": 0.05,
+    "datum_references": [
+      "A"
+    ],
+    "material_condition": null,
+    "applied_to": "F1.face_id"
+  },
+  {
+    "spec_id": "section_aa:F1_GDT2",
+    "callout_id": "F1_GDT2",
+    "section_id": "section_aa",
+    "source_view": "A-A",
+    "feature_id": "F1",
+    "feature_name": "Outer turned rim, Ø322",
+    "feature_type": "turned_od",
+    "spec_type": "geometric_tolerance",
+    "dimension_type": "position",
+    "description": "Position to datum A",
+    "nominal_value": "0.1 mm",
+    "tolerance_or_class": "0.1 mm",
+    "raw_text": "0.1 A",
+    "has_explicit_tolerance": true,
+    "kind": "position",
+    "value": 0.1,
+    "tol": null,
+    "qualifiers": [],
+    "multiplier": null,
+    "match_text": "0.1 A",
+    "match_numbers": [
+      0.1
+    ],
+    "match_tokens": [
+      "a"
+    ],
+    "instance_count": 1,
+    "tolerance_value_mm": 0.1,
+    "datum_references": [
+      "A"
+    ],
+    "material_condition": null,
+    "applied_to": "F1.face_id"
+  },
+  {
+    "spec_id": "section_aa:F1_GDT3",
+    "callout_id": "F1_GDT3",
+    "section_id": "section_aa",
+    "source_view": "A-A",
+    "feature_id": "F1",
+    "feature_name": "Outer turned rim, Ø322",
+    "feature_type": "turned_od",
+    "spec_type": "geometric_tolerance",
+    "dimension_type": "position",
+    "description": "Position to datum A|B|C",
+    "nominal_value": "0.6 mm",
+    "tolerance_or_class": "0.6 mm",
+    "raw_text": "0.6 A B C",
+    "has_explicit_tolerance": true,
+    "kind": "position",
+    "value": 0.6,
+    "tol": null,
+    "qualifiers": [],
+    "multiplier": null,
+    "match_text": "0.6 A B C",
+    "match_numbers": [
+      0.6
+    ],
+    "match_tokens": [
+      "a",
+      "b",
+      "c"
+    ],
+    "instance_count": 1,
+    "tolerance_value_mm": 0.6,
+    "datum_references": [
+      "A",
+      "B",
+      "C"
+    ],
+    "material_condition": null,
+    "applied_to": "F1.face_id"
+  },
+  {
+    "spec_id": "section_aa:F1_GDT4",
+    "callout_id": "F1_GDT4",
+    "section_id": "section_aa",
+    "source_view": "A-A",
+    "feature_id": "F1",
+    "feature_name": "Outer turned rim, Ø322",
+    "feature_type": "turned_od",
+    "spec_type": "geometric_tolerance",
+    "dimension_type": "position",
+    "description": "Position to datum A|B|RC",
+    "nominal_value": "1 mm",
+    "tolerance_or_class": "1 mm",
+    "raw_text": "1 A B RC",
+    "has_explicit_tolerance": true,
+    "kind": "position",
+    "value": 1.0,
+    "tol": null,
+    "qualifiers": [],
+    "multiplier": null,
+    "match_text": "1 A B RC",
+    "match_numbers": [
+      1.0
+    ],
+    "match_tokens": [
+      "a",
+      "b",
+      "rc"
+    ],
+    "instance_count": 1,
+    "tolerance_value_mm": 1.0,
+    "datum_references": [
+      "A",
+      "B",
+      "RC"
+    ],
+    "material_condition": null,
+    "applied_to": "F1.face_id"
+  },
+  {
+    "spec_id": "section_aa:F1_SF",
+    "callout_id": "F1_SF",
+    "section_id": "section_aa",
+    "source_view": "A-A",
+    "feature_id": "F1",
+    "feature_name": "Outer turned rim, Ø322",
+    "feature_type": "turned_od",
+    "spec_type": "surface_finish",
+    "dimension_type": "surface_finish",
+    "description": "Surface finish requirement",
+    "nominal_value": "x",
+    "tolerance_or_class": "x",
+    "raw_text": "x",
+    "has_explicit_tolerance": false,
+    "kind": "surface_finish",
+    "value": null,
+    "tol": null,
+    "qualifiers": [],
+    "multiplier": null,
+    "match_text": "x",
+    "match_numbers": [],
+    "match_tokens": [],
+    "instance_count": 1,
+    "surface_finish_ra": null,
+    "surface_finish_rz": null
+  },
+  {
+    "spec_id": "section_aa:F2_SD1",
+    "callout_id": "F2_SD1",
+    "section_id": "section_aa",
+    "source_view": "A-A",
+    "feature_id": "F2",
+    "feature_name": "Turned diameter Ø317 reference",
+    "feature_type": "turned_od",
+    "spec_type": "dimensional",
+    "dimension_type": "diameter",
+    "description": "Diameter [REF]",
+    "nominal_value": "Ø 317 mm",
+    "tolerance_or_class": "+0.2/-0 mm",
+    "raw_text": "Ø317 +0.2/-0",
+    "has_explicit_tolerance": true,
+    "kind": "diameter",
+    "value": 317.0,
+    "tol": {
+      "form": "deviation",
+      "plus": 0.2,
+      "minus": 0.0
+    },
+    "qualifiers": [
+      "REF"
+    ],
+    "multiplier": null,
+    "match_text": "Ø317 +0.2/-0",
+    "match_numbers": [
+      317.0,
+      0.2
+    ],
+    "match_tokens": [],
+    "instance_count": 1
+  },
+  {
+    "spec_id": "section_aa:F2_GDT1",
+    "callout_id": "F2_GDT1",
+    "section_id": "section_aa",
+    "source_view": "A-A",
+    "feature_id": "F2",
+    "feature_name": "Turned diameter Ø317 reference",
+    "feature_type": "turned_od",
+    "spec_type": "geometric_tolerance",
+    "dimension_type": "position",
+    "description": "Position to datum A",
+    "nominal_value": "0.5 mm",
+    "tolerance_or_class": "0.5 mm",
+    "raw_text": "0.5 A",
+    "has_explicit_tolerance": true,
+    "kind": "position",
+    "value": 0.5,
+    "tol": null,
+    "qualifiers": [],
+    "multiplier": null,
+    "match_text": "0.5 A",
+    "match_numbers": [
+      0.5
+    ],
+    "match_tokens": [
+      "a"
+    ],
+    "instance_count": 1,
+    "tolerance_value_mm": 0.5,
+    "datum_references": [
+      "A"
+    ],
+    "material_condition": null,
+    "applied_to": "F2.face_id"
+  },
+  {
+    "spec_id": "section_aa:F2_GDT2",
+    "callout_id": "F2_GDT2",
+    "section_id": "section_aa",
+    "source_view": "A-A",
+    "feature_id": "F2",
+    "feature_name": "Turned diameter Ø317 reference",
+    "feature_type": "turned_od",
+    "spec_type": "geometric_tolerance",
+    "dimension_type": "position",
+    "description": "Position to datum A",
+    "nominal_value": "0.3 mm",
+    "tolerance_or_class": "0.3 mm",
+    "raw_text": "0.3 A",
+    "has_explicit_tolerance": true,
+    "kind": "position",
+    "value": 0.3,
+    "tol": null,
+    "qualifiers": [],
+    "multiplier": null,
+    "match_text": "0.3 A",
+    "match_numbers": [
+      0.3
+    ],
+    "match_tokens": [
+      "a"
+    ],
+    "instance_count": 1,
+    "tolerance_value_mm": 0.3,
+    "datum_references": [
+      "A"
+    ],
+    "material_condition": null,
+    "applied_to": "F2.face_id"
+  },
+  {
+    "spec_id": "section_aa:F2_GDT3",
+    "callout_id": "F2_GDT3",
+    "section_id": "section_aa",
+    "source_view": "A-A",
+    "feature_id": "F2",
+    "feature_name": "Turned diameter Ø317 reference",
+    "feature_type": "turned_od",
+    "spec_type": "geometric_tolerance",
+    "dimension_type": "parallelism",
+    "description": "Parallelism to datum A",
+    "nominal_value": "0.1 mm",
+    "tolerance_or_class": "0.1 mm",
+    "raw_text": "0.1 A",
+    "has_explicit_tolerance": true,
+    "kind": "parallelism",
+    "value": 0.1,
+    "tol": null,
+    "qualifiers": [],
+    "multiplier": null,
+    "match_text": "0.1 A",
+    "match_numbers": [
+      0.1
+    ],
+    "match_tokens": [
+      "a"
+    ],
+    "instance_count": 1,
+    "tolerance_value_mm": 0.1,
+    "datum_references": [
+      "A"
+    ],
+    "material_condition": null,
+    "applied_to": "F2.face_id"
+  },
+  {
+    "spec_id": "section_aa:F3_SD1",
+    "callout_id": "F3_SD1",
+    "section_id": "section_aa",
+    "source_view": "A-A",
+    "feature_id": "F3",
+    "feature_name": "Turned diameter Ø314",
+    "feature_type": "turned_od",
+    "spec_type": "dimensional",
+    "dimension_type": "diameter",
+    "description": "Diameter",
+    "nominal_value": "Ø 314 mm",
+    "tolerance_or_class": "+0/-0.5 mm",
+    "raw_text": "Ø314 +0/-0.5",
+    "has_explicit_tolerance": true,
+    "kind": "diameter",
+    "value": 314.0,
+    "tol": {
+      "form": "deviation",
+      "plus": 0.0,
+      "minus": 0.5
+    },
+    "qualifiers": [],
+    "multiplier": null,
+    "match_text": "Ø314 +0/-0.5",
+    "match_numbers": [
+      314.0,
+      0.5
+    ],
+    "match_tokens": [],
+    "instance_count": 1
+  },
+  {
+    "spec_id": "section_aa:F3_GDT1",
+    "callout_id": "F3_GDT1",
+    "section_id": "section_aa",
+    "source_view": "A-A",
+    "feature_id": "F3",
+    "feature_name": "Turned diameter Ø314",
+    "feature_type": "turned_od",
+    "spec_type": "geometric_tolerance",
+    "dimension_type": "position",
+    "description": "Position to datum RA",
+    "nominal_value": "1 mm",
+    "tolerance_or_class": "1 mm",
+    "raw_text": "1 RA",
+    "has_explicit_tolerance": true,
+    "kind": "position",
+    "value": 1.0,
+    "tol": null,
+    "qualifiers": [],
+    "multiplier": null,
+    "match_text": "1 RA",
+    "match_numbers": [
+      1.0
+    ],
+    "match_tokens": [
+      "ra"
+    ],
+    "instance_count": 1,
+    "tolerance_value_mm": 1.0,
+    "datum_references": [
+      "RA"
+    ],
+    "material_condition": null,
+    "applied_to": "F3.face_id"
+  },
+  {
+    "spec_id": "section_aa:F4_SD1",
+    "callout_id": "F4_SD1",
+    "section_id": "section_aa",
+    "source_view": "A-A",
+    "feature_id": "F4",
+    "feature_name": "Turned diameter Ø282",
+    "feature_type": "turned_od",
+    "spec_type": "dimensional",
+    "dimension_type": "diameter",
+    "description": "Diameter",
+    "nominal_value": "Ø 282 mm",
+    "tolerance_or_class": "h7",
+    "raw_text": "Ø282 h7",
+    "has_explicit_tolerance": true,
+    "kind": "diameter",
+    "value": 282.0,
+    "tol": {
+      "form": "fit",
+      "letter": "h",
+      "grade": "7"
+    },
+    "qualifiers": [],
+    "multiplier": null,
+    "match_text": "Ø282 h7",
+    "match_numbers": [
+      282.0
+    ],
+    "match_tokens": [
+      "h7"
+    ],
+    "instance_count": 1
+  },
+  {
+    "spec_id": "section_aa:F4_GDT1",
+    "callout_id": "F4_GDT1",
+    "section_id": "section_aa",
+    "source_view": "A-A",
+    "feature_id": "F4",
+    "feature_name": "Turned diameter Ø282",
+    "feature_type": "turned_od",
+    "spec_type": "geometric_tolerance",
+    "dimension_type": "perpendicularity",
+    "description": "Perpendicularity to datum A",
+    "nominal_value": "0.05 mm",
+    "tolerance_or_class": "0.05 mm",
+    "raw_text": "0.05 A",
+    "has_explicit_tolerance": true,
+    "kind": "perpendicularity",
+    "value": 0.05,
+    "tol": null,
+    "qualifiers": [],
+    "multiplier": null,
+    "match_text": "0.05 A",
+    "match_numbers": [
+      0.05
+    ],
+    "match_tokens": [
+      "a"
+    ],
+    "instance_count": 1,
+    "tolerance_value_mm": 0.05,
+    "datum_references": [
+      "A"
+    ],
+    "material_condition": null,
+    "applied_to": "F4.face_id"
+  },
+  {
+    "spec_id": "section_aa:F4_GDT2",
+    "callout_id": "F4_GDT2",
+    "section_id": "section_aa",
+    "source_view": "A-A",
+    "feature_id": "F4",
+    "feature_name": "Turned diameter Ø282",
+    "feature_type": "turned_od",
+    "spec_type": "geometric_tolerance",
+    "dimension_type": "position",
+    "description": "Position to datum RA|RB",
+    "nominal_value": "2 mm",
+    "tolerance_or_class": "2 mm",
+    "raw_text": "2 RA RB",
+    "has_explicit_tolerance": true,
+    "kind": "position",
+    "value": 2.0,
+    "tol": null,
+    "qualifiers": [],
+    "multiplier": null,
+    "match_text": "2 RA RB",
+    "match_numbers": [
+      2.0
+    ],
+    "match_tokens": [
+      "ra",
+      "rb"
+    ],
+    "instance_count": 1,
+    "tolerance_value_mm": 2.0,
+    "datum_references": [
+      "RA",
+      "RB"
+    ],
+    "material_condition": null,
+    "applied_to": "F4.face_id"
+  },
+  {
+    "spec_id": "section_aa:F4_SF",
+    "callout_id": "F4_SF",
+    "section_id": "section_aa",
+    "source_view": "A-A",
+    "feature_id": "F4",
+    "feature_name": "Turned diameter Ø282",
+    "feature_type": "turned_od",
+    "spec_type": "surface_finish",
+    "dimension_type": "surface_finish",
+    "description": "Surface finish requirement",
+    "nominal_value": "z",
+    "tolerance_or_class": "z",
+    "raw_text": "z",
+    "has_explicit_tolerance": false,
+    "kind": "surface_finish",
+    "value": null,
+    "tol": null,
+    "qualifiers": [],
+    "multiplier": null,
+    "match_text": "z",
+    "match_numbers": [],
+    "match_tokens": [],
+    "instance_count": 1,
+    "surface_finish_ra": null,
+    "surface_finish_rz": null
+  },
+  {
+    "spec_id": "section_aa:F5_SD1",
+    "callout_id": "F5_SD1",
+    "section_id": "section_aa",
+    "source_view": "A-A",
+    "feature_id": "F5",
+    "feature_name": "Turned internal diameter Ø264",
+    "feature_type": "turned_id",
+    "spec_type": "dimensional",
+    "dimension_type": "diameter",
+    "description": "Diameter",
+    "nominal_value": "Ø 264 mm",
+    "tolerance_or_class": "General Tol",
+    "raw_text": "Ø264",
+    "has_explicit_tolerance": false,
+    "kind": "diameter",
+    "value": 264.0,
+    "tol": null,
+    "qualifiers": [],
+    "multiplier": null,
+    "match_text": "Ø264",
+    "match_numbers": [
+      264.0
+    ],
+    "match_tokens": [],
+    "instance_count": 1
+  },
+  {
+    "spec_id": "section_aa:F5_GDT1",
+    "callout_id": "F5_GDT1",
+    "section_id": "section_aa",
+    "source_view": "A-A",
+    "feature_id": "F5",
+    "feature_name": "Turned internal diameter Ø264",
+    "feature_type": "turned_id",
+    "spec_type": "geometric_tolerance",
+    "dimension_type": "position",
+    "description": "Position to datum A",
+    "nominal_value": "0.2 mm",
+    "tolerance_or_class": "0.2 mm",
+    "raw_text": "0.2 A",
+    "has_explicit_tolerance": true,
+    "kind": "position",
+    "value": 0.2,
+    "tol": null,
+    "qualifiers": [],
+    "multiplier": null,
+    "match_text": "0.2 A",
+    "match_numbers": [
+      0.2
+    ],
+    "match_tokens": [
+      "a"
+    ],
+    "instance_count": 1,
+    "tolerance_value_mm": 0.2,
+    "datum_references": [
+      "A"
+    ],
+    "material_condition": null,
+    "applied_to": "F5.face_id"
+  },
+  {
+    "spec_id": "section_aa:F5_GDT2",
+    "callout_id": "F5_GDT2",
+    "section_id": "section_aa",
+    "source_view": "A-A",
+    "feature_id": "F5",
+    "feature_name": "Turned internal diameter Ø264",
+    "feature_type": "turned_id",
+    "spec_type": "geometric_tolerance",
+    "dimension_type": "parallelism",
+    "description": "Parallelism to datum A",
+    "nominal_value": "0.1 mm",
+    "tolerance_or_class": "0.1 mm",
+    "raw_text": "0.1 A",
+    "has_explicit_tolerance": true,
+    "kind": "parallelism",
+    "value": 0.1,
+    "tol": null,
+    "qualifiers": [],
+    "multiplier": null,
+    "match_text": "0.1 A",
+    "match_numbers": [
+      0.1
+    ],
+    "match_tokens": [
+      "a"
+    ],
+    "instance_count": 1,
+    "tolerance_value_mm": 0.1,
+    "datum_references": [
+      "A"
+    ],
+    "material_condition": null,
+    "applied_to": "F5.face_id"
+  },
+  {
+    "spec_id": "section_aa:F6_SD1",
+    "callout_id": "F6_SD1",
+    "section_id": "section_aa",
+    "source_view": "A-A",
+    "feature_id": "F6",
+    "feature_name": "Turned internal diameter Ø207",
+    "feature_type": "turned_id",
+    "spec_type": "dimensional",
+    "dimension_type": "diameter",
+    "description": "Diameter",
+    "nominal_value": "Ø 207 mm",
+    "tolerance_or_class": "General Tol",
+    "raw_text": "Ø207",
+    "has_explicit_tolerance": false,
+    "kind": "diameter",
+    "value": 207.0,
+    "tol": null,
+    "qualifiers": [],
+    "multiplier": null,
+    "match_text": "Ø207",
+    "match_numbers": [
+      207.0
+    ],
+    "match_tokens": [],
+    "instance_count": 1
+  },
+  {
+    "spec_id": "section_aa:F6_GDT1",
+    "callout_id": "F6_GDT1",
+    "section_id": "section_aa",
+    "source_view": "A-A",
+    "feature_id": "F6",
+    "feature_name": "Turned internal diameter Ø207",
+    "feature_type": "turned_id",
+    "spec_type": "geometric_tolerance",
+    "dimension_type": "runout",
+    "description": "Runout to datum A|B",
+    "nominal_value": "0.06 mm",
+    "tolerance_or_class": "0.06 mm",
+    "raw_text": "0.06 A B",
+    "has_explicit_tolerance": true,
+    "kind": "runout",
+    "value": 0.06,
+    "tol": null,
+    "qualifiers": [],
+    "multiplier": null,
+    "match_text": "0.06 A B",
+    "match_numbers": [
+      0.06
+    ],
+    "match_tokens": [
+      "a",
+      "b"
+    ],
+    "instance_count": 1,
+    "tolerance_value_mm": 0.06,
+    "datum_references": [
+      "A",
+      "B"
+    ],
+    "material_condition": null,
+    "applied_to": "F6.face_id"
+  },
+  {
+    "spec_id": "section_aa:F6_SF",
+    "callout_id": "F6_SF",
+    "section_id": "section_aa",
+    "source_view": "A-A",
+    "feature_id": "F6",
+    "feature_name": "Turned internal diameter Ø207",
+    "feature_type": "turned_id",
+    "spec_type": "surface_finish",
+    "dimension_type": "surface_finish",
+    "description": "Surface finish requirement",
+    "nominal_value": "Ra 2.5 µm",
+    "tolerance_or_class": "Ra 2,5",
+    "raw_text": "Ra 2,5",
+    "has_explicit_tolerance": true,
+    "kind": "surface_finish",
+    "value": 2.5,
+    "tol": null,
+    "qualifiers": [],
+    "multiplier": null,
+    "match_text": "Ra 2,5",
+    "match_numbers": [
+      2.5
+    ],
+    "match_tokens": [
+      "ra"
+    ],
+    "instance_count": 1,
+    "surface_finish_ra": 2.5,
+    "surface_finish_rz": null
+  },
+  {
+    "spec_id": "section_aa:F7_SD1",
+    "callout_id": "F7_SD1",
+    "section_id": "section_aa",
+    "source_view": "A-A",
+    "feature_id": "F7",
+    "feature_name": "Turned diameter Ø120",
+    "feature_type": "turned_od",
+    "spec_type": "dimensional",
+    "dimension_type": "diameter",
+    "description": "Diameter",
+    "nominal_value": "Ø 120 mm",
+    "tolerance_or_class": "k7",
+    "raw_text": "Ø120 k7",
+    "has_explicit_tolerance": true,
+    "kind": "diameter",
+    "value": 120.0,
+    "tol": {
+      "form": "fit",
+      "letter": "k",
+      "grade": "7"
+    },
+    "qualifiers": [],
+    "multiplier": null,
+    "match_text": "Ø120 k7",
+    "match_numbers": [
+      120.0
+    ],
+    "match_tokens": [
+      "k7"
+    ],
+    "instance_count": 1
+  },
+  {
+    "spec_id": "section_aa:F7_GDT1",
+    "callout_id": "F7_GDT1",
+    "section_id": "section_aa",
+    "source_view": "A-A",
+    "feature_id": "F7",
+    "feature_name": "Turned diameter Ø120",
+    "feature_type": "turned_od",
+    "spec_type": "geometric_tolerance",
+    "dimension_type": "position",
+    "description": "Position to datum A",
+    "nominal_value": "0.4 mm",
+    "tolerance_or_class": "0.4 mm",
+    "raw_text": "0.4 A",
+    "has_explicit_tolerance": true,
+    "kind": "position",
+    "value": 0.4,
+    "tol": null,
+    "qualifiers": [],
+    "multiplier": null,
+    "match_text": "0.4 A",
+    "match_numbers": [
+      0.4
+    ],
+    "match_tokens": [
+      "a"
+    ],
+    "instance_count": 1,
+    "tolerance_value_mm": 0.4,
+    "datum_references": [
+      "A"
+    ],
+    "material_condition": null,
+    "applied_to": "F7.face_id"
+  },
+  {
+    "spec_id": "section_aa:F7_SF",
+    "callout_id": "F7_SF",
+    "section_id": "section_aa",
+    "source_view": "A-A",
+    "feature_id": "F7",
+    "feature_name": "Turned diameter Ø120",
+    "feature_type": "turned_od",
+    "spec_type": "surface_finish",
+    "dimension_type": "surface_finish",
+    "description": "Surface finish requirement",
+    "nominal_value": "x",
+    "tolerance_or_class": "x",
+    "raw_text": "x",
+    "has_explicit_tolerance": false,
+    "kind": "surface_finish",
+    "value": null,
+    "tol": null,
+    "qualifiers": [],
+    "multiplier": null,
+    "match_text": "x",
+    "match_numbers": [],
+    "match_tokens": [],
+    "instance_count": 1,
+    "surface_finish_ra": null,
+    "surface_finish_rz": null
+  },
+  {
+    "spec_id": "section_aa:F8_SD1",
+    "callout_id": "F8_SD1",
+    "section_id": "section_aa",
+    "source_view": "A-A",
+    "feature_id": "F8",
+    "feature_name": "Bore Ø100 H7",
+    "feature_type": "turned_id",
+    "spec_type": "dimensional",
+    "dimension_type": "diameter",
+    "description": "Diameter",
+    "nominal_value": "Ø 100 mm",
+    "tolerance_or_class": "H7",
+    "raw_text": "Ø100 H7",
+    "has_explicit_tolerance": true,
+    "kind": "diameter",
+    "value": 100.0,
+    "tol": {
+      "form": "fit",
+      "letter": "H",
+      "grade": "7"
+    },
+    "qualifiers": [],
+    "multiplier": null,
+    "match_text": "Ø100 H7",
+    "match_numbers": [
+      100.0
+    ],
+    "match_tokens": [
+      "h7"
+    ],
+    "instance_count": 1
+  },
+  {
+    "spec_id": "section_aa:F8_GDT1",
+    "callout_id": "F8_GDT1",
+    "section_id": "section_aa",
+    "source_view": "A-A",
+    "feature_id": "F8",
+    "feature_name": "Bore Ø100 H7",
+    "feature_type": "turned_id",
+    "spec_type": "geometric_tolerance",
+    "dimension_type": "circularity",
+    "description": "Circularity",
+    "nominal_value": "0.015 mm",
+    "tolerance_or_class": "0.015 mm",
+    "raw_text": "0.015",
+    "has_explicit_tolerance": true,
+    "kind": "circularity",
+    "value": 0.015,
+    "tol": null,
+    "qualifiers": [],
+    "multiplier": null,
+    "match_text": "0.015",
+    "match_numbers": [
+      0.015
+    ],
+    "match_tokens": [],
+    "instance_count": 1,
+    "tolerance_value_mm": 0.015,
+    "datum_references": [],
+    "material_condition": null,
+    "applied_to": "F8.axis"
+  },
+  {
+    "spec_id": "section_aa:F8_SF",
+    "callout_id": "F8_SF",
+    "section_id": "section_aa",
+    "source_view": "A-A",
+    "feature_id": "F8",
+    "feature_name": "Bore Ø100 H7",
+    "feature_type": "turned_id",
+    "spec_type": "surface_finish",
+    "dimension_type": "surface_finish",
+    "description": "Surface finish requirement",
+    "nominal_value": "Ra 2.5 µm",
+    "tolerance_or_class": "Ra 2,5",
+    "raw_text": "Ra 2,5",
+    "has_explicit_tolerance": true,
+    "kind": "surface_finish",
+    "value": 2.5,
+    "tol": null,
+    "qualifiers": [],
+    "multiplier": null,
+    "match_text": "Ra 2,5",
+    "match_numbers": [
+      2.5
+    ],
+    "match_tokens": [
+      "ra"
+    ],
+    "instance_count": 1,
+    "surface_finish_ra": 2.5,
+    "surface_finish_rz": null
+  },
+  {
+    "spec_id": "section_aa:F9_SD1",
+    "callout_id": "F9_SD1",
+    "section_id": "section_aa",
+    "source_view": "A-A",
+    "feature_id": "F9",
+    "feature_name": "Hole Ø11.5",
+    "feature_type": "hole",
+    "spec_type": "dimensional",
+    "dimension_type": "diameter",
+    "description": "Diameter",
+    "nominal_value": "Ø 11.5 mm",
+    "tolerance_or_class": "General Tol",
+    "raw_text": "Ø11.5",
+    "has_explicit_tolerance": false,
+    "kind": "diameter",
+    "value": 11.5,
+    "tol": null,
+    "qualifiers": [],
+    "multiplier": null,
+    "match_text": "Ø11.5",
+    "match_numbers": [
+      11.5
+    ],
+    "match_tokens": [],
+    "instance_count": 1
+  },
+  {
+    "spec_id": "section_aa:F10_SD1",
+    "callout_id": "F10_SD1",
+    "section_id": "section_aa",
+    "source_view": "A-A",
+    "feature_id": "F10",
+    "feature_name": "Carrier body with axial extent 53",
+    "feature_type": "part_body",
+    "spec_type": "dimensional",
+    "dimension_type": "length",
+    "description": "Length",
+    "nominal_value": "53 mm",
+    "tolerance_or_class": "+0/-0.2 mm",
+    "raw_text": "53 +0/-0.2",
+    "has_explicit_tolerance": true,
+    "kind": "length",
+    "value": 53.0,
+    "tol": {
+      "form": "deviation",
+      "plus": 0.0,
+      "minus": 0.2
+    },
+    "qualifiers": [],
+    "multiplier": null,
+    "match_text": "53 +0/-0.2",
+    "match_numbers": [
+      53.0,
+      0.2
+    ],
+    "match_tokens": [],
+    "instance_count": 1
+  },
+  {
+    "spec_id": "section_aa:F10_GDT1",
+    "callout_id": "F10_GDT1",
+    "section_id": "section_aa",
+    "source_view": "A-A",
+    "feature_id": "F10",
+    "feature_name": "Carrier body with axial extent 53",
+    "feature_type": "part_body",
+    "spec_type": "geometric_tolerance",
+    "dimension_type": "runout",
+    "description": "Runout to datum A|B",
+    "nominal_value": "0.06 mm",
+    "tolerance_or_class": "0.06 mm",
+    "raw_text": "0.06 A B",
+    "has_explicit_tolerance": true,
+    "kind": "runout",
+    "value": 0.06,
+    "tol": null,
+    "qualifiers": [],
+    "multiplier": null,
+    "match_text": "0.06 A B",
+    "match_numbers": [
+      0.06
+    ],
+    "match_tokens": [
+      "a",
+      "b"
+    ],
+    "instance_count": 1,
+    "tolerance_value_mm": 0.06,
+    "datum_references": [
+      "A",
+      "B"
+    ],
+    "material_condition": null,
+    "applied_to": "F10.face_id"
+  },
+  {
+    "spec_id": "section_aa:F11_SD1",
+    "callout_id": "F11_SD1",
+    "section_id": "section_aa",
+    "source_view": "A-A",
+    "feature_id": "F11",
+    "feature_name": "Radius R0.6",
+    "feature_type": "edge_treatment",
+    "spec_type": "dimensional",
+    "dimension_type": "fillet_radius",
+    "description": "Fillet radius",
+    "nominal_value": "R 0.6 mm",
+    "tolerance_or_class": "+0/-0.2 mm",
+    "raw_text": "R0.6 +0/-0.2",
+    "has_explicit_tolerance": true,
+    "kind": "fillet_radius",
+    "value": 0.6,
+    "tol": {
+      "form": "deviation",
+      "plus": 0.0,
+      "minus": 0.2
+    },
+    "qualifiers": [],
+    "multiplier": null,
+    "match_text": "R0.6 +0/-0.2",
+    "match_numbers": [
+      0.6,
+      0.2
+    ],
+    "match_tokens": [],
+    "instance_count": 1
+  },
+  {
+    "spec_id": "section_aa:F12_SD1",
+    "callout_id": "F12_SD1",
+    "section_id": "section_aa",
+    "source_view": "A-A",
+    "feature_id": "F12",
+    "feature_name": "Radius R1",
+    "feature_type": "edge_treatment",
+    "spec_type": "dimensional",
+    "dimension_type": "fillet_radius",
+    "description": "Fillet radius",
+    "nominal_value": "R 1 mm",
+    "tolerance_or_class": "+0/-0.2 mm",
+    "raw_text": "R1 +0/-0.2",
+    "has_explicit_tolerance": true,
+    "kind": "fillet_radius",
+    "value": 1.0,
+    "tol": {
+      "form": "deviation",
+      "plus": 0.0,
+      "minus": 0.2
+    },
+    "qualifiers": [],
+    "multiplier": null,
+    "match_text": "R1 +0/-0.2",
+    "match_numbers": [
+      1.0,
+      0.2
+    ],
+    "match_tokens": [],
+    "instance_count": 1
+  },
+  {
+    "spec_id": "section_aa:F13_SD1",
+    "callout_id": "F13_SD1",
+    "section_id": "section_aa",
+    "source_view": "A-A",
+    "feature_id": "F13",
+    "feature_name": "Chamfer 0.5 x 45°",
+    "feature_type": "edge_treatment",
+    "spec_type": "dimensional",
+    "dimension_type": "chamfer_leg",
+    "description": "Chamfer leg",
+    "nominal_value": "0.5 mm",
+    "tolerance_or_class": "General Tol",
+    "raw_text": "0.5",
+    "has_explicit_tolerance": false,
+    "kind": "chamfer_leg",
+    "value": 0.5,
+    "tol": null,
+    "qualifiers": [],
+    "multiplier": null,
+    "match_text": "0.5",
+    "match_numbers": [
+      0.5
+    ],
+    "match_tokens": [],
+    "instance_count": 1
+  },
+  {
+    "spec_id": "section_aa:F13_SD2",
+    "callout_id": "F13_SD2",
+    "section_id": "section_aa",
+    "source_view": "A-A",
+    "feature_id": "F13",
+    "feature_name": "Chamfer 0.5 x 45°",
+    "feature_type": "edge_treatment",
+    "spec_type": "dimensional",
+    "dimension_type": "chamfer_angle",
+    "description": "Chamfer angle",
+    "nominal_value": "45°",
+    "tolerance_or_class": "General Tol",
+    "raw_text": "45°",
+    "has_explicit_tolerance": false,
+    "kind": "chamfer_angle",
+    "value": 45.0,
+    "tol": null,
+    "qualifiers": [],
+    "multiplier": null,
+    "match_text": "45°",
+    "match_numbers": [
+      45.0
+    ],
+    "match_tokens": [],
+    "instance_count": 1
+  },
+  {
+    "spec_id": "section_aa:F14_SD1",
+    "callout_id": "F14_SD1",
+    "section_id": "section_aa",
+    "source_view": "A-A",
+    "feature_id": "F14",
+    "feature_name": "Chamfer 0.5 x 45°",
+    "feature_type": "edge_treatment",
+    "spec_type": "dimensional",
+    "dimension_type": "chamfer_leg",
+    "description": "Chamfer leg",
+    "nominal_value": "0.5 mm",
+    "tolerance_or_class": "General Tol",
+    "raw_text": "0.5",
+    "has_explicit_tolerance": false,
+    "kind": "chamfer_leg",
+    "value": 0.5,
+    "tol": null,
+    "qualifiers": [],
+    "multiplier": null,
+    "match_text": "0.5",
+    "match_numbers": [
+      0.5
+    ],
+    "match_tokens": [],
+    "instance_count": 1
+  },
+  {
+    "spec_id": "section_aa:F14_SD2",
+    "callout_id": "F14_SD2",
+    "section_id": "section_aa",
+    "source_view": "A-A",
+    "feature_id": "F14",
+    "feature_name": "Chamfer 0.5 x 45°",
+    "feature_type": "edge_treatment",
+    "spec_type": "dimensional",
+    "dimension_type": "chamfer_angle",
+    "description": "Chamfer angle",
+    "nominal_value": "45°",
+    "tolerance_or_class": "General Tol",
+    "raw_text": "45°",
+    "has_explicit_tolerance": false,
+    "kind": "chamfer_angle",
+    "value": 45.0,
+    "tol": null,
+    "qualifiers": [],
+    "multiplier": null,
+    "match_text": "45°",
+    "match_numbers": [
+      45.0
+    ],
+    "match_tokens": [],
+    "instance_count": 1
+  },
+  {
+    "spec_id": "section_aa:F15_SD1",
+    "callout_id": "F15_SD1",
+    "section_id": "section_aa",
+    "source_view": "A-A",
+    "feature_id": "F15",
+    "feature_name": "Chamfer 0.5 x 45°",
+    "feature_type": "edge_treatment",
+    "spec_type": "dimensional",
+    "dimension_type": "chamfer_leg",
+    "description": "Chamfer leg",
+    "nominal_value": "0.5 mm",
+    "tolerance_or_class": "General Tol",
+    "raw_text": "0.5",
+    "has_explicit_tolerance": false,
+    "kind": "chamfer_leg",
+    "value": 0.5,
+    "tol": null,
+    "qualifiers": [],
+    "multiplier": null,
+    "match_text": "0.5",
+    "match_numbers": [
+      0.5
+    ],
+    "match_tokens": [],
+    "instance_count": 1
+  },
+  {
+    "spec_id": "section_aa:F15_SD2",
+    "callout_id": "F15_SD2",
+    "section_id": "section_aa",
+    "source_view": "A-A",
+    "feature_id": "F15",
+    "feature_name": "Chamfer 0.5 x 45°",
+    "feature_type": "edge_treatment",
+    "spec_type": "dimensional",
+    "dimension_type": "chamfer_angle",
+    "description": "Chamfer angle",
+    "nominal_value": "45°",
+    "tolerance_or_class": "General Tol",
+    "raw_text": "45°",
+    "has_explicit_tolerance": false,
+    "kind": "chamfer_angle",
+    "value": 45.0,
+    "tol": null,
+    "qualifiers": [],
+    "multiplier": null,
+    "match_text": "45°",
+    "match_numbers": [
+      45.0
+    ],
+    "match_tokens": [],
+    "instance_count": 1
+  },
+  {
+    "spec_id": "section_aa:F16_SD1",
+    "callout_id": "F16_SD1",
+    "section_id": "section_aa",
+    "source_view": "A-A",
+    "feature_id": "F16",
+    "feature_name": "Inclined turned surface",
+    "feature_type": "turned_od",
+    "spec_type": "dimensional",
+    "dimension_type": "angle",
+    "description": "Angle",
+    "nominal_value": "20°",
+    "tolerance_or_class": "General Tol",
+    "raw_text": "20°",
+    "has_explicit_tolerance": false,
+    "kind": "angle",
+    "value": 20.0,
+    "tol": null,
+    "qualifiers": [],
+    "multiplier": null,
+    "match_text": "20°",
+    "match_numbers": [
+      20.0
+    ],
+    "match_tokens": [],
+    "instance_count": 1
+  },
+  {
+    "spec_id": "section_aa:LD1",
+    "callout_id": "LD1",
+    "section_id": "section_aa",
+    "source_view": "A-A",
+    "feature_id": "F6",
+    "feature_name": "Turned internal diameter Ø207",
+    "feature_type": "turned_id",
+    "spec_type": "dimensional",
+    "dimension_type": "location",
+    "description": "Location horizontal F6.end_left → F5.end_right",
+    "nominal_value": "36 mm",
+    "tolerance_or_class": "General Tol",
+    "raw_text": "36",
+    "has_explicit_tolerance": false,
+    "kind": "location",
+    "value": 36.0,
+    "tol": null,
+    "qualifiers": [
+      "BASIC"
+    ],
+    "multiplier": null,
+    "match_text": "36",
+    "match_numbers": [
+      36.0
+    ],
+    "match_tokens": [],
+    "instance_count": 1,
+    "from_ref": {
+      "local_id": "F6",
+      "role": "end_left"
+    },
+    "to_ref": {
+      "local_id": "F5",
+      "role": "end_right"
+    }
+  },
+  {
+    "spec_id": "section_aa:LD2",
+    "callout_id": "LD2",
+    "section_id": "section_aa",
+    "source_view": "A-A",
+    "feature_id": "F5",
+    "feature_name": "Turned internal diameter Ø264",
+    "feature_type": "turned_id",
+    "spec_type": "dimensional",
+    "dimension_type": "location",
+    "description": "Location horizontal F5.end_left → F4.end_right",
+    "nominal_value": "19 mm",
+    "tolerance_or_class": "General Tol",
+    "raw_text": "19",
+    "has_explicit_tolerance": false,
+    "kind": "location",
+    "value": 19.0,
+    "tol": null,
+    "qualifiers": [
+      "BASIC"
+    ],
+    "multiplier": null,
+    "match_text": "19",
+    "match_numbers": [
+      19.0
+    ],
+    "match_tokens": [],
+    "instance_count": 1,
+    "from_ref": {
+      "local_id": "F5",
+      "role": "end_left"
+    },
+    "to_ref": {
+      "local_id": "F4",
+      "role": "end_right"
+    }
+  },
+  {
+    "spec_id": "section_aa:LD3",
+    "callout_id": "LD3",
+    "section_id": "section_aa",
+    "source_view": "A-A",
+    "feature_id": "F4",
+    "feature_name": "Turned diameter Ø282",
+    "feature_type": "turned_od",
+    "spec_type": "dimensional",
+    "dimension_type": "location",
+    "description": "Location horizontal F4.end_left → F1.end_right",
+    "nominal_value": "24 mm",
+    "tolerance_or_class": "General Tol",
+    "raw_text": "24",
+    "has_explicit_tolerance": false,
+    "kind": "location",
+    "value": 24.0,
+    "tol": null,
+    "qualifiers": [
+      "BASIC"
+    ],
+    "multiplier": null,
+    "match_text": "24",
+    "match_numbers": [
+      24.0
+    ],
+    "match_tokens": [],
+    "instance_count": 1,
+    "from_ref": {
+      "local_id": "F4",
+      "role": "end_left"
+    },
+    "to_ref": {
+      "local_id": "F1",
+      "role": "end_right"
+    }
+  },
+  {
+    "spec_id": "section_aa:LD4",
+    "callout_id": "LD4",
+    "section_id": "section_aa",
+    "source_view": "A-A",
+    "feature_id": "F4",
+    "feature_name": "Turned diameter Ø282",
+    "feature_type": "turned_od",
+    "spec_type": "dimensional",
+    "dimension_type": "location",
+    "description": "Location horizontal F4.end_left → F3.end_right",
+    "nominal_value": "12.5 mm",
+    "tolerance_or_class": "General Tol",
+    "raw_text": "12.5",
+    "has_explicit_tolerance": false,
+    "kind": "location",
+    "value": 12.5,
+    "tol": null,
+    "qualifiers": [],
+    "multiplier": null,
+    "match_text": "12.5",
+    "match_numbers": [
+      12.5
+    ],
+    "match_tokens": [],
+    "instance_count": 1,
+    "from_ref": {
+      "local_id": "F4",
+      "role": "end_left"
+    },
+    "to_ref": {
+      "local_id": "F3",
+      "role": "end_right"
+    }
+  },
+  {
+    "spec_id": "section_aa:LD5",
+    "callout_id": "LD5",
+    "section_id": "section_aa",
+    "source_view": "A-A",
+    "feature_id": "F7",
+    "feature_name": "Turned diameter Ø120",
+    "feature_type": "turned_od",
+    "spec_type": "dimensional",
+    "dimension_type": "location",
+    "description": "Location horizontal F7.end_left → F4.end_right",
+    "nominal_value": "9 mm",
+    "tolerance_or_class": "General Tol",
+    "raw_text": "9",
+    "has_explicit_tolerance": false,
+    "kind": "location",
+    "value": 9.0,
+    "tol": null,
+    "qualifiers": [
+      "BASIC"
+    ],
+    "multiplier": null,
+    "match_text": "9",
+    "match_numbers": [
+      9.0
+    ],
+    "match_tokens": [],
+    "instance_count": 1,
+    "from_ref": {
+      "local_id": "F7",
+      "role": "end_left"
+    },
+    "to_ref": {
+      "local_id": "F4",
+      "role": "end_right"
+    }
+  },
+  {
+    "spec_id": "section_aa:LD6",
+    "callout_id": "LD6",
+    "section_id": "section_aa",
+    "source_view": "A-A",
+    "feature_id": "F7",
+    "feature_name": "Turned diameter Ø120",
+    "feature_type": "turned_od",
+    "spec_type": "dimensional",
+    "dimension_type": "location",
+    "description": "Location horizontal F7.end_left → F5.end_right",
+    "nominal_value": "1.5 mm",
+    "tolerance_or_class": "General Tol",
+    "raw_text": "1.5",
+    "has_explicit_tolerance": false,
+    "kind": "location",
+    "value": 1.5,
+    "tol": null,
+    "qualifiers": [],
+    "multiplier": null,
+    "match_text": "1.5",
+    "match_numbers": [
+      1.5
+    ],
+    "match_tokens": [],
+    "instance_count": 1,
+    "from_ref": {
+      "local_id": "F7",
+      "role": "end_left"
+    },
+    "to_ref": {
+      "local_id": "F5",
+      "role": "end_right"
+    }
+  },
+  {
+    "spec_id": "section_bb:F1_SD1",
+    "callout_id": "F1_SD1",
+    "section_id": "section_bb",
+    "source_view": "B-B",
+    "feature_id": "F1",
+    "feature_name": "Sectioned carrier body",
+    "feature_type": "part_body",
+    "spec_type": "dimensional",
+    "dimension_type": "diameter",
+    "description": "Diameter [REF]",
+    "nominal_value": "Ø 297 mm",
+    "tolerance_or_class": "General Tol",
+    "raw_text": "Ø297",
+    "has_explicit_tolerance": false,
+    "kind": "diameter",
+    "value": 297.0,
+    "tol": null,
+    "qualifiers": [
+      "REF"
+    ],
+    "multiplier": null,
+    "match_text": "Ø297",
+    "match_numbers": [
+      297.0
+    ],
+    "match_tokens": [],
+    "instance_count": 1
+  },
+  {
+    "spec_id": "section_bb:F2_SD1",
+    "callout_id": "F2_SD1",
+    "section_id": "section_bb",
+    "source_view": "B-B",
+    "feature_id": "F2",
+    "feature_name": "Three internal M10x1 threaded holes",
+    "feature_type": "hole",
+    "spec_type": "dimensional",
+    "dimension_type": "diameter",
+    "description": "Diameter",
+    "nominal_value": "3X Ø 10 mm",
+    "tolerance_or_class": "General Tol",
+    "raw_text": "3X Ø10",
+    "has_explicit_tolerance": false,
+    "kind": "diameter",
+    "value": 10.0,
+    "tol": null,
+    "qualifiers": [],
+    "multiplier": 3,
+    "match_text": "3X Ø10",
+    "match_numbers": [
+      10.0
+    ],
+    "match_tokens": [],
+    "instance_count": 1
+  },
+  {
+    "spec_id": "section_bb:F2_SD2",
+    "callout_id": "F2_SD2",
+    "section_id": "section_bb",
+    "source_view": "B-B",
+    "feature_id": "F2",
+    "feature_name": "Three internal M10x1 threaded holes",
+    "feature_type": "hole",
+    "spec_type": "dimensional",
+    "dimension_type": "thread_depth",
+    "description": "Thread depth",
+    "nominal_value": "6 mm",
+    "tolerance_or_class": "+1/-1 mm",
+    "raw_text": "6 +1/-1",
+    "has_explicit_tolerance": true,
+    "kind": "thread_depth",
+    "value": 6.0,
+    "tol": {
+      "form": "deviation",
+      "plus": 1.0,
+      "minus": 1.0
+    },
+    "qualifiers": [],
+    "multiplier": null,
+    "match_text": "6 +1/-1",
+    "match_numbers": [
+      6.0,
+      1.0,
+      1.0
+    ],
+    "match_tokens": [],
+    "instance_count": 1
+  },
+  {
+    "spec_id": "section_bb:F2_TH",
+    "callout_id": "F2_TH",
+    "section_id": "section_bb",
+    "source_view": "B-B",
+    "feature_id": "F2",
+    "feature_name": "Three internal M10x1 threaded holes",
+    "feature_type": "hole",
+    "spec_type": "thread",
+    "dimension_type": "ISO_M",
+    "description": "Thread M10x1",
+    "nominal_value": "M10x1",
+    "tolerance_or_class": "General Tol",
+    "raw_text": "M10x1",
+    "has_explicit_tolerance": false,
+    "kind": "thread",
+    "value": 10.0,
+    "tol": null,
+    "qualifiers": [],
+    "multiplier": null,
+    "match_text": "M10x1",
+    "match_numbers": [
+      10.0,
+      1.0
+    ],
+    "match_tokens": [
+      "m10x1"
+    ],
+    "instance_count": 1
+  },
+  {
+    "spec_id": "section_bb:F2_GDT1",
+    "callout_id": "F2_GDT1",
+    "section_id": "section_bb",
+    "source_view": "B-B",
+    "feature_id": "F2",
+    "feature_name": "Three internal M10x1 threaded holes",
+    "feature_type": "hole",
+    "spec_type": "geometric_tolerance",
+    "dimension_type": "position",
+    "description": "Position to datum A|B|C",
+    "nominal_value": "0.2 mm",
+    "tolerance_or_class": "0.2 mm",
+    "raw_text": "0.2 A B C",
+    "has_explicit_tolerance": true,
+    "kind": "position",
+    "value": 0.2,
+    "tol": null,
+    "qualifiers": [],
+    "multiplier": null,
+    "match_text": "0.2 A B C",
+    "match_numbers": [
+      0.2
+    ],
+    "match_tokens": [
+      "a",
+      "b",
+      "c"
+    ],
+    "instance_count": 1,
+    "tolerance_value_mm": 0.2,
+    "datum_references": [
+      "A",
+      "B",
+      "C"
+    ],
+    "material_condition": null,
+    "applied_to": "F2.axis"
+  },
+  {
+    "spec_id": "section_bb:F3_SD1",
+    "callout_id": "F3_SD1",
+    "section_id": "section_bb",
+    "source_view": "B-B",
+    "feature_id": "F3",
+    "feature_name": "Three Ø8 holes",
+    "feature_type": "hole",
+    "spec_type": "dimensional",
+    "dimension_type": "diameter",
+    "description": "Diameter",
+    "nominal_value": "3X Ø 8 mm",
+    "tolerance_or_class": "General Tol",
+    "raw_text": "3X Ø8",
+    "has_explicit_tolerance": false,
+    "kind": "diameter",
+    "value": 8.0,
+    "tol": null,
+    "qualifiers": [],
+    "multiplier": 3,
+    "match_text": "3X Ø8",
+    "match_numbers": [
+      8.0
+    ],
+    "match_tokens": [],
+    "instance_count": 1
+  },
+  {
+    "spec_id": "section_bb:F3_GDT1",
+    "callout_id": "F3_GDT1",
+    "section_id": "section_bb",
+    "source_view": "B-B",
+    "feature_id": "F3",
+    "feature_name": "Three Ø8 holes",
+    "feature_type": "hole",
+    "spec_type": "geometric_tolerance",
+    "dimension_type": "position",
+    "description": "Position to datum A|B|C",
+    "nominal_value": "0.4 mm",
+    "tolerance_or_class": "0.4 mm",
+    "raw_text": "0.4 A B C",
+    "has_explicit_tolerance": true,
+    "kind": "position",
+    "value": 0.4,
+    "tol": null,
+    "qualifiers": [],
+    "multiplier": null,
+    "match_text": "0.4 A B C",
+    "match_numbers": [
+      0.4
+    ],
+    "match_tokens": [
+      "a",
+      "b",
+      "c"
+    ],
+    "instance_count": 1,
+    "tolerance_value_mm": 0.4,
+    "datum_references": [
+      "A",
+      "B",
+      "C"
+    ],
+    "material_condition": null,
+    "applied_to": "F3.axis"
+  },
+  {
+    "spec_id": "section_bb:LD1",
+    "callout_id": "LD1",
+    "section_id": "section_bb",
+    "source_view": "B-B",
+    "feature_id": "F1",
+    "feature_name": "Sectioned carrier body",
+    "feature_type": "part_body",
+    "spec_type": "dimensional",
+    "dimension_type": "location",
+    "description": "Location angular F1.axis → F2.axis",
+    "nominal_value": "70 mm",
+    "tolerance_or_class": "General Tol",
+    "raw_text": "70",
+    "has_explicit_tolerance": false,
+    "kind": "location",
+    "value": 70.0,
+    "tol": null,
+    "qualifiers": [],
+    "multiplier": null,
+    "match_text": "70",
+    "match_numbers": [
+      70.0
+    ],
+    "match_tokens": [],
+    "instance_count": 1,
+    "from_ref": {
+      "local_id": "F1",
+      "role": "axis"
+    },
+    "to_ref": {
+      "local_id": "F2",
+      "role": "axis"
+    }
+  },
+  {
+    "spec_id": "section_bb:LD2",
+    "callout_id": "LD2",
+    "section_id": "section_bb",
+    "source_view": "B-B",
+    "feature_id": "F1",
+    "feature_name": "Sectioned carrier body",
+    "feature_type": "part_body",
+    "spec_type": "dimensional",
+    "dimension_type": "location",
+    "description": "Location vertical F1.face_id → F2.axis",
+    "nominal_value": "10 mm",
+    "tolerance_or_class": "General Tol",
+    "raw_text": "10",
+    "has_explicit_tolerance": false,
+    "kind": "location",
+    "value": 10.0,
+    "tol": null,
+    "qualifiers": [
+      "BASIC"
+    ],
+    "multiplier": null,
+    "match_text": "10",
+    "match_numbers": [
+      10.0
+    ],
+    "match_tokens": [],
+    "instance_count": 1,
+    "from_ref": {
+      "local_id": "F1",
+      "role": "face_id"
+    },
+    "to_ref": {
+      "local_id": "F2",
+      "role": "axis"
+    }
+  },
+  {
+    "spec_id": "section_cc:F1_SD1",
+    "callout_id": "F1_SD1",
+    "section_id": "section_cc",
+    "source_view": "C-C",
+    "feature_id": "F1",
+    "feature_name": "Stepped hole with counterbore",
+    "feature_type": "hole",
+    "spec_type": "dimensional",
+    "dimension_type": "diameter",
+    "description": "Diameter",
+    "nominal_value": "Ø 6.8 mm",
+    "tolerance_or_class": "+0.3/-0 mm",
+    "raw_text": "Ø6.8 +0.3/-0",
+    "has_explicit_tolerance": true,
+    "kind": "diameter",
+    "value": 6.8,
+    "tol": {
+      "form": "deviation",
+      "plus": 0.3,
+      "minus": 0.0
+    },
+    "qualifiers": [],
+    "multiplier": null,
+    "match_text": "Ø6.8 +0.3/-0",
+    "match_numbers": [
+      6.8,
+      0.3
+    ],
+    "match_tokens": [],
+    "instance_count": 12
+  },
+  {
+    "spec_id": "section_cc:F1_SD2",
+    "callout_id": "F1_SD2",
+    "section_id": "section_cc",
+    "source_view": "C-C",
+    "feature_id": "F1",
+    "feature_name": "Stepped hole with counterbore",
+    "feature_type": "hole",
+    "spec_type": "dimensional",
+    "dimension_type": "cbore_diameter",
+    "description": "Cbore diameter",
+    "nominal_value": "Ø 10 mm",
+    "tolerance_or_class": "+0.2/-0 mm",
+    "raw_text": "Ø10 +0.2/-0",
+    "has_explicit_tolerance": true,
+    "kind": "cbore_diameter",
+    "value": 10.0,
+    "tol": {
+      "form": "deviation",
+      "plus": 0.2,
+      "minus": 0.0
+    },
+    "qualifiers": [],
+    "multiplier": null,
+    "match_text": "Ø10 +0.2/-0",
+    "match_numbers": [
+      10.0,
+      0.2
+    ],
+    "match_tokens": [],
+    "instance_count": 12
+  },
+  {
+    "spec_id": "section_cc:F1_SD3",
+    "callout_id": "F1_SD3",
+    "section_id": "section_cc",
+    "source_view": "C-C",
+    "feature_id": "F1",
+    "feature_name": "Stepped hole with counterbore",
+    "feature_type": "hole",
+    "spec_type": "dimensional",
+    "dimension_type": "cbore_depth",
+    "description": "Cbore depth",
+    "nominal_value": "3.5 mm",
+    "tolerance_or_class": "General Tol",
+    "raw_text": "3.5",
+    "has_explicit_tolerance": false,
+    "kind": "cbore_depth",
+    "value": 3.5,
+    "tol": null,
+    "qualifiers": [],
+    "multiplier": null,
+    "match_text": "3.5",
+    "match_numbers": [
+      3.5
+    ],
+    "match_tokens": [],
+    "instance_count": 12
+  },
+  {
+    "spec_id": "section_cc:F1_SD4",
+    "callout_id": "F1_SD4",
+    "section_id": "section_cc",
+    "source_view": "C-C",
+    "feature_id": "F1",
+    "feature_name": "Stepped hole with counterbore",
+    "feature_type": "hole",
+    "spec_type": "dimensional",
+    "dimension_type": "fillet_radius",
+    "description": "Fillet radius [MAX]",
+    "nominal_value": "R 0.3 mm",
+    "tolerance_or_class": "MAX",
+    "raw_text": "R0.3 MAX",
+    "has_explicit_tolerance": false,
+    "kind": "fillet_radius",
+    "value": 0.3,
+    "tol": null,
+    "qualifiers": [
+      "MAX"
+    ],
+    "multiplier": null,
+    "match_text": "R0.3 MAX",
+    "match_numbers": [
+      0.3
+    ],
+    "match_tokens": [
+      "max"
+    ],
+    "instance_count": 12
+  },
+  {
+    "spec_id": "section_cc:F1_GDT1",
+    "callout_id": "F1_GDT1",
+    "section_id": "section_cc",
+    "source_view": "C-C",
+    "feature_id": "F1",
+    "feature_name": "Stepped hole with counterbore",
+    "feature_type": "hole",
+    "spec_type": "geometric_tolerance",
+    "dimension_type": "position",
+    "description": "Position to datum A|B|C",
+    "nominal_value": "0.4 mm",
+    "tolerance_or_class": "0.4 mm",
+    "raw_text": "0.4 A B C",
+    "has_explicit_tolerance": true,
+    "kind": "position",
+    "value": 0.4,
+    "tol": null,
+    "qualifiers": [],
+    "multiplier": null,
+    "match_text": "0.4 A B C",
+    "match_numbers": [
+      0.4
+    ],
+    "match_tokens": [
+      "a",
+      "b",
+      "c"
+    ],
+    "instance_count": 12,
+    "tolerance_value_mm": 0.4,
+    "datum_references": [
+      "A",
+      "B",
+      "C"
+    ],
+    "material_condition": null,
+    "applied_to": "F1.axis"
+  },
+  {
+    "spec_id": "section_dd:F1_SD1",
+    "callout_id": "F1_SD1",
+    "section_id": "section_dd",
+    "source_view": "D-D",
+    "feature_id": "F1",
+    "feature_name": "Sectioned web at minimum-thickness callout",
+    "feature_type": "web",
+    "spec_type": "dimensional",
+    "dimension_type": "thickness",
+    "description": "Thickness [MIN]",
+    "nominal_value": "1.5 mm",
+    "tolerance_or_class": "MIN",
+    "raw_text": "1.5 MIN",
+    "has_explicit_tolerance": false,
+    "kind": "thickness",
+    "value": 1.5,
+    "tol": null,
+    "qualifiers": [
+      "MIN"
+    ],
+    "multiplier": null,
+    "match_text": "1.5 MIN",
+    "match_numbers": [
+      1.5
+    ],
+    "match_tokens": [
+      "min"
+    ],
+    "instance_count": null
+  },
+  {
+    "spec_id": "section_ee:F1_SD1",
+    "callout_id": "F1_SD1",
+    "section_id": "section_ee",
+    "source_view": "E-E",
+    "feature_id": "F1",
+    "feature_name": "Cutter swept cylindrical envelope",
+    "feature_type": "turned_od",
+    "spec_type": "dimensional",
+    "dimension_type": "diameter",
+    "description": "Diameter",
+    "nominal_value": "Ø 160 mm",
+    "tolerance_or_class": "+0/-0.15 mm",
+    "raw_text": "Ø160 +0/-0.15",
+    "has_explicit_tolerance": true,
+    "kind": "diameter",
+    "value": 160.0,
+    "tol": {
+      "form": "deviation",
+      "plus": 0.0,
+      "minus": 0.15
+    },
+    "qualifiers": [],
+    "multiplier": null,
+    "match_text": "Ø160 +0/-0.15",
+    "match_numbers": [
+      160.0,
+      0.15
+    ],
+    "match_tokens": [],
+    "instance_count": 1
+  },
+  {
+    "spec_id": "section_ee:F1_GDT1",
+    "callout_id": "F1_GDT1",
+    "section_id": "section_ee",
+    "source_view": "E-E",
+    "feature_id": "F1",
+    "feature_name": "Cutter swept cylindrical envelope",
+    "feature_type": "turned_od",
+    "spec_type": "geometric_tolerance",
+    "dimension_type": "position",
+    "description": "Position to datum A|B",
+    "nominal_value": "0.5 mm",
+    "tolerance_or_class": "0.5 mm",
+    "raw_text": "0.5 A B",
+    "has_explicit_tolerance": true,
+    "kind": "position",
+    "value": 0.5,
+    "tol": null,
+    "qualifiers": [],
+    "multiplier": null,
+    "match_text": "0.5 A B",
+    "match_numbers": [
+      0.5
+    ],
+    "match_tokens": [
+      "a",
+      "b"
+    ],
+    "instance_count": 1,
+    "tolerance_value_mm": 0.5,
+    "datum_references": [
+      "A",
+      "B"
+    ],
+    "material_condition": null,
+    "applied_to": "F1.axis"
+  },
+  {
+    "spec_id": "section_ee:LD1",
+    "callout_id": "LD1",
+    "section_id": "section_ee",
+    "source_view": "E-E",
+    "feature_id": "F1",
+    "feature_name": "Cutter swept cylindrical envelope",
+    "feature_type": "turned_od",
+    "spec_type": "dimensional",
+    "dimension_type": "location",
+    "description": "Location vertical F1.center_point → F2.end_top",
+    "nominal_value": "130 mm",
+    "tolerance_or_class": "General Tol",
+    "raw_text": "130",
+    "has_explicit_tolerance": false,
+    "kind": "location",
+    "value": 130.0,
+    "tol": null,
+    "qualifiers": [
+      "BASIC"
+    ],
+    "multiplier": null,
+    "match_text": "130",
+    "match_numbers": [
+      130.0
+    ],
+    "match_tokens": [],
+    "instance_count": 1,
+    "from_ref": {
+      "local_id": "F1",
+      "role": "center_point"
+    },
+    "to_ref": {
+      "local_id": "F2",
+      "role": "end_top"
+    }
+  },
+  {
+    "spec_id": "section_ee:LD2",
+    "callout_id": "LD2",
+    "section_id": "section_ee",
+    "source_view": "E-E",
+    "feature_id": "F1",
+    "feature_name": "Cutter swept cylindrical envelope",
+    "feature_type": "turned_od",
+    "spec_type": "dimensional",
+    "dimension_type": "location",
+    "description": "Location horizontal F1.end_right → F2.end_left",
+    "nominal_value": "0.5 mm",
+    "tolerance_or_class": "General Tol",
+    "raw_text": "0.5",
+    "has_explicit_tolerance": false,
+    "kind": "location",
+    "value": 0.5,
+    "tol": null,
+    "qualifiers": [
+      "BASIC"
+    ],
+    "multiplier": null,
+    "match_text": "0.5",
+    "match_numbers": [
+      0.5
+    ],
+    "match_tokens": [],
+    "instance_count": 1,
+    "from_ref": {
+      "local_id": "F1",
+      "role": "end_right"
+    },
+    "to_ref": {
+      "local_id": "F2",
+      "role": "end_left"
+    }
+  },
+  {
+    "spec_id": "section_ff:F1_SD1",
+    "callout_id": "F1_SD1",
+    "section_id": "section_ff",
+    "source_view": "F-F",
+    "feature_id": "F1",
+    "feature_name": "Internal M8 threaded hole pattern",
+    "feature_type": "hole",
+    "spec_type": "dimensional",
+    "dimension_type": "diameter",
+    "description": "Diameter",
+    "nominal_value": "6X Ø 8 mm",
+    "tolerance_or_class": "General Tol",
+    "raw_text": "6X Ø8",
+    "has_explicit_tolerance": false,
+    "kind": "diameter",
+    "value": 8.0,
+    "tol": null,
+    "qualifiers": [],
+    "multiplier": 6,
+    "match_text": "6X Ø8",
+    "match_numbers": [
+      8.0
+    ],
+    "match_tokens": [],
+    "instance_count": 1
+  },
+  {
+    "spec_id": "section_ff:F1_TH",
+    "callout_id": "F1_TH",
+    "section_id": "section_ff",
+    "source_view": "F-F",
+    "feature_id": "F1",
+    "feature_name": "Internal M8 threaded hole pattern",
+    "feature_type": "hole",
+    "spec_type": "thread",
+    "dimension_type": "ISO_M",
+    "description": "Thread M8",
+    "nominal_value": "M8",
+    "tolerance_or_class": "General Tol",
+    "raw_text": "M8",
+    "has_explicit_tolerance": false,
+    "kind": "thread",
+    "value": 8.0,
+    "tol": null,
+    "qualifiers": [],
+    "multiplier": null,
+    "match_text": "M8",
+    "match_numbers": [
+      8.0
+    ],
+    "match_tokens": [
+      "m8"
+    ],
+    "instance_count": 1
+  },
+  {
+    "spec_id": "section_ff:F1_GDT1",
+    "callout_id": "F1_GDT1",
+    "section_id": "section_ff",
+    "source_view": "F-F",
+    "feature_id": "F1",
+    "feature_name": "Internal M8 threaded hole pattern",
+    "feature_type": "hole",
+    "spec_type": "geometric_tolerance",
+    "dimension_type": "position",
+    "description": "Position to datum A|B|C",
+    "nominal_value": "0.6 mm",
+    "tolerance_or_class": "0.6 mm",
+    "raw_text": "0.6 A B C",
+    "has_explicit_tolerance": true,
+    "kind": "position",
+    "value": 0.6,
+    "tol": null,
+    "qualifiers": [],
+    "multiplier": null,
+    "match_text": "0.6 A B C",
+    "match_numbers": [
+      0.6
+    ],
+    "match_tokens": [
+      "a",
+      "b",
+      "c"
+    ],
+    "instance_count": 1,
+    "tolerance_value_mm": 0.6,
+    "datum_references": [
+      "A",
+      "B",
+      "C"
+    ],
+    "material_condition": null,
+    "applied_to": "F1.axis"
+  },
+  {
+    "spec_id": "side_view:F1_SD1",
+    "callout_id": "F1_SD1",
+    "section_id": "side_view",
+    "source_view": "side_view",
+    "feature_id": "F1",
+    "feature_name": "Left inner corner radius",
+    "feature_type": "edge_treatment",
+    "spec_type": "dimensional",
+    "dimension_type": "fillet_radius",
+    "description": "Fillet radius",
+    "nominal_value": "R 0.5 mm",
+    "tolerance_or_class": "+0.2/-0.1 mm",
+    "raw_text": "R0.5 +0.2/-0.1",
+    "has_explicit_tolerance": true,
+    "kind": "fillet_radius",
+    "value": 0.5,
+    "tol": {
+      "form": "deviation",
+      "plus": 0.2,
+      "minus": 0.1
+    },
+    "qualifiers": [],
+    "multiplier": null,
+    "match_text": "R0.5 +0.2/-0.1",
+    "match_numbers": [
+      0.5,
+      0.2,
+      0.1
+    ],
+    "match_tokens": [],
+    "instance_count": 1
+  },
+  {
+    "spec_id": "side_view:F2_SD1",
+    "callout_id": "F2_SD1",
+    "section_id": "side_view",
+    "source_view": "side_view",
+    "feature_id": "F2",
+    "feature_name": "Right inner corner radius",
+    "feature_type": "edge_treatment",
+    "spec_type": "dimensional",
+    "dimension_type": "fillet_radius",
+    "description": "Fillet radius",
+    "nominal_value": "R 0.5 mm",
+    "tolerance_or_class": "+0.2/-0.1 mm",
+    "raw_text": "R0.5 +0.2/-0.1",
+    "has_explicit_tolerance": true,
+    "kind": "fillet_radius",
+    "value": 0.5,
+    "tol": {
+      "form": "deviation",
+      "plus": 0.2,
+      "minus": 0.1
+    },
+    "qualifiers": [],
+    "multiplier": null,
+    "match_text": "R0.5 +0.2/-0.1",
+    "match_numbers": [
+      0.5,
+      0.2,
+      0.1
+    ],
+    "match_tokens": [],
+    "instance_count": 1
+  }
+]

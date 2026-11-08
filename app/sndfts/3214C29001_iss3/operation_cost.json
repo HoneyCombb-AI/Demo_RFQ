@@ -1,0 +1,189 @@
+{
+  "organization_id": "sandfits",
+  "machining_operations": [
+    {
+      "op": 1,
+      "operation_name": "Pattern and Core Making",
+      "machine_family": "pattern_shop",
+      "cycle_time_sec": 960.0,
+      "rate_per_hr": 500.0,
+      "cost_per_piece_inr": 133.33,
+      "needs_price": false
+    },
+    {
+      "op": 2,
+      "operation_name": "Cast SG Iron Housing",
+      "machine_family": "foundry",
+      "cycle_time_sec": 540.0,
+      "rate_per_hr": 500.0,
+      "cost_per_piece_inr": 75.0,
+      "needs_price": false
+    },
+    {
+      "op": 3,
+      "operation_name": "Fettle and Clean Casting",
+      "machine_family": "fettling",
+      "cycle_time_sec": 270.0,
+      "rate_per_hr": 200.0,
+      "cost_per_piece_inr": 15.0,
+      "needs_price": false
+    },
+    {
+      "op": 4,
+      "operation_name": "Stress Relieve Casting",
+      "machine_family": "heat_treat_furnace",
+      "cycle_time_sec": 960.0,
+      "rate_per_hr": 400.0,
+      "cost_per_piece_inr": 106.67,
+      "needs_price": false
+    },
+    {
+      "op": 5,
+      "operation_name": "Rough Machine Primary Datum",
+      "machine_family": "vmc",
+      "cycle_time_sec": 94.31,
+      "rate_per_hr": 450.0,
+      "cost_per_piece_inr": 11.79,
+      "needs_price": false
+    },
+    {
+      "op": 6,
+      "operation_name": "Rough Turn Housing",
+      "machine_family": "vtc",
+      "cycle_time_sec": 460.1,
+      "rate_per_hr": 450.0,
+      "cost_per_piece_inr": 57.51,
+      "needs_price": false
+    },
+    {
+      "op": 7,
+      "operation_name": "Rough Axial Milling and Hole Making",
+      "machine_family": "vmc",
+      "cycle_time_sec": 1011.97,
+      "rate_per_hr": 450.0,
+      "cost_per_piece_inr": 126.5,
+      "needs_price": false
+    },
+    {
+      "op": 8,
+      "operation_name": "Rough Radial Hole Making",
+      "machine_family": "vmc",
+      "cycle_time_sec": 355.18,
+      "rate_per_hr": 450.0,
+      "cost_per_piece_inr": 44.4,
+      "needs_price": false
+    },
+    {
+      "op": 9,
+      "operation_name": "Semi-Finish Axial Bore",
+      "machine_family": "vtc",
+      "cycle_time_sec": 150.45,
+      "rate_per_hr": 450.0,
+      "cost_per_piece_inr": 18.81,
+      "needs_price": false
+    },
+    {
+      "op": 10,
+      "operation_name": "Semi-Finish Milled Faces and Groove",
+      "machine_family": "vmc",
+      "cycle_time_sec": 488.63,
+      "rate_per_hr": 450.0,
+      "cost_per_piece_inr": 61.08,
+      "needs_price": false
+    },
+    {
+      "op": 11,
+      "operation_name": "Finish Milled Faces and Groove",
+      "machine_family": "vmc",
+      "cycle_time_sec": 488.63,
+      "rate_per_hr": 450.0,
+      "cost_per_piece_inr": 61.08,
+      "needs_price": false
+    },
+    {
+      "op": 12,
+      "operation_name": "Finish Turn and Bore Housing",
+      "machine_family": "vtc",
+      "cycle_time_sec": 857.26,
+      "rate_per_hr": 450.0,
+      "cost_per_piece_inr": 107.16,
+      "needs_price": false
+    },
+    {
+      "op": 13,
+      "operation_name": "Casting Soundness Check",
+      "machine_family": "ndt",
+      "cycle_time_sec": 30.0,
+      "rate_per_hr": 250.0,
+      "cost_per_piece_inr": 2.08,
+      "needs_price": false
+    },
+    {
+      "op": 14,
+      "operation_name": "Radiographic Examination",
+      "machine_family": "outside_vendor",
+      "cycle_time_sec": 0.0,
+      "rate_per_hr": null,
+      "cost_per_piece_inr": null,
+      "needs_price": true
+    },
+    {
+      "op": 15,
+      "operation_name": "CTS3040L Structural Test",
+      "machine_family": "outside_vendor",
+      "cycle_time_sec": 0.0,
+      "rate_per_hr": null,
+      "cost_per_piece_inr": null,
+      "needs_price": true
+    },
+    {
+      "op": 16,
+      "operation_name": "Final Blast Before Primer",
+      "machine_family": "fettling",
+      "cycle_time_sec": 240.0,
+      "rate_per_hr": 200.0,
+      "cost_per_piece_inr": 13.33,
+      "needs_price": false
+    },
+    {
+      "op": 17,
+      "operation_name": "Apply M1006 Primer",
+      "machine_family": "paint_booth",
+      "cycle_time_sec": 120.0,
+      "rate_per_hr": 300.0,
+      "cost_per_piece_inr": 10.0,
+      "needs_price": false
+    },
+    {
+      "op": 18,
+      "operation_name": "Apply Anti-Rust Oil",
+      "machine_family": "outside_vendor",
+      "cycle_time_sec": 0.0,
+      "rate_per_hr": null,
+      "cost_per_piece_inr": null,
+      "needs_price": true
+    },
+    {
+      "op": 19,
+      "operation_name": "Final Dimensional and Quality Inspection",
+      "machine_family": "inspection",
+      "cycle_time_sec": 420.0,
+      "rate_per_hr": 250.0,
+      "cost_per_piece_inr": 29.17,
+      "needs_price": false
+    }
+  ],
+  "machining_cost_per_piece_inr": 872.91,
+  "fixture": {
+    "cost_per_piece_inr": 550.0,
+    "needs_price": false
+  },
+  "tooling": {
+    "cost_per_piece_inr": 28.72,
+    "needs_price": false
+  },
+  "gauges": {
+    "cost_per_piece_inr": 115.0,
+    "needs_price": false
+  }
+}

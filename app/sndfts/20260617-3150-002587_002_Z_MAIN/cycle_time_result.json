@@ -1,0 +1,3784 @@
+{
+  "analysis_id": "20260617-3150-002587_002_Z_MAIN_merge_20261108T080011Z",
+  "organization_id": "sandfits",
+  "quantity": 10,
+  "operations": [
+    {
+      "sequence": 1,
+      "name": "Pour Casting",
+      "machine_family": "foundry",
+      "in_house": true,
+      "setup_sec": 1800.0,
+      "load_unload_sec": 60.0,
+      "cycle_sec": 540.0,
+      "sub_operations": [
+        {
+          "operation_sequence": 1,
+          "sub_operation_sequence": 1,
+          "operation_type": "pour_casting",
+          "feature_id": null,
+          "method": "static",
+          "kind": "cast_pour",
+          "inputs": {},
+          "sources": {},
+          "params": {
+            "minutes_each": 8.0,
+            "count": 1.0
+          },
+          "cut_sec": 480.0,
+          "non_cut_sec": 0.0,
+          "missing": [],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        }
+      ]
+    },
+    {
+      "sequence": 2,
+      "name": "Shake Out and Fettle Casting",
+      "machine_family": "fettling",
+      "in_house": true,
+      "setup_sec": 600.0,
+      "load_unload_sec": 60.0,
+      "cycle_sec": 420.0,
+      "sub_operations": [
+        {
+          "operation_sequence": 2,
+          "sub_operation_sequence": 1,
+          "operation_type": "saw_cut",
+          "feature_id": null,
+          "method": "static",
+          "kind": "saw_cut",
+          "inputs": {},
+          "sources": {},
+          "params": {
+            "minutes_each": 2.0,
+            "count": 1.0
+          },
+          "cut_sec": 120.0,
+          "non_cut_sec": 0.0,
+          "missing": [],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_sequence": 2,
+          "sub_operation_sequence": 2,
+          "operation_type": "shot_blast",
+          "feature_id": null,
+          "method": "static",
+          "kind": "surface_treat",
+          "inputs": {},
+          "sources": {},
+          "params": {
+            "minutes_each": 3.0,
+            "count": 1.0
+          },
+          "cut_sec": 180.0,
+          "non_cut_sec": 0.0,
+          "missing": [],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_sequence": 2,
+          "sub_operation_sequence": 3,
+          "operation_type": "deburr",
+          "feature_id": null,
+          "method": "static",
+          "kind": "manual",
+          "inputs": {},
+          "sources": {},
+          "params": {
+            "minutes_each": 1.0,
+            "count": 1.0
+          },
+          "cut_sec": 60.0,
+          "non_cut_sec": 0.0,
+          "missing": [],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        }
+      ]
+    },
+    {
+      "sequence": 3,
+      "name": "Clean Casting Before Stress Relief",
+      "machine_family": "outside_vendor",
+      "in_house": false,
+      "setup_sec": 0.0,
+      "load_unload_sec": 0.0,
+      "cycle_sec": 0.0,
+      "sub_operations": [
+        {
+          "operation_sequence": 3,
+          "sub_operation_sequence": 1,
+          "operation_type": "clean_degrease",
+          "feature_id": null,
+          "method": "excluded",
+          "kind": "manual",
+          "inputs": {},
+          "sources": {},
+          "params": {},
+          "cut_sec": 0.0,
+          "non_cut_sec": 0.0,
+          "missing": [],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        }
+      ]
+    },
+    {
+      "sequence": 4,
+      "name": "Stress Relieve Casting",
+      "machine_family": "heat_treat_furnace",
+      "in_house": true,
+      "setup_sec": 1200.0,
+      "load_unload_sec": 60.0,
+      "cycle_sec": 960.0,
+      "sub_operations": [
+        {
+          "operation_sequence": 4,
+          "sub_operation_sequence": 1,
+          "operation_type": "stress_relieve",
+          "feature_id": null,
+          "method": "static",
+          "kind": "furnace_cycle",
+          "inputs": {},
+          "sources": {},
+          "params": {
+            "minutes_each": 15.0,
+            "count": 1.0
+          },
+          "cut_sec": 900.0,
+          "non_cut_sec": 0.0,
+          "missing": [],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        }
+      ]
+    },
+    {
+      "sequence": 5,
+      "name": "VTC Rough Turn and Establish Datums",
+      "machine_family": "vtc",
+      "in_house": true,
+      "setup_sec": 1500.0,
+      "load_unload_sec": 90.0,
+      "cycle_sec": 774.46,
+      "sub_operations": [
+        {
+          "operation_sequence": 5,
+          "sub_operation_sequence": 1,
+          "operation_type": "face_turn",
+          "feature_id": "F09",
+          "method": "formula",
+          "kind": "radial_turn",
+          "inputs": {
+            "kind": "radial_turn",
+            "start_diameter_mm": 328.0,
+            "finish_diameter_mm": 0.0,
+            "groove_count": 1,
+            "total_stock_mm": 3.0
+          },
+          "sources": {
+            "start_diameter_mm": {
+              "ref": "envelope.max_diameter + 2 x config.allowances.casting_stock_per_side_mm",
+              "kind": "computed"
+            },
+            "finish_diameter_mm": {
+              "ref": "solid face",
+              "kind": "computed"
+            },
+            "total_stock_mm": {
+              "ref": "config.allowances.casting_stock_per_side_mm",
+              "kind": "config"
+            }
+          },
+          "params": {
+            "vc_m_min": 220.0,
+            "position": 0.6,
+            "f_mm_rev": 0.32,
+            "rpm": 427.0,
+            "travel_mm": 164.0,
+            "passes": 1.0,
+            "steps": 1.0
+          },
+          "cut_sec": 72.89,
+          "non_cut_sec": 0.45,
+          "missing": [],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_sequence": 5,
+          "sub_operation_sequence": 2,
+          "operation_type": "rough_turn_od",
+          "feature_id": "F25",
+          "method": "formula",
+          "kind": "axial_turn",
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 328.0,
+            "finish_diameter_mm": 322.6,
+            "cut_length_mm": 60.0
+          },
+          "sources": {
+            "cut_length_mm": {
+              "ref": "F25 has no length; envelope.max_length",
+              "kind": "computed"
+            },
+            "start_diameter_mm": {
+              "ref": "F25.diameter + 2 x config.allowances.casting_stock_per_side_mm",
+              "kind": "computed"
+            },
+            "finish_diameter_mm": {
+              "ref": "F25.diameter + 2 x config.allowances.finish_stock_per_side_mm",
+              "kind": "computed"
+            }
+          },
+          "params": {
+            "vc_m_min": 220.0,
+            "position": 0.6,
+            "f_mm_rev": 0.37,
+            "rpm": 215.27,
+            "radial_mm": 2.7,
+            "passes": 1.0
+          },
+          "cut_sec": 46.7,
+          "non_cut_sec": 0.45,
+          "missing": [],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_sequence": 5,
+          "sub_operation_sequence": 3,
+          "operation_type": "rough_turn_od",
+          "feature_id": "F07",
+          "method": "formula",
+          "kind": "axial_turn",
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 323.0,
+            "finish_diameter_mm": 317.6,
+            "cut_length_mm": 60.0
+          },
+          "sources": {
+            "cut_length_mm": {
+              "ref": "F07 has no length; envelope.max_length",
+              "kind": "computed"
+            },
+            "start_diameter_mm": {
+              "ref": "F07.diameter + 2 x config.allowances.casting_stock_per_side_mm",
+              "kind": "computed"
+            },
+            "finish_diameter_mm": {
+              "ref": "F07.diameter + 2 x config.allowances.finish_stock_per_side_mm",
+              "kind": "computed"
+            }
+          },
+          "params": {
+            "vc_m_min": 220.0,
+            "position": 0.6,
+            "f_mm_rev": 0.37,
+            "rpm": 218.63,
+            "radial_mm": 2.7,
+            "passes": 1.0
+          },
+          "cut_sec": 45.98,
+          "non_cut_sec": 0.45,
+          "missing": [],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_sequence": 5,
+          "sub_operation_sequence": 4,
+          "operation_type": "rough_turn_od",
+          "feature_id": "F20",
+          "method": "formula",
+          "kind": "axial_turn",
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 304.0,
+            "finish_diameter_mm": 298.6,
+            "cut_length_mm": 60.0
+          },
+          "sources": {
+            "cut_length_mm": {
+              "ref": "F20 has no length; envelope.max_length",
+              "kind": "computed"
+            },
+            "start_diameter_mm": {
+              "ref": "F20.diameter + 2 x config.allowances.casting_stock_per_side_mm",
+              "kind": "computed"
+            },
+            "finish_diameter_mm": {
+              "ref": "F20.diameter + 2 x config.allowances.finish_stock_per_side_mm",
+              "kind": "computed"
+            }
+          },
+          "params": {
+            "vc_m_min": 220.0,
+            "position": 0.6,
+            "f_mm_rev": 0.37,
+            "rpm": 232.42,
+            "radial_mm": 2.7,
+            "passes": 1.0
+          },
+          "cut_sec": 43.26,
+          "non_cut_sec": 0.45,
+          "missing": [],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_sequence": 5,
+          "sub_operation_sequence": 5,
+          "operation_type": "rough_turn_od",
+          "feature_id": "F21",
+          "method": "formula",
+          "kind": "axial_turn",
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 303.0,
+            "finish_diameter_mm": 297.6,
+            "cut_length_mm": 60.0
+          },
+          "sources": {
+            "cut_length_mm": {
+              "ref": "F21 has no length; envelope.max_length",
+              "kind": "computed"
+            },
+            "start_diameter_mm": {
+              "ref": "F21.diameter + 2 x config.allowances.casting_stock_per_side_mm",
+              "kind": "computed"
+            },
+            "finish_diameter_mm": {
+              "ref": "F21.diameter + 2 x config.allowances.finish_stock_per_side_mm",
+              "kind": "computed"
+            }
+          },
+          "params": {
+            "vc_m_min": 220.0,
+            "position": 0.6,
+            "f_mm_rev": 0.37,
+            "rpm": 233.19,
+            "radial_mm": 2.7,
+            "passes": 1.0
+          },
+          "cut_sec": 43.12,
+          "non_cut_sec": 0.45,
+          "missing": [],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_sequence": 5,
+          "sub_operation_sequence": 6,
+          "operation_type": "rough_turn_od",
+          "feature_id": "F33",
+          "method": "formula",
+          "kind": "axial_turn",
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 320.0,
+            "finish_diameter_mm": 314.6,
+            "cut_length_mm": 11.5
+          },
+          "sources": {
+            "cut_length_mm": {
+              "ref": "F33.length",
+              "kind": "derived"
+            },
+            "start_diameter_mm": {
+              "ref": "F33.diameter + 2 x config.allowances.casting_stock_per_side_mm",
+              "kind": "computed"
+            },
+            "finish_diameter_mm": {
+              "ref": "F33.diameter + 2 x config.allowances.finish_stock_per_side_mm",
+              "kind": "computed"
+            }
+          },
+          "params": {
+            "vc_m_min": 220.0,
+            "position": 0.6,
+            "f_mm_rev": 0.37,
+            "rpm": 220.7,
+            "radial_mm": 2.7,
+            "passes": 1.0
+          },
+          "cut_sec": 9.92,
+          "non_cut_sec": 0.45,
+          "missing": [],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_sequence": 5,
+          "sub_operation_sequence": 7,
+          "operation_type": "rough_turn_od",
+          "feature_id": "F34",
+          "method": "formula",
+          "kind": "axial_turn",
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 288.0,
+            "finish_diameter_mm": 282.6,
+            "cut_length_mm": 7.5
+          },
+          "sources": {
+            "cut_length_mm": {
+              "ref": "F34.length",
+              "kind": "derived"
+            },
+            "start_diameter_mm": {
+              "ref": "F34.diameter + 2 x config.allowances.casting_stock_per_side_mm",
+              "kind": "computed"
+            },
+            "finish_diameter_mm": {
+              "ref": "F34.diameter + 2 x config.allowances.finish_stock_per_side_mm",
+              "kind": "computed"
+            }
+          },
+          "params": {
+            "vc_m_min": 220.0,
+            "position": 0.6,
+            "f_mm_rev": 0.37,
+            "rpm": 245.45,
+            "radial_mm": 2.7,
+            "passes": 1.0
+          },
+          "cut_sec": 6.28,
+          "non_cut_sec": 0.45,
+          "missing": [],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_sequence": 5,
+          "sub_operation_sequence": 8,
+          "operation_type": "turn_taper",
+          "feature_id": "F32",
+          "method": "fallback",
+          "kind": "axial_turn",
+          "inputs": {},
+          "sources": {
+            "cut_length_mm": {
+              "ref": "F32 has no length; envelope.max_length",
+              "kind": "computed"
+            },
+            "start_diameter_mm": {
+              "ref": "F32.diameter + 2 x config.allowances.casting_stock_per_side_mm",
+              "kind": "assumed"
+            },
+            "finish_diameter_mm": {
+              "ref": "F32.diameter",
+              "kind": "assumed"
+            }
+          },
+          "params": {
+            "fallback_min": 1.0
+          },
+          "cut_sec": 60.0,
+          "non_cut_sec": 0.45,
+          "missing": [
+            "F32.taper_included_angle_deg"
+          ],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_sequence": 5,
+          "sub_operation_sequence": 9,
+          "operation_type": "rough_turn_od",
+          "feature_id": "F37",
+          "method": "formula",
+          "kind": "axial_turn",
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 126.0,
+            "finish_diameter_mm": 120.6,
+            "cut_length_mm": 10.0
+          },
+          "sources": {
+            "cut_length_mm": {
+              "ref": "F37.length",
+              "kind": "derived"
+            },
+            "start_diameter_mm": {
+              "ref": "F37.diameter + 2 x config.allowances.casting_stock_per_side_mm",
+              "kind": "computed"
+            },
+            "finish_diameter_mm": {
+              "ref": "F37.diameter + 2 x config.allowances.finish_stock_per_side_mm",
+              "kind": "computed"
+            }
+          },
+          "params": {
+            "vc_m_min": 220.0,
+            "position": 0.6,
+            "f_mm_rev": 0.37,
+            "rpm": 567.95,
+            "radial_mm": 2.7,
+            "passes": 1.0
+          },
+          "cut_sec": 3.43,
+          "non_cut_sec": 0.45,
+          "missing": [],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_sequence": 5,
+          "sub_operation_sequence": 10,
+          "operation_type": "rough_turn_od",
+          "feature_id": "F45",
+          "method": "formula",
+          "kind": "axial_turn",
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 166.0,
+            "finish_diameter_mm": 160.6,
+            "cut_length_mm": 60.0
+          },
+          "sources": {
+            "cut_length_mm": {
+              "ref": "F45 has no length; envelope.max_length",
+              "kind": "computed"
+            },
+            "start_diameter_mm": {
+              "ref": "F45.diameter + 2 x config.allowances.casting_stock_per_side_mm",
+              "kind": "computed"
+            },
+            "finish_diameter_mm": {
+              "ref": "F45.diameter + 2 x config.allowances.finish_stock_per_side_mm",
+              "kind": "computed"
+            }
+          },
+          "params": {
+            "vc_m_min": 220.0,
+            "position": 0.6,
+            "f_mm_rev": 0.37,
+            "rpm": 428.83,
+            "radial_mm": 2.7,
+            "passes": 1.0
+          },
+          "cut_sec": 23.45,
+          "non_cut_sec": 0.45,
+          "missing": [],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_sequence": 5,
+          "sub_operation_sequence": 11,
+          "operation_type": "form_turn",
+          "feature_id": "F14",
+          "method": "static",
+          "kind": "axial_turn",
+          "inputs": {},
+          "sources": {},
+          "params": {
+            "minutes_each": 0.1,
+            "count": 1.0
+          },
+          "cut_sec": 6.0,
+          "non_cut_sec": 0.0,
+          "missing": [],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_sequence": 5,
+          "sub_operation_sequence": 12,
+          "operation_type": "form_turn",
+          "feature_id": "F18",
+          "method": "static",
+          "kind": "axial_turn",
+          "inputs": {},
+          "sources": {},
+          "params": {
+            "minutes_each": 0.1,
+            "count": 1.0
+          },
+          "cut_sec": 6.0,
+          "non_cut_sec": 0.0,
+          "missing": [],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_sequence": 5,
+          "sub_operation_sequence": 13,
+          "operation_type": "face_turn",
+          "feature_id": "F08",
+          "method": "formula",
+          "kind": "radial_turn",
+          "inputs": {
+            "kind": "radial_turn",
+            "start_diameter_mm": 328.0,
+            "finish_diameter_mm": 0.0,
+            "groove_count": 1,
+            "total_stock_mm": 3.0
+          },
+          "sources": {
+            "start_diameter_mm": {
+              "ref": "envelope.max_diameter + 2 x config.allowances.casting_stock_per_side_mm",
+              "kind": "computed"
+            },
+            "finish_diameter_mm": {
+              "ref": "solid face",
+              "kind": "computed"
+            },
+            "total_stock_mm": {
+              "ref": "config.allowances.casting_stock_per_side_mm",
+              "kind": "config"
+            }
+          },
+          "params": {
+            "vc_m_min": 220.0,
+            "position": 0.6,
+            "f_mm_rev": 0.32,
+            "rpm": 427.0,
+            "travel_mm": 164.0,
+            "passes": 1.0,
+            "steps": 1.0
+          },
+          "cut_sec": 72.89,
+          "non_cut_sec": 0.45,
+          "missing": [],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_sequence": 5,
+          "sub_operation_sequence": 14,
+          "operation_type": "face_turn",
+          "feature_id": "F12",
+          "method": "formula",
+          "kind": "radial_turn",
+          "inputs": {
+            "kind": "radial_turn",
+            "start_diameter_mm": 328.0,
+            "finish_diameter_mm": 0.0,
+            "groove_count": 1,
+            "total_stock_mm": 3.0
+          },
+          "sources": {
+            "start_diameter_mm": {
+              "ref": "envelope.max_diameter + 2 x config.allowances.casting_stock_per_side_mm",
+              "kind": "computed"
+            },
+            "finish_diameter_mm": {
+              "ref": "solid face",
+              "kind": "computed"
+            },
+            "total_stock_mm": {
+              "ref": "config.allowances.casting_stock_per_side_mm",
+              "kind": "config"
+            }
+          },
+          "params": {
+            "vc_m_min": 220.0,
+            "position": 0.6,
+            "f_mm_rev": 0.32,
+            "rpm": 427.0,
+            "travel_mm": 164.0,
+            "passes": 1.0,
+            "steps": 1.0
+          },
+          "cut_sec": 72.89,
+          "non_cut_sec": 0.45,
+          "missing": [],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_sequence": 5,
+          "sub_operation_sequence": 15,
+          "operation_type": "face_turn",
+          "feature_id": "F13",
+          "method": "formula",
+          "kind": "radial_turn",
+          "inputs": {
+            "kind": "radial_turn",
+            "start_diameter_mm": 328.0,
+            "finish_diameter_mm": 0.0,
+            "groove_count": 1,
+            "total_stock_mm": 3.0
+          },
+          "sources": {
+            "start_diameter_mm": {
+              "ref": "envelope.max_diameter + 2 x config.allowances.casting_stock_per_side_mm",
+              "kind": "computed"
+            },
+            "finish_diameter_mm": {
+              "ref": "solid face",
+              "kind": "computed"
+            },
+            "total_stock_mm": {
+              "ref": "config.allowances.casting_stock_per_side_mm",
+              "kind": "config"
+            }
+          },
+          "params": {
+            "vc_m_min": 220.0,
+            "position": 0.6,
+            "f_mm_rev": 0.32,
+            "rpm": 427.0,
+            "travel_mm": 164.0,
+            "passes": 1.0,
+            "steps": 1.0
+          },
+          "cut_sec": 72.89,
+          "non_cut_sec": 0.45,
+          "missing": [],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_sequence": 5,
+          "sub_operation_sequence": 16,
+          "operation_type": "rough_bore_id",
+          "feature_id": "F15",
+          "method": "formula",
+          "kind": "axial_turn",
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 112.0,
+            "finish_diameter_mm": 117.4,
+            "cut_length_mm": 60.0
+          },
+          "sources": {
+            "cut_length_mm": {
+              "ref": "F15 has no length; envelope.max_length",
+              "kind": "computed"
+            },
+            "start_diameter_mm": {
+              "ref": "F15.diameter - 2 x config.allowances.casting_stock_per_side_mm",
+              "kind": "computed"
+            },
+            "finish_diameter_mm": {
+              "ref": "F15.diameter - 2 x config.allowances.bore_finish_stock_per_side_mm",
+              "kind": "computed"
+            }
+          },
+          "params": {
+            "vc_m_min": 178.0,
+            "position": 0.6,
+            "f_mm_rev": 0.29,
+            "rpm": 493.98,
+            "radial_mm": 2.7,
+            "passes": 1.0
+          },
+          "cut_sec": 25.97,
+          "non_cut_sec": 0.45,
+          "missing": [],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_sequence": 5,
+          "sub_operation_sequence": 17,
+          "operation_type": "rough_bore_id",
+          "feature_id": "F17",
+          "method": "formula",
+          "kind": "axial_turn",
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 9.6,
+            "finish_diameter_mm": 15.0,
+            "cut_length_mm": 60.0
+          },
+          "sources": {
+            "cut_length_mm": {
+              "ref": "F17 has no length; envelope.max_length",
+              "kind": "computed"
+            },
+            "start_diameter_mm": {
+              "ref": "F17.diameter - 2 x config.allowances.casting_stock_per_side_mm",
+              "kind": "computed"
+            },
+            "finish_diameter_mm": {
+              "ref": "F17.diameter - 2 x config.allowances.bore_finish_stock_per_side_mm",
+              "kind": "computed"
+            }
+          },
+          "params": {
+            "vc_m_min": 178.0,
+            "position": 0.6,
+            "f_mm_rev": 0.29,
+            "rpm": 4606.44,
+            "radial_mm": 2.7,
+            "passes": 1.0
+          },
+          "cut_sec": 2.78,
+          "non_cut_sec": 0.45,
+          "missing": [],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_sequence": 5,
+          "sub_operation_sequence": 18,
+          "operation_type": "rough_bore_id",
+          "feature_id": "F35",
+          "method": "formula",
+          "kind": "axial_turn",
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 258.0,
+            "finish_diameter_mm": 263.4,
+            "cut_length_mm": 11.5
+          },
+          "sources": {
+            "cut_length_mm": {
+              "ref": "F35.length",
+              "kind": "derived"
+            },
+            "start_diameter_mm": {
+              "ref": "F35.diameter - 2 x config.allowances.casting_stock_per_side_mm",
+              "kind": "computed"
+            },
+            "finish_diameter_mm": {
+              "ref": "F35.diameter - 2 x config.allowances.bore_finish_stock_per_side_mm",
+              "kind": "computed"
+            }
+          },
+          "params": {
+            "vc_m_min": 178.0,
+            "position": 0.6,
+            "f_mm_rev": 0.29,
+            "rpm": 217.33,
+            "radial_mm": 2.7,
+            "passes": 1.0
+          },
+          "cut_sec": 12.85,
+          "non_cut_sec": 0.45,
+          "missing": [],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_sequence": 5,
+          "sub_operation_sequence": 19,
+          "operation_type": "rough_bore_id",
+          "feature_id": "F36",
+          "method": "formula",
+          "kind": "axial_turn",
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 201.0,
+            "finish_diameter_mm": 206.4,
+            "cut_length_mm": 34.5
+          },
+          "sources": {
+            "cut_length_mm": {
+              "ref": "F36.length",
+              "kind": "derived"
+            },
+            "start_diameter_mm": {
+              "ref": "F36.diameter - 2 x config.allowances.casting_stock_per_side_mm",
+              "kind": "computed"
+            },
+            "finish_diameter_mm": {
+              "ref": "F36.diameter - 2 x config.allowances.bore_finish_stock_per_side_mm",
+              "kind": "computed"
+            }
+          },
+          "params": {
+            "vc_m_min": 178.0,
+            "position": 0.6,
+            "f_mm_rev": 0.29,
+            "rpm": 278.15,
+            "radial_mm": 2.7,
+            "passes": 1.0
+          },
+          "cut_sec": 27.15,
+          "non_cut_sec": 0.45,
+          "missing": [],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_sequence": 5,
+          "sub_operation_sequence": 20,
+          "operation_type": "rough_bore_id",
+          "feature_id": "F38",
+          "method": "formula",
+          "kind": "axial_turn",
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 94.0,
+            "finish_diameter_mm": 99.4,
+            "cut_length_mm": 60.0
+          },
+          "sources": {
+            "cut_length_mm": {
+              "ref": "F38 has no length; envelope.max_length",
+              "kind": "computed"
+            },
+            "start_diameter_mm": {
+              "ref": "F38.diameter - 2 x config.allowances.casting_stock_per_side_mm",
+              "kind": "computed"
+            },
+            "finish_diameter_mm": {
+              "ref": "F38.diameter - 2 x config.allowances.bore_finish_stock_per_side_mm",
+              "kind": "computed"
+            }
+          },
+          "params": {
+            "vc_m_min": 178.0,
+            "position": 0.6,
+            "f_mm_rev": 0.29,
+            "rpm": 585.93,
+            "radial_mm": 2.7,
+            "passes": 1.0
+          },
+          "cut_sec": 21.89,
+          "non_cut_sec": 0.45,
+          "missing": [],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        }
+      ]
+    },
+    {
+      "sequence": 6,
+      "name": "VMC Rough Datum and Prismatic Features",
+      "machine_family": "vmc",
+      "in_house": true,
+      "setup_sec": 1500.0,
+      "load_unload_sec": 60.0,
+      "cycle_sec": 667.59,
+      "sub_operations": [
+        {
+          "operation_sequence": 6,
+          "sub_operation_sequence": 1,
+          "operation_type": "face_mill",
+          "feature_id": "F10",
+          "method": "formula",
+          "kind": "face_mill",
+          "inputs": {
+            "kind": "face_mill",
+            "mill_length_mm": 322.0,
+            "mill_width_mm": 322.0,
+            "total_stock_mm": 1.0,
+            "face_count": 1
+          },
+          "sources": {
+            "mill_length_mm": {
+              "ref": "envelope.max_diameter",
+              "kind": "computed"
+            },
+            "mill_width_mm": {
+              "ref": "envelope.max_diameter",
+              "kind": "computed"
+            },
+            "total_stock_mm": {
+              "ref": "config.allowances.facing_stock_per_face_mm",
+              "kind": "config"
+            },
+            "face_count": {
+              "ref": "F10.instance_count",
+              "kind": "drawing"
+            }
+          },
+          "params": {
+            "vc_m_min": 190.0,
+            "position": 0.6,
+            "fz_mm": 0.2,
+            "rpm": 1209.58,
+            "feed_mm_min": 1197.48,
+            "w_passes": 10.0,
+            "z_passes": 1.0
+          },
+          "cut_sec": 186.39,
+          "non_cut_sec": 0.3,
+          "missing": [],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_sequence": 6,
+          "sub_operation_sequence": 2,
+          "operation_type": "slot_mill",
+          "feature_id": "F23",
+          "method": "fallback",
+          "kind": "contour_mill",
+          "inputs": {},
+          "sources": {
+            "radial_width_mm": {
+              "ref": "F23.width",
+              "kind": "drawing"
+            },
+            "path_count": {
+              "ref": "F23.instance_count",
+              "kind": "drawing"
+            }
+          },
+          "params": {
+            "fallback_min": 2.0
+          },
+          "cut_sec": 120.0,
+          "non_cut_sec": 0.3,
+          "missing": [
+            "F23.path_length_mm",
+            "F23.depth"
+          ],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_sequence": 6,
+          "sub_operation_sequence": 3,
+          "operation_type": "profile_mill",
+          "feature_id": "F24",
+          "method": "fallback",
+          "kind": "contour_mill",
+          "inputs": {},
+          "sources": {
+            "path_count": {
+              "ref": "F24.instance_count",
+              "kind": "drawing"
+            }
+          },
+          "params": {
+            "fallback_min": 2.0
+          },
+          "cut_sec": 120.0,
+          "non_cut_sec": 0.3,
+          "missing": [
+            "F24: no contour rule for feature type 'tooth_ring'"
+          ],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_sequence": 6,
+          "sub_operation_sequence": 4,
+          "operation_type": "pocket_mill",
+          "feature_id": "F44",
+          "method": "fallback",
+          "kind": "pocket_mill",
+          "inputs": {},
+          "sources": {
+            "pocket_count": {
+              "ref": "F44.instance_count",
+              "kind": "drawing"
+            }
+          },
+          "params": {
+            "fallback_min": 3.0
+          },
+          "cut_sec": 180.0,
+          "non_cut_sec": 0.3,
+          "missing": [
+            "F44 pocket width x length",
+            "F44.pocket_depth_mm"
+          ],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        }
+      ]
+    },
+    {
+      "sequence": 7,
+      "name": "VMC Rough Axial Holes",
+      "machine_family": "vmc",
+      "in_house": true,
+      "setup_sec": 1500.0,
+      "load_unload_sec": 60.0,
+      "cycle_sec": 451.2,
+      "sub_operations": [
+        {
+          "operation_sequence": 7,
+          "sub_operation_sequence": 1,
+          "operation_type": "spot_drill",
+          "feature_id": "F01,F02,F03,F04,F05,F06,F16,F39,F43",
+          "method": "static",
+          "kind": "point_drill",
+          "inputs": {},
+          "sources": {},
+          "params": {
+            "minutes_each": 0.1,
+            "count": 20.0
+          },
+          "cut_sec": 120.0,
+          "non_cut_sec": 0.0,
+          "missing": [],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_sequence": 7,
+          "sub_operation_sequence": 2,
+          "operation_type": "drill",
+          "feature_id": "F01",
+          "method": "fallback",
+          "kind": "point_drill",
+          "inputs": {},
+          "sources": {
+            "hole_diameter_mm": {
+              "ref": "F01.diameter",
+              "kind": "assumed"
+            },
+            "hole_count": {
+              "ref": "F01.instance_count",
+              "kind": "drawing"
+            }
+          },
+          "params": {
+            "fallback_min": 0.5
+          },
+          "cut_sec": 30.0,
+          "non_cut_sec": 0.3,
+          "missing": [
+            "F01 depth"
+          ],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_sequence": 7,
+          "sub_operation_sequence": 2,
+          "operation_type": "drill",
+          "feature_id": "F02",
+          "method": "fallback",
+          "kind": "point_drill",
+          "inputs": {},
+          "sources": {
+            "hole_diameter_mm": {
+              "ref": "F02.diameter",
+              "kind": "assumed"
+            },
+            "hole_count": {
+              "ref": "F02.instance_count",
+              "kind": "drawing"
+            }
+          },
+          "params": {
+            "fallback_min": 0.5
+          },
+          "cut_sec": 30.0,
+          "non_cut_sec": 0.0,
+          "missing": [
+            "F02 depth"
+          ],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_sequence": 7,
+          "sub_operation_sequence": 2,
+          "operation_type": "drill",
+          "feature_id": "F03",
+          "method": "fallback",
+          "kind": "point_drill",
+          "inputs": {},
+          "sources": {
+            "hole_diameter_mm": {
+              "ref": "F03.diameter",
+              "kind": "assumed"
+            },
+            "hole_count": {
+              "ref": "F03.instance_count",
+              "kind": "drawing"
+            }
+          },
+          "params": {
+            "fallback_min": 0.5
+          },
+          "cut_sec": 30.0,
+          "non_cut_sec": 0.0,
+          "missing": [
+            "F03 depth"
+          ],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_sequence": 7,
+          "sub_operation_sequence": 2,
+          "operation_type": "drill",
+          "feature_id": "F04",
+          "method": "fallback",
+          "kind": "point_drill",
+          "inputs": {},
+          "sources": {
+            "hole_diameter_mm": {
+              "ref": "F04.diameter",
+              "kind": "assumed"
+            },
+            "hole_count": {
+              "ref": "F04.instance_count",
+              "kind": "drawing"
+            }
+          },
+          "params": {
+            "fallback_min": 0.5
+          },
+          "cut_sec": 30.0,
+          "non_cut_sec": 0.0,
+          "missing": [
+            "F04 depth"
+          ],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_sequence": 7,
+          "sub_operation_sequence": 2,
+          "operation_type": "drill",
+          "feature_id": "F05",
+          "method": "fallback",
+          "kind": "point_drill",
+          "inputs": {},
+          "sources": {
+            "hole_diameter_mm": {
+              "ref": "F05.diameter",
+              "kind": "assumed"
+            },
+            "hole_count": {
+              "ref": "F05.instance_count",
+              "kind": "drawing"
+            }
+          },
+          "params": {
+            "fallback_min": 0.5
+          },
+          "cut_sec": 30.0,
+          "non_cut_sec": 0.0,
+          "missing": [
+            "F05 depth"
+          ],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_sequence": 7,
+          "sub_operation_sequence": 2,
+          "operation_type": "drill",
+          "feature_id": "F06",
+          "method": "fallback",
+          "kind": "point_drill",
+          "inputs": {},
+          "sources": {
+            "hole_diameter_mm": {
+              "ref": "F06.diameter",
+              "kind": "assumed"
+            },
+            "hole_count": {
+              "ref": "F06.instance_count",
+              "kind": "drawing"
+            }
+          },
+          "params": {
+            "fallback_min": 0.5
+          },
+          "cut_sec": 30.0,
+          "non_cut_sec": 0.0,
+          "missing": [
+            "F06 depth"
+          ],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_sequence": 7,
+          "sub_operation_sequence": 3,
+          "operation_type": "drill",
+          "feature_id": "F16",
+          "method": "fallback",
+          "kind": "point_drill",
+          "inputs": {},
+          "sources": {
+            "hole_diameter_mm": {
+              "ref": "F16.diameter",
+              "kind": "drawing"
+            },
+            "hole_count": {
+              "ref": "F16.instance_count",
+              "kind": "drawing"
+            }
+          },
+          "params": {
+            "fallback_min": 0.5
+          },
+          "cut_sec": 30.0,
+          "non_cut_sec": 0.3,
+          "missing": [
+            "F16 depth"
+          ],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_sequence": 7,
+          "sub_operation_sequence": 4,
+          "operation_type": "drill",
+          "feature_id": "F39",
+          "method": "fallback",
+          "kind": "point_drill",
+          "inputs": {},
+          "sources": {
+            "hole_diameter_mm": {
+              "ref": "F39.diameter",
+              "kind": "drawing"
+            },
+            "hole_count": {
+              "ref": "F39.instance_count",
+              "kind": "drawing"
+            }
+          },
+          "params": {
+            "fallback_min": 0.5
+          },
+          "cut_sec": 30.0,
+          "non_cut_sec": 0.3,
+          "missing": [
+            "F39 depth"
+          ],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_sequence": 7,
+          "sub_operation_sequence": 5,
+          "operation_type": "drill",
+          "feature_id": "F43",
+          "method": "fallback",
+          "kind": "point_drill",
+          "inputs": {},
+          "sources": {
+            "hole_diameter_mm": {
+              "ref": "F43.diameter",
+              "kind": "drawing"
+            },
+            "hole_count": {
+              "ref": "F43.instance_count",
+              "kind": "drawing"
+            }
+          },
+          "params": {
+            "fallback_min": 0.5
+          },
+          "cut_sec": 30.0,
+          "non_cut_sec": 0.3,
+          "missing": [
+            "F43 depth"
+          ],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        }
+      ]
+    },
+    {
+      "sequence": 8,
+      "name": "VMC Rough Radial Hole",
+      "machine_family": "vmc",
+      "in_house": true,
+      "setup_sec": 1500.0,
+      "load_unload_sec": 60.0,
+      "cycle_sec": 67.07,
+      "sub_operations": [
+        {
+          "operation_sequence": 8,
+          "sub_operation_sequence": 1,
+          "operation_type": "spot_drill",
+          "feature_id": "F22",
+          "method": "static",
+          "kind": "point_drill",
+          "inputs": {},
+          "sources": {},
+          "params": {
+            "minutes_each": 0.1,
+            "count": 1.0
+          },
+          "cut_sec": 6.0,
+          "non_cut_sec": 0.0,
+          "missing": [],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_sequence": 8,
+          "sub_operation_sequence": 2,
+          "operation_type": "drill",
+          "feature_id": "F22",
+          "method": "formula",
+          "kind": "point_drill",
+          "inputs": {
+            "kind": "point_drill",
+            "hole_diameter_mm": 6.2,
+            "hole_depth_mm": 5.0,
+            "hole_count": 1,
+            "through_hole": false
+          },
+          "sources": {
+            "hole_diameter_mm": {
+              "ref": "F22.diameter",
+              "kind": "drawing"
+            },
+            "hole_depth_mm": {
+              "ref": "F22.depth",
+              "kind": "drawing"
+            },
+            "hole_count": {
+              "ref": "F22.instance_count",
+              "kind": "drawing"
+            }
+          },
+          "params": {
+            "vc_m_min": 90.0,
+            "position": 0.5,
+            "f_mm_rev": 0.15,
+            "rpm": 4620.63,
+            "point_mm": 1.86,
+            "peck_factor": 1.0,
+            "insert_drill": 0.0
+          },
+          "cut_sec": 0.77,
+          "non_cut_sec": 0.3,
+          "missing": [],
+          "warnings": [],
+          "cutting_limits": [
+            "feed 0.015 x \u00d86.2"
+          ],
+          "note": null
+        }
+      ]
+    },
+    {
+      "sequence": 9,
+      "name": "VMC Rough Inclined Holes",
+      "machine_family": "vmc",
+      "in_house": true,
+      "setup_sec": 1500.0,
+      "load_unload_sec": 60.0,
+      "cycle_sec": 132.6,
+      "sub_operations": [
+        {
+          "operation_sequence": 9,
+          "sub_operation_sequence": 1,
+          "operation_type": "spot_drill",
+          "feature_id": "F41,F42",
+          "method": "static",
+          "kind": "point_drill",
+          "inputs": {},
+          "sources": {},
+          "params": {
+            "minutes_each": 0.1,
+            "count": 2.0
+          },
+          "cut_sec": 12.0,
+          "non_cut_sec": 0.0,
+          "missing": [],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_sequence": 9,
+          "sub_operation_sequence": 2,
+          "operation_type": "drill",
+          "feature_id": "F41",
+          "method": "fallback",
+          "kind": "point_drill",
+          "inputs": {},
+          "sources": {
+            "hole_diameter_mm": {
+              "ref": "F41.diameter",
+              "kind": "drawing"
+            },
+            "hole_count": {
+              "ref": "F41.instance_count",
+              "kind": "drawing"
+            }
+          },
+          "params": {
+            "fallback_min": 0.5
+          },
+          "cut_sec": 30.0,
+          "non_cut_sec": 0.3,
+          "missing": [
+            "F41 depth"
+          ],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_sequence": 9,
+          "sub_operation_sequence": 3,
+          "operation_type": "drill",
+          "feature_id": "F42",
+          "method": "fallback",
+          "kind": "point_drill",
+          "inputs": {},
+          "sources": {
+            "hole_diameter_mm": {
+              "ref": "F42.diameter",
+              "kind": "drawing"
+            },
+            "hole_count": {
+              "ref": "F42.instance_count",
+              "kind": "drawing"
+            }
+          },
+          "params": {
+            "fallback_min": 0.5
+          },
+          "cut_sec": 30.0,
+          "non_cut_sec": 0.3,
+          "missing": [
+            "F42 depth"
+          ],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        }
+      ]
+    },
+    {
+      "sequence": 10,
+      "name": "VTC Semi-Finish Precision Bores",
+      "machine_family": "vtc",
+      "in_house": true,
+      "setup_sec": 1500.0,
+      "load_unload_sec": 90.0,
+      "cycle_sec": 188.8,
+      "sub_operations": [
+        {
+          "operation_sequence": 10,
+          "sub_operation_sequence": 1,
+          "operation_type": "semi_finish_bore_id",
+          "feature_id": "F36",
+          "method": "formula",
+          "kind": "axial_turn",
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 206.4,
+            "finish_diameter_mm": 206.7,
+            "cut_length_mm": 34.5
+          },
+          "sources": {
+            "cut_length_mm": {
+              "ref": "F36.length",
+              "kind": "derived"
+            },
+            "start_diameter_mm": {
+              "ref": "F36.diameter - 2 x config.allowances.bore_finish_stock_per_side_mm",
+              "kind": "computed"
+            },
+            "finish_diameter_mm": {
+              "ref": "F36.diameter - config.allowances.bore_finish_stock_per_side_mm",
+              "kind": "computed"
+            }
+          },
+          "params": {
+            "vc_m_min": 220.0,
+            "position": 0.5,
+            "f_mm_rev": 0.12,
+            "rpm": 339.04,
+            "radial_mm": 0.15,
+            "passes": 1.0
+          },
+          "cut_sec": 53.83,
+          "non_cut_sec": 0.45,
+          "missing": [],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_sequence": 10,
+          "sub_operation_sequence": 2,
+          "operation_type": "semi_finish_bore_id",
+          "feature_id": "F38",
+          "method": "formula",
+          "kind": "axial_turn",
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 99.4,
+            "finish_diameter_mm": 99.7,
+            "cut_length_mm": 60.0
+          },
+          "sources": {
+            "cut_length_mm": {
+              "ref": "F38 has no length; envelope.max_length",
+              "kind": "computed"
+            },
+            "start_diameter_mm": {
+              "ref": "F38.diameter - 2 x config.allowances.bore_finish_stock_per_side_mm",
+              "kind": "computed"
+            },
+            "finish_diameter_mm": {
+              "ref": "F38.diameter - config.allowances.bore_finish_stock_per_side_mm",
+              "kind": "computed"
+            }
+          },
+          "params": {
+            "vc_m_min": 220.0,
+            "position": 0.5,
+            "f_mm_rev": 0.12,
+            "rpm": 703.45,
+            "radial_mm": 0.15,
+            "passes": 1.0
+          },
+          "cut_sec": 44.07,
+          "non_cut_sec": 0.45,
+          "missing": [],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        }
+      ]
+    },
+    {
+      "sequence": 11,
+      "name": "VTC Finish Turn and Bore",
+      "machine_family": "vtc",
+      "in_house": true,
+      "setup_sec": 1500.0,
+      "load_unload_sec": 90.0,
+      "cycle_sec": 927.91,
+      "sub_operations": [
+        {
+          "operation_sequence": 11,
+          "sub_operation_sequence": 1,
+          "operation_type": "finish_bore_id",
+          "feature_id": "F15",
+          "method": "formula",
+          "kind": "axial_turn",
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 117.4,
+            "finish_diameter_mm": 118.0,
+            "cut_length_mm": 60.0
+          },
+          "sources": {
+            "cut_length_mm": {
+              "ref": "F15 has no length; envelope.max_length",
+              "kind": "computed"
+            },
+            "start_diameter_mm": {
+              "ref": "F15.diameter - 2 x config.allowances.bore_finish_stock_per_side_mm",
+              "kind": "computed"
+            },
+            "finish_diameter_mm": {
+              "ref": "F15.diameter",
+              "kind": "drawing"
+            }
+          },
+          "params": {
+            "vc_m_min": 220.0,
+            "position": 0.5,
+            "f_mm_rev": 0.12,
+            "rpm": 594.97,
+            "radial_mm": 0.3,
+            "passes": 1.0
+          },
+          "cut_sec": 52.1,
+          "non_cut_sec": 0.45,
+          "missing": [],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_sequence": 11,
+          "sub_operation_sequence": 2,
+          "operation_type": "finish_bore_id",
+          "feature_id": "F17",
+          "method": "formula",
+          "kind": "axial_turn",
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 15.0,
+            "finish_diameter_mm": 15.6,
+            "cut_length_mm": 60.0
+          },
+          "sources": {
+            "cut_length_mm": {
+              "ref": "F17 has no length; envelope.max_length",
+              "kind": "computed"
+            },
+            "start_diameter_mm": {
+              "ref": "F17.diameter - 2 x config.allowances.bore_finish_stock_per_side_mm",
+              "kind": "computed"
+            },
+            "finish_diameter_mm": {
+              "ref": "F17.diameter",
+              "kind": "drawing"
+            }
+          },
+          "params": {
+            "vc_m_min": 220.0,
+            "position": 0.5,
+            "f_mm_rev": 0.12,
+            "rpm": 4577.0,
+            "radial_mm": 0.3,
+            "passes": 1.0
+          },
+          "cut_sec": 6.77,
+          "non_cut_sec": 0.45,
+          "missing": [],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_sequence": 11,
+          "sub_operation_sequence": 3,
+          "operation_type": "finish_bore_id",
+          "feature_id": "F35",
+          "method": "formula",
+          "kind": "axial_turn",
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 263.4,
+            "finish_diameter_mm": 264.0,
+            "cut_length_mm": 11.5
+          },
+          "sources": {
+            "cut_length_mm": {
+              "ref": "F35.length",
+              "kind": "derived"
+            },
+            "start_diameter_mm": {
+              "ref": "F35.diameter - 2 x config.allowances.bore_finish_stock_per_side_mm",
+              "kind": "computed"
+            },
+            "finish_diameter_mm": {
+              "ref": "F35.diameter",
+              "kind": "drawing"
+            }
+          },
+          "params": {
+            "vc_m_min": 220.0,
+            "position": 0.5,
+            "f_mm_rev": 0.12,
+            "rpm": 265.56,
+            "radial_mm": 0.3,
+            "passes": 1.0
+          },
+          "cut_sec": 25.42,
+          "non_cut_sec": 0.45,
+          "missing": [],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_sequence": 11,
+          "sub_operation_sequence": 4,
+          "operation_type": "finish_bore_id",
+          "feature_id": "F36",
+          "method": "formula",
+          "kind": "axial_turn",
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 206.7,
+            "finish_diameter_mm": 207.0,
+            "cut_length_mm": 34.5
+          },
+          "sources": {
+            "cut_length_mm": {
+              "ref": "F36.length",
+              "kind": "derived"
+            },
+            "start_diameter_mm": {
+              "ref": "F36.diameter - config.allowances.bore_finish_stock_per_side_mm",
+              "kind": "computed"
+            },
+            "finish_diameter_mm": {
+              "ref": "F36.diameter",
+              "kind": "drawing"
+            }
+          },
+          "params": {
+            "vc_m_min": 220.0,
+            "position": 0.5,
+            "f_mm_rev": 0.12,
+            "rpm": 338.55,
+            "radial_mm": 0.15,
+            "passes": 1.0
+          },
+          "cut_sec": 53.91,
+          "non_cut_sec": 0.45,
+          "missing": [],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_sequence": 11,
+          "sub_operation_sequence": 5,
+          "operation_type": "finish_bore_id",
+          "feature_id": "F38",
+          "method": "formula",
+          "kind": "axial_turn",
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 99.7,
+            "finish_diameter_mm": 100.0,
+            "cut_length_mm": 60.0
+          },
+          "sources": {
+            "cut_length_mm": {
+              "ref": "F38 has no length; envelope.max_length",
+              "kind": "computed"
+            },
+            "start_diameter_mm": {
+              "ref": "F38.diameter - config.allowances.bore_finish_stock_per_side_mm",
+              "kind": "computed"
+            },
+            "finish_diameter_mm": {
+              "ref": "F38.diameter",
+              "kind": "drawing"
+            }
+          },
+          "params": {
+            "vc_m_min": 220.0,
+            "position": 0.5,
+            "f_mm_rev": 0.12,
+            "rpm": 701.33,
+            "radial_mm": 0.15,
+            "passes": 1.0
+          },
+          "cut_sec": 44.2,
+          "non_cut_sec": 0.45,
+          "missing": [],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_sequence": 11,
+          "sub_operation_sequence": 6,
+          "operation_type": "face_turn",
+          "feature_id": "F08",
+          "method": "formula",
+          "kind": "radial_turn",
+          "inputs": {
+            "kind": "radial_turn",
+            "start_diameter_mm": 328.0,
+            "finish_diameter_mm": 264.0,
+            "groove_count": 1,
+            "total_stock_mm": 0.3
+          },
+          "sources": {
+            "start_diameter_mm": {
+              "ref": "envelope.max_diameter + 2 x config.allowances.casting_stock_per_side_mm",
+              "kind": "computed"
+            },
+            "finish_diameter_mm": {
+              "ref": "F35.diameter",
+              "kind": "drawing"
+            },
+            "total_stock_mm": {
+              "ref": "config.allowances.finish_stock_per_side_mm",
+              "kind": "config"
+            }
+          },
+          "params": {
+            "vc_m_min": 220.0,
+            "position": 0.6,
+            "f_mm_rev": 0.32,
+            "rpm": 236.58,
+            "travel_mm": 32.0,
+            "passes": 1.0,
+            "steps": 1.0
+          },
+          "cut_sec": 26.95,
+          "non_cut_sec": 0.45,
+          "missing": [],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_sequence": 11,
+          "sub_operation_sequence": 7,
+          "operation_type": "face_turn",
+          "feature_id": "F09",
+          "method": "formula",
+          "kind": "radial_turn",
+          "inputs": {
+            "kind": "radial_turn",
+            "start_diameter_mm": 328.0,
+            "finish_diameter_mm": 264.0,
+            "groove_count": 1,
+            "total_stock_mm": 0.3
+          },
+          "sources": {
+            "start_diameter_mm": {
+              "ref": "envelope.max_diameter + 2 x config.allowances.casting_stock_per_side_mm",
+              "kind": "computed"
+            },
+            "finish_diameter_mm": {
+              "ref": "F35.diameter",
+              "kind": "drawing"
+            },
+            "total_stock_mm": {
+              "ref": "config.allowances.finish_stock_per_side_mm",
+              "kind": "config"
+            }
+          },
+          "params": {
+            "vc_m_min": 220.0,
+            "position": 0.6,
+            "f_mm_rev": 0.32,
+            "rpm": 236.58,
+            "travel_mm": 32.0,
+            "passes": 1.0,
+            "steps": 1.0
+          },
+          "cut_sec": 26.95,
+          "non_cut_sec": 0.45,
+          "missing": [],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_sequence": 11,
+          "sub_operation_sequence": 8,
+          "operation_type": "face_turn",
+          "feature_id": "F12",
+          "method": "formula",
+          "kind": "radial_turn",
+          "inputs": {
+            "kind": "radial_turn",
+            "start_diameter_mm": 328.0,
+            "finish_diameter_mm": 264.0,
+            "groove_count": 1,
+            "total_stock_mm": 0.3
+          },
+          "sources": {
+            "start_diameter_mm": {
+              "ref": "envelope.max_diameter + 2 x config.allowances.casting_stock_per_side_mm",
+              "kind": "computed"
+            },
+            "finish_diameter_mm": {
+              "ref": "F35.diameter",
+              "kind": "drawing"
+            },
+            "total_stock_mm": {
+              "ref": "config.allowances.finish_stock_per_side_mm",
+              "kind": "config"
+            }
+          },
+          "params": {
+            "vc_m_min": 220.0,
+            "position": 0.6,
+            "f_mm_rev": 0.32,
+            "rpm": 236.58,
+            "travel_mm": 32.0,
+            "passes": 1.0,
+            "steps": 1.0
+          },
+          "cut_sec": 26.95,
+          "non_cut_sec": 0.45,
+          "missing": [],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_sequence": 11,
+          "sub_operation_sequence": 9,
+          "operation_type": "face_turn",
+          "feature_id": "F13",
+          "method": "formula",
+          "kind": "radial_turn",
+          "inputs": {
+            "kind": "radial_turn",
+            "start_diameter_mm": 328.0,
+            "finish_diameter_mm": 264.0,
+            "groove_count": 1,
+            "total_stock_mm": 0.3
+          },
+          "sources": {
+            "start_diameter_mm": {
+              "ref": "envelope.max_diameter + 2 x config.allowances.casting_stock_per_side_mm",
+              "kind": "computed"
+            },
+            "finish_diameter_mm": {
+              "ref": "F35.diameter",
+              "kind": "drawing"
+            },
+            "total_stock_mm": {
+              "ref": "config.allowances.finish_stock_per_side_mm",
+              "kind": "config"
+            }
+          },
+          "params": {
+            "vc_m_min": 220.0,
+            "position": 0.6,
+            "f_mm_rev": 0.32,
+            "rpm": 236.58,
+            "travel_mm": 32.0,
+            "passes": 1.0,
+            "steps": 1.0
+          },
+          "cut_sec": 26.95,
+          "non_cut_sec": 0.45,
+          "missing": [],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_sequence": 11,
+          "sub_operation_sequence": 10,
+          "operation_type": "finish_turn_od",
+          "feature_id": "F25",
+          "method": "formula",
+          "kind": "axial_turn",
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 322.6,
+            "finish_diameter_mm": 322.0,
+            "cut_length_mm": 60.0
+          },
+          "sources": {
+            "cut_length_mm": {
+              "ref": "F25 has no length; envelope.max_length",
+              "kind": "computed"
+            },
+            "start_diameter_mm": {
+              "ref": "F25.diameter + 2 x config.allowances.finish_stock_per_side_mm",
+              "kind": "computed"
+            },
+            "finish_diameter_mm": {
+              "ref": "F25.diameter",
+              "kind": "drawing"
+            }
+          },
+          "params": {
+            "vc_m_min": 260.0,
+            "position": 0.5,
+            "f_mm_rev": 0.15,
+            "rpm": 256.78,
+            "radial_mm": 0.3,
+            "passes": 1.0
+          },
+          "cut_sec": 96.58,
+          "non_cut_sec": 0.45,
+          "missing": [],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_sequence": 11,
+          "sub_operation_sequence": 11,
+          "operation_type": "finish_turn_od",
+          "feature_id": "F07",
+          "method": "formula",
+          "kind": "axial_turn",
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 317.6,
+            "finish_diameter_mm": 317.0,
+            "cut_length_mm": 60.0
+          },
+          "sources": {
+            "cut_length_mm": {
+              "ref": "F07 has no length; envelope.max_length",
+              "kind": "computed"
+            },
+            "start_diameter_mm": {
+              "ref": "F07.diameter + 2 x config.allowances.finish_stock_per_side_mm",
+              "kind": "computed"
+            },
+            "finish_diameter_mm": {
+              "ref": "F07.diameter",
+              "kind": "drawing"
+            }
+          },
+          "params": {
+            "vc_m_min": 260.0,
+            "position": 0.5,
+            "f_mm_rev": 0.15,
+            "rpm": 260.83,
+            "radial_mm": 0.3,
+            "passes": 1.0
+          },
+          "cut_sec": 95.08,
+          "non_cut_sec": 0.45,
+          "missing": [],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_sequence": 11,
+          "sub_operation_sequence": 12,
+          "operation_type": "finish_turn_od",
+          "feature_id": "F20",
+          "method": "formula",
+          "kind": "axial_turn",
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 298.6,
+            "finish_diameter_mm": 298.0,
+            "cut_length_mm": 60.0
+          },
+          "sources": {
+            "cut_length_mm": {
+              "ref": "F20 has no length; envelope.max_length",
+              "kind": "computed"
+            },
+            "start_diameter_mm": {
+              "ref": "F20.diameter + 2 x config.allowances.finish_stock_per_side_mm",
+              "kind": "computed"
+            },
+            "finish_diameter_mm": {
+              "ref": "F20.diameter",
+              "kind": "drawing"
+            }
+          },
+          "params": {
+            "vc_m_min": 260.0,
+            "position": 0.5,
+            "f_mm_rev": 0.15,
+            "rpm": 277.44,
+            "radial_mm": 0.3,
+            "passes": 1.0
+          },
+          "cut_sec": 89.39,
+          "non_cut_sec": 0.45,
+          "missing": [],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_sequence": 11,
+          "sub_operation_sequence": 13,
+          "operation_type": "finish_turn_od",
+          "feature_id": "F21",
+          "method": "formula",
+          "kind": "axial_turn",
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 297.6,
+            "finish_diameter_mm": 297.0,
+            "cut_length_mm": 60.0
+          },
+          "sources": {
+            "cut_length_mm": {
+              "ref": "F21 has no length; envelope.max_length",
+              "kind": "computed"
+            },
+            "start_diameter_mm": {
+              "ref": "F21.diameter + 2 x config.allowances.finish_stock_per_side_mm",
+              "kind": "computed"
+            },
+            "finish_diameter_mm": {
+              "ref": "F21.diameter",
+              "kind": "drawing"
+            }
+          },
+          "params": {
+            "vc_m_min": 260.0,
+            "position": 0.5,
+            "f_mm_rev": 0.15,
+            "rpm": 278.37,
+            "radial_mm": 0.3,
+            "passes": 1.0
+          },
+          "cut_sec": 89.09,
+          "non_cut_sec": 0.45,
+          "missing": [],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_sequence": 11,
+          "sub_operation_sequence": 14,
+          "operation_type": "finish_turn_od",
+          "feature_id": "F33",
+          "method": "formula",
+          "kind": "axial_turn",
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 314.6,
+            "finish_diameter_mm": 314.0,
+            "cut_length_mm": 11.5
+          },
+          "sources": {
+            "cut_length_mm": {
+              "ref": "F33.length",
+              "kind": "derived"
+            },
+            "start_diameter_mm": {
+              "ref": "F33.diameter + 2 x config.allowances.finish_stock_per_side_mm",
+              "kind": "computed"
+            },
+            "finish_diameter_mm": {
+              "ref": "F33.diameter",
+              "kind": "drawing"
+            }
+          },
+          "params": {
+            "vc_m_min": 260.0,
+            "position": 0.5,
+            "f_mm_rev": 0.15,
+            "rpm": 263.32,
+            "radial_mm": 0.3,
+            "passes": 1.0
+          },
+          "cut_sec": 20.51,
+          "non_cut_sec": 0.45,
+          "missing": [],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_sequence": 11,
+          "sub_operation_sequence": 15,
+          "operation_type": "finish_turn_od",
+          "feature_id": "F34",
+          "method": "formula",
+          "kind": "axial_turn",
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 282.6,
+            "finish_diameter_mm": 282.0,
+            "cut_length_mm": 7.5
+          },
+          "sources": {
+            "cut_length_mm": {
+              "ref": "F34.length",
+              "kind": "derived"
+            },
+            "start_diameter_mm": {
+              "ref": "F34.diameter + 2 x config.allowances.finish_stock_per_side_mm",
+              "kind": "computed"
+            },
+            "finish_diameter_mm": {
+              "ref": "F34.diameter",
+              "kind": "drawing"
+            }
+          },
+          "params": {
+            "vc_m_min": 260.0,
+            "position": 0.5,
+            "f_mm_rev": 0.15,
+            "rpm": 293.17,
+            "radial_mm": 0.3,
+            "passes": 1.0
+          },
+          "cut_sec": 12.96,
+          "non_cut_sec": 0.45,
+          "missing": [],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_sequence": 11,
+          "sub_operation_sequence": 16,
+          "operation_type": "turn_taper",
+          "feature_id": "F32",
+          "method": "fallback",
+          "kind": "axial_turn",
+          "inputs": {},
+          "sources": {
+            "cut_length_mm": {
+              "ref": "F32 has no length; envelope.max_length",
+              "kind": "computed"
+            },
+            "start_diameter_mm": {
+              "ref": "F32.diameter",
+              "kind": "assumed"
+            },
+            "finish_diameter_mm": {
+              "ref": "F32.diameter",
+              "kind": "assumed"
+            }
+          },
+          "params": {
+            "fallback_min": 1.0
+          },
+          "cut_sec": 60.0,
+          "non_cut_sec": 0.45,
+          "missing": [
+            "F32.taper_included_angle_deg"
+          ],
+          "warnings": [
+            "F32: turn_taper from \u00d8120 to \u00d8120 removes nothing"
+          ],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_sequence": 11,
+          "sub_operation_sequence": 17,
+          "operation_type": "finish_turn_od",
+          "feature_id": "F37",
+          "method": "formula",
+          "kind": "axial_turn",
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 120.6,
+            "finish_diameter_mm": 120.0,
+            "cut_length_mm": 10.0
+          },
+          "sources": {
+            "cut_length_mm": {
+              "ref": "F37.length",
+              "kind": "derived"
+            },
+            "start_diameter_mm": {
+              "ref": "F37.diameter + 2 x config.allowances.finish_stock_per_side_mm",
+              "kind": "computed"
+            },
+            "finish_diameter_mm": {
+              "ref": "F37.diameter",
+              "kind": "drawing"
+            }
+          },
+          "params": {
+            "vc_m_min": 260.0,
+            "position": 0.5,
+            "f_mm_rev": 0.15,
+            "rpm": 687.95,
+            "radial_mm": 0.3,
+            "passes": 1.0
+          },
+          "cut_sec": 6.98,
+          "non_cut_sec": 0.45,
+          "missing": [],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_sequence": 11,
+          "sub_operation_sequence": 18,
+          "operation_type": "finish_turn_od",
+          "feature_id": "F45",
+          "method": "formula",
+          "kind": "axial_turn",
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 160.6,
+            "finish_diameter_mm": 160.0,
+            "cut_length_mm": 60.0
+          },
+          "sources": {
+            "cut_length_mm": {
+              "ref": "F45 has no length; envelope.max_length",
+              "kind": "computed"
+            },
+            "start_diameter_mm": {
+              "ref": "F45.diameter + 2 x config.allowances.finish_stock_per_side_mm",
+              "kind": "computed"
+            },
+            "finish_diameter_mm": {
+              "ref": "F45.diameter",
+              "kind": "drawing"
+            }
+          },
+          "params": {
+            "vc_m_min": 260.0,
+            "position": 0.5,
+            "f_mm_rev": 0.15,
+            "rpm": 516.29,
+            "radial_mm": 0.3,
+            "passes": 1.0
+          },
+          "cut_sec": 48.04,
+          "non_cut_sec": 0.45,
+          "missing": [],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_sequence": 11,
+          "sub_operation_sequence": 19,
+          "operation_type": "form_turn",
+          "feature_id": "F14",
+          "method": "static",
+          "kind": "axial_turn",
+          "inputs": {},
+          "sources": {},
+          "params": {
+            "minutes_each": 0.1,
+            "count": 1.0
+          },
+          "cut_sec": 6.0,
+          "non_cut_sec": 0.0,
+          "missing": [],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_sequence": 11,
+          "sub_operation_sequence": 20,
+          "operation_type": "form_turn",
+          "feature_id": "F18",
+          "method": "static",
+          "kind": "axial_turn",
+          "inputs": {},
+          "sources": {},
+          "params": {
+            "minutes_each": 0.1,
+            "count": 1.0
+          },
+          "cut_sec": 6.0,
+          "non_cut_sec": 0.0,
+          "missing": [],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_sequence": 11,
+          "sub_operation_sequence": 21,
+          "operation_type": "chamfer_turn",
+          "feature_id": "F29",
+          "method": "static",
+          "kind": "axial_turn",
+          "inputs": {},
+          "sources": {},
+          "params": {
+            "minutes_each": 0.05,
+            "count": 1.0
+          },
+          "cut_sec": 3.0,
+          "non_cut_sec": 0.0,
+          "missing": [],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_sequence": 11,
+          "sub_operation_sequence": 22,
+          "operation_type": "chamfer_turn",
+          "feature_id": "F30",
+          "method": "static",
+          "kind": "axial_turn",
+          "inputs": {},
+          "sources": {},
+          "params": {
+            "minutes_each": 0.05,
+            "count": 1.0
+          },
+          "cut_sec": 3.0,
+          "non_cut_sec": 0.0,
+          "missing": [],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_sequence": 11,
+          "sub_operation_sequence": 23,
+          "operation_type": "chamfer_turn",
+          "feature_id": "F31",
+          "method": "static",
+          "kind": "axial_turn",
+          "inputs": {},
+          "sources": {},
+          "params": {
+            "minutes_each": 0.05,
+            "count": 1.0
+          },
+          "cut_sec": 3.0,
+          "non_cut_sec": 0.0,
+          "missing": [],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        }
+      ]
+    },
+    {
+      "sequence": 12,
+      "name": "VMC Finish Datum and Prismatic Features",
+      "machine_family": "vmc",
+      "in_house": true,
+      "setup_sec": 1500.0,
+      "load_unload_sec": 60.0,
+      "cycle_sec": 667.59,
+      "sub_operations": [
+        {
+          "operation_sequence": 12,
+          "sub_operation_sequence": 1,
+          "operation_type": "face_mill",
+          "feature_id": "F10",
+          "method": "formula",
+          "kind": "face_mill",
+          "inputs": {
+            "kind": "face_mill",
+            "mill_length_mm": 322.0,
+            "mill_width_mm": 322.0,
+            "total_stock_mm": 1.0,
+            "face_count": 1
+          },
+          "sources": {
+            "mill_length_mm": {
+              "ref": "envelope.max_diameter",
+              "kind": "computed"
+            },
+            "mill_width_mm": {
+              "ref": "envelope.max_diameter",
+              "kind": "computed"
+            },
+            "total_stock_mm": {
+              "ref": "config.allowances.facing_stock_per_face_mm",
+              "kind": "config"
+            },
+            "face_count": {
+              "ref": "F10.instance_count",
+              "kind": "drawing"
+            }
+          },
+          "params": {
+            "vc_m_min": 190.0,
+            "position": 0.6,
+            "fz_mm": 0.2,
+            "rpm": 1209.58,
+            "feed_mm_min": 1197.48,
+            "w_passes": 10.0,
+            "z_passes": 1.0
+          },
+          "cut_sec": 186.39,
+          "non_cut_sec": 0.3,
+          "missing": [],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_sequence": 12,
+          "sub_operation_sequence": 2,
+          "operation_type": "slot_mill",
+          "feature_id": "F23",
+          "method": "fallback",
+          "kind": "contour_mill",
+          "inputs": {},
+          "sources": {
+            "radial_width_mm": {
+              "ref": "F23.width",
+              "kind": "drawing"
+            },
+            "path_count": {
+              "ref": "F23.instance_count",
+              "kind": "drawing"
+            }
+          },
+          "params": {
+            "fallback_min": 2.0
+          },
+          "cut_sec": 120.0,
+          "non_cut_sec": 0.3,
+          "missing": [
+            "F23.path_length_mm",
+            "F23.depth"
+          ],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_sequence": 12,
+          "sub_operation_sequence": 3,
+          "operation_type": "profile_mill",
+          "feature_id": "F24",
+          "method": "fallback",
+          "kind": "contour_mill",
+          "inputs": {},
+          "sources": {
+            "path_count": {
+              "ref": "F24.instance_count",
+              "kind": "drawing"
+            }
+          },
+          "params": {
+            "fallback_min": 2.0
+          },
+          "cut_sec": 120.0,
+          "non_cut_sec": 0.3,
+          "missing": [
+            "F24: no contour rule for feature type 'tooth_ring'"
+          ],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_sequence": 12,
+          "sub_operation_sequence": 4,
+          "operation_type": "pocket_mill",
+          "feature_id": "F44",
+          "method": "fallback",
+          "kind": "pocket_mill",
+          "inputs": {},
+          "sources": {
+            "pocket_count": {
+              "ref": "F44.instance_count",
+              "kind": "drawing"
+            }
+          },
+          "params": {
+            "fallback_min": 3.0
+          },
+          "cut_sec": 180.0,
+          "non_cut_sec": 0.3,
+          "missing": [
+            "F44 pocket width x length",
+            "F44.pocket_depth_mm"
+          ],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        }
+      ]
+    },
+    {
+      "sequence": 13,
+      "name": "VMC Finish Axial Holes and Threads",
+      "machine_family": "vmc",
+      "in_house": true,
+      "setup_sec": 1500.0,
+      "load_unload_sec": 60.0,
+      "cycle_sec": 705.41,
+      "sub_operations": [
+        {
+          "operation_sequence": 13,
+          "sub_operation_sequence": 1,
+          "operation_type": "drill",
+          "feature_id": "F01",
+          "method": "fallback",
+          "kind": "point_drill",
+          "inputs": {},
+          "sources": {
+            "hole_diameter_mm": {
+              "ref": "F01.diameter",
+              "kind": "assumed"
+            },
+            "hole_count": {
+              "ref": "F01.instance_count",
+              "kind": "drawing"
+            }
+          },
+          "params": {
+            "fallback_min": 0.5
+          },
+          "cut_sec": 30.0,
+          "non_cut_sec": 0.3,
+          "missing": [
+            "F01 depth"
+          ],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_sequence": 13,
+          "sub_operation_sequence": 1,
+          "operation_type": "drill",
+          "feature_id": "F02",
+          "method": "fallback",
+          "kind": "point_drill",
+          "inputs": {},
+          "sources": {
+            "hole_diameter_mm": {
+              "ref": "F02.diameter",
+              "kind": "assumed"
+            },
+            "hole_count": {
+              "ref": "F02.instance_count",
+              "kind": "drawing"
+            }
+          },
+          "params": {
+            "fallback_min": 0.5
+          },
+          "cut_sec": 30.0,
+          "non_cut_sec": 0.0,
+          "missing": [
+            "F02 depth"
+          ],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_sequence": 13,
+          "sub_operation_sequence": 1,
+          "operation_type": "drill",
+          "feature_id": "F03",
+          "method": "fallback",
+          "kind": "point_drill",
+          "inputs": {},
+          "sources": {
+            "hole_diameter_mm": {
+              "ref": "F03.diameter",
+              "kind": "assumed"
+            },
+            "hole_count": {
+              "ref": "F03.instance_count",
+              "kind": "drawing"
+            }
+          },
+          "params": {
+            "fallback_min": 0.5
+          },
+          "cut_sec": 30.0,
+          "non_cut_sec": 0.0,
+          "missing": [
+            "F03 depth"
+          ],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_sequence": 13,
+          "sub_operation_sequence": 1,
+          "operation_type": "drill",
+          "feature_id": "F04",
+          "method": "fallback",
+          "kind": "point_drill",
+          "inputs": {},
+          "sources": {
+            "hole_diameter_mm": {
+              "ref": "F04.diameter",
+              "kind": "assumed"
+            },
+            "hole_count": {
+              "ref": "F04.instance_count",
+              "kind": "drawing"
+            }
+          },
+          "params": {
+            "fallback_min": 0.5
+          },
+          "cut_sec": 30.0,
+          "non_cut_sec": 0.0,
+          "missing": [
+            "F04 depth"
+          ],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_sequence": 13,
+          "sub_operation_sequence": 1,
+          "operation_type": "drill",
+          "feature_id": "F05",
+          "method": "fallback",
+          "kind": "point_drill",
+          "inputs": {},
+          "sources": {
+            "hole_diameter_mm": {
+              "ref": "F05.diameter",
+              "kind": "assumed"
+            },
+            "hole_count": {
+              "ref": "F05.instance_count",
+              "kind": "drawing"
+            }
+          },
+          "params": {
+            "fallback_min": 0.5
+          },
+          "cut_sec": 30.0,
+          "non_cut_sec": 0.0,
+          "missing": [
+            "F05 depth"
+          ],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_sequence": 13,
+          "sub_operation_sequence": 1,
+          "operation_type": "drill",
+          "feature_id": "F06",
+          "method": "fallback",
+          "kind": "point_drill",
+          "inputs": {},
+          "sources": {
+            "hole_diameter_mm": {
+              "ref": "F06.diameter",
+              "kind": "assumed"
+            },
+            "hole_count": {
+              "ref": "F06.instance_count",
+              "kind": "drawing"
+            }
+          },
+          "params": {
+            "fallback_min": 0.5
+          },
+          "cut_sec": 30.0,
+          "non_cut_sec": 0.0,
+          "missing": [
+            "F06 depth"
+          ],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_sequence": 13,
+          "sub_operation_sequence": 2,
+          "operation_type": "drill",
+          "feature_id": "F16",
+          "method": "fallback",
+          "kind": "point_drill",
+          "inputs": {},
+          "sources": {
+            "hole_diameter_mm": {
+              "ref": "F16.diameter",
+              "kind": "drawing"
+            },
+            "hole_count": {
+              "ref": "F16.instance_count",
+              "kind": "drawing"
+            }
+          },
+          "params": {
+            "fallback_min": 0.5
+          },
+          "cut_sec": 30.0,
+          "non_cut_sec": 0.3,
+          "missing": [
+            "F16 depth"
+          ],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_sequence": 13,
+          "sub_operation_sequence": 3,
+          "operation_type": "drill",
+          "feature_id": "F39",
+          "method": "fallback",
+          "kind": "point_drill",
+          "inputs": {},
+          "sources": {
+            "hole_diameter_mm": {
+              "ref": "F39.diameter",
+              "kind": "drawing"
+            },
+            "hole_count": {
+              "ref": "F39.instance_count",
+              "kind": "drawing"
+            }
+          },
+          "params": {
+            "fallback_min": 0.5
+          },
+          "cut_sec": 30.0,
+          "non_cut_sec": 0.3,
+          "missing": [
+            "F39 depth"
+          ],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_sequence": 13,
+          "sub_operation_sequence": 4,
+          "operation_type": "drill",
+          "feature_id": "F43",
+          "method": "fallback",
+          "kind": "point_drill",
+          "inputs": {},
+          "sources": {
+            "hole_diameter_mm": {
+              "ref": "F43.diameter",
+              "kind": "drawing"
+            },
+            "hole_count": {
+              "ref": "F43.instance_count",
+              "kind": "drawing"
+            }
+          },
+          "params": {
+            "fallback_min": 0.5
+          },
+          "cut_sec": 30.0,
+          "non_cut_sec": 0.3,
+          "missing": [
+            "F43 depth"
+          ],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_sequence": 13,
+          "sub_operation_sequence": 5,
+          "operation_type": "counterbore",
+          "feature_id": "F43",
+          "method": "formula",
+          "kind": "point_drill",
+          "inputs": {
+            "kind": "point_drill",
+            "hole_diameter_mm": 10.0,
+            "hole_depth_mm": 3.5,
+            "hole_count": 12,
+            "pilot_diameter_mm": 6.8,
+            "through_hole": false
+          },
+          "sources": {
+            "hole_diameter_mm": {
+              "ref": "F43.cbore_diameter",
+              "kind": "drawing"
+            },
+            "hole_depth_mm": {
+              "ref": "F43.cbore_depth",
+              "kind": "drawing"
+            },
+            "pilot_diameter_mm": {
+              "ref": "F43.diameter",
+              "kind": "drawing"
+            },
+            "hole_count": {
+              "ref": "F43.instance_count",
+              "kind": "drawing"
+            }
+          },
+          "params": {
+            "vc_m_min": 55.0,
+            "position": 0.5,
+            "f_mm_rev": 0.17,
+            "rpm": 1750.7,
+            "point_mm": 0.0,
+            "peck_factor": 1.0,
+            "insert_drill": 0.0
+          },
+          "cut_sec": 13.31,
+          "non_cut_sec": 0.3,
+          "missing": [],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_sequence": 13,
+          "sub_operation_sequence": 6,
+          "operation_type": "countersink",
+          "feature_id": "F01",
+          "method": "fallback",
+          "kind": "point_drill",
+          "inputs": {},
+          "sources": {
+            "pilot_diameter_mm": {
+              "ref": "F01.diameter",
+              "kind": "assumed"
+            },
+            "hole_count": {
+              "ref": "F01.instance_count",
+              "kind": "drawing"
+            }
+          },
+          "params": {
+            "fallback_min": 0.5
+          },
+          "cut_sec": 30.0,
+          "non_cut_sec": 0.3,
+          "missing": [
+            "F01.hole_diameter_mm",
+            "F01 countersink depth"
+          ],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_sequence": 13,
+          "sub_operation_sequence": 6,
+          "operation_type": "countersink",
+          "feature_id": "F02",
+          "method": "fallback",
+          "kind": "point_drill",
+          "inputs": {},
+          "sources": {
+            "pilot_diameter_mm": {
+              "ref": "F02.diameter",
+              "kind": "assumed"
+            },
+            "hole_count": {
+              "ref": "F02.instance_count",
+              "kind": "drawing"
+            }
+          },
+          "params": {
+            "fallback_min": 0.5
+          },
+          "cut_sec": 30.0,
+          "non_cut_sec": 0.0,
+          "missing": [
+            "F02.hole_diameter_mm",
+            "F02 countersink depth"
+          ],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_sequence": 13,
+          "sub_operation_sequence": 6,
+          "operation_type": "countersink",
+          "feature_id": "F03",
+          "method": "fallback",
+          "kind": "point_drill",
+          "inputs": {},
+          "sources": {
+            "pilot_diameter_mm": {
+              "ref": "F03.diameter",
+              "kind": "assumed"
+            },
+            "hole_count": {
+              "ref": "F03.instance_count",
+              "kind": "drawing"
+            }
+          },
+          "params": {
+            "fallback_min": 0.5
+          },
+          "cut_sec": 30.0,
+          "non_cut_sec": 0.0,
+          "missing": [
+            "F03.hole_diameter_mm",
+            "F03 countersink depth"
+          ],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_sequence": 13,
+          "sub_operation_sequence": 6,
+          "operation_type": "countersink",
+          "feature_id": "F04",
+          "method": "fallback",
+          "kind": "point_drill",
+          "inputs": {},
+          "sources": {
+            "pilot_diameter_mm": {
+              "ref": "F04.diameter",
+              "kind": "assumed"
+            },
+            "hole_count": {
+              "ref": "F04.instance_count",
+              "kind": "drawing"
+            }
+          },
+          "params": {
+            "fallback_min": 0.5
+          },
+          "cut_sec": 30.0,
+          "non_cut_sec": 0.0,
+          "missing": [
+            "F04.hole_diameter_mm",
+            "F04 countersink depth"
+          ],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_sequence": 13,
+          "sub_operation_sequence": 6,
+          "operation_type": "countersink",
+          "feature_id": "F05",
+          "method": "fallback",
+          "kind": "point_drill",
+          "inputs": {},
+          "sources": {
+            "pilot_diameter_mm": {
+              "ref": "F05.diameter",
+              "kind": "assumed"
+            },
+            "hole_count": {
+              "ref": "F05.instance_count",
+              "kind": "drawing"
+            }
+          },
+          "params": {
+            "fallback_min": 0.5
+          },
+          "cut_sec": 30.0,
+          "non_cut_sec": 0.0,
+          "missing": [
+            "F05.hole_diameter_mm",
+            "F05 countersink depth"
+          ],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_sequence": 13,
+          "sub_operation_sequence": 6,
+          "operation_type": "countersink",
+          "feature_id": "F06",
+          "method": "fallback",
+          "kind": "point_drill",
+          "inputs": {},
+          "sources": {
+            "pilot_diameter_mm": {
+              "ref": "F06.diameter",
+              "kind": "assumed"
+            },
+            "hole_count": {
+              "ref": "F06.instance_count",
+              "kind": "drawing"
+            }
+          },
+          "params": {
+            "fallback_min": 0.5
+          },
+          "cut_sec": 30.0,
+          "non_cut_sec": 0.0,
+          "missing": [
+            "F06.hole_diameter_mm",
+            "F06 countersink depth"
+          ],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_sequence": 13,
+          "sub_operation_sequence": 7,
+          "operation_type": "tap",
+          "feature_id": "F01",
+          "method": "fallback",
+          "kind": "tap",
+          "inputs": {},
+          "sources": {
+            "major_diameter_mm": {
+              "ref": "F01.thread",
+              "kind": "drawing"
+            },
+            "hole_count": {
+              "ref": "F01.instance_count",
+              "kind": "drawing"
+            }
+          },
+          "params": {
+            "fallback_min": 0.5
+          },
+          "cut_sec": 30.0,
+          "non_cut_sec": 0.3,
+          "missing": [
+            "F01.thread.pitch",
+            "F01 thread depth"
+          ],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_sequence": 13,
+          "sub_operation_sequence": 7,
+          "operation_type": "tap",
+          "feature_id": "F02",
+          "method": "fallback",
+          "kind": "tap",
+          "inputs": {},
+          "sources": {
+            "major_diameter_mm": {
+              "ref": "F02.thread",
+              "kind": "drawing"
+            },
+            "hole_count": {
+              "ref": "F02.instance_count",
+              "kind": "drawing"
+            }
+          },
+          "params": {
+            "fallback_min": 0.5
+          },
+          "cut_sec": 30.0,
+          "non_cut_sec": 0.0,
+          "missing": [
+            "F02.thread.pitch",
+            "F02 thread depth"
+          ],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_sequence": 13,
+          "sub_operation_sequence": 7,
+          "operation_type": "tap",
+          "feature_id": "F03",
+          "method": "fallback",
+          "kind": "tap",
+          "inputs": {},
+          "sources": {
+            "major_diameter_mm": {
+              "ref": "F03.thread",
+              "kind": "drawing"
+            },
+            "hole_count": {
+              "ref": "F03.instance_count",
+              "kind": "drawing"
+            }
+          },
+          "params": {
+            "fallback_min": 0.5
+          },
+          "cut_sec": 30.0,
+          "non_cut_sec": 0.0,
+          "missing": [
+            "F03.thread.pitch",
+            "F03 thread depth"
+          ],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_sequence": 13,
+          "sub_operation_sequence": 7,
+          "operation_type": "tap",
+          "feature_id": "F04",
+          "method": "fallback",
+          "kind": "tap",
+          "inputs": {},
+          "sources": {
+            "major_diameter_mm": {
+              "ref": "F04.thread",
+              "kind": "drawing"
+            },
+            "hole_count": {
+              "ref": "F04.instance_count",
+              "kind": "drawing"
+            }
+          },
+          "params": {
+            "fallback_min": 0.5
+          },
+          "cut_sec": 30.0,
+          "non_cut_sec": 0.0,
+          "missing": [
+            "F04.thread.pitch",
+            "F04 thread depth"
+          ],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_sequence": 13,
+          "sub_operation_sequence": 7,
+          "operation_type": "tap",
+          "feature_id": "F05",
+          "method": "fallback",
+          "kind": "tap",
+          "inputs": {},
+          "sources": {
+            "major_diameter_mm": {
+              "ref": "F05.thread",
+              "kind": "drawing"
+            },
+            "hole_count": {
+              "ref": "F05.instance_count",
+              "kind": "drawing"
+            }
+          },
+          "params": {
+            "fallback_min": 0.5
+          },
+          "cut_sec": 30.0,
+          "non_cut_sec": 0.0,
+          "missing": [
+            "F05.thread.pitch",
+            "F05 thread depth"
+          ],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_sequence": 13,
+          "sub_operation_sequence": 7,
+          "operation_type": "tap",
+          "feature_id": "F06",
+          "method": "fallback",
+          "kind": "tap",
+          "inputs": {},
+          "sources": {
+            "major_diameter_mm": {
+              "ref": "F06.thread",
+              "kind": "drawing"
+            },
+            "hole_count": {
+              "ref": "F06.instance_count",
+              "kind": "drawing"
+            }
+          },
+          "params": {
+            "fallback_min": 0.5
+          },
+          "cut_sec": 30.0,
+          "non_cut_sec": 0.0,
+          "missing": [
+            "F06.thread.pitch",
+            "F06 thread depth"
+          ],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        }
+      ]
+    },
+    {
+      "sequence": 14,
+      "name": "VMC Finish Radial Hole",
+      "machine_family": "vmc",
+      "in_house": true,
+      "setup_sec": 1500.0,
+      "load_unload_sec": 60.0,
+      "cycle_sec": 61.07,
+      "sub_operations": [
+        {
+          "operation_sequence": 14,
+          "sub_operation_sequence": 1,
+          "operation_type": "drill",
+          "feature_id": "F22",
+          "method": "formula",
+          "kind": "point_drill",
+          "inputs": {
+            "kind": "point_drill",
+            "hole_diameter_mm": 6.2,
+            "hole_depth_mm": 5.0,
+            "hole_count": 1,
+            "through_hole": false
+          },
+          "sources": {
+            "hole_diameter_mm": {
+              "ref": "F22.diameter",
+              "kind": "drawing"
+            },
+            "hole_depth_mm": {
+              "ref": "F22.depth",
+              "kind": "drawing"
+            },
+            "hole_count": {
+              "ref": "F22.instance_count",
+              "kind": "drawing"
+            }
+          },
+          "params": {
+            "vc_m_min": 90.0,
+            "position": 0.5,
+            "f_mm_rev": 0.15,
+            "rpm": 4620.63,
+            "point_mm": 1.86,
+            "peck_factor": 1.0,
+            "insert_drill": 0.0
+          },
+          "cut_sec": 0.77,
+          "non_cut_sec": 0.3,
+          "missing": [],
+          "warnings": [],
+          "cutting_limits": [
+            "feed 0.015 x \u00d86.2"
+          ],
+          "note": null
+        }
+      ]
+    },
+    {
+      "sequence": 15,
+      "name": "VMC Finish Inclined Holes and Thread",
+      "machine_family": "vmc",
+      "in_house": true,
+      "setup_sec": 1500.0,
+      "load_unload_sec": 60.0,
+      "cycle_sec": 150.9,
+      "sub_operations": [
+        {
+          "operation_sequence": 15,
+          "sub_operation_sequence": 1,
+          "operation_type": "drill",
+          "feature_id": "F42",
+          "method": "fallback",
+          "kind": "point_drill",
+          "inputs": {},
+          "sources": {
+            "hole_diameter_mm": {
+              "ref": "F42.diameter",
+              "kind": "drawing"
+            },
+            "hole_count": {
+              "ref": "F42.instance_count",
+              "kind": "drawing"
+            }
+          },
+          "params": {
+            "fallback_min": 0.5
+          },
+          "cut_sec": 30.0,
+          "non_cut_sec": 0.3,
+          "missing": [
+            "F42 depth"
+          ],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_sequence": 15,
+          "sub_operation_sequence": 2,
+          "operation_type": "drill",
+          "feature_id": "F41",
+          "method": "fallback",
+          "kind": "point_drill",
+          "inputs": {},
+          "sources": {
+            "hole_diameter_mm": {
+              "ref": "F41.diameter",
+              "kind": "drawing"
+            },
+            "hole_count": {
+              "ref": "F41.instance_count",
+              "kind": "drawing"
+            }
+          },
+          "params": {
+            "fallback_min": 0.5
+          },
+          "cut_sec": 30.0,
+          "non_cut_sec": 0.3,
+          "missing": [
+            "F41 depth"
+          ],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_sequence": 15,
+          "sub_operation_sequence": 3,
+          "operation_type": "tap",
+          "feature_id": "F41",
+          "method": "fallback",
+          "kind": "tap",
+          "inputs": {},
+          "sources": {
+            "major_diameter_mm": {
+              "ref": "F41.thread",
+              "kind": "drawing"
+            },
+            "pitch_mm": {
+              "ref": "F41.thread",
+              "kind": "drawing"
+            },
+            "hole_count": {
+              "ref": "F41.instance_count",
+              "kind": "drawing"
+            }
+          },
+          "params": {
+            "fallback_min": 0.5
+          },
+          "cut_sec": 30.0,
+          "non_cut_sec": 0.3,
+          "missing": [
+            "F41 thread depth"
+          ],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        }
+      ]
+    },
+    {
+      "sequence": 16,
+      "name": "Final Deburr",
+      "machine_family": "fettling",
+      "in_house": true,
+      "setup_sec": 600.0,
+      "load_unload_sec": 60.0,
+      "cycle_sec": 120.0,
+      "sub_operations": [
+        {
+          "operation_sequence": 16,
+          "sub_operation_sequence": 1,
+          "operation_type": "deburr",
+          "feature_id": null,
+          "method": "static",
+          "kind": "manual",
+          "inputs": {},
+          "sources": {},
+          "params": {
+            "minutes_each": 1.0,
+            "count": 1.0
+          },
+          "cut_sec": 60.0,
+          "non_cut_sec": 0.0,
+          "missing": [],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        }
+      ]
+    },
+    {
+      "sequence": 17,
+      "name": "Dynamic Balance",
+      "machine_family": "outside_vendor",
+      "in_house": false,
+      "setup_sec": 0.0,
+      "load_unload_sec": 0.0,
+      "cycle_sec": 0.0,
+      "sub_operations": [
+        {
+          "operation_sequence": 17,
+          "sub_operation_sequence": 1,
+          "operation_type": "outside_process",
+          "feature_id": null,
+          "method": "excluded",
+          "kind": "manual",
+          "inputs": {},
+          "sources": {},
+          "params": {},
+          "cut_sec": 0.0,
+          "non_cut_sec": 0.0,
+          "missing": [],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        }
+      ]
+    },
+    {
+      "sequence": 18,
+      "name": "Final Clean and Demagnetize",
+      "machine_family": "outside_vendor",
+      "in_house": false,
+      "setup_sec": 0.0,
+      "load_unload_sec": 0.0,
+      "cycle_sec": 0.0,
+      "sub_operations": [
+        {
+          "operation_sequence": 18,
+          "sub_operation_sequence": 1,
+          "operation_type": "clean_degrease",
+          "feature_id": null,
+          "method": "excluded",
+          "kind": "manual",
+          "inputs": {},
+          "sources": {},
+          "params": {},
+          "cut_sec": 0.0,
+          "non_cut_sec": 0.0,
+          "missing": [],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_sequence": 18,
+          "sub_operation_sequence": 2,
+          "operation_type": "outside_process",
+          "feature_id": null,
+          "method": "excluded",
+          "kind": "manual",
+          "inputs": {},
+          "sources": {},
+          "params": {},
+          "cut_sec": 0.0,
+          "non_cut_sec": 0.0,
+          "missing": [],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        }
+      ]
+    },
+    {
+      "sequence": 19,
+      "name": "Final Inspection",
+      "machine_family": "inspection",
+      "in_house": true,
+      "setup_sec": 300.0,
+      "load_unload_sec": 30.0,
+      "cycle_sec": 540.0,
+      "sub_operations": [
+        {
+          "operation_sequence": 19,
+          "sub_operation_sequence": 1,
+          "operation_type": "cmm_inspect",
+          "feature_id": null,
+          "method": "static",
+          "kind": "inspection",
+          "inputs": {},
+          "sources": {},
+          "params": {
+            "minutes_each": 5.0,
+            "count": 1.0
+          },
+          "cut_sec": 300.0,
+          "non_cut_sec": 0.0,
+          "missing": [],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_sequence": 19,
+          "sub_operation_sequence": 2,
+          "operation_type": "manual_inspect",
+          "feature_id": null,
+          "method": "static",
+          "kind": "inspection",
+          "inputs": {},
+          "sources": {},
+          "params": {
+            "minutes_each": 1.5,
+            "count": 1.0
+          },
+          "cut_sec": 90.0,
+          "non_cut_sec": 0.0,
+          "missing": [],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_sequence": 19,
+          "sub_operation_sequence": 3,
+          "operation_type": "hardness_test",
+          "feature_id": null,
+          "method": "static",
+          "kind": "inspection",
+          "inputs": {},
+          "sources": {},
+          "params": {
+            "minutes_each": 2.0,
+            "count": 1.0
+          },
+          "cut_sec": 120.0,
+          "non_cut_sec": 0.0,
+          "missing": [],
+          "warnings": [],
+          "cutting_limits": [],
+          "note": null
+        }
+      ]
+    }
+  ],
+  "cycle_sec_per_piece": 7374.6,
+  "setup_sec_per_order": 21000.0,
+  "setup_sec_per_piece": 2100.0,
+  "total_sec_per_piece": 9474.6,
+  "conflicts": [],
+  "confidence": "low",
+  "low_confidence_reasons": [
+    "op 5.8 turn_taper: fallback \u2014 missing F32.taper_included_angle_deg",
+    "op 6.2 slot_mill: fallback \u2014 missing F23.path_length_mm, F23.depth",
+    "op 6.3 profile_mill: fallback \u2014 missing F24: no contour rule for feature type 'tooth_ring'",
+    "op 6.4 pocket_mill: fallback \u2014 missing F44 pocket width x length, F44.pocket_depth_mm",
+    "op 7.2 drill: fallback \u2014 missing F01 depth",
+    "op 7.2 drill: fallback \u2014 missing F02 depth",
+    "op 7.2 drill: fallback \u2014 missing F03 depth",
+    "op 7.2 drill: fallback \u2014 missing F04 depth",
+    "op 7.2 drill: fallback \u2014 missing F05 depth",
+    "op 7.2 drill: fallback \u2014 missing F06 depth",
+    "op 7.3 drill: fallback \u2014 missing F16 depth",
+    "op 7.4 drill: fallback \u2014 missing F39 depth",
+    "op 7.5 drill: fallback \u2014 missing F43 depth",
+    "op 9.2 drill: fallback \u2014 missing F41 depth",
+    "op 9.3 drill: fallback \u2014 missing F42 depth",
+    "op 11.16 turn_taper: fallback \u2014 missing F32.taper_included_angle_deg",
+    "op 12.2 slot_mill: fallback \u2014 missing F23.path_length_mm, F23.depth",
+    "op 12.3 profile_mill: fallback \u2014 missing F24: no contour rule for feature type 'tooth_ring'",
+    "op 12.4 pocket_mill: fallback \u2014 missing F44 pocket width x length, F44.pocket_depth_mm",
+    "op 13.1 drill: fallback \u2014 missing F01 depth",
+    "op 13.1 drill: fallback \u2014 missing F02 depth",
+    "op 13.1 drill: fallback \u2014 missing F03 depth",
+    "op 13.1 drill: fallback \u2014 missing F04 depth",
+    "op 13.1 drill: fallback \u2014 missing F05 depth",
+    "op 13.1 drill: fallback \u2014 missing F06 depth",
+    "op 13.2 drill: fallback \u2014 missing F16 depth",
+    "op 13.3 drill: fallback \u2014 missing F39 depth",
+    "op 13.4 drill: fallback \u2014 missing F43 depth",
+    "op 13.6 countersink: fallback \u2014 missing F01.hole_diameter_mm, F01 countersink depth",
+    "op 13.6 countersink: fallback \u2014 missing F02.hole_diameter_mm, F02 countersink depth",
+    "op 13.6 countersink: fallback \u2014 missing F03.hole_diameter_mm, F03 countersink depth",
+    "op 13.6 countersink: fallback \u2014 missing F04.hole_diameter_mm, F04 countersink depth",
+    "op 13.6 countersink: fallback \u2014 missing F05.hole_diameter_mm, F05 countersink depth",
+    "op 13.6 countersink: fallback \u2014 missing F06.hole_diameter_mm, F06 countersink depth",
+    "op 13.7 tap: fallback \u2014 missing F01.thread.pitch, F01 thread depth",
+    "op 13.7 tap: fallback \u2014 missing F02.thread.pitch, F02 thread depth",
+    "op 13.7 tap: fallback \u2014 missing F03.thread.pitch, F03 thread depth",
+    "op 13.7 tap: fallback \u2014 missing F04.thread.pitch, F04 thread depth",
+    "op 13.7 tap: fallback \u2014 missing F05.thread.pitch, F05 thread depth",
+    "op 13.7 tap: fallback \u2014 missing F06.thread.pitch, F06 thread depth",
+    "op 15.1 drill: fallback \u2014 missing F42 depth",
+    "op 15.2 drill: fallback \u2014 missing F41 depth",
+    "op 15.3 tap: fallback \u2014 missing F41 thread depth"
+  ]
+}

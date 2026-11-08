@@ -1,0 +1,189 @@
+{
+  "organization_id": "sandfits",
+  "machining_operations": [
+    {
+      "op": 1,
+      "operation_name": "Pour Casting",
+      "machine_family": "foundry",
+      "cycle_time_sec": 540.0,
+      "rate_per_hr": 500.0,
+      "cost_per_piece_inr": 75.0,
+      "needs_price": false
+    },
+    {
+      "op": 2,
+      "operation_name": "Shake Out and Fettle Casting",
+      "machine_family": "fettling",
+      "cycle_time_sec": 420.0,
+      "rate_per_hr": 200.0,
+      "cost_per_piece_inr": 23.33,
+      "needs_price": false
+    },
+    {
+      "op": 3,
+      "operation_name": "Clean Casting Before Stress Relief",
+      "machine_family": "outside_vendor",
+      "cycle_time_sec": 0.0,
+      "rate_per_hr": null,
+      "cost_per_piece_inr": null,
+      "needs_price": true
+    },
+    {
+      "op": 4,
+      "operation_name": "Stress Relieve Casting",
+      "machine_family": "heat_treat_furnace",
+      "cycle_time_sec": 960.0,
+      "rate_per_hr": 400.0,
+      "cost_per_piece_inr": 106.67,
+      "needs_price": false
+    },
+    {
+      "op": 5,
+      "operation_name": "VTC Rough Turn and Establish Datums",
+      "machine_family": "vtc",
+      "cycle_time_sec": 774.46,
+      "rate_per_hr": 450.0,
+      "cost_per_piece_inr": 96.81,
+      "needs_price": false
+    },
+    {
+      "op": 6,
+      "operation_name": "VMC Rough Datum and Prismatic Features",
+      "machine_family": "vmc",
+      "cycle_time_sec": 667.59,
+      "rate_per_hr": 450.0,
+      "cost_per_piece_inr": 83.45,
+      "needs_price": false
+    },
+    {
+      "op": 7,
+      "operation_name": "VMC Rough Axial Holes",
+      "machine_family": "vmc",
+      "cycle_time_sec": 451.2,
+      "rate_per_hr": 450.0,
+      "cost_per_piece_inr": 56.4,
+      "needs_price": false
+    },
+    {
+      "op": 8,
+      "operation_name": "VMC Rough Radial Hole",
+      "machine_family": "vmc",
+      "cycle_time_sec": 67.07,
+      "rate_per_hr": 450.0,
+      "cost_per_piece_inr": 8.38,
+      "needs_price": false
+    },
+    {
+      "op": 9,
+      "operation_name": "VMC Rough Inclined Holes",
+      "machine_family": "vmc",
+      "cycle_time_sec": 132.6,
+      "rate_per_hr": 450.0,
+      "cost_per_piece_inr": 16.57,
+      "needs_price": false
+    },
+    {
+      "op": 10,
+      "operation_name": "VTC Semi-Finish Precision Bores",
+      "machine_family": "vtc",
+      "cycle_time_sec": 188.8,
+      "rate_per_hr": 450.0,
+      "cost_per_piece_inr": 23.6,
+      "needs_price": false
+    },
+    {
+      "op": 11,
+      "operation_name": "VTC Finish Turn and Bore",
+      "machine_family": "vtc",
+      "cycle_time_sec": 927.91,
+      "rate_per_hr": 450.0,
+      "cost_per_piece_inr": 115.99,
+      "needs_price": false
+    },
+    {
+      "op": 12,
+      "operation_name": "VMC Finish Datum and Prismatic Features",
+      "machine_family": "vmc",
+      "cycle_time_sec": 667.59,
+      "rate_per_hr": 450.0,
+      "cost_per_piece_inr": 83.45,
+      "needs_price": false
+    },
+    {
+      "op": 13,
+      "operation_name": "VMC Finish Axial Holes and Threads",
+      "machine_family": "vmc",
+      "cycle_time_sec": 705.41,
+      "rate_per_hr": 450.0,
+      "cost_per_piece_inr": 88.18,
+      "needs_price": false
+    },
+    {
+      "op": 14,
+      "operation_name": "VMC Finish Radial Hole",
+      "machine_family": "vmc",
+      "cycle_time_sec": 61.07,
+      "rate_per_hr": 450.0,
+      "cost_per_piece_inr": 7.63,
+      "needs_price": false
+    },
+    {
+      "op": 15,
+      "operation_name": "VMC Finish Inclined Holes and Thread",
+      "machine_family": "vmc",
+      "cycle_time_sec": 150.9,
+      "rate_per_hr": 450.0,
+      "cost_per_piece_inr": 18.86,
+      "needs_price": false
+    },
+    {
+      "op": 16,
+      "operation_name": "Final Deburr",
+      "machine_family": "fettling",
+      "cycle_time_sec": 120.0,
+      "rate_per_hr": 200.0,
+      "cost_per_piece_inr": 6.67,
+      "needs_price": false
+    },
+    {
+      "op": 17,
+      "operation_name": "Dynamic Balance",
+      "machine_family": "outside_vendor",
+      "cycle_time_sec": 0.0,
+      "rate_per_hr": null,
+      "cost_per_piece_inr": null,
+      "needs_price": true
+    },
+    {
+      "op": 18,
+      "operation_name": "Final Clean and Demagnetize",
+      "machine_family": "outside_vendor",
+      "cycle_time_sec": 0.0,
+      "rate_per_hr": null,
+      "cost_per_piece_inr": null,
+      "needs_price": true
+    },
+    {
+      "op": 19,
+      "operation_name": "Final Inspection",
+      "machine_family": "inspection",
+      "cycle_time_sec": 540.0,
+      "rate_per_hr": 250.0,
+      "cost_per_piece_inr": 37.5,
+      "needs_price": false
+    }
+  ],
+  "machining_cost_per_piece_inr": 848.49,
+  "fixture": {
+    "cost_per_piece_inr": 1100.0,
+    "needs_price": false
+  },
+  "tooling": {
+    "cost_per_piece_inr": 35.25,
+    "needs_price": false
+  },
+  "gauges": {
+    "cost_per_piece_inr": 65.0,
+    "needs_price": false
+  }
+}
