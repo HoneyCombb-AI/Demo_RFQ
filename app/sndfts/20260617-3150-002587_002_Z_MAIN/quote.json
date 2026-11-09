@@ -1,106 +1,210 @@
 {
-  "organization_id": "sandfits",
+  "drawing_number": "3150-002587",
+  "part_name": "Lamellentr\u00e4ger SK",
+  "material": null,
   "quantity": 100,
-  "gross_kg": 7.751,
-  "net_kg": 7.751,
-  "material_inr_per_kg": 60.0,
-  "inputs": {
-    "gross_kg": "casting has no poured weight; material uses the finished weight on the drawing",
-    "one_time": "costing/one_time.yaml, divided by quantity. Indian catalog estimates, not a Sandfits price."
+  "quote_status": "complete",
+  "weights": {
+    "gross_weight_kg": 7.751,
+    "net_weight_kg": 7.751,
+    "scrap_weight_kg": 0.0
   },
-  "process_base_inr": 2663.54,
-  "total_inr": 2663.54,
-  "usd": null,
-  "lines": [
+  "direct_cost": {
+    "machining_cost_inr": 1075.53,
+    "material_cost_inr": 465.06,
+    "heat_treatment_cost_inr": 125.49,
+    "direct_cost_subtotal_inr": 1666.08
+  },
+  "overheads_and_surcharges": {
+    "tooling_inr": 31.2,
+    "inspection_inr": 44.12,
+    "fixture_inr": 1100.0,
+    "gauge_inr": 65.0
+  },
+  "pricing_summary": {
+    "subtotal_before_margin_inr": 1666.08,
+    "final_ex_works_price_inr": 2906.4
+  },
+  "machining_operations": [
     {
-      "key": "material",
-      "amount_inr": 465.06,
-      "needs_price": false
+      "sequence": 1,
+      "operation_name": "Pattern and Core Making",
+      "machine_family": "pattern_shop",
+      "cycle_time_sec": 960.0,
+      "hourly_rate_inr": 500.0,
+      "cost_per_piece_raw": 156.86274509803923,
+      "cost_per_piece_inr": 156.86
     },
     {
-      "key": "fettling",
-      "amount_inr": 35.29,
-      "needs_price": false
+      "sequence": 2,
+      "operation_name": "Pour Casting",
+      "machine_family": "foundry",
+      "cycle_time_sec": 540.0,
+      "hourly_rate_inr": 500.0,
+      "cost_per_piece_raw": 88.23529411764706,
+      "cost_per_piece_inr": 88.24
     },
     {
-      "key": "foundry",
-      "amount_inr": 88.24,
-      "needs_price": false
+      "sequence": 3,
+      "operation_name": "Shakeout and Fettle",
+      "machine_family": "fettling",
+      "cycle_time_sec": 300.0,
+      "hourly_rate_inr": 200.0,
+      "cost_per_piece_raw": 19.6078431372549,
+      "cost_per_piece_inr": 19.61
     },
     {
-      "key": "vmc",
-      "amount_inr": 426.98,
-      "needs_price": false
+      "sequence": 4,
+      "operation_name": "Pre-HT Clean",
+      "machine_family": "wash",
+      "cycle_time_sec": 210.0,
+      "hourly_rate_inr": 150.0,
+      "cost_per_piece_raw": 10.294117647058824,
+      "cost_per_piece_inr": 10.29
     },
     {
-      "key": "vtc",
-      "amount_inr": 278.11,
-      "needs_price": false
+      "sequence": 5,
+      "operation_name": "Casting Stress Relief",
+      "machine_family": "heat_treat_furnace",
+      "cycle_time_sec": 960.0,
+      "hourly_rate_inr": 400.0,
+      "cost_per_piece_raw": 125.49019607843138,
+      "cost_per_piece_inr": 125.49
     },
     {
-      "key": "heat_treat",
-      "amount_inr": 125.49,
-      "needs_price": false
+      "sequence": 6,
+      "operation_name": "Rough Machine Primary Datums",
+      "machine_family": "vtc",
+      "cycle_time_sec": 210.5,
+      "hourly_rate_inr": 450.0,
+      "cost_per_piece_raw": 30.955882352941178,
+      "cost_per_piece_inr": 30.96
     },
     {
-      "key": "stamping",
-      "amount_inr": 0.0,
-      "needs_price": false
+      "sequence": 7,
+      "operation_name": "Rough Machine Datum B",
+      "machine_family": "vmc",
+      "cycle_time_sec": 246.69,
+      "hourly_rate_inr": 450.0,
+      "cost_per_piece_raw": 36.27794117647059,
+      "cost_per_piece_inr": 36.28
     },
     {
-      "key": "plating",
-      "amount_inr": 0.0,
-      "needs_price": false
+      "sequence": 8,
+      "operation_name": "Rough Turn and Bore",
+      "machine_family": "vtc",
+      "cycle_time_sec": 611.66,
+      "hourly_rate_inr": 450.0,
+      "cost_per_piece_raw": 89.95,
+      "cost_per_piece_inr": 89.95
     },
     {
-      "key": "dynamic_balancing",
-      "amount_inr": 0.0,
-      "needs_price": true
+      "sequence": 9,
+      "operation_name": "Rough Mill Peripheral Features",
+      "machine_family": "vmc",
+      "cycle_time_sec": 420.6,
+      "hourly_rate_inr": 450.0,
+      "cost_per_piece_raw": 61.852941176470594,
+      "cost_per_piece_inr": 61.85
     },
     {
-      "key": "pre_heat_treatment_cleaning",
-      "amount_inr": 0.0,
-      "needs_price": true
+      "sequence": 10,
+      "operation_name": "Axial Hole Making",
+      "machine_family": "vmc",
+      "cycle_time_sec": 824.51,
+      "hourly_rate_inr": 450.0,
+      "cost_per_piece_raw": 121.25147058823529,
+      "cost_per_piece_inr": 121.25
     },
     {
-      "key": "precision_cleaning_and_demagnetization",
-      "amount_inr": 0.0,
-      "needs_price": true
+      "sequence": 11,
+      "operation_name": "Inclined Hole Making",
+      "machine_family": "vmc",
+      "cycle_time_sec": 192.9,
+      "hourly_rate_inr": 450.0,
+      "cost_per_piece_raw": 28.367647058823533,
+      "cost_per_piece_inr": 28.37
     },
     {
-      "key": "inspection",
-      "amount_inr": 44.12,
-      "needs_price": false
+      "sequence": 12,
+      "operation_name": "Radial Hole Making",
+      "machine_family": "vmc",
+      "cycle_time_sec": 67.07,
+      "hourly_rate_inr": 450.0,
+      "cost_per_piece_raw": 9.863235294117647,
+      "cost_per_piece_inr": 9.86
     },
     {
-      "key": "crush_test",
-      "amount_inr": 0.0,
-      "needs_price": false
+      "sequence": 13,
+      "operation_name": "Semi-Finish Precision Bore",
+      "machine_family": "vtc",
+      "cycle_time_sec": 134.52,
+      "hourly_rate_inr": 450.0,
+      "cost_per_piece_raw": 19.782352941176473,
+      "cost_per_piece_inr": 19.78
     },
     {
-      "key": "forge",
-      "amount_inr": 0.0,
-      "needs_price": false
+      "sequence": 14,
+      "operation_name": "Finish Turn and Bore",
+      "machine_family": "vtc",
+      "cycle_time_sec": 927.87,
+      "hourly_rate_inr": 450.0,
+      "cost_per_piece_raw": 136.45147058823528,
+      "cost_per_piece_inr": 136.45
     },
     {
-      "key": "consumable",
-      "amount_inr": 35.25,
-      "needs_price": false
+      "sequence": 15,
+      "operation_name": "Finish Mill Peripheral Features",
+      "machine_family": "vmc",
+      "cycle_time_sec": 607.29,
+      "hourly_rate_inr": 450.0,
+      "cost_per_piece_raw": 89.30735294117646,
+      "cost_per_piece_inr": 89.31
     },
     {
-      "key": "special_tooling",
-      "amount_inr": 0.0,
-      "needs_price": false
+      "sequence": 16,
+      "operation_name": "Deburr Machined Part",
+      "machine_family": "fettling",
+      "cycle_time_sec": 120.0,
+      "hourly_rate_inr": 200.0,
+      "cost_per_piece_raw": 7.843137254901961,
+      "cost_per_piece_inr": 7.84
     },
     {
-      "key": "fixture",
-      "amount_inr": 1100.0,
-      "needs_price": false
+      "sequence": 17,
+      "operation_name": "Final Clean",
+      "machine_family": "wash",
+      "cycle_time_sec": 210.0,
+      "hourly_rate_inr": 150.0,
+      "cost_per_piece_raw": 10.294117647058824,
+      "cost_per_piece_inr": 10.29
     },
     {
-      "key": "gauge",
-      "amount_inr": 65.0,
-      "needs_price": false
+      "sequence": 18,
+      "operation_name": "Demagnetize",
+      "machine_family": "demagnetizer",
+      "cycle_time_sec": 150.0,
+      "hourly_rate_inr": 150.0,
+      "cost_per_piece_raw": 7.352941176470589,
+      "cost_per_piece_inr": 7.35
+    },
+    {
+      "sequence": 19,
+      "operation_name": "Dynamic Balance",
+      "machine_family": "balancing",
+      "cycle_time_sec": 660.0,
+      "hourly_rate_inr": 700.0,
+      "cost_per_piece_raw": 150.98039215686273,
+      "cost_per_piece_inr": 150.98
+    },
+    {
+      "sequence": 20,
+      "operation_name": "Final Inspection",
+      "machine_family": "inspection",
+      "cycle_time_sec": 540.0,
+      "hourly_rate_inr": 250.0,
+      "cost_per_piece_raw": 44.11764705882353,
+      "cost_per_piece_inr": 44.12
     }
   ]
 }

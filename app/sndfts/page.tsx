@@ -42,7 +42,7 @@ export default async function SfsReportsListPage() {
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {parts.map((part) => (
-              <Link key={part.slug} href={`/sfs/${part.slug}`} className="block group">
+              <Link key={part.slug} href={`/sndfts/${part.slug}`} className="block group">
                 <Card className="h-full transition-all hover:shadow-md hover:border-primary/50 group-hover:-translate-y-1 duration-200">
                   <CardHeader className="pb-3">
                     <div className="flex justify-between items-start mb-2">

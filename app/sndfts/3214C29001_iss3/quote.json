@@ -1,121 +1,237 @@
 {
-  "organization_id": "sandfits",
+  "drawing_number": "3214C27901 / 3214C28901",
+  "part_name": null,
+  "material": "SG450/10 AS PER IS1865.",
   "quantity": 100,
-  "gross_kg": 10.0,
-  "net_kg": 10.0,
-  "material_inr_per_kg": 70.0,
-  "inputs": {
-    "gross_kg": "casting has no poured weight; material uses the finished weight on the drawing",
-    "one_time": "costing/one_time.yaml, divided by quantity. Indian catalog estimates, not a Sandfits price."
+  "quote_status": "complete",
+  "weights": {
+    "gross_weight_kg": 10.0,
+    "net_weight_kg": 10.0,
+    "scrap_weight_kg": 0.0
   },
-  "process_base_inr": 2420.65,
-  "total_inr": 2420.65,
-  "usd": null,
-  "lines": [
+  "direct_cost": {
+    "machining_cost_inr": 2531.08,
+    "material_cost_inr": 700.0,
+    "heat_treatment_cost_inr": 125.49,
+    "direct_cost_subtotal_inr": 3356.57
+  },
+  "overheads_and_surcharges": {
+    "tooling_inr": 23.98,
+    "inspection_inr": 34.31,
+    "fixture_inr": 550.0,
+    "gauge_inr": 115.0
+  },
+  "pricing_summary": {
+    "subtotal_before_margin_inr": 3356.57,
+    "final_ex_works_price_inr": 4079.86
+  },
+  "machining_operations": [
     {
-      "key": "material",
-      "amount_inr": 700.0,
-      "needs_price": false
+      "sequence": 1,
+      "operation_name": "Make Pattern and Cores",
+      "machine_family": "pattern_shop",
+      "cycle_time_sec": 960.0,
+      "hourly_rate_inr": 500.0,
+      "cost_per_piece_raw": 156.86274509803923,
+      "cost_per_piece_inr": 156.86
     },
     {
-      "key": "fettling",
-      "amount_inr": 33.33,
-      "needs_price": false
+      "sequence": 2,
+      "operation_name": "Pour Ductile-Iron Casting",
+      "machine_family": "foundry",
+      "cycle_time_sec": 540.0,
+      "hourly_rate_inr": 500.0,
+      "cost_per_piece_raw": 88.23529411764706,
+      "cost_per_piece_inr": 88.24
     },
     {
-      "key": "foundry",
-      "amount_inr": 88.24,
-      "needs_price": false
+      "sequence": 3,
+      "operation_name": "Shakeout and Fettle Casting",
+      "machine_family": "fettling",
+      "cycle_time_sec": 300.0,
+      "hourly_rate_inr": 200.0,
+      "cost_per_piece_raw": 19.6078431372549,
+      "cost_per_piece_inr": 19.61
     },
     {
-      "key": "ndt",
-      "amount_inr": 2.45,
-      "needs_price": false
+      "sequence": 4,
+      "operation_name": "Casting Radiographic Examination",
+      "machine_family": "radiography",
+      "cycle_time_sec": 780.0,
+      "hourly_rate_inr": 6400.0,
+      "cost_per_piece_raw": 1631.372549019608,
+      "cost_per_piece_inr": 1631.37
     },
     {
-      "key": "paint_booth",
-      "amount_inr": 11.76,
-      "needs_price": false
+      "sequence": 5,
+      "operation_name": "Clean Before Stress Relief",
+      "machine_family": "wash",
+      "cycle_time_sec": 210.0,
+      "hourly_rate_inr": 150.0,
+      "cost_per_piece_raw": 10.294117647058824,
+      "cost_per_piece_inr": 10.29
     },
     {
-      "key": "pattern_shop",
-      "amount_inr": 156.86,
-      "needs_price": false
+      "sequence": 6,
+      "operation_name": "Stress Relieve Casting",
+      "machine_family": "heat_treat_furnace",
+      "cycle_time_sec": 960.0,
+      "hourly_rate_inr": 400.0,
+      "cost_per_piece_raw": 125.49019607843138,
+      "cost_per_piece_inr": 125.49
     },
     {
-      "key": "vmc",
-      "amount_inr": 358.64,
-      "needs_price": false
+      "sequence": 7,
+      "operation_name": "Rough Machine Datum Faces",
+      "machine_family": "vmc",
+      "cycle_time_sec": 94.31,
+      "hourly_rate_inr": 450.0,
+      "cost_per_piece_raw": 13.869117647058824,
+      "cost_per_piece_inr": 13.87
     },
     {
-      "key": "vtc",
-      "amount_inr": 215.85,
-      "needs_price": false
+      "sequence": 8,
+      "operation_name": "Rough Turn Cast Housing",
+      "machine_family": "vtc",
+      "cycle_time_sec": 399.2,
+      "hourly_rate_inr": 450.0,
+      "cost_per_piece_raw": 58.705882352941174,
+      "cost_per_piece_inr": 58.71
     },
     {
-      "key": "heat_treat",
-      "amount_inr": 125.49,
-      "needs_price": false
+      "sequence": 9,
+      "operation_name": "Rough Mill Upper Recess",
+      "machine_family": "vmc",
+      "cycle_time_sec": 420.3,
+      "hourly_rate_inr": 450.0,
+      "cost_per_piece_raw": 61.80882352941177,
+      "cost_per_piece_inr": 61.81
     },
     {
-      "key": "stamping",
-      "amount_inr": 0.0,
-      "needs_price": false
+      "sequence": 10,
+      "operation_name": "Finish Turn Housing Diameters",
+      "machine_family": "vtc",
+      "cycle_time_sec": 735.91,
+      "hourly_rate_inr": 450.0,
+      "cost_per_piece_raw": 108.22205882352941,
+      "cost_per_piece_inr": 108.22
     },
     {
-      "key": "plating",
-      "amount_inr": 0.0,
-      "needs_price": false
+      "sequence": 11,
+      "operation_name": "Finish Datum Faces, Recess, and Axial Holes",
+      "machine_family": "vmc",
+      "cycle_time_sec": 1045.99,
+      "hourly_rate_inr": 450.0,
+      "cost_per_piece_raw": 153.8220588235294,
+      "cost_per_piece_inr": 153.82
     },
     {
-      "key": "CTS3040L_structural_test",
-      "amount_inr": 0.0,
-      "needs_price": true
+      "sequence": 12,
+      "operation_name": "Machine Radial Mounting Holes",
+      "machine_family": "vmc",
+      "cycle_time_sec": 324.6,
+      "hourly_rate_inr": 450.0,
+      "cost_per_piece_raw": 47.735294117647065,
+      "cost_per_piece_inr": 47.74
     },
     {
-      "key": "anti_rust_oil_application",
-      "amount_inr": 0.0,
-      "needs_price": true
+      "sequence": 13,
+      "operation_name": "Drill Side Lug Holes",
+      "machine_family": "vmc",
+      "cycle_time_sec": 90.58,
+      "hourly_rate_inr": 450.0,
+      "cost_per_piece_raw": 13.320588235294117,
+      "cost_per_piece_inr": 13.32
     },
     {
-      "key": "radiographic_examination_level_3",
-      "amount_inr": 0.0,
-      "needs_price": true
+      "sequence": 14,
+      "operation_name": "Machine Axial Housing Thread",
+      "machine_family": "vtc",
+      "cycle_time_sec": 150.45,
+      "hourly_rate_inr": 450.0,
+      "cost_per_piece_raw": 22.125,
+      "cost_per_piece_inr": 22.12
     },
     {
-      "key": "inspection",
-      "amount_inr": 34.31,
-      "needs_price": false
+      "sequence": 15,
+      "operation_name": "Deburr Machined Part",
+      "machine_family": "fettling",
+      "cycle_time_sec": 120.0,
+      "hourly_rate_inr": 200.0,
+      "cost_per_piece_raw": 7.843137254901961,
+      "cost_per_piece_inr": 7.84
     },
     {
-      "key": "crush_test",
-      "amount_inr": 0.0,
-      "needs_price": false
+      "sequence": 16,
+      "operation_name": "Wash After Machining",
+      "machine_family": "wash",
+      "cycle_time_sec": 210.0,
+      "hourly_rate_inr": 150.0,
+      "cost_per_piece_raw": 10.294117647058824,
+      "cost_per_piece_inr": 10.29
     },
     {
-      "key": "forge",
-      "amount_inr": 0.0,
-      "needs_price": false
+      "sequence": 17,
+      "operation_name": "Structural Test",
+      "machine_family": "test_rig",
+      "cycle_time_sec": 660.0,
+      "hourly_rate_inr": 400.0,
+      "cost_per_piece_raw": 86.27450980392156,
+      "cost_per_piece_inr": 86.27
     },
     {
-      "key": "consumable",
-      "amount_inr": 28.72,
-      "needs_price": false
+      "sequence": 18,
+      "operation_name": "Final Dimensional and Casting Inspection",
+      "machine_family": "inspection",
+      "cycle_time_sec": 420.0,
+      "hourly_rate_inr": 250.0,
+      "cost_per_piece_raw": 34.31372549019608,
+      "cost_per_piece_inr": 34.31
     },
     {
-      "key": "special_tooling",
-      "amount_inr": 0.0,
-      "needs_price": false
+      "sequence": 19,
+      "operation_name": "Mask Machined Surfaces for Primer",
+      "machine_family": "paint_booth",
+      "cycle_time_sec": 90.0,
+      "hourly_rate_inr": 300.0,
+      "cost_per_piece_raw": 8.823529411764707,
+      "cost_per_piece_inr": 8.82
     },
     {
-      "key": "fixture",
-      "amount_inr": 550.0,
-      "needs_price": false
+      "sequence": 20,
+      "operation_name": "Final Casting Blast",
+      "machine_family": "fettling",
+      "cycle_time_sec": 240.0,
+      "hourly_rate_inr": 200.0,
+      "cost_per_piece_raw": 15.686274509803923,
+      "cost_per_piece_inr": 15.69
     },
     {
-      "key": "gauge",
-      "amount_inr": 115.0,
-      "needs_price": false
+      "sequence": 21,
+      "operation_name": "Apply Zinc-Phosphate Primer",
+      "machine_family": "paint_booth",
+      "cycle_time_sec": 30.0,
+      "hourly_rate_inr": 300.0,
+      "cost_per_piece_raw": 2.9411764705882355,
+      "cost_per_piece_inr": 2.94
+    },
+    {
+      "sequence": 22,
+      "operation_name": "Unmask Machined Surfaces",
+      "machine_family": "paint_booth",
+      "cycle_time_sec": 60.0,
+      "hourly_rate_inr": 300.0,
+      "cost_per_piece_raw": 5.882352941176471,
+      "cost_per_piece_inr": 5.88
+    },
+    {
+      "sequence": 23,
+      "operation_name": "Apply Anti-Rust Oil",
+      "machine_family": "preserve",
+      "cycle_time_sec": 150.0,
+      "hourly_rate_inr": 150.0,
+      "cost_per_piece_raw": 7.352941176470589,
+      "cost_per_piece_inr": 7.35
     }
   ]
 }

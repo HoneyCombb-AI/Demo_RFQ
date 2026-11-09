@@ -1,0 +1,675 @@
+{
+  "analysis_id": "3214C29001_iss3_merge_20261108T095435Z",
+  "source_feature_graph_id": "3214C29001_iss3_merge_20261108T095435Z",
+  "quantity": 100,
+  "part_family": "hybrid",
+  "base_geometry": "complex",
+  "stock": {
+    "form": "sg_iron_casting",
+    "shape": "casting"
+  },
+  "operations": [
+    {
+      "sequence": 1,
+      "name": "Make Pattern and Cores",
+      "machine_family": "pattern_shop",
+      "setup_note": "Prepare the pattern and cores for the specified ductile-iron casting, with machining stock and casting features verified against the approved model.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "make_pattern",
+          "target_feature_ids": []
+        }
+      ]
+    },
+    {
+      "sequence": 2,
+      "name": "Pour Ductile-Iron Casting",
+      "machine_family": "foundry",
+      "setup_note": "Pour the SG450/10 casting from the prepared pattern and cores; the order quantity is 10 parts.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "pour_casting",
+          "target_feature_ids": []
+        }
+      ]
+    },
+    {
+      "sequence": 3,
+      "name": "Shakeout and Fettle Casting",
+      "machine_family": "fettling",
+      "setup_note": "Remove the casting from the mold, remove gates and risers without damaging machining stock, and clear foundry sand from internal passages.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "descale",
+          "target_feature_ids": []
+        },
+        {
+          "sequence": 2,
+          "operation_type": "deburr",
+          "target_feature_ids": []
+        },
+        {
+          "sequence": 3,
+          "operation_type": "shot_blast",
+          "target_feature_ids": []
+        }
+      ]
+    },
+    {
+      "sequence": 4,
+      "name": "Casting Radiographic Examination",
+      "machine_family": "radiography",
+      "setup_note": "Examine the fettled casting to the specified level 3 radiographic requirement and retain the inspection record.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "radiograph_ndt",
+          "target_feature_ids": []
+        }
+      ]
+    },
+    {
+      "sequence": 5,
+      "name": "Clean Before Stress Relief",
+      "machine_family": "wash",
+      "setup_note": "Wash and dry the casting after fettling and radiography before loading it into the stress-relief furnace.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "clean_degrease",
+          "target_feature_ids": []
+        }
+      ]
+    },
+    {
+      "sequence": 6,
+      "name": "Stress Relieve Casting",
+      "machine_family": "heat_treat_furnace",
+      "setup_note": "Stress-relieve the clean ductile-iron casting before machining; use the approved casting heat-treatment cycle. This treatment does not change the planned machinability state to hardened.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "stress_relieve",
+          "target_feature_ids": []
+        }
+      ]
+    },
+    {
+      "sequence": 7,
+      "name": "Rough Machine Datum Faces",
+      "machine_family": "vmc",
+      "setup_note": "Locate the stress-relieved casting on stable as-cast supports and rough the primary planar datum region. Take the first cut at least 2 mm below cast skin and verify stock distribution before proceeding.",
+      "datum_references": [
+        "DA"
+      ],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "face_mill",
+          "target_feature_ids": [
+            "F37"
+          ]
+        }
+      ]
+    },
+    {
+      "sequence": 8,
+      "name": "Rough Turn Cast Housing",
+      "machine_family": "vtc",
+      "setup_note": "Fixture the casting from the roughed datum face and indicate the casting axis. Confirm adequate casting stock on every turned feature before cutting; use dust extraction for cast-iron machining.",
+      "datum_references": [
+        "DA"
+      ],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "rough_turn_od",
+          "target_feature_ids": [
+            "F23"
+          ]
+        },
+        {
+          "sequence": 2,
+          "operation_type": "rough_turn_od",
+          "target_feature_ids": [
+            "F24"
+          ]
+        },
+        {
+          "sequence": 3,
+          "operation_type": "rough_turn_od",
+          "target_feature_ids": [
+            "F25"
+          ]
+        },
+        {
+          "sequence": 4,
+          "operation_type": "rough_turn_od",
+          "target_feature_ids": [
+            "F28",
+            "F35"
+          ]
+        },
+        {
+          "sequence": 5,
+          "operation_type": "rough_turn_od",
+          "target_feature_ids": [
+            "F32"
+          ]
+        },
+        {
+          "sequence": 6,
+          "operation_type": "rough_turn_od",
+          "target_feature_ids": [
+            "F33"
+          ]
+        },
+        {
+          "sequence": 7,
+          "operation_type": "rough_turn_od",
+          "target_feature_ids": [
+            "F34"
+          ]
+        },
+        {
+          "sequence": 8,
+          "operation_type": "rough_turn_od",
+          "target_feature_ids": [
+            "F59"
+          ]
+        }
+      ]
+    },
+    {
+      "sequence": 9,
+      "name": "Rough Mill Upper Recess",
+      "machine_family": "vmc",
+      "setup_note": "Locate from the roughed datum face and support the casting around the upper profile. Rough the recess and its walls before any finish machining.",
+      "datum_references": [
+        "DA"
+      ],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "slot_mill",
+          "target_feature_ids": [
+            "F14",
+            "F17",
+            "F18"
+          ]
+        }
+      ]
+    },
+    {
+      "sequence": 10,
+      "name": "Finish Turn Housing Diameters",
+      "machine_family": "vtc",
+      "setup_note": "Re-establish the casting axis from datum A and the roughed cylindrical datums. Finish the turned features after the route's rough cuts are complete; verify the largest diameter against available casting stock.",
+      "datum_references": [
+        "DA",
+        "DD",
+        "DF"
+      ],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "turn_taper",
+          "target_feature_ids": [
+            "F23"
+          ]
+        },
+        {
+          "sequence": 2,
+          "operation_type": "finish_turn_od",
+          "target_feature_ids": [
+            "F24"
+          ]
+        },
+        {
+          "sequence": 3,
+          "operation_type": "finish_turn_od",
+          "target_feature_ids": [
+            "F25"
+          ]
+        },
+        {
+          "sequence": 4,
+          "operation_type": "finish_turn_od",
+          "target_feature_ids": [
+            "F28",
+            "F35"
+          ]
+        },
+        {
+          "sequence": 5,
+          "operation_type": "finish_turn_od",
+          "target_feature_ids": [
+            "F32"
+          ]
+        },
+        {
+          "sequence": 6,
+          "operation_type": "finish_turn_od",
+          "target_feature_ids": [
+            "F33"
+          ]
+        },
+        {
+          "sequence": 7,
+          "operation_type": "finish_turn_od",
+          "target_feature_ids": [
+            "F34"
+          ]
+        },
+        {
+          "sequence": 8,
+          "operation_type": "finish_turn_od",
+          "target_feature_ids": [
+            "F59"
+          ]
+        }
+      ]
+    },
+    {
+      "sequence": 11,
+      "name": "Finish Datum Faces, Recess, and Axial Holes",
+      "machine_family": "vmc",
+      "setup_note": "Locate from datum A and the established turned axis, using the drawing datums for hole positioning. Finish the datum and recess surfaces before drilling; ream the dowel holes immediately after drilling without disturbing the setup.",
+      "datum_references": [
+        "DA",
+        "DD"
+      ],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "face_mill",
+          "target_feature_ids": [
+            "F37",
+            "F73"
+          ]
+        },
+        {
+          "sequence": 2,
+          "operation_type": "slot_mill",
+          "target_feature_ids": [
+            "F14",
+            "F17",
+            "F18"
+          ]
+        },
+        {
+          "sequence": 3,
+          "operation_type": "spot_drill",
+          "target_feature_ids": [
+            "F68",
+            "F69",
+            "F70"
+          ]
+        },
+        {
+          "sequence": 4,
+          "operation_type": "drill",
+          "target_feature_ids": [
+            "F68"
+          ]
+        },
+        {
+          "sequence": 5,
+          "operation_type": "drill",
+          "target_feature_ids": [
+            "F69",
+            "F70"
+          ]
+        },
+        {
+          "sequence": 6,
+          "operation_type": "ream",
+          "target_feature_ids": [
+            "F69",
+            "F70"
+          ]
+        }
+      ]
+    },
+    {
+      "sequence": 12,
+      "name": "Machine Radial Mounting Holes",
+      "machine_family": "vmc",
+      "setup_note": "Fixture and index the housing to access the radial mounting-hole locations while retaining datum references. Drill the specified tap holes and tap them last in this setup; confirm blind-hole depths from the drawing before machining.",
+      "datum_references": [
+        "DA",
+        "DD"
+      ],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "spot_drill",
+          "target_feature_ids": [
+            "F02",
+            "F03",
+            "F04",
+            "F05"
+          ]
+        },
+        {
+          "sequence": 2,
+          "operation_type": "drill",
+          "target_feature_ids": [
+            "F02",
+            "F03",
+            "F04",
+            "F05"
+          ]
+        },
+        {
+          "sequence": 3,
+          "operation_type": "tap",
+          "target_feature_ids": [
+            "F02",
+            "F03",
+            "F04",
+            "F05"
+          ]
+        }
+      ]
+    },
+    {
+      "sequence": 13,
+      "name": "Drill Side Lug Holes",
+      "machine_family": "vmc",
+      "setup_note": "Support the casting on datum references and index the fixture to access the side lugs. Spot and drill the four through-holes without clamping distortion of the lugs.",
+      "datum_references": [
+        "DA",
+        "DD"
+      ],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "spot_drill",
+          "target_feature_ids": [
+            "F64"
+          ]
+        },
+        {
+          "sequence": 2,
+          "operation_type": "drill",
+          "target_feature_ids": [
+            "F64"
+          ]
+        }
+      ]
+    },
+    {
+      "sequence": 14,
+      "name": "Machine Axial Housing Thread",
+      "machine_family": "vtc",
+      "setup_note": "Locate the upper boss from the turned axis and machine the specified axial thread. The drawing note calls for assembly machining with a cap; confirm the cap and the missing \u00d884 bore definition before releasing this operation.",
+      "datum_references": [
+        "DA",
+        "DD"
+      ],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "thread_id_single_point",
+          "target_feature_ids": [
+            "F61"
+          ]
+        }
+      ]
+    },
+    {
+      "sequence": 15,
+      "name": "Deburr Machined Part",
+      "machine_family": "fettling",
+      "setup_note": "Remove machining burrs and sharp edges, paying particular attention to drilled-hole exits and thread starts while protecting finished datum and fit surfaces.",
+      "datum_references": [
+        "DA",
+        "DD"
+      ],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "deburr",
+          "target_feature_ids": []
+        }
+      ]
+    },
+    {
+      "sequence": 16,
+      "name": "Wash After Machining",
+      "machine_family": "wash",
+      "setup_note": "Clean machining residue and cast-iron dust from the housing before structural testing and final inspection.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "clean_degrease",
+          "target_feature_ids": []
+        }
+      ]
+    },
+    {
+      "sequence": 17,
+      "name": "Structural Test",
+      "machine_family": "test_rig",
+      "setup_note": "Test the machined housing to CTS3040L and record the required result before coating.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "structural_test",
+          "target_feature_ids": []
+        }
+      ]
+    },
+    {
+      "sequence": 18,
+      "name": "Final Dimensional and Casting Inspection",
+      "machine_family": "inspection",
+      "setup_note": "Inspect critical dimensions, datum relationships, surface finish, and casting documentation after machining and structural testing. Verify the radiographic and supplier quality records are complete.",
+      "datum_references": [
+        "DA",
+        "DD",
+        "DF"
+      ],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "cmm_inspect",
+          "target_feature_ids": []
+        },
+        {
+          "sequence": 2,
+          "operation_type": "manual_inspect",
+          "target_feature_ids": []
+        }
+      ]
+    },
+    {
+      "sequence": 19,
+      "name": "Mask Machined Surfaces for Primer",
+      "machine_family": "paint_booth",
+      "setup_note": "Mask machined surfaces, bores, and threads that must receive anti-rust oil rather than primer.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "mask",
+          "target_feature_ids": []
+        }
+      ]
+    },
+    {
+      "sequence": 20,
+      "name": "Final Casting Blast",
+      "machine_family": "fettling",
+      "setup_note": "Blast the unmasked interior and exterior casting surfaces as specified, keeping masked machined surfaces protected; transfer directly to primer application.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "shot_blast",
+          "target_feature_ids": []
+        }
+      ]
+    },
+    {
+      "sequence": 21,
+      "name": "Apply Zinc-Phosphate Primer",
+      "machine_family": "paint_booth",
+      "setup_note": "Immediately apply the specified charcoal-grey zinc-phosphate primer to the blasted interior and exterior casting surfaces.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "paint",
+          "target_feature_ids": []
+        }
+      ]
+    },
+    {
+      "sequence": 22,
+      "name": "Unmask Machined Surfaces",
+      "machine_family": "paint_booth",
+      "setup_note": "Remove masking after the primer has been applied without damaging the coating or finished machined surfaces.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "unmask",
+          "target_feature_ids": []
+        }
+      ]
+    },
+    {
+      "sequence": 23,
+      "name": "Apply Anti-Rust Oil",
+      "machine_family": "preserve",
+      "setup_note": "Apply DW39 or equivalent anti-rust oil to all machined surfaces after primer masking is removed.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "apply_rust_preventive",
+          "target_feature_ids": []
+        }
+      ]
+    }
+  ],
+  "clarifications": [
+    {
+      "clarification_id": "C01",
+      "question": "Which feature is the \u00d884 +0/-0.012 bore mentioned in the assembly-machining note? The routing view identifies F59 as an \u00d884 outside diameter but contains no corresponding \u00d884 bore feature.",
+      "blocks": [
+        14
+      ],
+      "suggested_default": "Provide the bore location and geometry from the referenced drawing/model before machining; do not infer it from F59.",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C02",
+      "question": "Will the mating cap be supplied so the M90\u00d72 thread and \u00d884 bore can be machined as an assembly, as required by the drawing note?",
+      "blocks": [
+        14
+      ],
+      "suggested_default": "Machine as an assembly only if the matching cap is supplied and identified for the job.",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C03",
+      "question": "What valid screw engagement or required blind tap depth applies to the four M14\u00d72 mounting holes?",
+      "blocks": [
+        12
+      ],
+      "suggested_default": "Use the drawing's specified screw engagement and make tap depth greater than the valid screw depth.",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C04",
+      "question": "What is the definition or location of datum DB referenced by the positional tolerances for the hole pattern and dowel hole F70?",
+      "blocks": [
+        11
+      ],
+      "suggested_default": "Use datum DB as defined on the complete drawing/model; do not substitute another datum without approval.",
+      "priority": "high"
+    }
+  ],
+  "assumptions": [
+    {
+      "assumption_id": "A01",
+      "text": "The ductile-iron casting requires stress relief before machining; the specific furnace cycle is to follow the approved casting specification because no cycle parameters are supplied."
+    },
+    {
+      "assumption_id": "A02",
+      "text": "The casting/model provides adequate machining allowance on all specified turned and milled surfaces. Verify stock distribution before committing to datum locations, particularly for the \u00d8119.7 feature."
+    },
+    {
+      "assumption_id": "A03",
+      "text": "The available operation vocabulary has no separate semi-finish machining type. The route therefore rough-machines all turned and recessed features, then proceeds to finish machining after the roughing stages."
+    },
+    {
+      "assumption_id": "A04",
+      "text": "The specified radiographic examination and supplier quality records will document casting soundness; no separate destructive fracture or sectioning test sample was specified."
+    },
+    {
+      "assumption_id": "A05",
+      "text": "No pressure test is included because the stated requirement is a structural test to CTS3040L, not a pressure test."
+    }
+  ]
+}

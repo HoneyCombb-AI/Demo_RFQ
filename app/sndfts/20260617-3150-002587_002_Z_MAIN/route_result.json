@@ -1,0 +1,873 @@
+{
+  "analysis_id": "20260617-3150-002587_002_Z_MAIN_merge_20261108T080011Z",
+  "source_feature_graph_id": "20260617-3150-002587_002_Z_MAIN_merge_20261108T080011Z",
+  "quantity": 100,
+  "part_family": "hybrid",
+  "base_geometry": "rotational",
+  "stock": {
+    "form": "grey_iron_casting",
+    "shape": "casting"
+  },
+  "operations": [
+    {
+      "sequence": 1,
+      "name": "Pattern and Core Making",
+      "machine_family": "pattern_shop",
+      "setup_note": "Make the pattern and any required cores for the assumed cast blank. Verify machining allowance and stock distribution before releasing the pattern.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "make_pattern",
+          "target_feature_ids": []
+        }
+      ]
+    },
+    {
+      "sequence": 2,
+      "name": "Pour Casting",
+      "machine_family": "foundry",
+      "setup_note": "Pour the assumed grey-iron casting from the prepared pattern and cores. The casting is supplied near-net-shape for subsequent machining.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "pour_casting",
+          "target_feature_ids": []
+        }
+      ]
+    },
+    {
+      "sequence": 3,
+      "name": "Shakeout and Fettle",
+      "machine_family": "fettling",
+      "setup_note": "Remove the casting from the mold, clear core sand, remove gates and risers without cutting below the machining allowance, then blast and clean the casting.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "descale",
+          "target_feature_ids": []
+        },
+        {
+          "sequence": 2,
+          "operation_type": "deburr",
+          "target_feature_ids": []
+        },
+        {
+          "sequence": 3,
+          "operation_type": "shot_blast",
+          "target_feature_ids": []
+        }
+      ]
+    },
+    {
+      "sequence": 4,
+      "name": "Pre-HT Clean",
+      "machine_family": "wash",
+      "setup_note": "Wash the fettled casting before furnace loading to remove residual sand and contaminants. Ensure the part is dry before stress relieving.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "clean_degrease",
+          "target_feature_ids": []
+        }
+      ]
+    },
+    {
+      "sequence": 5,
+      "name": "Casting Stress Relief",
+      "machine_family": "heat_treat_furnace",
+      "setup_note": "Stress relieve the clean, as-cast part before machining to reduce distortion as stock is removed. This is a stress-relief cycle, not a hardening treatment.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "stress_relieve",
+          "target_feature_ids": []
+        }
+      ]
+    },
+    {
+      "sequence": 6,
+      "name": "Rough Machine Primary Datums",
+      "machine_family": "vtc",
+      "setup_note": "Locate the stress-relieved casting on stable as-cast supports and establish datum A by facing F09; rough datum C by turning F25. Ensure the first cuts pass at least 2 mm below cast skin and verify stock remains on the other features.",
+      "datum_references": [
+        "A",
+        "C"
+      ],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "face_turn",
+          "target_feature_ids": [
+            "F09"
+          ]
+        },
+        {
+          "sequence": 2,
+          "operation_type": "rough_turn_od",
+          "target_feature_ids": [
+            "F25"
+          ]
+        }
+      ]
+    },
+    {
+      "sequence": 7,
+      "name": "Rough Machine Datum B",
+      "machine_family": "vmc",
+      "setup_note": "Hold the casting from the newly machined datum A and rough-machined outer datum C. Machine datum face B, verifying adequate stock remains on features referenced to the datum system.",
+      "datum_references": [
+        "A",
+        "B",
+        "C"
+      ],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "face_mill",
+          "target_feature_ids": [
+            "F10"
+          ]
+        }
+      ]
+    },
+    {
+      "sequence": 8,
+      "name": "Rough Turn and Bore",
+      "machine_family": "vtc",
+      "setup_note": "Locate the casting from datums A and C, with datum B used to clock the part as required. Rough the turned diameters and faces, then rough the concentric bores; leave uniform stock for later finishing.",
+      "datum_references": [
+        "A",
+        "B",
+        "C"
+      ],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "rough_turn_od",
+          "target_feature_ids": [
+            "F07"
+          ]
+        },
+        {
+          "sequence": 2,
+          "operation_type": "rough_turn_od",
+          "target_feature_ids": [
+            "F20"
+          ]
+        },
+        {
+          "sequence": 3,
+          "operation_type": "rough_turn_od",
+          "target_feature_ids": [
+            "F21"
+          ]
+        },
+        {
+          "sequence": 4,
+          "operation_type": "rough_turn_od",
+          "target_feature_ids": [
+            "F33"
+          ]
+        },
+        {
+          "sequence": 5,
+          "operation_type": "rough_turn_od",
+          "target_feature_ids": [
+            "F34"
+          ]
+        },
+        {
+          "sequence": 6,
+          "operation_type": "rough_turn_od",
+          "target_feature_ids": [
+            "F37"
+          ]
+        },
+        {
+          "sequence": 7,
+          "operation_type": "rough_turn_od",
+          "target_feature_ids": [
+            "F45"
+          ]
+        },
+        {
+          "sequence": 8,
+          "operation_type": "rough_turn_od",
+          "target_feature_ids": [
+            "F32"
+          ]
+        },
+        {
+          "sequence": 9,
+          "operation_type": "form_turn",
+          "target_feature_ids": [
+            "F18"
+          ]
+        },
+        {
+          "sequence": 10,
+          "operation_type": "form_turn",
+          "target_feature_ids": [
+            "F14"
+          ]
+        },
+        {
+          "sequence": 11,
+          "operation_type": "face_turn",
+          "target_feature_ids": [
+            "F08"
+          ]
+        },
+        {
+          "sequence": 12,
+          "operation_type": "face_turn",
+          "target_feature_ids": [
+            "F12"
+          ]
+        },
+        {
+          "sequence": 13,
+          "operation_type": "face_turn",
+          "target_feature_ids": [
+            "F13"
+          ]
+        },
+        {
+          "sequence": 14,
+          "operation_type": "rough_bore_id",
+          "target_feature_ids": [
+            "F15"
+          ]
+        },
+        {
+          "sequence": 15,
+          "operation_type": "rough_bore_id",
+          "target_feature_ids": [
+            "F17"
+          ]
+        },
+        {
+          "sequence": 16,
+          "operation_type": "rough_bore_id",
+          "target_feature_ids": [
+            "F35"
+          ]
+        },
+        {
+          "sequence": 17,
+          "operation_type": "rough_bore_id",
+          "target_feature_ids": [
+            "F36"
+          ]
+        },
+        {
+          "sequence": 18,
+          "operation_type": "rough_bore_id",
+          "target_feature_ids": [
+            "F38"
+          ]
+        }
+      ]
+    },
+    {
+      "sequence": 9,
+      "name": "Rough Mill Peripheral Features",
+      "machine_family": "vmc",
+      "setup_note": "Locate from datums A, B, and C. Rough the six lamella openings and the peripheral profile features, leaving stock for a finishing pass and preserving the specified thin web.",
+      "datum_references": [
+        "A",
+        "B",
+        "C"
+      ],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "slot_mill",
+          "target_feature_ids": [
+            "F23",
+            "F44"
+          ]
+        },
+        {
+          "sequence": 2,
+          "operation_type": "profile_mill",
+          "target_feature_ids": [
+            "F24"
+          ]
+        }
+      ]
+    },
+    {
+      "sequence": 10,
+      "name": "Axial Hole Making",
+      "machine_family": "vmc",
+      "setup_note": "Locate from datum faces A and B and clock on datum C. Spot and drill the axial-face hole features; machine the counterbores and thread entries before tapping.",
+      "datum_references": [
+        "A",
+        "B",
+        "C"
+      ],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "spot_drill",
+          "target_feature_ids": [
+            "F01",
+            "F02",
+            "F03",
+            "F04",
+            "F05",
+            "F06",
+            "F16",
+            "F39",
+            "F43"
+          ]
+        },
+        {
+          "sequence": 2,
+          "operation_type": "drill",
+          "target_feature_ids": [
+            "F01",
+            "F02",
+            "F03",
+            "F04",
+            "F05",
+            "F06",
+            "F16",
+            "F39",
+            "F43"
+          ]
+        },
+        {
+          "sequence": 3,
+          "operation_type": "counterbore",
+          "target_feature_ids": [
+            "F43"
+          ]
+        },
+        {
+          "sequence": 4,
+          "operation_type": "countersink",
+          "target_feature_ids": [
+            "F01",
+            "F02",
+            "F03",
+            "F04",
+            "F05",
+            "F06"
+          ]
+        },
+        {
+          "sequence": 5,
+          "operation_type": "tap",
+          "target_feature_ids": [
+            "F01",
+            "F02",
+            "F03",
+            "F04",
+            "F05",
+            "F06"
+          ]
+        }
+      ]
+    },
+    {
+      "sequence": 11,
+      "name": "Inclined Hole Making",
+      "machine_family": "vmc",
+      "setup_note": "Use an angled fixture located from datums A, B, and C to align the inclined hole axes. Drill both hole groups, countersink the threaded entries, and tap last.",
+      "datum_references": [
+        "A",
+        "B",
+        "C"
+      ],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "spot_drill",
+          "target_feature_ids": [
+            "F41",
+            "F42"
+          ]
+        },
+        {
+          "sequence": 2,
+          "operation_type": "drill",
+          "target_feature_ids": [
+            "F41",
+            "F42"
+          ]
+        },
+        {
+          "sequence": 3,
+          "operation_type": "countersink",
+          "target_feature_ids": [
+            "F41"
+          ]
+        },
+        {
+          "sequence": 4,
+          "operation_type": "tap",
+          "target_feature_ids": [
+            "F41"
+          ]
+        }
+      ]
+    },
+    {
+      "sequence": 12,
+      "name": "Radial Hole Making",
+      "machine_family": "vmc",
+      "setup_note": "Reorient and clamp the part from datums A, B, and C so the radial hole axis is normal to the spindle. Spot and drill the shallow hole.",
+      "datum_references": [
+        "A",
+        "B",
+        "C"
+      ],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "spot_drill",
+          "target_feature_ids": [
+            "F22"
+          ]
+        },
+        {
+          "sequence": 2,
+          "operation_type": "drill",
+          "target_feature_ids": [
+            "F22"
+          ]
+        }
+      ]
+    },
+    {
+      "sequence": 13,
+      "name": "Semi-Finish Precision Bore",
+      "machine_family": "vtc",
+      "setup_note": "Re-establish the part from datums A and C after rough machining. Semi-finish the H7 bore, leaving a small, controlled allowance for the final boring pass.",
+      "datum_references": [
+        "A",
+        "C"
+      ],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "semi_finish_bore_id",
+          "target_feature_ids": [
+            "F38"
+          ]
+        }
+      ]
+    },
+    {
+      "sequence": 14,
+      "name": "Finish Turn and Bore",
+      "machine_family": "vtc",
+      "setup_note": "Locate from datum A and the established rotational datum C. Finish bores before the outer diameters to limit thin-wall distortion, then finish turned diameters, faces, and the tapered surface.",
+      "datum_references": [
+        "A",
+        "C"
+      ],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "finish_bore_id",
+          "target_feature_ids": [
+            "F38"
+          ]
+        },
+        {
+          "sequence": 2,
+          "operation_type": "finish_bore_id",
+          "target_feature_ids": [
+            "F15"
+          ]
+        },
+        {
+          "sequence": 3,
+          "operation_type": "finish_bore_id",
+          "target_feature_ids": [
+            "F17"
+          ]
+        },
+        {
+          "sequence": 4,
+          "operation_type": "finish_bore_id",
+          "target_feature_ids": [
+            "F35"
+          ]
+        },
+        {
+          "sequence": 5,
+          "operation_type": "finish_bore_id",
+          "target_feature_ids": [
+            "F36"
+          ]
+        },
+        {
+          "sequence": 6,
+          "operation_type": "finish_turn_od",
+          "target_feature_ids": [
+            "F07"
+          ]
+        },
+        {
+          "sequence": 7,
+          "operation_type": "finish_turn_od",
+          "target_feature_ids": [
+            "F20"
+          ]
+        },
+        {
+          "sequence": 8,
+          "operation_type": "finish_turn_od",
+          "target_feature_ids": [
+            "F21"
+          ]
+        },
+        {
+          "sequence": 9,
+          "operation_type": "finish_turn_od",
+          "target_feature_ids": [
+            "F25"
+          ]
+        },
+        {
+          "sequence": 10,
+          "operation_type": "finish_turn_od",
+          "target_feature_ids": [
+            "F33"
+          ]
+        },
+        {
+          "sequence": 11,
+          "operation_type": "finish_turn_od",
+          "target_feature_ids": [
+            "F34"
+          ]
+        },
+        {
+          "sequence": 12,
+          "operation_type": "finish_turn_od",
+          "target_feature_ids": [
+            "F37"
+          ]
+        },
+        {
+          "sequence": 13,
+          "operation_type": "finish_turn_od",
+          "target_feature_ids": [
+            "F45"
+          ]
+        },
+        {
+          "sequence": 14,
+          "operation_type": "turn_taper",
+          "target_feature_ids": [
+            "F32"
+          ]
+        },
+        {
+          "sequence": 15,
+          "operation_type": "form_turn",
+          "target_feature_ids": [
+            "F18"
+          ]
+        },
+        {
+          "sequence": 16,
+          "operation_type": "form_turn",
+          "target_feature_ids": [
+            "F14"
+          ]
+        },
+        {
+          "sequence": 17,
+          "operation_type": "face_turn",
+          "target_feature_ids": [
+            "F09"
+          ]
+        },
+        {
+          "sequence": 18,
+          "operation_type": "face_turn",
+          "target_feature_ids": [
+            "F08"
+          ]
+        },
+        {
+          "sequence": 19,
+          "operation_type": "face_turn",
+          "target_feature_ids": [
+            "F12"
+          ]
+        },
+        {
+          "sequence": 20,
+          "operation_type": "face_turn",
+          "target_feature_ids": [
+            "F13"
+          ]
+        },
+        {
+          "sequence": 21,
+          "operation_type": "chamfer_turn",
+          "target_feature_ids": [
+            "F29",
+            "F30",
+            "F31"
+          ]
+        }
+      ]
+    },
+    {
+      "sequence": 15,
+      "name": "Finish Mill Peripheral Features",
+      "machine_family": "vmc",
+      "setup_note": "Locate from datums A, B, and C. Finish the datum face, lamella openings, and peripheral profiles after all rough machining is complete.",
+      "datum_references": [
+        "A",
+        "B",
+        "C"
+      ],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "face_mill",
+          "target_feature_ids": [
+            "F10"
+          ]
+        },
+        {
+          "sequence": 2,
+          "operation_type": "slot_mill",
+          "target_feature_ids": [
+            "F23",
+            "F44"
+          ]
+        },
+        {
+          "sequence": 3,
+          "operation_type": "profile_mill",
+          "target_feature_ids": [
+            "F24"
+          ]
+        }
+      ]
+    },
+    {
+      "sequence": 16,
+      "name": "Deburr Machined Part",
+      "machine_family": "fettling",
+      "setup_note": "Remove machining burrs and break remaining sharp edges without altering finished datums, fits, or specified edge treatments.",
+      "datum_references": [
+        "A",
+        "B",
+        "C"
+      ],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "deburr",
+          "target_feature_ids": []
+        }
+      ]
+    },
+    {
+      "sequence": 17,
+      "name": "Final Clean",
+      "machine_family": "wash",
+      "setup_note": "Wash and degrease the fully machined part to meet the specified VSK2 cleanliness requirement. Keep the part clean through subsequent balancing and inspection.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "clean_degrease",
+          "target_feature_ids": []
+        }
+      ]
+    },
+    {
+      "sequence": 18,
+      "name": "Demagnetize",
+      "machine_family": "demagnetizer",
+      "setup_note": "Demagnetize the finished, clean part before final verification to meet the residual magnetism limit.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "demagnetize",
+          "target_feature_ids": []
+        }
+      ]
+    },
+    {
+      "sequence": 19,
+      "name": "Dynamic Balance",
+      "machine_family": "balancing",
+      "setup_note": "Mount the complete machined part on the balancing machine using its rotational axis. Balance to the drawing's specified dynamic quality and record residual unbalance by plane.",
+      "datum_references": [
+        "A",
+        "C"
+      ],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "dynamic_balance",
+          "target_feature_ids": []
+        }
+      ]
+    },
+    {
+      "sequence": 20,
+      "name": "Final Inspection",
+      "machine_family": "inspection",
+      "setup_note": "Inspect the completed part at stable temperature. Verify dimensional and geometric requirements, specified hardness, balance documentation, cleanliness, and residual magnetism.",
+      "datum_references": [
+        "A",
+        "B",
+        "C",
+        "RA"
+      ],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "cmm_inspect",
+          "target_feature_ids": []
+        },
+        {
+          "sequence": 2,
+          "operation_type": "hardness_test",
+          "target_feature_ids": []
+        },
+        {
+          "sequence": 3,
+          "operation_type": "manual_inspect",
+          "target_feature_ids": []
+        }
+      ]
+    }
+  ],
+  "clarifications": [
+    {
+      "clarification_id": "C01",
+      "question": "What material designation and casting family are specified for this part?",
+      "blocks": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "suggested_default": "Proceed provisionally as a grey-iron casting, pending confirmation from the material callout.",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C02",
+      "question": "What is the intended depth of the six lamella-related openings F23?",
+      "blocks": [
+        9,
+        15
+      ],
+      "suggested_default": "Use the drawing's complete slot profile and leave the specified 1.5 mm minimum web F44.",
+      "priority": "medium"
+    },
+    {
+      "clarification_id": "C03",
+      "question": "In which direction is hole F39 drilled?",
+      "blocks": [
+        10
+      ],
+      "suggested_default": "Treat F39 as an axial-face hole accessible from the datum setup.",
+      "priority": "medium"
+    },
+    {
+      "clarification_id": "C04",
+      "question": "What is the nominal diameter of balancing hole feature F16?",
+      "blocks": [
+        10
+      ],
+      "suggested_default": "Use the drawing's specified hole diameter, not exceeding the stated 20 mm maximum.",
+      "priority": "medium"
+    }
+  ],
+  "assumptions": [
+    {
+      "assumption_id": "A01",
+      "text": "The routing view does not state the material designation or blank type. A grey-iron casting is selected provisionally because it is an available stock form and is consistent with the stated 150\u2013190 HBW hardness range; confirm before quoting or production."
+    },
+    {
+      "assumption_id": "A02",
+      "text": "Stress relief is assumed for the casting before machining, following the casting route sequence. The specified 150\u2013190 HBW condition is not treated as a hardening requirement."
+    },
+    {
+      "assumption_id": "A03",
+      "text": "The datum layout and casting stock distribution are not fully described in the routing view. The route assumes F09 can be faced on the VTC, F10 can then be machined on the VMC, and sufficient stock exists on all machined features."
+    },
+    {
+      "assumption_id": "A04",
+      "text": "A separate semi-finish pass is included for the H7 bore F38. Other semi-finishing is not represented as a distinct pass because the controlled operation vocabulary has no general semi-finish turning operation; final cuts follow completion of all rough machining."
+    },
+    {
+      "assumption_id": "A05",
+      "text": "The H7 bore F38 is finish-bored on the VTC. Honing is omitted because the shop route specifies no hone and the shop has no honing machine."
+    },
+    {
+      "assumption_id": "A06",
+      "text": "No pressure-test requirement is stated, so the casting-route pressure test step is not included."
+    },
+    {
+      "assumption_id": "A07",
+      "text": "The six openings F23 are assumed to be milled slots, with the minimum-thickness web F44 left by that material removal. The complete slot depth and profile require confirmation."
+    },
+    {
+      "assumption_id": "A08",
+      "text": "F43 is assumed to be accessible in the axial-face drilling setup, and F29\u2013F31 are assumed to be turned-edge chamfers. Confirm feature orientations and edge locations against the drawing."
+    }
+  ]
+}
