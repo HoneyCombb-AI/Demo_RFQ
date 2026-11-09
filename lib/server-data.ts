@@ -152,10 +152,35 @@ async function getDrawingPageUrls(
   slug: string,
 ): Promise<{ balloonedImageUrls: string[]; originalImageUrls: string[] }> {
   const apiBase = `/api/images/${orgSlug}/${slug}`;
-  return {
-    balloonedImageUrls: [`${apiBase}/ballooned`],
-    originalImageUrls: [`${apiBase}/original`],
-  };
+
+  // Count original pages (page_001_original.png, page_002_original.png, …)
+  let pageCount = 0;
+  try {
+    const entries = await fs.readdir(dir);
+    for (const entry of entries) {
+      if (/^page_\d+_original\.png$/.test(entry)) pageCount++;
+    }
+  } catch {
+    // fall back to single page below
+  }
+
+  if (pageCount === 0) pageCount = 1;
+
+  const originalImageUrls = Array.from({ length: pageCount }, (_, i) =>
+    `${apiBase}/original?page=${i + 1}`
+  );
+
+  // Check whether a dedicated ballooned drawing exists
+  const hasBalloonedDrawing = await fs
+    .access(path.join(dir, "ballooned_drawing.png"))
+    .then(() => true)
+    .catch(() => false);
+
+  const balloonedImageUrls = hasBalloonedDrawing
+    ? [`${apiBase}/ballooned`]
+    : originalImageUrls.map((u) => u.replace("/original?", "/ballooned?"));
+
+  return { balloonedImageUrls, originalImageUrls };
 }
 
 export async function getReportData(
@@ -511,8 +536,8 @@ export async function findImageFile(
   const p = String(page).padStart(3, "0");
   const candidates =
     type === "ballooned"
-      ? [`ballooned_drawing.png`, `ballooned_drawing_${p}.png`, `balloon_drawing.png`, `page_001_original.png`, `page_${p}_original.png`, `page_${p}_vlm.png`, `original_drawing.png`]
-      : [`page_001_original.png`, `page_${p}_original.png`, `page_${p}_vlm.png`, `original_drawing.png`, `ballooned_drawing.png`, `ballooned_drawing_${p}.png`];
+      ? [`ballooned_drawing.png`, `ballooned_drawing_${p}.png`, `balloon_drawing.png`, `page_${p}_original.png`, `page_${p}_vlm.png`, `original_drawing.png`]
+      : [`page_${p}_original.png`, `page_001_original.png`, `page_${p}_vlm.png`, `original_drawing.png`, `ballooned_drawing.png`, `ballooned_drawing_${p}.png`];
 
   for (const name of candidates) {
     try {

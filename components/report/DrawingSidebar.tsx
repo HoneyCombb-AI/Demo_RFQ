@@ -2,7 +2,6 @@
 
 import * as React from "react"
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
-import { ScrollArea } from "@/components/ui/scroll-area"
 import { Button } from "@/components/ui/button"
 import { ZoomIn, ZoomOut, RotateCcw } from "lucide-react"
 import {
@@ -108,7 +107,7 @@ export function DrawingSidebar({ balloonedImageUrls, originalImageUrls }: Drawin
   const isMultiPage = currentUrls.length > 1
 
   return (
-    <div data-tour="drawing-sidebar" className="w-95 shrink-0 flex flex-col border-r border-border bg-muted/20">
+    <div data-tour="drawing-sidebar" className="w-95 shrink-0 flex flex-col min-h-0 overflow-hidden border-r border-border bg-muted/20">
       <div className="p-4 border-b">
         <ToggleGroup
           value={[activeImage]}
@@ -135,8 +134,8 @@ export function DrawingSidebar({ balloonedImageUrls, originalImageUrls }: Drawin
         </ToggleGroup>
       </div>
 
-      <ScrollArea className="flex-1 p-4">
-        <div className="space-y-4">
+      <div className="flex-1 overflow-y-auto min-h-0">
+        <div className="p-4 space-y-4">
           {currentUrls.map((url, i) => (
             <div key={url}>
               {isMultiPage && (
@@ -172,12 +171,12 @@ export function DrawingSidebar({ balloonedImageUrls, originalImageUrls }: Drawin
               </Dialog>
             </div>
           ))}
-        </div>
 
-        <div className="mt-4 text-center text-xs text-muted-foreground">
-          Click image to expand
+          <div className="mt-2 text-center text-xs text-muted-foreground pb-2">
+            Click image to expand
+          </div>
         </div>
-      </ScrollArea>
+      </div>
     </div>
   )
 }
