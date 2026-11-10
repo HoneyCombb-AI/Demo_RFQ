@@ -1,103 +1,125 @@
 {
   "drawing_number": "057300",
   "part_name": "TAPERED PIN",
-  "material": "MAT'L: STEEL LASALLE STRESS PROOF OPT'L: SAE 4140 (30-38 Rc) MIN YIELD 100,000 PSI OPT'L: ASTM A311 CLASS B GRADE 1141/1144 MIN YIELD 100,000 PSI",
-  "quantity": 100,
-  "quote_status": "complete",
+  "material": "STEEL LASALLE STRESS PROOF",
+  "quantity": 10,
+  "quote_status": "incomplete",
   "weights": {
-    "raw_bar_dia_mm": 54.5,
-    "actual_bar_dia_mm": 54.5,
-    "gross_weight_kg": 3.8931,
-    "gross_weight_g": 3893.1,
-    "net_weight_kg": 2.1938,
-    "net_weight_g": 2193.8,
-    "scrap_weight_kg": 1.6994,
-    "scrap_weight_g": 1699.4,
-    "net_weight_source": "routing"
+    "gross_weight_kg": 3.917,
+    "net_weight_kg": 2.409,
+    "scrap_weight_kg": 1.508,
+    "raw_bar_dia_mm": 55.0
   },
   "direct_cost": {
-    "material_cost_inr": 362.06,
-    "material_rate_per_kg_inr": 93.0,
-    "material_substitution": null,
-    "machining_cost_inr": 59.84,
-    "direct_base_inr": 421.9
+    "machining_cost_inr": 72.24,
+    "direct_base_inr": 72.24
   },
   "cif_and_overheads": {
-    "packaging_charges_inr": 18.43,
-    "overhead_25_pct_inr": 105.48,
-    "logistics_cost_inr": 89.84,
-    "total_cif_inr": 635.65,
-    "scrap_recovery_credit_inr": -33.99,
-    "total_cost_per_pc_inr": 601.66
+    "overhead_25_pct_inr": 72.39,
+    "total_cif_inr": 459.61,
+    "total_cost_per_pc_inr": 429.45,
+    "packaging_charges_inr": 20.24,
+    "logistics_cost_inr": 77.43,
+    "scrap_recovery_credit_inr": -30.16
   },
   "pricing_and_duties": {
-    "profit_10_pct_inr": 42.19,
-    "actual_cost_inr": 643.85,
-    "icc_and_rejection_inr": 10.49,
-    "custom_duty_3_5_pct_inr": 22.53,
-    "warehouse_cost_4_pct_inr": 25.75,
-    "final_landed_price_inr": 702.62
+    "profit_10_pct_inr": 28.95,
+    "actual_cost_inr": 458.4,
+    "icc_and_rejection_inr": 5.79,
+    "custom_duty_3_5_pct_inr": 16.04,
+    "warehouse_cost_4_pct_inr": 18.34,
+    "final_landed_price_inr": 498.57
   },
   "machining_operations": [
     {
       "sequence": 1,
-      "operation_name": "Saw Blanks to Length",
+      "operation_name": "Saw Cut Blanks",
       "machine_family": "saw",
-      "cycle_time_sec": 69.3,
-      "cycle_time_raw_sec": 69.3,
+      "cycle_time_sec": 52.62,
       "hourly_rate_inr": 290.0,
-      "cost_per_piece_inr": 5.58,
-      "cost_per_piece_raw": 5.5825
+      "cost_per_piece_raw": 4.986862745098039,
+      "cost_per_piece_inr": 4.99,
+      "efficiency": 0.85
     },
     {
       "sequence": 2,
-      "operation_name": "CNC Turn – First End",
+      "operation_name": "CNC Turn \u2013 Head and Axial Tapped Hole",
       "machine_family": "cnc_lathe",
-      "cycle_time_sec": 234.4,
-      "cycle_time_raw_sec": 234.4,
+      "cycle_time_sec": 245.79,
       "hourly_rate_inr": 280.0,
-      "cost_per_piece_inr": 18.23,
-      "cost_per_piece_raw": 18.23111111111111
+      "cost_per_piece_raw": 22.49058823529412,
+      "cost_per_piece_inr": 22.49,
+      "efficiency": 0.85
     },
     {
       "sequence": 3,
-      "operation_name": "CNC Turn – Second End",
+      "operation_name": "CNC Turn \u2013 Taper and Threaded End",
       "machine_family": "cnc_lathe",
-      "cycle_time_sec": 411.8,
-      "cycle_time_raw_sec": 411.8,
+      "cycle_time_sec": 322.06,
       "hourly_rate_inr": 280.0,
-      "cost_per_piece_inr": 32.03,
-      "cost_per_piece_raw": 32.028888888888886
+      "cost_per_piece_raw": 29.469542483660135,
+      "cost_per_piece_inr": 29.47,
+      "efficiency": 0.85
     },
     {
       "sequence": 4,
-      "operation_name": "Production Deburr / Clean",
+      "operation_name": "Deburr",
       "machine_family": "finish_bench",
-      "cycle_time_sec": 108.0,
-      "cycle_time_raw_sec": 108.0,
+      "cycle_time_sec": 78.0,
       "hourly_rate_inr": 200.0,
-      "cost_per_piece_inr": 3.0,
-      "cost_per_piece_raw": 3.0
+      "cost_per_piece_raw": 5.098039215686275,
+      "cost_per_piece_inr": 5.1,
+      "efficiency": 0.85
     },
     {
       "sequence": 5,
-      "operation_name": "Batch Phosphate Coat",
-      "machine_family": "plating_line",
-      "cycle_time_sec": 217.1,
-      "cycle_time_raw_sec": 217.1,
-      "hourly_rate_inr": 300.0,
-      "cost_per_piece_inr": 0.0,
-      "cost_per_piece_raw": 0.0
+      "operation_name": "Pre-Coating Dimensional and Functional Inspection",
+      "machine_family": "inspection",
+      "cycle_time_sec": 105.0,
+      "hourly_rate_inr": 250.0,
+      "cost_per_piece_raw": 8.57843137254902,
+      "cost_per_piece_inr": 8.58,
+      "efficiency": 0.85
     },
     {
       "sequence": 6,
-      "operation_name": "Final Shop-Floor Gauge Inspection",
+      "operation_name": "Clean and Mask for Phosphate",
+      "machine_family": "finish_bench",
+      "cycle_time_sec": 108.0,
+      "hourly_rate_inr": 200.0,
+      "cost_per_piece_raw": 7.0588235294117645,
+      "cost_per_piece_inr": 7.06,
+      "efficiency": 0.85
+    },
+    {
+      "sequence": 7,
+      "operation_name": "Phosphate Coat",
+      "machine_family": "plating_line",
+      "cycle_time_sec": 60.0,
+      "hourly_rate_inr": 300.0,
+      "cost_per_piece_raw": 5.882352941176471,
+      "cost_per_piece_inr": 5.88,
+      "efficiency": 0.85
+    },
+    {
+      "sequence": 8,
+      "operation_name": "Unmask",
+      "machine_family": "finish_bench",
+      "cycle_time_sec": 48.0,
+      "hourly_rate_inr": 200.0,
+      "cost_per_piece_raw": 3.1372549019607847,
+      "cost_per_piece_inr": 3.14,
+      "efficiency": 0.85
+    },
+    {
+      "sequence": 9,
+      "operation_name": "Final Coating Inspection",
       "machine_family": "inspection",
-      "cycle_time_sec": 15.0,
-      "cycle_time_raw_sec": 829.8,
+      "cycle_time_sec": 105.0,
       "hourly_rate_inr": 250.0,
-      "cost_per_piece_inr": 1.0,
-      "cost_per_piece_raw": 1.0
+      "cost_per_piece_raw": 8.57843137254902,
+      "cost_per_piece_inr": 8.58,
+      "efficiency": 0.85
     }
   ]
 }

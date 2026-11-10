@@ -2,112 +2,89 @@
   "drawing_number": "073670",
   "part_name": "OUTER TUBE",
   "material": "ASTM A622M",
-  "quantity": 100,
-  "quote_status": "complete",
+  "quantity": 10,
+  "quote_status": "incomplete",
   "weights": {
-    "raw_bar_dia_mm": 130.0,
-    "actual_bar_dia_mm": 130.0,
-    "gross_weight_kg": 2.4041,
-    "gross_weight_g": 2404.1,
-    "net_weight_kg": 1.8484,
-    "net_weight_g": 1848.4,
-    "scrap_weight_kg": 0.5557,
-    "scrap_weight_g": 555.7,
-    "net_weight_source": "routing"
+    "gross_weight_kg": 13.321,
+    "raw_bar_dia_mm": 132.0
   },
   "direct_cost": {
-    "material_cost_inr": 324.55,
-    "material_rate_per_kg_inr": 135.0,
-    "material_substitution": null,
-    "machining_cost_inr": 77.78,
-    "direct_base_inr": 402.34
+    "machining_cost_inr": 127.15,
+    "direct_base_inr": 127.15
   },
   "cif_and_overheads": {
-    "packaging_charges_inr": 15.53,
-    "overhead_25_pct_inr": 100.58,
-    "logistics_cost_inr": 75.7,
-    "total_cif_inr": 594.15,
-    "scrap_recovery_credit_inr": -11.11,
-    "total_cost_per_pc_inr": 583.03
+    "overhead_25_pct_inr": 31.91,
+    "total_cif_inr": 159.56,
+    "total_cost_per_pc_inr": 159.56
   },
   "pricing_and_duties": {
-    "profit_10_pct_inr": 40.23,
-    "actual_cost_inr": 623.27,
-    "icc_and_rejection_inr": 10.28,
-    "custom_duty_3_5_pct_inr": 21.81,
-    "warehouse_cost_4_pct_inr": 24.93,
-    "final_landed_price_inr": 680.29
+    "profit_10_pct_inr": 12.77,
+    "actual_cost_inr": 172.33,
+    "icc_and_rejection_inr": 2.55,
+    "custom_duty_3_5_pct_inr": 6.03,
+    "warehouse_cost_4_pct_inr": 6.89,
+    "final_landed_price_inr": 187.8
   },
   "machining_operations": [
     {
       "sequence": 1,
-      "operation_name": "Blank Draw Disc",
-      "machine_family": "sheet_metal_stamping",
-      "cycle_time_sec": 42.4,
-      "cycle_time_raw_sec": 42.4,
-      "hourly_rate_inr": 500.0,
-      "cost_per_piece_inr": 5.89,
-      "cost_per_piece_raw": 5.888888888888889
+      "operation_name": "Saw Cut Blank",
+      "machine_family": "saw",
+      "cycle_time_sec": 240.07,
+      "hourly_rate_inr": 290.0,
+      "cost_per_piece_raw": 22.75173202614379,
+      "cost_per_piece_inr": 22.75,
+      "efficiency": 0.85
     },
     {
       "sequence": 2,
-      "operation_name": "Deep Draw Precursor Cup",
-      "machine_family": "sheet_metal_stamping",
-      "cycle_time_sec": 85.1,
-      "cycle_time_raw_sec": 85.1,
-      "hourly_rate_inr": 500.0,
-      "cost_per_piece_inr": 11.82,
-      "cost_per_piece_raw": 11.819444444444445
+      "operation_name": "CNC Lathe \u2013 Bore and Rough Turn",
+      "machine_family": "cnc_lathe",
+      "cycle_time_sec": 402.19,
+      "hourly_rate_inr": 280.0,
+      "cost_per_piece_raw": 36.80169934640523,
+      "cost_per_piece_inr": 36.8,
+      "efficiency": 0.85
     },
     {
       "sequence": 3,
-      "operation_name": "CNC Turn – First End",
+      "operation_name": "CNC Lathe \u2013 Finish Turn",
       "machine_family": "cnc_lathe",
-      "cycle_time_sec": 246.5,
-      "cycle_time_raw_sec": 246.5,
+      "cycle_time_sec": 281.46,
       "hourly_rate_inr": 280.0,
-      "cost_per_piece_inr": 19.17,
-      "cost_per_piece_raw": 19.17222222222222
+      "cost_per_piece_raw": 25.754509803921568,
+      "cost_per_piece_inr": 25.75,
+      "efficiency": 0.85
     },
     {
       "sequence": 4,
-      "operation_name": "CNC Turn – Second End",
-      "machine_family": "cnc_lathe",
-      "cycle_time_sec": 330.8,
-      "cycle_time_raw_sec": 330.8,
-      "hourly_rate_inr": 280.0,
-      "cost_per_piece_inr": 25.73,
-      "cost_per_piece_raw": 25.72888888888889
+      "operation_name": "VMC \u2013 Axial Hole Pattern",
+      "machine_family": "vmc_3axis",
+      "cycle_time_sec": 249.82,
+      "hourly_rate_inr": 450.0,
+      "cost_per_piece_raw": 36.73823529411764,
+      "cost_per_piece_inr": 36.74,
+      "efficiency": 0.85
     },
     {
       "sequence": 5,
-      "operation_name": "VMC Drill Bottom Hole Pattern",
-      "machine_family": "vmc_3axis",
-      "cycle_time_sec": 89.4,
-      "cycle_time_raw_sec": 89.4,
-      "hourly_rate_inr": 450.0,
-      "cost_per_piece_inr": 11.18,
-      "cost_per_piece_raw": 11.175
+      "operation_name": "Deburr",
+      "machine_family": "finish_bench",
+      "cycle_time_sec": 78.0,
+      "hourly_rate_inr": 200.0,
+      "cost_per_piece_raw": 5.098039215686275,
+      "cost_per_piece_inr": 5.1,
+      "efficiency": 0.85
     },
     {
       "sequence": 6,
-      "operation_name": "Production Deburr and Clean",
-      "machine_family": "finish_bench",
-      "cycle_time_sec": 120.0,
-      "cycle_time_raw_sec": 352.9,
-      "hourly_rate_inr": 200.0,
-      "cost_per_piece_inr": 3.0,
-      "cost_per_piece_raw": 3.0
-    },
-    {
-      "sequence": 7,
-      "operation_name": "Final Shop-Floor Gauge Inspection",
+      "operation_name": "Final Inspection",
       "machine_family": "inspection",
-      "cycle_time_sec": 15.0,
-      "cycle_time_raw_sec": 318.0,
+      "cycle_time_sec": 105.0,
       "hourly_rate_inr": 250.0,
-      "cost_per_piece_inr": 1.0,
-      "cost_per_piece_raw": 1.0
+      "cost_per_piece_raw": 8.57843137254902,
+      "cost_per_piece_inr": 8.58,
+      "efficiency": 0.85
     }
   ]
 }

@@ -1,83 +1,97 @@
 {
-  "drawing_number": "06370_",
+  "drawing_number": null,
   "part_name": "OUTER TUBE",
-  "material": "S.A.E. 1010-1026 S.S.T., CDBW, OR ERW DOM\nOPT. - ROLLED, WELDED & STRESS RELIEF ANNEALED STEEL. MIN. YIELD 207 N/MM²(30,000 PSI)",
-  "quantity": 100,
-  "quote_status": "complete",
-  "weights": {
-    "raw_bar_dia_mm": 145.0,
-    "actual_bar_dia_mm": 145.0,
-    "gross_weight_kg": 0.3593,
-    "gross_weight_g": 359.3,
-    "net_weight_kg": 0.3355,
-    "net_weight_g": 335.5,
-    "scrap_weight_kg": 0.0239,
-    "scrap_weight_g": 23.9,
-    "net_weight_source": "routing"
-  },
+  "material": "MAT'L - S.A.E. 1010-1026 S.S.T., CDW, OR ERW D",
+  "quantity": 10,
+  "quote_status": "incomplete",
+  "weights": {},
   "direct_cost": {
-    "material_cost_inr": 48.51,
-    "material_rate_per_kg_inr": 135.0,
-    "material_substitution": null,
-    "machining_cost_inr": 29.28,
-    "direct_base_inr": 77.79
+    "machining_cost_inr": 65.32,
+    "direct_base_inr": 65.32
   },
   "cif_and_overheads": {
-    "packaging_charges_inr": 2.82,
-    "overhead_25_pct_inr": 19.45,
-    "logistics_cost_inr": 13.74,
-    "total_cif_inr": 113.79,
-    "scrap_recovery_credit_inr": -0.48,
-    "total_cost_per_pc_inr": 113.32
+    "overhead_25_pct_inr": 16.45,
+    "total_cif_inr": 82.27,
+    "total_cost_per_pc_inr": 82.27
   },
   "pricing_and_duties": {
-    "profit_10_pct_inr": 7.78,
-    "actual_cost_inr": 121.09,
-    "icc_and_rejection_inr": 5.26,
-    "custom_duty_3_5_pct_inr": 4.24,
-    "warehouse_cost_4_pct_inr": 4.84,
-    "final_landed_price_inr": 135.44
+    "profit_10_pct_inr": 6.58,
+    "actual_cost_inr": 88.85,
+    "icc_and_rejection_inr": 1.32,
+    "custom_duty_3_5_pct_inr": 3.11,
+    "warehouse_cost_4_pct_inr": 3.55,
+    "final_landed_price_inr": 96.83
   },
   "machining_operations": [
     {
       "sequence": 1,
-      "operation_name": "Saw – Tube Blanks",
+      "operation_name": "Saw Cut Tube Blank",
       "machine_family": "saw",
-      "cycle_time_sec": 68.4,
-      "cycle_time_raw_sec": 68.4,
+      "cycle_time_sec": 67.67,
       "hourly_rate_inr": 290.0,
-      "cost_per_piece_inr": 5.51,
-      "cost_per_piece_raw": 5.51
+      "cost_per_piece_raw": 6.413169934640522,
+      "cost_per_piece_inr": 6.41,
+      "efficiency": 0.85
     },
     {
       "sequence": 2,
-      "operation_name": "CNC Turn – First End",
+      "operation_name": "CNC Lathe \u2013 Rough Machining",
       "machine_family": "cnc_lathe",
-      "cycle_time_sec": 147.9,
-      "cycle_time_raw_sec": 147.9,
+      "cycle_time_sec": 168.41,
       "hourly_rate_inr": 280.0,
-      "cost_per_piece_inr": 11.5,
-      "cost_per_piece_raw": 11.503333333333334
+      "cost_per_piece_raw": 15.410065359477123,
+      "cost_per_piece_inr": 15.41,
+      "efficiency": 0.85
     },
     {
       "sequence": 3,
-      "operation_name": "CNC Turn – Second End",
-      "machine_family": "cnc_lathe",
-      "cycle_time_sec": 144.9,
-      "cycle_time_raw_sec": 144.9,
-      "hourly_rate_inr": 280.0,
-      "cost_per_piece_inr": 11.27,
-      "cost_per_piece_raw": 11.27
+      "operation_name": "Pre-Anneal Deburr and Clean",
+      "machine_family": "finish_bench",
+      "cycle_time_sec": 108.0,
+      "hourly_rate_inr": 200.0,
+      "cost_per_piece_raw": 7.0588235294117645,
+      "cost_per_piece_inr": 7.06,
+      "efficiency": 0.85
+    },
+    {
+      "sequence": 4,
+      "operation_name": "Outside Stress-Relief Anneal",
+      "machine_family": "outside_vendor",
+      "cycle_time_sec": 0.0,
+      "hourly_rate_inr": 0.0,
+      "cost_per_piece_raw": null,
+      "cost_per_piece_inr": null,
+      "efficiency": 0.85
     },
     {
       "sequence": 5,
-      "operation_name": "Final Shop-Floor Gauge Inspection",
+      "operation_name": "CNC Lathe \u2013 Finish Machining",
+      "machine_family": "cnc_lathe",
+      "cycle_time_sec": 321.08,
+      "hourly_rate_inr": 280.0,
+      "cost_per_piece_raw": 29.379869281045753,
+      "cost_per_piece_inr": 29.38,
+      "efficiency": 0.85
+    },
+    {
+      "sequence": 6,
+      "operation_name": "Final Deburr and Clean",
+      "machine_family": "finish_bench",
+      "cycle_time_sec": 108.0,
+      "hourly_rate_inr": 200.0,
+      "cost_per_piece_raw": 7.0588235294117645,
+      "cost_per_piece_inr": 7.06,
+      "efficiency": 0.85
+    },
+    {
+      "sequence": 7,
+      "operation_name": "Final Dimensional Inspection",
       "machine_family": "inspection",
-      "cycle_time_sec": 15.0,
-      "cycle_time_raw_sec": 88.6,
+      "cycle_time_sec": 105.0,
       "hourly_rate_inr": 250.0,
-      "cost_per_piece_inr": 1.0,
-      "cost_per_piece_raw": 1.0
+      "cost_per_piece_raw": 8.57843137254902,
+      "cost_per_piece_inr": 8.58,
+      "efficiency": 0.85
     }
   ]
 }

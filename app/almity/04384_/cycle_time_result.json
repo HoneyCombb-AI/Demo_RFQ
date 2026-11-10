@@ -1,681 +1,917 @@
 {
-  "analysis_id": "043840_merge_20261010T222629Z",
-  "quantity": 100,
-  "t_cycle_per_part_sec": 1403.7,
-  "t_cycle_total_batch_sec": 140370.0,
-  "t_setup_total_batch_sec": 4380.0,
+  "analysis_id": "043840_merge_20261109T181923Z",
+  "organization_id": "almity",
+  "quantity": 10,
+  "t_cycle_per_part_sec": 1209.78,
+  "t_cycle_total_batch_sec": 12097.8,
+  "t_setup_total_batch_sec": 5460.0,
   "operations": [
     {
       "sequence": 1,
-      "name": "Saw – Cut Bright-Bar Blanks",
+      "name": "Saw Cut Blanks",
       "machine_family": "saw",
       "in_house": true,
-      "setup_time_sec": 300.0,
-      "t_setup_per_piece_sec": 3.0,
-      "t_handling_sec": 24.0,
-      "t_machining_sec": 30.4,
-      "t_op_total_sec": 62.8,
+      "setup_time_sec": 480.0,
+      "t_setup_per_piece_sec": 48.0,
+      "t_handling_sec": 30.0,
+      "t_machining_sec": 34.254,
+      "t_op_total_sec": 112.254,
       "sub_op_results": [
         {
           "operation_seq": 1,
           "sub_op_seq": 1,
           "operation_type": "saw_cut",
           "kind": "saw_cut",
-          "rpm": null,
-          "feed_mm_min": null,
-          "t_cut_sec": 30.4,
+          "method": "formula",
+          "feature_id": null,
+          "inputs": {
+            "kind": "saw_cut",
+            "cut_diameter_mm": 50.0,
+            "cut_count": 1
+          },
+          "sources": {
+            "cut_diameter_mm": {
+              "ref": "stock.diameter_mm",
+              "kind": "stock"
+            }
+          },
+          "t_cut_sec": 34.254,
           "t_tool_sec": 0.0,
           "t_rapid_sec": 0.0,
-          "t_sub_total_sec": 30.4,
+          "t_sub_total_sec": 34.254,
           "trace": {
-            "operation_type": "saw_cut",
-            "kind": "saw_cut",
-            "machinability": "medium",
-            "area": 1963.5,
-            "cut_rate": 5500,
-            "blade_return": 0.15,
-            "t_cut": 0.506999
+            "area_cm2": 19.635,
+            "cut_rate_cm2_min": 40.0,
+            "blade_return_min": 0.08
           },
-          "warnings": []
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [],
+          "note": null
         }
       ]
     },
     {
       "sequence": 2,
-      "name": "CNC Turn – First End",
+      "name": "CNC Turn \u2013 First Op",
       "machine_family": "cnc_lathe",
       "in_house": true,
       "setup_time_sec": 1200.0,
-      "t_setup_per_piece_sec": 12.0,
-      "t_handling_sec": 24.0,
-      "t_machining_sec": 157.9,
-      "t_op_total_sec": 221.8,
+      "t_setup_per_piece_sec": 120.0,
+      "t_handling_sec": 30.0,
+      "t_machining_sec": 327.99,
+      "t_op_total_sec": 477.99,
       "sub_op_results": [
         {
           "operation_seq": 2,
           "sub_op_seq": 1,
           "operation_type": "face_turn",
           "kind": "radial_turn",
-          "rpm": null,
-          "feed_mm_min": null,
-          "t_cut_sec": 14.7,
-          "t_tool_sec": 0.4,
-          "t_rapid_sec": 0.0,
-          "t_sub_total_sec": 15.2,
-          "trace": {
-            "operation_type": "face_turn",
+          "method": "formula",
+          "feature_id": null,
+          "inputs": {
             "kind": "radial_turn",
-            "machinability": "medium",
-            "travel": 25.0,
-            "D_avg": 25.0,
-            "Vc": 110,
-            "fn": 0.12,
-            "rpm": 1400.56,
-            "total_stock_mm": 2.8285,
-            "max_doc": 5.0,
-            "passes": 1,
+            "start_diameter_mm": 50.0,
+            "finish_diameter_mm": 0.0,
             "groove_count": 1,
-            "t_pure_cut": 0.14875
+            "total_stock_mm": 100.9775
           },
-          "warnings": []
+          "sources": {
+            "start_diameter_mm": {
+              "ref": "stock.diameter_mm",
+              "kind": "stock"
+            },
+            "finish_diameter_mm": {
+              "ref": "solid face",
+              "kind": "computed"
+            },
+            "total_stock_mm": {
+              "ref": "(stock.length_mm - envelope.max_length) / 2",
+              "kind": "computed"
+            }
+          },
+          "t_cut_sec": 249.192,
+          "t_tool_sec": 5.448,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 254.64,
+          "trace": {
+            "vc_m_min": 124.0,
+            "position": 0.6,
+            "f_mm_rev": 0.21,
+            "rpm": 1578.817,
+            "travel_mm": 25.0,
+            "passes": 51.0,
+            "steps": 1.0,
+            "Vc": 124.0,
+            "fn": 0.21
+          },
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [],
+          "note": null,
+          "rpm": 1578.817
         },
         {
           "operation_seq": 2,
           "sub_op_seq": 2,
-          "operation_type": "finish_turn_od",
-          "kind": "axial_turn",
-          "rpm": null,
-          "feed_mm_min": null,
-          "t_cut_sec": 87.3,
-          "t_tool_sec": 2.6,
+          "operation_type": "center_drill",
+          "kind": "point_drill",
+          "method": "static",
+          "feature_id": null,
+          "inputs": {},
+          "sources": {},
+          "t_cut_sec": 6.0,
+          "t_tool_sec": 0.0,
           "t_rapid_sec": 0.0,
-          "t_sub_total_sec": 90.0,
+          "t_sub_total_sec": 6.0,
           "trace": {
-            "operation_type": "finish_turn_od",
-            "kind": "axial_turn",
-            "machinability": "medium",
-            "D_avg": 49.765,
-            "radial_stock": 0.235,
-            "fn": 0.1,
-            "doc": 0.3,
-            "Vc": 135,
-            "rpm": 863.495,
-            "passes": 1,
-            "t_pure_cut": 0.881904,
-            "indexing_factor": 0.1,
-            "non_cut_factor": 1.5,
-            "aux_time_min": 0.0,
-            "t_cut": 1.45514
+            "minutes_each": 0.1,
+            "count": 1.0
           },
-          "warnings": []
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [],
+          "note": null
         },
         {
           "operation_seq": 2,
           "sub_op_seq": 3,
-          "operation_type": "spot_drill",
-          "kind": "point_drill",
-          "rpm": null,
-          "feed_mm_min": null,
-          "t_cut_sec": 1.5,
-          "t_tool_sec": 0.1,
-          "t_rapid_sec": 0.1,
-          "t_sub_total_sec": 1.6,
-          "trace": {
-            "operation_type": "spot_drill",
-            "kind": "point_drill",
-            "machinability": "medium",
-            "Vc": 32,
-            "fn": 0.14,
-            "rpm": 1697.65,
-            "total_depth": 5.8,
-            "peck_retracts": 0,
-            "t_one": 0.0244034,
-            "t_cut": 0.0244034,
-            "feed_mm_min": 237.671
+          "operation_type": "rough_turn_od",
+          "kind": "axial_turn",
+          "method": "formula",
+          "feature_id": "F05",
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 50.0,
+            "finish_diameter_mm": 2.55,
+            "cut_length_mm": 2.88
           },
-          "warnings": []
+          "sources": {
+            "cut_length_mm": {
+              "ref": "F05.length",
+              "kind": "drawing"
+            },
+            "start_diameter_mm": {
+              "ref": "stock.diameter_mm",
+              "kind": "stock"
+            },
+            "finish_diameter_mm": {
+              "ref": "F05.diameter + 2 x config.allowances.finish_stock_per_side_mm",
+              "kind": "computed"
+            }
+          },
+          "t_cut_sec": 9.744,
+          "t_tool_sec": 0.45,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 10.194,
+          "trace": {
+            "vc_m_min": 124.0,
+            "position": 0.6,
+            "f_mm_rev": 0.24,
+            "rpm": 1502.2046,
+            "radial_mm": 23.725,
+            "passes": 12.0,
+            "Vc": 124.0,
+            "fn": 0.24
+          },
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [],
+          "note": null,
+          "rpm": 1502.2046
         },
         {
           "operation_seq": 2,
           "sub_op_seq": 4,
-          "operation_type": "drill",
-          "kind": "point_drill",
-          "rpm": null,
-          "feed_mm_min": null,
-          "t_cut_sec": 32.6,
-          "t_tool_sec": 2.0,
-          "t_rapid_sec": 1.6,
-          "t_sub_total_sec": 36.1,
-          "trace": {
-            "operation_type": "drill",
-            "kind": "point_drill",
-            "machinability": "medium",
-            "Vc": 32,
-            "fn": 0.14,
-            "rpm": 693.807,
-            "total_depth": 37.1544,
-            "peck_retracts": 2,
-            "t_one": 0.54251,
-            "t_cut": 0.54251,
-            "feed_mm_min": 97.133
+          "operation_type": "rough_turn_od",
+          "kind": "axial_turn",
+          "method": "formula",
+          "feature_id": "F04",
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 50.0,
+            "finish_diameter_mm": 1.988,
+            "cut_length_mm": 2.9
           },
-          "warnings": []
+          "sources": {
+            "cut_length_mm": {
+              "ref": "F04.length",
+              "kind": "drawing"
+            },
+            "start_diameter_mm": {
+              "ref": "stock.diameter_mm",
+              "kind": "stock"
+            },
+            "finish_diameter_mm": {
+              "ref": "F04.diameter + 2 x config.allowances.finish_stock_per_side_mm",
+              "kind": "computed"
+            }
+          },
+          "t_cut_sec": 10.488,
+          "t_tool_sec": 0.45,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 10.938,
+          "trace": {
+            "vc_m_min": 124.0,
+            "position": 0.6,
+            "f_mm_rev": 0.24,
+            "rpm": 1518.4437,
+            "radial_mm": 24.006,
+            "passes": 13.0,
+            "Vc": 124.0,
+            "fn": 0.24
+          },
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [],
+          "note": null,
+          "rpm": 1518.4437
         },
         {
           "operation_seq": 2,
           "sub_op_seq": 5,
-          "operation_type": "chamfer_turn",
+          "operation_type": "rough_turn_od",
           "kind": "axial_turn",
-          "rpm": null,
-          "feed_mm_min": null,
-          "t_cut_sec": 2.1,
-          "t_tool_sec": 0.1,
-          "t_rapid_sec": 0.0,
-          "t_sub_total_sec": 2.2,
-          "trace": {
-            "operation_type": "chamfer_turn",
+          "method": "formula",
+          "feature_id": "F02",
+          "inputs": {
             "kind": "axial_turn",
-            "machinability": "medium",
-            "D_avg": 49.022,
-            "radial_stock": 0.508,
-            "fn": 0.24,
-            "doc": 3.0,
-            "Vc": 135,
-            "rpm": 876.583,
-            "passes": 1,
-            "t_pure_cut": 0.021504,
-            "indexing_factor": 0.1,
-            "non_cut_factor": 1.5,
-            "aux_time_min": 0.0,
-            "t_cut": 0.0354815
+            "start_diameter_mm": 50.0,
+            "finish_diameter_mm": 1.74,
+            "cut_length_mm": 1.85
           },
-          "warnings": []
+          "sources": {
+            "cut_length_mm": {
+              "ref": "F02.length",
+              "kind": "derived"
+            },
+            "start_diameter_mm": {
+              "ref": "stock.diameter_mm",
+              "kind": "stock"
+            },
+            "finish_diameter_mm": {
+              "ref": "F02.diameter + 2 x config.allowances.finish_stock_per_side_mm",
+              "kind": "computed"
+            }
+          },
+          "t_cut_sec": 8.202,
+          "t_tool_sec": 0.45,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 8.652,
+          "trace": {
+            "vc_m_min": 124.0,
+            "position": 0.6,
+            "f_mm_rev": 0.24,
+            "rpm": 1525.7219,
+            "radial_mm": 24.13,
+            "passes": 13.0,
+            "Vc": 124.0,
+            "fn": 0.24
+          },
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [],
+          "note": null,
+          "rpm": 1525.7219
         },
         {
           "operation_seq": 2,
           "sub_op_seq": 6,
-          "operation_type": "tap",
-          "kind": "tap",
-          "rpm": null,
-          "feed_mm_min": null,
-          "t_cut_sec": 11.6,
-          "t_tool_sec": 1.2,
-          "t_rapid_sec": 0.0,
-          "t_sub_total_sec": 12.8,
-          "trace": {
-            "operation_type": "tap",
-            "kind": "tap",
-            "machinability": "medium",
-            "Vc": 10,
-            "rpm": 200.51,
-            "t_one": 0.193679,
-            "t_pure_cut": 0.193679,
-            "t_cut": 0.193679
+          "operation_type": "finish_turn_od",
+          "kind": "axial_turn",
+          "method": "formula",
+          "feature_id": "F05",
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 2.55,
+            "finish_diameter_mm": 1.95,
+            "cut_length_mm": 2.88
           },
-          "warnings": []
+          "sources": {
+            "cut_length_mm": {
+              "ref": "F05.length",
+              "kind": "drawing"
+            },
+            "start_diameter_mm": {
+              "ref": "F05.diameter + 2 x config.allowances.finish_stock_per_side_mm",
+              "kind": "computed"
+            },
+            "finish_diameter_mm": {
+              "ref": "F05.diameter",
+              "kind": "drawing"
+            }
+          },
+          "t_cut_sec": 0.912,
+          "t_tool_sec": 0.45,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 1.362,
+          "trace": {
+            "vc_m_min": 180.0,
+            "position": 0.0,
+            "f_mm_rev": 0.08,
+            "rpm": 4000.0,
+            "radial_mm": 0.3,
+            "passes": 1.0,
+            "Vc": 180.0,
+            "fn": 0.08
+          },
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [
+            "tolerance band 0.01"
+          ],
+          "note": null,
+          "rpm": 4000.0
+        },
+        {
+          "operation_seq": 2,
+          "sub_op_seq": 7,
+          "operation_type": "turn_taper",
+          "kind": "axial_turn",
+          "method": "formula",
+          "feature_id": "F04",
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 1.988,
+            "finish_diameter_mm": 1.388,
+            "cut_length_mm": 2.9,
+            "taper_included_angle_deg": 7.152669
+          },
+          "sources": {
+            "cut_length_mm": {
+              "ref": "F04.length",
+              "kind": "drawing"
+            },
+            "start_diameter_mm": {
+              "ref": "F04.diameter + 2 x config.allowances.finish_stock_per_side_mm",
+              "kind": "computed"
+            },
+            "finish_diameter_mm": {
+              "ref": "F04.diameter",
+              "kind": "drawing"
+            },
+            "taper_included_angle_deg": {
+              "ref": "F04.taper_angle_deg",
+              "kind": "derived"
+            }
+          },
+          "t_cut_sec": 0.918,
+          "t_tool_sec": 0.45,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 1.368,
+          "trace": {
+            "vc_m_min": 180.0,
+            "position": 0.0,
+            "f_mm_rev": 0.08,
+            "rpm": 4000.0,
+            "radial_mm": 0.3,
+            "passes": 1.0,
+            "Vc": 180.0,
+            "fn": 0.08
+          },
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [
+            "tolerance band 0.02"
+          ],
+          "note": null,
+          "rpm": 4000.0
+        },
+        {
+          "operation_seq": 2,
+          "sub_op_seq": 8,
+          "operation_type": "finish_turn_od",
+          "kind": "axial_turn",
+          "method": "formula",
+          "feature_id": "F02",
+          "inputs": {
+            "kind": "axial_turn",
+            "start_diameter_mm": 1.74,
+            "finish_diameter_mm": 1.14,
+            "cut_length_mm": 1.85
+          },
+          "sources": {
+            "cut_length_mm": {
+              "ref": "F02.length",
+              "kind": "derived"
+            },
+            "start_diameter_mm": {
+              "ref": "F02.diameter + 2 x config.allowances.finish_stock_per_side_mm",
+              "kind": "computed"
+            },
+            "finish_diameter_mm": {
+              "ref": "F02.diameter",
+              "kind": "drawing"
+            }
+          },
+          "t_cut_sec": 0.72,
+          "t_tool_sec": 0.45,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 1.17,
+          "trace": {
+            "vc_m_min": 180.0,
+            "position": 0.0,
+            "f_mm_rev": 0.08,
+            "rpm": 4000.0,
+            "radial_mm": 0.3,
+            "passes": 1.0,
+            "Vc": 180.0,
+            "fn": 0.08
+          },
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [
+            "tolerance band 0.008"
+          ],
+          "note": null,
+          "rpm": 4000.0
+        },
+        {
+          "operation_seq": 2,
+          "sub_op_seq": 9,
+          "operation_type": "groove_od",
+          "kind": "radial_turn",
+          "method": "fallback",
+          "feature_id": "F03",
+          "inputs": {},
+          "sources": {
+            "groove_count": {
+              "ref": "F03.instance_count",
+              "kind": "drawing"
+            }
+          },
+          "t_cut_sec": 18.0,
+          "t_tool_sec": 5.448,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 23.448,
+          "trace": {
+            "fallback_min": 0.3
+          },
+          "warnings": [],
+          "missing": [
+            "F03 groove start diameter (host \u00d8 or seat \u00d8 + depth)",
+            "F03 groove seat diameter (diameter or depth)",
+            "F03.groove_width_mm"
+          ],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_seq": 2,
+          "sub_op_seq": 10,
+          "operation_type": "thread_od_single_point",
+          "kind": "thread_cut",
+          "method": "formula",
+          "feature_id": "F02",
+          "inputs": {
+            "kind": "thread_cut",
+            "major_diameter_mm": 31.75,
+            "minor_diameter_mm": 29.4587,
+            "thread_length_mm": 1.85,
+            "pitch_mm": 2.1166666666666667,
+            "thread_starts": 1
+          },
+          "sources": {
+            "major_diameter_mm": {
+              "ref": "F02.thread",
+              "kind": "drawing"
+            },
+            "pitch_mm": {
+              "ref": "F02.thread",
+              "kind": "drawing"
+            },
+            "minor_diameter_mm": {
+              "ref": "major - 1.0825 x pitch",
+              "kind": "computed"
+            },
+            "thread_length_mm": {
+              "ref": "F02.length",
+              "kind": "derived"
+            }
+          },
+          "t_cut_sec": 1.77,
+          "t_tool_sec": 5.448,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 7.218,
+          "trace": {
+            "vc_m_min": 80.0,
+            "rpm": 802.0407,
+            "passes": 13.0,
+            "Vc": 80.0
+          },
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [],
+          "note": null,
+          "rpm": 802.0407
+        },
+        {
+          "operation_seq": 2,
+          "sub_op_seq": 11,
+          "operation_type": "chamfer_turn",
+          "kind": "axial_turn",
+          "method": "static",
+          "feature_id": "F01",
+          "inputs": {},
+          "sources": {},
+          "t_cut_sec": 3.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 3.0,
+          "trace": {
+            "minutes_each": 0.05,
+            "count": 1.0
+          },
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [],
+          "note": null
         }
       ]
     },
     {
       "sequence": 3,
-      "name": "CNC Turn – Second End",
+      "name": "CNC Turn \u2013 Second Op",
       "machine_family": "cnc_lathe",
       "in_house": true,
-      "setup_time_sec": 1500.0,
-      "t_setup_per_piece_sec": 15.0,
-      "t_handling_sec": 24.0,
-      "t_machining_sec": 241.8,
-      "t_op_total_sec": 323.5,
+      "setup_time_sec": 1200.0,
+      "t_setup_per_piece_sec": 120.0,
+      "t_handling_sec": 30.0,
+      "t_machining_sec": 340.536,
+      "t_op_total_sec": 490.536,
       "sub_op_results": [
         {
           "operation_seq": 3,
           "sub_op_seq": 1,
           "operation_type": "face_turn",
           "kind": "radial_turn",
-          "rpm": null,
-          "feed_mm_min": null,
-          "t_cut_sec": 14.7,
-          "t_tool_sec": 0.4,
-          "t_rapid_sec": 0.0,
-          "t_sub_total_sec": 15.2,
-          "trace": {
-            "operation_type": "face_turn",
+          "method": "formula",
+          "feature_id": null,
+          "inputs": {
             "kind": "radial_turn",
-            "machinability": "medium",
-            "travel": 25.0,
-            "D_avg": 25.0,
-            "Vc": 110,
-            "fn": 0.12,
-            "rpm": 1400.56,
-            "total_stock_mm": 2.8285,
-            "max_doc": 5.0,
-            "passes": 1,
+            "start_diameter_mm": 50.0,
+            "finish_diameter_mm": 0.0,
             "groove_count": 1,
-            "t_pure_cut": 0.14875
+            "total_stock_mm": 100.9775
           },
-          "warnings": []
+          "sources": {
+            "start_diameter_mm": {
+              "ref": "stock.diameter_mm",
+              "kind": "stock"
+            },
+            "finish_diameter_mm": {
+              "ref": "solid face",
+              "kind": "computed"
+            },
+            "total_stock_mm": {
+              "ref": "(stock.length_mm - envelope.max_length) / 2",
+              "kind": "computed"
+            }
+          },
+          "t_cut_sec": 249.192,
+          "t_tool_sec": 5.448,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 254.64,
+          "trace": {
+            "vc_m_min": 124.0,
+            "position": 0.6,
+            "f_mm_rev": 0.21,
+            "rpm": 1578.817,
+            "travel_mm": 25.0,
+            "passes": 51.0,
+            "steps": 1.0,
+            "Vc": 124.0,
+            "fn": 0.21
+          },
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [],
+          "note": null,
+          "rpm": 1578.817
         },
         {
           "operation_seq": 3,
           "sub_op_seq": 2,
           "operation_type": "center_drill",
           "kind": "point_drill",
-          "rpm": null,
-          "feed_mm_min": null,
-          "t_cut_sec": 2.1,
-          "t_tool_sec": 0.1,
-          "t_rapid_sec": 0.1,
-          "t_sub_total_sec": 2.3,
+          "method": "static",
+          "feature_id": null,
+          "inputs": {},
+          "sources": {},
+          "t_cut_sec": 6.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 6.0,
           "trace": {
-            "operation_type": "center_drill",
-            "kind": "point_drill",
-            "machinability": "medium",
-            "Vc": 32,
-            "fn": 0.14,
-            "rpm": 1616.81,
-            "total_depth": 7.89,
-            "peck_retracts": 0,
-            "t_one": 0.034857,
-            "t_cut": 0.034857,
-            "feed_mm_min": 226.354
+            "minutes_each": 0.1,
+            "count": 1.0
           },
-          "warnings": []
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [],
+          "note": null
         },
         {
           "operation_seq": 3,
           "sub_op_seq": 3,
-          "operation_type": "rough_turn_od",
-          "kind": "axial_turn",
-          "rpm": null,
-          "feed_mm_min": null,
-          "t_cut_sec": 40.4,
-          "t_tool_sec": 1.2,
-          "t_rapid_sec": 0.0,
-          "t_sub_total_sec": 41.6,
-          "trace": {
-            "operation_type": "rough_turn_od",
-            "kind": "axial_turn",
-            "machinability": "medium",
-            "D_avg": 48.2901,
-            "radial_stock": 1.70985,
-            "fn": 0.24,
-            "doc": 3.0,
-            "Vc": 135,
-            "rpm": 889.867,
-            "passes": 1,
-            "t_pure_cut": 0.408305,
-            "indexing_factor": 0.1,
-            "non_cut_factor": 1.5,
-            "aux_time_min": 0.0,
-            "t_cut": 0.673704
+          "operation_type": "drill",
+          "kind": "point_drill",
+          "method": "fallback",
+          "feature_id": "F06",
+          "inputs": {},
+          "sources": {
+            "hole_diameter_mm": {
+              "ref": "F06.diameter",
+              "kind": "drawing"
+            },
+            "hole_count": {
+              "ref": "F06.instance_count",
+              "kind": "drawing"
+            }
           },
-          "warnings": []
+          "t_cut_sec": 30.0,
+          "t_tool_sec": 5.448,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 35.448,
+          "trace": {
+            "fallback_min": 0.5
+          },
+          "warnings": [],
+          "missing": [
+            "F06 depth"
+          ],
+          "cutting_limits": [],
+          "note": null
         },
         {
           "operation_seq": 3,
           "sub_op_seq": 4,
-          "operation_type": "rough_turn_od",
-          "kind": "axial_turn",
-          "rpm": null,
-          "feed_mm_min": null,
-          "t_cut_sec": 59.4,
-          "t_tool_sec": 1.8,
-          "t_rapid_sec": 0.0,
-          "t_sub_total_sec": 61.2,
-          "trace": {
-            "operation_type": "rough_turn_od",
-            "kind": "axial_turn",
-            "machinability": "medium",
-            "D_avg": 41.275,
-            "radial_stock": 8.725,
-            "fn": 0.24,
-            "doc": 3.0,
-            "Vc": 135,
-            "rpm": 1041.11,
-            "passes": 3,
-            "t_pure_cut": 0.6002,
-            "indexing_factor": 0.1,
-            "non_cut_factor": 1.5,
-            "aux_time_min": 0.0,
-            "t_cut": 0.990331
+          "operation_type": "tap",
+          "kind": "tap",
+          "method": "fallback",
+          "feature_id": "F06",
+          "inputs": {},
+          "sources": {
+            "major_diameter_mm": {
+              "ref": "F06.thread",
+              "kind": "drawing"
+            },
+            "pitch_mm": {
+              "ref": "F06.thread",
+              "kind": "drawing"
+            },
+            "hole_count": {
+              "ref": "F06.instance_count",
+              "kind": "drawing"
+            }
           },
-          "warnings": []
+          "t_cut_sec": 30.0,
+          "t_tool_sec": 5.448,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 35.448,
+          "trace": {
+            "fallback_min": 0.5
+          },
+          "warnings": [],
+          "missing": [
+            "F06 thread depth"
+          ],
+          "cutting_limits": [],
+          "note": null
         },
         {
           "operation_seq": 3,
           "sub_op_seq": 5,
-          "operation_type": "turn_taper",
-          "kind": "axial_turn",
-          "rpm": null,
-          "feed_mm_min": null,
-          "t_cut_sec": 68.5,
-          "t_tool_sec": 2.1,
-          "t_rapid_sec": 0.0,
-          "t_sub_total_sec": 70.6,
-          "trace": {
-            "operation_type": "turn_taper",
-            "kind": "axial_turn",
-            "machinability": "medium",
-            "D_avg": 40.9177,
-            "radial_stock": 5.66255,
-            "fn": 0.24,
-            "doc": 3.0,
-            "Vc": 135,
-            "rpm": 1050.2,
-            "passes": 2,
-            "t_pure_cut": 0.691939,
-            "indexing_factor": 0.1,
-            "non_cut_factor": 1.5,
-            "aux_time_min": 0.0,
-            "t_cut": 1.1417
-          },
-          "warnings": []
-        },
-        {
-          "operation_seq": 3,
-          "sub_op_seq": 6,
-          "operation_type": "finish_turn_od",
-          "kind": "axial_turn",
-          "rpm": null,
-          "feed_mm_min": null,
-          "t_cut_sec": 15.4,
-          "t_tool_sec": 0.5,
-          "t_rapid_sec": 0.0,
-          "t_sub_total_sec": 15.9,
-          "trace": {
-            "operation_type": "finish_turn_od",
-            "kind": "axial_turn",
-            "machinability": "medium",
-            "D_avg": 32.15,
-            "radial_stock": 0.4,
-            "fn": 0.24,
-            "doc": 3.0,
-            "Vc": 135,
-            "rpm": 1336.6,
-            "passes": 1,
-            "t_pure_cut": 0.155836,
-            "indexing_factor": 0.1,
-            "non_cut_factor": 1.5,
-            "aux_time_min": 0.0,
-            "t_cut": 0.25713
-          },
-          "warnings": []
-        },
-        {
-          "operation_seq": 3,
-          "sub_op_seq": 7,
-          "operation_type": "undercut_groove",
-          "kind": "radial_turn",
-          "rpm": null,
-          "feed_mm_min": null,
-          "t_cut_sec": 3.0,
-          "t_tool_sec": 0.1,
-          "t_rapid_sec": 0.0,
-          "t_sub_total_sec": 3.1,
-          "trace": {
-            "operation_type": "undercut_groove",
-            "kind": "radial_turn",
-            "machinability": "medium",
-            "travel": 1.397,
-            "D_avg": 30.353,
-            "Vc": 110,
-            "fn": 0.12,
-            "rpm": 1153.56,
-            "steps": 3,
-            "groove_count": 1,
-            "t_pure_cut": 0.0302758
-          },
-          "warnings": []
-        },
-        {
-          "operation_seq": 3,
-          "sub_op_seq": 8,
           "operation_type": "chamfer_turn",
           "kind": "axial_turn",
-          "rpm": null,
-          "feed_mm_min": null,
-          "t_cut_sec": 1.3,
+          "method": "static",
+          "feature_id": "F07",
+          "inputs": {},
+          "sources": {},
+          "t_cut_sec": 9.0,
           "t_tool_sec": 0.0,
           "t_rapid_sec": 0.0,
-          "t_sub_total_sec": 1.4,
+          "t_sub_total_sec": 9.0,
           "trace": {
-            "operation_type": "chamfer_turn",
-            "kind": "axial_turn",
-            "machinability": "medium",
-            "D_avg": 30.226,
-            "radial_stock": 1.524,
-            "fn": 0.24,
-            "doc": 3.0,
-            "Vc": 135,
-            "rpm": 1421.68,
-            "passes": 1,
-            "t_pure_cut": 0.0132589,
-            "indexing_factor": 0.1,
-            "non_cut_factor": 1.5,
-            "aux_time_min": 0.0,
-            "t_cut": 0.0218772
+            "minutes_each": 0.05,
+            "count": 3.0
           },
-          "warnings": []
-        },
-        {
-          "operation_seq": 3,
-          "sub_op_seq": 9,
-          "operation_type": "thread_od_single_point",
-          "kind": "thread_cut",
-          "rpm": null,
-          "feed_mm_min": null,
-          "t_cut_sec": 28.3,
-          "t_tool_sec": 2.3,
-          "t_rapid_sec": 0.0,
-          "t_sub_total_sec": 30.5,
-          "trace": {
-            "operation_type": "thread_od_single_point",
-            "kind": "thread_cut",
-            "machinability": "medium",
-            "Vc": 30,
-            "rpm": 300.765,
-            "total_passes": 6,
-            "t_pure_cut": 0.471145,
-            "t_cut": 0.471145
-          },
-          "warnings": []
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [],
+          "note": null
         }
       ]
     },
     {
       "sequence": 4,
-      "name": "Production Deburr / Clean",
+      "name": "Deburr",
       "machine_family": "finish_bench",
       "in_house": true,
-      "setup_time_sec": 180.0,
-      "t_setup_per_piece_sec": 1.8,
-      "t_handling_sec": 24.0,
-      "t_machining_sec": 101.0,
-      "t_op_total_sec": 144.6,
+      "setup_time_sec": 300.0,
+      "t_setup_per_piece_sec": 30.0,
+      "t_handling_sec": 18.0,
+      "t_machining_sec": 60.0,
+      "t_op_total_sec": 108.0,
       "sub_op_results": [
         {
           "operation_seq": 4,
           "sub_op_seq": 1,
           "operation_type": "deburr",
           "kind": "manual",
-          "rpm": null,
-          "feed_mm_min": null,
-          "t_cut_sec": 80.0,
+          "method": "static",
+          "feature_id": null,
+          "inputs": {},
+          "sources": {},
+          "t_cut_sec": 60.0,
           "t_tool_sec": 0.0,
           "t_rapid_sec": 0.0,
-          "t_sub_total_sec": 80.0,
+          "t_sub_total_sec": 60.0,
           "trace": {
-            "operation_type": "deburr",
-            "base": 1.33333,
-            "complexity_mult": 1.0,
-            "sec_per_feat": 2.0,
-            "t_cut_sec": 80.0
+            "minutes_each": 1.0,
+            "count": 1.0
           },
-          "warnings": []
-        },
-        {
-          "operation_seq": 4,
-          "sub_op_seq": 2,
-          "operation_type": "clean_degrease",
-          "kind": "manual",
-          "rpm": null,
-          "feed_mm_min": null,
-          "t_cut_sec": 21.0,
-          "t_tool_sec": 0.0,
-          "t_rapid_sec": 0.0,
-          "t_sub_total_sec": 21.0,
-          "trace": {
-            "operation_type": "clean_degrease",
-            "base": 0.5,
-            "complexity_mult": 0.7,
-            "sec_per_feat": 15.0,
-            "t_cut_sec": 21.0
-          },
-          "warnings": []
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [],
+          "note": null
         }
       ]
     },
     {
       "sequence": 5,
-      "name": "Batch Phosphate / Green Color Coding",
-      "machine_family": "plating_line",
+      "name": "Clean for Phosphate",
+      "machine_family": "finish_bench",
       "in_house": true,
-      "setup_time_sec": 600.0,
-      "t_setup_per_piece_sec": 6.0,
-      "t_handling_sec": 24.0,
-      "t_machining_sec": 165.0,
-      "t_op_total_sec": 224.1,
+      "setup_time_sec": 300.0,
+      "t_setup_per_piece_sec": 30.0,
+      "t_handling_sec": 18.0,
+      "t_machining_sec": 30.0,
+      "t_op_total_sec": 78.0,
       "sub_op_results": [
         {
           "operation_seq": 5,
           "sub_op_seq": 1,
           "operation_type": "clean_degrease",
           "kind": "manual",
-          "rpm": null,
-          "feed_mm_min": null,
-          "t_cut_sec": 21.0,
+          "method": "static",
+          "feature_id": null,
+          "inputs": {},
+          "sources": {},
+          "t_cut_sec": 30.0,
           "t_tool_sec": 0.0,
           "t_rapid_sec": 0.0,
-          "t_sub_total_sec": 21.0,
+          "t_sub_total_sec": 30.0,
           "trace": {
-            "operation_type": "clean_degrease",
-            "base": 0.5,
-            "complexity_mult": 0.7,
-            "sec_per_feat": 15.0,
-            "t_cut_sec": 21.0
+            "minutes_each": 0.5,
+            "count": 1.0
           },
-          "warnings": []
-        },
-        {
-          "operation_seq": 5,
-          "sub_op_seq": 2,
-          "operation_type": "mask",
-          "kind": "manual",
-          "rpm": null,
-          "feed_mm_min": null,
-          "t_cut_sec": 45.0,
-          "t_tool_sec": 0.0,
-          "t_rapid_sec": 0.0,
-          "t_sub_total_sec": 45.0,
-          "trace": {
-            "operation_type": "mask",
-            "base": 0.75,
-            "complexity_mult": 1.0,
-            "sec_per_feat": 10.0,
-            "t_cut_sec": 45.0
-          },
-          "warnings": []
-        },
-        {
-          "operation_seq": 5,
-          "sub_op_seq": 3,
-          "operation_type": "phosphate",
-          "kind": "surface_treat",
-          "rpm": null,
-          "feed_mm_min": null,
-          "t_cut_sec": 39.0,
-          "t_tool_sec": 0.0,
-          "t_rapid_sec": 0.0,
-          "t_sub_total_sec": 39.0,
-          "trace": {
-            "cycle": 35.0,
-            "batch": 100,
-            "dwell": 15.0
-          },
-          "warnings": []
-        },
-        {
-          "operation_seq": 5,
-          "sub_op_seq": 4,
-          "operation_type": "paint",
-          "kind": "surface_treat",
-          "rpm": null,
-          "feed_mm_min": null,
-          "t_cut_sec": 39.0,
-          "t_tool_sec": 0.0,
-          "t_rapid_sec": 0.0,
-          "t_sub_total_sec": 39.0,
-          "trace": {
-            "cycle": 25.0,
-            "batch": 100,
-            "dwell": 10.0
-          },
-          "warnings": []
-        },
-        {
-          "operation_seq": 5,
-          "sub_op_seq": 5,
-          "operation_type": "unmask",
-          "kind": "manual",
-          "rpm": null,
-          "feed_mm_min": null,
-          "t_cut_sec": 21.0,
-          "t_tool_sec": 0.0,
-          "t_rapid_sec": 0.0,
-          "t_sub_total_sec": 21.0,
-          "trace": {
-            "operation_type": "unmask",
-            "base": 0.5,
-            "complexity_mult": 0.7,
-            "sec_per_feat": 5.0,
-            "t_cut_sec": 21.0
-          },
-          "warnings": []
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [],
+          "note": null
         }
       ]
     },
     {
       "sequence": 6,
-      "name": "Final Shop-Floor Gauge Inspection",
-      "machine_family": "inspection",
+      "name": "Mask for Phosphate",
+      "machine_family": "finish_bench",
       "in_house": true,
-      "setup_time_sec": 600.0,
-      "t_setup_per_piece_sec": 6.0,
-      "t_handling_sec": 15.0,
-      "t_machining_sec": 345.0,
-      "t_op_total_sec": 426.9,
+      "setup_time_sec": 300.0,
+      "t_setup_per_piece_sec": 30.0,
+      "t_handling_sec": 18.0,
+      "t_machining_sec": 60.0,
+      "t_op_total_sec": 108.0,
       "sub_op_results": [
         {
           "operation_seq": 6,
           "sub_op_seq": 1,
-          "operation_type": "manual_inspect",
-          "kind": "inspection",
-          "rpm": null,
-          "feed_mm_min": null,
-          "t_cut_sec": 345.0,
+          "operation_type": "mask",
+          "kind": "manual",
+          "method": "static",
+          "feature_id": null,
+          "inputs": {},
+          "sources": {},
+          "t_cut_sec": 60.0,
           "t_tool_sec": 0.0,
           "t_rapid_sec": 0.0,
-          "t_sub_total_sec": 345.0,
+          "t_sub_total_sec": 60.0,
           "trace": {
-            "t_full": 5.75,
-            "t_cut": 5.75
+            "minutes_each": 1.0,
+            "count": 1.0
           },
-          "warnings": []
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [],
+          "note": null
+        }
+      ]
+    },
+    {
+      "sequence": 7,
+      "name": "Phosphate Coat",
+      "machine_family": "plating_line",
+      "in_house": true,
+      "setup_time_sec": 1200.0,
+      "t_setup_per_piece_sec": 120.0,
+      "t_handling_sec": 30.0,
+      "t_machining_sec": 30.0,
+      "t_op_total_sec": 180.0,
+      "sub_op_results": [
+        {
+          "operation_seq": 7,
+          "sub_op_seq": 1,
+          "operation_type": "phosphate",
+          "kind": "surface_treat",
+          "method": "static",
+          "feature_id": null,
+          "inputs": {},
+          "sources": {},
+          "t_cut_sec": 30.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 30.0,
+          "trace": {
+            "minutes_each": 0.5,
+            "count": 1.0
+          },
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [],
+          "note": null
+        }
+      ]
+    },
+    {
+      "sequence": 8,
+      "name": "Unmask",
+      "machine_family": "finish_bench",
+      "in_house": true,
+      "setup_time_sec": 300.0,
+      "t_setup_per_piece_sec": 30.0,
+      "t_handling_sec": 18.0,
+      "t_machining_sec": 30.0,
+      "t_op_total_sec": 78.0,
+      "sub_op_results": [
+        {
+          "operation_seq": 8,
+          "sub_op_seq": 1,
+          "operation_type": "unmask",
+          "kind": "manual",
+          "method": "static",
+          "feature_id": null,
+          "inputs": {},
+          "sources": {},
+          "t_cut_sec": 30.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 30.0,
+          "trace": {
+            "minutes_each": 0.5,
+            "count": 1.0
+          },
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [],
+          "note": null
+        }
+      ]
+    },
+    {
+      "sequence": 9,
+      "name": "Final Inspection",
+      "machine_family": "inspection",
+      "in_house": true,
+      "setup_time_sec": 180.0,
+      "t_setup_per_piece_sec": 18.0,
+      "t_handling_sec": 15.0,
+      "t_machining_sec": 90.0,
+      "t_op_total_sec": 123.0,
+      "sub_op_results": [
+        {
+          "operation_seq": 9,
+          "sub_op_seq": 1,
+          "operation_type": "manual_inspect",
+          "kind": "inspection",
+          "method": "static",
+          "feature_id": null,
+          "inputs": {},
+          "sources": {},
+          "t_cut_sec": 90.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 90.0,
+          "trace": {
+            "minutes_each": 1.5,
+            "count": 1.0
+          },
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [],
+          "note": null
         }
       ]
     }
-  ],
-  "warnings": [
-    "Loaded org machining overrides from: engine/data/machining_data_almity.yaml"
   ]
 }

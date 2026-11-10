@@ -1,123 +1,132 @@
 {
   "drawing_number": "MB09B700520",
   "part_name": "BUSHING",
-  "material": "MAKE FROM BUSHING: 839310",
-  "quantity": 100,
-  "quote_status": "incomplete_manual_entry_required",
+  "material": null,
+  "quantity": 10,
+  "quote_status": "incomplete",
   "weights": {
-    "raw_bar_dia_mm": 71.0,
-    "actual_bar_dia_mm": 71.0,
-    "gross_weight_kg": null,
-    "gross_weight_g": null,
-    "net_weight_kg": null,
-    "net_weight_g": null,
-    "scrap_weight_kg": null,
-    "scrap_weight_g": null,
-    "net_weight_source": "manual_required"
+    "net_weight_kg": 1.741,
+    "raw_bar_dia_mm": 75.0
   },
   "direct_cost": {
-    "material_cost_inr": null,
-    "material_rate_per_kg_inr": 135.0,
-    "material_substitution": null,
-    "machining_cost_inr": 101.7,
-    "direct_base_inr": null
+    "machining_cost_inr": 74.75,
+    "direct_base_inr": 74.75
   },
   "cif_and_overheads": {
-    "packaging_charges_inr": null,
-    "overhead_25_pct_inr": null,
-    "logistics_cost_inr": null,
-    "total_cif_inr": null,
-    "scrap_recovery_credit_inr": null,
-    "total_cost_per_pc_inr": null
+    "overhead_25_pct_inr": 57.98,
+    "total_cif_inr": 360.5,
+    "total_cost_per_pc_inr": 360.5,
+    "packaging_charges_inr": 14.62,
+    "logistics_cost_inr": 55.96
   },
   "pricing_and_duties": {
-    "profit_10_pct_inr": null,
-    "actual_cost_inr": null,
-    "icc_and_rejection_inr": null,
-    "custom_duty_3_5_pct_inr": null,
-    "warehouse_cost_4_pct_inr": null,
-    "final_landed_price_inr": null
+    "profit_10_pct_inr": 23.19,
+    "actual_cost_inr": 383.69,
+    "icc_and_rejection_inr": 4.64,
+    "custom_duty_3_5_pct_inr": 13.43,
+    "warehouse_cost_4_pct_inr": 15.35,
+    "final_landed_price_inr": 417.11
   },
   "machining_operations": [
     {
       "sequence": 1,
-      "operation_name": "CNC Turn – First End",
-      "machine_family": "cnc_lathe",
-      "cycle_time_sec": 85.0,
-      "cycle_time_raw_sec": 42.4,
-      "hourly_rate_inr": 280.0,
-      "cost_per_piece_inr": 6.61,
-      "cost_per_piece_raw": 6.611111111111111
+      "operation_name": "Saw Cut Stock",
+      "machine_family": "saw",
+      "cycle_time_sec": 101.07,
+      "hourly_rate_inr": 290.0,
+      "cost_per_piece_raw": 9.578529411764706,
+      "cost_per_piece_inr": 9.58,
+      "efficiency": 0.85
     },
     {
       "sequence": 2,
-      "operation_name": "CNC Turn – Second End",
+      "operation_name": "CNC Turn \u2014 First Setup",
       "machine_family": "cnc_lathe",
-      "cycle_time_sec": 85.0,
-      "cycle_time_raw_sec": 39.4,
+      "cycle_time_sec": 299.06,
       "hourly_rate_inr": 280.0,
-      "cost_per_piece_inr": 6.61,
-      "cost_per_piece_raw": 6.611111111111111
+      "cost_per_piece_raw": 27.364967320261442,
+      "cost_per_piece_inr": 27.36,
+      "efficiency": 0.85
     },
     {
       "sequence": 3,
-      "operation_name": "VMC – Flats, Interrupted Profile and Mounting Holes",
-      "machine_family": "vmc_3axis",
-      "cycle_time_sec": 375.1,
-      "cycle_time_raw_sec": 375.1,
-      "hourly_rate_inr": 450.0,
-      "cost_per_piece_inr": 46.89,
-      "cost_per_piece_raw": 46.8875
+      "operation_name": "CNC Turn \u2014 Reverse Setup",
+      "machine_family": "cnc_lathe",
+      "cycle_time_sec": 56.89,
+      "hourly_rate_inr": 280.0,
+      "cost_per_piece_raw": 5.205620915032679,
+      "cost_per_piece_inr": 5.21,
+      "efficiency": 0.85
     },
     {
       "sequence": 4,
-      "operation_name": "Cold Form – Outer Tube End Curls",
-      "machine_family": "sheet_metal_stamping",
-      "cycle_time_sec": 117.8,
-      "cycle_time_raw_sec": 117.8,
-      "hourly_rate_inr": 500.0,
-      "cost_per_piece_inr": 16.36,
-      "cost_per_piece_raw": 16.36111111111111
+      "operation_name": "Cross-Hole Drilling",
+      "machine_family": "vmc_3axis",
+      "cycle_time_sec": 91.3,
+      "hourly_rate_inr": 450.0,
+      "cost_per_piece_raw": 13.426470588235293,
+      "cost_per_piece_inr": 13.43,
+      "efficiency": 0.85
     },
     {
       "sequence": 5,
-      "operation_name": "Cylindrical Grind – Called-Out Ground Surface",
-      "machine_family": "cylindrical_grinder",
-      "cycle_time_sec": 218.4,
-      "cycle_time_raw_sec": 218.4,
-      "hourly_rate_inr": 350.0,
-      "cost_per_piece_inr": 21.23,
-      "cost_per_piece_raw": 21.233333333333334
+      "operation_name": "Deburr Machined Metal Parts",
+      "machine_family": "finish_bench",
+      "cycle_time_sec": 78.0,
+      "hourly_rate_inr": 200.0,
+      "cost_per_piece_raw": 5.098039215686275,
+      "cost_per_piece_inr": 5.1,
+      "efficiency": 0.85
     },
     {
       "sequence": 6,
-      "operation_name": "Production Bench – Deburr, Clean and Mark",
-      "machine_family": "finish_bench",
-      "cycle_time_sec": 120.0,
-      "cycle_time_raw_sec": 268.3,
-      "hourly_rate_inr": 200.0,
-      "cost_per_piece_inr": 3.0,
-      "cost_per_piece_raw": 3.0
+      "operation_name": "Phosphate Coat",
+      "machine_family": "plating_line",
+      "cycle_time_sec": 90.0,
+      "hourly_rate_inr": 300.0,
+      "cost_per_piece_raw": 8.823529411764707,
+      "cost_per_piece_inr": 8.82,
+      "efficiency": 0.85
     },
     {
       "sequence": 7,
-      "operation_name": "Batch Phosphate and Ground-Surface Oil",
-      "machine_family": "plating_line",
-      "cycle_time_sec": 191.8,
-      "cycle_time_raw_sec": 191.8,
-      "hourly_rate_inr": 300.0,
-      "cost_per_piece_inr": 0.0,
-      "cost_per_piece_raw": 0.0
+      "operation_name": "Rubber Mold Bond",
+      "machine_family": "outside_vendor",
+      "cycle_time_sec": 0.0,
+      "hourly_rate_inr": 0.0,
+      "cost_per_piece_raw": null,
+      "cost_per_piece_inr": null,
+      "efficiency": 0.85
     },
     {
       "sequence": 8,
-      "operation_name": "Final Shop-Floor Gauge and Sampled Test Gate",
+      "operation_name": "Outer Tube OD Grind",
+      "machine_family": "cylindrical_grinder",
+      "cycle_time_sec": 123.88,
+      "hourly_rate_inr": 270.0,
+      "cost_per_piece_raw": 10.930588235294117,
+      "cost_per_piece_inr": 10.93,
+      "efficiency": 0.85
+    },
+    {
+      "sequence": 9,
+      "operation_name": "Oil and Identify",
+      "machine_family": "finish_bench",
+      "cycle_time_sec": 48.0,
+      "hourly_rate_inr": 200.0,
+      "cost_per_piece_raw": 3.1372549019607847,
+      "cost_per_piece_inr": 3.14,
+      "efficiency": 0.85
+    },
+    {
+      "sequence": 10,
+      "operation_name": "Final Inspection",
       "machine_family": "inspection",
-      "cycle_time_sec": 15.0,
-      "cycle_time_raw_sec": 144.5,
+      "cycle_time_sec": 105.0,
       "hourly_rate_inr": 250.0,
-      "cost_per_piece_inr": 1.0,
-      "cost_per_piece_raw": 1.0
+      "cost_per_piece_raw": 8.57843137254902,
+      "cost_per_piece_inr": 8.58,
+      "efficiency": 0.85
     }
   ]
 }

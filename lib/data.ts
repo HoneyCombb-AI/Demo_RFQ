@@ -741,9 +741,10 @@ export function formatTime(minutes: number): string {
 
 /** Format currency (INR) */
 export function formatCurrency(
-  value: number,
+  value: number | null | undefined,
   currency: string = "INR",
 ): string {
+  if (value == null) return "—";
   const symbol = currency === "INR" ? "₹" : currency === "EUR" ? "€" : "$";
   return `${symbol}${value.toLocaleString("en-IN", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
 }
