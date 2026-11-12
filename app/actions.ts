@@ -10,6 +10,7 @@ const CODE_MAP: Record<string, string> = {
   "3742": "/argl",
   "2847": "/bhg",
   "9173": "/sndfts",
+  "4836": "/walchandnagar",
 }
 
 export async function loginWithCode(

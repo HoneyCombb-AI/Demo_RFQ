@@ -1,0 +1,3742 @@
+{
+  "analysis_id": "500054_merge_20261112T190245Z",
+  "organization_id": "walchandnagar",
+  "quantity": 1,
+  "t_cycle_per_part_sec": 796307.85,
+  "t_cycle_total_batch_sec": 796307.85,
+  "t_setup_total_batch_sec": 86400.0,
+  "operations": [
+    {
+      "sequence": 1,
+      "name": "Material Receipt and Document Release",
+      "machine_family": "dimensional_inspection",
+      "in_house": true,
+      "setup_time_sec": 600.0,
+      "t_setup_per_piece_sec": 600.0,
+      "t_handling_sec": 30.0,
+      "t_machining_sec": 90.0,
+      "t_op_total_sec": 720.0,
+      "sub_op_results": [
+        {
+          "operation_seq": 1,
+          "sub_op_seq": 1,
+          "operation_type": "manual_inspect",
+          "kind": "inspection",
+          "method": "static",
+          "feature_id": null,
+          "inputs": {},
+          "sources": {},
+          "t_cut_sec": 90.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 90.0,
+          "trace": {
+            "minutes_each": 1.5,
+            "count": 1.0
+          },
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [],
+          "note": null
+        }
+      ]
+    },
+    {
+      "sequence": 2,
+      "name": "Incoming Plate and Forging UT",
+      "machine_family": "ultrasonic_examination",
+      "in_house": true,
+      "setup_time_sec": 900.0,
+      "t_setup_per_piece_sec": 900.0,
+      "t_handling_sec": 30.0,
+      "t_machining_sec": 7200.0,
+      "t_op_total_sec": 8130.0,
+      "sub_op_results": [
+        {
+          "operation_seq": 2,
+          "sub_op_seq": 1,
+          "operation_type": "ut_ndt",
+          "kind": "inspection",
+          "method": "static",
+          "feature_id": null,
+          "inputs": {},
+          "sources": {},
+          "t_cut_sec": 7200.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 7200.0,
+          "trace": {
+            "minutes_each": 120.0,
+            "count": 1.0
+          },
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [],
+          "note": null
+        }
+      ]
+    },
+    {
+      "sequence": 3,
+      "name": "Required Material and Welding Coupon Tests",
+      "machine_family": "destructive_testing",
+      "in_house": true,
+      "setup_time_sec": 900.0,
+      "t_setup_per_piece_sec": 900.0,
+      "t_handling_sec": 30.0,
+      "t_machining_sec": 14400.0,
+      "t_op_total_sec": 15330.0,
+      "sub_op_results": [
+        {
+          "operation_seq": 3,
+          "sub_op_seq": 1,
+          "operation_type": "structural_test",
+          "kind": "inspection",
+          "method": "static",
+          "feature_id": null,
+          "inputs": {},
+          "sources": {},
+          "t_cut_sec": 14400.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 14400.0,
+          "trace": {
+            "minutes_each": 240.0,
+            "count": 1.0
+          },
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [],
+          "note": null
+        }
+      ]
+    },
+    {
+      "sequence": 4,
+      "name": "Cut Plate Components",
+      "machine_family": "cnc_plasma",
+      "in_house": true,
+      "setup_time_sec": 900.0,
+      "t_setup_per_piece_sec": 900.0,
+      "t_handling_sec": 30.0,
+      "t_machining_sec": 7230.0,
+      "t_op_total_sec": 8160.0,
+      "sub_op_results": [
+        {
+          "operation_seq": 4,
+          "sub_op_seq": 1,
+          "operation_type": "mark_stamp",
+          "kind": "manual",
+          "method": "static",
+          "feature_id": null,
+          "inputs": {},
+          "sources": {},
+          "t_cut_sec": 30.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 30.0,
+          "trace": {
+            "minutes_each": 0.5,
+            "count": 1.0
+          },
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_seq": 4,
+          "sub_op_seq": 2,
+          "operation_type": "plasma_cut",
+          "kind": "sheet_cut",
+          "method": "static",
+          "feature_id": "F02,F06",
+          "inputs": {},
+          "sources": {},
+          "t_cut_sec": 3600.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 3600.0,
+          "trace": {
+            "minutes_each": 60.0,
+            "count": 1.0
+          },
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_seq": 4,
+          "sub_op_seq": 3,
+          "operation_type": "plasma_cut",
+          "kind": "sheet_cut",
+          "method": "static",
+          "feature_id": null,
+          "inputs": {},
+          "sources": {},
+          "t_cut_sec": 3600.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 3600.0,
+          "trace": {
+            "minutes_each": 60.0,
+            "count": 1.0
+          },
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [],
+          "note": null
+        }
+      ]
+    },
+    {
+      "sequence": 5,
+      "name": "Plate Weld-Edge Preparation",
+      "machine_family": "cnc_milling",
+      "in_house": true,
+      "setup_time_sec": 1500.0,
+      "t_setup_per_piece_sec": 1500.0,
+      "t_handling_sec": 48.0,
+      "t_machining_sec": 126.3,
+      "t_op_total_sec": 1674.3,
+      "sub_op_results": [
+        {
+          "operation_seq": 5,
+          "sub_op_seq": 1,
+          "operation_type": "side_mill",
+          "kind": "contour_mill",
+          "method": "fallback",
+          "feature_id": null,
+          "inputs": {},
+          "sources": {},
+          "t_cut_sec": 120.0,
+          "t_tool_sec": 0.3,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 120.3,
+          "trace": {
+            "fallback_min": 2.0
+          },
+          "warnings": [],
+          "missing": [
+            "side_mill has no target feature"
+          ],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_seq": 5,
+          "sub_op_seq": 2,
+          "operation_type": "chamfer_mill",
+          "kind": "contour_mill",
+          "method": "static",
+          "feature_id": null,
+          "inputs": {},
+          "sources": {},
+          "t_cut_sec": 6.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 6.0,
+          "trace": {
+            "minutes_each": 0.1,
+            "count": 1.0
+          },
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [],
+          "note": null
+        }
+      ]
+    },
+    {
+      "sequence": 6,
+      "name": "Roll Upper Shell Courses",
+      "machine_family": "plate_bending",
+      "in_house": true,
+      "setup_time_sec": 1800.0,
+      "t_setup_per_piece_sec": 1800.0,
+      "t_handling_sec": 120.0,
+      "t_machining_sec": 14400.0,
+      "t_op_total_sec": 16320.0,
+      "sub_op_results": [
+        {
+          "operation_seq": 6,
+          "sub_op_seq": 1,
+          "operation_type": "roll_form",
+          "kind": "bend",
+          "method": "static",
+          "feature_id": "F50",
+          "inputs": {},
+          "sources": {},
+          "t_cut_sec": 14400.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 14400.0,
+          "trace": {
+            "minutes_each": 240.0,
+            "count": 1.0
+          },
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [],
+          "note": null
+        }
+      ]
+    },
+    {
+      "sequence": 7,
+      "name": "Roll Lower Shell Courses",
+      "machine_family": "plate_bending",
+      "in_house": true,
+      "setup_time_sec": 1800.0,
+      "t_setup_per_piece_sec": 1800.0,
+      "t_handling_sec": 120.0,
+      "t_machining_sec": 14400.0,
+      "t_op_total_sec": 16320.0,
+      "sub_op_results": [
+        {
+          "operation_seq": 7,
+          "sub_op_seq": 1,
+          "operation_type": "roll_form",
+          "kind": "bend",
+          "method": "static",
+          "feature_id": "F17",
+          "inputs": {},
+          "sources": {},
+          "t_cut_sec": 14400.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 14400.0,
+          "trace": {
+            "minutes_each": 240.0,
+            "count": 1.0
+          },
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [],
+          "note": null
+        }
+      ]
+    },
+    {
+      "sequence": 8,
+      "name": "Roll Conical Transition",
+      "machine_family": "plate_bending",
+      "in_house": true,
+      "setup_time_sec": 1800.0,
+      "t_setup_per_piece_sec": 1800.0,
+      "t_handling_sec": 120.0,
+      "t_machining_sec": 14400.0,
+      "t_op_total_sec": 16320.0,
+      "sub_op_results": [
+        {
+          "operation_seq": 8,
+          "sub_op_seq": 1,
+          "operation_type": "roll_form",
+          "kind": "bend",
+          "method": "static",
+          "feature_id": "F14",
+          "inputs": {},
+          "sources": {},
+          "t_cut_sec": 14400.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 14400.0,
+          "trace": {
+            "minutes_each": 240.0,
+            "count": 1.0
+          },
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [],
+          "note": null
+        }
+      ]
+    },
+    {
+      "sequence": 9,
+      "name": "Roll Upper Skirt",
+      "machine_family": "plate_bending",
+      "in_house": true,
+      "setup_time_sec": 1800.0,
+      "t_setup_per_piece_sec": 1800.0,
+      "t_handling_sec": 120.0,
+      "t_machining_sec": 14400.0,
+      "t_op_total_sec": 16320.0,
+      "sub_op_results": [
+        {
+          "operation_seq": 9,
+          "sub_op_seq": 1,
+          "operation_type": "roll_form",
+          "kind": "bend",
+          "method": "static",
+          "feature_id": "F35",
+          "inputs": {},
+          "sources": {},
+          "t_cut_sec": 14400.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 14400.0,
+          "trace": {
+            "minutes_each": 240.0,
+            "count": 1.0
+          },
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [],
+          "note": null
+        }
+      ]
+    },
+    {
+      "sequence": 10,
+      "name": "Roll Lower Skirt",
+      "machine_family": "plate_bending",
+      "in_house": true,
+      "setup_time_sec": 1800.0,
+      "t_setup_per_piece_sec": 1800.0,
+      "t_handling_sec": 120.0,
+      "t_machining_sec": 14400.0,
+      "t_op_total_sec": 16320.0,
+      "sub_op_results": [
+        {
+          "operation_seq": 10,
+          "sub_op_seq": 1,
+          "operation_type": "roll_form",
+          "kind": "bend",
+          "method": "static",
+          "feature_id": "F36",
+          "inputs": {},
+          "sources": {},
+          "t_cut_sec": 14400.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 14400.0,
+          "trace": {
+            "minutes_each": 240.0,
+            "count": 1.0
+          },
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [],
+          "note": null
+        }
+      ]
+    },
+    {
+      "sequence": 11,
+      "name": "Form Upper Dished Head",
+      "machine_family": "plate_bending",
+      "in_house": false,
+      "setup_time_sec": 0.0,
+      "t_setup_per_piece_sec": 0.0,
+      "t_handling_sec": 0.0,
+      "t_machining_sec": 0.0,
+      "t_op_total_sec": 0.0,
+      "sub_op_results": [
+        {
+          "operation_seq": 11,
+          "sub_op_seq": 1,
+          "operation_type": "stamp_form",
+          "kind": "bend",
+          "method": "excluded",
+          "feature_id": null,
+          "inputs": {},
+          "sources": {},
+          "t_cut_sec": 0.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 0.0,
+          "trace": {},
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [],
+          "note": null
+        }
+      ]
+    },
+    {
+      "sequence": 12,
+      "name": "Form Lower Dished Head",
+      "machine_family": "plate_bending",
+      "in_house": false,
+      "setup_time_sec": 0.0,
+      "t_setup_per_piece_sec": 0.0,
+      "t_handling_sec": 0.0,
+      "t_machining_sec": 0.0,
+      "t_op_total_sec": 0.0,
+      "sub_op_results": [
+        {
+          "operation_seq": 12,
+          "sub_op_seq": 1,
+          "operation_type": "stamp_form",
+          "kind": "bend",
+          "method": "excluded",
+          "feature_id": null,
+          "inputs": {},
+          "sources": {},
+          "t_cut_sec": 0.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 0.0,
+          "trace": {},
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [],
+          "note": null
+        }
+      ]
+    },
+    {
+      "sequence": 13,
+      "name": "Form Toricone Knuckles",
+      "machine_family": "plate_bending",
+      "in_house": false,
+      "setup_time_sec": 0.0,
+      "t_setup_per_piece_sec": 0.0,
+      "t_handling_sec": 0.0,
+      "t_machining_sec": 0.0,
+      "t_op_total_sec": 0.0,
+      "sub_op_results": [
+        {
+          "operation_seq": 13,
+          "sub_op_seq": 1,
+          "operation_type": "stamp_form",
+          "kind": "bend",
+          "method": "excluded",
+          "feature_id": null,
+          "inputs": {},
+          "sources": {},
+          "t_cut_sec": 0.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 0.0,
+          "trace": {},
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_seq": 13,
+          "sub_op_seq": 2,
+          "operation_type": "stamp_form",
+          "kind": "bend",
+          "method": "excluded",
+          "feature_id": null,
+          "inputs": {},
+          "sources": {},
+          "t_cut_sec": 0.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 0.0,
+          "trace": {},
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [],
+          "note": null
+        }
+      ]
+    },
+    {
+      "sequence": 14,
+      "name": "Restore Formed-Part Normalized Condition",
+      "machine_family": "furnace",
+      "in_house": true,
+      "setup_time_sec": 2400.0,
+      "t_setup_per_piece_sec": 2400.0,
+      "t_handling_sec": 120.0,
+      "t_machining_sec": 28800.0,
+      "t_op_total_sec": 31320.0,
+      "sub_op_results": [
+        {
+          "operation_seq": 14,
+          "sub_op_seq": 1,
+          "operation_type": "normalize",
+          "kind": "furnace_cycle",
+          "method": "static",
+          "feature_id": null,
+          "inputs": {},
+          "sources": {},
+          "t_cut_sec": 28800.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 28800.0,
+          "trace": {
+            "minutes_each": 480.0,
+            "count": 1.0
+          },
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [],
+          "note": null
+        }
+      ]
+    },
+    {
+      "sequence": 15,
+      "name": "Rough Turn Hillside Nozzle Forging",
+      "machine_family": "cnc_lathe",
+      "in_house": true,
+      "setup_time_sec": 1200.0,
+      "t_setup_per_piece_sec": 1200.0,
+      "t_handling_sec": 30.0,
+      "t_machining_sec": 78.9,
+      "t_op_total_sec": 1308.9,
+      "sub_op_results": [
+        {
+          "operation_seq": 15,
+          "sub_op_seq": 1,
+          "operation_type": "face_turn",
+          "kind": "radial_turn",
+          "method": "fallback",
+          "feature_id": "F55",
+          "inputs": {},
+          "sources": {
+            "finish_diameter_mm": {
+              "ref": "solid face",
+              "kind": "computed"
+            },
+            "total_stock_mm": {
+              "ref": "config.allowances.facing_stock_per_face_mm",
+              "kind": "config"
+            }
+          },
+          "t_cut_sec": 18.0,
+          "t_tool_sec": 0.45,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 18.45,
+          "trace": {
+            "fallback_min": 0.3
+          },
+          "warnings": [],
+          "missing": [
+            "F55 start diameter (stock or feature)"
+          ],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_seq": 15,
+          "sub_op_seq": 2,
+          "operation_type": "turn_taper",
+          "kind": "axial_turn",
+          "method": "fallback",
+          "feature_id": "F59",
+          "inputs": {},
+          "sources": {},
+          "t_cut_sec": 60.0,
+          "t_tool_sec": 0.45,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 60.45,
+          "trace": {
+            "fallback_min": 1.0
+          },
+          "warnings": [],
+          "missing": [
+            "F59.length",
+            "F59.diameter"
+          ],
+          "cutting_limits": [],
+          "note": null
+        }
+      ]
+    },
+    {
+      "sequence": 16,
+      "name": "Machine Hillside Saddle and Weld Preparation",
+      "machine_family": "cnc_milling",
+      "in_house": true,
+      "setup_time_sec": 1500.0,
+      "t_setup_per_piece_sec": 1500.0,
+      "t_handling_sec": 48.0,
+      "t_machining_sec": 246.6,
+      "t_op_total_sec": 1794.6,
+      "sub_op_results": [
+        {
+          "operation_seq": 16,
+          "sub_op_seq": 1,
+          "operation_type": "profile_mill",
+          "kind": "contour_mill",
+          "method": "fallback",
+          "feature_id": "F55",
+          "inputs": {},
+          "sources": {
+            "path_count": {
+              "ref": "F55.instance_count",
+              "kind": "drawing"
+            }
+          },
+          "t_cut_sec": 120.0,
+          "t_tool_sec": 0.3,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 120.3,
+          "trace": {
+            "fallback_min": 2.0
+          },
+          "warnings": [],
+          "missing": [
+            "F55: no contour rule for feature type 'boss'"
+          ],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_seq": 16,
+          "sub_op_seq": 2,
+          "operation_type": "profile_mill",
+          "kind": "contour_mill",
+          "method": "fallback",
+          "feature_id": "F57",
+          "inputs": {},
+          "sources": {
+            "path_count": {
+              "ref": "F57.instance_count",
+              "kind": "drawing"
+            }
+          },
+          "t_cut_sec": 120.0,
+          "t_tool_sec": 0.3,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 120.3,
+          "trace": {
+            "fallback_min": 2.0
+          },
+          "warnings": [],
+          "missing": [
+            "F57: no contour rule for feature type 'edge_treatment'"
+          ],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_seq": 16,
+          "sub_op_seq": 3,
+          "operation_type": "chamfer_mill",
+          "kind": "contour_mill",
+          "method": "static",
+          "feature_id": "F56",
+          "inputs": {},
+          "sources": {},
+          "t_cut_sec": 6.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 6.0,
+          "trace": {
+            "minutes_each": 0.1,
+            "count": 1.0
+          },
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [],
+          "note": null
+        }
+      ]
+    },
+    {
+      "sequence": 17,
+      "name": "Machine Loose Reducing Flange \u2014 First Side",
+      "machine_family": "cnc_lathe",
+      "in_house": true,
+      "setup_time_sec": 1200.0,
+      "t_setup_per_piece_sec": 1200.0,
+      "t_handling_sec": 30.0,
+      "t_machining_sec": 278.7,
+      "t_op_total_sec": 1508.7,
+      "sub_op_results": [
+        {
+          "operation_seq": 17,
+          "sub_op_seq": 1,
+          "operation_type": "face_turn",
+          "kind": "radial_turn",
+          "method": "fallback",
+          "feature_id": "F49",
+          "inputs": {},
+          "sources": {
+            "finish_diameter_mm": {
+              "ref": "solid face",
+              "kind": "computed"
+            },
+            "total_stock_mm": {
+              "ref": "config.allowances.facing_stock_per_face_mm",
+              "kind": "config"
+            }
+          },
+          "t_cut_sec": 18.0,
+          "t_tool_sec": 0.45,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 18.45,
+          "trace": {
+            "fallback_min": 0.3
+          },
+          "warnings": [],
+          "missing": [
+            "F49 start diameter (stock or feature)"
+          ],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_seq": 17,
+          "sub_op_seq": 2,
+          "operation_type": "rough_turn_od",
+          "kind": "axial_turn",
+          "method": "fallback",
+          "feature_id": "F49",
+          "inputs": {},
+          "sources": {},
+          "t_cut_sec": 60.0,
+          "t_tool_sec": 0.45,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 60.45,
+          "trace": {
+            "fallback_min": 1.0
+          },
+          "warnings": [],
+          "missing": [
+            "F49.length",
+            "F49.diameter"
+          ],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_seq": 17,
+          "sub_op_seq": 3,
+          "operation_type": "rough_bore_id",
+          "kind": "axial_turn",
+          "method": "fallback",
+          "feature_id": "F49",
+          "inputs": {},
+          "sources": {},
+          "t_cut_sec": 60.0,
+          "t_tool_sec": 0.45,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 60.45,
+          "trace": {
+            "fallback_min": 1.0
+          },
+          "warnings": [],
+          "missing": [
+            "F49.length",
+            "F49.diameter"
+          ],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_seq": 17,
+          "sub_op_seq": 4,
+          "operation_type": "finish_bore_id",
+          "kind": "axial_turn",
+          "method": "fallback",
+          "feature_id": "F49",
+          "inputs": {},
+          "sources": {},
+          "t_cut_sec": 60.0,
+          "t_tool_sec": 0.45,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 60.45,
+          "trace": {
+            "fallback_min": 1.0
+          },
+          "warnings": [],
+          "missing": [
+            "F49.length",
+            "F49.diameter"
+          ],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_seq": 17,
+          "sub_op_seq": 5,
+          "operation_type": "finish_turn_od",
+          "kind": "axial_turn",
+          "method": "fallback",
+          "feature_id": "F49",
+          "inputs": {},
+          "sources": {},
+          "t_cut_sec": 60.0,
+          "t_tool_sec": 0.45,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 60.45,
+          "trace": {
+            "fallback_min": 1.0
+          },
+          "warnings": [],
+          "missing": [
+            "F49.length",
+            "F49.diameter"
+          ],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_seq": 17,
+          "sub_op_seq": 6,
+          "operation_type": "face_turn",
+          "kind": "radial_turn",
+          "method": "fallback",
+          "feature_id": "F49",
+          "inputs": {},
+          "sources": {
+            "finish_diameter_mm": {
+              "ref": "solid face",
+              "kind": "computed"
+            },
+            "total_stock_mm": {
+              "ref": "config.allowances.finish_stock_per_side_mm",
+              "kind": "config"
+            }
+          },
+          "t_cut_sec": 18.0,
+          "t_tool_sec": 0.45,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 18.45,
+          "trace": {
+            "fallback_min": 0.3
+          },
+          "warnings": [],
+          "missing": [
+            "F49 start diameter (stock or feature)"
+          ],
+          "cutting_limits": [],
+          "note": null
+        }
+      ]
+    },
+    {
+      "sequence": 18,
+      "name": "Machine Loose Reducing Flange \u2014 Reverse Side",
+      "machine_family": "cnc_lathe",
+      "in_house": true,
+      "setup_time_sec": 1200.0,
+      "t_setup_per_piece_sec": 1200.0,
+      "t_handling_sec": 30.0,
+      "t_machining_sec": 18.45,
+      "t_op_total_sec": 1248.45,
+      "sub_op_results": [
+        {
+          "operation_seq": 18,
+          "sub_op_seq": 1,
+          "operation_type": "face_turn",
+          "kind": "radial_turn",
+          "method": "fallback",
+          "feature_id": "F49",
+          "inputs": {},
+          "sources": {
+            "finish_diameter_mm": {
+              "ref": "solid face",
+              "kind": "computed"
+            },
+            "total_stock_mm": {
+              "ref": "config.allowances.finish_stock_per_side_mm",
+              "kind": "config"
+            }
+          },
+          "t_cut_sec": 18.0,
+          "t_tool_sec": 0.45,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 18.45,
+          "trace": {
+            "fallback_min": 0.3
+          },
+          "warnings": [],
+          "missing": [
+            "F49 start diameter (stock or feature)"
+          ],
+          "cutting_limits": [],
+          "note": null
+        }
+      ]
+    },
+    {
+      "sequence": 19,
+      "name": "Machine Upper-Shell Openings",
+      "machine_family": "cnc_horizontal_boring",
+      "in_house": true,
+      "setup_time_sec": 2400.0,
+      "t_setup_per_piece_sec": 2400.0,
+      "t_handling_sec": 90.0,
+      "t_machining_sec": 246.9,
+      "t_op_total_sec": 2736.9,
+      "sub_op_results": [
+        {
+          "operation_seq": 19,
+          "sub_op_seq": 1,
+          "operation_type": "profile_mill",
+          "kind": "contour_mill",
+          "method": "fallback",
+          "feature_id": "F52",
+          "inputs": {},
+          "sources": {
+            "path_count": {
+              "ref": "F52.instance_count",
+              "kind": "drawing"
+            }
+          },
+          "t_cut_sec": 120.0,
+          "t_tool_sec": 0.9,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 120.9,
+          "trace": {
+            "fallback_min": 2.0
+          },
+          "warnings": [],
+          "missing": [
+            "F52: no contour rule for feature type 'hole'"
+          ],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_seq": 19,
+          "sub_op_seq": 1,
+          "operation_type": "profile_mill",
+          "kind": "contour_mill",
+          "method": "fallback",
+          "feature_id": "F53",
+          "inputs": {},
+          "sources": {
+            "path_count": {
+              "ref": "F53.instance_count",
+              "kind": "drawing"
+            }
+          },
+          "t_cut_sec": 120.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 120.0,
+          "trace": {
+            "fallback_min": 2.0
+          },
+          "warnings": [],
+          "missing": [
+            "F53: no contour rule for feature type 'hole'"
+          ],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_seq": 19,
+          "sub_op_seq": 2,
+          "operation_type": "chamfer_mill",
+          "kind": "contour_mill",
+          "method": "static",
+          "feature_id": null,
+          "inputs": {},
+          "sources": {},
+          "t_cut_sec": 6.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 6.0,
+          "trace": {
+            "minutes_each": 0.1,
+            "count": 1.0
+          },
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [],
+          "note": null
+        }
+      ]
+    },
+    {
+      "sequence": 20,
+      "name": "Machine Lower-Shell Openings",
+      "machine_family": "cnc_horizontal_boring",
+      "in_house": true,
+      "setup_time_sec": 2400.0,
+      "t_setup_per_piece_sec": 2400.0,
+      "t_handling_sec": 90.0,
+      "t_machining_sec": 1086.9,
+      "t_op_total_sec": 3576.9,
+      "sub_op_results": [
+        {
+          "operation_seq": 20,
+          "sub_op_seq": 1,
+          "operation_type": "profile_mill",
+          "kind": "contour_mill",
+          "method": "fallback",
+          "feature_id": "F18",
+          "inputs": {},
+          "sources": {
+            "path_count": {
+              "ref": "F18.instance_count",
+              "kind": "drawing"
+            }
+          },
+          "t_cut_sec": 120.0,
+          "t_tool_sec": 0.9,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 120.9,
+          "trace": {
+            "fallback_min": 2.0
+          },
+          "warnings": [],
+          "missing": [
+            "F18: no contour rule for feature type 'hole'"
+          ],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_seq": 20,
+          "sub_op_seq": 1,
+          "operation_type": "profile_mill",
+          "kind": "contour_mill",
+          "method": "fallback",
+          "feature_id": "F19",
+          "inputs": {},
+          "sources": {
+            "path_count": {
+              "ref": "F19.instance_count",
+              "kind": "drawing"
+            }
+          },
+          "t_cut_sec": 120.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 120.0,
+          "trace": {
+            "fallback_min": 2.0
+          },
+          "warnings": [],
+          "missing": [
+            "F19: no contour rule for feature type 'hole'"
+          ],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_seq": 20,
+          "sub_op_seq": 1,
+          "operation_type": "profile_mill",
+          "kind": "contour_mill",
+          "method": "fallback",
+          "feature_id": "F23",
+          "inputs": {},
+          "sources": {
+            "path_count": {
+              "ref": "F23.instance_count",
+              "kind": "drawing"
+            }
+          },
+          "t_cut_sec": 120.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 120.0,
+          "trace": {
+            "fallback_min": 2.0
+          },
+          "warnings": [],
+          "missing": [
+            "F23: no contour rule for feature type 'hole'"
+          ],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_seq": 20,
+          "sub_op_seq": 1,
+          "operation_type": "profile_mill",
+          "kind": "contour_mill",
+          "method": "fallback",
+          "feature_id": "F25",
+          "inputs": {},
+          "sources": {
+            "path_count": {
+              "ref": "F25.instance_count",
+              "kind": "drawing"
+            }
+          },
+          "t_cut_sec": 120.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 120.0,
+          "trace": {
+            "fallback_min": 2.0
+          },
+          "warnings": [],
+          "missing": [
+            "F25: no contour rule for feature type 'hole'"
+          ],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_seq": 20,
+          "sub_op_seq": 1,
+          "operation_type": "profile_mill",
+          "kind": "contour_mill",
+          "method": "fallback",
+          "feature_id": "F26",
+          "inputs": {},
+          "sources": {
+            "path_count": {
+              "ref": "F26.instance_count",
+              "kind": "drawing"
+            }
+          },
+          "t_cut_sec": 120.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 120.0,
+          "trace": {
+            "fallback_min": 2.0
+          },
+          "warnings": [],
+          "missing": [
+            "F26: no contour rule for feature type 'hole'"
+          ],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_seq": 20,
+          "sub_op_seq": 1,
+          "operation_type": "profile_mill",
+          "kind": "contour_mill",
+          "method": "fallback",
+          "feature_id": "F27",
+          "inputs": {},
+          "sources": {
+            "path_count": {
+              "ref": "F27.instance_count",
+              "kind": "drawing"
+            }
+          },
+          "t_cut_sec": 120.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 120.0,
+          "trace": {
+            "fallback_min": 2.0
+          },
+          "warnings": [],
+          "missing": [
+            "F27: no contour rule for feature type 'hole'"
+          ],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_seq": 20,
+          "sub_op_seq": 1,
+          "operation_type": "profile_mill",
+          "kind": "contour_mill",
+          "method": "fallback",
+          "feature_id": "F28",
+          "inputs": {},
+          "sources": {
+            "path_count": {
+              "ref": "F28.instance_count",
+              "kind": "drawing"
+            }
+          },
+          "t_cut_sec": 120.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 120.0,
+          "trace": {
+            "fallback_min": 2.0
+          },
+          "warnings": [],
+          "missing": [
+            "F28: no contour rule for feature type 'hole'"
+          ],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_seq": 20,
+          "sub_op_seq": 1,
+          "operation_type": "profile_mill",
+          "kind": "contour_mill",
+          "method": "fallback",
+          "feature_id": "F29",
+          "inputs": {},
+          "sources": {
+            "path_count": {
+              "ref": "F29.instance_count",
+              "kind": "drawing"
+            }
+          },
+          "t_cut_sec": 120.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 120.0,
+          "trace": {
+            "fallback_min": 2.0
+          },
+          "warnings": [],
+          "missing": [
+            "F29: no contour rule for feature type 'hole'"
+          ],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_seq": 20,
+          "sub_op_seq": 1,
+          "operation_type": "profile_mill",
+          "kind": "contour_mill",
+          "method": "fallback",
+          "feature_id": "F30",
+          "inputs": {},
+          "sources": {
+            "path_count": {
+              "ref": "F30.instance_count",
+              "kind": "drawing"
+            }
+          },
+          "t_cut_sec": 120.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 120.0,
+          "trace": {
+            "fallback_min": 2.0
+          },
+          "warnings": [],
+          "missing": [
+            "F30: no contour rule for feature type 'hole'"
+          ],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_seq": 20,
+          "sub_op_seq": 2,
+          "operation_type": "chamfer_mill",
+          "kind": "contour_mill",
+          "method": "static",
+          "feature_id": null,
+          "inputs": {},
+          "sources": {},
+          "t_cut_sec": 6.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 6.0,
+          "trace": {
+            "minutes_each": 0.1,
+            "count": 1.0
+          },
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [],
+          "note": null
+        }
+      ]
+    },
+    {
+      "sequence": 21,
+      "name": "Machine Upper-Head Openings",
+      "machine_family": "cnc_horizontal_boring",
+      "in_house": true,
+      "setup_time_sec": 2400.0,
+      "t_setup_per_piece_sec": 2400.0,
+      "t_handling_sec": 90.0,
+      "t_machining_sec": 366.9,
+      "t_op_total_sec": 2856.9,
+      "sub_op_results": [
+        {
+          "operation_seq": 21,
+          "sub_op_seq": 1,
+          "operation_type": "profile_mill",
+          "kind": "contour_mill",
+          "method": "fallback",
+          "feature_id": "F21",
+          "inputs": {},
+          "sources": {
+            "path_count": {
+              "ref": "F21.instance_count",
+              "kind": "drawing"
+            }
+          },
+          "t_cut_sec": 120.0,
+          "t_tool_sec": 0.9,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 120.9,
+          "trace": {
+            "fallback_min": 2.0
+          },
+          "warnings": [],
+          "missing": [
+            "F21: no contour rule for feature type 'hole'"
+          ],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_seq": 21,
+          "sub_op_seq": 1,
+          "operation_type": "profile_mill",
+          "kind": "contour_mill",
+          "method": "fallback",
+          "feature_id": "F32",
+          "inputs": {},
+          "sources": {
+            "path_count": {
+              "ref": "F32.instance_count",
+              "kind": "drawing"
+            }
+          },
+          "t_cut_sec": 120.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 120.0,
+          "trace": {
+            "fallback_min": 2.0
+          },
+          "warnings": [],
+          "missing": [
+            "F32: no contour rule for feature type 'hole'"
+          ],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_seq": 21,
+          "sub_op_seq": 1,
+          "operation_type": "profile_mill",
+          "kind": "contour_mill",
+          "method": "fallback",
+          "feature_id": "F42",
+          "inputs": {},
+          "sources": {
+            "path_count": {
+              "ref": "F42.instance_count",
+              "kind": "drawing"
+            }
+          },
+          "t_cut_sec": 120.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 120.0,
+          "trace": {
+            "fallback_min": 2.0
+          },
+          "warnings": [],
+          "missing": [
+            "F42: no contour rule for feature type 'hole'"
+          ],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_seq": 21,
+          "sub_op_seq": 2,
+          "operation_type": "chamfer_mill",
+          "kind": "contour_mill",
+          "method": "static",
+          "feature_id": null,
+          "inputs": {},
+          "sources": {},
+          "t_cut_sec": 6.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 6.0,
+          "trace": {
+            "minutes_each": 0.1,
+            "count": 1.0
+          },
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [],
+          "note": null
+        }
+      ]
+    },
+    {
+      "sequence": 22,
+      "name": "Machine Lower-Head Outlet Opening",
+      "machine_family": "cnc_horizontal_boring",
+      "in_house": true,
+      "setup_time_sec": 2400.0,
+      "t_setup_per_piece_sec": 2400.0,
+      "t_handling_sec": 90.0,
+      "t_machining_sec": 126.9,
+      "t_op_total_sec": 2616.9,
+      "sub_op_results": [
+        {
+          "operation_seq": 22,
+          "sub_op_seq": 1,
+          "operation_type": "profile_mill",
+          "kind": "contour_mill",
+          "method": "fallback",
+          "feature_id": "F34",
+          "inputs": {},
+          "sources": {
+            "path_count": {
+              "ref": "F34.instance_count",
+              "kind": "drawing"
+            }
+          },
+          "t_cut_sec": 120.0,
+          "t_tool_sec": 0.9,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 120.9,
+          "trace": {
+            "fallback_min": 2.0
+          },
+          "warnings": [],
+          "missing": [
+            "F34: no contour rule for feature type 'hole'"
+          ],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_seq": 22,
+          "sub_op_seq": 2,
+          "operation_type": "chamfer_mill",
+          "kind": "contour_mill",
+          "method": "static",
+          "feature_id": null,
+          "inputs": {},
+          "sources": {},
+          "t_cut_sec": 6.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 6.0,
+          "trace": {
+            "minutes_each": 0.1,
+            "count": 1.0
+          },
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [],
+          "note": null
+        }
+      ]
+    },
+    {
+      "sequence": 23,
+      "name": "Machine Upper-Skirt Vent Openings",
+      "machine_family": "cnc_horizontal_boring",
+      "in_house": true,
+      "setup_time_sec": 2400.0,
+      "t_setup_per_piece_sec": 2400.0,
+      "t_handling_sec": 90.0,
+      "t_machining_sec": 126.9,
+      "t_op_total_sec": 2616.9,
+      "sub_op_results": [
+        {
+          "operation_seq": 23,
+          "sub_op_seq": 1,
+          "operation_type": "profile_mill",
+          "kind": "contour_mill",
+          "method": "fallback",
+          "feature_id": "F33",
+          "inputs": {},
+          "sources": {
+            "path_count": {
+              "ref": "F33.instance_count",
+              "kind": "drawing"
+            }
+          },
+          "t_cut_sec": 120.0,
+          "t_tool_sec": 0.9,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 120.9,
+          "trace": {
+            "fallback_min": 2.0
+          },
+          "warnings": [],
+          "missing": [
+            "F33: no contour rule for feature type 'hole'"
+          ],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_seq": 23,
+          "sub_op_seq": 2,
+          "operation_type": "chamfer_mill",
+          "kind": "contour_mill",
+          "method": "static",
+          "feature_id": null,
+          "inputs": {},
+          "sources": {},
+          "t_cut_sec": 6.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 6.0,
+          "trace": {
+            "minutes_each": 0.1,
+            "count": 1.0
+          },
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [],
+          "note": null
+        }
+      ]
+    },
+    {
+      "sequence": 24,
+      "name": "Machine Lower-Skirt Access Openings",
+      "machine_family": "cnc_horizontal_boring",
+      "in_house": true,
+      "setup_time_sec": 2400.0,
+      "t_setup_per_piece_sec": 2400.0,
+      "t_handling_sec": 90.0,
+      "t_machining_sec": 126.9,
+      "t_op_total_sec": 2616.9,
+      "sub_op_results": [
+        {
+          "operation_seq": 24,
+          "sub_op_seq": 1,
+          "operation_type": "profile_mill",
+          "kind": "contour_mill",
+          "method": "fallback",
+          "feature_id": "F38",
+          "inputs": {},
+          "sources": {
+            "path_count": {
+              "ref": "F38.instance_count",
+              "kind": "drawing"
+            }
+          },
+          "t_cut_sec": 120.0,
+          "t_tool_sec": 0.9,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 120.9,
+          "trace": {
+            "fallback_min": 2.0
+          },
+          "warnings": [],
+          "missing": [
+            "F38: no contour rule for feature type 'hole'"
+          ],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_seq": 24,
+          "sub_op_seq": 2,
+          "operation_type": "chamfer_mill",
+          "kind": "contour_mill",
+          "method": "static",
+          "feature_id": null,
+          "inputs": {},
+          "sources": {},
+          "t_cut_sec": 6.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 6.0,
+          "trace": {
+            "minutes_each": 0.1,
+            "count": 1.0
+          },
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [],
+          "note": null
+        }
+      ]
+    },
+    {
+      "sequence": 25,
+      "name": "Preweld Surface Examination",
+      "machine_family": "penetrant_and_magnetic_particle",
+      "in_house": true,
+      "setup_time_sec": 900.0,
+      "t_setup_per_piece_sec": 900.0,
+      "t_handling_sec": 30.0,
+      "t_machining_sec": 7200.0,
+      "t_op_total_sec": 8130.0,
+      "sub_op_results": [
+        {
+          "operation_seq": 25,
+          "sub_op_seq": 1,
+          "operation_type": "mpi_ndt",
+          "kind": "inspection",
+          "method": "static",
+          "feature_id": null,
+          "inputs": {},
+          "sources": {},
+          "t_cut_sec": 7200.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 7200.0,
+          "trace": {
+            "minutes_each": 120.0,
+            "count": 1.0
+          },
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [],
+          "note": null
+        }
+      ]
+    },
+    {
+      "sequence": 26,
+      "name": "Fit, Tack and First-Side Weld",
+      "machine_family": "automatic_welding",
+      "in_house": true,
+      "setup_time_sec": 1500.0,
+      "t_setup_per_piece_sec": 1500.0,
+      "t_handling_sec": 60.0,
+      "t_machining_sec": 72000.0,
+      "t_op_total_sec": 73560.0,
+      "sub_op_results": [
+        {
+          "operation_seq": 26,
+          "sub_op_seq": 1,
+          "operation_type": "tack_weld",
+          "kind": "weld",
+          "method": "static",
+          "feature_id": null,
+          "inputs": {},
+          "sources": {},
+          "t_cut_sec": 14400.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 14400.0,
+          "trace": {
+            "minutes_each": 240.0,
+            "count": 1.0
+          },
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_seq": 26,
+          "sub_op_seq": 2,
+          "operation_type": "full_weld",
+          "kind": "weld",
+          "method": "static",
+          "feature_id": null,
+          "inputs": {},
+          "sources": {},
+          "t_cut_sec": 57600.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 57600.0,
+          "trace": {
+            "minutes_each": 960.0,
+            "count": 1.0
+          },
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [],
+          "note": null
+        }
+      ]
+    },
+    {
+      "sequence": 27,
+      "name": "Back-Grind Roots to Sound Metal",
+      "machine_family": "fabrication_assembly",
+      "in_house": true,
+      "setup_time_sec": 1200.0,
+      "t_setup_per_piece_sec": 1200.0,
+      "t_handling_sec": 60.0,
+      "t_machining_sec": 60.0,
+      "t_op_total_sec": 1320.0,
+      "sub_op_results": [
+        {
+          "operation_seq": 27,
+          "sub_op_seq": 1,
+          "operation_type": "deburr",
+          "kind": "manual",
+          "method": "static",
+          "feature_id": null,
+          "inputs": {},
+          "sources": {},
+          "t_cut_sec": 60.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 60.0,
+          "trace": {
+            "minutes_each": 1.0,
+            "count": 1.0
+          },
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [],
+          "note": null
+        }
+      ]
+    },
+    {
+      "sequence": 28,
+      "name": "Examine Back-Ground Roots",
+      "machine_family": "penetrant_and_magnetic_particle",
+      "in_house": true,
+      "setup_time_sec": 900.0,
+      "t_setup_per_piece_sec": 900.0,
+      "t_handling_sec": 30.0,
+      "t_machining_sec": 7200.0,
+      "t_op_total_sec": 8130.0,
+      "sub_op_results": [
+        {
+          "operation_seq": 28,
+          "sub_op_seq": 1,
+          "operation_type": "mpi_ndt",
+          "kind": "inspection",
+          "method": "static",
+          "feature_id": null,
+          "inputs": {},
+          "sources": {},
+          "t_cut_sec": 7200.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 7200.0,
+          "trace": {
+            "minutes_each": 120.0,
+            "count": 1.0
+          },
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [],
+          "note": null
+        }
+      ]
+    },
+    {
+      "sequence": 29,
+      "name": "Complete Pressure and Attachment Welding",
+      "machine_family": "automatic_welding",
+      "in_house": true,
+      "setup_time_sec": 1500.0,
+      "t_setup_per_piece_sec": 1500.0,
+      "t_handling_sec": 60.0,
+      "t_machining_sec": 115200.0,
+      "t_op_total_sec": 116760.0,
+      "sub_op_results": [
+        {
+          "operation_seq": 29,
+          "sub_op_seq": 1,
+          "operation_type": "full_weld",
+          "kind": "weld",
+          "method": "static",
+          "feature_id": "F13,F51",
+          "inputs": {},
+          "sources": {},
+          "t_cut_sec": 57600.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 57600.0,
+          "trace": {
+            "minutes_each": 960.0,
+            "count": 1.0
+          },
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_seq": 29,
+          "sub_op_seq": 2,
+          "operation_type": "full_weld",
+          "kind": "weld",
+          "method": "static",
+          "feature_id": null,
+          "inputs": {},
+          "sources": {},
+          "t_cut_sec": 57600.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 57600.0,
+          "trace": {
+            "minutes_each": 960.0,
+            "count": 1.0
+          },
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [],
+          "note": null
+        }
+      ]
+    },
+    {
+      "sequence": 30,
+      "name": "Dress Welds and Remove Temporary Attachments",
+      "machine_family": "fabrication_assembly",
+      "in_house": true,
+      "setup_time_sec": 1200.0,
+      "t_setup_per_piece_sec": 1200.0,
+      "t_handling_sec": 60.0,
+      "t_machining_sec": 60.0,
+      "t_op_total_sec": 1320.0,
+      "sub_op_results": [
+        {
+          "operation_seq": 30,
+          "sub_op_seq": 1,
+          "operation_type": "deburr",
+          "kind": "manual",
+          "method": "static",
+          "feature_id": null,
+          "inputs": {},
+          "sources": {},
+          "t_cut_sec": 60.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 60.0,
+          "trace": {
+            "minutes_each": 1.0,
+            "count": 1.0
+          },
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [],
+          "note": null
+        }
+      ]
+    },
+    {
+      "sequence": 31,
+      "name": "Pre-PWHT Radiography",
+      "machine_family": "radiography",
+      "in_house": true,
+      "setup_time_sec": 1200.0,
+      "t_setup_per_piece_sec": 1200.0,
+      "t_handling_sec": 60.0,
+      "t_machining_sec": 28800.0,
+      "t_op_total_sec": 30060.0,
+      "sub_op_results": [
+        {
+          "operation_seq": 31,
+          "sub_op_seq": 1,
+          "operation_type": "radiograph_ndt",
+          "kind": "inspection",
+          "method": "static",
+          "feature_id": null,
+          "inputs": {},
+          "sources": {},
+          "t_cut_sec": 28800.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 28800.0,
+          "trace": {
+            "minutes_each": 480.0,
+            "count": 1.0
+          },
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [],
+          "note": null
+        }
+      ]
+    },
+    {
+      "sequence": 32,
+      "name": "Final Vessel PWHT",
+      "machine_family": "furnace",
+      "in_house": true,
+      "setup_time_sec": 2400.0,
+      "t_setup_per_piece_sec": 2400.0,
+      "t_handling_sec": 120.0,
+      "t_machining_sec": 86460.0,
+      "t_op_total_sec": 88980.0,
+      "sub_op_results": [
+        {
+          "operation_seq": 32,
+          "sub_op_seq": 1,
+          "operation_type": "mask",
+          "kind": "manual",
+          "method": "static",
+          "feature_id": null,
+          "inputs": {},
+          "sources": {},
+          "t_cut_sec": 60.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 60.0,
+          "trace": {
+            "minutes_each": 1.0,
+            "count": 1.0
+          },
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_seq": 32,
+          "sub_op_seq": 2,
+          "operation_type": "stress_relieve",
+          "kind": "furnace_cycle",
+          "method": "static",
+          "feature_id": null,
+          "inputs": {},
+          "sources": {},
+          "t_cut_sec": 86400.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 86400.0,
+          "trace": {
+            "minutes_each": 1440.0,
+            "count": 1.0
+          },
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [],
+          "note": null
+        }
+      ]
+    },
+    {
+      "sequence": 33,
+      "name": "Post-PWHT Radiography",
+      "machine_family": "radiography",
+      "in_house": true,
+      "setup_time_sec": 1200.0,
+      "t_setup_per_piece_sec": 1200.0,
+      "t_handling_sec": 60.0,
+      "t_machining_sec": 28800.0,
+      "t_op_total_sec": 30060.0,
+      "sub_op_results": [
+        {
+          "operation_seq": 33,
+          "sub_op_seq": 1,
+          "operation_type": "radiograph_ndt",
+          "kind": "inspection",
+          "method": "static",
+          "feature_id": null,
+          "inputs": {},
+          "sources": {},
+          "t_cut_sec": 28800.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 28800.0,
+          "trace": {
+            "minutes_each": 480.0,
+            "count": 1.0
+          },
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [],
+          "note": null
+        }
+      ]
+    },
+    {
+      "sequence": 34,
+      "name": "Post-PWHT Volumetric UT",
+      "machine_family": "ultrasonic_examination",
+      "in_house": true,
+      "setup_time_sec": 900.0,
+      "t_setup_per_piece_sec": 900.0,
+      "t_handling_sec": 30.0,
+      "t_machining_sec": 7200.0,
+      "t_op_total_sec": 8130.0,
+      "sub_op_results": [
+        {
+          "operation_seq": 34,
+          "sub_op_seq": 1,
+          "operation_type": "ut_ndt",
+          "kind": "inspection",
+          "method": "static",
+          "feature_id": null,
+          "inputs": {},
+          "sources": {},
+          "t_cut_sec": 7200.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 7200.0,
+          "trace": {
+            "minutes_each": 120.0,
+            "count": 1.0
+          },
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [],
+          "note": null
+        }
+      ]
+    },
+    {
+      "sequence": 35,
+      "name": "Post-PWHT Surface Examination",
+      "machine_family": "penetrant_and_magnetic_particle",
+      "in_house": true,
+      "setup_time_sec": 900.0,
+      "t_setup_per_piece_sec": 900.0,
+      "t_handling_sec": 30.0,
+      "t_machining_sec": 7200.0,
+      "t_op_total_sec": 8130.0,
+      "sub_op_results": [
+        {
+          "operation_seq": 35,
+          "sub_op_seq": 1,
+          "operation_type": "mpi_ndt",
+          "kind": "inspection",
+          "method": "static",
+          "feature_id": null,
+          "inputs": {},
+          "sources": {},
+          "t_cut_sec": 7200.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 7200.0,
+          "trace": {
+            "minutes_each": 120.0,
+            "count": 1.0
+          },
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [],
+          "note": null
+        }
+      ]
+    },
+    {
+      "sequence": 36,
+      "name": "Post-PWHT Hardness Survey",
+      "machine_family": "hardness_test",
+      "in_house": true,
+      "setup_time_sec": 600.0,
+      "t_setup_per_piece_sec": 600.0,
+      "t_handling_sec": 18.0,
+      "t_machining_sec": 120.0,
+      "t_op_total_sec": 738.0,
+      "sub_op_results": [
+        {
+          "operation_seq": 36,
+          "sub_op_seq": 1,
+          "operation_type": "hardness_test",
+          "kind": "inspection",
+          "method": "static",
+          "feature_id": null,
+          "inputs": {},
+          "sources": {},
+          "t_cut_sec": 120.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 120.0,
+          "trace": {
+            "minutes_each": 2.0,
+            "count": 1.0
+          },
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [],
+          "note": null
+        }
+      ]
+    },
+    {
+      "sequence": 37,
+      "name": "Post-PWHT Base-End Axial Machining",
+      "machine_family": "cnc_horizontal_boring",
+      "in_house": true,
+      "setup_time_sec": 2400.0,
+      "t_setup_per_piece_sec": 2400.0,
+      "t_handling_sec": 90.0,
+      "t_machining_sec": 865.2,
+      "t_op_total_sec": 3355.2,
+      "sub_op_results": [
+        {
+          "operation_seq": 37,
+          "sub_op_seq": 1,
+          "operation_type": "face_mill",
+          "kind": "face_mill",
+          "method": "fallback",
+          "feature_id": "F02",
+          "inputs": {},
+          "sources": {
+            "total_stock_mm": {
+              "ref": "config.allowances.facing_stock_per_face_mm",
+              "kind": "config"
+            },
+            "face_count": {
+              "ref": "F02.instance_count",
+              "kind": "drawing"
+            }
+          },
+          "t_cut_sec": 90.0,
+          "t_tool_sec": 0.9,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 90.9,
+          "trace": {
+            "fallback_min": 1.5
+          },
+          "warnings": [],
+          "missing": [
+            "F02 face size",
+            "F02 face size"
+          ],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_seq": 37,
+          "sub_op_seq": 2,
+          "operation_type": "face_mill",
+          "kind": "face_mill",
+          "method": "fallback",
+          "feature_id": "F06",
+          "inputs": {},
+          "sources": {
+            "total_stock_mm": {
+              "ref": "config.allowances.facing_stock_per_face_mm",
+              "kind": "config"
+            },
+            "face_count": {
+              "ref": "F06.instance_count",
+              "kind": "drawing"
+            }
+          },
+          "t_cut_sec": 90.0,
+          "t_tool_sec": 0.9,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 90.9,
+          "trace": {
+            "fallback_min": 1.5
+          },
+          "warnings": [],
+          "missing": [
+            "F06 face size",
+            "F06 face size"
+          ],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_seq": 37,
+          "sub_op_seq": 3,
+          "operation_type": "profile_mill",
+          "kind": "contour_mill",
+          "method": "fallback",
+          "feature_id": "F07",
+          "inputs": {},
+          "sources": {
+            "path_count": {
+              "ref": "F07.instance_count",
+              "kind": "drawing"
+            }
+          },
+          "t_cut_sec": 120.0,
+          "t_tool_sec": 0.9,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 120.9,
+          "trace": {
+            "fallback_min": 2.0
+          },
+          "warnings": [],
+          "missing": [
+            "F07: no contour rule for feature type 'boss'"
+          ],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_seq": 37,
+          "sub_op_seq": 4,
+          "operation_type": "face_mill",
+          "kind": "face_mill",
+          "method": "fallback",
+          "feature_id": "F02",
+          "inputs": {},
+          "sources": {
+            "total_stock_mm": {
+              "ref": "config.allowances.facing_stock_per_face_mm",
+              "kind": "config"
+            },
+            "face_count": {
+              "ref": "F02.instance_count",
+              "kind": "drawing"
+            }
+          },
+          "t_cut_sec": 90.0,
+          "t_tool_sec": 0.9,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 90.9,
+          "trace": {
+            "fallback_min": 1.5
+          },
+          "warnings": [],
+          "missing": [
+            "F02 face size",
+            "F02 face size"
+          ],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_seq": 37,
+          "sub_op_seq": 5,
+          "operation_type": "face_mill",
+          "kind": "face_mill",
+          "method": "fallback",
+          "feature_id": "F06",
+          "inputs": {},
+          "sources": {
+            "total_stock_mm": {
+              "ref": "config.allowances.facing_stock_per_face_mm",
+              "kind": "config"
+            },
+            "face_count": {
+              "ref": "F06.instance_count",
+              "kind": "drawing"
+            }
+          },
+          "t_cut_sec": 90.0,
+          "t_tool_sec": 0.9,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 90.9,
+          "trace": {
+            "fallback_min": 1.5
+          },
+          "warnings": [],
+          "missing": [
+            "F06 face size",
+            "F06 face size"
+          ],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_seq": 37,
+          "sub_op_seq": 6,
+          "operation_type": "profile_mill",
+          "kind": "contour_mill",
+          "method": "fallback",
+          "feature_id": "F07",
+          "inputs": {},
+          "sources": {
+            "path_count": {
+              "ref": "F07.instance_count",
+              "kind": "drawing"
+            }
+          },
+          "t_cut_sec": 120.0,
+          "t_tool_sec": 0.9,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 120.9,
+          "trace": {
+            "fallback_min": 2.0
+          },
+          "warnings": [],
+          "missing": [
+            "F07: no contour rule for feature type 'boss'"
+          ],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_seq": 37,
+          "sub_op_seq": 7,
+          "operation_type": "spot_drill",
+          "kind": "point_drill",
+          "method": "static",
+          "feature_id": "F08,F09",
+          "inputs": {},
+          "sources": {},
+          "t_cut_sec": 198.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 198.0,
+          "trace": {
+            "minutes_each": 0.1,
+            "count": 33.0
+          },
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_seq": 37,
+          "sub_op_seq": 8,
+          "operation_type": "drill",
+          "kind": "point_drill",
+          "method": "fallback",
+          "feature_id": "F08",
+          "inputs": {},
+          "sources": {
+            "hole_diameter_mm": {
+              "ref": "F08.diameter",
+              "kind": "drawing"
+            },
+            "hole_count": {
+              "ref": "F08.instance_count",
+              "kind": "drawing"
+            }
+          },
+          "t_cut_sec": 30.0,
+          "t_tool_sec": 0.9,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 30.9,
+          "trace": {
+            "fallback_min": 0.5
+          },
+          "warnings": [
+            "F08: THRU hole has no depth and no host thickness"
+          ],
+          "missing": [
+            "F08 depth"
+          ],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_seq": 37,
+          "sub_op_seq": 9,
+          "operation_type": "drill",
+          "kind": "point_drill",
+          "method": "fallback",
+          "feature_id": "F09",
+          "inputs": {},
+          "sources": {
+            "hole_diameter_mm": {
+              "ref": "F09.diameter",
+              "kind": "drawing"
+            },
+            "hole_count": {
+              "ref": "F09.instance_count",
+              "kind": "drawing"
+            }
+          },
+          "t_cut_sec": 30.0,
+          "t_tool_sec": 0.9,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 30.9,
+          "trace": {
+            "fallback_min": 0.5
+          },
+          "warnings": [
+            "F09: THRU hole has no depth and no host thickness"
+          ],
+          "missing": [
+            "F09 depth"
+          ],
+          "cutting_limits": [],
+          "note": null
+        }
+      ]
+    },
+    {
+      "sequence": 38,
+      "name": "Post-PWHT Base Detail \u2014 Transverse Access",
+      "machine_family": "cnc_horizontal_boring",
+      "in_house": true,
+      "setup_time_sec": 2400.0,
+      "t_setup_per_piece_sec": 2400.0,
+      "t_handling_sec": 90.0,
+      "t_machining_sec": 278.7,
+      "t_op_total_sec": 2768.7,
+      "sub_op_results": [
+        {
+          "operation_seq": 38,
+          "sub_op_seq": 1,
+          "operation_type": "slot_mill",
+          "kind": "contour_mill",
+          "method": "fallback",
+          "feature_id": "F01",
+          "inputs": {},
+          "sources": {
+            "radial_width_mm": {
+              "ref": "F01.width",
+              "kind": "drawing"
+            },
+            "path_count": {
+              "ref": "F01.instance_count",
+              "kind": "drawing"
+            }
+          },
+          "t_cut_sec": 120.0,
+          "t_tool_sec": 0.9,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 120.9,
+          "trace": {
+            "fallback_min": 2.0
+          },
+          "warnings": [],
+          "missing": [
+            "F01.path_length_mm",
+            "F01.depth"
+          ],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_seq": 38,
+          "sub_op_seq": 2,
+          "operation_type": "slot_mill",
+          "kind": "contour_mill",
+          "method": "fallback",
+          "feature_id": "F01",
+          "inputs": {},
+          "sources": {
+            "radial_width_mm": {
+              "ref": "F01.width",
+              "kind": "drawing"
+            },
+            "path_count": {
+              "ref": "F01.instance_count",
+              "kind": "drawing"
+            }
+          },
+          "t_cut_sec": 120.0,
+          "t_tool_sec": 0.9,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 120.9,
+          "trace": {
+            "fallback_min": 2.0
+          },
+          "warnings": [],
+          "missing": [
+            "F01.path_length_mm",
+            "F01.depth"
+          ],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_seq": 38,
+          "sub_op_seq": 3,
+          "operation_type": "spot_drill",
+          "kind": "point_drill",
+          "method": "static",
+          "feature_id": "F03",
+          "inputs": {},
+          "sources": {},
+          "t_cut_sec": 6.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 6.0,
+          "trace": {
+            "minutes_each": 0.1,
+            "count": 1.0
+          },
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_seq": 38,
+          "sub_op_seq": 4,
+          "operation_type": "drill",
+          "kind": "point_drill",
+          "method": "fallback",
+          "feature_id": "F03",
+          "inputs": {},
+          "sources": {
+            "hole_diameter_mm": {
+              "ref": "F03.diameter",
+              "kind": "drawing"
+            },
+            "hole_count": {
+              "ref": "F03.instance_count",
+              "kind": "drawing"
+            }
+          },
+          "t_cut_sec": 30.0,
+          "t_tool_sec": 0.9,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 30.9,
+          "trace": {
+            "fallback_min": 0.5
+          },
+          "warnings": [
+            "F03: THRU radial hole has no through_length and no local wall"
+          ],
+          "missing": [
+            "F03 depth"
+          ],
+          "cutting_limits": [],
+          "note": null
+        }
+      ]
+    },
+    {
+      "sequence": 39,
+      "name": "Post-PWHT Hillside Nozzle Finishing",
+      "machine_family": "cnc_horizontal_boring",
+      "in_house": true,
+      "setup_time_sec": 2400.0,
+      "t_setup_per_piece_sec": 2400.0,
+      "t_handling_sec": 90.0,
+      "t_machining_sec": 368.7,
+      "t_op_total_sec": 2858.7,
+      "sub_op_results": [
+        {
+          "operation_seq": 39,
+          "sub_op_seq": 1,
+          "operation_type": "profile_mill",
+          "kind": "contour_mill",
+          "method": "fallback",
+          "feature_id": "F59",
+          "inputs": {},
+          "sources": {
+            "path_count": {
+              "ref": "F59.instance_count",
+              "kind": "drawing"
+            }
+          },
+          "t_cut_sec": 120.0,
+          "t_tool_sec": 0.9,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 120.9,
+          "trace": {
+            "fallback_min": 2.0
+          },
+          "warnings": [],
+          "missing": [
+            "F59: no contour rule for feature type 'turned_od'"
+          ],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_seq": 39,
+          "sub_op_seq": 2,
+          "operation_type": "profile_mill",
+          "kind": "contour_mill",
+          "method": "fallback",
+          "feature_id": "F55",
+          "inputs": {},
+          "sources": {
+            "path_count": {
+              "ref": "F55.instance_count",
+              "kind": "drawing"
+            }
+          },
+          "t_cut_sec": 120.0,
+          "t_tool_sec": 0.9,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 120.9,
+          "trace": {
+            "fallback_min": 2.0
+          },
+          "warnings": [],
+          "missing": [
+            "F55: no contour rule for feature type 'boss'"
+          ],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_seq": 39,
+          "sub_op_seq": 3,
+          "operation_type": "profile_mill",
+          "kind": "contour_mill",
+          "method": "fallback",
+          "feature_id": "F57",
+          "inputs": {},
+          "sources": {
+            "path_count": {
+              "ref": "F57.instance_count",
+              "kind": "drawing"
+            }
+          },
+          "t_cut_sec": 120.0,
+          "t_tool_sec": 0.9,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 120.9,
+          "trace": {
+            "fallback_min": 2.0
+          },
+          "warnings": [],
+          "missing": [
+            "F57: no contour rule for feature type 'edge_treatment'"
+          ],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_seq": 39,
+          "sub_op_seq": 4,
+          "operation_type": "chamfer_mill",
+          "kind": "contour_mill",
+          "method": "static",
+          "feature_id": "F56",
+          "inputs": {},
+          "sources": {},
+          "t_cut_sec": 6.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 6.0,
+          "trace": {
+            "minutes_each": 0.1,
+            "count": 1.0
+          },
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [],
+          "note": null
+        }
+      ]
+    },
+    {
+      "sequence": 40,
+      "name": "Finish Welded-Nozzle Gasket Faces",
+      "machine_family": "cnc_horizontal_boring",
+      "in_house": true,
+      "setup_time_sec": 2400.0,
+      "t_setup_per_piece_sec": 2400.0,
+      "t_handling_sec": 90.0,
+      "t_machining_sec": 120.9,
+      "t_op_total_sec": 2610.9,
+      "sub_op_results": [
+        {
+          "operation_seq": 40,
+          "sub_op_seq": 1,
+          "operation_type": "unmask",
+          "kind": "manual",
+          "method": "static",
+          "feature_id": null,
+          "inputs": {},
+          "sources": {},
+          "t_cut_sec": 30.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 30.0,
+          "trace": {
+            "minutes_each": 0.5,
+            "count": 1.0
+          },
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_seq": 40,
+          "sub_op_seq": 2,
+          "operation_type": "face_mill",
+          "kind": "face_mill",
+          "method": "fallback",
+          "feature_id": null,
+          "inputs": {},
+          "sources": {},
+          "t_cut_sec": 90.0,
+          "t_tool_sec": 0.9,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 90.9,
+          "trace": {
+            "fallback_min": 1.5
+          },
+          "warnings": [],
+          "missing": [
+            "face_mill has no target feature"
+          ],
+          "cutting_limits": [],
+          "note": null
+        }
+      ]
+    },
+    {
+      "sequence": 41,
+      "name": "Final Machined-Forging Surface Examination",
+      "machine_family": "penetrant_and_magnetic_particle",
+      "in_house": true,
+      "setup_time_sec": 900.0,
+      "t_setup_per_piece_sec": 900.0,
+      "t_handling_sec": 30.0,
+      "t_machining_sec": 7200.0,
+      "t_op_total_sec": 8130.0,
+      "sub_op_results": [
+        {
+          "operation_seq": 41,
+          "sub_op_seq": 1,
+          "operation_type": "mpi_ndt",
+          "kind": "inspection",
+          "method": "static",
+          "feature_id": null,
+          "inputs": {},
+          "sources": {},
+          "t_cut_sec": 7200.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 7200.0,
+          "trace": {
+            "minutes_each": 120.0,
+            "count": 1.0
+          },
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [],
+          "note": null
+        }
+      ]
+    },
+    {
+      "sequence": 42,
+      "name": "Final Shop Dimensional Survey and Deburr",
+      "machine_family": "dimensional_inspection",
+      "in_house": true,
+      "setup_time_sec": 600.0,
+      "t_setup_per_piece_sec": 600.0,
+      "t_handling_sec": 30.0,
+      "t_machining_sec": 90.0,
+      "t_op_total_sec": 720.0,
+      "sub_op_results": [
+        {
+          "operation_seq": 42,
+          "sub_op_seq": 1,
+          "operation_type": "manual_inspect",
+          "kind": "inspection",
+          "method": "static",
+          "feature_id": null,
+          "inputs": {},
+          "sources": {},
+          "t_cut_sec": 90.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 90.0,
+          "trace": {
+            "minutes_each": 1.5,
+            "count": 1.0
+          },
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [],
+          "note": null
+        }
+      ]
+    },
+    {
+      "sequence": 43,
+      "name": "Shop Horizontal Hydrostatic Test",
+      "machine_family": "hydrostatic_test",
+      "in_house": true,
+      "setup_time_sec": 1800.0,
+      "t_setup_per_piece_sec": 1800.0,
+      "t_handling_sec": 120.0,
+      "t_machining_sec": 28800.0,
+      "t_op_total_sec": 30720.0,
+      "sub_op_results": [
+        {
+          "operation_seq": 43,
+          "sub_op_seq": 1,
+          "operation_type": "assemble",
+          "kind": "manual",
+          "method": "static",
+          "feature_id": null,
+          "inputs": {},
+          "sources": {},
+          "t_cut_sec": 14400.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 14400.0,
+          "trace": {
+            "minutes_each": 240.0,
+            "count": 1.0
+          },
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_seq": 43,
+          "sub_op_seq": 2,
+          "operation_type": "pressure_test",
+          "kind": "inspection",
+          "method": "static",
+          "feature_id": null,
+          "inputs": {},
+          "sources": {},
+          "t_cut_sec": 14400.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 14400.0,
+          "trace": {
+            "minutes_each": 240.0,
+            "count": 1.0
+          },
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [],
+          "note": null
+        }
+      ]
+    },
+    {
+      "sequence": 44,
+      "name": "Drain and Dry After Shop Hydrotest",
+      "machine_family": "hydrostatic_test",
+      "in_house": true,
+      "setup_time_sec": 1800.0,
+      "t_setup_per_piece_sec": 1800.0,
+      "t_handling_sec": 120.0,
+      "t_machining_sec": 30.0,
+      "t_op_total_sec": 1950.0,
+      "sub_op_results": [
+        {
+          "operation_seq": 44,
+          "sub_op_seq": 1,
+          "operation_type": "clean_degrease",
+          "kind": "manual",
+          "method": "static",
+          "feature_id": null,
+          "inputs": {},
+          "sources": {},
+          "t_cut_sec": 30.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 30.0,
+          "trace": {
+            "minutes_each": 0.5,
+            "count": 1.0
+          },
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [],
+          "note": null
+        }
+      ]
+    },
+    {
+      "sequence": 45,
+      "name": "Cut Removable-Internals Components",
+      "machine_family": "cnc_plasma",
+      "in_house": true,
+      "setup_time_sec": 900.0,
+      "t_setup_per_piece_sec": 900.0,
+      "t_handling_sec": 30.0,
+      "t_machining_sec": 3600.0,
+      "t_op_total_sec": 4530.0,
+      "sub_op_results": [
+        {
+          "operation_seq": 45,
+          "sub_op_seq": 1,
+          "operation_type": "plasma_cut",
+          "kind": "sheet_cut",
+          "method": "static",
+          "feature_id": null,
+          "inputs": {},
+          "sources": {},
+          "t_cut_sec": 3600.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 3600.0,
+          "trace": {
+            "minutes_each": 60.0,
+            "count": 1.0
+          },
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [],
+          "note": null
+        }
+      ]
+    },
+    {
+      "sequence": 46,
+      "name": "Build Removable-Internals Sections",
+      "machine_family": "fabrication_assembly",
+      "in_house": true,
+      "setup_time_sec": 1200.0,
+      "t_setup_per_piece_sec": 1200.0,
+      "t_handling_sec": 60.0,
+      "t_machining_sec": 14400.0,
+      "t_op_total_sec": 15660.0,
+      "sub_op_results": [
+        {
+          "operation_seq": 46,
+          "sub_op_seq": 1,
+          "operation_type": "assemble",
+          "kind": "manual",
+          "method": "static",
+          "feature_id": "F11,F12,F20,F22,F24",
+          "inputs": {},
+          "sources": {},
+          "t_cut_sec": 14400.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 14400.0,
+          "trace": {
+            "minutes_each": 240.0,
+            "count": 1.0
+          },
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [],
+          "note": null
+        }
+      ]
+    },
+    {
+      "sequence": 47,
+      "name": "Weld Removable-Internals Sections",
+      "machine_family": "automatic_welding",
+      "in_house": true,
+      "setup_time_sec": 1500.0,
+      "t_setup_per_piece_sec": 1500.0,
+      "t_handling_sec": 60.0,
+      "t_machining_sec": 72000.0,
+      "t_op_total_sec": 73560.0,
+      "sub_op_results": [
+        {
+          "operation_seq": 47,
+          "sub_op_seq": 1,
+          "operation_type": "tack_weld",
+          "kind": "weld",
+          "method": "static",
+          "feature_id": null,
+          "inputs": {},
+          "sources": {},
+          "t_cut_sec": 14400.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 14400.0,
+          "trace": {
+            "minutes_each": 240.0,
+            "count": 1.0
+          },
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_seq": 47,
+          "sub_op_seq": 2,
+          "operation_type": "full_weld",
+          "kind": "weld",
+          "method": "static",
+          "feature_id": null,
+          "inputs": {},
+          "sources": {},
+          "t_cut_sec": 57600.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 57600.0,
+          "trace": {
+            "minutes_each": 960.0,
+            "count": 1.0
+          },
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [],
+          "note": null
+        }
+      ]
+    },
+    {
+      "sequence": 48,
+      "name": "Examine Removable-Internals Welds",
+      "machine_family": "penetrant_and_magnetic_particle",
+      "in_house": true,
+      "setup_time_sec": 900.0,
+      "t_setup_per_piece_sec": 900.0,
+      "t_handling_sec": 30.0,
+      "t_machining_sec": 5400.0,
+      "t_op_total_sec": 6330.0,
+      "sub_op_results": [
+        {
+          "operation_seq": 48,
+          "sub_op_seq": 1,
+          "operation_type": "fpi_ndt",
+          "kind": "inspection",
+          "method": "static",
+          "feature_id": null,
+          "inputs": {},
+          "sources": {},
+          "t_cut_sec": 5400.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 5400.0,
+          "trace": {
+            "minutes_each": 90.0,
+            "count": 1.0
+          },
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [],
+          "note": null
+        }
+      ]
+    },
+    {
+      "sequence": 49,
+      "name": "Deburr and Piece-Mark Internals",
+      "machine_family": "fabrication_assembly",
+      "in_house": true,
+      "setup_time_sec": 1200.0,
+      "t_setup_per_piece_sec": 1200.0,
+      "t_handling_sec": 60.0,
+      "t_machining_sec": 90.0,
+      "t_op_total_sec": 1350.0,
+      "sub_op_results": [
+        {
+          "operation_seq": 49,
+          "sub_op_seq": 1,
+          "operation_type": "deburr",
+          "kind": "manual",
+          "method": "static",
+          "feature_id": null,
+          "inputs": {},
+          "sources": {},
+          "t_cut_sec": 60.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 60.0,
+          "trace": {
+            "minutes_each": 1.0,
+            "count": 1.0
+          },
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_seq": 49,
+          "sub_op_seq": 2,
+          "operation_type": "mark_stamp",
+          "kind": "manual",
+          "method": "static",
+          "feature_id": null,
+          "inputs": {},
+          "sources": {},
+          "t_cut_sec": 30.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 30.0,
+          "trace": {
+            "minutes_each": 0.5,
+            "count": 1.0
+          },
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [],
+          "note": null
+        }
+      ]
+    },
+    {
+      "sequence": 50,
+      "name": "Trial Assemble Each Internals Type",
+      "machine_family": "fabrication_assembly",
+      "in_house": true,
+      "setup_time_sec": 1200.0,
+      "t_setup_per_piece_sec": 1200.0,
+      "t_handling_sec": 60.0,
+      "t_machining_sec": 14490.0,
+      "t_op_total_sec": 15750.0,
+      "sub_op_results": [
+        {
+          "operation_seq": 50,
+          "sub_op_seq": 1,
+          "operation_type": "assemble",
+          "kind": "manual",
+          "method": "static",
+          "feature_id": "F11,F12,F20,F22,F24",
+          "inputs": {},
+          "sources": {},
+          "t_cut_sec": 14400.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 14400.0,
+          "trace": {
+            "minutes_each": 240.0,
+            "count": 1.0
+          },
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_seq": 50,
+          "sub_op_seq": 2,
+          "operation_type": "manual_inspect",
+          "kind": "inspection",
+          "method": "static",
+          "feature_id": null,
+          "inputs": {},
+          "sources": {},
+          "t_cut_sec": 90.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 90.0,
+          "trace": {
+            "minutes_each": 1.5,
+            "count": 1.0
+          },
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [],
+          "note": null
+        }
+      ]
+    },
+    {
+      "sequence": 51,
+      "name": "Test Specified Liquid-Tight Internals",
+      "machine_family": "hydrostatic_test",
+      "in_house": true,
+      "setup_time_sec": 1800.0,
+      "t_setup_per_piece_sec": 1800.0,
+      "t_handling_sec": 120.0,
+      "t_machining_sec": 14400.0,
+      "t_op_total_sec": 16320.0,
+      "sub_op_results": [
+        {
+          "operation_seq": 51,
+          "sub_op_seq": 1,
+          "operation_type": "pressure_test",
+          "kind": "inspection",
+          "method": "static",
+          "feature_id": null,
+          "inputs": {},
+          "sources": {},
+          "t_cut_sec": 14400.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 14400.0,
+          "trace": {
+            "minutes_each": 240.0,
+            "count": 1.0
+          },
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [],
+          "note": null
+        }
+      ]
+    },
+    {
+      "sequence": 52,
+      "name": "Distributor Hydraulic Acceptance Test",
+      "machine_family": "hydrostatic_test",
+      "in_house": true,
+      "setup_time_sec": 1800.0,
+      "t_setup_per_piece_sec": 1800.0,
+      "t_handling_sec": 120.0,
+      "t_machining_sec": 14400.0,
+      "t_op_total_sec": 16320.0,
+      "sub_op_results": [
+        {
+          "operation_seq": 52,
+          "sub_op_seq": 1,
+          "operation_type": "pressure_test",
+          "kind": "inspection",
+          "method": "static",
+          "feature_id": null,
+          "inputs": {},
+          "sources": {},
+          "t_cut_sec": 14400.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 14400.0,
+          "trace": {
+            "minutes_each": 240.0,
+            "count": 1.0
+          },
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [],
+          "note": null
+        }
+      ]
+    },
+    {
+      "sequence": 53,
+      "name": "Trial Assemble Platform Modules",
+      "machine_family": "fabrication_assembly",
+      "in_house": true,
+      "setup_time_sec": 1200.0,
+      "t_setup_per_piece_sec": 1200.0,
+      "t_handling_sec": 60.0,
+      "t_machining_sec": 14490.0,
+      "t_op_total_sec": 15750.0,
+      "sub_op_results": [
+        {
+          "operation_seq": 53,
+          "sub_op_seq": 1,
+          "operation_type": "assemble",
+          "kind": "manual",
+          "method": "static",
+          "feature_id": "F39,F40,F41,F43,F44,F45,F46,F47,F48",
+          "inputs": {},
+          "sources": {},
+          "t_cut_sec": 14400.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 14400.0,
+          "trace": {
+            "minutes_each": 240.0,
+            "count": 1.0
+          },
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_seq": 53,
+          "sub_op_seq": 2,
+          "operation_type": "manual_inspect",
+          "kind": "inspection",
+          "method": "static",
+          "feature_id": null,
+          "inputs": {},
+          "sources": {},
+          "t_cut_sec": 90.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 90.0,
+          "trace": {
+            "minutes_each": 1.5,
+            "count": 1.0
+          },
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [],
+          "note": null
+        }
+      ]
+    },
+    {
+      "sequence": 54,
+      "name": "Site Erection",
+      "machine_family": "crane",
+      "in_house": true,
+      "setup_time_sec": 600.0,
+      "t_setup_per_piece_sec": 600.0,
+      "t_handling_sec": 60.0,
+      "t_machining_sec": 30.0,
+      "t_op_total_sec": 690.0,
+      "sub_op_results": [
+        {
+          "operation_seq": 54,
+          "sub_op_seq": 1,
+          "operation_type": "load_unload",
+          "kind": "manual",
+          "method": "static",
+          "feature_id": null,
+          "inputs": {},
+          "sources": {},
+          "t_cut_sec": 30.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 30.0,
+          "trace": {
+            "minutes_each": 0.5,
+            "count": 1.0
+          },
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [],
+          "note": null
+        }
+      ]
+    },
+    {
+      "sequence": 55,
+      "name": "Site Plumbness and Foundation Survey",
+      "machine_family": "dimensional_inspection",
+      "in_house": true,
+      "setup_time_sec": 600.0,
+      "t_setup_per_piece_sec": 600.0,
+      "t_handling_sec": 30.0,
+      "t_machining_sec": 90.0,
+      "t_op_total_sec": 720.0,
+      "sub_op_results": [
+        {
+          "operation_seq": 55,
+          "sub_op_seq": 1,
+          "operation_type": "manual_inspect",
+          "kind": "inspection",
+          "method": "static",
+          "feature_id": null,
+          "inputs": {},
+          "sources": {},
+          "t_cut_sec": 90.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 90.0,
+          "trace": {
+            "minutes_each": 1.5,
+            "count": 1.0
+          },
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [],
+          "note": null
+        }
+      ]
+    },
+    {
+      "sequence": 56,
+      "name": "Site Vertical Hydrostatic Test",
+      "machine_family": "hydrostatic_test",
+      "in_house": true,
+      "setup_time_sec": 1800.0,
+      "t_setup_per_piece_sec": 1800.0,
+      "t_handling_sec": 120.0,
+      "t_machining_sec": 28800.0,
+      "t_op_total_sec": 30720.0,
+      "sub_op_results": [
+        {
+          "operation_seq": 56,
+          "sub_op_seq": 1,
+          "operation_type": "assemble",
+          "kind": "manual",
+          "method": "static",
+          "feature_id": null,
+          "inputs": {},
+          "sources": {},
+          "t_cut_sec": 14400.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 14400.0,
+          "trace": {
+            "minutes_each": 240.0,
+            "count": 1.0
+          },
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_seq": 56,
+          "sub_op_seq": 2,
+          "operation_type": "pressure_test",
+          "kind": "inspection",
+          "method": "static",
+          "feature_id": null,
+          "inputs": {},
+          "sources": {},
+          "t_cut_sec": 14400.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 14400.0,
+          "trace": {
+            "minutes_each": 240.0,
+            "count": 1.0
+          },
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [],
+          "note": null
+        }
+      ]
+    },
+    {
+      "sequence": 57,
+      "name": "Drain and Dry After Site Hydrotest",
+      "machine_family": "hydrostatic_test",
+      "in_house": true,
+      "setup_time_sec": 1800.0,
+      "t_setup_per_piece_sec": 1800.0,
+      "t_handling_sec": 120.0,
+      "t_machining_sec": 30.0,
+      "t_op_total_sec": 1950.0,
+      "sub_op_results": [
+        {
+          "operation_seq": 57,
+          "sub_op_seq": 1,
+          "operation_type": "clean_degrease",
+          "kind": "manual",
+          "method": "static",
+          "feature_id": null,
+          "inputs": {},
+          "sources": {},
+          "t_cut_sec": 30.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 30.0,
+          "trace": {
+            "minutes_each": 0.5,
+            "count": 1.0
+          },
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [],
+          "note": null
+        }
+      ]
+    },
+    {
+      "sequence": 58,
+      "name": "External Surface Preparation and Painting",
+      "machine_family": "painting",
+      "in_house": true,
+      "setup_time_sec": 1500.0,
+      "t_setup_per_piece_sec": 1500.0,
+      "t_handling_sec": 60.0,
+      "t_machining_sec": 28890.0,
+      "t_op_total_sec": 30450.0,
+      "sub_op_results": [
+        {
+          "operation_seq": 58,
+          "sub_op_seq": 1,
+          "operation_type": "mask",
+          "kind": "manual",
+          "method": "static",
+          "feature_id": null,
+          "inputs": {},
+          "sources": {},
+          "t_cut_sec": 60.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 60.0,
+          "trace": {
+            "minutes_each": 1.0,
+            "count": 1.0
+          },
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_seq": 58,
+          "sub_op_seq": 2,
+          "operation_type": "paint",
+          "kind": "surface_treat",
+          "method": "static",
+          "feature_id": null,
+          "inputs": {},
+          "sources": {},
+          "t_cut_sec": 28800.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 28800.0,
+          "trace": {
+            "minutes_each": 480.0,
+            "count": 1.0
+          },
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_seq": 58,
+          "sub_op_seq": 3,
+          "operation_type": "unmask",
+          "kind": "manual",
+          "method": "static",
+          "feature_id": null,
+          "inputs": {},
+          "sources": {},
+          "t_cut_sec": 30.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 30.0,
+          "trace": {
+            "minutes_each": 0.5,
+            "count": 1.0
+          },
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [],
+          "note": null
+        }
+      ]
+    },
+    {
+      "sequence": 59,
+      "name": "Install Removable Internals and Closures",
+      "machine_family": "fabrication_assembly",
+      "in_house": true,
+      "setup_time_sec": 1200.0,
+      "t_setup_per_piece_sec": 1200.0,
+      "t_handling_sec": 60.0,
+      "t_machining_sec": 32400.0,
+      "t_op_total_sec": 33660.0,
+      "sub_op_results": [
+        {
+          "operation_seq": 59,
+          "sub_op_seq": 1,
+          "operation_type": "assemble",
+          "kind": "manual",
+          "method": "static",
+          "feature_id": "F11,F12,F20,F22,F24",
+          "inputs": {},
+          "sources": {},
+          "t_cut_sec": 14400.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 14400.0,
+          "trace": {
+            "minutes_each": 240.0,
+            "count": 1.0
+          },
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_seq": 59,
+          "sub_op_seq": 2,
+          "operation_type": "assemble",
+          "kind": "manual",
+          "method": "static",
+          "feature_id": "F49",
+          "inputs": {},
+          "sources": {},
+          "t_cut_sec": 14400.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 14400.0,
+          "trace": {
+            "minutes_each": 240.0,
+            "count": 1.0
+          },
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_seq": 59,
+          "sub_op_seq": 3,
+          "operation_type": "insert_hardware",
+          "kind": "manual",
+          "method": "static",
+          "feature_id": null,
+          "inputs": {},
+          "sources": {},
+          "t_cut_sec": 3600.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 3600.0,
+          "trace": {
+            "minutes_each": 60.0,
+            "count": 1.0
+          },
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [],
+          "note": null
+        }
+      ]
+    },
+    {
+      "sequence": 60,
+      "name": "Final Installed Internals Level Survey",
+      "machine_family": "dimensional_inspection",
+      "in_house": true,
+      "setup_time_sec": 600.0,
+      "t_setup_per_piece_sec": 600.0,
+      "t_handling_sec": 30.0,
+      "t_machining_sec": 90.0,
+      "t_op_total_sec": 720.0,
+      "sub_op_results": [
+        {
+          "operation_seq": 60,
+          "sub_op_seq": 1,
+          "operation_type": "manual_inspect",
+          "kind": "inspection",
+          "method": "static",
+          "feature_id": null,
+          "inputs": {},
+          "sources": {},
+          "t_cut_sec": 90.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 90.0,
+          "trace": {
+            "minutes_each": 1.5,
+            "count": 1.0
+          },
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [],
+          "note": null
+        }
+      ]
+    },
+    {
+      "sequence": 61,
+      "name": "Install Platform Modules",
+      "machine_family": "fabrication_assembly",
+      "in_house": true,
+      "setup_time_sec": 1200.0,
+      "t_setup_per_piece_sec": 1200.0,
+      "t_handling_sec": 60.0,
+      "t_machining_sec": 18000.0,
+      "t_op_total_sec": 19260.0,
+      "sub_op_results": [
+        {
+          "operation_seq": 61,
+          "sub_op_seq": 1,
+          "operation_type": "assemble",
+          "kind": "manual",
+          "method": "static",
+          "feature_id": "F39,F40,F41,F43,F44,F45,F46,F47,F48",
+          "inputs": {},
+          "sources": {},
+          "t_cut_sec": 14400.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 14400.0,
+          "trace": {
+            "minutes_each": 240.0,
+            "count": 1.0
+          },
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [],
+          "note": null
+        },
+        {
+          "operation_seq": 61,
+          "sub_op_seq": 2,
+          "operation_type": "insert_hardware",
+          "kind": "manual",
+          "method": "static",
+          "feature_id": null,
+          "inputs": {},
+          "sources": {},
+          "t_cut_sec": 3600.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 3600.0,
+          "trace": {
+            "minutes_each": 60.0,
+            "count": 1.0
+          },
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [],
+          "note": null
+        }
+      ]
+    },
+    {
+      "sequence": 62,
+      "name": "Final Acceptance and Manufacturing Record",
+      "machine_family": "dimensional_inspection",
+      "in_house": true,
+      "setup_time_sec": 600.0,
+      "t_setup_per_piece_sec": 600.0,
+      "t_handling_sec": 30.0,
+      "t_machining_sec": 90.0,
+      "t_op_total_sec": 720.0,
+      "sub_op_results": [
+        {
+          "operation_seq": 62,
+          "sub_op_seq": 1,
+          "operation_type": "manual_inspect",
+          "kind": "inspection",
+          "method": "static",
+          "feature_id": null,
+          "inputs": {},
+          "sources": {},
+          "t_cut_sec": 90.0,
+          "t_tool_sec": 0.0,
+          "t_rapid_sec": 0.0,
+          "t_sub_total_sec": 90.0,
+          "trace": {
+            "minutes_each": 1.5,
+            "count": 1.0
+          },
+          "warnings": [],
+          "missing": [],
+          "cutting_limits": [],
+          "note": null
+        }
+      ]
+    }
+  ]
+}

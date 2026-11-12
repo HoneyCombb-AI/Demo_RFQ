@@ -1,0 +1,1868 @@
+{
+  "analysis_id": "500054_merge_20261112T190245Z",
+  "source_feature_graph_id": "500054_merge_20261112T190245Z",
+  "quantity": 1,
+  "part_family": "fabricated",
+  "base_geometry": "complex",
+  "stock": {
+    "form": "killed_carbon_steel_plate",
+    "machining_allowance_mm": 0.5,
+    "shape": "plate"
+  },
+  "operations": [
+    {
+      "sequence": 1,
+      "name": "Material Receipt and Document Release",
+      "machine_family": "dimensional_inspection",
+      "setup_note": "Receive identified plates, forgings, seamless products, bolting and internals materials against the approved component BOM and inspection plan. Verify normalized condition, killed quality, material certificates, service suitability and drawing holds before releasing affected work.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "manual_inspect",
+          "target_feature_ids": []
+        }
+      ]
+    },
+    {
+      "sequence": 2,
+      "name": "Incoming Plate and Forging UT",
+      "machine_family": "ultrasonic_examination",
+      "setup_note": "Support each identified pressure-part plate or forging for full examination before forming or machining. Apply the hydrogen/wet-H2S service examination requirements irrespective of whether thickness exceeds 50 mm.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "ut_ndt",
+          "target_feature_ids": []
+        }
+      ]
+    },
+    {
+      "sequence": 3,
+      "name": "Required Material and Welding Coupon Tests",
+      "machine_family": "destructive_testing",
+      "setup_note": "Locate traceable material or production-weld coupons in the applicable test fixtures. Perform impact and other destructive tests required by the approved code/specification test matrix, accounting for representative fabrication heat-treatment exposure.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "structural_test",
+          "target_feature_ids": []
+        }
+      ]
+    },
+    {
+      "sequence": 4,
+      "name": "Cut Plate Components",
+      "machine_family": "cnc_plasma",
+      "setup_note": "Locate identified plate on the cutting bed using the released nesting and course drawings, transferring traceability before separation. Cut shell developments, cone and skirt sectors, head blanks, rings and attachment pieces with forming, weld-shrinkage and machining reserves.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "mark_stamp",
+          "target_feature_ids": []
+        },
+        {
+          "sequence": 2,
+          "operation_type": "plasma_cut",
+          "target_feature_ids": [
+            "F02",
+            "F06"
+          ]
+        },
+        {
+          "sequence": 3,
+          "operation_type": "plasma_cut",
+          "target_feature_ids": []
+        }
+      ]
+    },
+    {
+      "sequence": 5,
+      "name": "Plate Weld-Edge Preparation",
+      "machine_family": "cnc_milling",
+      "setup_note": "Clamp each cut component on supported process faces and machine weld preparations to the qualified WPS, removing detrimental thermal-cut material. These are joint-preparation references, not final vessel precision datums.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "side_mill",
+          "target_feature_ids": []
+        },
+        {
+          "sequence": 2,
+          "operation_type": "chamfer_mill",
+          "target_feature_ids": []
+        }
+      ]
+    },
+    {
+      "sequence": 6,
+      "name": "Roll Upper Shell Courses",
+      "machine_family": "plate_bending",
+      "setup_note": "Load one released upper-shell course blank with its longitudinal seam and orientation marks referenced to the rolls. Form the 1100 mm nominal internal-diameter shell course without machining the cylindrical wall.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "roll_form",
+          "target_feature_ids": [
+            "F50"
+          ]
+        }
+      ]
+    },
+    {
+      "sequence": 7,
+      "name": "Roll Lower Shell Courses",
+      "machine_family": "plate_bending",
+      "setup_note": "Load one lower-shell course blank from the approved course map and establish its seam reference on the rolls. Form the 1800 mm nominal internal diameter; the 22470 mm assembled shell length is not treated as a single rolling width.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "roll_form",
+          "target_feature_ids": [
+            "F17"
+          ]
+        }
+      ]
+    },
+    {
+      "sequence": 8,
+      "name": "Roll Conical Transition",
+      "machine_family": "plate_bending",
+      "setup_note": "Locate the released cone development by its generator and seam marks and roll the tapered wall. Use the approved transition profile rather than the extraction's assumed endpoint order or derived angle.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "roll_form",
+          "target_feature_ids": [
+            "F14"
+          ]
+        }
+      ]
+    },
+    {
+      "sequence": 9,
+      "name": "Roll Upper Skirt",
+      "machine_family": "plate_bending",
+      "setup_note": "Locate the released upper-skirt development by its seam and vessel orientation marks. Roll the tapered skirt to the approved end diameters and released length, retaining the specified minimum finished thickness.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "roll_form",
+          "target_feature_ids": [
+            "F35"
+          ]
+        }
+      ]
+    },
+    {
+      "sequence": 10,
+      "name": "Roll Lower Skirt",
+      "machine_family": "plate_bending",
+      "setup_note": "Locate the lower-skirt sector on its seam marks and roll the tapered course with the 2831 mm base internal diameter. Maintain the base-ring mating reference for subsequent fit-up.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "roll_form",
+          "target_feature_ids": [
+            "F36"
+          ]
+        }
+      ]
+    },
+    {
+      "sequence": 11,
+      "name": "Form Upper Dished Head",
+      "machine_family": "plate_bending",
+      "setup_note": "At the specialist forming supplier, locate the traceable upper-head blank in qualified dishing/flanging tooling. Form the 2:1 elliptical head and straight flange while preserving the required minimum-after-forming thickness.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "in_house": false,
+      "outside_process": "dished_head_forming",
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "stamp_form",
+          "target_feature_ids": [
+            "F10"
+          ]
+        }
+      ]
+    },
+    {
+      "sequence": 12,
+      "name": "Form Lower Dished Head",
+      "machine_family": "plate_bending",
+      "setup_note": "At the specialist forming supplier, locate the traceable lower-head blank in qualified dishing/flanging tooling. Form the 2:1 elliptical profile and straight flange, leaving the bottom-outlet opening for the released layout.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "in_house": false,
+      "outside_process": "dished_head_forming",
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "stamp_form",
+          "target_feature_ids": [
+            "F31"
+          ]
+        }
+      ]
+    },
+    {
+      "sequence": 13,
+      "name": "Form Toricone Knuckles",
+      "machine_family": "plate_bending",
+      "setup_note": "Support the rolled transition blank or released sectors in specialist flanging tooling. Form the R110 and R180 junctions and specified straight flanges without substituting machined internal grooves for the formed transitions.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "in_house": false,
+      "outside_process": "toricone_knuckle_flanging",
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "stamp_form",
+          "target_feature_ids": [
+            "F15"
+          ]
+        },
+        {
+          "sequence": 2,
+          "operation_type": "stamp_form",
+          "target_feature_ids": [
+            "F16"
+          ]
+        }
+      ]
+    },
+    {
+      "sequence": 14,
+      "name": "Restore Formed-Part Normalized Condition",
+      "machine_family": "furnace",
+      "setup_note": "Support the formed heads and toricone to prevent distortion and normalize under the approved material/forming procedure. These components may share a qualified furnace load if capacity and temperature uniformity permit; this is separate from final vessel PWHT.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "normalize",
+          "target_feature_ids": []
+        }
+      ]
+    },
+    {
+      "sequence": 15,
+      "name": "Rough Turn Hillside Nozzle Forging",
+      "machine_family": "cnc_lathe",
+      "setup_note": "Grip the identified integral-reinforcement forging on sacrificial stock and face a process reference before roughing the hub taper. Leave the released weld-distortion and finishing reserves; do not machine the hillside saddle as an axisymmetric surface.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "face_turn",
+          "target_feature_ids": [
+            "F55"
+          ]
+        },
+        {
+          "sequence": 2,
+          "operation_type": "turn_taper",
+          "target_feature_ids": [
+            "F59"
+          ]
+        }
+      ]
+    },
+    {
+      "sequence": 16,
+      "name": "Machine Hillside Saddle and Weld Preparation",
+      "machine_family": "cnc_milling",
+      "setup_note": "Fixture the nozzle forging on its turned process reference at the released hillside angle. Machine the shell-matching lip, dedicated R20 form and 45-degree preparation, retaining minimum reinforcement dimensions.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "profile_mill",
+          "target_feature_ids": [
+            "F55"
+          ]
+        },
+        {
+          "sequence": 2,
+          "operation_type": "profile_mill",
+          "target_feature_ids": [
+            "F57"
+          ]
+        },
+        {
+          "sequence": 3,
+          "operation_type": "chamfer_mill",
+          "target_feature_ids": [
+            "F56"
+          ]
+        }
+      ]
+    },
+    {
+      "sequence": 17,
+      "name": "Machine Loose Reducing Flange \u2014 First Side",
+      "machine_family": "cnc_lathe",
+      "setup_note": "Hold the bought forged reducing flange on sacrificial stock, face a locating reference and rough its single released OD and bore. Finish the bore and OD after roughing, then finish the accessible gasket face; this loose bolted component is not welded into the vessel before PWHT.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "face_turn",
+          "target_feature_ids": [
+            "F49"
+          ]
+        },
+        {
+          "sequence": 2,
+          "operation_type": "rough_turn_od",
+          "target_feature_ids": [
+            "F49"
+          ]
+        },
+        {
+          "sequence": 3,
+          "operation_type": "rough_bore_id",
+          "target_feature_ids": [
+            "F49"
+          ]
+        },
+        {
+          "sequence": 4,
+          "operation_type": "finish_bore_id",
+          "target_feature_ids": [
+            "F49"
+          ]
+        },
+        {
+          "sequence": 5,
+          "operation_type": "finish_turn_od",
+          "target_feature_ids": [
+            "F49"
+          ]
+        },
+        {
+          "sequence": 6,
+          "operation_type": "face_turn",
+          "target_feature_ids": [
+            "F49"
+          ]
+        }
+      ]
+    },
+    {
+      "sequence": 18,
+      "name": "Machine Loose Reducing Flange \u2014 Reverse Side",
+      "machine_family": "cnc_lathe",
+      "setup_note": "Reverse onto the finished locating diameter using protected jaws and seat against the first machined face. Face the opposite side to the released thickness and specified sealing finish.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "face_turn",
+          "target_feature_ids": [
+            "F49"
+          ]
+        }
+      ]
+    },
+    {
+      "sequence": 19,
+      "name": "Machine Upper-Shell Openings",
+      "machine_family": "cnc_horizontal_boring",
+      "setup_note": "Support the formed upper-shell course on an indexed fixture and locate from the released tangent-line and angular references. Mill I01 and M01 openings and their weld preparations, checking downcomer avoidance and seam clearances before cutting.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "profile_mill",
+          "target_feature_ids": [
+            "F52",
+            "F53"
+          ]
+        },
+        {
+          "sequence": 2,
+          "operation_type": "chamfer_mill",
+          "target_feature_ids": []
+        }
+      ]
+    },
+    {
+      "sequence": 20,
+      "name": "Machine Lower-Shell Openings",
+      "machine_family": "cnc_horizontal_boring",
+      "setup_note": "Locate the applicable lower-shell course from its approved elevation and angular references on a supported indexing fixture. Mill the released nozzle and manway openings and joint preparations; grouped feature IDs retain the separate physical connections named in the drawing.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "profile_mill",
+          "target_feature_ids": [
+            "F18",
+            "F19",
+            "F23",
+            "F25",
+            "F26",
+            "F27",
+            "F28",
+            "F29",
+            "F30"
+          ]
+        },
+        {
+          "sequence": 2,
+          "operation_type": "chamfer_mill",
+          "target_feature_ids": []
+        }
+      ]
+    },
+    {
+      "sequence": 21,
+      "name": "Machine Upper-Head Openings",
+      "machine_family": "cnc_horizontal_boring",
+      "setup_note": "Nest the normalized upper head in a contour-support fixture and pick up its axis and tangent plane. Mill only the released O01, G01 and V01 locations; V01 host placement and O01 size remain blocking holds.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "profile_mill",
+          "target_feature_ids": [
+            "F21",
+            "F32",
+            "F42"
+          ]
+        },
+        {
+          "sequence": 2,
+          "operation_type": "chamfer_mill",
+          "target_feature_ids": []
+        }
+      ]
+    },
+    {
+      "sequence": 22,
+      "name": "Machine Lower-Head Outlet Opening",
+      "machine_family": "cnc_horizontal_boring",
+      "setup_note": "Nest the normalized lower head on contour supports and locate the O05 axis from the approved outlet arrangement. Mill the opening and weld preparation for the seamless long-radius elbow/nozzle assembly.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "profile_mill",
+          "target_feature_ids": [
+            "F34"
+          ]
+        },
+        {
+          "sequence": 2,
+          "operation_type": "chamfer_mill",
+          "target_feature_ids": []
+        }
+      ]
+    },
+    {
+      "sequence": 23,
+      "name": "Machine Upper-Skirt Vent Openings",
+      "machine_family": "cnc_horizontal_boring",
+      "setup_note": "Support and index the upper-skirt course from the released vessel orientation reference. Mill the three vent openings represented by F33 and prepare the approved fully reinforced connections.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "profile_mill",
+          "target_feature_ids": [
+            "F33"
+          ]
+        },
+        {
+          "sequence": 2,
+          "operation_type": "chamfer_mill",
+          "target_feature_ids": []
+        }
+      ]
+    },
+    {
+      "sequence": 24,
+      "name": "Machine Lower-Skirt Access Openings",
+      "machine_family": "cnc_horizontal_boring",
+      "setup_note": "Locate the lower-skirt course on supported indexing fixtures using the released access-opening orientations. Mill A01/A02 and their reinforcement preparations without treating the extracted 600 OD as a confirmed clear opening diameter.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "profile_mill",
+          "target_feature_ids": [
+            "F38"
+          ]
+        },
+        {
+          "sequence": 2,
+          "operation_type": "chamfer_mill",
+          "target_feature_ids": []
+        }
+      ]
+    },
+    {
+      "sequence": 25,
+      "name": "Preweld Surface Examination",
+      "machine_family": "penetrant_and_magnetic_particle",
+      "setup_note": "Present formed weld bevels and at least 50 mm of neighboring surfaces, trimmed plate edges and machined forgings for the applicable MT/PT examination. Release only sound, clean joint preparations for fit-up.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "mpi_ndt",
+          "target_feature_ids": []
+        }
+      ]
+    },
+    {
+      "sequence": 26,
+      "name": "Fit, Tack and First-Side Weld",
+      "machine_family": "automatic_welding",
+      "setup_note": "Locate courses, heads, skirt, integral nozzles, support rings, cleats and lifting attachments in the approved staged assembly fixtures, preserving reverse-side access. Tack and weld the first side in a balanced qualified sequence using service-approved low-hydrogen consumables and specified preheat/interpass controls.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "tack_weld",
+          "target_feature_ids": []
+        },
+        {
+          "sequence": 2,
+          "operation_type": "full_weld",
+          "target_feature_ids": []
+        }
+      ]
+    },
+    {
+      "sequence": 27,
+      "name": "Back-Grind Roots to Sound Metal",
+      "machine_family": "fabrication_assembly",
+      "setup_note": "Retain the staged weldment on secure supports and expose the reverse side of each double-welded joint. Remove root tacks, backing where used and unsound root material to sound metal before reverse-side examination.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "deburr",
+          "target_feature_ids": []
+        }
+      ]
+    },
+    {
+      "sequence": 28,
+      "name": "Examine Back-Ground Roots",
+      "machine_family": "penetrant_and_magnetic_particle",
+      "setup_note": "Access the prepared reverse-side grooves while the assembly is securely supported. MT the exposed roots and adjacent edges and obtain release before reverse-side welding.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "mpi_ndt",
+          "target_feature_ids": []
+        }
+      ]
+    },
+    {
+      "sequence": 29,
+      "name": "Complete Pressure and Attachment Welding",
+      "machine_family": "automatic_welding",
+      "setup_note": "Return released joints to the qualified welding position and complete the reverse side and remaining qualified closures in a balanced sequence. Complete all direct-to-vessel support, trunnion, cleat, skirt and reinforcement welds before final PWHT, with internal supports installed before access is obstructed.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "full_weld",
+          "target_feature_ids": [
+            "F13",
+            "F51"
+          ]
+        },
+        {
+          "sequence": 2,
+          "operation_type": "full_weld",
+          "target_feature_ids": []
+        }
+      ]
+    },
+    {
+      "sequence": 30,
+      "name": "Dress Welds and Remove Temporary Attachments",
+      "machine_family": "fabrication_assembly",
+      "setup_note": "Support the completed weldment and remove temporary welded aids before final PWHT, blending removal sites without reducing required wall thickness. Dress specified weld contours and nozzle inside corners to the required smooth profiles, including the minimum 6 mm internal edge radius.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "deburr",
+          "target_feature_ids": []
+        }
+      ]
+    },
+    {
+      "sequence": 31,
+      "name": "Pre-PWHT Radiography",
+      "machine_family": "radiography",
+      "setup_note": "Position the weldment for 100% radiography of the specified pressure welds after forming and nozzle installation. Examine areas that would be obscured by any subsequently approved attachment before that attachment is installed.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "radiograph_ndt",
+          "target_feature_ids": []
+        }
+      ]
+    },
+    {
+      "sequence": 32,
+      "name": "Final Vessel PWHT",
+      "machine_family": "furnace",
+      "setup_note": "Support and stiffen the complete welded vessel in a qualified furnace load, protect flange facings and instrument inside/outside surfaces. Use the wet-H2S service PWHT requirements, including 635 \u00b114 \u00b0C and the code-required hold with a one-hour minimum; this single vessel is one load subject to confirmed furnace capacity.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "mask",
+          "target_feature_ids": []
+        },
+        {
+          "sequence": 2,
+          "operation_type": "stress_relieve",
+          "target_feature_ids": []
+        }
+      ]
+    },
+    {
+      "sequence": 33,
+      "name": "Post-PWHT Radiography",
+      "machine_family": "radiography",
+      "setup_note": "Support the cooled vessel for final 100% radiography of the specified pressure welds after PWHT. This also provides the post-PWHT examination required when thick joints are allowed to cool before their final heat treatment.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "radiograph_ndt",
+          "target_feature_ids": []
+        }
+      ]
+    },
+    {
+      "sequence": 34,
+      "name": "Post-PWHT Volumetric UT",
+      "machine_family": "ultrasonic_examination",
+      "setup_note": "Present accessible shell/head welds, nozzle joints and repair zones for post-PWHT UT. Retain this provisionally until the thickness schedule establishes whether the over-50 mm examination trigger applies.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "ut_ndt",
+          "target_feature_ids": []
+        }
+      ]
+    },
+    {
+      "sequence": 35,
+      "name": "Post-PWHT Surface Examination",
+      "machine_family": "penetrant_and_magnetic_particle",
+      "setup_note": "Access all specified attachment-to-pressure-part welds, nozzle welds and temporary-attachment removal sites on the supported vessel. Perform final MT after PWHT and release any repair only through an approved repeat welding/heat-treatment/examination route.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "mpi_ndt",
+          "target_feature_ids": []
+        }
+      ]
+    },
+    {
+      "sequence": 36,
+      "name": "Post-PWHT Hardness Survey",
+      "machine_family": "hardness_test",
+      "setup_note": "Use a portable tester calibrated at 200 HB on the cooled, accessible vessel. Record required inside/outside readings for each shell section, head, nozzle and longitudinal, girth and nozzle weld, with no reading above 200 HB or any stricter project limit.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "hardness_test",
+          "target_feature_ids": []
+        }
+      ]
+    },
+    {
+      "sequence": 37,
+      "name": "Post-PWHT Base-End Axial Machining",
+      "machine_family": "cnc_horizontal_boring",
+      "setup_note": "Support the vessel horizontally on engineered stationary supports with its base end facing the boring machine; establish an unlettered process reference from the vessel axis and base face. Subject to the released anchor-chair detail and machine reach, rough the accessible ring/boss surfaces before finishing them, then produce the axial \u00d840 hole and 32 \u00d866 anchor holes on the 3071 PCD.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "face_mill",
+          "target_feature_ids": [
+            "F02"
+          ]
+        },
+        {
+          "sequence": 2,
+          "operation_type": "face_mill",
+          "target_feature_ids": [
+            "F06"
+          ]
+        },
+        {
+          "sequence": 3,
+          "operation_type": "profile_mill",
+          "target_feature_ids": [
+            "F07"
+          ]
+        },
+        {
+          "sequence": 4,
+          "operation_type": "face_mill",
+          "target_feature_ids": [
+            "F02"
+          ]
+        },
+        {
+          "sequence": 5,
+          "operation_type": "face_mill",
+          "target_feature_ids": [
+            "F06"
+          ]
+        },
+        {
+          "sequence": 6,
+          "operation_type": "profile_mill",
+          "target_feature_ids": [
+            "F07"
+          ]
+        },
+        {
+          "sequence": 7,
+          "operation_type": "spot_drill",
+          "target_feature_ids": [
+            "F08",
+            "F09"
+          ]
+        },
+        {
+          "sequence": 8,
+          "operation_type": "drill",
+          "target_feature_ids": [
+            "F08"
+          ]
+        },
+        {
+          "sequence": 9,
+          "operation_type": "drill",
+          "target_feature_ids": [
+            "F09"
+          ]
+        }
+      ]
+    },
+    {
+      "sequence": 38,
+      "name": "Post-PWHT Base Detail \u2014 Transverse Access",
+      "machine_family": "cnc_horizontal_boring",
+      "setup_note": "Reposition and securely support the base-detail access direction, locating from the previously machined process references. Rough and finish the 66 mm slot, then spot and drill the transverse \u00d866 through-hole after the slot milling is complete.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "slot_mill",
+          "target_feature_ids": [
+            "F01"
+          ]
+        },
+        {
+          "sequence": 2,
+          "operation_type": "slot_mill",
+          "target_feature_ids": [
+            "F01"
+          ]
+        },
+        {
+          "sequence": 3,
+          "operation_type": "spot_drill",
+          "target_feature_ids": [
+            "F03"
+          ]
+        },
+        {
+          "sequence": 4,
+          "operation_type": "drill",
+          "target_feature_ids": [
+            "F03"
+          ]
+        }
+      ]
+    },
+    {
+      "sequence": 39,
+      "name": "Post-PWHT Hillside Nozzle Finishing",
+      "machine_family": "cnc_horizontal_boring",
+      "setup_note": "Support the vessel with the hillside nozzle accessible and align the spindle to the released nozzle reference. Finish the previously roughed hub taper and lip surfaces by contour milling, preserving the minimum reinforcement section and specified junction forms.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "profile_mill",
+          "target_feature_ids": [
+            "F59"
+          ]
+        },
+        {
+          "sequence": 2,
+          "operation_type": "profile_mill",
+          "target_feature_ids": [
+            "F55"
+          ]
+        },
+        {
+          "sequence": 3,
+          "operation_type": "profile_mill",
+          "target_feature_ids": [
+            "F57"
+          ]
+        },
+        {
+          "sequence": 4,
+          "operation_type": "chamfer_mill",
+          "target_feature_ids": [
+            "F56"
+          ]
+        }
+      ]
+    },
+    {
+      "sequence": 40,
+      "name": "Finish Welded-Nozzle Gasket Faces",
+      "machine_family": "cnc_horizontal_boring",
+      "setup_note": "Locate one welded-nozzle flange axis at a time with the vessel supported against movement and remove its PWHT face protection. Finish the specified gasket faces to 3.2\u20136.3 \u03bcm Ra using an approved facing path; the supplied graph does not provide separate face IDs.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "unmask",
+          "target_feature_ids": []
+        },
+        {
+          "sequence": 2,
+          "operation_type": "face_mill",
+          "target_feature_ids": []
+        }
+      ]
+    },
+    {
+      "sequence": 41,
+      "name": "Final Machined-Forging Surface Examination",
+      "machine_family": "penetrant_and_magnetic_particle",
+      "setup_note": "Present the entire accessible finished surface of each pressure forging, including the loose reducing flange and subsequently finished nozzle forgings. Complete the required MT after finish machining rather than treating the earlier rough-machined examination as final.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "mpi_ndt",
+          "target_feature_ids": []
+        }
+      ]
+    },
+    {
+      "sequence": 42,
+      "name": "Final Shop Dimensional Survey and Deburr",
+      "machine_family": "dimensional_inspection",
+      "setup_note": "Survey the supported vessel against its axis, tangent lines and released orientation reference. Verify shell roundness, alignment, skirt length, nozzle locations, tray-support elevations, machined base details and gasket-face finish, and release the completed weld/NDE dossier for shop hydrotest.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "manual_inspect",
+          "target_feature_ids": []
+        }
+      ]
+    },
+    {
+      "sequence": 43,
+      "name": "Shop Horizontal Hydrostatic Test",
+      "machine_family": "hydrostatic_test",
+      "setup_note": "Support the bare pressure vessel on the approved horizontal hydrotest supports and fit rated temporary closures and calibrated instruments. Test after accepted PWHT/NDE using approved UG-99(c) pressure, potable water, specified metal/water temperatures, complete venting and verified support/pressure stresses.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "assemble",
+          "target_feature_ids": []
+        },
+        {
+          "sequence": 2,
+          "operation_type": "pressure_test",
+          "target_feature_ids": []
+        }
+      ]
+    },
+    {
+      "sequence": 44,
+      "name": "Drain and Dry After Shop Hydrotest",
+      "machine_family": "hydrostatic_test",
+      "setup_note": "Keep the vessel on its hydrotest supports while draining all low points immediately after the test. Thoroughly dry with an approved unheated method and verify that no standing water remains; heat drying is prohibited.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "clean_degrease",
+          "target_feature_ids": []
+        }
+      ]
+    },
+    {
+      "sequence": 45,
+      "name": "Cut Removable-Internals Components",
+      "machine_family": "cnc_plasma",
+      "setup_note": "Locate the identified internals sheet/plate on a clean cutting bed using the released supplier nesting drawings. Cut only specified component profiles; tray perforation, formed-part and distributor-outlet details remain subject to the supplier fabrication drawings rather than inferred geometry.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "plasma_cut",
+          "target_feature_ids": []
+        }
+      ]
+    },
+    {
+      "sequence": 46,
+      "name": "Build Removable-Internals Sections",
+      "machine_family": "fabrication_assembly",
+      "setup_note": "Fixture the released tray and distributor component kits against their supplier assembly references using clean, material-compatible tooling. Build interchangeable sections sized to pass the applicable manway, with fabrication details and any additional component-making setups released before production.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "assemble",
+          "target_feature_ids": [
+            "F11",
+            "F12",
+            "F20",
+            "F22",
+            "F24"
+          ]
+        }
+      ]
+    },
+    {
+      "sequence": 47,
+      "name": "Weld Removable-Internals Sections",
+      "machine_family": "automatic_welding",
+      "setup_note": "Hold each removable section in its qualified welding fixture and weld only the joints shown on the supplier drawings. Use qualified full-penetration metal-arc procedures, matching/service-approved filler, required preheat and no permanent backing strips, without welding these removable assemblies to the PWHT-complete vessel.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "tack_weld",
+          "target_feature_ids": []
+        },
+        {
+          "sequence": 2,
+          "operation_type": "full_weld",
+          "target_feature_ids": []
+        }
+      ]
+    },
+    {
+      "sequence": 48,
+      "name": "Examine Removable-Internals Welds",
+      "machine_family": "penetrant_and_magnetic_particle",
+      "setup_note": "Support completed removable sections with all specified weld surfaces accessible. Perform PT of welds not requiring radiography, after any separately required internals heat treatment has been resolved and completed.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "fpi_ndt",
+          "target_feature_ids": []
+        }
+      ]
+    },
+    {
+      "sequence": 49,
+      "name": "Deburr and Piece-Mark Internals",
+      "machine_family": "fabrication_assembly",
+      "setup_note": "Place removable sections on clean protected benches and remove burrs from perforated areas, cut edges and weld-adjacent surfaces. Permanently mark pieces to the supplier assembly drawings, assigning identical marks to interchangeable pieces.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "deburr",
+          "target_feature_ids": []
+        },
+        {
+          "sequence": 2,
+          "operation_type": "mark_stamp",
+          "target_feature_ids": []
+        }
+      ]
+    },
+    {
+      "sequence": 50,
+      "name": "Trial Assemble Each Internals Type",
+      "machine_family": "fabrication_assembly",
+      "setup_note": "Randomly select parts and trial assemble at least one of each tray and distributor type on supports comparable to the installed condition. Verify fit, interchangeability, specified overlaps, manway passage and shop flatness within \u00b13 mm.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "assemble",
+          "target_feature_ids": [
+            "F11",
+            "F12",
+            "F20",
+            "F22",
+            "F24"
+          ]
+        },
+        {
+          "sequence": 2,
+          "operation_type": "manual_inspect",
+          "target_feature_ids": []
+        }
+      ]
+    },
+    {
+      "sequence": 51,
+      "name": "Test Specified Liquid-Tight Internals",
+      "machine_family": "hydrostatic_test",
+      "setup_note": "Support only those tray sections or seal pans designated liquid-tight on the released supplier drawings, close their normal outlets and conduct the specified water-retention test. Accept a liquid-level loss no greater than 20 mm/h; this provisional step does not apply to ordinary perforated tray decks.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "pressure_test",
+          "target_feature_ids": []
+        }
+      ]
+    },
+    {
+      "sequence": 52,
+      "name": "Distributor Hydraulic Acceptance Test",
+      "machine_family": "hydrostatic_test",
+      "setup_note": "Mount each required distributor type in its supplier-approved water-test arrangement and verify the contractual hydraulic performance. Apply packed-bed distributor flow points only if the released specification makes them applicable to these distributors.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "pressure_test",
+          "target_feature_ids": []
+        }
+      ]
+    },
+    {
+      "sequence": 53,
+      "name": "Trial Assemble Platform Modules",
+      "machine_family": "fabrication_assembly",
+      "setup_note": "Assemble each released platform module from its detailed structural kit on a level fixture and verify fit to the vessel cleat arrangement. Keep platforms bolted/removable rather than welding them directly to the pressure vessel.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "assemble",
+          "target_feature_ids": [
+            "F39",
+            "F40",
+            "F41",
+            "F43",
+            "F44",
+            "F45",
+            "F46",
+            "F47",
+            "F48"
+          ]
+        },
+        {
+          "sequence": 2,
+          "operation_type": "manual_inspect",
+          "target_feature_ids": []
+        }
+      ]
+    },
+    {
+      "sequence": 54,
+      "name": "Site Erection",
+      "machine_family": "crane",
+      "setup_note": "Use the approved transport/erection configuration, verified lifted mass and engineered trunnion/tailing-lug rigging plan to erect the vessel onto its foundation. Confirm crane capacity, foundation readiness and temporary stability before releasing the load.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "load_unload",
+          "target_feature_ids": []
+        }
+      ]
+    },
+    {
+      "sequence": 55,
+      "name": "Site Plumbness and Foundation Survey",
+      "machine_family": "dimensional_inspection",
+      "setup_note": "Reference the erected vessel to the approved survey control and released north orientation. Check plumbness, elevation, base support and anchor arrangement before authorizing the vertical hydrotest.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "manual_inspect",
+          "target_feature_ids": []
+        }
+      ]
+    },
+    {
+      "sequence": 56,
+      "name": "Site Vertical Hydrostatic Test",
+      "machine_family": "hydrostatic_test",
+      "setup_note": "Test the erected vessel on its accepted foundation using approved UG-99(b) pressure, rated closures and calibrated instruments. Verify the approximately 165000 kg field-hydrotest load case, liquid head, temperatures and complete venting before pressurization.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "assemble",
+          "target_feature_ids": []
+        },
+        {
+          "sequence": 2,
+          "operation_type": "pressure_test",
+          "target_feature_ids": []
+        }
+      ]
+    },
+    {
+      "sequence": 57,
+      "name": "Drain and Dry After Site Hydrotest",
+      "machine_family": "hydrostatic_test",
+      "setup_note": "Drain the erected vessel immediately after test acceptance through all approved low-point drains. Thoroughly dry by an unheated method and inspect for retained water before coating or installing removable internals.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "clean_degrease",
+          "target_feature_ids": []
+        }
+      ]
+    },
+    {
+      "sequence": 58,
+      "name": "External Surface Preparation and Painting",
+      "machine_family": "painting",
+      "setup_note": "After both required pressure tests are accepted, protect gasket faces, identification and uncoated areas and prepare external surfaces to the released painting specification. Apply and inspect the specified primer/finish system without coating internal process surfaces or sealing faces.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "mask",
+          "target_feature_ids": []
+        },
+        {
+          "sequence": 2,
+          "operation_type": "paint",
+          "target_feature_ids": []
+        },
+        {
+          "sequence": 3,
+          "operation_type": "unmask",
+          "target_feature_ids": []
+        }
+      ]
+    },
+    {
+      "sequence": 59,
+      "name": "Install Removable Internals and Closures",
+      "machine_family": "fabrication_assembly",
+      "setup_note": "Pass identified sections through the applicable manway and assemble them on the previously welded, inspected supports without new welding to the pressure shell. Install distributors, trays, loose reducing flange, specified gaskets and service-approved bolting to the released assembly instructions.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "assemble",
+          "target_feature_ids": [
+            "F11",
+            "F12",
+            "F20",
+            "F22",
+            "F24"
+          ]
+        },
+        {
+          "sequence": 2,
+          "operation_type": "assemble",
+          "target_feature_ids": [
+            "F49"
+          ]
+        },
+        {
+          "sequence": 3,
+          "operation_type": "insert_hardware",
+          "target_feature_ids": []
+        }
+      ]
+    },
+    {
+      "sequence": 60,
+      "name": "Final Installed Internals Level Survey",
+      "machine_family": "dimensional_inspection",
+      "setup_note": "Reference an optical or laser level to the erected vessel survey control and check each installed tray type and distributor. Verify tray levelness within \u00b13 mm, supplier clearances, orientation and unobstructed downcomers before closing access.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "manual_inspect",
+          "target_feature_ids": []
+        }
+      ]
+    },
+    {
+      "sequence": 61,
+      "name": "Install Platform Modules",
+      "machine_family": "fabrication_assembly",
+      "setup_note": "Support each released platform module at its designated elevation and bolt it to the previously welded vessel cleats. Verify access, alignment and fastener completion without adding post-PWHT welds to the pressure-containing vessel.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "assemble",
+          "target_feature_ids": [
+            "F39",
+            "F40",
+            "F41",
+            "F43",
+            "F44",
+            "F45",
+            "F46",
+            "F47",
+            "F48"
+          ]
+        },
+        {
+          "sequence": 2,
+          "operation_type": "insert_hardware",
+          "target_feature_ids": []
+        }
+      ]
+    },
+    {
+      "sequence": 62,
+      "name": "Final Acceptance and Manufacturing Record",
+      "machine_family": "dimensional_inspection",
+      "setup_note": "Inspect the completed installed assembly against the released drawings and purchaser/TPIA hold points. Close material traceability, welding, heat-treatment, NDE, hardness, dimensional, hydraulic-test, coating and internals-performance records before acceptance.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "manual_inspect",
+          "target_feature_ids": []
+        }
+      ]
+    }
+  ],
+  "clarifications": [
+    {
+      "clarification_id": "C01",
+      "question": "What is the approved minimum-after-forming pressure-part thickness schedule?",
+      "blocks": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        11,
+        12,
+        13,
+        14,
+        26,
+        29,
+        32,
+        34,
+        43,
+        56
+      ],
+      "suggested_default": "No thickness is inferred from the assembled envelope; retain procurement and pressure-part production holds.",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C02",
+      "question": "What is the released plate development and shell-course cutting schedule?",
+      "blocks": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        26
+      ],
+      "suggested_default": "Use multiple commercially feasible courses; do not order one plate from the vessel overall envelope.",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C03",
+      "question": "Can the available furnace accommodate and uniformly heat the complete 38862 mm vessel with its required supports?",
+      "blocks": [
+        32
+      ],
+      "suggested_default": "Quote full-furnace PWHT provisionally; require an approved alternative capacity plan before fabrication release.",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C04",
+      "question": "Can the horizontal boring installation reach the post-PWHT base and nozzle machining locations with the complete vessel supported?",
+      "blocks": [
+        37,
+        38,
+        39,
+        40
+      ],
+      "suggested_default": "Use a stationary supported vessel with local machine access; do not assume the complete vessel fits a lathe or vertical boring machine.",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C05",
+      "question": "What is the approved vessel handling and erection capacity plan?",
+      "blocks": [
+        26,
+        32,
+        37,
+        43,
+        54,
+        56
+      ],
+      "suggested_default": "Use the drawing's 54000 kg approximate shop-fabricated weight only for preliminary planning; verify actual lift and support loads before execution.",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C06",
+      "question": "What is the released toricone profile for F14?",
+      "blocks": [
+        8,
+        13,
+        26
+      ],
+      "suggested_default": "Connect the 1100 mm upper shell to the 1800 mm lower shell using the indicated R110/R180 formed junctions; disregard the assumed endpoint ordering and derived taper angle.",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C07",
+      "question": "What is the released length of the upper skirt F35?",
+      "blocks": [
+        9,
+        23,
+        26,
+        54
+      ],
+      "suggested_default": "Retain 5872 mm for preliminary routing only; do not cut final skirt developments while the length remains on hold.",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C08",
+      "question": "What is the confirmed nominal size of nozzle O01?",
+      "blocks": [
+        21,
+        26,
+        40
+      ],
+      "suggested_default": "Use NPS 10 for provisional procurement planning, not the extracted assumed 8 mm diameter.",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C09",
+      "question": "What is the confirmed nominal size of nozzle X04?",
+      "blocks": [
+        20,
+        26,
+        40
+      ],
+      "suggested_default": "Retain NPS 3, Class 600 for quotation only pending pump-vendor confirmation.",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C10",
+      "question": "What is the confirmed nominal size of connections L04A/B?",
+      "blocks": [
+        20,
+        26,
+        40
+      ],
+      "suggested_default": "Retain NPS 3 for quotation only and hold opening manufacture.",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C11",
+      "question": "What are the released angular orientations of vessel nozzles and skirt openings?",
+      "blocks": [
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        26
+      ],
+      "suggested_default": "Do not infer orientations from the elevation view.",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C12",
+      "question": "What are the released nozzle elevations?",
+      "blocks": [
+        19,
+        20,
+        21,
+        22,
+        26
+      ],
+      "suggested_default": "Use printed elevations for planning only until the drawing hold is removed.",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C13",
+      "question": "Is V01 installed in the G01 blind flange rather than directly in the upper head?",
+      "blocks": [
+        21,
+        26,
+        40
+      ],
+      "suggested_default": "Follow Note B provisionally and relocate the F42 opening setup to the released blind-flange component instead of cutting an additional head opening.",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C14",
+      "question": "Is there an approved project deviation permitting the two gussets specified for nozzles 2 inches and smaller despite the UOP hydrogen-service prohibition?",
+      "blocks": [
+        26,
+        29
+      ],
+      "suggested_default": "Use integral reinforcement without gussets until the specification conflict is formally resolved.",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C15",
+      "question": "What is the required length of slot F01?",
+      "blocks": [
+        38
+      ],
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C16",
+      "question": "What is the required depth of slot F01?",
+      "blocks": [
+        38
+      ],
+      "suggested_default": "Treat it as through only if confirmed by the released anchor-chair detail.",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C17",
+      "question": "Which released anchor-chair/base detail locates F02, F03 and F06\u2013F09?",
+      "blocks": [
+        4,
+        26,
+        37,
+        38
+      ],
+      "suggested_default": "Provisionally group axial ring/boss machining separately from transverse slot/hole machining; do not infer missing section dimensions.",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C18",
+      "question": "Do F13 and F51 describe the same pair of trunnions?",
+      "blocks": [
+        4,
+        26,
+        29,
+        54
+      ],
+      "suggested_default": "Preserve both graph IDs but hold trunnion quantity release to avoid manufacturing a duplicate pair.",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C19",
+      "question": "What is the released integral hillside-nozzle forging profile for F55/F59?",
+      "blocks": [
+        15,
+        16,
+        26,
+        39
+      ],
+      "suggested_default": "Retain the indicated lip, 45-degree preparation, R20 junction and minimum 30-degree hub taper without inventing diameters or reinforcement thicknesses.",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C20",
+      "question": "What is the approved component detail for reducing flange F49?",
+      "blocks": [
+        17,
+        18,
+        59
+      ],
+      "suggested_default": "Treat 8 inch \u00d7 2 inch as nominal connection sizes, not finished machining diameters.",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C21",
+      "question": "Which released supplier fabrication drawing set governs the trays and distributors?",
+      "blocks": [
+        26,
+        29,
+        45,
+        46,
+        47,
+        50,
+        52,
+        59,
+        60
+      ],
+      "suggested_default": "Retain three tray groups totaling trays 1\u201336 and distributors to drawings 3-144/3-160; do not infer perforations, component bends or hydraulic outlet details.",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C22",
+      "question": "What PWHT requirement applies to the removable-internals welds?",
+      "blocks": [
+        47,
+        48,
+        50,
+        59
+      ],
+      "suggested_default": "Assume no additional internals PWHT only after the supplier demonstrates that the applicable material, code and qualified WPS permit it.",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C23",
+      "question": "Which trays or seal pans are specified to be liquid-tight?",
+      "blocks": [
+        51,
+        59
+      ],
+      "suggested_default": "Do not water-retention test ordinary perforated tray decks; remove operation 51 if no liquid-tight components are specified.",
+      "priority": "medium"
+    },
+    {
+      "clarification_id": "C24",
+      "question": "What is the released platform-module fabrication drawing set?",
+      "blocks": [
+        26,
+        29,
+        53,
+        61
+      ],
+      "suggested_default": "Treat platforms as removable structural kits attached by bolts to pre-PWHT welded cleats.",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C25",
+      "question": "Are the field erection, vertical hydrotest and final installation operations within Walchandnagar's execution scope?",
+      "blocks": [
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62
+      ],
+      "suggested_default": "Retain these as required route interfaces and assume execution by Walchandnagar field resources until the contractual boundary is confirmed.",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C26",
+      "question": "What is the approved shop horizontal hydrotest pressure?",
+      "blocks": [
+        43
+      ],
+      "suggested_default": "Use an approved UG-99(c) calculation including temperature stress ratios and horizontal support checks; do not calculate from design pressure alone.",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C27",
+      "question": "What is the approved site vertical hydrotest pressure?",
+      "blocks": [
+        56
+      ],
+      "suggested_default": "Use an approved UG-99(b) calculation including the vertical liquid head and foundation load case.",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C28",
+      "question": "What coating system is specified by the released project painting specification?",
+      "blocks": [
+        58
+      ],
+      "suggested_default": "No primer or finish is applied before both required pressure tests unless the purchaser approves a different test/coating sequence.",
+      "priority": "medium"
+    },
+    {
+      "clarification_id": "C29",
+      "question": "What is the confirmed vessel north reference?",
+      "blocks": [
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        26,
+        55
+      ],
+      "suggested_default": "Maintain an explicitly temporary shop angular reference until north orientation is released.",
+      "priority": "high"
+    }
+  ],
+  "assumptions": [
+    {
+      "assumption_id": "A01",
+      "text": "The stock record identifies the principal pressure-vessel plate procurement, not a single blank for the complete assembly. Plate dimensions remain null because thicknesses and course developments are absent; the 3071 mm envelope value is also the anchor-hole PCD and cannot safely define a developed shell plate or base-ring OD."
+    },
+    {
+      "assumption_id": "A02",
+      "text": "The 0.5 mm machining allowance is finishing stock on machined surfaces, not corrosion allowance, forming allowance or weld-distortion reserve. Separate fabrication reserves must be established in the component cutting schedule."
+    },
+    {
+      "assumption_id": "A03",
+      "text": "The approximate shop-fabricated weight is 54000 kg. The supplied 120900 kg value is operating weight, not a raw-stock or bare-vessel handling weight; field-hydrotest weight is approximately 165000 kg."
+    },
+    {
+      "assumption_id": "A04",
+      "text": "The dominant process is welded fabrication. F14, F17, F35, F36 and F50 are formed plate geometries despite their extracted turned_id labels; their complete internal surfaces are not bored."
+    },
+    {
+      "assumption_id": "A05",
+      "text": "Course counts, nozzle-component counts and detailed module counts are unavailable. Applicable setup rows are representative configurations to be expanded into one loading per released course, component or indexed fixture arrangement when the fabrication BOM is issued; no 22470 mm single-width rolling setup is assumed."
+    },
+    {
+      "assumption_id": "A06",
+      "text": "The main plate stock record does not replace the multi-material BOM. Forged flanges and integral nozzle forgings, seamless pipe/fittings, internals sheet, bolting and structural kits are separately purchased in their specified product forms and grades."
+    },
+    {
+      "assumption_id": "A07",
+      "text": "The inventory establishes plate rolling but not dishing presses or toricone-flanging tooling. Operations 11\u201313 are therefore subcontracted specialist forming, using the allowed plate_bending forming-family key rather than implying that an in-house roller performs press dishing."
+    },
+    {
+      "assumption_id": "A08",
+      "text": "Post-form normalization of heads and the toricone is provisionally retained to establish the required normalized condition after forming. Its necessity and qualified cycle must be reconciled with the actual forming procedure; cold-rolled shell courses are not automatically assigned another normalization cycle."
+    },
+    {
+      "assumption_id": "A09",
+      "text": "The toricone is provisionally interpreted as joining the 1100 mm upper shell to the 1800 mm lower shell. The extracted assumed endpoint order and derived taper angle are not accepted as manufacturing inputs."
+    },
+    {
+      "assumption_id": "A10",
+      "text": "No drawing datum letters were supplied. Datum-reference arrays are empty, and the route uses unlettered process references until the detailed fabrication drawings define the controlling reference system."
+    },
+    {
+      "assumption_id": "A11",
+      "text": "The base ring, top ring and raised-boss details are provisionally accessible through separate axial and transverse machining configurations. Their final connectivity, section dimensions and setup split remain blocked by the missing anchor-chair detail."
+    },
+    {
+      "assumption_id": "A12",
+      "text": "F13 and F51 are both retained for feature coverage but are not interpreted as an authorization to fabricate four trunnions. Quantity release is held until their possible duplication is resolved."
+    },
+    {
+      "assumption_id": "A13",
+      "text": "Pressure and attachment welding follows the more stringent applicable hydrogen-service and drawing requirements: qualified complete penetration, approved low-hydrogen consumables, required back-grinding and MT before reverse welding, and removal of permanent backing. GTAW single-sided roots are permitted only where reverse-side access is demonstrably impractical and the qualified procedure allows them."
+    },
+    {
+      "assumption_id": "A14",
+      "text": "All direct-to-vessel welding, including internals supports, cleats, lifting attachments and temporary-attachment removal, is completed before final PWHT. The conflicting small-nozzle gusset note is not implemented without an approved disposition."
+    },
+    {
+      "assumption_id": "A15",
+      "text": "Pressure-vessel sequence steps for separate nozzle reinforcing pads and their pneumatic bubble tests are dropped because integral reinforcement is specified and no vented pressure-part reinforcing pads are identified. If approved vented attachments are introduced, insert their installation after the required unobscured radiography and their leak test before PWHT and hydrotest."
+    },
+    {
+      "assumption_id": "A16",
+      "text": "Both pre- and post-PWHT radiography are retained. Final 100% post-PWHT radiography supports the permitted thick-joint cooling alternative; post-PWHT UT is provisionally retained until the thickness-dependent trigger is resolved."
+    },
+    {
+      "assumption_id": "A17",
+      "text": "Final PWHT is stress relief, not hardening. Material machinability remains medium afterward; the required 200 HB acceptance limit is not converted into an invented HRC value."
+    },
+    {
+      "assumption_id": "A18",
+      "text": "The fabrication sequence's generic stress-relief temperature and vibratory alternative are replaced by the governing wet-H2S furnace-PWHT requirements. Local treatment is not assumed to replace full furnace treatment of longitudinal seams, nozzles or attachments."
+    },
+    {
+      "assumption_id": "A19",
+      "text": "Turning saw-cut and part-off steps are dropped because components arrive as discrete bought forgings or plasma-cut plate pieces. Lathe center-drilling is dropped because no between-centers shaft is identified; grooving and threading are dropped because no corresponding groove or thread features are specified. Facing, rough/finish machining where applicable, edge treatment and final inspection are retained."
+    },
+    {
+      "assumption_id": "A20",
+      "text": "Milling saw-cut preparation is replaced by plate plasma cutting or bought forgings. Pocketing, reaming, tapping, countersinking and counterboring are dropped because no such features are called out; clearance holes are drilled without unnecessary reaming. Spot drilling precedes drilling, and thin-section roughing precedes finishing."
+    },
+    {
+      "assumption_id": "A21",
+      "text": "The reducing flange is provisionally a loose forged bolted component, permitting final machining outside the welded-vessel PWHT sequence. Its printed 8 inch \u00d7 2 inch designation does not provide actual OD, bore, thickness or bolt-pattern machining dimensions."
+    },
+    {
+      "assumption_id": "A22",
+      "text": "Welded-nozzle sealing faces are explicitly required by the notes but lack individual graph IDs, so their machining targets are empty rather than incorrectly assigned to nearby opening features. Final MT of forging surfaces follows their actual finish machining."
+    },
+    {
+      "assumption_id": "A23",
+      "text": "The removable-internals route is provisional pending supplier details. No perforation count, hole size, tray bend geometry or distributor outlet pattern is invented; additional component-making setups must be expanded from the released supplier drawings."
+    },
+    {
+      "assumption_id": "A24",
+      "text": "Low-chrome supply-condition and welding requirements must be verified against the released material/WPS package. Austenitic weld ferrite-number requirements are not automatically imposed on the stated ferritic 410S trays; any required internals PWHT must be inserted before their final NDE and trial assembly."
+    },
+    {
+      "assumption_id": "A25",
+      "text": "Liquid-tight tray testing is retained conditionally and removed if no applicable trays or seal pans are specified. Distributor water testing is retained provisionally for the contractual hydraulic guarantee; packed-bed-specific turndown/100%/110% test points are not imposed without an applicable specification."
+    },
+    {
+      "assumption_id": "A26",
+      "text": "The platform features are assembled from separately detailed structural kits, not fabricated from guessed members. Platforms remain bolted to previously welded cleats; detailed structural cutting and welding setups await the released platform BOM."
+    },
+    {
+      "assumption_id": "A27",
+      "text": "Field operations are retained because a vertical site hydrotest is explicitly required. Their in-house flags provisionally assume Walchandnagar field execution using the listed process capabilities; contractual ownership and site equipment availability require confirmation."
+    },
+    {
+      "assumption_id": "A28",
+      "text": "Final painting is placed after both shop and site pressure tests to satisfy the retrieved no-coating-before-pressure-testing rule. Coating surface-preparation method and equipment are not invented before the painting specification is supplied."
+    },
+    {
+      "assumption_id": "A29",
+      "text": "Drain-and-dry activities are represented by clean_degrease because the controlled vocabulary has no dedicated drain/dry type. Hand grinding, weld dressing and root cleanup are represented by deburr with their actual scope stated in the setup notes; no precision grinding machine is implied."
+    },
+    {
+      "assumption_id": "A30",
+      "text": "Generic fabrication final inspection is retained through shop dimensional release and final acceptance. CMM inspection is not imposed on this vessel; optical/laser survey and suitable manual measurements are used."
+    }
+  ]
+}
