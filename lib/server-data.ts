@@ -153,32 +153,47 @@ async function getDrawingPageUrls(
 ): Promise<{ balloonedImageUrls: string[]; originalImageUrls: string[] }> {
   const apiBase = `/api/images/${orgSlug}/${slug}`;
 
-  // Count original pages (page_001_original.png, page_002_original.png, …)
-  let pageCount = 0;
+  let entries: string[] = [];
   try {
-    const entries = await fs.readdir(dir);
-    for (const entry of entries) {
-      if (/^page_\d+_original\.png$/.test(entry)) pageCount++;
-    }
+    entries = await fs.readdir(dir);
   } catch {
-    // fall back to single page below
+    // directory unreadable — fall back to defaults below
   }
 
+  // Count original pages (page_001_original.png, page_002_original.png, …)
+  let pageCount = 0;
+  for (const entry of entries) {
+    if (/^page_\d+_original\.png$/.test(entry)) pageCount++;
+  }
   if (pageCount === 0) pageCount = 1;
 
   const originalImageUrls = Array.from({ length: pageCount }, (_, i) =>
     `${apiBase}/original?page=${i + 1}`
   );
 
-  // Check whether a dedicated ballooned drawing exists
+  // Collect ballooned_page_XXX.png files, sorted by page number
+  const balloonedPages: number[] = [];
+  for (const entry of entries) {
+    const m = entry.match(/^ballooned_page_(\d+)\.png$/);
+    if (m) balloonedPages.push(parseInt(m[1], 10));
+  }
+  balloonedPages.sort((a, b) => a - b);
+
+  // Also check for a single ballooned_drawing.png
   const hasBalloonedDrawing = await fs
     .access(path.join(dir, "ballooned_drawing.png"))
     .then(() => true)
     .catch(() => false);
 
-  const balloonedImageUrls = hasBalloonedDrawing
-    ? [`${apiBase}/ballooned`]
-    : originalImageUrls.map((u) => u.replace("/original?", "/ballooned?"));
+  let balloonedImageUrls: string[];
+  if (hasBalloonedDrawing) {
+    balloonedImageUrls = [`${apiBase}/ballooned`];
+  } else if (balloonedPages.length > 0) {
+    balloonedImageUrls = balloonedPages.map((p) => `${apiBase}/ballooned?page=${p}`);
+  } else {
+    // No ballooned images at all — fall back to original pages
+    balloonedImageUrls = originalImageUrls.map((u) => u.replace("/original?", "/ballooned?"));
+  }
 
   return { balloonedImageUrls, originalImageUrls };
 }
@@ -536,7 +551,7 @@ export async function findImageFile(
   const p = String(page).padStart(3, "0");
   const candidates =
     type === "ballooned"
-      ? [`ballooned_drawing.png`, `ballooned_drawing_${p}.png`, `balloon_drawing.png`, `page_${p}_original.png`, `page_${p}_vlm.png`, `original_drawing.png`]
+      ? [`ballooned_page_${p}.png`, `ballooned_drawing.png`, `ballooned_drawing_${p}.png`, `balloon_drawing.png`, `page_${p}_original.png`, `page_${p}_vlm.png`, `original_drawing.png`]
       : [`page_${p}_original.png`, `page_001_original.png`, `page_${p}_vlm.png`, `original_drawing.png`, `ballooned_drawing.png`, `ballooned_drawing_${p}.png`];
 
   for (const name of candidates) {
