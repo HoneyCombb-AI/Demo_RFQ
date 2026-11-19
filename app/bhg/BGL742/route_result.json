@@ -1,362 +1,204 @@
 {
-  "analysis_id": "BGL_742_merge_20261025T181916Z",
-  "source_feature_graph_id": "BGL_742_merge_20261025T181916Z",
+  "analysis_id": "BGL_742_merge_20261119T132522Z",
+  "source_feature_graph_id": "BGL_742_merge_20261119T132522Z",
   "quantity": 100,
-  "part_family": "hybrid",
+  "part_family": "turned",
   "base_geometry": "rotational",
   "stock": {
-    "form": "forged_ring",
+    "form": "bought_annealed_ring",
     "diameter_mm": 213.0,
-    "bore_diameter_mm": 175.0,
-    "length_mm": 58.0,
-    "machining_allowance_mm": 2.5
+    "bore_diameter_mm": 176.026,
+    "width_mm": 58.8,
+    "machining_allowance_mm": 2.5,
+    "shape": "ring"
   },
   "operations": [
     {
       "sequence": 1,
-      "name": "Incoming Forging Inspection",
+      "name": "Blank Receiving Inspection",
       "machine_family": "inspection",
-      "setup_note": "Receive the bought-in forged ring. Check the certificate, a sample hardness of the annealed 8620, and the Ø213 / Ø175 × 58 mm envelope before it is released to the lathe. No heat treatment is specified, so this is an incoming-condition check only.",
+      "setup_note": "Receive the purchased annealed rings and verify material certification, condition, outside diameter, existing bore and axial width. Check that the specified machining allowance is available before releasing the blanks.",
       "datum_references": [],
       "material_machinability": "medium",
-      "setup_time_min": 10.0,
       "in_house": true,
       "sub_operations": [
         {
           "sequence": 1,
           "operation_type": "manual_inspect",
-          "target_feature_ids": [],
-          "inputs": {
-            "kind": "inspection",
-            "dimension_count": 4,
-            "gdt_count": 0,
-            "sampling_rate_pct": 100.0,
-            "requires_fixture": false
-          }
+          "target_feature_ids": []
         }
       ]
     },
     {
       "sequence": 2,
-      "name": "CNC Turn – OP10 First Side",
+      "name": "CNC Turn \u2013 Lower Datum Side",
       "machine_family": "cnc_lathe",
-      "setup_note": "Chuck the forged ring and load/unload in the same setup. Face one side, rough and finish the Ø208 OD over the 53.8 mm finished height, and bore the Ø181.026 tooth minor across the 37.3 mm toothed section so the shaper has a true tip diameter. Break the accessible 45° OD edge.",
+      "setup_note": "Grip the upper blank OD in low-pressure bored jaws, exposing the lower face and internal profile; use the blank axis provisionally until the bore is machined. Establish datum B at the lower groove flank and finish the accessible lower OD band for reverse gripping.",
       "datum_references": [
         "B"
       ],
       "material_machinability": "medium",
-      "setup_time_min": 20.0,
       "in_house": true,
       "sub_operations": [
         {
           "sequence": 1,
           "operation_type": "face_turn",
           "target_feature_ids": [
-            "F04"
-          ],
-          "inputs": {
-            "kind": "radial_turn",
-            "start_diameter_mm": 213.0,
-            "finish_diameter_mm": 175.0,
-            "groove_count": 1,
-            "total_stock_mm": 2.1
-          }
+            "F15"
+          ]
         },
         {
           "sequence": 2,
           "operation_type": "rough_turn_od",
           "target_feature_ids": [
-            "F01"
-          ],
-          "inputs": {
-            "kind": "axial_turn",
-            "start_diameter_mm": 213.0,
-            "finish_diameter_mm": 208.8,
-            "cut_length_mm": 53.8
-          }
+            "F02"
+          ]
         },
         {
           "sequence": 3,
-          "operation_type": "finish_turn_od",
+          "operation_type": "rough_bore_id",
           "target_feature_ids": [
             "F01"
-          ],
-          "inputs": {
-            "kind": "axial_turn",
-            "start_diameter_mm": 208.8,
-            "finish_diameter_mm": 208.0,
-            "cut_length_mm": 53.8
-          }
+          ]
         },
         {
           "sequence": 4,
-          "operation_type": "chamfer_turn",
+          "operation_type": "rough_bore_id",
           "target_feature_ids": [
-            "F01"
-          ],
-          "inputs": {
-            "kind": "axial_turn",
-            "start_diameter_mm": 208.0,
-            "finish_diameter_mm": 206.0,
-            "cut_length_mm": 1.0,
-            "taper_included_angle_deg": 45.0
-          }
+            "F05"
+          ]
         },
         {
           "sequence": 5,
-          "operation_type": "rough_bore_id",
+          "operation_type": "groove_id",
           "target_feature_ids": [
             "F13"
-          ],
-          "inputs": {
-            "kind": "axial_turn",
-            "start_diameter_mm": 175.0,
-            "finish_diameter_mm": 180.226,
-            "cut_length_mm": 37.3
-          }
+          ]
         },
         {
           "sequence": 6,
+          "operation_type": "finish_turn_od",
+          "target_feature_ids": [
+            "F02"
+          ]
+        },
+        {
+          "sequence": 7,
           "operation_type": "finish_bore_id",
           "target_feature_ids": [
-            "F13"
-          ],
-          "inputs": {
-            "kind": "axial_turn",
-            "start_diameter_mm": 180.226,
-            "finish_diameter_mm": 181.026,
-            "cut_length_mm": 37.3
-          }
+            "F01"
+          ]
+        },
+        {
+          "sequence": 8,
+          "operation_type": "finish_bore_id",
+          "target_feature_ids": [
+            "F05"
+          ]
+        },
+        {
+          "sequence": 9,
+          "operation_type": "bore_taper",
+          "target_feature_ids": [
+            "F04"
+          ]
+        },
+        {
+          "sequence": 10,
+          "operation_type": "chamfer_turn",
+          "target_feature_ids": [
+            "F07"
+          ]
+        },
+        {
+          "sequence": 11,
+          "operation_type": "groove_id",
+          "target_feature_ids": [
+            "F08"
+          ]
+        },
+        {
+          "sequence": 12,
+          "operation_type": "chamfer_turn",
+          "target_feature_ids": [
+            "F10"
+          ]
         }
       ]
     },
     {
       "sequence": 3,
-      "name": "CNC Turn – OP20 Reverse Side",
+      "name": "CNC Turn \u2013 Upper Side",
       "machine_family": "cnc_lathe",
-      "setup_note": "Reverse the ring, locate from the finished OD and the first face, and load/unload once. Face to 53.8 mm overall (16.5 mm top face to datum B + 37.3 mm datum B to the bottom face). Turn the Ø188 counterbore, the Ø185.5 and Ø185 steps, the Ø191 × 3.2 snap-ring groove (datum B shoulder), the R1.2 undercut, the Ø189.5 lower entry, and the specified chamfers.",
+      "setup_note": "Reverse into low-pressure soft jaws on the finished lower OD band, with a relieved axial locator contacting datum B without obstructing the upper bores. Face to finished overall width, complete the remaining OD band and machine the upper internal steps.",
       "datum_references": [
         "B"
       ],
       "material_machinability": "medium",
-      "setup_time_min": 15.0,
       "in_house": true,
       "sub_operations": [
         {
           "sequence": 1,
           "operation_type": "face_turn",
           "target_feature_ids": [
-            "F11"
-          ],
-          "inputs": {
-            "kind": "radial_turn",
-            "start_diameter_mm": 208.0,
-            "finish_diameter_mm": 175.0,
-            "groove_count": 1,
-            "total_stock_mm": 2.1
-          }
+            "F12"
+          ]
         },
         {
           "sequence": 2,
-          "operation_type": "chamfer_turn",
+          "operation_type": "rough_turn_od",
           "target_feature_ids": [
-            "F01"
-          ],
-          "inputs": {
-            "kind": "axial_turn",
-            "start_diameter_mm": 208.0,
-            "finish_diameter_mm": 206.0,
-            "cut_length_mm": 1.0,
-            "taper_included_angle_deg": 45.0
-          }
+            "F02"
+          ]
         },
         {
           "sequence": 3,
-          "operation_type": "rough_bore_id",
+          "operation_type": "finish_turn_od",
           "target_feature_ids": [
-            "F12"
-          ],
-          "inputs": {
-            "kind": "axial_turn",
-            "start_diameter_mm": 175.0,
-            "finish_diameter_mm": 187.2,
-            "cut_length_mm": 1.0
-          }
+            "F02"
+          ]
         },
         {
           "sequence": 4,
-          "operation_type": "finish_bore_id",
+          "operation_type": "rough_bore_id",
           "target_feature_ids": [
-            "F12"
-          ],
-          "inputs": {
-            "kind": "axial_turn",
-            "start_diameter_mm": 187.2,
-            "finish_diameter_mm": 188.0,
-            "cut_length_mm": 1.0
-          }
+            "F09"
+          ]
         },
         {
           "sequence": 5,
-          "operation_type": "chamfer_turn",
+          "operation_type": "rough_bore_id",
           "target_feature_ids": [
-            "F12"
-          ],
-          "inputs": {
-            "kind": "axial_turn",
-            "start_diameter_mm": 188.0,
-            "finish_diameter_mm": 190.0,
-            "cut_length_mm": 1.0,
-            "taper_included_angle_deg": 30.0
-          }
+            "F03"
+          ]
         },
         {
           "sequence": 6,
-          "operation_type": "rough_bore_id",
+          "operation_type": "finish_bore_id",
           "target_feature_ids": [
-            "F08"
-          ],
-          "inputs": {
-            "kind": "axial_turn",
-            "start_diameter_mm": 175.0,
-            "finish_diameter_mm": 184.7,
-            "cut_length_mm": 3.2
-          }
+            "F09"
+          ]
         },
         {
           "sequence": 7,
           "operation_type": "finish_bore_id",
           "target_feature_ids": [
-            "F08"
-          ],
-          "inputs": {
-            "kind": "axial_turn",
-            "start_diameter_mm": 184.7,
-            "finish_diameter_mm": 185.5,
-            "cut_length_mm": 3.2
-          }
+            "F03"
+          ]
         },
         {
           "sequence": 8,
-          "operation_type": "rough_bore_id",
+          "operation_type": "chamfer_turn",
           "target_feature_ids": [
-            "F09"
-          ],
-          "inputs": {
-            "kind": "axial_turn",
-            "start_diameter_mm": 175.0,
-            "finish_diameter_mm": 184.2,
-            "cut_length_mm": 9.91
-          }
+            "F11"
+          ]
         },
         {
           "sequence": 9,
-          "operation_type": "finish_bore_id",
-          "target_feature_ids": [
-            "F09"
-          ],
-          "inputs": {
-            "kind": "axial_turn",
-            "start_diameter_mm": 184.2,
-            "finish_diameter_mm": 185.0,
-            "cut_length_mm": 9.91
-          }
-        },
-        {
-          "sequence": 10,
           "operation_type": "chamfer_turn",
-          "target_feature_ids": [
-            "F09"
-          ],
-          "inputs": {
-            "kind": "axial_turn",
-            "start_diameter_mm": 185.0,
-            "finish_diameter_mm": 187.0,
-            "cut_length_mm": 1.0,
-            "taper_included_angle_deg": 30.0
-          }
-        },
-        {
-          "sequence": 11,
-          "operation_type": "groove_id",
-          "target_feature_ids": [
-            "F03"
-          ],
-          "inputs": {
-            "kind": "radial_turn",
-            "start_diameter_mm": 185.0,
-            "finish_diameter_mm": 191.0,
-            "groove_width_mm": 3.2,
-            "groove_count": 1
-          }
-        },
-        {
-          "sequence": 12,
-          "operation_type": "chamfer_turn",
-          "target_feature_ids": [
-            "F03"
-          ],
-          "inputs": {
-            "kind": "axial_turn",
-            "start_diameter_mm": 191.0,
-            "finish_diameter_mm": 193.0,
-            "cut_length_mm": 1.0,
-            "taper_included_angle_deg": 25.0
-          }
-        },
-        {
-          "sequence": 13,
-          "operation_type": "undercut_groove",
           "target_feature_ids": [
             "F10"
-          ],
-          "inputs": {
-            "kind": "radial_turn",
-            "start_diameter_mm": 185.5,
-            "finish_diameter_mm": 187.9,
-            "groove_width_mm": 3.1,
-            "groove_count": 1
-          }
-        },
-        {
-          "sequence": 14,
-          "operation_type": "rough_bore_id",
-          "target_feature_ids": [
-            "F14"
-          ],
-          "inputs": {
-            "kind": "axial_turn",
-            "start_diameter_mm": 175.0,
-            "finish_diameter_mm": 188.7,
-            "cut_length_mm": 1.0
-          }
-        },
-        {
-          "sequence": 15,
-          "operation_type": "finish_bore_id",
-          "target_feature_ids": [
-            "F14"
-          ],
-          "inputs": {
-            "kind": "axial_turn",
-            "start_diameter_mm": 188.7,
-            "finish_diameter_mm": 189.5,
-            "cut_length_mm": 1.0
-          }
-        },
-        {
-          "sequence": 16,
-          "operation_type": "chamfer_turn",
-          "target_feature_ids": [
-            "F14"
-          ],
-          "inputs": {
-            "kind": "axial_turn",
-            "start_diameter_mm": 189.5,
-            "finish_diameter_mm": 191.5,
-            "cut_length_mm": 1.0,
-            "taper_included_angle_deg": 15.0
-          }
+          ]
         }
       ]
     },
@@ -364,281 +206,275 @@
       "sequence": 4,
       "name": "In-Process Blank Inspection",
       "machine_family": "inspection",
-      "setup_note": "Gate the soft blank before tooth cutting. Check overall height 53.8 mm, OD Ø208, tooth-minor Ø181.026, counterbore Ø188, and snap-ring groove width 3.2 mm. Do not release a blank that will not clean up in shaping.",
+      "setup_note": "Support the soft turned blank without distorting the ring and inspect the faces, stepped bores, relief and datum-B flank against the process axis. Release for shaping only after confirming tooth-tip pre-bore size, cutter clearance and available tooth-section geometry.",
       "datum_references": [
         "B"
       ],
       "material_machinability": "medium",
-      "setup_time_min": 5.0,
       "in_house": true,
       "sub_operations": [
         {
           "sequence": 1,
           "operation_type": "manual_inspect",
-          "target_feature_ids": [
-            "F01",
-            "F03",
-            "F12",
-            "F13"
-          ],
-          "inputs": {
-            "kind": "inspection",
-            "dimension_count": 6,
-            "gdt_count": 2,
-            "sampling_rate_pct": 100.0,
-            "requires_fixture": false
-          }
+          "target_feature_ids": []
         }
       ]
     },
     {
       "sequence": 5,
-      "name": "Internal Gear Shaping",
-      "machine_family": "gear_shaping",
-      "setup_note": "Locate on the turned Ø181.026 minor and datum B. Shape the internal spur (70 teeth, module 2.65, 24° pressure angle, 0° helix) in a rough pass and a finish pass across the 37.3 mm face. Stroke length is the face plus 5 mm approach and 3 mm overtravel. An internal gear is shaped, not hobbed. No shaving stock is left.",
+      "name": "Internal Gear Shaping \u2013 Rough and Finish",
+      "machine_family": "gear_shaper",
+      "setup_note": "Locate the soft blank on datum B and center from the finished OD and tooth-tip pre-bore using a low-distortion ring fixture. Rough-shape then finish-shape the 70 internal teeth in one loading, establishing datum A at the gear pitch axis and producing the specified profile and crown.",
       "datum_references": [
         "B",
         "A"
       ],
       "material_machinability": "medium",
-      "setup_time_min": 30.0,
       "in_house": true,
       "sub_operations": [
         {
           "sequence": 1,
           "operation_type": "shape_teeth",
           "target_feature_ids": [
-            "F02",
-            "F07"
-          ],
-          "inputs": {
-            "kind": "gear_shape",
-            "number_of_cuts": 1,
-            "pass": "rough",
-            "number_of_teeth": 70,
-            "normal_module_mm": 2.65,
-            "face_width_mm": 37.3,
-            "whole_depth_mm": 5.96,
-            "helix_angle_deg": 0.0,
-            "internal": true
-          }
+            "F01"
+          ]
         },
         {
           "sequence": 2,
           "operation_type": "shape_teeth",
           "target_feature_ids": [
-            "F02",
-            "F07"
-          ],
-          "inputs": {
-            "kind": "gear_shape",
-            "number_of_cuts": 1,
-            "pass": "finish",
-            "number_of_teeth": 70,
-            "normal_module_mm": 2.65,
-            "face_width_mm": 37.3,
-            "whole_depth_mm": 5.96,
-            "helix_angle_deg": 0.0,
-            "internal": true
-          }
+            "F01"
+          ]
         }
       ]
     },
     {
       "sequence": 6,
-      "name": "Tooth Chamfer and Deburr",
-      "machine_family": "chamfer_deburr",
-      "setup_note": "Chamfer-deburr machine, not a machining centre. Break the tooth crest (F05, P–Q) and root edge (F06, L–M) 0–1 mm, and apply the general 0.2–0.5 mm edge break. Do not break the active flank F07.",
+      "name": "Tooth Chamfer and Deburr \u2013 Upper End",
+      "machine_family": "entry_chamfer_machine",
+      "setup_note": "Support the shaped ring on datum B with the upper tooth ends exposed and center to datum A. Machine the upper tooth-end edge breaks and remove upper-side burrs while the ring remains soft.",
       "datum_references": [
         "A",
         "B"
       ],
       "material_machinability": "medium",
-      "setup_time_min": 15.0,
       "in_house": true,
       "sub_operations": [
         {
           "sequence": 1,
           "operation_type": "teeth_chamfer",
           "target_feature_ids": [
-            "F05",
-            "F06"
-          ],
-          "inputs": {
-            "kind": "gear_finish",
-            "number_of_teeth": 70,
-            "normal_module_mm": 2.65,
-            "face_width_mm": 37.3,
-            "stock_per_flank_mm": 0.5,
-            "helix_angle_deg": 0.0
-          }
+            "F16",
+            "F17"
+          ]
         },
         {
           "sequence": 2,
           "operation_type": "deburr",
-          "target_feature_ids": [],
-          "inputs": {
-            "kind": "manual",
-            "complexity": "medium",
-            "edge_length_mm": 800.0
-          }
+          "target_feature_ids": []
         }
       ]
     },
     {
       "sequence": 7,
-      "name": "Gear Inspection",
-      "machine_family": "inspection",
-      "setup_note": "100% tooth-thickness check over pins at the 3.89–3.99 mm normal space width. Lead, profile and helix (ffα 0.02, ffβ 0.02, fHβ per chart, fpt 0.023, Fr 0.094) on a gear analyser by sample, not on every piece. Datum A is the pitch cylinder.",
+      "name": "Tooth Chamfer and Deburr \u2013 Lower End",
+      "machine_family": "entry_chamfer_machine",
+      "setup_note": "Reverse the ring in a protected fixture centered to datum A, exposing the lower tooth ends and transition at M. Complete the lower tooth chamfers and remaining general edge breaks, then confirm the ring is burr-free before carburizing.",
       "datum_references": [
         "A",
         "B"
       ],
       "material_machinability": "medium",
-      "setup_time_min": 10.0,
       "in_house": true,
       "sub_operations": [
         {
           "sequence": 1,
-          "operation_type": "manual_inspect",
+          "operation_type": "teeth_chamfer",
           "target_feature_ids": [
-            "F02"
-          ],
-          "inputs": {
-            "kind": "inspection",
-            "dimension_count": 2,
-            "gdt_count": 0,
-            "sampling_rate_pct": 100.0,
-            "requires_fixture": true
-          }
+            "F19",
+            "F20"
+          ]
         },
         {
           "sequence": 2,
-          "operation_type": "gear_check",
+          "operation_type": "teeth_chamfer",
           "target_feature_ids": [
-            "F02",
-            "F07"
-          ],
-          "inputs": {
-            "kind": "inspection",
-            "dimension_count": 6,
-            "gdt_count": 0,
-            "sampling_rate_pct": 10.0,
-            "requires_fixture": true
-          }
+            "F14"
+          ]
+        },
+        {
+          "sequence": 3,
+          "operation_type": "teeth_chamfer",
+          "target_feature_ids": [
+            "F18"
+          ]
+        },
+        {
+          "sequence": 4,
+          "operation_type": "deburr",
+          "target_feature_ids": []
         }
       ]
     },
     {
       "sequence": 8,
-      "name": "Wash",
-      "machine_family": "finish_bench",
-      "setup_note": "Wash and dry the soft rings after gear inspection so chips and coolant are out of the tooth spaces and the snap-ring groove before final inspection and packing.",
+      "name": "Continuous Carburize and Integral Quench",
+      "machine_family": "carburizing_furnace",
+      "setup_note": "Load the soft, burr-free rings on distortion-control carriers through the in-house continuous carburizer with integral quench, targeting 1.2 mm effective case depth and 60\u201362 HRC after temper. Process the 100-piece order in qualified carrier loads rather than assuming one load; charge heat treatment per finished kilogram.",
       "datum_references": [],
       "material_machinability": "medium",
-      "setup_time_min": 5.0,
       "in_house": true,
       "sub_operations": [
         {
           "sequence": 1,
-          "operation_type": "clean_degrease",
-          "target_feature_ids": [],
-          "inputs": {
-            "kind": "manual",
-            "complexity": "medium",
-            "estimated_time_min": 1.0
-          }
+          "operation_type": "carburize",
+          "target_feature_ids": []
         }
       ]
     },
     {
       "sequence": 9,
-      "name": "Final Dimensional Inspection",
-      "machine_family": "inspection",
-      "setup_note": "Final gate on the washed soft ring. Sampled check of the turned diameters, 53.8 mm height, groove, and edge breaks, plus a 100% check of the key characteristics already gated at the blank and gear stations.",
-      "datum_references": [
-        "A",
-        "B"
-      ],
-      "material_machinability": "medium",
-      "setup_time_min": 10.0,
+      "name": "Low-Temperature Temper",
+      "machine_family": "carburizing_furnace",
+      "setup_note": "Transfer the quenched rings promptly to the qualified tempering cycle using supported carrier loads within equipment capacity. Temper to the customer-required final surface hardness of 60\u201362 HRC.",
+      "datum_references": [],
+      "material_machinability": "hardened",
       "in_house": true,
       "sub_operations": [
         {
           "sequence": 1,
-          "operation_type": "cmm_inspect",
-          "target_feature_ids": [],
-          "inputs": {
-            "kind": "inspection",
-            "dimension_count": 12,
-            "gdt_count": 6,
-            "sampling_rate_pct": 10.0,
-            "requires_fixture": true
-          }
-        },
-        {
-          "sequence": 2,
-          "operation_type": "manual_inspect",
-          "target_feature_ids": [
-            "F03",
-            "F05",
-            "F06"
-          ],
-          "inputs": {
-            "kind": "inspection",
-            "dimension_count": 4,
-            "gdt_count": 1,
-            "sampling_rate_pct": 100.0,
-            "requires_fixture": false
-          }
+          "operation_type": "temper",
+          "target_feature_ids": []
         }
       ]
     },
     {
       "sequence": 10,
-      "name": "Mark Part Number",
-      "machine_family": "finish_bench",
-      "setup_note": "Mark BGL742 on the bottom face. The drawing calls that face out as an optional marking location, and this route includes it.",
-      "datum_references": [
-        "B"
-      ],
-      "material_machinability": "medium",
-      "setup_time_min": 5.0,
+      "name": "Hardness and Effective Case-Depth Check",
+      "machine_family": "inspection",
+      "setup_note": "Check tempered surface hardness and verify 1.2 mm effective case depth using a representative witness coupon or approved metallurgical sample. Maintain traceability from the sample to the production carrier loads.",
+      "datum_references": [],
+      "material_machinability": "hardened",
+      "material_hardness_hrc": 61.0,
       "in_house": true,
       "sub_operations": [
         {
           "sequence": 1,
-          "operation_type": "mark_stamp",
-          "target_feature_ids": [
-            "F11"
-          ],
-          "inputs": {
-            "kind": "manual",
-            "complexity": "low",
-            "estimated_time_min": 0.4
-          }
+          "operation_type": "hardness_test",
+          "target_feature_ids": []
         }
       ]
     },
     {
       "sequence": 11,
-      "name": "Rust Preventive and Pack",
-      "machine_family": "finish_bench",
-      "setup_note": "No coating is specified. Dip the soft 8620 rings in rust-preventive oil, drain, and pack for the 100-piece lot.",
+      "name": "Shot Blast \u2013 Quench Scale Removal",
+      "machine_family": "shot_blaster",
+      "setup_note": "Support the hardened rings in qualified blast fixtures and remove quench scale without damaging the shaped tooth edges or datum flank. Split the order into equipment-rated loads; this is scale removal, not shot peening.",
       "datum_references": [],
-      "material_machinability": "medium",
-      "setup_time_min": 5.0,
+      "material_machinability": "hardened",
+      "material_hardness_hrc": 61.0,
       "in_house": true,
       "sub_operations": [
         {
           "sequence": 1,
-          "operation_type": "oil_and_pack",
-          "target_feature_ids": [],
-          "inputs": {
-            "kind": "manual",
-            "complexity": "low",
-            "estimated_time_min": 0.8
-          }
+          "operation_type": "shot_blast",
+          "target_feature_ids": []
+        }
+      ]
+    },
+    {
+      "sequence": 12,
+      "name": "Wash",
+      "machine_family": "washing_machine",
+      "setup_note": "Rack the hardened rings with the internal teeth and reliefs accessible to the wash flow. Remove blast media and residual contamination, then dry before inspection.",
+      "datum_references": [],
+      "material_machinability": "hardened",
+      "material_hardness_hrc": 61.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "clean_degrease",
+          "target_feature_ids": []
+        }
+      ]
+    },
+    {
+      "sequence": 13,
+      "name": "Gear Inspection",
+      "machine_family": "inspection",
+      "setup_note": "Locate from datum B and evaluate the finished gear about datum A. Check tooth size over pins and perform sampled gear-analyser checks of profile, pitch, helix and load-side crown against the approved gear specification.",
+      "datum_references": [
+        "A",
+        "B"
+      ],
+      "material_machinability": "hardened",
+      "material_hardness_hrc": 61.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "gear_check",
+          "target_feature_ids": []
+        }
+      ]
+    },
+    {
+      "sequence": 14,
+      "name": "Final Dimensional Inspection",
+      "machine_family": "inspection",
+      "setup_note": "Establish datum A from the gear pitch geometry and datum B from the lower relief flank without distorting the ring. Check final sizes and edge condition, with sampled CMM verification of the specified positional, profile and perpendicularity requirements after heat treatment.",
+      "datum_references": [
+        "A",
+        "B"
+      ],
+      "material_machinability": "hardened",
+      "material_hardness_hrc": 61.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "manual_inspect",
+          "target_feature_ids": []
+        },
+        {
+          "sequence": 2,
+          "operation_type": "cmm_inspect",
+          "target_feature_ids": []
+        }
+      ]
+    },
+    {
+      "sequence": 15,
+      "name": "Identification Marking",
+      "machine_family": "finish_bench",
+      "setup_note": "Support the inspected hardened ring and apply identification at the approved optional marking location. Keep the mark clear of tooth working surfaces and datum-contact areas.",
+      "datum_references": [],
+      "material_machinability": "hardened",
+      "material_hardness_hrc": 61.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "mark_stamp",
+          "target_feature_ids": []
+        }
+      ]
+    },
+    {
+      "sequence": 16,
+      "name": "Rust Preventive and Pack",
+      "machine_family": "oiling_packing",
+      "setup_note": "Apply rust preventive to the clean, accepted rings and pack with separators protecting the internal teeth and datum surfaces. Preserve heat-treatment and inspection traceability for the 100-piece order.",
+      "datum_references": [],
+      "material_machinability": "hardened",
+      "material_hardness_hrc": 61.0,
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "apply_rust_preventive",
+          "target_feature_ids": []
         }
       ]
     }
@@ -646,33 +482,149 @@
   "clarifications": [
     {
       "clarification_id": "C01",
-      "question": "No heat treatment specified, quoted soft; confirm whether HT is in your scope.",
-      "why_it_matters": "The drawing and the extracted specifications state material 8620 and do not state a case depth, hardness, or carburise note. 8620 is often carburised, but nothing on this sheet puts heat treatment in scope, so the route and the price are soft and include no post-HT finishing. If heat treatment is yours to do, the route and the price both change.",
-      "blocks": [],
-      "suggested_default": null,
+      "question": "What is the authoritative internal-gear root diameter, given the component table states 191.35\u2013191.55 mm but F01 contains an assumed 178.875 mm value?",
+      "blocks": [
+        5,
+        13
+      ],
+      "suggested_default": "Use the component-table root diameter of 191.35\u2013191.55 mm and reject the assumed 178.875 mm value.",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C02",
+      "question": "What is the axial width of the internal annular relief F13?",
+      "blocks": [
+        2
+      ],
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C03",
+      "question": "What is the radial depth of the internal annular relief F13?",
+      "blocks": [
+        2
+      ],
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C04",
+      "question": "What is the axial distance from the lower face F15 to the datum-B flank of F13?",
+      "blocks": [
+        2
+      ],
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C05",
+      "question": "Where is the \u00d8185 cylindrical land F05 located axially relative to the active internal-tooth span?",
+      "blocks": [
+        2,
+        5
+      ],
+      "suggested_default": "Treat F05 as a lower-end land outside the active tooth span so that it does not remove the \u00d8181.026 tooth tips.",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C06",
+      "question": "What is the taper angle of the internal transition F04?",
+      "blocks": [
+        2
+      ],
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C07",
+      "question": "Which ISO 1328 accuracy grade applies to the internal gear F01?",
+      "blocks": [
+        5,
+        13
+      ],
+      "priority": "medium"
+    },
+    {
+      "clarification_id": "C08",
+      "question": "What is the required over-pins acceptance dimension for F01?",
+      "blocks": [
+        5,
+        13
+      ],
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C09",
+      "question": "What measuring-pin diameter is specified for the over-pins gear check?",
+      "blocks": [
+        13
+      ],
+      "priority": "medium"
+    },
+    {
+      "clarification_id": "C10",
+      "question": "What is the complete helix-slope deviation requirement cropped after '0.045 MAX LOAD SI'?",
+      "blocks": [
+        5,
+        13
+      ],
+      "suggested_default": "Provisionally interpret the load-side helix-slope limit as 0.045 mm maximum over the center 80% of face width, subject to approval.",
+      "priority": "medium"
+    },
+    {
+      "clarification_id": "C11",
+      "question": "What is the specified size of the 15\u00b0 tooth-end chamfer F14?",
+      "blocks": [
+        7
+      ],
       "priority": "high"
     }
   ],
   "assumptions": [
     {
       "assumption_id": "A01",
-      "text": "No heat treatment is specified on the drawing or in the extracted specifications. The ring is quoted soft. Incoming hardness is the supplied annealed or normalised condition, not a final specification."
+      "text": "Linear dimensions are interpreted in millimetres, consistent with the routing-view dimensions and module specification."
     },
     {
       "assumption_id": "A02",
-      "text": "The blank is a bought-in forged ring, Ø213 / Ø175 × 58 mm, gross 5.2723 kg. Finished height is 53.8 mm and net weight is 2.8103 kg. Material stays at ₹75/kg. There is no in-house saw, heat, forge, or trim."
+      "text": "Stock is a purchased annealed ring with 2.5 mm machining allowance per side: OD 208 + 5 = 213 mm, bore 181.026 \u2212 5 = 176.026 mm, and axial width 53.8 + 5 = 58.8 mm. The 53.8 mm face width is the section A-A basic stack 16.5 + 37.3. The 13.11 mm dimension is Detail A only. No sawing, forging or drilling from solid is required. Finished weight is estimated at 2.796 kg: 16.5 mm at bore 188 mm, and 37.3 mm from OD 208 to root 191.45 plus 52.7 percent of the tooth annulus out to tip 181.026."
     },
     {
       "assumption_id": "A03",
-      "text": "The internal spur is shaped, rough then finish, because an internal gear cannot be hobbed. Internal shaving is not used: flank and root Ra are 3.2 and the stated ffα 0.02, ffβ 0.02 and fpt 0.023 are taken from the finish shaping pass. Shaving an internal gear would need a special machine the drawing does not call for."
+      "text": "Feature descriptions establish datum A as the F01 gear pitch axis and datum B as the lower flank of F13. Before shaping establishes A, soft machining and blank inspection use a temporary process axis from the turned geometry; final datum relationships are verified after heat treatment."
     },
     {
       "assumption_id": "A04",
-      "text": "No drilled-hole or slot pattern is in the extracted features, so there is no VMC operation. Tooth edge breaks go on a chamfer-deburr machine. Setups are amortised over 100 pieces and sit inside each operation cycle, as on the JAL routes."
+      "text": "The \u00d8181.026 tooth-tip envelope is pre-bored before shaping and survives as the internal tooth tips, so its boring operations legitimately target F01. The component-table root range 191.35\u2013191.55 mm provisionally overrides the geometrically inconsistent assumed root value."
     },
     {
       "assumption_id": "A05",
-      "text": "Gear inspection is 100% over pins and a sampled gear-analyser check. Final CMM is sampled. Marking is included because the bottom face is noted as an optional marking location. No coating is specified, so rust-preventive oil is preservation only. The chamfer-deburr machine is costed at ₹350/hr, the gear-machine rate already used for shaping; the shop card has no separate chamfer rate."
+      "text": "Provisional access allocation places F04, F05 and F13 on the lower datum-side setup and F03 and F09 on the upper setup. The stepped lands are assumed not to overlap the active tooth span; section-layout clarifications must be resolved before machining."
+    },
+    {
+      "assumption_id": "A06",
+      "text": "F10 is interpreted as two axisymmetric end chamfers, one machined in each turning setup. F16 and F17 are allocated to the upper tooth end; F14, F18, F19 and F20 to the lower tooth end, subject to the complete drawing."
+    },
+    {
+      "assumption_id": "A07",
+      "text": "The R0.25 F06 blends are produced incidentally by the adjacent bore and taper finishing tools. F08 receives a dedicated internal form-grooving step because its R1.2 carries an explicit tolerance."
+    },
+    {
+      "assumption_id": "A08",
+      "text": "The gear shaper is assumed capable of producing the specified profile modification and 0.010\u20130.040 mm load-side crown using a qualified shaping process. Rough and finish shaping remain separate passes in one loading; neither tooth shaving nor tooth grinding is required."
+    },
+    {
+      "assumption_id": "A09",
+      "text": "Customer instruction requires in-house continuous carburizing with integral quench, followed immediately by tempering, to 60\u201362 HRC and 1.2 mm effective case depth. The 61 HRC entries represent the nominal midpoint, not a measured result; heat treatment is charged per finished kilogram."
+    },
+    {
+      "assumption_id": "A10",
+      "text": "The conditional 'Hard finish datums' template step is explicitly omitted under the BGL742-specific rule: no bore or face has a specified fit, Ra 0.8 or tighter, or size band below 0.05 mm. F13's 0.05 mm perpendicularity is not such a size band; all turned surfaces are finished soft and checked after heat treatment."
+    },
+    {
+      "assumption_id": "A11",
+      "text": "Hardness and case-depth verification use an approved representative witness coupon or metallurgical sample. Final CMM and gear-analyser checks are provisionally sampled, with the production sampling plan to be approved before release."
+    },
+    {
+      "assumption_id": "A12",
+      "text": "The external-gear sequence is inapplicable: this part has internal teeth, no off-axis holes or pockets, and requires neither hobbing nor a VMC setup. Deburring is completed before carburizing and is not repeated afterward."
     }
   ]
 }
