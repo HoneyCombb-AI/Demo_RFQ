@@ -1,21 +1,23 @@
 {
-  "analysis_id": "080300_merge_20261110T033730Z",
-  "source_feature_graph_id": "080300_merge_20261110T033730Z",
+  "analysis_id": "080300_merge_20261119T091912Z",
+  "source_feature_graph_id": "080300_merge_20261119T091912Z",
   "quantity": 10,
   "part_family": "turned",
-  "base_geometry": "cylindrical",
+  "base_geometry": "rotational",
   "stock": {
-    "form": "hot_rolled_round_bar",
-    "diameter_mm": 159.0,
-    "machining_allowance_mm": 0.5,
-    "shape": "round_bar"
+    "form": "seamless_tube",
+    "diameter_mm": 155.0,
+    "bore_diameter_mm": 141.7,
+    "length_mm": 99.0,
+    "machining_allowance_mm": 0.3,
+    "shape": "tube"
   },
   "operations": [
     {
       "sequence": 1,
-      "name": "Saw Cut Stock",
+      "name": "Saw Tube Blanks",
       "machine_family": "saw",
-      "setup_note": "Saw the provisional hot-rolled round-bar blank to the required cut length. Finished length is not stated, so blank length remains to be confirmed.",
+      "setup_note": "Support and clamp the tube without crushing it, and saw individual 99 mm blanks with facing allowance at both ends.",
       "datum_references": [],
       "material_machinability": "medium",
       "in_house": true,
@@ -29,9 +31,9 @@
     },
     {
       "sequence": 2,
-      "name": "CNC Lathe - Rough OD and Bore, Finish Bore",
+      "name": "CNC Turn \u2013 Reference Face and Bore",
       "machine_family": "cnc_lathe",
-      "setup_note": "Chuck the cut blank, face the accessible end to establish an axial reference, and machine the OD before boring for rigidity. Rough the OD and bore, then finish the bore before finish-turning the OD because the finished tube wall is relatively thin.",
+      "setup_note": "Grip a short OD band in conforming soft jaws at low pressure, leaving clearance for through-boring, and face the exposed end as the axial setup reference. Rough the accessible OD before boring, then finish the through bore while retaining OD finishing stock.",
       "datum_references": [],
       "material_machinability": "medium",
       "in_house": true,
@@ -39,68 +41,38 @@
         {
           "sequence": 1,
           "operation_type": "face_turn",
-          "target_feature_ids": []
+          "target_feature_ids": [
+            "F02"
+          ]
         },
         {
           "sequence": 2,
           "operation_type": "rough_turn_od",
           "target_feature_ids": [
-            "F01"
+            "F02"
           ]
         },
         {
           "sequence": 3,
-          "operation_type": "drill",
+          "operation_type": "rough_bore_id",
           "target_feature_ids": [
-            "F02"
+            "F03"
           ]
         },
         {
           "sequence": 4,
-          "operation_type": "rough_bore_id",
-          "target_feature_ids": [
-            "F02"
-          ]
-        },
-        {
-          "sequence": 5,
           "operation_type": "finish_bore_id",
           "target_feature_ids": [
-            "F02"
+            "F03"
           ]
         }
       ]
     },
     {
       "sequence": 3,
-      "name": "CNC Lathe - Finish OD and Chamfer First End",
+      "name": "CNC Turn \u2013 Final Length and OD",
       "machine_family": "cnc_lathe",
-      "setup_note": "Locate on the finished bore with an expanding mandrel to support the thin wall. Finish the OD and machine the accessible end chamfer.",
-      "datum_references": [],
-      "material_machinability": "medium",
-      "in_house": true,
-      "sub_operations": [
-        {
-          "sequence": 1,
-          "operation_type": "finish_turn_od",
-          "target_feature_ids": [
-            "F01"
-          ]
-        },
-        {
-          "sequence": 2,
-          "operation_type": "chamfer_turn",
-          "target_feature_ids": [
-            "F03"
-          ]
-        }
-      ]
-    },
-    {
-      "sequence": 4,
-      "name": "CNC Lathe - Reverse and Finish Second End",
-      "machine_family": "cnc_lathe",
-      "setup_note": "Reverse the part and hold it in soft jaws on the finished OD. Face the remaining end to length and machine its chamfer.",
+      "setup_note": "Locate on the finished bore using a low-pressure expanding mandrel against the first machined face, with a relieved stop providing tool clearance at both OD rims. Face the opposite end to final length, rough the former grip band, then finish the complete OD and chamfer both ends without reloading.",
       "datum_references": [],
       "material_machinability": "medium",
       "in_house": true,
@@ -108,22 +80,45 @@
         {
           "sequence": 1,
           "operation_type": "face_turn",
-          "target_feature_ids": []
+          "target_feature_ids": [
+            "F02"
+          ]
         },
         {
           "sequence": 2,
+          "operation_type": "rough_turn_od",
+          "target_feature_ids": [
+            "F02"
+          ]
+        },
+        {
+          "sequence": 3,
+          "operation_type": "finish_turn_od",
+          "target_feature_ids": [
+            "F02"
+          ]
+        },
+        {
+          "sequence": 4,
           "operation_type": "chamfer_turn",
           "target_feature_ids": [
-            "F03"
+            "F04"
+          ]
+        },
+        {
+          "sequence": 5,
+          "operation_type": "chamfer_turn",
+          "target_feature_ids": [
+            "F04"
           ]
         }
       ]
     },
     {
-      "sequence": 5,
-      "name": "Deburr",
+      "sequence": 4,
+      "name": "Deburr and Clean",
       "machine_family": "finish_bench",
-      "setup_note": "Remove burrs from the machined edges and bore ends, preserving the specified chamfers and finished surfaces.",
+      "setup_note": "Support the released tube on a non-marring bench fixture and remove residual burrs, limiting unspecified edge breaks to 0.5 mm maximum. Clean the bore and exterior without altering the specified chamfers or finished dimensions.",
       "datum_references": [],
       "material_machinability": "medium",
       "in_house": true,
@@ -132,14 +127,19 @@
           "sequence": 1,
           "operation_type": "deburr",
           "target_feature_ids": []
+        },
+        {
+          "sequence": 2,
+          "operation_type": "clean_degrease",
+          "target_feature_ids": []
         }
       ]
     },
     {
-      "sequence": 6,
-      "name": "Final Inspection",
+      "sequence": 5,
+      "name": "Final Dimensional Inspection",
       "machine_family": "inspection",
-      "setup_note": "Inspect the OD, through bore, and both end chamfers against the drawing after the part has stabilized.",
+      "setup_note": "Inspect each clean part unclamped and temperature-stabilized, checking OD, bore size at multiple axial and angular positions, overall length, both chamfers, and the specified OD finish. Verify the bore remains within limits after release from the mandrel.",
       "datum_references": [],
       "material_machinability": "medium",
       "in_house": true,
@@ -155,38 +155,57 @@
   "clarifications": [
     {
       "clarification_id": "C01",
-      "question": "What starting stock form is intended for this part: solid round bar or seamless mechanical tube?",
+      "question": "What commercially available seamless tube blank size is approved with sufficient guaranteed cleanup on both finished diameters?",
       "blocks": [
         1,
-        2
+        2,
+        3
       ],
-      "suggested_default": "Proceed provisionally with hot-rolled solid round bar because no tube grade or tube blank is specified.",
+      "suggested_default": "Use the provisional 155.0 mm OD \u00d7 141.7 mm ID tube, cut to 99.0 mm, only after procurement verifies availability and dimensional tolerances that guarantee cleanup.",
       "priority": "high"
     },
     {
       "clarification_id": "C02",
-      "question": "What is the finished overall length of the part?",
+      "question": "Are the specified 1\u20131.5 mm \u00d7 45\u00b0 chamfers located on the outside rims at both ends?",
       "blocks": [
-        1,
-        2,
-        3,
-        4
+        3
       ],
+      "suggested_default": "Apply one specified chamfer to each OD rim; break the bore edges to 0.5 mm maximum.",
       "priority": "high"
     }
   ],
   "assumptions": [
     {
       "assumption_id": "A01",
-      "text": "Because the blank type is unstated and the material callout does not specify a mechanical-tube grade, the provisional stock is hot-rolled round bar sized above the finished OD. This assumes boring the through bore from solid stock; confirm the intended stock form because a tube blank could materially reduce machining."
+      "text": "The route is for part 080300: overall length is 93.17\u201393.67 mm and the variant table states PROCESS PER: NONE. Requirements for parts 080301 and 080302 are not applied."
     },
     {
       "assumption_id": "A02",
-      "text": "The drawing view provides no finished length, so stock cut length and final face position cannot be specified. Center drilling is not included; add center support if the confirmed length requires it, including if the length-to-diameter ratio exceeds 4:1."
+      "text": "Near-net seamless mechanical tubing within the stated material range is assumed available. The selected tube dimensions are provisional purchasing targets, not a verified commercial standard size; actual stock tolerances must guarantee complete cleanup."
     },
     {
       "assumption_id": "A03",
-      "text": "Grooving and threading are omitted because no groove or thread features are shown. Part-off is omitted because the route starts with saw-cut individual blanks rather than bar-fed production."
+      "text": "The 0.3 mm machining allowance is interpreted as a nominal diametral finishing allowance for this near-net tube. Light roughing removes the supplied surface before finishing; no bulk OD or bore removal is assumed."
+    },
+    {
+      "assumption_id": "A04",
+      "text": "No drawing datum letters are supplied. The first machined end and finished bore are manufacturing locating references only, so datum_references remains empty."
+    },
+    {
+      "assumption_id": "A05",
+      "text": "Both end-facing cuts target F02 because its axial length defines the overall length and the routing view contains no separate end-face feature IDs."
+    },
+    {
+      "assumption_id": "A06",
+      "text": "F04 is provisionally interpreted as two OD chamfers. Its two instances receive separate chamfer-turning sub-operations, and the specific chamfer dimensions override the general 0.5 mm maximum edge break."
+    },
+    {
+      "assumption_id": "A07",
+      "text": "The expanding mandrel and relieved axial stop are assumed available or procurable. The accessible OD is roughed before boring; the original grip band is roughed in the second lathe setup, and all OD finishing follows bore finishing to control thin-wall distortion."
+    },
+    {
+      "assumption_id": "A08",
+      "text": "Center drilling and tailstock support are omitted because this is a short, open-bore tube. Pilot drilling is omitted because the stock already has a through bore; grooving and threading are omitted because no such features are specified; parting off is omitted because individual blanks are saw-cut and both ends are faced."
     }
   ]
 }

@@ -3,81 +3,78 @@
   "part_name": "INNER TUBE",
   "material": "SAE 1010-1026 STEEL",
   "quantity": 10,
-  "quote_status": "incomplete",
+  "quote_status": "complete",
   "weights": {
-    "raw_bar_dia_mm": 159.0
+    "gross_weight_kg": 2.409,
+    "net_weight_kg": 2.14631,
+    "scrap_weight_kg": 0.2627
   },
   "direct_cost": {
-    "machining_cost_inr": 78.57,
-    "direct_base_inr": 78.57
+    "machining_cost_inr": 56.37,
+    "direct_base_inr": 237.04,
+    "material_cost_inr": 180.67,
+    "material_rate_per_kg_inr": 75.0
   },
   "cif_and_overheads": {
-    "overhead_25_pct_inr": 19.77,
-    "total_cif_inr": 98.84,
-    "total_cost_per_pc_inr": 98.84
+    "overhead_25_pct_inr": 59.38,
+    "total_cif_inr": 383.94,
+    "total_cost_per_pc_inr": 378.69,
+    "packaging_charges_inr": 18.03,
+    "logistics_cost_inr": 68.99,
+    "scrap_recovery_credit_inr": -5.25
   },
   "pricing_and_duties": {
-    "profit_10_pct_inr": 7.91,
-    "actual_cost_inr": 106.75,
-    "icc_and_rejection_inr": 1.58,
-    "custom_duty_3_5_pct_inr": 3.74,
-    "warehouse_cost_4_pct_inr": 4.27,
-    "final_landed_price_inr": 116.34
+    "profit_10_pct_inr": 23.75,
+    "actual_cost_inr": 402.44,
+    "icc_and_rejection_inr": 6.25,
+    "custom_duty_3_5_pct_inr": 14.09,
+    "warehouse_cost_4_pct_inr": 16.1,
+    "final_landed_price_inr": 438.88
   },
   "machining_operations": [
     {
       "sequence": 1,
-      "operation_name": "Saw Cut Stock",
+      "operation_name": "Saw Tube Blanks",
       "machine_family": "saw",
-      "cycle_time_sec": 332.63,
+      "cycle_time_sec": 81.29,
       "hourly_rate_inr": 290.0,
-      "cost_per_piece_raw": 31.52375816993464,
-      "cost_per_piece_inr": 31.52,
+      "cost_per_piece_raw": 7.703954248366014,
+      "cost_per_piece_inr": 7.7,
       "efficiency": 0.85
     },
     {
       "sequence": 2,
-      "operation_name": "CNC Lathe - Rough OD and Bore, Finish Bore",
+      "operation_name": "CNC Turn \u2013 Reference Face and Bore",
       "machine_family": "cnc_lathe",
-      "cycle_time_sec": 304.15,
+      "cycle_time_sec": 242.5,
       "hourly_rate_inr": 280.0,
-      "cost_per_piece_raw": 27.830718954248365,
-      "cost_per_piece_inr": 27.83,
+      "cost_per_piece_raw": 22.18954248366013,
+      "cost_per_piece_inr": 22.19,
       "efficiency": 0.85
     },
     {
       "sequence": 3,
-      "operation_name": "CNC Lathe - Finish OD and Chamfer First End",
+      "operation_name": "CNC Turn \u2013 Final Length and OD",
       "machine_family": "cnc_lathe",
-      "cycle_time_sec": 101.45,
+      "cycle_time_sec": 212.26,
       "hourly_rate_inr": 280.0,
-      "cost_per_piece_raw": 9.283006535947713,
-      "cost_per_piece_inr": 9.28,
+      "cost_per_piece_raw": 19.42248366013072,
+      "cost_per_piece_inr": 19.42,
       "efficiency": 0.85
     },
     {
       "sequence": 4,
-      "operation_name": "CNC Lathe - Reverse and Finish Second End",
-      "machine_family": "cnc_lathe",
-      "cycle_time_sec": 52.85,
-      "hourly_rate_inr": 280.0,
-      "cost_per_piece_raw": 4.835947712418301,
-      "cost_per_piece_inr": 4.84,
+      "operation_name": "Deburr and Clean",
+      "machine_family": "finish_bench",
+      "cycle_time_sec": 108.0,
+      "hourly_rate_inr": 200.0,
+      "cost_per_piece_raw": 7.0588235294117645,
+      "cost_per_piece_inr": 7.06,
       "efficiency": 0.85
     },
     {
       "sequence": 5,
-      "operation_name": "Deburr",
-      "machine_family": "finish_bench",
-      "cycle_time_sec": 78.0,
-      "hourly_rate_inr": 200.0,
-      "cost_per_piece_raw": 5.098039215686275,
-      "cost_per_piece_inr": 5.1,
-      "efficiency": 0.85
-    },
-    {
-      "sequence": 6,
-      "operation_name": "Final Inspection",
+      "operation_name": "Final Dimensional Inspection",
       "machine_family": "inspection",
       "cycle_time_sec": 105.0,
       "hourly_rate_inr": 250.0,
