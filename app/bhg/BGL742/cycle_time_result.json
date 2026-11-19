@@ -2,8 +2,8 @@
   "analysis_id": "BGL_742_merge_20261119T132522Z",
   "organization_id": "bhg",
   "quantity": 100,
-  "t_cycle_per_part_sec": 4921.08,
-  "t_cycle_total_batch_sec": 492108.0,
+  "t_cycle_per_part_sec": 4800.18,
+  "t_cycle_total_batch_sec": 480018.0,
   "t_setup_total_batch_sec": 15060.0,
   "operations": [
     {
@@ -49,8 +49,8 @@
       "setup_time_sec": 1500.0,
       "t_setup_per_piece_sec": 15.0,
       "t_handling_sec": 30.0,
-      "t_machining_sec": 528.19,
-      "t_op_total_sec": 573.19,
+      "t_machining_sec": 407.286,
+      "t_op_total_sec": 452.286,
       "sub_op_results": [
         {
           "operation_seq": 2,
@@ -80,15 +80,15 @@
               "kind": "config"
             }
           },
-          "t_cut_sec": 43.69,
-          "t_tool_sec": 5.45,
+          "t_cut_sec": 43.692,
+          "t_tool_sec": 5.448,
           "t_rapid_sec": 0.0,
           "t_sub_total_sec": 49.14,
           "trace": {
             "vc_m_min": 164.0,
             "position": 0.6,
             "f_mm_rev": 0.29,
-            "rpm": 501.95,
+            "rpm": 501.9502,
             "travel_mm": 104.0,
             "passes": 1.0,
             "steps": 1.0,
@@ -99,7 +99,7 @@
           "missing": [],
           "cutting_limits": [],
           "note": null,
-          "rpm": 501.95
+          "rpm": 501.9502
         },
         {
           "operation_seq": 2,
@@ -136,30 +136,6 @@
           "operation_type": "rough_bore_id",
           "kind": "axial_turn",
           "method": "fallback",
-          "feature_id": "F01",
-          "inputs": {},
-          "sources": {},
-          "t_cut_sec": 60.0,
-          "t_tool_sec": 5.45,
-          "t_rapid_sec": 0.0,
-          "t_sub_total_sec": 65.45,
-          "trace": {
-            "fallback_min": 1.0
-          },
-          "warnings": [],
-          "missing": [
-            "F01.length",
-            "F01.diameter"
-          ],
-          "cutting_limits": [],
-          "note": null
-        },
-        {
-          "operation_seq": 2,
-          "sub_op_seq": 4,
-          "operation_type": "rough_bore_id",
-          "kind": "axial_turn",
-          "method": "fallback",
           "feature_id": "F05",
           "inputs": {},
           "sources": {
@@ -173,9 +149,9 @@
             }
           },
           "t_cut_sec": 60.0,
-          "t_tool_sec": 0.45,
+          "t_tool_sec": 5.448,
           "t_rapid_sec": 0.0,
-          "t_sub_total_sec": 60.45,
+          "t_sub_total_sec": 65.448,
           "trace": {
             "fallback_min": 1.0
           },
@@ -190,7 +166,7 @@
         },
         {
           "operation_seq": 2,
-          "sub_op_seq": 5,
+          "sub_op_seq": 4,
           "operation_type": "groove_id",
           "kind": "radial_turn",
           "method": "fallback",
@@ -203,9 +179,9 @@
             }
           },
           "t_cut_sec": 18.0,
-          "t_tool_sec": 5.45,
+          "t_tool_sec": 5.448,
           "t_rapid_sec": 0.0,
-          "t_sub_total_sec": 23.45,
+          "t_sub_total_sec": 23.448,
           "trace": {
             "fallback_min": 0.3
           },
@@ -220,7 +196,7 @@
         },
         {
           "operation_seq": 2,
-          "sub_op_seq": 6,
+          "sub_op_seq": 5,
           "operation_type": "finish_turn_od",
           "kind": "axial_turn",
           "method": "fallback",
@@ -252,31 +228,7 @@
         },
         {
           "operation_seq": 2,
-          "sub_op_seq": 7,
-          "operation_type": "finish_bore_id",
-          "kind": "axial_turn",
-          "method": "fallback",
-          "feature_id": "F01",
-          "inputs": {},
-          "sources": {},
-          "t_cut_sec": 60.0,
-          "t_tool_sec": 0.45,
-          "t_rapid_sec": 0.0,
-          "t_sub_total_sec": 60.45,
-          "trace": {
-            "fallback_min": 1.0
-          },
-          "warnings": [],
-          "missing": [
-            "F01.length",
-            "F01.diameter"
-          ],
-          "cutting_limits": [],
-          "note": null
-        },
-        {
-          "operation_seq": 2,
-          "sub_op_seq": 8,
+          "sub_op_seq": 6,
           "operation_type": "finish_bore_id",
           "kind": "axial_turn",
           "method": "fallback",
@@ -308,7 +260,7 @@
         },
         {
           "operation_seq": 2,
-          "sub_op_seq": 9,
+          "sub_op_seq": 7,
           "operation_type": "bore_taper",
           "kind": "axial_turn",
           "method": "fallback",
@@ -346,7 +298,7 @@
         },
         {
           "operation_seq": 2,
-          "sub_op_seq": 10,
+          "sub_op_seq": 8,
           "operation_type": "chamfer_turn",
           "kind": "axial_turn",
           "method": "static",
@@ -368,7 +320,7 @@
         },
         {
           "operation_seq": 2,
-          "sub_op_seq": 11,
+          "sub_op_seq": 9,
           "operation_type": "groove_id",
           "kind": "radial_turn",
           "method": "fallback",
@@ -398,7 +350,7 @@
         },
         {
           "operation_seq": 2,
-          "sub_op_seq": 12,
+          "sub_op_seq": 10,
           "operation_type": "chamfer_turn",
           "kind": "axial_turn",
           "method": "static",
@@ -428,8 +380,8 @@
       "setup_time_sec": 1500.0,
       "t_setup_per_piece_sec": 15.0,
       "t_handling_sec": 30.0,
-      "t_machining_sec": 384.29,
-      "t_op_total_sec": 429.29,
+      "t_machining_sec": 384.294,
+      "t_op_total_sec": 429.294,
       "sub_op_results": [
         {
           "operation_seq": 3,
@@ -459,15 +411,15 @@
               "kind": "config"
             }
           },
-          "t_cut_sec": 10.33,
-          "t_tool_sec": 5.45,
+          "t_cut_sec": 10.332,
+          "t_tool_sec": 5.448,
           "t_rapid_sec": 0.0,
           "t_sub_total_sec": 15.78,
           "trace": {
             "vc_m_min": 164.0,
             "position": 0.6,
             "f_mm_rev": 0.29,
-            "rpm": 265.33,
+            "rpm": 265.3256,
             "travel_mm": 11.25,
             "passes": 1.0,
             "steps": 1.0,
@@ -478,7 +430,7 @@
           "missing": [],
           "cutting_limits": [],
           "note": null,
-          "rpm": 265.33
+          "rpm": 265.3256
         },
         {
           "operation_seq": 3,
@@ -565,9 +517,9 @@
             }
           },
           "t_cut_sec": 60.0,
-          "t_tool_sec": 5.45,
+          "t_tool_sec": 5.448,
           "t_rapid_sec": 0.0,
-          "t_sub_total_sec": 65.45,
+          "t_sub_total_sec": 65.448,
           "trace": {
             "fallback_min": 1.0
           },
@@ -615,7 +567,7 @@
             "vc_m_min": 144.0,
             "position": 0.6,
             "f_mm_rev": 0.29,
-            "rpm": 398.23,
+            "rpm": 398.233,
             "radial_mm": 75.1,
             "passes": 38.0,
             "Vc": 144.0,
@@ -627,7 +579,7 @@
           "missing": [],
           "cutting_limits": [],
           "note": null,
-          "rpm": 398.23
+          "rpm": 398.233
         },
         {
           "operation_seq": 3,
@@ -688,15 +640,15 @@
               "kind": "drawing"
             }
           },
-          "t_cut_sec": 9.16,
+          "t_cut_sec": 9.156,
           "t_tool_sec": 0.45,
           "t_rapid_sec": 0.0,
-          "t_sub_total_sec": 9.61,
+          "t_sub_total_sec": 9.606,
           "trace": {
             "vc_m_min": 170.0,
             "position": 0.5,
             "f_mm_rev": 0.12,
-            "rpm": 283.91,
+            "rpm": 283.907,
             "radial_mm": 0.4,
             "passes": 1.0,
             "Vc": 170.0,
@@ -706,7 +658,7 @@
           "missing": [],
           "cutting_limits": [],
           "note": null,
-          "rpm": 283.91
+          "rpm": 283.907
         },
         {
           "operation_seq": 3,
