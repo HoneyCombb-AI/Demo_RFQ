@@ -1,272 +1,236 @@
 {
   "analysis_id": "ASD26056_6422_Wheel_merge_20261023T164731Z",
   "source_feature_graph_id": "ASD26056_6422_Wheel_merge_20261023T164731Z",
-  "quantity": 10,
-  "part_family": "sheet_metal",
-  "base_geometry": "flat_plate",
+  "quantity": 100,
+  "part_family": "hybrid",
+  "base_geometry": "rotational",
   "stock": {
-    "form": "hot_rolled_sheet",
-    "width_mm": 155.0,
-    "height_mm": 155.0,
-    "thickness_mm": 4.5,
-    "machining_allowance_mm": null
+    "form": "ring_rolled_blank",
+    "diameter_mm": 151.0,
+    "bore_diameter_mm": 98.02,
+    "width_mm": 8.5,
+    "machining_allowance_mm": 1.0,
+    "shape": "ring"
   },
   "operations": [
     {
       "sequence": 1,
-      "name": "Shear Strip",
-      "machine_family": "shearing_machine",
-      "setup_note": "HR13 sheet 4.5 mm (3.5 final + 0.9 side A + 0.1 side B lapping stock, note 2) sheared into 160 mm strip.",
-      "datum_references": [],
-      "material_machinability": "easy",
-      "setup_time_min": 10.0,
+      "name": "CNC Turn \u2014 Datum Face and Bore",
+      "machine_family": "cnc_lathe",
+      "setup_note": "Hold the incoming ring in low-force bored soft jaws with broad axial support, leaving side B accessible. Establish datum Q on F13, then machine the bore and provisionally interpreted internal shoulder without releasing the part.",
+      "datum_references": [
+        "Q"
+      ],
+      "material_machinability": "medium",
       "in_house": true,
       "sub_operations": [
         {
           "sequence": 1,
-          "operation_type": "shear_cut",
-          "target_feature_ids": [],
-          "inputs": {
-            "sheet_thickness_mm": 4.5,
-            "strip_width_mm": 160,
-            "strip_length_mm": 2500,
-            "parts_per_strip": 16,
-            "shear_s_per_strip": 6
-          }
+          "operation_type": "face_turn",
+          "target_feature_ids": [
+            "F13"
+          ]
+        },
+        {
+          "sequence": 2,
+          "operation_type": "face_turn",
+          "target_feature_ids": [
+            "F15"
+          ]
+        },
+        {
+          "sequence": 3,
+          "operation_type": "rough_bore_id",
+          "target_feature_ids": [
+            "F01"
+          ]
+        },
+        {
+          "sequence": 4,
+          "operation_type": "finish_bore_id",
+          "target_feature_ids": [
+            "F15"
+          ]
+        },
+        {
+          "sequence": 5,
+          "operation_type": "finish_bore_id",
+          "target_feature_ids": [
+            "F01"
+          ]
+        },
+        {
+          "sequence": 6,
+          "operation_type": "chamfer_turn",
+          "target_feature_ids": [
+            "F08"
+          ]
         }
       ]
     },
     {
       "sequence": 2,
-      "name": "Fine Blank Wheel",
-      "machine_family": "fine_blanking_press",
-      "setup_note": "Compound fine-blanking tool, one stroke: 58 teeth and \u00d8149 tip circle, bore pre-pierced \u00d898, \u00d89 holes, \u00d812 hole, oval and index slots. Die-roll side = side A (removed by the 0.9 mm side-A stock).",
-      "datum_references": [],
-      "material_machinability": "easy",
-      "setup_time_min": 30.0,
+      "name": "CNC Turn \u2014 Reverse Face and Outside Profile",
+      "machine_family": "cnc_lathe",
+      "setup_note": "Reverse onto a precision bore locator with datum Q against an annular backing face and low-distortion axial clamping. Finish side A, the provisionally interpreted external shoulders, and the outside diameter concentrically with the finished bore.",
+      "datum_references": [
+        "Q"
+      ],
+      "material_machinability": "medium",
       "in_house": true,
       "sub_operations": [
         {
           "sequence": 1,
-          "operation_type": "punch",
+          "operation_type": "face_turn",
           "target_feature_ids": [
-            "F18",
-            "F02"
-          ],
-          "inputs": {
-            "tip_diameter_mm": 149.0,
-            "teeth": 58,
-            "positions": 60,
-            "tooth_width_mm": 4.1,
-            "tooth_depth_mm": 5.0,
-            "tooth_profile_perimeter_mm": 1020,
-            "inner_perimeter_mm": 486,
-            "total_cut_perimeter_mm": 1506,
-            "thickness_mm": 4.5,
-            "uts_mpa": 380,
-            "blanking_force_t": 235,
-            "press_t": 400,
-            "strokes_per_min": 35
-          }
+            "F14"
+          ]
         },
         {
           "sequence": 2,
-          "operation_type": "punch",
+          "operation_type": "face_turn",
           "target_feature_ids": [
-            "F01",
-            "F04",
-            "F05",
-            "F06",
-            "F07"
-          ],
-          "inputs": {
-            "bore_prepierce_mm": 98.0,
-            "holes": "3 x \u00d89, \u00d812",
-            "slots": "oval 5.5, index 8"
-          }
+            "F16"
+          ]
+        },
+        {
+          "sequence": 3,
+          "operation_type": "finish_turn_od",
+          "target_feature_ids": [
+            "F16"
+          ]
+        },
+        {
+          "sequence": 4,
+          "operation_type": "face_turn",
+          "target_feature_ids": [
+            "F17"
+          ]
+        },
+        {
+          "sequence": 5,
+          "operation_type": "finish_turn_od",
+          "target_feature_ids": [
+            "F17"
+          ]
+        },
+        {
+          "sequence": 6,
+          "operation_type": "finish_turn_od",
+          "target_feature_ids": [
+            "F18"
+          ]
         }
       ]
     },
     {
       "sequence": 3,
-      "name": "CNC Turn Bore",
-      "machine_family": "cnc_lathe",
-      "setup_note": "Locate on \u00d8149 tooth tips (concentricity \u00d80.1) and side B face. Bore \u00d8100.02 +0.054 (H8) Ra 3.2; side-A bore chamfer 2.4 x 45 deg before lapping (note 1, detail C) -> 1.5 after lapping.",
+      "name": "VMC \u2014 Axial Holes and Index Slot",
+      "machine_family": "vmc_3axis",
+      "setup_note": "Locate the turned ring by its bore and datum Q on a supported fixture with clearance beneath the through features. Establish the drawing angular origin only after datum P and the basic feature locations are confirmed.",
       "datum_references": [
-        "P",
         "Q"
       ],
-      "material_machinability": "easy",
-      "setup_time_min": 20.0,
+      "material_machinability": "medium",
       "in_house": true,
       "sub_operations": [
         {
           "sequence": 1,
-          "operation_type": "rough_bore_id",
+          "operation_type": "spot_drill",
           "target_feature_ids": [
-            "F01"
-          ],
-          "inputs": {
-            "from_mm": 98.0,
-            "to_mm": 99.6,
-            "length_mm": 6.5,
-            "vc_m_min": 250,
-            "f_mm_rev": 0.25,
-            "rpm": 804,
-            "vf_mm_min": 201
-          }
+            "F03",
+            "F04",
+            "F05"
+          ]
         },
         {
           "sequence": 2,
-          "operation_type": "finish_bore_id",
+          "operation_type": "drill",
           "target_feature_ids": [
-            "F01"
-          ],
-          "inputs": {
-            "to_mm": 100.02,
-            "tol": "+0.054/0 H8",
-            "ra_um": 3.2,
-            "length_mm": 6.5,
-            "vc_m_min": 280,
-            "f_mm_rev": 0.12,
-            "rpm": 891,
-            "vf_mm_min": 107
-          }
+            "F03"
+          ]
         },
         {
           "sequence": 3,
-          "operation_type": "chamfer_turn",
+          "operation_type": "drill",
           "target_feature_ids": [
-            "F08"
-          ],
-          "inputs": {
-            "chamfer": "2.4 x 45 deg side A (before lapping)",
-            "edge_break_side_b_mm": 0.1,
-            "f_mm_rev": 0.12,
-            "rpm": 800,
-            "passes": 2
-          }
+            "F04",
+            "F05"
+          ]
+        },
+        {
+          "sequence": 4,
+          "operation_type": "slot_mill",
+          "target_feature_ids": [
+            "F07"
+          ]
         }
       ]
     },
     {
       "sequence": 4,
-      "name": "VMC Counterbore Mounting Holes",
+      "name": "VMC \u2014 Cross-Axis Oval Slot",
       "machine_family": "vmc_3axis",
-      "setup_note": "Fixture on \u00d8100.02 bore and index slot. 3 x \u00d816.3 +/-0.1 counterbores on PCD \u00d8119.5, side A, depth 2.4 before lapping (1.5 +/-0.1 after), Ra 3.2, position \u00d80.1 to P-Q.",
+      "setup_note": "Reorient the supported ring so the spindle accesses F06 across the part axis, as stated in the routing view. Locate from the bore and Q, and clock from the confirmed angular reference; release this setup only after the slot section and through extent are defined.",
       "datum_references": [
-        "P",
         "Q"
       ],
-      "material_machinability": "easy",
-      "setup_time_min": 20.0,
+      "material_machinability": "medium",
       "in_house": true,
       "sub_operations": [
         {
           "sequence": 1,
-          "operation_type": "counterbore",
+          "operation_type": "slot_mill",
           "target_feature_ids": [
-            "F03"
-          ],
-          "inputs": {
-            "count": 3,
-            "diameter_mm": 16.3,
-            "pilot_mm": 9.0,
-            "depth_mm": 2.4,
-            "pcd_mm": 119.5,
-            "vc_m_min": 120,
-            "rpm": 2343,
-            "f_mm_rev": 0.12,
-            "vf_mm_min": 281
-          }
+            "F06"
+          ]
         }
       ]
     },
     {
       "sequence": 5,
-      "name": "Rotary Surface Grind Side A",
-      "machine_family": "rotary_surface_grinder",
-      "setup_note": "Blanchard grind side A 0.8 mm on magnetic chuck, full batch per load; removes fine-blanking die roll.",
+      "name": "Hob External Tooth Profile",
+      "machine_family": "gear_hobber",
+      "setup_note": "Locate on the finished bore with Q against the arbor face and support the thin ring against cutting deflection. Use a drawing-approved profile hob and the confirmed tooth indexing and angular phase; generate F12 with the tooth profile only if its assumed root location is confirmed.",
       "datum_references": [
         "Q"
       ],
-      "material_machinability": "easy",
-      "setup_time_min": 10.0,
+      "material_machinability": "medium",
       "in_house": true,
       "sub_operations": [
         {
           "sequence": 1,
-          "operation_type": "surface_grind",
+          "operation_type": "hob_teeth",
           "target_feature_ids": [
-            "F14"
-          ],
-          "inputs": {
-            "stock_mm": 0.8,
-            "parts_per_load": 10,
-            "rough_downfeed_mm_min": 0.2,
-            "finish_downfeed_mm_min": 0.05
-          }
+            "F02",
+            "F12"
+          ]
         }
       ]
     },
     {
       "sequence": 6,
-      "name": "Double-Side Lap",
-      "machine_family": "lapping_machine",
-      "setup_note": "Lapping phase (note 2): side B 0.1, side A final 0.1 to thickness 3.5 +0.1 and counterbore depth 1.5 +/-0.1; flatness 0.2 both sides.",
-      "datum_references": [
-        "Q"
-      ],
-      "material_machinability": "easy",
-      "setup_time_min": 15.0,
-      "in_house": true,
-      "sub_operations": [
-        {
-          "sequence": 1,
-          "operation_type": "lap",
-          "target_feature_ids": [
-            "F13",
-            "F14"
-          ],
-          "inputs": {
-            "stock_per_side_mm": 0.1,
-            "parts_per_load": 10,
-            "carriers": 5,
-            "removal_mm_min": 0.02
-          }
-        }
-      ]
-    },
-    {
-      "sequence": 7,
-      "name": "Brush Deburr",
+      "name": "Controlled Deburring",
       "machine_family": "rotary_deburring_machine",
-      "setup_note": "Burrs not admitted; edge break 0.1 max; no rounding of tooth profile.",
+      "setup_note": "Support the wheel and protect the functional tooth contours during localized deburring. Remove burrs without rounding the tooth profile, keeping permitted general edge breaks within the drawing's 0.1 mm maximum.",
       "datum_references": [],
-      "material_machinability": "easy",
-      "setup_time_min": 5.0,
+      "material_machinability": "medium",
       "in_house": true,
       "sub_operations": [
         {
           "sequence": 1,
           "operation_type": "deburr",
-          "target_feature_ids": [
-            "F02"
-          ],
-          "inputs": {
-            "passes": 2
-          }
+          "target_feature_ids": []
         }
       ]
     },
     {
-      "sequence": 8,
-      "name": "Wash",
+      "sequence": 7,
+      "name": "Wash and Dry",
       "machine_family": "washing_machine",
-      "setup_note": "Remove lapping slurry.",
+      "setup_note": "Load finished wheels in separated baskets that protect the tooth profiles and machined faces. Wash and dry in batches within the approved basket capacity before laser marking and final inspection.",
       "datum_references": [],
-      "material_machinability": "easy",
-      "setup_time_min": 0.0,
+      "material_machinability": "medium",
       "in_house": true,
       "sub_operations": [
         {
@@ -277,52 +241,57 @@
       ]
     },
     {
-      "sequence": 9,
-      "name": "DMC Laser Mark",
+      "sequence": 8,
+      "name": "Laser Mark DMC",
       "machine_family": "laser_marker",
-      "setup_note": "DMC: P/N, supplier number, manufacturing date, serial number.",
+      "setup_note": "Fixture the clean wheel with the customer-approved marking area exposed. Apply the DMC containing part number, supplier number, manufacturing date, and individual serial number without affecting functional surfaces.",
       "datum_references": [],
-      "material_machinability": "easy",
-      "setup_time_min": 5.0,
+      "material_machinability": "medium",
       "in_house": true,
       "sub_operations": [
         {
           "sequence": 1,
           "operation_type": "mark_stamp",
-          "target_feature_ids": [],
-          "inputs": {
-            "mark_s": 9
-          }
+          "target_feature_ids": []
+        }
+      ]
+    },
+    {
+      "sequence": 9,
+      "name": "Final Dimensional and Tooth Inspection",
+      "machine_family": "inspection",
+      "setup_note": "Locate from Q and the bore using the customer-confirmed datum interpretation for dimensional and geometric checks. Check tooth integrity on all 100 pieces, verify the released tooth profile and indexing, and verify DMC content and readability.",
+      "datum_references": [
+        "Q"
+      ],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "manual_inspect",
+          "target_feature_ids": []
+        },
+        {
+          "sequence": 2,
+          "operation_type": "gear_check",
+          "target_feature_ids": []
         }
       ]
     },
     {
       "sequence": 10,
-      "name": "Final Inspection",
-      "machine_family": "inspection",
-      "setup_note": "100% teeth integrity check; bore H8, thickness, counterbore depth, flatness.",
-      "datum_references": [
-        "P",
-        "Q"
-      ],
-      "material_machinability": "easy",
-      "setup_time_min": 10.0,
+      "name": "Rust Preventive and Pack",
+      "machine_family": "oiling_packing",
+      "setup_note": "Handle accepted wheels in separated trays and apply compatible rust preventive. Pack with protection against tooth damage, face distortion, and loss of serial-number traceability.",
+      "datum_references": [],
+      "material_machinability": "medium",
       "in_house": true,
       "sub_operations": [
         {
           "sequence": 1,
-          "operation_type": "gear_check",
-          "target_feature_ids": [
-            "F02"
-          ]
-        },
-        {
-          "sequence": 2,
-          "operation_type": "manual_inspect",
-          "target_feature_ids": [
-            "F01",
-            "F03"
-          ]
+          "operation_type": "apply_rust_preventive",
+          "target_feature_ids": []
         }
       ]
     }
@@ -330,36 +299,225 @@
   "clarifications": [
     {
       "clarification_id": "C01",
-      "question": "Is a fine-blanking press available in house? Conventional stamping leaves fracture zone on the tooth flanks, which the drawing forbids.",
+      "question": "Please provide the manufacturing definition of tooth profile F02, including the location of its specified R0.5 feature F12.",
       "blocks": [
-        2
+        5,
+        9
       ],
-      "suggested_default": "Fine blanking in house",
       "priority": "high"
     },
     {
       "clarification_id": "C02",
-      "question": "Side A removal 0.9 mm: Blanchard grind 0.8 then lap 0.1, or lap the full 0.9 (much longer lapping cycle)?",
+      "question": "What is the intended tooth indexing arrangement, given that 58 teeth at a 6-degree pitch do not close a full revolution?",
       "blocks": [
         5,
-        6
+        9
       ],
-      "suggested_default": "Blanchard grind 0.8 + lap",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C03",
+      "question": "What physical feature establishes datum P in the P-Q datum reference?",
+      "blocks": [
+        3,
+        4,
+        5,
+        9
+      ],
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C04",
+      "question": "Please provide the finished cross-section of inner step F15.",
+      "blocks": [
+        1,
+        9
+      ],
+      "suggested_default": "Treat F15 provisionally as an internal concentric shoulder accessible from side B; no dimensions are inferred.",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C05",
+      "question": "Please provide the finished cross-section of outer flange F16.",
+      "blocks": [
+        2,
+        9
+      ],
+      "suggested_default": "Treat F16 provisionally as an external concentric shoulder accessible from side A; no dimensions are inferred.",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C06",
+      "question": "Please provide the finished cross-section of middle flange F17.",
+      "blocks": [
+        2,
+        3,
+        9
+      ],
+      "suggested_default": "Treat F17 provisionally as an external concentric shoulder accessible from side A; no dimensions are inferred.",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C07",
+      "question": "What is the basic location of hole F03 relative to the drawing datum system?",
+      "blocks": [
+        3,
+        9
+      ],
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C08",
+      "question": "What is the basic location of hole F04 relative to the drawing datum system?",
+      "blocks": [
+        3,
+        9
+      ],
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C09",
+      "question": "Is the diameter of hole F05 12 \u00b10.2 mm?",
+      "blocks": [
+        3,
+        9
+      ],
+      "suggested_default": "Use 12 \u00b10.2 mm, matching F04, for provisional planning only.",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C10",
+      "question": "What is the basic location of hole F05 relative to the drawing datum system?",
+      "blocks": [
+        3,
+        9
+      ],
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C11",
+      "question": "Please provide the section defining the through-cut direction and extent of oval slot F06.",
+      "blocks": [
+        4,
+        9
+      ],
+      "suggested_default": "Retain a separate cross-axis milling setup as stated in the routing view; do not assume a numerical cutting depth.",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C12",
+      "question": "What is the basic location of oval slot F06?",
+      "blocks": [
+        4,
+        9
+      ],
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C13",
+      "question": "What is the required depth of index slot F07?",
+      "blocks": [
+        3,
+        9
+      ],
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C14",
+      "question": "What is the finished length of index slot F07?",
+      "blocks": [
+        3,
+        9
+      ],
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C15",
+      "question": "What is the basic location of index slot F07?",
+      "blocks": [
+        3,
+        5,
+        9
+      ],
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C16",
+      "question": "Which edge of face F13 carries the 1.5 mm \u00d7 45-degree chamfer F08?",
+      "blocks": [
+        1,
+        9
+      ],
+      "suggested_default": "Treat F08 provisionally as the central-bore entrance chamfer on side B.",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C17",
+      "question": "Where is the DMC marking permitted on the finished wheel?",
+      "blocks": [
+        8,
+        9
+      ],
+      "priority": "medium"
+    },
+    {
+      "clarification_id": "C18",
+      "question": "Which material standard defines the HR13 callout?",
+      "blocks": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "suggested_default": "Use the supplied medium-machinability mild-carbon-steel classification for provisional planning.",
       "priority": "medium"
     }
   ],
   "assumptions": [
     {
       "assumption_id": "A01",
-      "text": "Sheet thickness 4.5 mm: 3.5 final + 0.9 side A + 0.1 side B (lapping note 2)."
+      "text": "The dominant geometry is an annular rotational body despite the complex frame classification; axial holes and slots make the process family hybrid."
     },
     {
       "assumption_id": "A02",
-      "text": "Counterbores \u00d816.3 x 1.5 (2.4 before lapping) machined on VMC, not coined, because of Ra 3.2 and +/-0.1 depth."
+      "text": "With no stated blank or annealed case-hardening supply condition, select a bought ring-rolled blank. Provisional dimensions provide 1 mm radial allowance on the OD and bore and 1 mm on each axial face."
     },
     {
       "assumption_id": "A03",
-      "text": "No heat treatment required by the drawing."
+      "text": "F15 is provisionally an internal shoulder on side B; F16 and F17 are external shoulders on side A. Each receives separate face and diameter sub-operations, and their missing dimensions are not invented; the setup allocation requires confirmation before machining."
+    },
+    {
+      "assumption_id": "A04",
+      "text": "F08 is provisionally assigned to the bore entrance on datum-Q face F13. Its explicit 1.5 mm chamfer is distinct from the general 0.1 mm maximum edge break."
+    },
+    {
+      "assumption_id": "A05",
+      "text": "F02 is provisionally treated as a hob-generable external tooth form, with F12 generated incidentally by the approved hob profile. Tooth profile, indexing, and the assumed root-radius location require release before tooling procurement or cutting."
+    },
+    {
+      "assumption_id": "A06",
+      "text": "DIN class 9 is the external-gear route's provisional quality default, pending confirmation that this unspecified wheel tooth form is governed by that classification. No tooth grinding is included."
+    },
+    {
+      "assumption_id": "A07",
+      "text": "The external-gear sequence's locating-surface turning and hobbing steps are retained. Its entry-chamfer step is omitted because no tooth-entry chamfer is identified; F08 is a face-edge chamfer, not evidence of a tooth-entry chamfer."
+    },
+    {
+      "assumption_id": "A08",
+      "text": "The preloaded ring-forming sequence is not applicable to a bought ring-rolled blank, so cold rolling, ring coiling, welding, normalizing, shot blasting, and cold sizing are omitted. The internal-gear sequence is not applicable because no internal teeth or spline are identified."
+    },
+    {
+      "assumption_id": "A09",
+      "text": "No heat treatment is specified. The induction sequence, its mandatory post-hardening rebore, and its magnetic-particle inspection are therefore not applied; the material remains in the supplied medium-machinability state throughout."
+    },
+    {
+      "assumption_id": "A10",
+      "text": "F05 uses the routing view's provisional 12 \u00b10.2 mm diameter. F06 retains separate cross-axis access, while F07 retains axial access; missing slot extents and basic locations are not inferred."
+    },
+    {
+      "assumption_id": "A11",
+      "text": "General deburring must not round the functional tooth profile. The specified R0.5 profile feature is intentional geometry and is not to be created by deburring."
     }
   ]
 }

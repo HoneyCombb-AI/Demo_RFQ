@@ -1,163 +1,187 @@
 {
   "drawing_number": "ASD26088_8561",
   "part_name": "ENGAGING SLEEVE 3 POSITION BAS",
-  "material": "16MnCr5 / 16MnCrS5",
+  "material": null,
   "quantity": 100,
   "quote_status": "complete",
   "weights": {
-    "blank_type": "cold_rolled_ring_blank",
-    "blank_outer_dia_mm": 158.0,
-    "blank_inner_dia_mm": 115.3,
-    "blank_thickness_mm": 27.8,
-    "raw_bar_dia_mm": 158.0,
-    "actual_bar_dia_mm": 158.0,
-    "gross_weight_kg": 1.78,
-    "gross_weight_g": 1780.0,
-    "net_weight_kg": 1.06,
-    "net_weight_g": 1060.0,
-    "scrap_weight_kg": 0.72,
-    "scrap_weight_g": 720.0,
-    "net_weight_source": "estimated_geometry"
+    "gross_weight_kg": 1.265
   },
   "direct_cost": {
-    "material_cost_inr": 329.3,
-    "machining_cost_inr": 127.58,
-    "heat_treatment_cost_inr": 106.8,
-    "direct_cost_subtotal_inr": 563.68
+    "machining_cost_inr": 1622.65,
+    "material_cost_inr": 120.17,
+    "direct_cost_subtotal_inr": 1742.82
   },
   "overheads_and_surcharges": {
-    "factory_overhead_margin_inr": 563.68,
-    "tooling_inr": 112.74,
-    "rejection_inr": 24.8,
-    "inspection_inr": 22.55,
-    "cleaning_inr": 11.27,
-    "scrap_recovery_credit_inr": -15.3,
-    "export_packaging_inr": 21.2,
-    "fob_freight_inr": 15.9,
-    "packaging_and_fob_inr": 37.1
+    "tooling_inr": 81.13,
+    "inspection_inr": 56.37
   },
   "pricing_summary": {
-    "subtotal_before_margin_inr": 756.84,
-    "overhead_and_margin_inr": 563.68,
-    "final_ex_works_price_inr": 1320.52
+    "subtotal_before_margin_inr": 1742.82,
+    "final_ex_works_price_inr": 1893.26
   },
   "machining_operations": [
     {
       "sequence": 1,
-      "operation_name": "Cold Roll Ring Section",
-      "machine_family": "cold_rolling_mill",
-      "cycle_time_sec": 4.2,
-      "hourly_rate_inr": 1200.0,
-      "cost_per_piece_inr": 1.4,
-      "cost_per_piece_raw": 1.4000000000000001
+      "operation_name": "Soft Turn \u2014 First Side",
+      "machine_family": "cnc_lathe",
+      "cycle_time_sec": 1491.79,
+      "hourly_rate_inr": 350.0,
+      "cost_per_piece_raw": 170.6295751633987,
+      "cost_per_piece_inr": 170.63
     },
     {
       "sequence": 2,
-      "operation_name": "Ring Making (CNC Ring Bending)",
-      "machine_family": "ring_making_machine",
-      "cycle_time_sec": 16.2,
-      "hourly_rate_inr": 800.0,
-      "cost_per_piece_inr": 3.6,
-      "cost_per_piece_raw": 3.5999999999999996
+      "operation_name": "Soft Turn \u2014 Reverse Side",
+      "machine_family": "cnc_lathe",
+      "cycle_time_sec": 1102.49,
+      "hourly_rate_inr": 350.0,
+      "cost_per_piece_raw": 126.10179738562093,
+      "cost_per_piece_inr": 126.1
     },
     {
       "sequence": 3,
-      "operation_name": "Flash Butt Weld and Trim",
-      "machine_family": "flash_butt_welder",
-      "cycle_time_sec": 42.0,
-      "hourly_rate_inr": 700.0,
-      "cost_per_piece_inr": 8.17,
-      "cost_per_piece_raw": 8.166666666666668
+      "operation_name": "Shape Internal Teeth \u2014 Left and Middle",
+      "machine_family": "gear_shaper",
+      "cycle_time_sec": 4581.6,
+      "hourly_rate_inr": 500.0,
+      "cost_per_piece_raw": 748.6274509803923,
+      "cost_per_piece_inr": 748.63
+    },
+    {
+      "sequence": 4,
+      "operation_name": "Shape Internal Teeth \u2014 Right",
+      "machine_family": "gear_shaper",
+      "cycle_time_sec": 2779.8,
+      "hourly_rate_inr": 500.0,
+      "cost_per_piece_raw": 454.2156862745098,
+      "cost_per_piece_inr": 454.22
     },
     {
       "sequence": 5,
-      "operation_name": "Shot Blast",
-      "machine_family": "shot_blaster",
-      "cycle_time_sec": 8.4,
-      "hourly_rate_inr": 250.0,
-      "cost_per_piece_inr": 0.58,
-      "cost_per_piece_raw": 0.5833333333333334
+      "operation_name": "Chamfer Right Tooth Entry",
+      "machine_family": "entry_chamfer_machine",
+      "cycle_time_sec": 144.0,
+      "hourly_rate_inr": 350.0,
+      "cost_per_piece_raw": 16.47058823529412,
+      "cost_per_piece_inr": 16.47
     },
     {
       "sequence": 6,
-      "operation_name": "Size Ring Blank",
-      "machine_family": "ring_sizing_machine",
-      "cycle_time_sec": 15.0,
-      "hourly_rate_inr": 400.0,
-      "cost_per_piece_inr": 1.67,
-      "cost_per_piece_raw": 1.6666666666666667
+      "operation_name": "Pre-Hardening Deburr",
+      "machine_family": "rotary_deburring_machine",
+      "cycle_time_sec": 84.0,
+      "hourly_rate_inr": 200.0,
+      "cost_per_piece_raw": 5.4901960784313735,
+      "cost_per_piece_inr": 5.49
     },
     {
       "sequence": 7,
-      "operation_name": "CNC Turn - Setup 1 (Side A)",
-      "machine_family": "cnc_lathe",
-      "cycle_time_sec": 90.2,
-      "hourly_rate_inr": 300.0,
-      "cost_per_piece_inr": 7.52,
-      "cost_per_piece_raw": 7.516666666666667
+      "operation_name": "Wash Before Hardening",
+      "machine_family": "washing_machine",
+      "cycle_time_sec": 30.0,
+      "hourly_rate_inr": 180.0,
+      "cost_per_piece_raw": 1.7647058823529411,
+      "cost_per_piece_inr": 1.76
     },
     {
       "sequence": 8,
-      "operation_name": "CNC Turn - Setup 2 (Side B)",
-      "machine_family": "cnc_lathe",
-      "cycle_time_sec": 183.5,
-      "hourly_rate_inr": 300.0,
-      "cost_per_piece_inr": 15.29,
-      "cost_per_piece_raw": 15.291666666666668
+      "operation_name": "Induction Harden",
+      "machine_family": "induction_hardening_machine",
+      "cycle_time_sec": 54.0,
+      "hourly_rate_inr": 500.0,
+      "cost_per_piece_raw": 8.823529411764707,
+      "cost_per_piece_inr": 8.82
     },
     {
       "sequence": 9,
-      "operation_name": "Shape Internal Splines",
-      "machine_family": "gear_shaper",
-      "cycle_time_sec": 345.0,
-      "hourly_rate_inr": 500.0,
-      "cost_per_piece_inr": 47.92,
-      "cost_per_piece_raw": 47.91666666666667
+      "operation_name": "Temper",
+      "machine_family": "tempering_furnace",
+      "cycle_time_sec": 42.0,
+      "hourly_rate_inr": 300.0,
+      "cost_per_piece_raw": 4.11764705882353,
+      "cost_per_piece_inr": 4.12
     },
     {
       "sequence": 10,
-      "operation_name": "Teeth Entry Chamfer",
-      "machine_family": "gear_hobber",
-      "cycle_time_sec": 69.0,
-      "hourly_rate_inr": 400.0,
-      "cost_per_piece_inr": 7.67,
-      "cost_per_piece_raw": 7.666666666666666
+      "operation_name": "Hard Finish \u2014 First Side and Groove",
+      "machine_family": "cnc_lathe",
+      "cycle_time_sec": 402.59,
+      "hourly_rate_inr": 350.0,
+      "cost_per_piece_raw": 46.04787581699346,
+      "cost_per_piece_inr": 46.05
     },
     {
       "sequence": 11,
-      "operation_name": "Wash",
-      "machine_family": "washing_machine",
-      "cycle_time_sec": 12.0,
-      "hourly_rate_inr": 150.0,
-      "cost_per_piece_inr": 0.5,
-      "cost_per_piece_raw": 0.5
+      "operation_name": "Hard Finish \u2014 Reverse Bore",
+      "machine_family": "cnc_lathe",
+      "cycle_time_sec": 227.95,
+      "hourly_rate_inr": 350.0,
+      "cost_per_piece_raw": 26.072712418300654,
+      "cost_per_piece_inr": 26.07
+    },
+    {
+      "sequence": 12,
+      "operation_name": "Post-Rebore Deburr",
+      "machine_family": "rotary_deburring_machine",
+      "cycle_time_sec": 84.0,
+      "hourly_rate_inr": 200.0,
+      "cost_per_piece_raw": 5.4901960784313735,
+      "cost_per_piece_inr": 5.49
+    },
+    {
+      "sequence": 13,
+      "operation_name": "Identification Marking",
+      "machine_family": "laser_marker",
+      "cycle_time_sec": 48.0,
+      "hourly_rate_inr": 250.0,
+      "cost_per_piece_raw": 3.9215686274509807,
+      "cost_per_piece_inr": 3.92
     },
     {
       "sequence": 14,
-      "operation_name": "Hard Turn Fork Groove Walls",
-      "machine_family": "cnc_lathe",
-      "cycle_time_sec": 65.1,
-      "hourly_rate_inr": 450.0,
-      "cost_per_piece_inr": 8.14,
-      "cost_per_piece_raw": 8.1375
+      "operation_name": "End-of-Line Inspection",
+      "machine_family": "inspection",
+      "cycle_time_sec": 585.0,
+      "hourly_rate_inr": 250.0,
+      "cost_per_piece_raw": 47.794117647058826,
+      "cost_per_piece_inr": 47.79
     },
     {
       "sequence": 15,
-      "operation_name": "Rotary Deburr",
-      "machine_family": "rotary_deburring_machine",
-      "cycle_time_sec": 36.0,
-      "hourly_rate_inr": 200.0,
-      "cost_per_piece_inr": 2.0,
-      "cost_per_piece_raw": 2.0
+      "operation_name": "Magnetic Particle Inspection",
+      "machine_family": "mpi_bench",
+      "cycle_time_sec": 162.0,
+      "hourly_rate_inr": 250.0,
+      "cost_per_piece_raw": 13.23529411764706,
+      "cost_per_piece_inr": 13.24
     },
     {
       "sequence": 16,
-      "operation_name": "Final Inspection",
+      "operation_name": "Final Wash",
+      "machine_family": "washing_machine",
+      "cycle_time_sec": 30.0,
+      "hourly_rate_inr": 180.0,
+      "cost_per_piece_raw": 1.7647058823529411,
+      "cost_per_piece_inr": 1.76
+    },
+    {
+      "sequence": 17,
+      "operation_name": "Cleanliness Acceptance",
       "machine_family": "inspection",
-      "cycle_time_sec": 333.0,
+      "cycle_time_sec": 105.0,
       "hourly_rate_inr": 250.0,
-      "cost_per_piece_inr": 23.12,
-      "cost_per_piece_raw": 23.125
+      "cost_per_piece_raw": 8.57843137254902,
+      "cost_per_piece_inr": 8.58
+    },
+    {
+      "sequence": 18,
+      "operation_name": "Preserve and Pack",
+      "machine_family": "oiling_packing",
+      "cycle_time_sec": 48.0,
+      "hourly_rate_inr": 180.0,
+      "cost_per_piece_raw": 2.8235294117647065,
+      "cost_per_piece_inr": 2.82
     }
   ]
 }

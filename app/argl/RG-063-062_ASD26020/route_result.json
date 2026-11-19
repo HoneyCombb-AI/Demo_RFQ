@@ -1,0 +1,838 @@
+{
+  "analysis_id": "RG-063-062_ASD26020_merge_20261118T165655Z",
+  "source_feature_graph_id": "RG-063-062_ASD26020_merge_20261118T165655Z",
+  "quantity": 100,
+  "part_family": "turned",
+  "base_geometry": "rotational",
+  "stock": {
+    "form": "bought_annealed_ring",
+    "diameter_mm": 233.7,
+    "bore_diameter_mm": 191.6,
+    "width_mm": 55.9,
+    "machining_allowance_mm": 2.0,
+    "shape": "ring"
+  },
+  "operations": [
+    {
+      "sequence": 1,
+      "name": "Blank Receiving and Inspection",
+      "machine_family": "inspection",
+      "setup_note": "Receive the 100 bought annealed rings and verify identification, material certification, incoming dimensions and condition against the approved blank drawing. Verify the specified 152\u2013201 HB range; the referenced 55.9 mm blank width requires confirmation before machining.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "manual_inspect",
+          "target_feature_ids": []
+        },
+        {
+          "sequence": 2,
+          "operation_type": "hardness_test",
+          "target_feature_ids": []
+        }
+      ]
+    },
+    {
+      "sequence": 2,
+      "name": "Rough Turning-1 \u2014 156.1",
+      "machine_family": "cnc_lathe",
+      "setup_note": "Grip the incoming OD in bored soft jaws with the datum-A end accessible and the opposite end against an axial stop. Rough-face F15 to establish a preliminary A reference, then rough the central bore while retaining soft-finishing stock.",
+      "datum_references": [
+        "A"
+      ],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "face_turn",
+          "target_feature_ids": [
+            "F15"
+          ]
+        },
+        {
+          "sequence": 2,
+          "operation_type": "rough_bore_id",
+          "target_feature_ids": [
+            "F22",
+            "F24"
+          ]
+        }
+      ]
+    },
+    {
+      "sequence": 3,
+      "name": "Rough Turning-2 \u2014 156.2",
+      "machine_family": "cnc_lathe",
+      "setup_note": "Reverse onto a full-contact expanding fixture in the roughed bore, seating preliminary datum A against the axial locator. Rough the external preform, left land and accessible shoulders, leaving stock for the subsequent soft-turning setups.",
+      "datum_references": [
+        "A"
+      ],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "rough_turn_od",
+          "target_feature_ids": [
+            "F01"
+          ]
+        },
+        {
+          "sequence": 2,
+          "operation_type": "rough_turn_od",
+          "target_feature_ids": [
+            "F13"
+          ]
+        },
+        {
+          "sequence": 3,
+          "operation_type": "face_turn",
+          "target_feature_ids": [
+            "F05"
+          ]
+        },
+        {
+          "sequence": 4,
+          "operation_type": "face_turn",
+          "target_feature_ids": [
+            "F08",
+            "F06"
+          ]
+        },
+        {
+          "sequence": 5,
+          "operation_type": "turn_taper",
+          "target_feature_ids": [
+            "F10"
+          ]
+        },
+        {
+          "sequence": 6,
+          "operation_type": "chamfer_turn",
+          "target_feature_ids": [
+            "F16"
+          ]
+        }
+      ]
+    },
+    {
+      "sequence": 4,
+      "name": "ID and Face Turning \u2014 170.1 / 170.2",
+      "machine_family": "cnc_lathe",
+      "setup_note": "Grip the roughed left cylindrical land in full-contact soft jaws, leaving the datum-A end accessible. Refresh A before soft-finishing the central bore and right-end face zones, retaining the specified hard-turning stock.",
+      "datum_references": [
+        "A",
+        "M1"
+      ],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "face_turn",
+          "target_feature_ids": [
+            "F15"
+          ]
+        },
+        {
+          "sequence": 2,
+          "operation_type": "finish_bore_id",
+          "target_feature_ids": [
+            "F22",
+            "F24"
+          ]
+        },
+        {
+          "sequence": 3,
+          "operation_type": "face_turn",
+          "target_feature_ids": [
+            "F14"
+          ]
+        },
+        {
+          "sequence": 4,
+          "operation_type": "face_turn",
+          "target_feature_ids": [
+            "F17",
+            "F18",
+            "F19"
+          ]
+        },
+        {
+          "sequence": 5,
+          "operation_type": "chamfer_turn",
+          "target_feature_ids": [
+            "F09"
+          ]
+        }
+      ]
+    },
+    {
+      "sequence": 5,
+      "name": "OD Turning and Facing \u2014 170.4",
+      "machine_family": "cnc_lathe",
+      "setup_note": "Locate on the soft central bore with datum A seated against the mandrel stop, using the bore axis provisionally as B. Soft-finish the external gear preform, left land, taper, shoulders and larger bore land; prepare the shown chamfers without cutting the final tooth-tip diameter.",
+      "datum_references": [
+        "A",
+        "B"
+      ],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "finish_turn_od",
+          "target_feature_ids": [
+            "F01"
+          ]
+        },
+        {
+          "sequence": 2,
+          "operation_type": "finish_turn_od",
+          "target_feature_ids": [
+            "F13",
+            "F11",
+            "F12"
+          ]
+        },
+        {
+          "sequence": 3,
+          "operation_type": "turn_taper",
+          "target_feature_ids": [
+            "F10"
+          ]
+        },
+        {
+          "sequence": 4,
+          "operation_type": "face_turn",
+          "target_feature_ids": [
+            "F05"
+          ]
+        },
+        {
+          "sequence": 5,
+          "operation_type": "face_turn",
+          "target_feature_ids": [
+            "F08",
+            "F06"
+          ]
+        },
+        {
+          "sequence": 6,
+          "operation_type": "rough_bore_id",
+          "target_feature_ids": [
+            "F23"
+          ]
+        },
+        {
+          "sequence": 7,
+          "operation_type": "finish_bore_id",
+          "target_feature_ids": [
+            "F23"
+          ]
+        },
+        {
+          "sequence": 8,
+          "operation_type": "chamfer_turn",
+          "target_feature_ids": [
+            "F07"
+          ]
+        },
+        {
+          "sequence": 9,
+          "operation_type": "chamfer_turn",
+          "target_feature_ids": [
+            "F16"
+          ]
+        },
+        {
+          "sequence": 10,
+          "operation_type": "chamfer_turn",
+          "target_feature_ids": [
+            "F25"
+          ]
+        }
+      ]
+    },
+    {
+      "sequence": 6,
+      "name": "Gear Hobbing \u2014 Class 10",
+      "machine_family": "gear_hobber",
+      "setup_note": "Mount the soft ring on the dedicated bore-locating fixture with datum A against its axial seat. Hob the 151-tooth right-hand helical gear to ISO 1328 class 10 using the released gear specification, leaving flank-grinding stock.",
+      "datum_references": [
+        "A",
+        "B"
+      ],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "hob_teeth",
+          "target_feature_ids": [
+            "F01"
+          ]
+        }
+      ]
+    },
+    {
+      "sequence": 7,
+      "name": "Rotary Deburr",
+      "machine_family": "rotary_deburring_machine",
+      "setup_note": "Support the soft hobbed ring in the rotary deburring fixture and remove tooth burrs while preserving the specified edge geometry. Complete all general burr removal here before carbonitriding; no post-heat-treatment deburring operation is scheduled.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "deburr",
+          "target_feature_ids": [
+            "F01"
+          ]
+        }
+      ]
+    },
+    {
+      "sequence": 8,
+      "name": "Outside Carbonitriding",
+      "machine_family": "outside_vendor",
+      "setup_note": "Send the deburred rings to the approved carbonitriding supplier with the released exclusion-zone map and case-hardening acceptance requirements. Treat the 100-piece order as a traceable lot, splitting it into qualified rack loads if supplier capacity requires; carbonitriding replaces the legacy LPC/nitrogen-quench route.",
+      "datum_references": [],
+      "material_machinability": "medium",
+      "in_house": false,
+      "outside_process": "carbonitriding",
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "carbonitride",
+          "target_feature_ids": [
+            "F01"
+          ]
+        }
+      ]
+    },
+    {
+      "sequence": 9,
+      "name": "Carbonitriding Receiving Inspection",
+      "machine_family": "inspection",
+      "setup_note": "Receive the hardened lot with supplier traceability and test certificates, checking surface hardness, core hardness, case-depth results and protected-area compliance against the approved acceptance schedule. Inspect for heat-treatment damage before releasing the rings to ovality correction.",
+      "datum_references": [],
+      "material_machinability": "hardened",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "hardness_test",
+          "target_feature_ids": []
+        },
+        {
+          "sequence": 2,
+          "operation_type": "manual_inspect",
+          "target_feature_ids": []
+        }
+      ]
+    },
+    {
+      "sequence": 10,
+      "name": "OD and ID Ovality Check and Correction",
+      "machine_family": "ovality_correction",
+      "setup_note": "Support the hardened ring on the ovality SPM without distorting it and measure OD and ID ovality. Correct readings exceeding the control-plan 0.03 mm limit and recheck before hard turning; this is not a grinding operation.",
+      "datum_references": [],
+      "material_machinability": "hardened",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "manual_inspect",
+          "target_feature_ids": []
+        },
+        {
+          "sequence": 2,
+          "operation_type": "straighten",
+          "target_feature_ids": [
+            "F01",
+            "F13",
+            "F22",
+            "F23",
+            "F24"
+          ]
+        },
+        {
+          "sequence": 3,
+          "operation_type": "manual_inspect",
+          "target_feature_ids": []
+        }
+      ]
+    },
+    {
+      "sequence": 11,
+      "name": "Hard Turning-1 \u2014 282.1",
+      "machine_family": "cnc_lathe",
+      "setup_note": "Grip the corrected left cylindrical land in full-contact soft jaws with low distortion and pick up the accessible datum-A face. Finish A, the central H8 bore and right-end face zones, separating bore stock removal from the final sizing pass.",
+      "datum_references": [
+        "A",
+        "B",
+        "M1"
+      ],
+      "material_machinability": "hardened",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "face_turn",
+          "target_feature_ids": [
+            "F15"
+          ]
+        },
+        {
+          "sequence": 2,
+          "operation_type": "rough_bore_id",
+          "target_feature_ids": [
+            "F22",
+            "F24"
+          ]
+        },
+        {
+          "sequence": 3,
+          "operation_type": "finish_bore_id",
+          "target_feature_ids": [
+            "F22",
+            "F24"
+          ]
+        },
+        {
+          "sequence": 4,
+          "operation_type": "face_turn",
+          "target_feature_ids": [
+            "F14"
+          ]
+        },
+        {
+          "sequence": 5,
+          "operation_type": "face_turn",
+          "target_feature_ids": [
+            "F17",
+            "F18",
+            "F19"
+          ]
+        },
+        {
+          "sequence": 6,
+          "operation_type": "chamfer_turn",
+          "target_feature_ids": [
+            "F09"
+          ]
+        }
+      ]
+    },
+    {
+      "sequence": 12,
+      "name": "Hard Turning-2 \u2014 282.2",
+      "machine_family": "cnc_lathe",
+      "setup_note": "Reverse onto a low-distortion expanding fixture in the finished right-hand bore, seating datum A against the axial stop and leaving the larger left bore accessible. Hard-finish the remaining land, taper, left shoulders and specified chamfers without turning the gear tooth tips.",
+      "datum_references": [
+        "A",
+        "B"
+      ],
+      "material_machinability": "hardened",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "finish_turn_od",
+          "target_feature_ids": [
+            "F13",
+            "F11",
+            "F12"
+          ]
+        },
+        {
+          "sequence": 2,
+          "operation_type": "turn_taper",
+          "target_feature_ids": [
+            "F10"
+          ]
+        },
+        {
+          "sequence": 3,
+          "operation_type": "face_turn",
+          "target_feature_ids": [
+            "F05"
+          ]
+        },
+        {
+          "sequence": 4,
+          "operation_type": "face_turn",
+          "target_feature_ids": [
+            "F08",
+            "F06"
+          ]
+        },
+        {
+          "sequence": 5,
+          "operation_type": "finish_bore_id",
+          "target_feature_ids": [
+            "F23"
+          ]
+        },
+        {
+          "sequence": 6,
+          "operation_type": "chamfer_turn",
+          "target_feature_ids": [
+            "F07"
+          ]
+        },
+        {
+          "sequence": 7,
+          "operation_type": "chamfer_turn",
+          "target_feature_ids": [
+            "F16"
+          ]
+        }
+      ]
+    },
+    {
+      "sequence": 13,
+      "name": "External Gear Grinding \u2014 Class 10",
+      "machine_family": "gear_grinder",
+      "setup_note": "Mount on the dedicated finished-bore fixture against datum A after both hard-turning setups are complete. Grind the external teeth to ISO 1328 class 10 and the released finished gear geometry, with no surface burn marks.",
+      "datum_references": [
+        "A",
+        "B"
+      ],
+      "material_machinability": "hardened",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "grind_teeth",
+          "target_feature_ids": [
+            "F01"
+          ]
+        }
+      ]
+    },
+    {
+      "sequence": 14,
+      "name": "Laser Identification Marking",
+      "machine_family": "laser_marker",
+      "setup_note": "Locate the hardened ring from datum A and the approved bore-axis reference, presenting the specified marking face to the laser. Apply the data matrix and human-readable identification within their released zones without damaging functional tooth surfaces.",
+      "datum_references": [
+        "A",
+        "B"
+      ],
+      "material_machinability": "hardened",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "mark_stamp",
+          "target_feature_ids": [
+            "F20"
+          ]
+        },
+        {
+          "sequence": 2,
+          "operation_type": "mark_stamp",
+          "target_feature_ids": [
+            "F21"
+          ]
+        }
+      ]
+    },
+    {
+      "sequence": 15,
+      "name": "Final Dimensional and Gear Inspection",
+      "machine_family": "inspection",
+      "setup_note": "Use the specified diameter 196.721 \u00b10.01 control fixture and axial reference A for dimensional and helical-gear checks except the free bore and H measurement. Separately verify 196.6 H8, free-state circularity, surface texture, marking, burr absence and the required no-burn condition.",
+      "datum_references": [
+        "A",
+        "B",
+        "M1"
+      ],
+      "material_machinability": "hardened",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "gear_check",
+          "target_feature_ids": []
+        },
+        {
+          "sequence": 2,
+          "operation_type": "manual_inspect",
+          "target_feature_ids": []
+        }
+      ]
+    },
+    {
+      "sequence": 16,
+      "name": "Magnetic Particle Inspection and Demagnetization",
+      "machine_family": "mpi_bench",
+      "setup_note": "Support the hardened ring in the MPI fixture and inspect for cracks using the approved procedure. Demagnetize afterward and verify residual magnetism below the control-plan limit of 3 gauss, which is stricter than the drawing's 5-gauss maximum.",
+      "datum_references": [],
+      "material_machinability": "hardened",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "mpi_ndt",
+          "target_feature_ids": []
+        },
+        {
+          "sequence": 2,
+          "operation_type": "demagnetize",
+          "target_feature_ids": []
+        }
+      ]
+    },
+    {
+      "sequence": 17,
+      "name": "Safe-Launch Inspection",
+      "machine_family": "inspection",
+      "setup_note": "Present the accepted hardened rings in the approved control fixtures using datum A and the specified bore reference. Perform the control-plan 100% critical-characteristic inspection during the first three months of supply and retain traceable results.",
+      "datum_references": [
+        "A",
+        "B"
+      ],
+      "material_machinability": "hardened",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "manual_inspect",
+          "target_feature_ids": []
+        }
+      ]
+    },
+    {
+      "sequence": 18,
+      "name": "Final Washing",
+      "machine_family": "washing_machine",
+      "setup_note": "Load the rings into non-damaging wash carriers only after final inspection, MPI and safe launch. Wash using the control-plan 25-micron filtration requirement and silicone-free chemistry, splitting the order into carrier loads as needed.",
+      "datum_references": [],
+      "material_machinability": "hardened",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "clean_degrease",
+          "target_feature_ids": []
+        }
+      ]
+    },
+    {
+      "sequence": 19,
+      "name": "Oiling and Packing",
+      "machine_family": "oiling_packing",
+      "setup_note": "Transfer the washed rings to clean oiling carriers and apply an approved water-soluble rust preventive compatible with downstream welding and washing. Pack without tooth or datum-face damage and maintain lot identity; do not use silicone-containing products.",
+      "datum_references": [],
+      "material_machinability": "hardened",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "apply_rust_preventive",
+          "target_feature_ids": []
+        }
+      ]
+    },
+    {
+      "sequence": 20,
+      "name": "Dock Audit",
+      "machine_family": "inspection",
+      "setup_note": "Audit the packed lot for identification, quantity, preservation, packaging and required release records. Verify visible cleanliness under 750 lux and confirm the accepted residual-magnetism and inspection records remain traceable to the shipment.",
+      "datum_references": [],
+      "material_machinability": "hardened",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "manual_inspect",
+          "target_feature_ids": []
+        }
+      ]
+    },
+    {
+      "sequence": 21,
+      "name": "Dispatch Release",
+      "machine_family": "inspection",
+      "setup_note": "Release the audited 100-piece shipment after checking delivery documentation, material and heat-treatment traceability, and applicable IMDS/BRDS approval records. No further machining or surface processing follows release.",
+      "datum_references": [],
+      "material_machinability": "hardened",
+      "in_house": true,
+      "sub_operations": [
+        {
+          "sequence": 1,
+          "operation_type": "manual_inspect",
+          "target_feature_ids": []
+        }
+      ]
+    }
+  ],
+  "clarifications": [
+    {
+      "clarification_id": "C01",
+      "question": "Is the incoming blank axial width of 55.9 \u00b10.5 mm stated in the part-specific control-plan reference correct for this revision?",
+      "blocks": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "suggested_default": "Provisionally use the referenced 55.9 mm bought-blank width, retaining the drawing's 22.385 mm finished envelope; confirm before committing stock or machining cost.",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C02",
+      "question": "Is carbonitriding formally approved to supersede the drawing's low-pressure carburizing and nitrogen-quench note?",
+      "blocks": [
+        8
+      ],
+      "suggested_default": "Follow the supplied part-specific control plan and subcontract carbonitriding, subject to documented customer approval before processing.",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C03",
+      "question": "Does F22 represent the same continuous 196.6 H8 cylindrical bore as F24?",
+      "blocks": [
+        2,
+        4,
+        11,
+        15
+      ],
+      "suggested_default": "Treat F22 and F24 as regions of one continuous 196.6 H8 bore and machine them together.",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C04",
+      "question": "Which physical feature establishes datum B?",
+      "blocks": [
+        5,
+        6,
+        11,
+        12,
+        13,
+        14,
+        15,
+        17
+      ],
+      "suggested_default": "Provisionally use the axis of F24 and its soft-machined precursor as datum B, pending confirmation.",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C05",
+      "question": "Which physical feature establishes datum C in the general position-tolerance requirement?",
+      "blocks": [
+        15,
+        17
+      ],
+      "suggested_default": "Do not assign an invented datum C; hold acceptance of characteristics requiring C until its definition is supplied.",
+      "priority": "medium"
+    },
+    {
+      "clarification_id": "C06",
+      "question": "Which case-depth acceptance schedule governs the returned carbonitrided lot?",
+      "blocks": [
+        8,
+        9,
+        11,
+        12,
+        15
+      ],
+      "suggested_default": "Preserve the drawing's finished M1/M2 requirement of 0.65\u20131.05 mm and M4 minimum of 0.35 mm; use the control-plan incoming 0.85\u20131.15 mm requirement only after confirming its measurement locations and allowance for subsequent hard machining.",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C07",
+      "question": "Which physical surfaces belong to the mandatory non-carburized and non-quenched area marked \u2460?",
+      "blocks": [
+        8
+      ],
+      "suggested_default": "Require an annotated exclusion-zone drawing and supplier-approved protection method before carbonitriding; do not infer the protected surfaces from the extracted feature names.",
+      "priority": "high"
+    },
+    {
+      "clarification_id": "C08",
+      "question": "What is the approved data-matrix marking footprint for F20?",
+      "blocks": [
+        14
+      ],
+      "suggested_default": "Reserve the stated 5 \u00d7 11 mm marking envelope, but do not release the laser program until the conflict with the boxed 5 \u00d7 5 dimensions is resolved.",
+      "priority": "medium"
+    },
+    {
+      "clarification_id": "C09",
+      "question": "Is F25 a continuous annular 30-degree entry chamfer that may be turned before hobbing?",
+      "blocks": [
+        5,
+        6
+      ],
+      "suggested_default": "Prepare F25 by chamfer turning before hobbing; if it is a tooth-by-tooth lead chamfer, replace that sub-operation with a dedicated entry-chamfer-machine setup before rotary deburring.",
+      "priority": "medium"
+    }
+  ],
+  "assumptions": [
+    {
+      "assumption_id": "A01",
+      "text": "The bought-annealed-ring carbonitriding sequence is the sole applicable route family. All 21 retrieved steps are retained in order, including four separate soft-turning setups, two hard-turning setups, safe launch, dock audit and dispatch."
+    },
+    {
+      "assumption_id": "A02",
+      "text": "Stock dimensions provisionally follow the part-specific reference blank: OD 233.7 mm, ID 191.6 mm and width 55.9 mm. The 2 mm allowance field denotes nominal OD radial allowance, not a uniform allowance on the bore and faces; the incoming width requires confirmation."
+    },
+    {
+      "assumption_id": "A03",
+      "text": "Datum A is assumed accessible from the right/reference end for setup planning. The central bore axis is used provisionally as B, and F22/F24 are treated as one continuous equal-diameter bore; the released section and datum definition must confirm this arrangement."
+    },
+    {
+      "assumption_id": "A04",
+      "text": "F18 and F19 are control-reference zones on F17, not additional grooves or diameter steps. Facing F17 physically produces their underlying surface, so they are grouped with F17."
+    },
+    {
+      "assumption_id": "A05",
+      "text": "F02 and its edges F03/F04 describe the hobbing-tool rack diagram, not additional workpiece geometry, and receive no production sub-operations."
+    },
+    {
+      "assumption_id": "A06",
+      "text": "The small radii F06, F11 and F12 are produced incidentally by adjacent facing or land-turning tools. F07, F09, F16 and F25 are separately assigned chamfer cuts; no unsupported groove is introduced."
+    },
+    {
+      "assumption_id": "A07",
+      "text": "Conditional groove_id and groove_od steps in the retrieved sequence are omitted because no physical bore or OD groove is identified in the routing view. F25 is provisionally an annular pre-hob chamfer, so no separate tooth-entry-chamfer setup is included."
+    },
+    {
+      "assumption_id": "A08",
+      "text": "Turning assignments to F01 produce only its cylindrical gear preform. Hobbing and the single gear-grinding operation produce the teeth and finished gear geometry; hard turning does not cut the tooth-tip diameter."
+    },
+    {
+      "assumption_id": "A09",
+      "text": "The substantial central-bore stock retained by the control-plan soft-turning stages requires stock-removal and final-sizing sub-operations within hard turning-1. Hard machining must retain the approved case depths on required hardened surfaces and leave burr-free edges without a second deburring operation."
+    },
+    {
+      "assumption_id": "A10",
+      "text": "Carbonitriding is represented as the supplier's complete qualified treatment service, including any required protection and associated thermal stages. Only F01 is confidently mapped as a required hardened feature; other treatment-zone assignments await the annotated drawing."
+    },
+    {
+      "assumption_id": "A11",
+      "text": "All operations after carbonitriding remain classified as hardened. HRC values are left null because the supplied HB/HV specifications have not been converted or replaced with measured HRC values."
+    },
+    {
+      "assumption_id": "A12",
+      "text": "The control-plan class 10 hobbing/grinding requirement and residual magnetism below 3 gauss are followed. No 156.3.2 operation, duplicate 170.2 setup, outside rough-turn receiving inspection, pre-heat-treatment wash, OD/face grind, bore hone, tooth shave, tooth hone or second gear grind is included."
+    },
+    {
+      "assumption_id": "A13",
+      "text": "The component gear table governs finished tooth dimensions where it provides explicit limits, including tip diameter 229.8 +0/-0.2 mm. The 229.701 mm extracted envelope lies within that tip-diameter range."
+    },
+    {
+      "assumption_id": "A14",
+      "text": "A customer-approved water-soluble protective oil is selected from the drawing's permitted preservation alternatives; the control-plan oil grade is not assumed compatible without approval. The stated and computed masses are not used to override drawing geometry, particularly because the drawing prohibits machining from the 3D model."
+    }
+  ]
+}

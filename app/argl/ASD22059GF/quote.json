@@ -1,181 +1,172 @@
 {
-  "drawing_number": "ASD22059GF",
+  "drawing_number": "ASD22059GR",
   "part_name": "Ring gear",
   "material": "31CrMoV9ZR",
   "quantity": 100,
   "quote_status": "complete",
   "weights": {
-    "blank_type": "cold_rolled_ring_blank",
-    "blank_outer_dia_mm": 223.1,
-    "blank_inner_dia_mm": 183.5,
-    "blank_thickness_mm": 26.6,
-    "raw_bar_dia_mm": 223.1,
-    "actual_bar_dia_mm": 223.1,
-    "gross_weight_kg": 2.64,
-    "gross_weight_g": 2640.0,
+    "gross_weight_kg": 3.623,
     "net_weight_kg": 1.69,
-    "net_weight_g": 1690.0,
-    "scrap_weight_kg": 0.95,
-    "scrap_weight_g": 950.0,
-    "net_weight_source": "estimated_geometry"
+    "scrap_weight_kg": 1.933
   },
   "direct_cost": {
-    "material_cost_inr": 488.4,
-    "machining_cost_inr": 329.85,
-    "heat_treatment_cost_inr": 158.4,
-    "direct_cost_subtotal_inr": 976.65
+    "machining_cost_inr": 393.97,
+    "material_cost_inr": 398.53,
+    "heat_treatment_cost_inr": 135.2,
+    "direct_cost_subtotal_inr": 927.7
   },
   "overheads_and_surcharges": {
-    "factory_overhead_margin_inr": 976.65,
-    "tooling_inr": 195.33,
-    "rejection_inr": 42.97,
-    "inspection_inr": 39.07,
-    "cleaning_inr": 19.53,
-    "scrap_recovery_credit_inr": -20.19,
-    "export_packaging_inr": 33.8,
-    "fob_freight_inr": 25.35,
-    "packaging_and_fob_inr": 59.15
+    "tooling_inr": 19.7,
+    "inspection_inr": 75.98
   },
   "pricing_summary": {
-    "subtotal_before_margin_inr": 1312.51,
-    "overhead_and_margin_inr": 976.65,
-    "final_ex_works_price_inr": 2289.16
+    "subtotal_before_margin_inr": 927.7,
+    "final_ex_works_price_inr": 1063.38
   },
   "machining_operations": [
     {
       "sequence": 1,
-      "operation_name": "Cold Roll Ring Section",
-      "machine_family": "cold_rolling_mill",
-      "cycle_time_sec": 5.4,
-      "hourly_rate_inr": 1200.0,
-      "cost_per_piece_inr": 1.8,
-      "cost_per_piece_raw": 1.8
+      "operation_name": "CNC Turn \u2014 BS Side and Locating Surfaces",
+      "machine_family": "cnc_lathe",
+      "cycle_time_sec": 610.28,
+      "hourly_rate_inr": 350.0,
+      "cost_per_piece_raw": 69.80326797385621,
+      "cost_per_piece_inr": 69.8
     },
     {
       "sequence": 2,
-      "operation_name": "Ring Making (CNC Ring Bending)",
-      "machine_family": "ring_making_machine",
-      "cycle_time_sec": 18.0,
-      "hourly_rate_inr": 800.0,
-      "cost_per_piece_inr": 4.0,
-      "cost_per_piece_raw": 4.0
+      "operation_name": "CNC Turn \u2014 nBS Side",
+      "machine_family": "cnc_lathe",
+      "cycle_time_sec": 74.14,
+      "hourly_rate_inr": 350.0,
+      "cost_per_piece_raw": 8.480065359477123,
+      "cost_per_piece_inr": 8.48
     },
     {
       "sequence": 3,
-      "operation_name": "Flash Butt Weld and Trim",
-      "machine_family": "flash_butt_welder",
-      "cycle_time_sec": 42.0,
-      "hourly_rate_inr": 700.0,
-      "cost_per_piece_inr": 8.17,
-      "cost_per_piece_raw": 8.166666666666668
+      "operation_name": "Shape Internal Helical Gear",
+      "machine_family": "gear_shaper",
+      "cycle_time_sec": 815.08,
+      "hourly_rate_inr": 500.0,
+      "cost_per_piece_raw": 133.18300653594773,
+      "cost_per_piece_inr": 133.18
+    },
+    {
+      "sequence": 4,
+      "operation_name": "Pre-Nitriding Gear and Edge Deburr",
+      "machine_family": "rotary_deburring_machine",
+      "cycle_time_sec": 144.0,
+      "hourly_rate_inr": 200.0,
+      "cost_per_piece_raw": 9.411764705882353,
+      "cost_per_piece_inr": 9.41
     },
     {
       "sequence": 5,
-      "operation_name": "Shot Blast",
-      "machine_family": "shot_blaster",
-      "cycle_time_sec": 12.6,
+      "operation_name": "Pre-Nitriding Dimensional and Gear Inspection",
+      "machine_family": "inspection",
+      "cycle_time_sec": 465.0,
       "hourly_rate_inr": 250.0,
-      "cost_per_piece_inr": 0.88,
-      "cost_per_piece_raw": 0.875
+      "cost_per_piece_raw": 37.99019607843138,
+      "cost_per_piece_inr": 37.99
     },
     {
       "sequence": 6,
-      "operation_name": "Size Ring Blank",
-      "machine_family": "ring_sizing_machine",
-      "cycle_time_sec": 15.0,
-      "hourly_rate_inr": 400.0,
-      "cost_per_piece_inr": 1.67,
-      "cost_per_piece_raw": 1.6666666666666667
+      "operation_name": "Pre-Nitriding Wash",
+      "machine_family": "washing_machine",
+      "cycle_time_sec": 30.0,
+      "hourly_rate_inr": 180.0,
+      "cost_per_piece_raw": 1.7647058823529411,
+      "cost_per_piece_inr": 1.76
     },
     {
       "sequence": 7,
-      "operation_name": "CNC Turn - Setup 1 (OD)",
-      "machine_family": "cnc_lathe",
-      "cycle_time_sec": 165.0,
-      "hourly_rate_inr": 300.0,
-      "cost_per_piece_inr": 13.75,
-      "cost_per_piece_raw": 13.749999999999998
+      "operation_name": "Outside Controlled Nitriding",
+      "machine_family": "outside_vendor",
+      "cycle_time_sec": 0.0,
+      "hourly_rate_inr": 0.0,
+      "cost_per_piece_raw": null,
+      "cost_per_piece_inr": null
     },
     {
       "sequence": 8,
-      "operation_name": "CNC Turn - Setup 2 (Bore)",
-      "machine_family": "cnc_lathe",
-      "cycle_time_sec": 86.0,
-      "hourly_rate_inr": 300.0,
-      "cost_per_piece_inr": 7.17,
-      "cost_per_piece_raw": 7.166666666666667
+      "operation_name": "Outside Metallurgical Acceptance",
+      "machine_family": "outside_vendor",
+      "cycle_time_sec": 0.0,
+      "hourly_rate_inr": 0.0,
+      "cost_per_piece_raw": null,
+      "cost_per_piece_inr": null
     },
     {
       "sequence": 9,
-      "operation_name": "Hob External Lugs",
-      "machine_family": "gear_hobber",
-      "cycle_time_sec": 89.4,
-      "hourly_rate_inr": 400.0,
-      "cost_per_piece_inr": 9.93,
-      "cost_per_piece_raw": 9.933333333333334
+      "operation_name": "Finish Grind Datum A and OD Datum B",
+      "machine_family": "cylindrical_grinder",
+      "cycle_time_sec": 700.84,
+      "hourly_rate_inr": 350.0,
+      "cost_per_piece_raw": 80.16143790849674,
+      "cost_per_piece_inr": 80.16
     },
     {
       "sequence": 10,
-      "operation_name": "Shape Internal Helical Teeth",
-      "machine_family": "gear_shaper",
-      "cycle_time_sec": 693.0,
-      "hourly_rate_inr": 500.0,
-      "cost_per_piece_inr": 96.25,
-      "cost_per_piece_raw": 96.25
+      "operation_name": "Finish Grind nBS Face",
+      "machine_family": "cylindrical_grinder",
+      "cycle_time_sec": 644.77,
+      "hourly_rate_inr": 350.0,
+      "cost_per_piece_raw": 73.74820261437908,
+      "cost_per_piece_inr": 73.75
     },
     {
       "sequence": 11,
-      "operation_name": "Wash",
-      "machine_family": "washing_machine",
-      "cycle_time_sec": 12.0,
-      "hourly_rate_inr": 150.0,
-      "cost_per_piece_inr": 0.5,
-      "cost_per_piece_raw": 0.5
+      "operation_name": "Post-Grinding Edge Deburr",
+      "machine_family": "rotary_deburring_machine",
+      "cycle_time_sec": 84.0,
+      "hourly_rate_inr": 200.0,
+      "cost_per_piece_raw": 5.4901960784313735,
+      "cost_per_piece_inr": 5.49
+    },
+    {
+      "sequence": 12,
+      "operation_name": "Laser DMC Marking",
+      "machine_family": "laser_marker",
+      "cycle_time_sec": 48.0,
+      "hourly_rate_inr": 250.0,
+      "cost_per_piece_raw": 3.9215686274509807,
+      "cost_per_piece_inr": 3.92
     },
     {
       "sequence": 13,
-      "operation_name": "Grind Faces and OD",
-      "machine_family": "cylindrical_grinder",
-      "cycle_time_sec": 105.0,
-      "hourly_rate_inr": 350.0,
-      "cost_per_piece_inr": 10.21,
-      "cost_per_piece_raw": 10.208333333333334
+      "operation_name": "Final Dimensional and Gear Acceptance",
+      "machine_family": "inspection",
+      "cycle_time_sec": 465.0,
+      "hourly_rate_inr": 250.0,
+      "cost_per_piece_raw": 37.99019607843138,
+      "cost_per_piece_inr": 37.99
     },
     {
       "sequence": 14,
-      "operation_name": "Grind Internal Teeth",
-      "machine_family": "gear_grinder",
-      "cycle_time_sec": 442.8,
-      "hourly_rate_inr": 1200.0,
-      "cost_per_piece_inr": 147.6,
-      "cost_per_piece_raw": 147.6
+      "operation_name": "Demagnetize",
+      "machine_family": "mpi_bench",
+      "cycle_time_sec": 42.0,
+      "hourly_rate_inr": 250.0,
+      "cost_per_piece_raw": 3.431372549019608,
+      "cost_per_piece_inr": 3.43
     },
     {
       "sequence": 15,
-      "operation_name": "Rotary Deburr",
-      "machine_family": "rotary_deburring_machine",
-      "cycle_time_sec": 36.0,
-      "hourly_rate_inr": 200.0,
-      "cost_per_piece_inr": 2.0,
-      "cost_per_piece_raw": 2.0
+      "operation_name": "Final Precision Wash and Dry",
+      "machine_family": "washing_machine",
+      "cycle_time_sec": 30.0,
+      "hourly_rate_inr": 180.0,
+      "cost_per_piece_raw": 1.7647058823529411,
+      "cost_per_piece_inr": 1.76
     },
     {
       "sequence": 16,
-      "operation_name": "DMC Laser Mark",
-      "machine_family": "laser_marker",
-      "cycle_time_sec": 21.0,
-      "hourly_rate_inr": 300.0,
-      "cost_per_piece_inr": 1.75,
-      "cost_per_piece_raw": 1.75
-    },
-    {
-      "sequence": 17,
-      "operation_name": "Final Inspection",
-      "machine_family": "inspection",
-      "cycle_time_sec": 348.0,
-      "hourly_rate_inr": 250.0,
-      "cost_per_piece_inr": 24.17,
-      "cost_per_piece_raw": 24.166666666666668
+      "operation_name": "Dry Corrosion Protection and VCI Pack",
+      "machine_family": "oiling_packing",
+      "cycle_time_sec": 48.0,
+      "hourly_rate_inr": 180.0,
+      "cost_per_piece_raw": 2.8235294117647065,
+      "cost_per_piece_inr": 2.82
     }
   ]
 }

@@ -1,172 +1,262 @@
 {
   "drawing_number": "ASD 24012",
-  "part_name": "CLUTCH RING",
+  "part_name": null,
   "material": "ISO683-3 16MnCr5",
   "quantity": 100,
   "quote_status": "complete",
   "weights": {
-    "blank_type": "cold_rolled_ring_blank",
-    "blank_outer_dia_mm": 197.0,
-    "blank_inner_dia_mm": 152.6,
-    "blank_thickness_mm": 16.6,
-    "raw_bar_dia_mm": 197.0,
-    "actual_bar_dia_mm": 197.0,
-    "gross_weight_kg": 1.59,
-    "gross_weight_g": 1590.0,
+    "gross_weight_kg": 1.703,
     "net_weight_kg": 0.87,
-    "net_weight_g": 870.0,
-    "scrap_weight_kg": 0.72,
-    "scrap_weight_g": 720.0,
-    "net_weight_source": "estimated_geometry"
+    "scrap_weight_kg": 0.833
   },
   "direct_cost": {
-    "material_cost_inr": 294.15,
-    "machining_cost_inr": 122.59,
-    "heat_treatment_cost_inr": 95.4,
-    "direct_cost_subtotal_inr": 512.14
+    "machining_cost_inr": 1324.63,
+    "material_cost_inr": 161.78,
+    "heat_treatment_cost_inr": 69.6,
+    "direct_cost_subtotal_inr": 1556.01
   },
   "overheads_and_surcharges": {
-    "factory_overhead_margin_inr": 512.14,
-    "tooling_inr": 102.43,
-    "rejection_inr": 22.53,
-    "inspection_inr": 20.49,
-    "cleaning_inr": 10.24,
-    "scrap_recovery_credit_inr": -15.3,
-    "export_packaging_inr": 17.4,
-    "fob_freight_inr": 13.05,
-    "packaging_and_fob_inr": 30.45
+    "tooling_inr": 66.23,
+    "inspection_inr": 107.84
   },
   "pricing_summary": {
-    "subtotal_before_margin_inr": 682.98,
-    "overhead_and_margin_inr": 512.14,
-    "final_ex_works_price_inr": 1195.12
+    "subtotal_before_margin_inr": 1556.01,
+    "final_ex_works_price_inr": 1730.08
   },
   "machining_operations": [
     {
       "sequence": 1,
-      "operation_name": "Cold Roll Ring Section",
-      "machine_family": "cold_rolling_mill",
-      "cycle_time_sec": 4.2,
-      "hourly_rate_inr": 1200.0,
-      "cost_per_piece_inr": 1.4,
-      "cost_per_piece_raw": 1.4000000000000001
+      "operation_name": "Incoming Ring Inspection",
+      "machine_family": "inspection",
+      "cycle_time_sec": 225.0,
+      "hourly_rate_inr": 250.0,
+      "cost_per_piece_raw": 18.38235294117647,
+      "cost_per_piece_inr": 18.38
     },
     {
       "sequence": 2,
-      "operation_name": "Ring Making (CNC Ring Bending)",
-      "machine_family": "ring_making_machine",
-      "cycle_time_sec": 16.2,
-      "hourly_rate_inr": 800.0,
-      "cost_per_piece_inr": 3.6,
-      "cost_per_piece_raw": 3.5999999999999996
+      "operation_name": "Soft Rough Turning \u2013 First Side",
+      "machine_family": "cnc_lathe",
+      "cycle_time_sec": 249.62,
+      "hourly_rate_inr": 350.0,
+      "cost_per_piece_raw": 28.551307189542488,
+      "cost_per_piece_inr": 28.55
     },
     {
       "sequence": 3,
-      "operation_name": "Flash Butt Weld and Trim",
-      "machine_family": "flash_butt_welder",
-      "cycle_time_sec": 34.8,
-      "hourly_rate_inr": 700.0,
-      "cost_per_piece_inr": 6.77,
-      "cost_per_piece_raw": 6.766666666666666
+      "operation_name": "Soft Rough Turning \u2013 Second Side",
+      "machine_family": "cnc_lathe",
+      "cycle_time_sec": 597.95,
+      "hourly_rate_inr": 350.0,
+      "cost_per_piece_raw": 68.39297385620915,
+      "cost_per_piece_inr": 68.39
+    },
+    {
+      "sequence": 4,
+      "operation_name": "Soft ID and Datum-Face Turning",
+      "machine_family": "cnc_lathe",
+      "cycle_time_sec": 273.06,
+      "hourly_rate_inr": 350.0,
+      "cost_per_piece_raw": 31.232352941176472,
+      "cost_per_piece_inr": 31.23
     },
     {
       "sequence": 5,
-      "operation_name": "Shot Blast",
-      "machine_family": "shot_blaster",
-      "cycle_time_sec": 7.8,
-      "hourly_rate_inr": 250.0,
-      "cost_per_piece_inr": 0.54,
-      "cost_per_piece_raw": 0.5416666666666666
+      "operation_name": "Soft OD and Remaining Face Turning",
+      "machine_family": "cnc_lathe",
+      "cycle_time_sec": 606.23,
+      "hourly_rate_inr": 350.0,
+      "cost_per_piece_raw": 69.34003267973857,
+      "cost_per_piece_inr": 69.34
     },
     {
       "sequence": 6,
-      "operation_name": "Size Ring Blank",
-      "machine_family": "ring_sizing_machine",
-      "cycle_time_sec": 15.0,
-      "hourly_rate_inr": 400.0,
-      "cost_per_piece_inr": 1.67,
-      "cost_per_piece_raw": 1.6666666666666667
+      "operation_name": "Rough Peripheral and Cam Patterns",
+      "machine_family": "vmc_3axis",
+      "cycle_time_sec": 413.9,
+      "hourly_rate_inr": 450.0,
+      "cost_per_piece_raw": 60.86764705882353,
+      "cost_per_piece_inr": 60.87
     },
     {
       "sequence": 7,
-      "operation_name": "CNC Turn - Setup 1 (Face F39, OD)",
-      "machine_family": "cnc_lathe",
-      "cycle_time_sec": 70.7,
-      "hourly_rate_inr": 300.0,
-      "cost_per_piece_inr": 5.89,
-      "cost_per_piece_raw": 5.891666666666667
+      "operation_name": "External Tooth-Form Hobbing",
+      "machine_family": "gear_hobber",
+      "cycle_time_sec": 1281.6,
+      "hourly_rate_inr": 500.0,
+      "cost_per_piece_raw": 209.41176470588235,
+      "cost_per_piece_inr": 209.41
     },
     {
       "sequence": 8,
-      "operation_name": "CNC Turn - Setup 2 (Face F40, Bores)",
-      "machine_family": "cnc_lathe",
-      "cycle_time_sec": 68.5,
-      "hourly_rate_inr": 300.0,
-      "cost_per_piece_inr": 5.71,
-      "cost_per_piece_raw": 5.708333333333334
+      "operation_name": "Tooth Lead Chamfer \u2013 First Side",
+      "machine_family": "entry_chamfer_machine",
+      "cycle_time_sec": 144.0,
+      "hourly_rate_inr": 350.0,
+      "cost_per_piece_raw": 16.47058823529412,
+      "cost_per_piece_inr": 16.47
     },
     {
       "sequence": 9,
-      "operation_name": "VMC Mill External Lugs",
-      "machine_family": "vmc_3axis",
-      "cycle_time_sec": 138.0,
-      "hourly_rate_inr": 450.0,
-      "cost_per_piece_inr": 17.25,
-      "cost_per_piece_raw": 17.25
+      "operation_name": "Tooth Lead Chamfer \u2013 Reverse Side",
+      "machine_family": "entry_chamfer_machine",
+      "cycle_time_sec": 144.0,
+      "hourly_rate_inr": 350.0,
+      "cost_per_piece_raw": 16.47058823529412,
+      "cost_per_piece_inr": 16.47
     },
     {
       "sequence": 10,
-      "operation_name": "VMC Mill Internal Cam Profile",
+      "operation_name": "Datum-Related Soft Profile Finishing",
       "machine_family": "vmc_3axis",
-      "cycle_time_sec": 316.2,
+      "cycle_time_sec": 654.2,
       "hourly_rate_inr": 450.0,
-      "cost_per_piece_inr": 39.52,
-      "cost_per_piece_raw": 39.525
+      "cost_per_piece_raw": 96.20588235294119,
+      "cost_per_piece_inr": 96.21
     },
     {
       "sequence": 11,
-      "operation_name": "Wash",
-      "machine_family": "washing_machine",
-      "cycle_time_sec": 12.0,
-      "hourly_rate_inr": 150.0,
-      "cost_per_piece_inr": 0.5,
-      "cost_per_piece_raw": 0.5
+      "operation_name": "Pre-Hardening Rotary Deburr",
+      "machine_family": "rotary_deburring_machine",
+      "cycle_time_sec": 84.0,
+      "hourly_rate_inr": 200.0,
+      "cost_per_piece_raw": 5.4901960784313735,
+      "cost_per_piece_inr": 5.49
+    },
+    {
+      "sequence": 12,
+      "operation_name": "Outside Carbonitriding and Tempering",
+      "machine_family": "outside_vendor",
+      "cycle_time_sec": 0.0,
+      "hourly_rate_inr": 0.0,
+      "cost_per_piece_raw": null,
+      "cost_per_piece_inr": null
+    },
+    {
+      "sequence": 13,
+      "operation_name": "Heat-Treatment Receiving Inspection",
+      "machine_family": "inspection",
+      "cycle_time_sec": 225.0,
+      "hourly_rate_inr": 250.0,
+      "cost_per_piece_raw": 18.38235294117647,
+      "cost_per_piece_inr": 18.38
     },
     {
       "sequence": 14,
-      "operation_name": "Re-bore and Face - Setup 1",
-      "machine_family": "cnc_lathe",
-      "cycle_time_sec": 105.2,
-      "hourly_rate_inr": 450.0,
-      "cost_per_piece_inr": 13.15,
-      "cost_per_piece_raw": 13.15
+      "operation_name": "OD and ID Ovality Correction",
+      "machine_family": "ovality_correction",
+      "cycle_time_sec": 180.0,
+      "hourly_rate_inr": 250.0,
+      "cost_per_piece_raw": 14.705882352941178,
+      "cost_per_piece_inr": 14.71
     },
     {
       "sequence": 15,
-      "operation_name": "Re-face - Setup 2",
+      "operation_name": "Hard Turning \u2013 Datum Face and Bores",
       "machine_family": "cnc_lathe",
-      "cycle_time_sec": 61.7,
-      "hourly_rate_inr": 450.0,
-      "cost_per_piece_inr": 7.71,
-      "cost_per_piece_raw": 7.712500000000001
+      "cycle_time_sec": 251.36,
+      "hourly_rate_inr": 350.0,
+      "cost_per_piece_raw": 28.750326797385625,
+      "cost_per_piece_inr": 28.75
     },
     {
       "sequence": 16,
-      "operation_name": "Rotary Deburr",
-      "machine_family": "rotary_deburring_machine",
-      "cycle_time_sec": 36.0,
-      "hourly_rate_inr": 200.0,
-      "cost_per_piece_inr": 2.0,
-      "cost_per_piece_raw": 2.0
+      "operation_name": "Hardened Cam Profile Grinding",
+      "machine_family": "cylindrical_grinder",
+      "cycle_time_sec": 215.8,
+      "hourly_rate_inr": 350.0,
+      "cost_per_piece_raw": 24.683006535947715,
+      "cost_per_piece_inr": 24.68
     },
     {
       "sequence": 17,
-      "operation_name": "Final Inspection",
-      "machine_family": "inspection",
-      "cycle_time_sec": 243.0,
+      "operation_name": "Hard Turning \u2013 Remaining Diameters and Face",
+      "machine_family": "cnc_lathe",
+      "cycle_time_sec": 517.73,
+      "hourly_rate_inr": 350.0,
+      "cost_per_piece_raw": 59.217483660130725,
+      "cost_per_piece_inr": 59.22
+    },
+    {
+      "sequence": 18,
+      "operation_name": "External Tooth-Form Grinding",
+      "machine_family": "gear_grinder",
+      "cycle_time_sec": 1923.6,
+      "hourly_rate_inr": 900.0,
+      "cost_per_piece_raw": 565.7647058823529,
+      "cost_per_piece_inr": 565.76
+    },
+    {
+      "sequence": 19,
+      "operation_name": "Laser Traceability Marking",
+      "machine_family": "laser_marker",
+      "cycle_time_sec": 48.0,
       "hourly_rate_inr": 250.0,
-      "cost_per_piece_inr": 16.88,
-      "cost_per_piece_raw": 16.875
+      "cost_per_piece_raw": 3.9215686274509807,
+      "cost_per_piece_inr": 3.92
+    },
+    {
+      "sequence": 20,
+      "operation_name": "Final Dimensional and Profile Inspection",
+      "machine_family": "inspection",
+      "cycle_time_sec": 465.0,
+      "hourly_rate_inr": 250.0,
+      "cost_per_piece_raw": 37.99019607843138,
+      "cost_per_piece_inr": 37.99
+    },
+    {
+      "sequence": 21,
+      "operation_name": "Magnetic Particle Inspection and Demagnetizing",
+      "machine_family": "mpi_bench",
+      "cycle_time_sec": 252.0,
+      "hourly_rate_inr": 250.0,
+      "cost_per_piece_raw": 20.58823529411765,
+      "cost_per_piece_inr": 20.59
+    },
+    {
+      "sequence": 22,
+      "operation_name": "Safe-Launch Inspection",
+      "machine_family": "inspection",
+      "cycle_time_sec": 105.0,
+      "hourly_rate_inr": 250.0,
+      "cost_per_piece_raw": 8.57843137254902,
+      "cost_per_piece_inr": 8.58
+    },
+    {
+      "sequence": 23,
+      "operation_name": "Final Washing",
+      "machine_family": "washing_machine",
+      "cycle_time_sec": 30.0,
+      "hourly_rate_inr": 180.0,
+      "cost_per_piece_raw": 1.7647058823529411,
+      "cost_per_piece_inr": 1.76
+    },
+    {
+      "sequence": 24,
+      "operation_name": "Cleanliness Acceptance",
+      "machine_family": "inspection",
+      "cycle_time_sec": 105.0,
+      "hourly_rate_inr": 250.0,
+      "cost_per_piece_raw": 8.57843137254902,
+      "cost_per_piece_inr": 8.58
+    },
+    {
+      "sequence": 25,
+      "operation_name": "Rust Prevention and Packing",
+      "machine_family": "oiling_packing",
+      "cycle_time_sec": 48.0,
+      "hourly_rate_inr": 180.0,
+      "cost_per_piece_raw": 2.8235294117647065,
+      "cost_per_piece_inr": 2.82
+    },
+    {
+      "sequence": 26,
+      "operation_name": "Dock Audit and Dispatch Release",
+      "machine_family": "inspection",
+      "cycle_time_sec": 195.0,
+      "hourly_rate_inr": 250.0,
+      "cost_per_piece_raw": 15.93137254901961,
+      "cost_per_piece_inr": 15.93
     }
   ]
 }

@@ -5,131 +5,113 @@
   "quantity": 100,
   "quote_status": "complete",
   "weights": {
-    "blank_type": "hot_rolled_sheet",
-    "blank_outer_dia_mm": 155.0,
-    "blank_thickness_mm": 4.5,
-    "raw_bar_dia_mm": 155.0,
-    "actual_bar_dia_mm": 155.0,
-    "gross_weight_kg": 0.883,
-    "gross_weight_g": 883.0,
+    "gross_weight_kg": 0.691,
     "net_weight_kg": 0.196,
-    "net_weight_g": 196.0,
-    "scrap_weight_kg": 0.687,
-    "scrap_weight_g": 687.0,
-    "net_weight_source": "estimated_geometry"
+    "scrap_weight_kg": 0.495
   },
   "direct_cost": {
-    "material_cost_inr": 163.35,
-    "machining_cost_inr": 24.25,
-    "heat_treatment_cost_inr": 0.0,
-    "direct_cost_subtotal_inr": 187.6
+    "machining_cost_inr": 343.05,
+    "material_cost_inr": 51.82,
+    "direct_cost_subtotal_inr": 394.87
   },
   "overheads_and_surcharges": {
-    "factory_overhead_margin_inr": 187.6,
-    "tooling_inr": 37.52,
-    "rejection_inr": 8.25,
-    "inspection_inr": 7.5,
-    "cleaning_inr": 3.75,
-    "scrap_recovery_credit_inr": -14.6,
-    "export_packaging_inr": 3.92,
-    "fob_freight_inr": 2.94,
-    "packaging_and_fob_inr": 6.86
+    "tooling_inr": 17.15,
+    "inspection_inr": 37.99
   },
   "pricing_summary": {
-    "subtotal_before_margin_inr": 236.88,
-    "overhead_and_margin_inr": 187.6,
-    "final_ex_works_price_inr": 424.48
+    "subtotal_before_margin_inr": 394.87,
+    "final_ex_works_price_inr": 450.01
   },
   "machining_operations": [
     {
       "sequence": 1,
-      "operation_name": "Shear Strip",
-      "machine_family": "shearing_machine",
-      "cycle_time_sec": 0.6,
-      "hourly_rate_inr": 250.0,
-      "cost_per_piece_inr": 0.04,
-      "cost_per_piece_raw": 0.041666666666666664
+      "operation_name": "CNC Turn \u2014 Datum Face and Bore",
+      "machine_family": "cnc_lathe",
+      "cycle_time_sec": 257.93,
+      "hourly_rate_inr": 350.0,
+      "cost_per_piece_raw": 29.501797385620915,
+      "cost_per_piece_inr": 29.5
     },
     {
       "sequence": 2,
-      "operation_name": "Fine Blank Wheel",
-      "machine_family": "fine_blanking_press",
-      "cycle_time_sec": 1.8,
-      "hourly_rate_inr": 2000.0,
-      "cost_per_piece_inr": 1.0,
-      "cost_per_piece_raw": 1.0
+      "operation_name": "CNC Turn \u2014 Reverse Face and Outside Profile",
+      "machine_family": "cnc_lathe",
+      "cycle_time_sec": 246.08,
+      "hourly_rate_inr": 350.0,
+      "cost_per_piece_raw": 28.146405228758173,
+      "cost_per_piece_inr": 28.15
     },
     {
       "sequence": 3,
-      "operation_name": "CNC Turn Bore",
-      "machine_family": "cnc_lathe",
-      "cycle_time_sec": 34.8,
-      "hourly_rate_inr": 300.0,
-      "cost_per_piece_inr": 2.9,
-      "cost_per_piece_raw": 2.8999999999999995
+      "operation_name": "VMC \u2014 Axial Holes and Index Slot",
+      "machine_family": "vmc_3axis",
+      "cycle_time_sec": 250.26,
+      "hourly_rate_inr": 450.0,
+      "cost_per_piece_raw": 36.80294117647059,
+      "cost_per_piece_inr": 36.8
     },
     {
       "sequence": 4,
-      "operation_name": "VMC Counterbore Mounting Holes",
+      "operation_name": "VMC \u2014 Cross-Axis Oval Slot",
       "machine_family": "vmc_3axis",
-      "cycle_time_sec": 27.0,
+      "cycle_time_sec": 173.3,
       "hourly_rate_inr": 450.0,
-      "cost_per_piece_inr": 3.38,
-      "cost_per_piece_raw": 3.375
+      "cost_per_piece_raw": 25.48529411764706,
+      "cost_per_piece_inr": 25.49
     },
     {
       "sequence": 5,
-      "operation_name": "Rotary Surface Grind Side A",
-      "machine_family": "rotary_surface_grinder",
-      "cycle_time_sec": 51.0,
-      "hourly_rate_inr": 450.0,
-      "cost_per_piece_inr": 6.38,
-      "cost_per_piece_raw": 6.375
+      "operation_name": "Hob External Tooth Profile",
+      "machine_family": "gear_hobber",
+      "cycle_time_sec": 1279.8,
+      "hourly_rate_inr": 500.0,
+      "cost_per_piece_raw": 209.11764705882354,
+      "cost_per_piece_inr": 209.12
     },
     {
       "sequence": 6,
-      "operation_name": "Double-Side Lap",
-      "machine_family": "lapping_machine",
-      "cycle_time_sec": 54.0,
-      "hourly_rate_inr": 450.0,
-      "cost_per_piece_inr": 6.75,
-      "cost_per_piece_raw": 6.75
+      "operation_name": "Controlled Deburring",
+      "machine_family": "rotary_deburring_machine",
+      "cycle_time_sec": 84.0,
+      "hourly_rate_inr": 200.0,
+      "cost_per_piece_raw": 5.4901960784313735,
+      "cost_per_piece_inr": 5.49
     },
     {
       "sequence": 7,
-      "operation_name": "Brush Deburr",
-      "machine_family": "rotary_deburring_machine",
-      "cycle_time_sec": 8.4,
-      "hourly_rate_inr": 200.0,
-      "cost_per_piece_inr": 0.47,
-      "cost_per_piece_raw": 0.46666666666666673
+      "operation_name": "Wash and Dry",
+      "machine_family": "washing_machine",
+      "cycle_time_sec": 30.0,
+      "hourly_rate_inr": 180.0,
+      "cost_per_piece_raw": 1.7647058823529411,
+      "cost_per_piece_inr": 1.76
     },
     {
       "sequence": 8,
-      "operation_name": "Wash",
-      "machine_family": "washing_machine",
-      "cycle_time_sec": 6.0,
-      "hourly_rate_inr": 150.0,
-      "cost_per_piece_inr": 0.25,
-      "cost_per_piece_raw": 0.25
+      "operation_name": "Laser Mark DMC",
+      "machine_family": "laser_marker",
+      "cycle_time_sec": 48.0,
+      "hourly_rate_inr": 250.0,
+      "cost_per_piece_raw": 3.9215686274509807,
+      "cost_per_piece_inr": 3.92
     },
     {
       "sequence": 9,
-      "operation_name": "DMC Laser Mark",
-      "machine_family": "laser_marker",
-      "cycle_time_sec": 12.0,
-      "hourly_rate_inr": 300.0,
-      "cost_per_piece_inr": 1.0,
-      "cost_per_piece_raw": 1.0
+      "operation_name": "Final Dimensional and Tooth Inspection",
+      "machine_family": "inspection",
+      "cycle_time_sec": 465.0,
+      "hourly_rate_inr": 250.0,
+      "cost_per_piece_raw": 37.99019607843138,
+      "cost_per_piece_inr": 37.99
     },
     {
       "sequence": 10,
-      "operation_name": "Final Inspection",
-      "machine_family": "inspection",
-      "cycle_time_sec": 30.0,
-      "hourly_rate_inr": 250.0,
-      "cost_per_piece_inr": 2.08,
-      "cost_per_piece_raw": 2.0833333333333335
+      "operation_name": "Rust Preventive and Pack",
+      "machine_family": "oiling_packing",
+      "cycle_time_sec": 48.0,
+      "hourly_rate_inr": 180.0,
+      "cost_per_piece_raw": 2.8235294117647065,
+      "cost_per_piece_inr": 2.82
     }
   ]
 }
