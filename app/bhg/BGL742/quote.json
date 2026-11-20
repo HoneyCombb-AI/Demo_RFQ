@@ -10,22 +10,76 @@
     "scrap_weight_kg": 2.418
   },
   "direct_cost": {
-    "machining_cost_inr": 488.37,
+    "machining_cost_inr": 485.9,
     "material_cost_inr": 625.68,
     "heat_treatment_cost_inr": 223.68,
-    "direct_cost_subtotal_inr": 1337.73
+    "direct_cost_subtotal_inr": 1335.26
   },
   "overheads_and_surcharges": {
     "tooling_inr": 24.42,
     "inspection_inr": 91.91,
     "overhead_inr": 0.0,
-    "rejection_inr": 29.08
+    "rejection_inr": 29.08,
+    "packaging_inr": 2.47
   },
   "pricing_summary": {
     "subtotal_before_margin_inr": 1483.14,
     "final_ex_works_price_inr": 1705.61,
     "margin_inr": 222.47
   },
+  "price_breakdown": [
+    {
+      "key": "material",
+      "label": "Material",
+      "amount_inr": 625.68
+    },
+    {
+      "key": "machining",
+      "label": "Machining",
+      "amount_inr": 485.9
+    },
+    {
+      "key": "heat_treat",
+      "label": "Heat treatment",
+      "amount_inr": 223.68,
+      "basis": "2.796 kg \u00d7 80"
+    },
+    {
+      "key": "tooling",
+      "label": "Tooling",
+      "amount_inr": 24.42
+    },
+    {
+      "key": "inspection",
+      "label": "Inspection",
+      "amount_inr": 91.91
+    },
+    {
+      "key": "rejection",
+      "label": "Rejection",
+      "amount_inr": 29.08
+    },
+    {
+      "key": "overhead",
+      "label": "Overhead",
+      "amount_inr": 0.0
+    },
+    {
+      "key": "packaging",
+      "label": "Packing",
+      "amount_inr": 2.47
+    },
+    {
+      "key": "margin",
+      "label": "Profit",
+      "amount_inr": 222.47
+    },
+    {
+      "key": "total",
+      "label": "Ex-works",
+      "amount_inr": 1705.61
+    }
+  ],
   "machining_operations": [
     {
       "sequence": 1,
@@ -95,18 +149,18 @@
       "operation_name": "Continuous Carburize and Integral Quench",
       "machine_family": "carburizing_furnace",
       "cycle_time_sec": 102.0,
-      "hourly_rate_inr": 400.0,
-      "cost_per_piece_raw": 13.333333333333332,
-      "cost_per_piece_inr": 13.33
+      "cost_per_piece_raw": null,
+      "cost_per_piece_inr": null,
+      "priced_by": "heat_treatment_line"
     },
     {
       "sequence": 9,
       "operation_name": "Low-Temperature Temper",
       "machine_family": "carburizing_furnace",
       "cycle_time_sec": 36.0,
-      "hourly_rate_inr": 400.0,
-      "cost_per_piece_raw": 4.705882352941177,
-      "cost_per_piece_inr": 4.71
+      "cost_per_piece_raw": null,
+      "cost_per_piece_inr": null,
+      "priced_by": "heat_treatment_line"
     },
     {
       "sequence": 10,

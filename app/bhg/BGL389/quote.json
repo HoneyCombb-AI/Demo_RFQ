@@ -6,26 +6,80 @@
   "quote_status": "complete",
   "weights": {
     "gross_weight_kg": 4.161,
-    "net_weight_kg": 2.0648,
-    "scrap_weight_kg": 2.0962
+    "net_weight_kg": 1.354,
+    "scrap_weight_kg": 2.807
   },
   "direct_cost": {
-    "machining_cost_inr": 318.21,
+    "machining_cost_inr": 315.74,
     "material_cost_inr": 499.32,
-    "heat_treatment_cost_inr": 165.18,
-    "direct_cost_subtotal_inr": 982.71
+    "heat_treatment_cost_inr": 108.32,
+    "direct_cost_subtotal_inr": 923.38
   },
   "overheads_and_surcharges": {
     "tooling_inr": 15.91,
     "inspection_inr": 91.91,
     "overhead_inr": 0.0,
-    "rejection_inr": 21.81
+    "rejection_inr": 20.67,
+    "packaging_inr": 2.47
   },
   "pricing_summary": {
-    "subtotal_before_margin_inr": 1112.34,
-    "final_ex_works_price_inr": 1279.19,
-    "margin_inr": 166.85
+    "subtotal_before_margin_inr": 1054.34,
+    "final_ex_works_price_inr": 1212.49,
+    "margin_inr": 158.15
   },
+  "price_breakdown": [
+    {
+      "key": "material",
+      "label": "Material",
+      "amount_inr": 499.32
+    },
+    {
+      "key": "machining",
+      "label": "Machining",
+      "amount_inr": 315.74
+    },
+    {
+      "key": "heat_treat",
+      "label": "Heat treatment",
+      "amount_inr": 108.32,
+      "basis": "1.354 kg \u00d7 80"
+    },
+    {
+      "key": "tooling",
+      "label": "Tooling",
+      "amount_inr": 15.91
+    },
+    {
+      "key": "inspection",
+      "label": "Inspection",
+      "amount_inr": 91.91
+    },
+    {
+      "key": "rejection",
+      "label": "Rejection",
+      "amount_inr": 20.67
+    },
+    {
+      "key": "overhead",
+      "label": "Overhead",
+      "amount_inr": 0.0
+    },
+    {
+      "key": "packaging",
+      "label": "Packing",
+      "amount_inr": 2.47
+    },
+    {
+      "key": "margin",
+      "label": "Profit",
+      "amount_inr": 158.15
+    },
+    {
+      "key": "total",
+      "label": "Ex-works",
+      "amount_inr": 1212.49
+    }
+  ],
   "machining_operations": [
     {
       "sequence": 1,
@@ -86,18 +140,18 @@
       "operation_name": "Continuous Carburize and Integral Quench",
       "machine_family": "carburizing_furnace",
       "cycle_time_sec": 102.0,
-      "hourly_rate_inr": 400.0,
-      "cost_per_piece_raw": 13.333333333333332,
-      "cost_per_piece_inr": 13.33
+      "cost_per_piece_raw": null,
+      "cost_per_piece_inr": null,
+      "priced_by": "heat_treatment_line"
     },
     {
       "sequence": 8,
       "operation_name": "Temper",
       "machine_family": "carburizing_furnace",
       "cycle_time_sec": 36.0,
-      "hourly_rate_inr": 400.0,
-      "cost_per_piece_raw": 4.705882352941177,
-      "cost_per_piece_inr": 4.71
+      "cost_per_piece_raw": null,
+      "cost_per_piece_inr": null,
+      "priced_by": "heat_treatment_line"
     },
     {
       "sequence": 9,
