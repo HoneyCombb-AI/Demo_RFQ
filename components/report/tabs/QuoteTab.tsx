@@ -105,6 +105,65 @@ export function QuoteTab({ quote }: { quote: JttQuoteData | any }) {
         </section>
       )}
 
+      {/* Full Price Breakdown (waterfall) */}
+      {quote.price_breakdown && quote.price_breakdown.length > 0 && (() => {
+        const rows: any[] = quote.price_breakdown
+        const totalRow = rows.find((r: any) => r.key === "total")
+        const totalAmt: number | null = totalRow?.amount_inr ?? null
+        return (
+          <section>
+            <h3 className="text-lg font-semibold mb-4">Price Breakdown</h3>
+            <div className="rounded-md border bg-card overflow-hidden">
+              <Table>
+                <TableHeader className="bg-muted/50">
+                  <TableRow>
+                    <TableHead className="w-[40%] text-xs font-semibold tracking-wider uppercase">Component</TableHead>
+                    <TableHead className="text-xs font-semibold tracking-wider uppercase">Basis</TableHead>
+                    <TableHead className="text-xs font-semibold tracking-wider uppercase text-right">Amount (INR)</TableHead>
+                    <TableHead className="text-xs font-semibold tracking-wider uppercase text-right">Share (%)</TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  {rows.map((row: any) => {
+                    const isTotal = row.key === "total"
+                    const isMargin = row.key === "margin"
+                    const pct =
+                      totalAmt && totalAmt > 0 && row.amount_inr != null && !isTotal
+                        ? `${((row.amount_inr / totalAmt) * 100).toFixed(1)}%`
+                        : isTotal ? "100%" : "—"
+                    return (
+                      <TableRow
+                        key={row.key}
+                        className={
+                          isTotal
+                            ? "bg-primary/10 font-bold border-t-2 border-primary/30"
+                            : isMargin
+                            ? "text-emerald-600 dark:text-emerald-400"
+                            : ""
+                        }
+                      >
+                        <TableCell className={isTotal ? "font-bold text-primary" : "font-medium"}>
+                          {row.label}
+                        </TableCell>
+                        <TableCell className="text-xs text-muted-foreground font-mono">
+                          {row.basis ?? "—"}
+                        </TableCell>
+                        <TableCell className="font-mono text-right">
+                          {row.amount_inr != null ? formatCurrency(row.amount_inr, "INR") : "—"}
+                        </TableCell>
+                        <TableCell className="font-mono text-right text-muted-foreground text-xs">
+                          {pct}
+                        </TableCell>
+                      </TableRow>
+                    )
+                  })}
+                </TableBody>
+              </Table>
+            </div>
+          </section>
+        )
+      })()}
+
       {/* Direct Costs Breakdown */}
       {direct_cost && (
         <section>
